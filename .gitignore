@@ -1,4 +1,7 @@
 .idea/
 node_modules/
-assets/fonts/
-assets/images/
+src/
+tasks/
+gulpfile.js
+package-lock.json
+package.json
