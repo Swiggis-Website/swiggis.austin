@@ -52,7 +52,7 @@ var Home = React.createClass({
                     activeHomePanel={this.props.activeHomePanel}
                     handleRouting={this.props.handleRouting}
                 />
-                <DisqusCount/>
+                {/* <DisqusCount/> */}
             </ Page>
         )
     },

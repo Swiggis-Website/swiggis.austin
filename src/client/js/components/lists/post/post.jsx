@@ -25,14 +25,14 @@ var Post = React.createClass({
                 <p>{this.props.article.subtitle}</p>
 
                 <p className="meta">
-                    <span
+{/*                     <span
                         title={"Comments for " + this.props.article.title}
                         data-disqus-url={window.location.protocol + window.location.hostname + '/' + articleUrl}
                         data-disqus-identifier={this.props.article.driveId}
                         className="disqus-comment-count"
                     >
                     </span>
-                &nbsp;-&nbsp;
+                &nbsp;-&nbsp; */}
                     Published in : &nbsp;
                     <a
                         role='button'

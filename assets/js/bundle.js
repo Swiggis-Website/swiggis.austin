@@ -46489,7 +46489,7 @@ var Credits = React.createClass({displayName: "Credits",
             React.createElement(Row, null, 
                 React.createElement("div", {className: "col-xs-12 col-sm-2"}, 
                     React.createElement("a", {href: "#!/about"}, 
-                        React.createElement("img", {src: "images/profile-1.jpg", className: "user-icon ", alt: "user-image"})
+                        React.createElement("img", {src: "images/SWIGGIS_icon.png", className: "user-icon ", alt: "user-image"})
                     )
                 ), 
                 React.createElement("div", {className: "col-xs-12 col-sm-6"}, 
@@ -47024,14 +47024,14 @@ var Post = React.createClass({displayName: "Post",
                 React.createElement("p", null, this.props.article.subtitle), 
 
                 React.createElement("p", {className: "meta"}, 
-                    React.createElement("span", {
-                        title: "Comments for " + this.props.article.title, 
-                        "data-disqus-url": window.location.protocol + window.location.hostname + '/' + articleUrl, 
-                        "data-disqus-identifier": this.props.article.driveId, 
-                        className: "disqus-comment-count"
-                    }
-                    ), 
-                " - " + ' ' +
+/*                     <span
+                        title={"Comments for " + this.props.article.title}
+                        data-disqus-url={window.location.protocol + window.location.hostname + '/' + articleUrl}
+                        data-disqus-identifier={this.props.article.driveId}
+                        className="disqus-comment-count"
+                    >
+                    </span>
+                &nbsp;-&nbsp; */
                     "Published in :  ", 
                     React.createElement("a", {
                         role: "button", 
@@ -47171,10 +47171,10 @@ var Article = React.createClass({displayName: "Article",
                             )
                         )
                     ), 
-                    React.createElement(DisqusThread, {
-                        id: this.props.currentPage.driveId, 
-                        title: this.props.currentPage.title}
-                    ), 
+           /*          <DisqusThread
+                        id={this.props.currentPage.driveId}
+                        title={this.props.currentPage.title}
+                    /> */
                     React.createElement(Footer, {
                         lastUpdated: this.props.currentPage.lastUpdated, 
                         category: this.props.currentPage.category, 
@@ -47230,8 +47230,8 @@ var Category = React.createClass({displayName: "Category",
                     articles: category.articles, 
                     activeHomePanel: "articles", 
                     handleRouting: this.props.handleRouting}
-                ), 
-                React.createElement(DisqusCount, null)
+                )
+                /* <DisqusCount/> */
             )
         )
     }
@@ -47473,8 +47473,8 @@ var Home = React.createClass({displayName: "Home",
                     categories: this.props.store.category, 
                     activeHomePanel: this.props.activeHomePanel, 
                     handleRouting: this.props.handleRouting}
-                ), 
-                React.createElement(DisqusCount, null)
+                )
+                /* <DisqusCount/> */
             )
         )
     },
@@ -47714,30 +47714,34 @@ var sendMail = function (formValues, callback) {
     var config = window.configReactDriveCms;
     console.log(JSON.stringify(formValues));
 
-    getInfo(function (info) {
-        formValues['ip'] = info.address;
-        formValues['country'] = info.countryName;
-        $.ajax({
-            type: "GET",
-            dataType: 'jsonp',
-            data: formValues,
-            url: "https://script.google.com/macros/s/" + config.sendMailUrlId + "/exec"
-        }).done(function (response) {
+    $.ajax({
+        method: "POST",
+        dataType: 'json',
+        accepts: "application/json",
+        cache: false,
+        data: formValues,
+        url: "https://www.enformed.io/bhxxb368",
+        success: function(response) {
             callback(response);
-        });
+        },
+        error: function(response) {
+            callback(response);
+        }
+    }).done(function (response) {
+        callback(response);
     });
 };
 
 var getInfo = function (callback) {
-    callback = callback || noop;
-    var $ = window.$;
+    callback = noop;
+/*     var $ = window.$;
     $.ajax({
         type: "GET",
         dataType: 'jsonp',
-        url: "http://smart-ip.net/info-json"
+        url: "http://smart-ip.net/info-json" 
     }).done(function (response) {
         callback(response);
-    });
+    }); */
 };
 
 module.exports = sendMail;
@@ -47904,13 +47908,10 @@ var ValidateFields = function (formValues) {
             return filter.test(inputEmail);
         },
         company: function (inputCompany) {
-            var self = this;
-            return ( self.checkMinLength(inputCompany, 3));
+            return true;
         },
         number: function (inputNumber) {
-            inputNumber = inputNumber.replace(/\s/g, '');
-            var filter = /^[\+]?[(]?[0-9]{3}[)]?[-\s\.]?[0-9]{3}[-\s\.]?[0-9]{4,6}$/im;
-            return filter.test(inputNumber);
+            return true;
         },
         message: function (inputMessage) {
             var self = this;

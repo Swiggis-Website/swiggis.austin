@@ -13,13 +13,10 @@ var ValidateFields = function (formValues) {
             return filter.test(inputEmail);
         },
         company: function (inputCompany) {
-            var self = this;
-            return ( self.checkMinLength(inputCompany, 3));
+            return true;
         },
         number: function (inputNumber) {
-            inputNumber = inputNumber.replace(/\s/g, '');
-            var filter = /^[\+]?[(]?[0-9]{3}[)]?[-\s\.]?[0-9]{3}[-\s\.]?[0-9]{4,6}$/im;
-            return filter.test(inputNumber);
+            return true;
         },
         message: function (inputMessage) {
             var self = this;

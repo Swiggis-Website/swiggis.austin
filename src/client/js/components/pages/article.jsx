@@ -38,10 +38,10 @@ var Article = React.createClass({
                             </div>
                         </Row>
                     </main>
-                    <DisqusThread
+           {/*          <DisqusThread
                         id={this.props.currentPage.driveId}
                         title={this.props.currentPage.title}
-                    />
+                    /> */}
                     <Footer
                         lastUpdated={this.props.currentPage.lastUpdated}
                         category={this.props.currentPage.category}

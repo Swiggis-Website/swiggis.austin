@@ -11,7 +11,7 @@ var Credits = React.createClass({
             <Row >
                 <div className="col-xs-12 col-sm-2">
                     <a href="#!/about">
-                        <img src="images/profile-1.jpg" className="user-icon " alt="user-image" />
+                        <img src="images/SWIGGIS_icon.png" className="user-icon " alt="user-image" />
                     </a>
                 </div>
                 <div className="col-xs-12 col-sm-6">
