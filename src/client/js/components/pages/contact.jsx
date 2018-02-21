@@ -165,7 +165,7 @@ var Contact = React.createClass({
                         title: 'Message Sent',
                         contents: 'Thank you!'
                     };
-                    if(response.code !== 200){
+                    if(response.status !== 200){
                         modal['status'] = 'error';
                         modal['title'] = 'Operation Failed';
                         modal['contents'] = 'Please try again.'

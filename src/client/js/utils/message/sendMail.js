@@ -10,11 +10,11 @@ var sendMail = function (formValues, callback) {
 
     $.ajax({
         method: "POST",
-        dataType: 'json',
+        dataType: 'jsonp',
         accepts: "application/json",
         cache: false,
         data: formValues,
-        url: "https://www.enformed.io/bhxxb368",
+        url: "//www.enformed.io/bhxxb368",
         success: function(response) {
             callback(response);
         },
