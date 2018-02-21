@@ -4303,7 +4303,7 @@ a.menu-trigger {
     height: 50px;
     padding: 0;
     float: right;
-    border-radius: 50%
+    -border-radius: 50%
 }
 
 #menu,
@@ -4543,7 +4543,7 @@ a.menu-trigger span {
 #menu li.menu-articles-item a {
     font-size: medium;
     position: relative;
-    top: 10px
+    top: 0px
 }
 
 #menu li.menu-articles-item.article-expanded {
