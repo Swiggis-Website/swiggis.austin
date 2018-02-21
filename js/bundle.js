@@ -47406,7 +47406,7 @@ var Contact = React.createClass({displayName: "Contact",
                         title: 'Message Sent',
                         contents: 'Thank you!'
                     };
-                    if(response.code !== 200){
+                    if(response.status !== 200){
                         modal['status'] = 'error';
                         modal['title'] = 'Operation Failed';
                         modal['contents'] = 'Please try again.'
@@ -47716,11 +47716,11 @@ var sendMail = function (formValues, callback) {
 
     $.ajax({
         method: "POST",
-        dataType: 'json',
+        dataType: 'jsonp',
         accepts: "application/json",
         cache: false,
         data: formValues,
-        url: "https://www.enformed.io/bhxxb368",
+        url: "//www.enformed.io/bhxxb368",
         success: function(response) {
             callback(response);
         },
