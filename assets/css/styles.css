@@ -21,7 +21,8 @@ a {
 a,
 a:focus,
 a:hover {
-    text-decoration: none
+    text-decoration: none;
+    border-bottom: solid 1px;
 }
 
 .clearfix:after,
@@ -2277,11 +2278,6 @@ h2 {
 .sidebar {
     text-rendering: optimizeLegibility;
     -webkit-font-smoothing: antialiased
-}
-
-a {
-    color: #fff;
-    border-bottom: solid 1px #fAfafa
 }
 
 a:active,

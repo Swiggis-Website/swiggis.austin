@@ -17,6 +17,7 @@ var MenuCategory = React.createClass({
             <li key={self.props.key} className={("menu-category-item" + (isExpanded ? ' category-expanded' : ''))}>
                 <i className={("fa fa-chevron-right" + (isExpanded ? ' chevron-expanded' : ' chevron'))}></i>
                 <a
+                    className="menuitem"
                     onClick={self.setActiveCategory.bind(null, expData)}
                     role="button"
                     title={self.props.category.title}

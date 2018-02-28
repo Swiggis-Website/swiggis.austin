@@ -8,6 +8,7 @@ var NotFoundRoute = Router.NotFoundRoute;
 
 var Home = require('./../pages/home.jsx');
 var About = require("./../pages/about.jsx");
+var Membership = require("./../pages/membership.jsx");
 var Contact = require("./../pages/contact.jsx");
 var Article = require("./../pages/article.jsx");
 var Category = require("./../pages/category.jsx");
@@ -17,6 +18,7 @@ var routes = function (App) {
         <Route name="app" path="/" handler={App}>
             <Route name="home" path="home" handler={Home}/>
             <Route name="about" path="about" handler={About}/>
+            <Route name="membership" path="membership" handler={Membership}/>
             <Route name="contact" path="contact" handler={Contact}/>
             <Route name="article" path="article/:articleId/:slug" handler={Article}/>
             <Route name="category" path="category/:categoryId/:slug" handler={Category}/>
