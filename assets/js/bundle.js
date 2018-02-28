@@ -47525,7 +47525,7 @@ var Membership = React.createClass({displayName: "Membership",
                         React.createElement("h1", null, "SWIGGIS - MEMBERSHIP"), 
                         React.createElement("p", null, "SWIGGIS is a professional and social organization. Our membership provides women geographers with a positive and productive space as well as a supportive and engaging environment in which we mentor each other, enhance our intellectual climate, and are innovative in our strategies to promote the professional status of women in Geography and GIS. Our goal is to meet monthly, and our meetings will be scheduled alternatively as educational sessions and social happy hours."    
                         ), 
-                        React.createElement("p", null, React.createElement("a", {href: "https://docs.google.com/forms/d/e/1FAIpQLSdq2LzemMruybSH77dejrvsF8Juc_IvTlU2Hr-7sS-Rh3_fKw/viewform"}, "Fill out the membership registration form")
+                        React.createElement("p", null, React.createElement("a", {href: "https://docs.google.com/forms/d/e/1FAIpQLSdq2LzemMruybSH77dejrvsF8Juc_IvTlU2Hr-7sS-Rh3_fKw/viewform", target: "_blank"}, "Fill out the membership registration form")
                         ), 
 
                         React.createElement("h1", null, "MEMBERSHIP DUES"), 
