@@ -47533,15 +47533,18 @@ var Membership = React.createClass({displayName: "Membership",
                         React.createElement("input", {type: "hidden", name: "cmd", value: "_s-xclick"}), 
                         React.createElement("input", {type: "hidden", name: "hosted_button_id", value: "2YL58QAU9MRJL"}), 
                         React.createElement("table", null, 
-                        React.createElement("tr", null, React.createElement("td", null, React.createElement("input", {type: "hidden", name: "on0", value: "Membership Type"}), "Membership Type")), React.createElement("tr", null, React.createElement("td", null, React.createElement("select", {name: "os0"}, 
-                            React.createElement("option", {value: "Professional Membership"}, "Professional Membership $25.00 USD"), 
-                            React.createElement("option", {value: "Student Membership"}, "Student Membership $10.00 USD")
+                        React.createElement("tr", null, React.createElement("td", null, React.createElement("input", {type: "hidden", name: "on0", value: "Membership Type"}), "Membership Type")), React.createElement("tr", null, React.createElement("td", null, 
+                        React.createElement("select", {name: "os0"}, 
+                            React.createElement("option", {value: "Professional Membership"}, "Professional Membership $26.00 USD"), 
+                            React.createElement("option", {value: "Student Membership"}, "Student Membership $11.00 USD")
                         ), " "))
                         ), 
                         React.createElement("input", {type: "hidden", name: "currency_code", value: "USD"}), 
                         React.createElement("input", {type: "image", src: "https://www.paypalobjects.com/en_US/i/btn/btn_buynowCC_LG.gif", border: "0", name: "submit", alt: "PayPal - The safer, easier way to pay online!"}), 
                         React.createElement("img", {alt: "", border: "0", src: "https://www.paypalobjects.com/en_US/i/scr/pixel.gif", width: "1", height: "1"})
-                        )
+                        ), 
+                        React.createElement("br", null), 
+                        React.createElement("p", null, "DISCLAIMER: An additional $1 is charged to cover fees for online payment of Membership Dues.")
                         )
                     )
                 ), 
