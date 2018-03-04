@@ -38,15 +38,18 @@ var Membership = React.createClass({
                         <input type="hidden" name="cmd" value="_s-xclick" />
                         <input type="hidden" name="hosted_button_id" value="2YL58QAU9MRJL" />
                         <table>
-                        <tr><td><input type="hidden" name="on0" value="Membership Type" />Membership Type</td></tr><tr><td><select name="os0">
-                            <option value="Professional Membership">Professional Membership $25.00 USD</option>
-                            <option value="Student Membership">Student Membership $10.00 USD</option>
+                        <tr><td><input type="hidden" name="on0" value="Membership Type" />Membership Type</td></tr><tr><td>
+                        <select name="os0">
+                            <option value="Professional Membership">Professional Membership $26.00 USD</option>
+                            <option value="Student Membership">Student Membership $11.00 USD</option>
                         </select> </td></tr>
                         </table>
                         <input type="hidden" name="currency_code" value="USD" />
                         <input type="image" src="https://www.paypalobjects.com/en_US/i/btn/btn_buynowCC_LG.gif" border="0" name="submit" alt="PayPal - The safer, easier way to pay online!" />
                         <img alt="" border="0" src="https://www.paypalobjects.com/en_US/i/scr/pixel.gif" width="1" height="1" />
                         </form>
+                        <br />
+                        <p>DISCLAIMER: An additional $1 is charged to cover fees for online payment of Membership Dues.</p>
                         </p>
                     </div>
                 </div>
