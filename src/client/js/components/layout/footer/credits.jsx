@@ -35,18 +35,18 @@ var Credits = React.createClass({
                 </div>
                 <div className="col-xs-12 col-sm-4">
                     <div className="social">
-                        <p>Share this article</p>
+                        <p>Connect with SWIGGIS</p>
                         <div className="social-links">
-                            <a className="social-icon" href="#" data-platform="twitter" data-message="Message about this post" >
+                            <a className="social-icon" href="https://twitter.com/SWIGGISAustin" target="_blank" >
                                 <i className="fa fa-twitter"></i>
                             </a>
 
-                            <a className="social-icon" href="#" data-platform="facebook" data-message="Message about this post" >
-                                <i className="fa fa-facebook-official"></i>
+                            <a className="social-icon" href="https://www.linkedin.com/in/swiggis-austin-86299a15a/" target="_blank" >
+                                <i className="fa fa-linkedin"></i>
                             </a>
 
-                            <a className="social-icon" data-platform="mail"  href="#!/contact">
-                                <i className="fa fa-envelope"></i>
+                            <a className="social-icon" href="https://www.meetup.com/SWIGGISAustin/" target="_blank" >
+                                <i className="fa fa-calendar"></i>
                             </a>
                         </div>
                     </div>
