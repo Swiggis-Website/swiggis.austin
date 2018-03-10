@@ -46515,18 +46515,18 @@ var Credits = React.createClass({displayName: "Credits",
                 ), 
                 React.createElement("div", {className: "col-xs-12 col-sm-4"}, 
                     React.createElement("div", {className: "social"}, 
-                        React.createElement("p", null, "Share this article"), 
+                        React.createElement("p", null, "Connect with SWIGGIS"), 
                         React.createElement("div", {className: "social-links"}, 
-                            React.createElement("a", {className: "social-icon", href: "#", "data-platform": "twitter", "data-message": "Message about this post"}, 
+                            React.createElement("a", {className: "social-icon", href: "https://twitter.com/SWIGGISAustin", target: "_blank"}, 
                                 React.createElement("i", {className: "fa fa-twitter"})
                             ), 
 
-                            React.createElement("a", {className: "social-icon", href: "#", "data-platform": "facebook", "data-message": "Message about this post"}, 
-                                React.createElement("i", {className: "fa fa-facebook-official"})
+                            React.createElement("a", {className: "social-icon", href: "https://www.linkedin.com/in/swiggis-austin-86299a15a/", target: "_blank"}, 
+                                React.createElement("i", {className: "fa fa-linkedin"})
                             ), 
 
-                            React.createElement("a", {className: "social-icon", "data-platform": "mail", href: "#!/contact"}, 
-                                React.createElement("i", {className: "fa fa-envelope"})
+                            React.createElement("a", {className: "social-icon", href: "https://www.meetup.com/SWIGGISAustin/", target: "_blank"}, 
+                                React.createElement("i", {className: "fa fa-calendar"})
                             )
                         )
                     )
@@ -47324,7 +47324,7 @@ var Contact = React.createClass({displayName: "Contact",
                 activeCategory: this.props.activeCategory, 
                 modal: this.props.modal
             }, 
-                React.createElement("h3", null, "Send me an email"), 
+                React.createElement("h3", null, "Send us an email"), 
                 React.createElement("form", null, 
                     formFields.map(function(field, i) {
                         return React.createElement("div", {className: "form-group", key: i}, 
