@@ -30,7 +30,7 @@ var Membership = React.createClass({
                         <h1>SWIGGIS - MEMBERSHIP</h1>
                         <p>SWIGGIS is a professional and social organization. Our membership provides women geographers with a positive and productive space as well as a supportive and engaging environment in which we mentor each other, enhance our intellectual climate, and are innovative in our strategies to promote the professional status of women in Geography and GIS. Our goal is to meet monthly, and our meetings will be scheduled alternatively as educational sessions and social happy hours.    
                         </p>
-                        <p><a href="https://docs.google.com/forms/d/e/1FAIpQLSdq2LzemMruybSH77dejrvsF8Juc_IvTlU2Hr-7sS-Rh3_fKw/viewform" target="_blank">Fill out the membership registration form</a>
+                        <p><a href="https://docs.google.com/forms/d/e/1FAIpQLSeuMlfxZfWVsvf5ihvjBjoEyriEQVIYAHPit45cFPnRywhhHA/viewform" target="_blank">Fill out the membership registration form</a>
                         </p>
 
                         <h1>MEMBERSHIP DUES</h1>
