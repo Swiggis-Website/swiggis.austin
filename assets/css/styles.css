@@ -4407,7 +4407,7 @@ a.menu-trigger span {
 
 #menu {
     background-color: #333;
-    overflow: hidden;
+    overflow: auto;
     z-index: 1;
     display: block;
     top: 0;
