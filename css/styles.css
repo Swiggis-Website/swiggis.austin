@@ -7924,6 +7924,10 @@ form:before {
     margin-bottom: 0
 }
 
+.category-button {
+    color: white;
+}
+
 @media (min-width:768px) {
     .container-menu-open .image-category {
         width: 80%
