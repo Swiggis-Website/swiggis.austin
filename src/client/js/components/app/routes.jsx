@@ -20,7 +20,7 @@ var routes = function (App) {
             <Route name="about" path="about" handler={About}/>
             <Route name="membership" path="membership" handler={Membership}/>
             <Route name="contact" path="contact" handler={Contact}/>
-            <Route name="article" path="article/:articleId/:slug" handler={Article}/>
+            <Route name="article" path="article/:slug" handler={Article}/>
             <Route name="category" path="category/:categoryId/:slug" handler={Category}/>
             <DefaultRoute handler={Home}/>
             <Redirect from="/page1" to="home" />

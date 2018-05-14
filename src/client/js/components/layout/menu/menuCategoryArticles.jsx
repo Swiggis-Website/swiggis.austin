@@ -8,7 +8,8 @@ var MenuCategoryArticles = React.createClass({
         return (
             <ul className={("menu-articles-list" + (self.props.expanded ? ' articles-expanded' : ''))}>
                 {self.props.articles.map(function (article, i) {
-                    var articleUrl = '#!/article/' + article.id + '/' + string.slug(article.title);
+                    //var articleUrl = '#!/article/' + article.id + '/' + string.slug(article.title);
+                    var articleUrl = '#!/article/' + string.slug(article.title);
                     return <li key={i} className={("menu-articles-item" + (self.props.expanded ? ' article-expanded' : ''))}>
                         <a
                             onClick={self.props.handleRouting.bind(null, article)}

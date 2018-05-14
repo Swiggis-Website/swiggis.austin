@@ -8,7 +8,8 @@ var OtherArticle = React.createClass({
         var otherArticleStyle = {
             backgroundImage: 'url(' + this.props.article.image + ')'
         };
-        var articleUrl = '#!/article/' + self.props.article.id + '/' + string.slug(self.props.article.title);
+        //var articleUrl = '#!/article/' + self.props.article.id + '/' + string.slug(self.props.article.title);
+        var articleUrl = '#!/article/' + string.slug(self.props.article.title);
         return (
 
             <div key={this.props.key} className="col-sm-6 col-md-2 no-gutter read-another-container image-read-another" style={otherArticleStyle}>

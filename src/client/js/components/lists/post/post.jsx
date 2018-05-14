@@ -5,8 +5,10 @@ var string = require('./../../../utils/utils').string;
 var Post = React.createClass({
     render: function () {
         var self = this;
-        var articleUrl = '#!/article/' + self.props.article.id + '/' + string.slug(self.props.article.title);
-        var categoryUrl = '#!/category/' + self.props.article.category.id + '/' + string.slug(self.props.article.category.title);
+        //var articleUrl = '#!/article/' + self.props.article.id + '/' + string.slug(self.props.article.title);
+        var articleUrl = '#!/article/' + string.slug(self.props.article.title);
+        //var categoryUrl = '#!/category/' + self.props.article.category.id + '/' + string.slug(self.props.article.category.title);
+        var categoryUrl = '#!/category/' + string.slug(self.props.article.category.title);
         return (
             <div key={this.props.key} className="post-preview col-xs-10  no-gutter">
                 <div>
