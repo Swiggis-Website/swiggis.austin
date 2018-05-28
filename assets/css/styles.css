@@ -21,7 +21,8 @@ a {
 a,
 a:focus,
 a:hover {
-    text-decoration: none
+    text-decoration: none;
+    border-bottom: solid 1px;
 }
 
 .clearfix:after,
@@ -2279,11 +2280,6 @@ h2 {
     -webkit-font-smoothing: antialiased
 }
 
-a {
-    color: #fff;
-    border-bottom: solid 1px #fAfafa
-}
-
 a:active,
 a:hover {
     outline: 0;
@@ -4411,7 +4407,7 @@ a.menu-trigger span {
 
 #menu {
     background-color: #333;
-    overflow: hidden;
+    overflow: auto;
     z-index: 1;
     display: block;
     top: 0;
@@ -7926,6 +7922,10 @@ form:before {
     width: 100%;
     margin-left: -15px;
     margin-bottom: 0
+}
+
+.category-button {
+    color: white;
 }
 
 @media (min-width:768px) {

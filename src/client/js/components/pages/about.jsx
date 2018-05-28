@@ -46,7 +46,7 @@ var About = React.createClass({
                 </div>
 
                 <footer className="split-footer">
-                    <a href="#!/contact">Contact</a>
+                    <a href="#/contact">Contact</a>
                 </footer>
             </Page>
         )

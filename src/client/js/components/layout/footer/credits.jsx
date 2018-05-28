@@ -5,12 +5,12 @@ var Row = require('react-bootstrap').Row;
 var Credits = React.createClass({
     render: function () {
         var self = this;
-        var categoryUrl = '#!/category/' + self.props.category.id + '/' + string.slug(self.props.category.title);
+        var categoryUrl = '#/category/' + self.props.category.id + '/' + string.slug(self.props.category.title);
         var date = string.formatDate(self.props.lastUpdated);
         return (
             <Row >
                 <div className="col-xs-12 col-sm-2">
-                    <a href="#!/about">
+                    <a href="#/about">
                         <img src="images/SWIGGIS_icon.png" className="user-icon " alt="user-image" />
                     </a>
                 </div>
@@ -21,7 +21,7 @@ var Credits = React.createClass({
                         </p>
                         <p>
                             <span className="credits-separator">by</span>
-                            <a href="#!/about">
+                            <a href="#/about">
                                 {self.props.author}
                             </a>
                             <span className="credits-separator">in</span>
@@ -35,18 +35,18 @@ var Credits = React.createClass({
                 </div>
                 <div className="col-xs-12 col-sm-4">
                     <div className="social">
-                        <p>Share this article</p>
+                        <p>Connect with SWIGGIS</p>
                         <div className="social-links">
-                            <a className="social-icon" href="#" data-platform="twitter" data-message="Message about this post" >
+                            <a className="social-icon" href="https://twitter.com/SWIGGISAustin" target="_blank" >
                                 <i className="fa fa-twitter"></i>
                             </a>
 
-                            <a className="social-icon" href="#" data-platform="facebook" data-message="Message about this post" >
-                                <i className="fa fa-facebook-official"></i>
+                            <a className="social-icon" href="https://www.linkedin.com/in/swiggis-austin-86299a15a/" target="_blank" >
+                                <i className="fa fa-linkedin"></i>
                             </a>
 
-                            <a className="social-icon" data-platform="mail"  href="#!/contact">
-                                <i className="fa fa-envelope"></i>
+                            <a className="social-icon" href="https://www.meetup.com/SWIGGISAustin/" target="_blank" >
+                                <i className="fa fa-calendar"></i>
                             </a>
                         </div>
                     </div>

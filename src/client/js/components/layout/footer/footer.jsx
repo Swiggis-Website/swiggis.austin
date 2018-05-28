@@ -11,10 +11,6 @@ var Footer = React.createClass({
                     category={this.props.category}
                     author={this.props.author}
                 />
-                {/* <ReadOther
-                    articles={this.props.articles}
-                    handleRouting={this.props.handleRouting}
-                /> */}
             </footer>
         )
     }

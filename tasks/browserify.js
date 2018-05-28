@@ -2,11 +2,11 @@
 var browserify = require('browserify');
 var rename = require('gulp-rename');
 var source = require("vinyl-source-stream");
-var reactify = require('reactify');
+var babelify = require('babelify');
 
 module.exports = function (gulp) {
     var b = browserify();
-    b.transform(reactify); // use the reactify transform
+    b.transform(babelify, {presets: ["react", "es2015"]}); // use the babelify transform
     b.add('./src/client/client.js');
     return b.bundle()
         .pipe(source('./src/client/client.js'))

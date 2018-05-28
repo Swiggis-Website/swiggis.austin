@@ -76,7 +76,7 @@ var Contact = React.createClass({
                 activeCategory={this.props.activeCategory}
                 modal={this.props.modal}
             >
-                <h3>Send me an email</h3>
+                <h3>Send us an email</h3>
                 <form>
                     {formFields.map(function(field, i) {
                         return <div className="form-group" key={i}>
@@ -103,7 +103,7 @@ var Contact = React.createClass({
                     </div>
                 </form>
                 <footer className="split-footer">
-                    <a href="#!/about">About</a>
+                    <a href="#/about">About</a>
                 </footer>
             </Page>
         )

@@ -39,7 +39,6 @@ var Category = React.createClass({
                     activeHomePanel={"articles"}
                     handleRouting={this.props.handleRouting}
                 />
-                {/* <DisqusCount/> */}
             </Page>
         )
     }

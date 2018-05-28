@@ -1,9 +1,7 @@
 'use strict';
 var React = require('react');
-var _ = require('lodash');
 var noop = function () {
 };
-var Main = require('./main.jsx');
 
 var App = function (drive, views, route) {
     return React.createClass({
@@ -82,7 +80,7 @@ var App = function (drive, views, route) {
         handleRouting: function (element, e) {
             e.preventDefault();
             e.stopPropagation();
-            var routeSplit = e.target.href.split('#!');
+            var routeSplit = e.target.href.split('#');
             var route = routeSplit[1];
             var self = this;
             self.loadElement(element.type, element.id, function () {
@@ -91,12 +89,27 @@ var App = function (drive, views, route) {
         },
         goToRoute: function (route) {
             var self = this;
-            self.context.router.transitionTo(route);
+            self.props.history.push(route);
         },
         render: function () {
-            var path = this.context.router.getCurrentPath();
+            var self = this;
+            var path = this.props.location.pathname;
+            var children = React.Children.map(this.props.children, function (child) {
+                return React.cloneElement(child, {                     
+                    store: self.state.store,
+                    currentPage: self.state.currentPage,
+                    path: path,
+                    activeHomePanel: self.state.activeHomePanel,
+                    setMainProperty: self.setMainProperty,
+                    menuVisible: self.state.menuVisible,
+                    handleRouting: self.handleRouting,
+                    activeCategory: self.state.activeCategory,
+                    config: self.state.config,
+                    modal: self.state.modal
+                })
+            });
             return (
-                <Main
+                <div
                     store={this.state.store}
                     currentPage={this.state.currentPage}
                     path={path}
@@ -106,8 +119,10 @@ var App = function (drive, views, route) {
                     handleRouting={this.handleRouting}
                     activeCategory={this.state.activeCategory}
                     config={this.state.config}
-                    modal={this.state.modal}
-                />
+                    modal={this.state.modal} 
+                >
+                {children}
+                </div>
             )
         }
     });

@@ -6,7 +6,7 @@ var Category = React.createClass({
 
     render: function () {
         var self = this;
-        var categoryUrl = '#!/category/' + self.props.category.id + '/' + string.slug(self.props.category.title);
+        var categoryUrl = '#/category/' + self.props.category.id + '/' + string.slug(self.props.category.title);
         var categoryStyle = {
             backgroundImage: 'url(' + self.props.category.image + ')'
         };
@@ -18,6 +18,7 @@ var Category = React.createClass({
                 <h2 className="category-title">
                     <a
                         role='button'
+                        className = "category-button"
                         onClick={self.props.handleRouting.bind(null, self.props.category)}
                         href={categoryUrl}
                         title={self.props.category.title}

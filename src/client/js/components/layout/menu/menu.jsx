@@ -9,15 +9,19 @@ var Menu = React.createClass({
                 <ul>
                     <li>
                         <i className="fa fa-home"></i>
-                        <a href="#!/home">Home</a>
+                        <a className="menuitem" href="#/home">Home</a>
+                    </li>
+                    <li>
+                        <i className="fa fa-info"></i>
+                        <a className="menuitem" href="#/about"> About</a>
                     </li>
                     <li>
                         <i className="fa fa-user"></i>
-                        <a href="#!/about">About</a>
+                        <a className="menuitem" href="#/membership">Membership</a>
                     </li>
                     <li>
-                        <i className="fa fa-paper-plane"></i>
-                        <a href="#!/contact">Contact</a>
+                        <i className="fa fa-envelope"></i>
+                        <a className="menuitem" href="#/contact">Contact</a>
                     </li>
                 </ul>
                 <hr />
