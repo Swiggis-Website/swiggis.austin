@@ -4,9 +4,9 @@
 var React = require('react');
 var ReactDOM = require('react-dom');
 var Router = require('react-router').Router;
-var useRouterHistory = require('react-router').useRouterHistory;
-var createHashHistory = require('./../../node_modules/history/lib/createHashHistory.js');
-var History = useRouterHistory(createHashHistory({ queryKey: false }));
+var useRouterHistory = require('react-router/lib/useRouterHistory');
+var createHashHistory = require('react-router/node_modules/history/lib/createHashHistory');
+var History = useRouterHistory(createHashHistory)({ queryKey: false });
 
 var $ = window.$;
 var config = window.configReactDriveCms;
@@ -16,16 +16,16 @@ drive.init(function (views) {
     var routes = require('./js/components/app/routes.jsx')(App);
     ReactDOM.render(React.createElement(Router, { history: History }, routes), document.getElementById('app-mount'));
 });
-//# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbImNsaWVudC5qcyJdLCJuYW1lcyI6WyJSZWFjdCIsInJlcXVpcmUiLCJSZWFjdERPTSIsIlJvdXRlciIsInVzZVJvdXRlckhpc3RvcnkiLCJjcmVhdGVIYXNoSGlzdG9yeSIsIkhpc3RvcnkiLCJxdWVyeUtleSIsIiQiLCJ3aW5kb3ciLCJjb25maWciLCJjb25maWdSZWFjdERyaXZlQ21zIiwiZHJpdmUiLCJpbml0Iiwidmlld3MiLCJBcHAiLCJyb3V0ZXMiLCJyZW5kZXIiLCJjcmVhdGVFbGVtZW50IiwiaGlzdG9yeSIsImRvY3VtZW50IiwiZ2V0RWxlbWVudEJ5SWQiXSwibWFwcGluZ3MiOiJBQUFBOztBQUNBLElBQUlBLFFBQVFDLFFBQVEsT0FBUixDQUFaO0FBQ0EsSUFBSUMsV0FBV0QsUUFBUSxXQUFSLENBQWY7QUFDQSxJQUFJRSxTQUFTRixRQUFRLGNBQVIsRUFBd0JFLE1BQXJDO0FBQ0EsSUFBSUMsbUJBQW1CSCxRQUFRLGNBQVIsRUFBd0JHLGdCQUEvQztBQUNBLElBQUlDLG9CQUFvQkosUUFBUSx1REFBUixDQUF4QjtBQUNBLElBQUlLLFVBQVVGLGlCQUFpQkMsa0JBQWtCLEVBQUNFLFVBQVUsS0FBWCxFQUFsQixDQUFqQixDQUFkOztBQUVBLElBQUlDLElBQUlDLE9BQU9ELENBQWY7QUFDQSxJQUFJRSxTQUFTRCxPQUFPRSxtQkFBcEI7QUFDSSxJQUFJQyxRQUFRWCxRQUFRLDJCQUFSLEVBQXFDUyxNQUFyQyxFQUE2Q0YsQ0FBN0MsQ0FBWjtBQUNBSSxNQUFNQyxJQUFOLENBQVcsVUFBVUMsS0FBVixFQUFpQjtBQUN4QixRQUFJQyxNQUFNZCxRQUFRLDZCQUFSLEVBQXVDVyxLQUF2QyxFQUE4Q0UsS0FBOUMsQ0FBVjtBQUNBLFFBQUlFLFNBQVNmLFFBQVEsZ0NBQVIsRUFBMENjLEdBQTFDLENBQWI7QUFDQWIsYUFBU2UsTUFBVCxDQUFnQmpCLE1BQU1rQixhQUFOLENBQ1pmLE1BRFksRUFFWixFQUFDZ0IsU0FBU2IsT0FBVixFQUZZLEVBR1pVLE1BSFksQ0FBaEIsRUFJR0ksU0FBU0MsY0FBVCxDQUF3QixXQUF4QixDQUpIO0FBS0gsQ0FSRCIsImZpbGUiOiJjbGllbnQuanMiLCJzb3VyY2VzQ29udGVudCI6WyIndXNlIHN0cmljdCc7XG52YXIgUmVhY3QgPSByZXF1aXJlKCdyZWFjdCcpO1xudmFyIFJlYWN0RE9NID0gcmVxdWlyZSgncmVhY3QtZG9tJyk7XG52YXIgUm91dGVyID0gcmVxdWlyZSgncmVhY3Qtcm91dGVyJykuUm91dGVyO1xudmFyIHVzZVJvdXRlckhpc3RvcnkgPSByZXF1aXJlKCdyZWFjdC1yb3V0ZXInKS51c2VSb3V0ZXJIaXN0b3J5O1xudmFyIGNyZWF0ZUhhc2hIaXN0b3J5ID0gcmVxdWlyZSgnLi8uLi8uLi9ub2RlX21vZHVsZXMvaGlzdG9yeS9saWIvY3JlYXRlSGFzaEhpc3RvcnkuanMnKTtcbnZhciBIaXN0b3J5ID0gdXNlUm91dGVySGlzdG9yeShjcmVhdGVIYXNoSGlzdG9yeSh7cXVlcnlLZXk6IGZhbHNlfSkpXG5cbnZhciAkID0gd2luZG93LiQ7XG52YXIgY29uZmlnID0gd2luZG93LmNvbmZpZ1JlYWN0RHJpdmVDbXM7XG4gICAgdmFyIGRyaXZlID0gcmVxdWlyZSgnLi9qcy9kcml2ZUFjY2Vzcy9kcml2ZS5qcycpKGNvbmZpZywgJCk7XG4gICAgZHJpdmUuaW5pdChmdW5jdGlvbiAodmlld3MpIHsgXG4gICAgICAgIHZhciBBcHAgPSByZXF1aXJlKCcuL2pzL2NvbXBvbmVudHMvYXBwL2FwcC5qc3gnKShkcml2ZSwgdmlld3MpO1xuICAgICAgICB2YXIgcm91dGVzID0gcmVxdWlyZSgnLi9qcy9jb21wb25lbnRzL2FwcC9yb3V0ZXMuanN4JykoQXBwKTtcbiAgICAgICAgUmVhY3RET00ucmVuZGVyKFJlYWN0LmNyZWF0ZUVsZW1lbnQoXG4gICAgICAgICAgICBSb3V0ZXIsXG4gICAgICAgICAgICB7aGlzdG9yeTogSGlzdG9yeX0sXG4gICAgICAgICAgICByb3V0ZXNcbiAgICAgICAgKSwgZG9jdW1lbnQuZ2V0RWxlbWVudEJ5SWQoJ2FwcC1tb3VudCcpKTtcbiAgICB9KTsiXX0=
-},{"./../../node_modules/history/lib/createHashHistory.js":"/mnt/c/swiggis.original/node_modules/history/lib/createHashHistory.js","./js/components/app/app.jsx":"/mnt/c/swiggis.original/src/client/js/components/app/app.jsx","./js/components/app/routes.jsx":"/mnt/c/swiggis.original/src/client/js/components/app/routes.jsx","./js/driveAccess/drive.js":"/mnt/c/swiggis.original/src/client/js/driveAccess/drive.js","react":"/mnt/c/swiggis.original/node_modules/react/react.js","react-dom":"/mnt/c/swiggis.original/node_modules/react-dom/index.js","react-router":"/mnt/c/swiggis.original/node_modules/react-router/lib/index.js"}],"/mnt/c/swiggis.original/node_modules/babel-runtime/core-js/object/assign.js":[function(require,module,exports){
+//# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbImNsaWVudC5qcyJdLCJuYW1lcyI6WyJSZWFjdCIsInJlcXVpcmUiLCJSZWFjdERPTSIsIlJvdXRlciIsInVzZVJvdXRlckhpc3RvcnkiLCJjcmVhdGVIYXNoSGlzdG9yeSIsIkhpc3RvcnkiLCJxdWVyeUtleSIsIiQiLCJ3aW5kb3ciLCJjb25maWciLCJjb25maWdSZWFjdERyaXZlQ21zIiwiZHJpdmUiLCJpbml0Iiwidmlld3MiLCJBcHAiLCJyb3V0ZXMiLCJyZW5kZXIiLCJjcmVhdGVFbGVtZW50IiwiaGlzdG9yeSIsImRvY3VtZW50IiwiZ2V0RWxlbWVudEJ5SWQiXSwibWFwcGluZ3MiOiJBQUFBOztBQUNBLElBQUlBLFFBQVFDLFFBQVEsT0FBUixDQUFaO0FBQ0EsSUFBSUMsV0FBV0QsUUFBUSxXQUFSLENBQWY7QUFDQSxJQUFJRSxTQUFTRixRQUFRLGNBQVIsRUFBd0JFLE1BQXJDO0FBQ0EsSUFBSUMsbUJBQW1CSCxRQUFRLG1DQUFSLENBQXZCO0FBQ0EsSUFBSUksb0JBQW9CSixRQUFRLHlEQUFSLENBQXhCO0FBQ0EsSUFBSUssVUFBVUYsaUJBQWlCQyxpQkFBakIsRUFBb0MsRUFBQ0UsVUFBVSxLQUFYLEVBQXBDLENBQWQ7O0FBRUEsSUFBSUMsSUFBSUMsT0FBT0QsQ0FBZjtBQUNBLElBQUlFLFNBQVNELE9BQU9FLG1CQUFwQjtBQUNJLElBQUlDLFFBQVFYLFFBQVEsMkJBQVIsRUFBcUNTLE1BQXJDLEVBQTZDRixDQUE3QyxDQUFaO0FBQ0FJLE1BQU1DLElBQU4sQ0FBVyxVQUFVQyxLQUFWLEVBQWlCO0FBQ3hCLFFBQUlDLE1BQU1kLFFBQVEsNkJBQVIsRUFBdUNXLEtBQXZDLEVBQThDRSxLQUE5QyxDQUFWO0FBQ0EsUUFBSUUsU0FBU2YsUUFBUSxnQ0FBUixFQUEwQ2MsR0FBMUMsQ0FBYjtBQUNBYixhQUFTZSxNQUFULENBQWdCakIsTUFBTWtCLGFBQU4sQ0FDWmYsTUFEWSxFQUVaLEVBQUNnQixTQUFTYixPQUFWLEVBRlksRUFHWlUsTUFIWSxDQUFoQixFQUlHSSxTQUFTQyxjQUFULENBQXdCLFdBQXhCLENBSkg7QUFLSCxDQVJEIiwiZmlsZSI6ImNsaWVudC5qcyIsInNvdXJjZXNDb250ZW50IjpbIid1c2Ugc3RyaWN0JztcclxudmFyIFJlYWN0ID0gcmVxdWlyZSgncmVhY3QnKTtcclxudmFyIFJlYWN0RE9NID0gcmVxdWlyZSgncmVhY3QtZG9tJyk7XHJcbnZhciBSb3V0ZXIgPSByZXF1aXJlKCdyZWFjdC1yb3V0ZXInKS5Sb3V0ZXI7XHJcbnZhciB1c2VSb3V0ZXJIaXN0b3J5ID0gcmVxdWlyZSgncmVhY3Qtcm91dGVyL2xpYi91c2VSb3V0ZXJIaXN0b3J5Jyk7XHJcbnZhciBjcmVhdGVIYXNoSGlzdG9yeSA9IHJlcXVpcmUoJ3JlYWN0LXJvdXRlci9ub2RlX21vZHVsZXMvaGlzdG9yeS9saWIvY3JlYXRlSGFzaEhpc3RvcnknKTtcclxudmFyIEhpc3RvcnkgPSB1c2VSb3V0ZXJIaXN0b3J5KGNyZWF0ZUhhc2hIaXN0b3J5KSh7cXVlcnlLZXk6IGZhbHNlfSk7XHJcblxyXG52YXIgJCA9IHdpbmRvdy4kO1xyXG52YXIgY29uZmlnID0gd2luZG93LmNvbmZpZ1JlYWN0RHJpdmVDbXM7XHJcbiAgICB2YXIgZHJpdmUgPSByZXF1aXJlKCcuL2pzL2RyaXZlQWNjZXNzL2RyaXZlLmpzJykoY29uZmlnLCAkKTtcclxuICAgIGRyaXZlLmluaXQoZnVuY3Rpb24gKHZpZXdzKSB7IFxyXG4gICAgICAgIHZhciBBcHAgPSByZXF1aXJlKCcuL2pzL2NvbXBvbmVudHMvYXBwL2FwcC5qc3gnKShkcml2ZSwgdmlld3MpO1xyXG4gICAgICAgIHZhciByb3V0ZXMgPSByZXF1aXJlKCcuL2pzL2NvbXBvbmVudHMvYXBwL3JvdXRlcy5qc3gnKShBcHApO1xyXG4gICAgICAgIFJlYWN0RE9NLnJlbmRlcihSZWFjdC5jcmVhdGVFbGVtZW50KFxyXG4gICAgICAgICAgICBSb3V0ZXIsXHJcbiAgICAgICAgICAgIHtoaXN0b3J5OiBIaXN0b3J5fSxcclxuICAgICAgICAgICAgcm91dGVzXHJcbiAgICAgICAgKSwgZG9jdW1lbnQuZ2V0RWxlbWVudEJ5SWQoJ2FwcC1tb3VudCcpKTtcclxuICAgIH0pOyJdfQ==
+},{"./js/components/app/app.jsx":"C:\\swiggis.austin\\src\\client\\js\\components\\app\\app.jsx","./js/components/app/routes.jsx":"C:\\swiggis.austin\\src\\client\\js\\components\\app\\routes.jsx","./js/driveAccess/drive.js":"C:\\swiggis.austin\\src\\client\\js\\driveAccess\\drive.js","react":"C:\\swiggis.austin\\node_modules\\react\\react.js","react-dom":"C:\\swiggis.austin\\node_modules\\react-dom\\index.js","react-router":"C:\\swiggis.austin\\node_modules\\react-router\\lib\\index.js","react-router/lib/useRouterHistory":"C:\\swiggis.austin\\node_modules\\react-router\\lib\\useRouterHistory.js","react-router/node_modules/history/lib/createHashHistory":"C:\\swiggis.austin\\node_modules\\react-router\\node_modules\\history\\lib\\createHashHistory.js"}],"C:\\swiggis.austin\\node_modules\\babel-runtime\\core-js\\object\\assign.js":[function(require,module,exports){
 module.exports = { "default": require("core-js/library/fn/object/assign"), __esModule: true };
-},{"core-js/library/fn/object/assign":"/mnt/c/swiggis.original/node_modules/core-js/library/fn/object/assign.js"}],"/mnt/c/swiggis.original/node_modules/babel-runtime/core-js/object/create.js":[function(require,module,exports){
+},{"core-js/library/fn/object/assign":"C:\\swiggis.austin\\node_modules\\core-js\\library\\fn\\object\\assign.js"}],"C:\\swiggis.austin\\node_modules\\babel-runtime\\core-js\\object\\create.js":[function(require,module,exports){
 module.exports = { "default": require("core-js/library/fn/object/create"), __esModule: true };
-},{"core-js/library/fn/object/create":"/mnt/c/swiggis.original/node_modules/core-js/library/fn/object/create.js"}],"/mnt/c/swiggis.original/node_modules/babel-runtime/core-js/object/keys.js":[function(require,module,exports){
+},{"core-js/library/fn/object/create":"C:\\swiggis.austin\\node_modules\\core-js\\library\\fn\\object\\create.js"}],"C:\\swiggis.austin\\node_modules\\babel-runtime\\core-js\\object\\keys.js":[function(require,module,exports){
 module.exports = { "default": require("core-js/library/fn/object/keys"), __esModule: true };
-},{"core-js/library/fn/object/keys":"/mnt/c/swiggis.original/node_modules/core-js/library/fn/object/keys.js"}],"/mnt/c/swiggis.original/node_modules/babel-runtime/core-js/object/set-prototype-of.js":[function(require,module,exports){
+},{"core-js/library/fn/object/keys":"C:\\swiggis.austin\\node_modules\\core-js\\library\\fn\\object\\keys.js"}],"C:\\swiggis.austin\\node_modules\\babel-runtime\\core-js\\object\\set-prototype-of.js":[function(require,module,exports){
 module.exports = { "default": require("core-js/library/fn/object/set-prototype-of"), __esModule: true };
-},{"core-js/library/fn/object/set-prototype-of":"/mnt/c/swiggis.original/node_modules/core-js/library/fn/object/set-prototype-of.js"}],"/mnt/c/swiggis.original/node_modules/babel-runtime/helpers/class-call-check.js":[function(require,module,exports){
+},{"core-js/library/fn/object/set-prototype-of":"C:\\swiggis.austin\\node_modules\\core-js\\library\\fn\\object\\set-prototype-of.js"}],"C:\\swiggis.austin\\node_modules\\babel-runtime\\helpers\\class-call-check.js":[function(require,module,exports){
 "use strict";
 
 exports["default"] = function (instance, Constructor) {
@@ -35,7 +35,7 @@ exports["default"] = function (instance, Constructor) {
 };
 
 exports.__esModule = true;
-},{}],"/mnt/c/swiggis.original/node_modules/babel-runtime/helpers/extends.js":[function(require,module,exports){
+},{}],"C:\\swiggis.austin\\node_modules\\babel-runtime\\helpers\\extends.js":[function(require,module,exports){
 "use strict";
 
 var _Object$assign = require("babel-runtime/core-js/object/assign")["default"];
@@ -55,7 +55,7 @@ exports["default"] = _Object$assign || function (target) {
 };
 
 exports.__esModule = true;
-},{"babel-runtime/core-js/object/assign":"/mnt/c/swiggis.original/node_modules/babel-runtime/core-js/object/assign.js"}],"/mnt/c/swiggis.original/node_modules/babel-runtime/helpers/inherits.js":[function(require,module,exports){
+},{"babel-runtime/core-js/object/assign":"C:\\swiggis.austin\\node_modules\\babel-runtime\\core-js\\object\\assign.js"}],"C:\\swiggis.austin\\node_modules\\babel-runtime\\helpers\\inherits.js":[function(require,module,exports){
 "use strict";
 
 var _Object$create = require("babel-runtime/core-js/object/create")["default"];
@@ -79,7 +79,7 @@ exports["default"] = function (subClass, superClass) {
 };
 
 exports.__esModule = true;
-},{"babel-runtime/core-js/object/create":"/mnt/c/swiggis.original/node_modules/babel-runtime/core-js/object/create.js","babel-runtime/core-js/object/set-prototype-of":"/mnt/c/swiggis.original/node_modules/babel-runtime/core-js/object/set-prototype-of.js"}],"/mnt/c/swiggis.original/node_modules/babel-runtime/helpers/interop-require-default.js":[function(require,module,exports){
+},{"babel-runtime/core-js/object/create":"C:\\swiggis.austin\\node_modules\\babel-runtime\\core-js\\object\\create.js","babel-runtime/core-js/object/set-prototype-of":"C:\\swiggis.austin\\node_modules\\babel-runtime\\core-js\\object\\set-prototype-of.js"}],"C:\\swiggis.austin\\node_modules\\babel-runtime\\helpers\\interop-require-default.js":[function(require,module,exports){
 "use strict";
 
 exports["default"] = function (obj) {
@@ -89,7 +89,7 @@ exports["default"] = function (obj) {
 };
 
 exports.__esModule = true;
-},{}],"/mnt/c/swiggis.original/node_modules/babel-runtime/helpers/interop-require-wildcard.js":[function(require,module,exports){
+},{}],"C:\\swiggis.austin\\node_modules\\babel-runtime\\helpers\\interop-require-wildcard.js":[function(require,module,exports){
 "use strict";
 
 exports["default"] = function (obj) {
@@ -110,7 +110,7 @@ exports["default"] = function (obj) {
 };
 
 exports.__esModule = true;
-},{}],"/mnt/c/swiggis.original/node_modules/babel-runtime/helpers/object-without-properties.js":[function(require,module,exports){
+},{}],"C:\\swiggis.austin\\node_modules\\babel-runtime\\helpers\\object-without-properties.js":[function(require,module,exports){
 "use strict";
 
 exports["default"] = function (obj, keys) {
@@ -126,7 +126,7 @@ exports["default"] = function (obj, keys) {
 };
 
 exports.__esModule = true;
-},{}],"/mnt/c/swiggis.original/node_modules/classnames/index.js":[function(require,module,exports){
+},{}],"C:\\swiggis.austin\\node_modules\\classnames\\index.js":[function(require,module,exports){
 /*!
   Copyright (c) 2016 Jed Watson.
   Licensed under the MIT License (MIT), see
@@ -176,41 +176,41 @@ exports.__esModule = true;
 	}
 }());
 
-},{}],"/mnt/c/swiggis.original/node_modules/core-js/library/fn/object/assign.js":[function(require,module,exports){
+},{}],"C:\\swiggis.austin\\node_modules\\core-js\\library\\fn\\object\\assign.js":[function(require,module,exports){
 require('../../modules/es6.object.assign');
 module.exports = require('../../modules/$.core').Object.assign;
-},{"../../modules/$.core":"/mnt/c/swiggis.original/node_modules/core-js/library/modules/$.core.js","../../modules/es6.object.assign":"/mnt/c/swiggis.original/node_modules/core-js/library/modules/es6.object.assign.js"}],"/mnt/c/swiggis.original/node_modules/core-js/library/fn/object/create.js":[function(require,module,exports){
+},{"../../modules/$.core":"C:\\swiggis.austin\\node_modules\\core-js\\library\\modules\\$.core.js","../../modules/es6.object.assign":"C:\\swiggis.austin\\node_modules\\core-js\\library\\modules\\es6.object.assign.js"}],"C:\\swiggis.austin\\node_modules\\core-js\\library\\fn\\object\\create.js":[function(require,module,exports){
 var $ = require('../../modules/$');
 module.exports = function create(P, D){
   return $.create(P, D);
 };
-},{"../../modules/$":"/mnt/c/swiggis.original/node_modules/core-js/library/modules/$.js"}],"/mnt/c/swiggis.original/node_modules/core-js/library/fn/object/keys.js":[function(require,module,exports){
+},{"../../modules/$":"C:\\swiggis.austin\\node_modules\\core-js\\library\\modules\\$.js"}],"C:\\swiggis.austin\\node_modules\\core-js\\library\\fn\\object\\keys.js":[function(require,module,exports){
 require('../../modules/es6.object.keys');
 module.exports = require('../../modules/$.core').Object.keys;
-},{"../../modules/$.core":"/mnt/c/swiggis.original/node_modules/core-js/library/modules/$.core.js","../../modules/es6.object.keys":"/mnt/c/swiggis.original/node_modules/core-js/library/modules/es6.object.keys.js"}],"/mnt/c/swiggis.original/node_modules/core-js/library/fn/object/set-prototype-of.js":[function(require,module,exports){
+},{"../../modules/$.core":"C:\\swiggis.austin\\node_modules\\core-js\\library\\modules\\$.core.js","../../modules/es6.object.keys":"C:\\swiggis.austin\\node_modules\\core-js\\library\\modules\\es6.object.keys.js"}],"C:\\swiggis.austin\\node_modules\\core-js\\library\\fn\\object\\set-prototype-of.js":[function(require,module,exports){
 require('../../modules/es6.object.set-prototype-of');
 module.exports = require('../../modules/$.core').Object.setPrototypeOf;
-},{"../../modules/$.core":"/mnt/c/swiggis.original/node_modules/core-js/library/modules/$.core.js","../../modules/es6.object.set-prototype-of":"/mnt/c/swiggis.original/node_modules/core-js/library/modules/es6.object.set-prototype-of.js"}],"/mnt/c/swiggis.original/node_modules/core-js/library/modules/$.a-function.js":[function(require,module,exports){
+},{"../../modules/$.core":"C:\\swiggis.austin\\node_modules\\core-js\\library\\modules\\$.core.js","../../modules/es6.object.set-prototype-of":"C:\\swiggis.austin\\node_modules\\core-js\\library\\modules\\es6.object.set-prototype-of.js"}],"C:\\swiggis.austin\\node_modules\\core-js\\library\\modules\\$.a-function.js":[function(require,module,exports){
 module.exports = function(it){
   if(typeof it != 'function')throw TypeError(it + ' is not a function!');
   return it;
 };
-},{}],"/mnt/c/swiggis.original/node_modules/core-js/library/modules/$.an-object.js":[function(require,module,exports){
+},{}],"C:\\swiggis.austin\\node_modules\\core-js\\library\\modules\\$.an-object.js":[function(require,module,exports){
 var isObject = require('./$.is-object');
 module.exports = function(it){
   if(!isObject(it))throw TypeError(it + ' is not an object!');
   return it;
 };
-},{"./$.is-object":"/mnt/c/swiggis.original/node_modules/core-js/library/modules/$.is-object.js"}],"/mnt/c/swiggis.original/node_modules/core-js/library/modules/$.cof.js":[function(require,module,exports){
+},{"./$.is-object":"C:\\swiggis.austin\\node_modules\\core-js\\library\\modules\\$.is-object.js"}],"C:\\swiggis.austin\\node_modules\\core-js\\library\\modules\\$.cof.js":[function(require,module,exports){
 var toString = {}.toString;
 
 module.exports = function(it){
   return toString.call(it).slice(8, -1);
 };
-},{}],"/mnt/c/swiggis.original/node_modules/core-js/library/modules/$.core.js":[function(require,module,exports){
+},{}],"C:\\swiggis.austin\\node_modules\\core-js\\library\\modules\\$.core.js":[function(require,module,exports){
 var core = module.exports = {version: '1.2.6'};
 if(typeof __e == 'number')__e = core; // eslint-disable-line no-undef
-},{}],"/mnt/c/swiggis.original/node_modules/core-js/library/modules/$.ctx.js":[function(require,module,exports){
+},{}],"C:\\swiggis.austin\\node_modules\\core-js\\library\\modules\\$.ctx.js":[function(require,module,exports){
 // optional / simple context binding
 var aFunction = require('./$.a-function');
 module.exports = function(fn, that, length){
@@ -231,13 +231,13 @@ module.exports = function(fn, that, length){
     return fn.apply(that, arguments);
   };
 };
-},{"./$.a-function":"/mnt/c/swiggis.original/node_modules/core-js/library/modules/$.a-function.js"}],"/mnt/c/swiggis.original/node_modules/core-js/library/modules/$.defined.js":[function(require,module,exports){
+},{"./$.a-function":"C:\\swiggis.austin\\node_modules\\core-js\\library\\modules\\$.a-function.js"}],"C:\\swiggis.austin\\node_modules\\core-js\\library\\modules\\$.defined.js":[function(require,module,exports){
 // 7.2.1 RequireObjectCoercible(argument)
 module.exports = function(it){
   if(it == undefined)throw TypeError("Can't call method on  " + it);
   return it;
 };
-},{}],"/mnt/c/swiggis.original/node_modules/core-js/library/modules/$.export.js":[function(require,module,exports){
+},{}],"C:\\swiggis.austin\\node_modules\\core-js\\library\\modules\\$.export.js":[function(require,module,exports){
 var global    = require('./$.global')
   , core      = require('./$.core')
   , ctx       = require('./$.ctx')
@@ -284,7 +284,7 @@ $export.P = 8;  // proto
 $export.B = 16; // bind
 $export.W = 32; // wrap
 module.exports = $export;
-},{"./$.core":"/mnt/c/swiggis.original/node_modules/core-js/library/modules/$.core.js","./$.ctx":"/mnt/c/swiggis.original/node_modules/core-js/library/modules/$.ctx.js","./$.global":"/mnt/c/swiggis.original/node_modules/core-js/library/modules/$.global.js"}],"/mnt/c/swiggis.original/node_modules/core-js/library/modules/$.fails.js":[function(require,module,exports){
+},{"./$.core":"C:\\swiggis.austin\\node_modules\\core-js\\library\\modules\\$.core.js","./$.ctx":"C:\\swiggis.austin\\node_modules\\core-js\\library\\modules\\$.ctx.js","./$.global":"C:\\swiggis.austin\\node_modules\\core-js\\library\\modules\\$.global.js"}],"C:\\swiggis.austin\\node_modules\\core-js\\library\\modules\\$.fails.js":[function(require,module,exports){
 module.exports = function(exec){
   try {
     return !!exec();
@@ -292,22 +292,22 @@ module.exports = function(exec){
     return true;
   }
 };
-},{}],"/mnt/c/swiggis.original/node_modules/core-js/library/modules/$.global.js":[function(require,module,exports){
+},{}],"C:\\swiggis.austin\\node_modules\\core-js\\library\\modules\\$.global.js":[function(require,module,exports){
 // https://github.com/zloirock/core-js/issues/86#issuecomment-115759028
 var global = module.exports = typeof window != 'undefined' && window.Math == Math
   ? window : typeof self != 'undefined' && self.Math == Math ? self : Function('return this')();
 if(typeof __g == 'number')__g = global; // eslint-disable-line no-undef
-},{}],"/mnt/c/swiggis.original/node_modules/core-js/library/modules/$.iobject.js":[function(require,module,exports){
+},{}],"C:\\swiggis.austin\\node_modules\\core-js\\library\\modules\\$.iobject.js":[function(require,module,exports){
 // fallback for non-array-like ES3 and non-enumerable old V8 strings
 var cof = require('./$.cof');
 module.exports = Object('z').propertyIsEnumerable(0) ? Object : function(it){
   return cof(it) == 'String' ? it.split('') : Object(it);
 };
-},{"./$.cof":"/mnt/c/swiggis.original/node_modules/core-js/library/modules/$.cof.js"}],"/mnt/c/swiggis.original/node_modules/core-js/library/modules/$.is-object.js":[function(require,module,exports){
+},{"./$.cof":"C:\\swiggis.austin\\node_modules\\core-js\\library\\modules\\$.cof.js"}],"C:\\swiggis.austin\\node_modules\\core-js\\library\\modules\\$.is-object.js":[function(require,module,exports){
 module.exports = function(it){
   return typeof it === 'object' ? it !== null : typeof it === 'function';
 };
-},{}],"/mnt/c/swiggis.original/node_modules/core-js/library/modules/$.js":[function(require,module,exports){
+},{}],"C:\\swiggis.austin\\node_modules\\core-js\\library\\modules\\$.js":[function(require,module,exports){
 var $Object = Object;
 module.exports = {
   create:     $Object.create,
@@ -321,7 +321,7 @@ module.exports = {
   getSymbols: $Object.getOwnPropertySymbols,
   each:       [].forEach
 };
-},{}],"/mnt/c/swiggis.original/node_modules/core-js/library/modules/$.object-assign.js":[function(require,module,exports){
+},{}],"C:\\swiggis.austin\\node_modules\\core-js\\library\\modules\\$.object-assign.js":[function(require,module,exports){
 // 19.1.2.1 Object.assign(target, source, ...)
 var $        = require('./$')
   , toObject = require('./$.to-object')
@@ -355,7 +355,7 @@ module.exports = require('./$.fails')(function(){
   }
   return T;
 } : Object.assign;
-},{"./$":"/mnt/c/swiggis.original/node_modules/core-js/library/modules/$.js","./$.fails":"/mnt/c/swiggis.original/node_modules/core-js/library/modules/$.fails.js","./$.iobject":"/mnt/c/swiggis.original/node_modules/core-js/library/modules/$.iobject.js","./$.to-object":"/mnt/c/swiggis.original/node_modules/core-js/library/modules/$.to-object.js"}],"/mnt/c/swiggis.original/node_modules/core-js/library/modules/$.object-sap.js":[function(require,module,exports){
+},{"./$":"C:\\swiggis.austin\\node_modules\\core-js\\library\\modules\\$.js","./$.fails":"C:\\swiggis.austin\\node_modules\\core-js\\library\\modules\\$.fails.js","./$.iobject":"C:\\swiggis.austin\\node_modules\\core-js\\library\\modules\\$.iobject.js","./$.to-object":"C:\\swiggis.austin\\node_modules\\core-js\\library\\modules\\$.to-object.js"}],"C:\\swiggis.austin\\node_modules\\core-js\\library\\modules\\$.object-sap.js":[function(require,module,exports){
 // most Object methods by ES6 should accept primitives
 var $export = require('./$.export')
   , core    = require('./$.core')
@@ -366,7 +366,7 @@ module.exports = function(KEY, exec){
   exp[KEY] = exec(fn);
   $export($export.S + $export.F * fails(function(){ fn(1); }), 'Object', exp);
 };
-},{"./$.core":"/mnt/c/swiggis.original/node_modules/core-js/library/modules/$.core.js","./$.export":"/mnt/c/swiggis.original/node_modules/core-js/library/modules/$.export.js","./$.fails":"/mnt/c/swiggis.original/node_modules/core-js/library/modules/$.fails.js"}],"/mnt/c/swiggis.original/node_modules/core-js/library/modules/$.set-proto.js":[function(require,module,exports){
+},{"./$.core":"C:\\swiggis.austin\\node_modules\\core-js\\library\\modules\\$.core.js","./$.export":"C:\\swiggis.austin\\node_modules\\core-js\\library\\modules\\$.export.js","./$.fails":"C:\\swiggis.austin\\node_modules\\core-js\\library\\modules\\$.fails.js"}],"C:\\swiggis.austin\\node_modules\\core-js\\library\\modules\\$.set-proto.js":[function(require,module,exports){
 // Works with __proto__ only. Old v8 can't work with null proto objects.
 /* eslint-disable no-proto */
 var getDesc  = require('./$').getDesc
@@ -393,18 +393,18 @@ module.exports = {
     }({}, false) : undefined),
   check: check
 };
-},{"./$":"/mnt/c/swiggis.original/node_modules/core-js/library/modules/$.js","./$.an-object":"/mnt/c/swiggis.original/node_modules/core-js/library/modules/$.an-object.js","./$.ctx":"/mnt/c/swiggis.original/node_modules/core-js/library/modules/$.ctx.js","./$.is-object":"/mnt/c/swiggis.original/node_modules/core-js/library/modules/$.is-object.js"}],"/mnt/c/swiggis.original/node_modules/core-js/library/modules/$.to-object.js":[function(require,module,exports){
+},{"./$":"C:\\swiggis.austin\\node_modules\\core-js\\library\\modules\\$.js","./$.an-object":"C:\\swiggis.austin\\node_modules\\core-js\\library\\modules\\$.an-object.js","./$.ctx":"C:\\swiggis.austin\\node_modules\\core-js\\library\\modules\\$.ctx.js","./$.is-object":"C:\\swiggis.austin\\node_modules\\core-js\\library\\modules\\$.is-object.js"}],"C:\\swiggis.austin\\node_modules\\core-js\\library\\modules\\$.to-object.js":[function(require,module,exports){
 // 7.1.13 ToObject(argument)
 var defined = require('./$.defined');
 module.exports = function(it){
   return Object(defined(it));
 };
-},{"./$.defined":"/mnt/c/swiggis.original/node_modules/core-js/library/modules/$.defined.js"}],"/mnt/c/swiggis.original/node_modules/core-js/library/modules/es6.object.assign.js":[function(require,module,exports){
+},{"./$.defined":"C:\\swiggis.austin\\node_modules\\core-js\\library\\modules\\$.defined.js"}],"C:\\swiggis.austin\\node_modules\\core-js\\library\\modules\\es6.object.assign.js":[function(require,module,exports){
 // 19.1.3.1 Object.assign(target, source)
 var $export = require('./$.export');
 
 $export($export.S + $export.F, 'Object', {assign: require('./$.object-assign')});
-},{"./$.export":"/mnt/c/swiggis.original/node_modules/core-js/library/modules/$.export.js","./$.object-assign":"/mnt/c/swiggis.original/node_modules/core-js/library/modules/$.object-assign.js"}],"/mnt/c/swiggis.original/node_modules/core-js/library/modules/es6.object.keys.js":[function(require,module,exports){
+},{"./$.export":"C:\\swiggis.austin\\node_modules\\core-js\\library\\modules\\$.export.js","./$.object-assign":"C:\\swiggis.austin\\node_modules\\core-js\\library\\modules\\$.object-assign.js"}],"C:\\swiggis.austin\\node_modules\\core-js\\library\\modules\\es6.object.keys.js":[function(require,module,exports){
 // 19.1.2.14 Object.keys(O)
 var toObject = require('./$.to-object');
 
@@ -413,11 +413,11 @@ require('./$.object-sap')('keys', function($keys){
     return $keys(toObject(it));
   };
 });
-},{"./$.object-sap":"/mnt/c/swiggis.original/node_modules/core-js/library/modules/$.object-sap.js","./$.to-object":"/mnt/c/swiggis.original/node_modules/core-js/library/modules/$.to-object.js"}],"/mnt/c/swiggis.original/node_modules/core-js/library/modules/es6.object.set-prototype-of.js":[function(require,module,exports){
+},{"./$.object-sap":"C:\\swiggis.austin\\node_modules\\core-js\\library\\modules\\$.object-sap.js","./$.to-object":"C:\\swiggis.austin\\node_modules\\core-js\\library\\modules\\$.to-object.js"}],"C:\\swiggis.austin\\node_modules\\core-js\\library\\modules\\es6.object.set-prototype-of.js":[function(require,module,exports){
 // 19.1.3.19 Object.setPrototypeOf(O, proto)
 var $export = require('./$.export');
 $export($export.S, 'Object', {setPrototypeOf: require('./$.set-proto').set});
-},{"./$.export":"/mnt/c/swiggis.original/node_modules/core-js/library/modules/$.export.js","./$.set-proto":"/mnt/c/swiggis.original/node_modules/core-js/library/modules/$.set-proto.js"}],"/mnt/c/swiggis.original/node_modules/create-react-class/factory.js":[function(require,module,exports){
+},{"./$.export":"C:\\swiggis.austin\\node_modules\\core-js\\library\\modules\\$.export.js","./$.set-proto":"C:\\swiggis.austin\\node_modules\\core-js\\library\\modules\\$.set-proto.js"}],"C:\\swiggis.austin\\node_modules\\create-react-class\\factory.js":[function(require,module,exports){
 (function (process){
 /**
  * Copyright (c) 2013-present, Facebook, Inc.
@@ -1347,7 +1347,7 @@ function factory(ReactComponent, isValidElement, ReactNoopUpdateQueue) {
 module.exports = factory;
 
 }).call(this,require('_process'))
-},{"_process":"/mnt/c/swiggis.original/node_modules/process/browser.js","fbjs/lib/emptyObject":"/mnt/c/swiggis.original/node_modules/fbjs/lib/emptyObject.js","fbjs/lib/invariant":"/mnt/c/swiggis.original/node_modules/fbjs/lib/invariant.js","fbjs/lib/warning":"/mnt/c/swiggis.original/node_modules/fbjs/lib/warning.js","object-assign":"/mnt/c/swiggis.original/node_modules/create-react-class/node_modules/object-assign/index.js"}],"/mnt/c/swiggis.original/node_modules/create-react-class/index.js":[function(require,module,exports){
+},{"_process":"C:\\swiggis.austin\\node_modules\\process\\browser.js","fbjs/lib/emptyObject":"C:\\swiggis.austin\\node_modules\\fbjs\\lib\\emptyObject.js","fbjs/lib/invariant":"C:\\swiggis.austin\\node_modules\\fbjs\\lib\\invariant.js","fbjs/lib/warning":"C:\\swiggis.austin\\node_modules\\fbjs\\lib\\warning.js","object-assign":"C:\\swiggis.austin\\node_modules\\create-react-class\\node_modules\\object-assign\\index.js"}],"C:\\swiggis.austin\\node_modules\\create-react-class\\index.js":[function(require,module,exports){
 /**
  * Copyright (c) 2013-present, Facebook, Inc.
  *
@@ -1377,7 +1377,7 @@ module.exports = factory(
   ReactNoopUpdateQueue
 );
 
-},{"./factory":"/mnt/c/swiggis.original/node_modules/create-react-class/factory.js","react":"/mnt/c/swiggis.original/node_modules/react/react.js"}],"/mnt/c/swiggis.original/node_modules/create-react-class/node_modules/object-assign/index.js":[function(require,module,exports){
+},{"./factory":"C:\\swiggis.austin\\node_modules\\create-react-class\\factory.js","react":"C:\\swiggis.austin\\node_modules\\react\\react.js"}],"C:\\swiggis.austin\\node_modules\\create-react-class\\node_modules\\object-assign\\index.js":[function(require,module,exports){
 /*
 object-assign
 (c) Sindre Sorhus
@@ -1469,7 +1469,7 @@ module.exports = shouldUseNative() ? Object.assign : function (target, source) {
 	return to;
 };
 
-},{}],"/mnt/c/swiggis.original/node_modules/deep-equal/index.js":[function(require,module,exports){
+},{}],"C:\\swiggis.austin\\node_modules\\deep-equal\\index.js":[function(require,module,exports){
 var pSlice = Array.prototype.slice;
 var objectKeys = require('./lib/keys.js');
 var isArguments = require('./lib/is_arguments.js');
@@ -1565,7 +1565,7 @@ function objEquiv(a, b, opts) {
   return typeof a === typeof b;
 }
 
-},{"./lib/is_arguments.js":"/mnt/c/swiggis.original/node_modules/deep-equal/lib/is_arguments.js","./lib/keys.js":"/mnt/c/swiggis.original/node_modules/deep-equal/lib/keys.js"}],"/mnt/c/swiggis.original/node_modules/deep-equal/lib/is_arguments.js":[function(require,module,exports){
+},{"./lib/is_arguments.js":"C:\\swiggis.austin\\node_modules\\deep-equal\\lib\\is_arguments.js","./lib/keys.js":"C:\\swiggis.austin\\node_modules\\deep-equal\\lib\\keys.js"}],"C:\\swiggis.austin\\node_modules\\deep-equal\\lib\\is_arguments.js":[function(require,module,exports){
 var supportsArgumentsClass = (function(){
   return Object.prototype.toString.call(arguments)
 })() == '[object Arguments]';
@@ -1587,7 +1587,7 @@ function unsupported(object){
     false;
 };
 
-},{}],"/mnt/c/swiggis.original/node_modules/deep-equal/lib/keys.js":[function(require,module,exports){
+},{}],"C:\\swiggis.austin\\node_modules\\deep-equal\\lib\\keys.js":[function(require,module,exports){
 exports = module.exports = typeof Object.keys === 'function'
   ? Object.keys : shim;
 
@@ -1598,7 +1598,7 @@ function shim (obj) {
   return keys;
 }
 
-},{}],"/mnt/c/swiggis.original/node_modules/dom-helpers/activeElement.js":[function(require,module,exports){
+},{}],"C:\\swiggis.austin\\node_modules\\dom-helpers\\activeElement.js":[function(require,module,exports){
 'use strict';
 
 var babelHelpers = require('./util/babelHelpers.js');
@@ -1623,7 +1623,7 @@ function activeElement() {
 }
 
 module.exports = exports['default'];
-},{"./ownerDocument":"/mnt/c/swiggis.original/node_modules/dom-helpers/ownerDocument.js","./util/babelHelpers.js":"/mnt/c/swiggis.original/node_modules/dom-helpers/util/babelHelpers.js"}],"/mnt/c/swiggis.original/node_modules/dom-helpers/events/filter.js":[function(require,module,exports){
+},{"./ownerDocument":"C:\\swiggis.austin\\node_modules\\dom-helpers\\ownerDocument.js","./util/babelHelpers.js":"C:\\swiggis.austin\\node_modules\\dom-helpers\\util\\babelHelpers.js"}],"C:\\swiggis.austin\\node_modules\\dom-helpers\\events\\filter.js":[function(require,module,exports){
 'use strict';
 
 var contains = require('../query/contains'),
@@ -1640,14 +1640,14 @@ module.exports = function (selector, handler) {
     })) handler.call(this, e);
   };
 };
-},{"../query/contains":"/mnt/c/swiggis.original/node_modules/dom-helpers/query/contains.js","../query/querySelectorAll":"/mnt/c/swiggis.original/node_modules/dom-helpers/query/querySelectorAll.js"}],"/mnt/c/swiggis.original/node_modules/dom-helpers/events/index.js":[function(require,module,exports){
+},{"../query/contains":"C:\\swiggis.austin\\node_modules\\dom-helpers\\query\\contains.js","../query/querySelectorAll":"C:\\swiggis.austin\\node_modules\\dom-helpers\\query\\querySelectorAll.js"}],"C:\\swiggis.austin\\node_modules\\dom-helpers\\events\\index.js":[function(require,module,exports){
 'use strict';
 var on = require('./on'),
     off = require('./off'),
     filter = require('./filter');
 
 module.exports = { on: on, off: off, filter: filter };
-},{"./filter":"/mnt/c/swiggis.original/node_modules/dom-helpers/events/filter.js","./off":"/mnt/c/swiggis.original/node_modules/dom-helpers/events/off.js","./on":"/mnt/c/swiggis.original/node_modules/dom-helpers/events/on.js"}],"/mnt/c/swiggis.original/node_modules/dom-helpers/events/off.js":[function(require,module,exports){
+},{"./filter":"C:\\swiggis.austin\\node_modules\\dom-helpers\\events\\filter.js","./off":"C:\\swiggis.austin\\node_modules\\dom-helpers\\events\\off.js","./on":"C:\\swiggis.austin\\node_modules\\dom-helpers\\events\\on.js"}],"C:\\swiggis.austin\\node_modules\\dom-helpers\\events\\off.js":[function(require,module,exports){
 'use strict';
 var canUseDOM = require('../util/inDOM');
 var off = function off() {};
@@ -1665,7 +1665,7 @@ if (canUseDOM) {
 }
 
 module.exports = off;
-},{"../util/inDOM":"/mnt/c/swiggis.original/node_modules/dom-helpers/util/inDOM.js"}],"/mnt/c/swiggis.original/node_modules/dom-helpers/events/on.js":[function(require,module,exports){
+},{"../util/inDOM":"C:\\swiggis.austin\\node_modules\\dom-helpers\\util\\inDOM.js"}],"C:\\swiggis.austin\\node_modules\\dom-helpers\\events\\on.js":[function(require,module,exports){
 'use strict';
 var canUseDOM = require('../util/inDOM');
 var on = function on() {};
@@ -1682,7 +1682,7 @@ if (canUseDOM) {
 }
 
 module.exports = on;
-},{"../util/inDOM":"/mnt/c/swiggis.original/node_modules/dom-helpers/util/inDOM.js"}],"/mnt/c/swiggis.original/node_modules/dom-helpers/ownerDocument.js":[function(require,module,exports){
+},{"../util/inDOM":"C:\\swiggis.austin\\node_modules\\dom-helpers\\util\\inDOM.js"}],"C:\\swiggis.austin\\node_modules\\dom-helpers\\ownerDocument.js":[function(require,module,exports){
 "use strict";
 
 exports.__esModule = true;
@@ -1693,7 +1693,7 @@ function ownerDocument(node) {
 }
 
 module.exports = exports["default"];
-},{}],"/mnt/c/swiggis.original/node_modules/dom-helpers/query/contains.js":[function(require,module,exports){
+},{}],"C:\\swiggis.austin\\node_modules\\dom-helpers\\query\\contains.js":[function(require,module,exports){
 'use strict';
 var canUseDOM = require('../util/inDOM');
 
@@ -1714,7 +1714,7 @@ var contains = (function () {
 })();
 
 module.exports = contains;
-},{"../util/inDOM":"/mnt/c/swiggis.original/node_modules/dom-helpers/util/inDOM.js"}],"/mnt/c/swiggis.original/node_modules/dom-helpers/query/querySelectorAll.js":[function(require,module,exports){
+},{"../util/inDOM":"C:\\swiggis.austin\\node_modules\\dom-helpers\\util\\inDOM.js"}],"C:\\swiggis.austin\\node_modules\\dom-helpers\\query\\querySelectorAll.js":[function(require,module,exports){
 'use strict';
 //     Zepto.js
 //     (c) 2010-2015 Thomas Fuchs
@@ -1742,7 +1742,7 @@ module.exports = function qsa(element, selector) {
 
   return toArray(element.querySelectorAll(selector));
 };
-},{}],"/mnt/c/swiggis.original/node_modules/dom-helpers/style/getComputedStyle.js":[function(require,module,exports){
+},{}],"C:\\swiggis.austin\\node_modules\\dom-helpers\\style\\getComputedStyle.js":[function(require,module,exports){
 'use strict';
 
 var babelHelpers = require('../util/babelHelpers.js');
@@ -1791,7 +1791,7 @@ module.exports = function _getComputedStyle(node) {
     }
   };
 };
-},{"../util/babelHelpers.js":"/mnt/c/swiggis.original/node_modules/dom-helpers/util/babelHelpers.js","../util/camelizeStyle":"/mnt/c/swiggis.original/node_modules/dom-helpers/util/camelizeStyle.js"}],"/mnt/c/swiggis.original/node_modules/dom-helpers/style/index.js":[function(require,module,exports){
+},{"../util/babelHelpers.js":"C:\\swiggis.austin\\node_modules\\dom-helpers\\util\\babelHelpers.js","../util/camelizeStyle":"C:\\swiggis.austin\\node_modules\\dom-helpers\\util\\camelizeStyle.js"}],"C:\\swiggis.austin\\node_modules\\dom-helpers\\style\\index.js":[function(require,module,exports){
 'use strict';
 
 var camelize = require('../util/camelizeStyle'),
@@ -1816,13 +1816,13 @@ module.exports = function style(node, property, value) {
 
   node.style.cssText += ';' + css;
 };
-},{"../util/camelizeStyle":"/mnt/c/swiggis.original/node_modules/dom-helpers/util/camelizeStyle.js","../util/hyphenateStyle":"/mnt/c/swiggis.original/node_modules/dom-helpers/util/hyphenateStyle.js","./getComputedStyle":"/mnt/c/swiggis.original/node_modules/dom-helpers/style/getComputedStyle.js","./removeStyle":"/mnt/c/swiggis.original/node_modules/dom-helpers/style/removeStyle.js"}],"/mnt/c/swiggis.original/node_modules/dom-helpers/style/removeStyle.js":[function(require,module,exports){
+},{"../util/camelizeStyle":"C:\\swiggis.austin\\node_modules\\dom-helpers\\util\\camelizeStyle.js","../util/hyphenateStyle":"C:\\swiggis.austin\\node_modules\\dom-helpers\\util\\hyphenateStyle.js","./getComputedStyle":"C:\\swiggis.austin\\node_modules\\dom-helpers\\style\\getComputedStyle.js","./removeStyle":"C:\\swiggis.austin\\node_modules\\dom-helpers\\style\\removeStyle.js"}],"C:\\swiggis.austin\\node_modules\\dom-helpers\\style\\removeStyle.js":[function(require,module,exports){
 'use strict';
 
 module.exports = function removeStyle(node, key) {
   return 'removeProperty' in node.style ? node.style.removeProperty(key) : node.style.removeAttribute(key);
 };
-},{}],"/mnt/c/swiggis.original/node_modules/dom-helpers/util/babelHelpers.js":[function(require,module,exports){
+},{}],"C:\\swiggis.austin\\node_modules\\dom-helpers\\util\\babelHelpers.js":[function(require,module,exports){
 (function (root, factory) {
   if (typeof define === "function" && define.amd) {
     define(["exports"], factory);
@@ -1854,7 +1854,7 @@ module.exports = function removeStyle(node, key) {
     return target;
   };
 })
-},{}],"/mnt/c/swiggis.original/node_modules/dom-helpers/util/camelize.js":[function(require,module,exports){
+},{}],"C:\\swiggis.austin\\node_modules\\dom-helpers\\util\\camelize.js":[function(require,module,exports){
 "use strict";
 
 var rHyphen = /-(.)/g;
@@ -1864,7 +1864,7 @@ module.exports = function camelize(string) {
     return chr.toUpperCase();
   });
 };
-},{}],"/mnt/c/swiggis.original/node_modules/dom-helpers/util/camelizeStyle.js":[function(require,module,exports){
+},{}],"C:\\swiggis.austin\\node_modules\\dom-helpers\\util\\camelizeStyle.js":[function(require,module,exports){
 /**
  * Copyright 2014-2015, Facebook, Inc.
  * All rights reserved.
@@ -1878,7 +1878,7 @@ var msPattern = /^-ms-/;
 module.exports = function camelizeStyleName(string) {
   return camelize(string.replace(msPattern, 'ms-'));
 };
-},{"./camelize":"/mnt/c/swiggis.original/node_modules/dom-helpers/util/camelize.js"}],"/mnt/c/swiggis.original/node_modules/dom-helpers/util/hyphenate.js":[function(require,module,exports){
+},{"./camelize":"C:\\swiggis.austin\\node_modules\\dom-helpers\\util\\camelize.js"}],"C:\\swiggis.austin\\node_modules\\dom-helpers\\util\\hyphenate.js":[function(require,module,exports){
 'use strict';
 
 var rUpper = /([A-Z])/g;
@@ -1886,7 +1886,7 @@ var rUpper = /([A-Z])/g;
 module.exports = function hyphenate(string) {
   return string.replace(rUpper, '-$1').toLowerCase();
 };
-},{}],"/mnt/c/swiggis.original/node_modules/dom-helpers/util/hyphenateStyle.js":[function(require,module,exports){
+},{}],"C:\\swiggis.austin\\node_modules\\dom-helpers\\util\\hyphenateStyle.js":[function(require,module,exports){
 /**
  * Copyright 2013-2014, Facebook, Inc.
  * All rights reserved.
@@ -1901,10 +1901,10 @@ var msPattern = /^ms-/;
 module.exports = function hyphenateStyleName(string) {
   return hyphenate(string).replace(msPattern, "-ms-");
 };
-},{"./hyphenate":"/mnt/c/swiggis.original/node_modules/dom-helpers/util/hyphenate.js"}],"/mnt/c/swiggis.original/node_modules/dom-helpers/util/inDOM.js":[function(require,module,exports){
+},{"./hyphenate":"C:\\swiggis.austin\\node_modules\\dom-helpers\\util\\hyphenate.js"}],"C:\\swiggis.austin\\node_modules\\dom-helpers\\util\\inDOM.js":[function(require,module,exports){
 'use strict';
 module.exports = !!(typeof window !== 'undefined' && window.document && window.document.createElement);
-},{}],"/mnt/c/swiggis.original/node_modules/dom-helpers/util/scrollbarSize.js":[function(require,module,exports){
+},{}],"C:\\swiggis.austin\\node_modules\\dom-helpers\\util\\scrollbarSize.js":[function(require,module,exports){
 'use strict';
 
 var canUseDOM = require('./inDOM');
@@ -1930,7 +1930,7 @@ module.exports = function (recalc) {
 
   return size;
 };
-},{"./inDOM":"/mnt/c/swiggis.original/node_modules/dom-helpers/util/inDOM.js"}],"/mnt/c/swiggis.original/node_modules/fbjs/lib/EventListener.js":[function(require,module,exports){
+},{"./inDOM":"C:\\swiggis.austin\\node_modules\\dom-helpers\\util\\inDOM.js"}],"C:\\swiggis.austin\\node_modules\\fbjs\\lib\\EventListener.js":[function(require,module,exports){
 (function (process){
 'use strict';
 
@@ -2007,7 +2007,7 @@ var EventListener = {
 
 module.exports = EventListener;
 }).call(this,require('_process'))
-},{"./emptyFunction":"/mnt/c/swiggis.original/node_modules/fbjs/lib/emptyFunction.js","_process":"/mnt/c/swiggis.original/node_modules/process/browser.js"}],"/mnt/c/swiggis.original/node_modules/fbjs/lib/ExecutionEnvironment.js":[function(require,module,exports){
+},{"./emptyFunction":"C:\\swiggis.austin\\node_modules\\fbjs\\lib\\emptyFunction.js","_process":"C:\\swiggis.austin\\node_modules\\process\\browser.js"}],"C:\\swiggis.austin\\node_modules\\fbjs\\lib\\ExecutionEnvironment.js":[function(require,module,exports){
 /**
  * Copyright (c) 2013-present, Facebook, Inc.
  *
@@ -2041,7 +2041,7 @@ var ExecutionEnvironment = {
 };
 
 module.exports = ExecutionEnvironment;
-},{}],"/mnt/c/swiggis.original/node_modules/fbjs/lib/camelize.js":[function(require,module,exports){
+},{}],"C:\\swiggis.austin\\node_modules\\fbjs\\lib\\camelize.js":[function(require,module,exports){
 "use strict";
 
 /**
@@ -2071,7 +2071,7 @@ function camelize(string) {
 }
 
 module.exports = camelize;
-},{}],"/mnt/c/swiggis.original/node_modules/fbjs/lib/camelizeStyleName.js":[function(require,module,exports){
+},{}],"C:\\swiggis.austin\\node_modules\\fbjs\\lib\\camelizeStyleName.js":[function(require,module,exports){
 /**
  * Copyright (c) 2013-present, Facebook, Inc.
  *
@@ -2109,7 +2109,7 @@ function camelizeStyleName(string) {
 }
 
 module.exports = camelizeStyleName;
-},{"./camelize":"/mnt/c/swiggis.original/node_modules/fbjs/lib/camelize.js"}],"/mnt/c/swiggis.original/node_modules/fbjs/lib/containsNode.js":[function(require,module,exports){
+},{"./camelize":"C:\\swiggis.austin\\node_modules\\fbjs\\lib\\camelize.js"}],"C:\\swiggis.austin\\node_modules\\fbjs\\lib\\containsNode.js":[function(require,module,exports){
 'use strict';
 
 /**
@@ -2147,7 +2147,7 @@ function containsNode(outerNode, innerNode) {
 }
 
 module.exports = containsNode;
-},{"./isTextNode":"/mnt/c/swiggis.original/node_modules/fbjs/lib/isTextNode.js"}],"/mnt/c/swiggis.original/node_modules/fbjs/lib/createArrayFromMixed.js":[function(require,module,exports){
+},{"./isTextNode":"C:\\swiggis.austin\\node_modules\\fbjs\\lib\\isTextNode.js"}],"C:\\swiggis.austin\\node_modules\\fbjs\\lib\\createArrayFromMixed.js":[function(require,module,exports){
 (function (process){
 'use strict';
 
@@ -2274,7 +2274,7 @@ function createArrayFromMixed(obj) {
 
 module.exports = createArrayFromMixed;
 }).call(this,require('_process'))
-},{"./invariant":"/mnt/c/swiggis.original/node_modules/fbjs/lib/invariant.js","_process":"/mnt/c/swiggis.original/node_modules/process/browser.js"}],"/mnt/c/swiggis.original/node_modules/fbjs/lib/createNodesFromMarkup.js":[function(require,module,exports){
+},{"./invariant":"C:\\swiggis.austin\\node_modules\\fbjs\\lib\\invariant.js","_process":"C:\\swiggis.austin\\node_modules\\process\\browser.js"}],"C:\\swiggis.austin\\node_modules\\fbjs\\lib\\createNodesFromMarkup.js":[function(require,module,exports){
 (function (process){
 'use strict';
 
@@ -2358,7 +2358,7 @@ function createNodesFromMarkup(markup, handleScript) {
 
 module.exports = createNodesFromMarkup;
 }).call(this,require('_process'))
-},{"./ExecutionEnvironment":"/mnt/c/swiggis.original/node_modules/fbjs/lib/ExecutionEnvironment.js","./createArrayFromMixed":"/mnt/c/swiggis.original/node_modules/fbjs/lib/createArrayFromMixed.js","./getMarkupWrap":"/mnt/c/swiggis.original/node_modules/fbjs/lib/getMarkupWrap.js","./invariant":"/mnt/c/swiggis.original/node_modules/fbjs/lib/invariant.js","_process":"/mnt/c/swiggis.original/node_modules/process/browser.js"}],"/mnt/c/swiggis.original/node_modules/fbjs/lib/emptyFunction.js":[function(require,module,exports){
+},{"./ExecutionEnvironment":"C:\\swiggis.austin\\node_modules\\fbjs\\lib\\ExecutionEnvironment.js","./createArrayFromMixed":"C:\\swiggis.austin\\node_modules\\fbjs\\lib\\createArrayFromMixed.js","./getMarkupWrap":"C:\\swiggis.austin\\node_modules\\fbjs\\lib\\getMarkupWrap.js","./invariant":"C:\\swiggis.austin\\node_modules\\fbjs\\lib\\invariant.js","_process":"C:\\swiggis.austin\\node_modules\\process\\browser.js"}],"C:\\swiggis.austin\\node_modules\\fbjs\\lib\\emptyFunction.js":[function(require,module,exports){
 "use strict";
 
 /**
@@ -2395,7 +2395,7 @@ emptyFunction.thatReturnsArgument = function (arg) {
 };
 
 module.exports = emptyFunction;
-},{}],"/mnt/c/swiggis.original/node_modules/fbjs/lib/emptyObject.js":[function(require,module,exports){
+},{}],"C:\\swiggis.austin\\node_modules\\fbjs\\lib\\emptyObject.js":[function(require,module,exports){
 (function (process){
 /**
  * Copyright (c) 2013-present, Facebook, Inc.
@@ -2415,7 +2415,7 @@ if (process.env.NODE_ENV !== 'production') {
 
 module.exports = emptyObject;
 }).call(this,require('_process'))
-},{"_process":"/mnt/c/swiggis.original/node_modules/process/browser.js"}],"/mnt/c/swiggis.original/node_modules/fbjs/lib/focusNode.js":[function(require,module,exports){
+},{"_process":"C:\\swiggis.austin\\node_modules\\process\\browser.js"}],"C:\\swiggis.austin\\node_modules\\fbjs\\lib\\focusNode.js":[function(require,module,exports){
 /**
  * Copyright (c) 2013-present, Facebook, Inc.
  *
@@ -2440,7 +2440,7 @@ function focusNode(node) {
 }
 
 module.exports = focusNode;
-},{}],"/mnt/c/swiggis.original/node_modules/fbjs/lib/getActiveElement.js":[function(require,module,exports){
+},{}],"C:\\swiggis.austin\\node_modules\\fbjs\\lib\\getActiveElement.js":[function(require,module,exports){
 'use strict';
 
 /**
@@ -2477,7 +2477,7 @@ function getActiveElement(doc) /*?DOMElement*/{
 }
 
 module.exports = getActiveElement;
-},{}],"/mnt/c/swiggis.original/node_modules/fbjs/lib/getMarkupWrap.js":[function(require,module,exports){
+},{}],"C:\\swiggis.austin\\node_modules\\fbjs\\lib\\getMarkupWrap.js":[function(require,module,exports){
 (function (process){
 'use strict';
 
@@ -2572,7 +2572,7 @@ function getMarkupWrap(nodeName) {
 
 module.exports = getMarkupWrap;
 }).call(this,require('_process'))
-},{"./ExecutionEnvironment":"/mnt/c/swiggis.original/node_modules/fbjs/lib/ExecutionEnvironment.js","./invariant":"/mnt/c/swiggis.original/node_modules/fbjs/lib/invariant.js","_process":"/mnt/c/swiggis.original/node_modules/process/browser.js"}],"/mnt/c/swiggis.original/node_modules/fbjs/lib/getUnboundedScrollPosition.js":[function(require,module,exports){
+},{"./ExecutionEnvironment":"C:\\swiggis.austin\\node_modules\\fbjs\\lib\\ExecutionEnvironment.js","./invariant":"C:\\swiggis.austin\\node_modules\\fbjs\\lib\\invariant.js","_process":"C:\\swiggis.austin\\node_modules\\process\\browser.js"}],"C:\\swiggis.austin\\node_modules\\fbjs\\lib\\getUnboundedScrollPosition.js":[function(require,module,exports){
 /**
  * Copyright (c) 2013-present, Facebook, Inc.
  *
@@ -2609,7 +2609,7 @@ function getUnboundedScrollPosition(scrollable) {
 }
 
 module.exports = getUnboundedScrollPosition;
-},{}],"/mnt/c/swiggis.original/node_modules/fbjs/lib/hyphenate.js":[function(require,module,exports){
+},{}],"C:\\swiggis.austin\\node_modules\\fbjs\\lib\\hyphenate.js":[function(require,module,exports){
 'use strict';
 
 /**
@@ -2640,7 +2640,7 @@ function hyphenate(string) {
 }
 
 module.exports = hyphenate;
-},{}],"/mnt/c/swiggis.original/node_modules/fbjs/lib/hyphenateStyleName.js":[function(require,module,exports){
+},{}],"C:\\swiggis.austin\\node_modules\\fbjs\\lib\\hyphenateStyleName.js":[function(require,module,exports){
 /**
  * Copyright (c) 2013-present, Facebook, Inc.
  *
@@ -2677,7 +2677,7 @@ function hyphenateStyleName(string) {
 }
 
 module.exports = hyphenateStyleName;
-},{"./hyphenate":"/mnt/c/swiggis.original/node_modules/fbjs/lib/hyphenate.js"}],"/mnt/c/swiggis.original/node_modules/fbjs/lib/invariant.js":[function(require,module,exports){
+},{"./hyphenate":"C:\\swiggis.austin\\node_modules\\fbjs\\lib\\hyphenate.js"}],"C:\\swiggis.austin\\node_modules\\fbjs\\lib\\invariant.js":[function(require,module,exports){
 (function (process){
 /**
  * Copyright (c) 2013-present, Facebook, Inc.
@@ -2733,7 +2733,7 @@ function invariant(condition, format, a, b, c, d, e, f) {
 
 module.exports = invariant;
 }).call(this,require('_process'))
-},{"_process":"/mnt/c/swiggis.original/node_modules/process/browser.js"}],"/mnt/c/swiggis.original/node_modules/fbjs/lib/isNode.js":[function(require,module,exports){
+},{"_process":"C:\\swiggis.austin\\node_modules\\process\\browser.js"}],"C:\\swiggis.austin\\node_modules\\fbjs\\lib\\isNode.js":[function(require,module,exports){
 'use strict';
 
 /**
@@ -2756,7 +2756,7 @@ function isNode(object) {
 }
 
 module.exports = isNode;
-},{}],"/mnt/c/swiggis.original/node_modules/fbjs/lib/isTextNode.js":[function(require,module,exports){
+},{}],"C:\\swiggis.austin\\node_modules\\fbjs\\lib\\isTextNode.js":[function(require,module,exports){
 'use strict';
 
 /**
@@ -2779,7 +2779,7 @@ function isTextNode(object) {
 }
 
 module.exports = isTextNode;
-},{"./isNode":"/mnt/c/swiggis.original/node_modules/fbjs/lib/isNode.js"}],"/mnt/c/swiggis.original/node_modules/fbjs/lib/memoizeStringOnly.js":[function(require,module,exports){
+},{"./isNode":"C:\\swiggis.austin\\node_modules\\fbjs\\lib\\isNode.js"}],"C:\\swiggis.austin\\node_modules\\fbjs\\lib\\memoizeStringOnly.js":[function(require,module,exports){
 /**
  * Copyright (c) 2013-present, Facebook, Inc.
  *
@@ -2807,7 +2807,7 @@ function memoizeStringOnly(callback) {
 }
 
 module.exports = memoizeStringOnly;
-},{}],"/mnt/c/swiggis.original/node_modules/fbjs/lib/performance.js":[function(require,module,exports){
+},{}],"C:\\swiggis.austin\\node_modules\\fbjs\\lib\\performance.js":[function(require,module,exports){
 /**
  * Copyright (c) 2013-present, Facebook, Inc.
  *
@@ -2828,7 +2828,7 @@ if (ExecutionEnvironment.canUseDOM) {
 }
 
 module.exports = performance || {};
-},{"./ExecutionEnvironment":"/mnt/c/swiggis.original/node_modules/fbjs/lib/ExecutionEnvironment.js"}],"/mnt/c/swiggis.original/node_modules/fbjs/lib/performanceNow.js":[function(require,module,exports){
+},{"./ExecutionEnvironment":"C:\\swiggis.austin\\node_modules\\fbjs\\lib\\ExecutionEnvironment.js"}],"C:\\swiggis.austin\\node_modules\\fbjs\\lib\\performanceNow.js":[function(require,module,exports){
 'use strict';
 
 /**
@@ -2860,7 +2860,7 @@ if (performance.now) {
 }
 
 module.exports = performanceNow;
-},{"./performance":"/mnt/c/swiggis.original/node_modules/fbjs/lib/performance.js"}],"/mnt/c/swiggis.original/node_modules/fbjs/lib/shallowEqual.js":[function(require,module,exports){
+},{"./performance":"C:\\swiggis.austin\\node_modules\\fbjs\\lib\\performance.js"}],"C:\\swiggis.austin\\node_modules\\fbjs\\lib\\shallowEqual.js":[function(require,module,exports){
 /**
  * Copyright (c) 2013-present, Facebook, Inc.
  *
@@ -2926,7 +2926,7 @@ function shallowEqual(objA, objB) {
 }
 
 module.exports = shallowEqual;
-},{}],"/mnt/c/swiggis.original/node_modules/fbjs/lib/warning.js":[function(require,module,exports){
+},{}],"C:\\swiggis.austin\\node_modules\\fbjs\\lib\\warning.js":[function(require,module,exports){
 (function (process){
 /**
  * Copyright (c) 2014-present, Facebook, Inc.
@@ -2991,969 +2991,7 @@ if (process.env.NODE_ENV !== 'production') {
 
 module.exports = warning;
 }).call(this,require('_process'))
-},{"./emptyFunction":"/mnt/c/swiggis.original/node_modules/fbjs/lib/emptyFunction.js","_process":"/mnt/c/swiggis.original/node_modules/process/browser.js"}],"/mnt/c/swiggis.original/node_modules/history/lib/Actions.js":[function(require,module,exports){
-/**
- * Indicates that navigation was caused by a call to history.push.
- */
-'use strict';
-
-exports.__esModule = true;
-var PUSH = 'PUSH';
-
-exports.PUSH = PUSH;
-/**
- * Indicates that navigation was caused by a call to history.replace.
- */
-var REPLACE = 'REPLACE';
-
-exports.REPLACE = REPLACE;
-/**
- * Indicates that navigation was caused by some other action such
- * as using a browser's back/forward buttons and/or manually manipulating
- * the URL in a browser's location bar. This is the default.
- *
- * See https://developer.mozilla.org/en-US/docs/Web/API/WindowEventHandlers/onpopstate
- * for more information.
- */
-var POP = 'POP';
-
-exports.POP = POP;
-exports['default'] = {
-  PUSH: PUSH,
-  REPLACE: REPLACE,
-  POP: POP
-};
-},{}],"/mnt/c/swiggis.original/node_modules/history/lib/AsyncUtils.js":[function(require,module,exports){
-"use strict";
-
-exports.__esModule = true;
-exports.loopAsync = loopAsync;
-
-function loopAsync(turns, work, callback) {
-  var currentTurn = 0;
-  var isDone = false;
-
-  function done() {
-    isDone = true;
-    callback.apply(this, arguments);
-  }
-
-  function next() {
-    if (isDone) return;
-
-    if (currentTurn < turns) {
-      work.call(this, currentTurn++, next, done);
-    } else {
-      done.apply(this, arguments);
-    }
-  }
-
-  next();
-}
-},{}],"/mnt/c/swiggis.original/node_modules/history/lib/DOMStateStorage.js":[function(require,module,exports){
-(function (process){
-/*eslint-disable no-empty */
-'use strict';
-
-exports.__esModule = true;
-exports.saveState = saveState;
-exports.readState = readState;
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { 'default': obj }; }
-
-var _warning = require('warning');
-
-var _warning2 = _interopRequireDefault(_warning);
-
-var KeyPrefix = '@@History/';
-var QuotaExceededError = 'QuotaExceededError';
-var SecurityError = 'SecurityError';
-
-function createKey(key) {
-  return KeyPrefix + key;
-}
-
-function saveState(key, state) {
-  try {
-    window.sessionStorage.setItem(createKey(key), JSON.stringify(state));
-  } catch (error) {
-    if (error.name === SecurityError) {
-      // Blocking cookies in Chrome/Firefox/Safari throws SecurityError on any
-      // attempt to access window.sessionStorage.
-      process.env.NODE_ENV !== 'production' ? _warning2['default'](false, '[history] Unable to save state; sessionStorage is not available due to security settings') : undefined;
-
-      return;
-    }
-
-    if (error.name === QuotaExceededError && window.sessionStorage.length === 0) {
-      // Safari "private mode" throws QuotaExceededError.
-      process.env.NODE_ENV !== 'production' ? _warning2['default'](false, '[history] Unable to save state; sessionStorage is not available in Safari private mode') : undefined;
-
-      return;
-    }
-
-    throw error;
-  }
-}
-
-function readState(key) {
-  var json = undefined;
-  try {
-    json = window.sessionStorage.getItem(createKey(key));
-  } catch (error) {
-    if (error.name === SecurityError) {
-      // Blocking cookies in Chrome/Firefox/Safari throws SecurityError on any
-      // attempt to access window.sessionStorage.
-      process.env.NODE_ENV !== 'production' ? _warning2['default'](false, '[history] Unable to read state; sessionStorage is not available due to security settings') : undefined;
-
-      return null;
-    }
-  }
-
-  if (json) {
-    try {
-      return JSON.parse(json);
-    } catch (error) {
-      // Ignore invalid JSON.
-    }
-  }
-
-  return null;
-}
-}).call(this,require('_process'))
-},{"_process":"/mnt/c/swiggis.original/node_modules/process/browser.js","warning":"/mnt/c/swiggis.original/node_modules/warning/browser.js"}],"/mnt/c/swiggis.original/node_modules/history/lib/DOMUtils.js":[function(require,module,exports){
-'use strict';
-
-exports.__esModule = true;
-exports.addEventListener = addEventListener;
-exports.removeEventListener = removeEventListener;
-exports.getHashPath = getHashPath;
-exports.replaceHashPath = replaceHashPath;
-exports.getWindowPath = getWindowPath;
-exports.go = go;
-exports.getUserConfirmation = getUserConfirmation;
-exports.supportsHistory = supportsHistory;
-exports.supportsGoWithoutReloadUsingHash = supportsGoWithoutReloadUsingHash;
-
-function addEventListener(node, event, listener) {
-  if (node.addEventListener) {
-    node.addEventListener(event, listener, false);
-  } else {
-    node.attachEvent('on' + event, listener);
-  }
-}
-
-function removeEventListener(node, event, listener) {
-  if (node.removeEventListener) {
-    node.removeEventListener(event, listener, false);
-  } else {
-    node.detachEvent('on' + event, listener);
-  }
-}
-
-function getHashPath() {
-  // We can't use window.location.hash here because it's not
-  // consistent across browsers - Firefox will pre-decode it!
-  return window.location.href.split('#')[1] || '';
-}
-
-function replaceHashPath(path) {
-  window.location.replace(window.location.pathname + window.location.search + '#' + path);
-}
-
-function getWindowPath() {
-  return window.location.pathname + window.location.search + window.location.hash;
-}
-
-function go(n) {
-  if (n) window.history.go(n);
-}
-
-function getUserConfirmation(message, callback) {
-  callback(window.confirm(message));
-}
-
-/**
- * Returns true if the HTML5 history API is supported. Taken from Modernizr.
- *
- * https://github.com/Modernizr/Modernizr/blob/master/LICENSE
- * https://github.com/Modernizr/Modernizr/blob/master/feature-detects/history.js
- * changed to avoid false negatives for Windows Phones: https://github.com/rackt/react-router/issues/586
- */
-
-function supportsHistory() {
-  var ua = navigator.userAgent;
-  if ((ua.indexOf('Android 2.') !== -1 || ua.indexOf('Android 4.0') !== -1) && ua.indexOf('Mobile Safari') !== -1 && ua.indexOf('Chrome') === -1 && ua.indexOf('Windows Phone') === -1) {
-    return false;
-  }
-  // FIXME: Work around our browser history not working correctly on Chrome
-  // iOS: https://github.com/rackt/react-router/issues/2565
-  if (ua.indexOf('CriOS') !== -1) {
-    return false;
-  }
-  return window.history && 'pushState' in window.history;
-}
-
-/**
- * Returns false if using go(n) with hash history causes a full page reload.
- */
-
-function supportsGoWithoutReloadUsingHash() {
-  var ua = navigator.userAgent;
-  return ua.indexOf('Firefox') === -1;
-}
-},{}],"/mnt/c/swiggis.original/node_modules/history/lib/ExecutionEnvironment.js":[function(require,module,exports){
-'use strict';
-
-exports.__esModule = true;
-var canUseDOM = !!(typeof window !== 'undefined' && window.document && window.document.createElement);
-exports.canUseDOM = canUseDOM;
-},{}],"/mnt/c/swiggis.original/node_modules/history/lib/createDOMHistory.js":[function(require,module,exports){
-(function (process){
-'use strict';
-
-exports.__esModule = true;
-
-var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { 'default': obj }; }
-
-var _invariant = require('invariant');
-
-var _invariant2 = _interopRequireDefault(_invariant);
-
-var _ExecutionEnvironment = require('./ExecutionEnvironment');
-
-var _DOMUtils = require('./DOMUtils');
-
-var _createHistory = require('./createHistory');
-
-var _createHistory2 = _interopRequireDefault(_createHistory);
-
-function createDOMHistory(options) {
-  var history = _createHistory2['default'](_extends({
-    getUserConfirmation: _DOMUtils.getUserConfirmation
-  }, options, {
-    go: _DOMUtils.go
-  }));
-
-  function listen(listener) {
-    !_ExecutionEnvironment.canUseDOM ? process.env.NODE_ENV !== 'production' ? _invariant2['default'](false, 'DOM history needs a DOM') : _invariant2['default'](false) : undefined;
-
-    return history.listen(listener);
-  }
-
-  return _extends({}, history, {
-    listen: listen
-  });
-}
-
-exports['default'] = createDOMHistory;
-module.exports = exports['default'];
-}).call(this,require('_process'))
-},{"./DOMUtils":"/mnt/c/swiggis.original/node_modules/history/lib/DOMUtils.js","./ExecutionEnvironment":"/mnt/c/swiggis.original/node_modules/history/lib/ExecutionEnvironment.js","./createHistory":"/mnt/c/swiggis.original/node_modules/history/lib/createHistory.js","_process":"/mnt/c/swiggis.original/node_modules/process/browser.js","invariant":"/mnt/c/swiggis.original/node_modules/invariant/browser.js"}],"/mnt/c/swiggis.original/node_modules/history/lib/createHashHistory.js":[function(require,module,exports){
-(function (process){
-'use strict';
-
-exports.__esModule = true;
-
-var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { 'default': obj }; }
-
-var _warning = require('warning');
-
-var _warning2 = _interopRequireDefault(_warning);
-
-var _invariant = require('invariant');
-
-var _invariant2 = _interopRequireDefault(_invariant);
-
-var _Actions = require('./Actions');
-
-var _ExecutionEnvironment = require('./ExecutionEnvironment');
-
-var _DOMUtils = require('./DOMUtils');
-
-var _DOMStateStorage = require('./DOMStateStorage');
-
-var _createDOMHistory = require('./createDOMHistory');
-
-var _createDOMHistory2 = _interopRequireDefault(_createDOMHistory);
-
-var _parsePath = require('./parsePath');
-
-var _parsePath2 = _interopRequireDefault(_parsePath);
-
-function isAbsolutePath(path) {
-  return typeof path === 'string' && path.charAt(0) === '/';
-}
-
-function ensureSlash() {
-  var path = _DOMUtils.getHashPath();
-
-  if (isAbsolutePath(path)) return true;
-
-  _DOMUtils.replaceHashPath('/' + path);
-
-  return false;
-}
-
-function addQueryStringValueToPath(path, key, value) {
-  return path + (path.indexOf('?') === -1 ? '?' : '&') + (key + '=' + value);
-}
-
-function stripQueryStringValueFromPath(path, key) {
-  return path.replace(new RegExp('[?&]?' + key + '=[a-zA-Z0-9]+'), '');
-}
-
-function getQueryStringValueFromPath(path, key) {
-  var match = path.match(new RegExp('\\?.*?\\b' + key + '=(.+?)\\b'));
-  return match && match[1];
-}
-
-var DefaultQueryKey = '_k';
-
-function createHashHistory() {
-  var options = arguments.length <= 0 || arguments[0] === undefined ? {} : arguments[0];
-
-  !_ExecutionEnvironment.canUseDOM ? process.env.NODE_ENV !== 'production' ? _invariant2['default'](false, 'Hash history needs a DOM') : _invariant2['default'](false) : undefined;
-
-  var queryKey = options.queryKey;
-
-  if (queryKey === undefined || !!queryKey) queryKey = typeof queryKey === 'string' ? queryKey : DefaultQueryKey;
-
-  function getCurrentLocation() {
-    var path = _DOMUtils.getHashPath();
-
-    var key = undefined,
-        state = undefined;
-    if (queryKey) {
-      key = getQueryStringValueFromPath(path, queryKey);
-      path = stripQueryStringValueFromPath(path, queryKey);
-
-      if (key) {
-        state = _DOMStateStorage.readState(key);
-      } else {
-        state = null;
-        key = history.createKey();
-        _DOMUtils.replaceHashPath(addQueryStringValueToPath(path, queryKey, key));
-      }
-    } else {
-      key = state = null;
-    }
-
-    var location = _parsePath2['default'](path);
-
-    return history.createLocation(_extends({}, location, { state: state }), undefined, key);
-  }
-
-  function startHashChangeListener(_ref) {
-    var transitionTo = _ref.transitionTo;
-
-    function hashChangeListener() {
-      if (!ensureSlash()) return; // Always make sure hashes are preceeded with a /.
-
-      transitionTo(getCurrentLocation());
-    }
-
-    ensureSlash();
-    _DOMUtils.addEventListener(window, 'hashchange', hashChangeListener);
-
-    return function () {
-      _DOMUtils.removeEventListener(window, 'hashchange', hashChangeListener);
-    };
-  }
-
-  function finishTransition(location) {
-    var basename = location.basename;
-    var pathname = location.pathname;
-    var search = location.search;
-    var state = location.state;
-    var action = location.action;
-    var key = location.key;
-
-    if (action === _Actions.POP) return; // Nothing to do.
-
-    var path = (basename || '') + pathname + search;
-
-    if (queryKey) {
-      path = addQueryStringValueToPath(path, queryKey, key);
-      _DOMStateStorage.saveState(key, state);
-    } else {
-      // Drop key and state.
-      location.key = location.state = null;
-    }
-
-    var currentHash = _DOMUtils.getHashPath();
-
-    if (action === _Actions.PUSH) {
-      if (currentHash !== path) {
-        window.location.hash = path;
-      } else {
-        process.env.NODE_ENV !== 'production' ? _warning2['default'](false, 'You cannot PUSH the same path using hash history') : undefined;
-      }
-    } else if (currentHash !== path) {
-      // REPLACE
-      _DOMUtils.replaceHashPath(path);
-    }
-  }
-
-  var history = _createDOMHistory2['default'](_extends({}, options, {
-    getCurrentLocation: getCurrentLocation,
-    finishTransition: finishTransition,
-    saveState: _DOMStateStorage.saveState
-  }));
-
-  var listenerCount = 0,
-      stopHashChangeListener = undefined;
-
-  function listenBefore(listener) {
-    if (++listenerCount === 1) stopHashChangeListener = startHashChangeListener(history);
-
-    var unlisten = history.listenBefore(listener);
-
-    return function () {
-      unlisten();
-
-      if (--listenerCount === 0) stopHashChangeListener();
-    };
-  }
-
-  function listen(listener) {
-    if (++listenerCount === 1) stopHashChangeListener = startHashChangeListener(history);
-
-    var unlisten = history.listen(listener);
-
-    return function () {
-      unlisten();
-
-      if (--listenerCount === 0) stopHashChangeListener();
-    };
-  }
-
-  function push(location) {
-    process.env.NODE_ENV !== 'production' ? _warning2['default'](queryKey || location.state == null, 'You cannot use state without a queryKey it will be dropped') : undefined;
-
-    history.push(location);
-  }
-
-  function replace(location) {
-    process.env.NODE_ENV !== 'production' ? _warning2['default'](queryKey || location.state == null, 'You cannot use state without a queryKey it will be dropped') : undefined;
-
-    history.replace(location);
-  }
-
-  var goIsSupportedWithoutReload = _DOMUtils.supportsGoWithoutReloadUsingHash();
-
-  function go(n) {
-    process.env.NODE_ENV !== 'production' ? _warning2['default'](goIsSupportedWithoutReload, 'Hash history go(n) causes a full page reload in this browser') : undefined;
-
-    history.go(n);
-  }
-
-  function createHref(path) {
-    return '#' + history.createHref(path);
-  }
-
-  // deprecated
-  function registerTransitionHook(hook) {
-    if (++listenerCount === 1) stopHashChangeListener = startHashChangeListener(history);
-
-    history.registerTransitionHook(hook);
-  }
-
-  // deprecated
-  function unregisterTransitionHook(hook) {
-    history.unregisterTransitionHook(hook);
-
-    if (--listenerCount === 0) stopHashChangeListener();
-  }
-
-  // deprecated
-  function pushState(state, path) {
-    process.env.NODE_ENV !== 'production' ? _warning2['default'](queryKey || state == null, 'You cannot use state without a queryKey it will be dropped') : undefined;
-
-    history.pushState(state, path);
-  }
-
-  // deprecated
-  function replaceState(state, path) {
-    process.env.NODE_ENV !== 'production' ? _warning2['default'](queryKey || state == null, 'You cannot use state without a queryKey it will be dropped') : undefined;
-
-    history.replaceState(state, path);
-  }
-
-  return _extends({}, history, {
-    listenBefore: listenBefore,
-    listen: listen,
-    push: push,
-    replace: replace,
-    go: go,
-    createHref: createHref,
-
-    registerTransitionHook: registerTransitionHook, // deprecated - warning is in createHistory
-    unregisterTransitionHook: unregisterTransitionHook, // deprecated - warning is in createHistory
-    pushState: pushState, // deprecated - warning is in createHistory
-    replaceState: replaceState // deprecated - warning is in createHistory
-  });
-}
-
-exports['default'] = createHashHistory;
-module.exports = exports['default'];
-}).call(this,require('_process'))
-},{"./Actions":"/mnt/c/swiggis.original/node_modules/history/lib/Actions.js","./DOMStateStorage":"/mnt/c/swiggis.original/node_modules/history/lib/DOMStateStorage.js","./DOMUtils":"/mnt/c/swiggis.original/node_modules/history/lib/DOMUtils.js","./ExecutionEnvironment":"/mnt/c/swiggis.original/node_modules/history/lib/ExecutionEnvironment.js","./createDOMHistory":"/mnt/c/swiggis.original/node_modules/history/lib/createDOMHistory.js","./parsePath":"/mnt/c/swiggis.original/node_modules/history/lib/parsePath.js","_process":"/mnt/c/swiggis.original/node_modules/process/browser.js","invariant":"/mnt/c/swiggis.original/node_modules/invariant/browser.js","warning":"/mnt/c/swiggis.original/node_modules/warning/browser.js"}],"/mnt/c/swiggis.original/node_modules/history/lib/createHistory.js":[function(require,module,exports){
-//import warning from 'warning'
-'use strict';
-
-exports.__esModule = true;
-
-var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { 'default': obj }; }
-
-var _deepEqual = require('deep-equal');
-
-var _deepEqual2 = _interopRequireDefault(_deepEqual);
-
-var _AsyncUtils = require('./AsyncUtils');
-
-var _Actions = require('./Actions');
-
-var _createLocation2 = require('./createLocation');
-
-var _createLocation3 = _interopRequireDefault(_createLocation2);
-
-var _runTransitionHook = require('./runTransitionHook');
-
-var _runTransitionHook2 = _interopRequireDefault(_runTransitionHook);
-
-var _parsePath = require('./parsePath');
-
-var _parsePath2 = _interopRequireDefault(_parsePath);
-
-var _deprecate = require('./deprecate');
-
-var _deprecate2 = _interopRequireDefault(_deprecate);
-
-function createRandomKey(length) {
-  return Math.random().toString(36).substr(2, length);
-}
-
-function locationsAreEqual(a, b) {
-  return a.pathname === b.pathname && a.search === b.search &&
-  //a.action === b.action && // Different action !== location change.
-  a.key === b.key && _deepEqual2['default'](a.state, b.state);
-}
-
-var DefaultKeyLength = 6;
-
-function createHistory() {
-  var options = arguments.length <= 0 || arguments[0] === undefined ? {} : arguments[0];
-  var getCurrentLocation = options.getCurrentLocation;
-  var finishTransition = options.finishTransition;
-  var saveState = options.saveState;
-  var go = options.go;
-  var keyLength = options.keyLength;
-  var getUserConfirmation = options.getUserConfirmation;
-
-  if (typeof keyLength !== 'number') keyLength = DefaultKeyLength;
-
-  var transitionHooks = [];
-
-  function listenBefore(hook) {
-    transitionHooks.push(hook);
-
-    return function () {
-      transitionHooks = transitionHooks.filter(function (item) {
-        return item !== hook;
-      });
-    };
-  }
-
-  var allKeys = [];
-  var changeListeners = [];
-  var location = undefined;
-
-  function getCurrent() {
-    if (pendingLocation && pendingLocation.action === _Actions.POP) {
-      return allKeys.indexOf(pendingLocation.key);
-    } else if (location) {
-      return allKeys.indexOf(location.key);
-    } else {
-      return -1;
-    }
-  }
-
-  function updateLocation(newLocation) {
-    var current = getCurrent();
-
-    location = newLocation;
-
-    if (location.action === _Actions.PUSH) {
-      allKeys = [].concat(allKeys.slice(0, current + 1), [location.key]);
-    } else if (location.action === _Actions.REPLACE) {
-      allKeys[current] = location.key;
-    }
-
-    changeListeners.forEach(function (listener) {
-      listener(location);
-    });
-  }
-
-  function listen(listener) {
-    changeListeners.push(listener);
-
-    if (location) {
-      listener(location);
-    } else {
-      var _location = getCurrentLocation();
-      allKeys = [_location.key];
-      updateLocation(_location);
-    }
-
-    return function () {
-      changeListeners = changeListeners.filter(function (item) {
-        return item !== listener;
-      });
-    };
-  }
-
-  function confirmTransitionTo(location, callback) {
-    _AsyncUtils.loopAsync(transitionHooks.length, function (index, next, done) {
-      _runTransitionHook2['default'](transitionHooks[index], location, function (result) {
-        if (result != null) {
-          done(result);
-        } else {
-          next();
-        }
-      });
-    }, function (message) {
-      if (getUserConfirmation && typeof message === 'string') {
-        getUserConfirmation(message, function (ok) {
-          callback(ok !== false);
-        });
-      } else {
-        callback(message !== false);
-      }
-    });
-  }
-
-  var pendingLocation = undefined;
-
-  function transitionTo(nextLocation) {
-    if (location && locationsAreEqual(location, nextLocation)) return; // Nothing to do.
-
-    pendingLocation = nextLocation;
-
-    confirmTransitionTo(nextLocation, function (ok) {
-      if (pendingLocation !== nextLocation) return; // Transition was interrupted.
-
-      if (ok) {
-        // treat PUSH to current path like REPLACE to be consistent with browsers
-        if (nextLocation.action === _Actions.PUSH) {
-          var prevPath = createPath(location);
-          var nextPath = createPath(nextLocation);
-
-          if (nextPath === prevPath) nextLocation.action = _Actions.REPLACE;
-        }
-
-        if (finishTransition(nextLocation) !== false) updateLocation(nextLocation);
-      } else if (location && nextLocation.action === _Actions.POP) {
-        var prevIndex = allKeys.indexOf(location.key);
-        var nextIndex = allKeys.indexOf(nextLocation.key);
-
-        if (prevIndex !== -1 && nextIndex !== -1) go(prevIndex - nextIndex); // Restore the URL.
-      }
-    });
-  }
-
-  function push(location) {
-    transitionTo(createLocation(location, _Actions.PUSH, createKey()));
-  }
-
-  function replace(location) {
-    transitionTo(createLocation(location, _Actions.REPLACE, createKey()));
-  }
-
-  function goBack() {
-    go(-1);
-  }
-
-  function goForward() {
-    go(1);
-  }
-
-  function createKey() {
-    return createRandomKey(keyLength);
-  }
-
-  function createPath(location) {
-    if (location == null || typeof location === 'string') return location;
-
-    var pathname = location.pathname;
-    var search = location.search;
-    var hash = location.hash;
-
-    var result = pathname;
-
-    if (search) result += search;
-
-    if (hash) result += hash;
-
-    return result;
-  }
-
-  function createHref(location) {
-    return createPath(location);
-  }
-
-  function createLocation(location, action) {
-    var key = arguments.length <= 2 || arguments[2] === undefined ? createKey() : arguments[2];
-
-    if (typeof action === 'object') {
-      //warning(
-      //  false,
-      //  'The state (2nd) argument to history.createLocation is deprecated; use a ' +
-      //  'location descriptor instead'
-      //)
-
-      if (typeof location === 'string') location = _parsePath2['default'](location);
-
-      location = _extends({}, location, { state: action });
-
-      action = key;
-      key = arguments[3] || createKey();
-    }
-
-    return _createLocation3['default'](location, action, key);
-  }
-
-  // deprecated
-  function setState(state) {
-    if (location) {
-      updateLocationState(location, state);
-      updateLocation(location);
-    } else {
-      updateLocationState(getCurrentLocation(), state);
-    }
-  }
-
-  function updateLocationState(location, state) {
-    location.state = _extends({}, location.state, state);
-    saveState(location.key, location.state);
-  }
-
-  // deprecated
-  function registerTransitionHook(hook) {
-    if (transitionHooks.indexOf(hook) === -1) transitionHooks.push(hook);
-  }
-
-  // deprecated
-  function unregisterTransitionHook(hook) {
-    transitionHooks = transitionHooks.filter(function (item) {
-      return item !== hook;
-    });
-  }
-
-  // deprecated
-  function pushState(state, path) {
-    if (typeof path === 'string') path = _parsePath2['default'](path);
-
-    push(_extends({ state: state }, path));
-  }
-
-  // deprecated
-  function replaceState(state, path) {
-    if (typeof path === 'string') path = _parsePath2['default'](path);
-
-    replace(_extends({ state: state }, path));
-  }
-
-  return {
-    listenBefore: listenBefore,
-    listen: listen,
-    transitionTo: transitionTo,
-    push: push,
-    replace: replace,
-    go: go,
-    goBack: goBack,
-    goForward: goForward,
-    createKey: createKey,
-    createPath: createPath,
-    createHref: createHref,
-    createLocation: createLocation,
-
-    setState: _deprecate2['default'](setState, 'setState is deprecated; use location.key to save state instead'),
-    registerTransitionHook: _deprecate2['default'](registerTransitionHook, 'registerTransitionHook is deprecated; use listenBefore instead'),
-    unregisterTransitionHook: _deprecate2['default'](unregisterTransitionHook, 'unregisterTransitionHook is deprecated; use the callback returned from listenBefore instead'),
-    pushState: _deprecate2['default'](pushState, 'pushState is deprecated; use push instead'),
-    replaceState: _deprecate2['default'](replaceState, 'replaceState is deprecated; use replace instead')
-  };
-}
-
-exports['default'] = createHistory;
-module.exports = exports['default'];
-},{"./Actions":"/mnt/c/swiggis.original/node_modules/history/lib/Actions.js","./AsyncUtils":"/mnt/c/swiggis.original/node_modules/history/lib/AsyncUtils.js","./createLocation":"/mnt/c/swiggis.original/node_modules/history/lib/createLocation.js","./deprecate":"/mnt/c/swiggis.original/node_modules/history/lib/deprecate.js","./parsePath":"/mnt/c/swiggis.original/node_modules/history/lib/parsePath.js","./runTransitionHook":"/mnt/c/swiggis.original/node_modules/history/lib/runTransitionHook.js","deep-equal":"/mnt/c/swiggis.original/node_modules/deep-equal/index.js"}],"/mnt/c/swiggis.original/node_modules/history/lib/createLocation.js":[function(require,module,exports){
-//import warning from 'warning'
-'use strict';
-
-exports.__esModule = true;
-
-var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { 'default': obj }; }
-
-var _Actions = require('./Actions');
-
-var _parsePath = require('./parsePath');
-
-var _parsePath2 = _interopRequireDefault(_parsePath);
-
-function createLocation() {
-  var location = arguments.length <= 0 || arguments[0] === undefined ? '/' : arguments[0];
-  var action = arguments.length <= 1 || arguments[1] === undefined ? _Actions.POP : arguments[1];
-  var key = arguments.length <= 2 || arguments[2] === undefined ? null : arguments[2];
-
-  var _fourthArg = arguments.length <= 3 || arguments[3] === undefined ? null : arguments[3];
-
-  if (typeof location === 'string') location = _parsePath2['default'](location);
-
-  if (typeof action === 'object') {
-    //warning(
-    //  false,
-    //  'The state (2nd) argument to createLocation is deprecated; use a ' +
-    //  'location descriptor instead'
-    //)
-
-    location = _extends({}, location, { state: action });
-
-    action = key || _Actions.POP;
-    key = _fourthArg;
-  }
-
-  var pathname = location.pathname || '/';
-  var search = location.search || '';
-  var hash = location.hash || '';
-  var state = location.state || null;
-
-  return {
-    pathname: pathname,
-    search: search,
-    hash: hash,
-    state: state,
-    action: action,
-    key: key
-  };
-}
-
-exports['default'] = createLocation;
-module.exports = exports['default'];
-},{"./Actions":"/mnt/c/swiggis.original/node_modules/history/lib/Actions.js","./parsePath":"/mnt/c/swiggis.original/node_modules/history/lib/parsePath.js"}],"/mnt/c/swiggis.original/node_modules/history/lib/deprecate.js":[function(require,module,exports){
-//import warning from 'warning'
-
-"use strict";
-
-exports.__esModule = true;
-function deprecate(fn) {
-  return fn;
-  //return function () {
-  //  warning(false, '[history] ' + message)
-  //  return fn.apply(this, arguments)
-  //}
-}
-
-exports["default"] = deprecate;
-module.exports = exports["default"];
-},{}],"/mnt/c/swiggis.original/node_modules/history/lib/extractPath.js":[function(require,module,exports){
-"use strict";
-
-exports.__esModule = true;
-function extractPath(string) {
-  var match = string.match(/^https?:\/\/[^\/]*/);
-
-  if (match == null) return string;
-
-  return string.substring(match[0].length);
-}
-
-exports["default"] = extractPath;
-module.exports = exports["default"];
-},{}],"/mnt/c/swiggis.original/node_modules/history/lib/parsePath.js":[function(require,module,exports){
-(function (process){
-'use strict';
-
-exports.__esModule = true;
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { 'default': obj }; }
-
-var _warning = require('warning');
-
-var _warning2 = _interopRequireDefault(_warning);
-
-var _extractPath = require('./extractPath');
-
-var _extractPath2 = _interopRequireDefault(_extractPath);
-
-function parsePath(path) {
-  var pathname = _extractPath2['default'](path);
-  var search = '';
-  var hash = '';
-
-  process.env.NODE_ENV !== 'production' ? _warning2['default'](path === pathname, 'A path must be pathname + search + hash only, not a fully qualified URL like "%s"', path) : undefined;
-
-  var hashIndex = pathname.indexOf('#');
-  if (hashIndex !== -1) {
-    hash = pathname.substring(hashIndex);
-    pathname = pathname.substring(0, hashIndex);
-  }
-
-  var searchIndex = pathname.indexOf('?');
-  if (searchIndex !== -1) {
-    search = pathname.substring(searchIndex);
-    pathname = pathname.substring(0, searchIndex);
-  }
-
-  if (pathname === '') pathname = '/';
-
-  return {
-    pathname: pathname,
-    search: search,
-    hash: hash
-  };
-}
-
-exports['default'] = parsePath;
-module.exports = exports['default'];
-}).call(this,require('_process'))
-},{"./extractPath":"/mnt/c/swiggis.original/node_modules/history/lib/extractPath.js","_process":"/mnt/c/swiggis.original/node_modules/process/browser.js","warning":"/mnt/c/swiggis.original/node_modules/warning/browser.js"}],"/mnt/c/swiggis.original/node_modules/history/lib/runTransitionHook.js":[function(require,module,exports){
-(function (process){
-'use strict';
-
-exports.__esModule = true;
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { 'default': obj }; }
-
-var _warning = require('warning');
-
-var _warning2 = _interopRequireDefault(_warning);
-
-function runTransitionHook(hook, location, callback) {
-  var result = hook(location, callback);
-
-  if (hook.length < 2) {
-    // Assume the hook runs synchronously and automatically
-    // call the callback with the return value.
-    callback(result);
-  } else {
-    process.env.NODE_ENV !== 'production' ? _warning2['default'](result === undefined, 'You should not "return" in a transition hook with a callback argument; call the callback instead') : undefined;
-  }
-}
-
-exports['default'] = runTransitionHook;
-module.exports = exports['default'];
-}).call(this,require('_process'))
-},{"_process":"/mnt/c/swiggis.original/node_modules/process/browser.js","warning":"/mnt/c/swiggis.original/node_modules/warning/browser.js"}],"/mnt/c/swiggis.original/node_modules/hoist-non-react-statics/index.js":[function(require,module,exports){
+},{"./emptyFunction":"C:\\swiggis.austin\\node_modules\\fbjs\\lib\\emptyFunction.js","_process":"C:\\swiggis.austin\\node_modules\\process\\browser.js"}],"C:\\swiggis.austin\\node_modules\\hoist-non-react-statics\\index.js":[function(require,module,exports){
 /**
  * Copyright 2015, Yahoo! Inc.
  * Copyrights licensed under the New BSD License. See the accompanying LICENSE file for terms.
@@ -4005,7 +3043,7 @@ module.exports = function hoistNonReactStatics(targetComponent, sourceComponent,
     return targetComponent;
 };
 
-},{}],"/mnt/c/swiggis.original/node_modules/invariant/browser.js":[function(require,module,exports){
+},{}],"C:\\swiggis.austin\\node_modules\\invariant\\browser.js":[function(require,module,exports){
 (function (process){
 /**
  * Copyright 2013-2015, Facebook, Inc.
@@ -4060,7 +3098,7 @@ var invariant = function(condition, format, a, b, c, d, e, f) {
 module.exports = invariant;
 
 }).call(this,require('_process'))
-},{"_process":"/mnt/c/swiggis.original/node_modules/process/browser.js"}],"/mnt/c/swiggis.original/node_modules/keycode/index.js":[function(require,module,exports){
+},{"_process":"C:\\swiggis.austin\\node_modules\\process\\browser.js"}],"C:\\swiggis.austin\\node_modules\\keycode\\index.js":[function(require,module,exports){
 // Source: http://jsfiddle.net/vWx8V/
 // http://stackoverflow.com/questions/5603195/full-list-of-javascript-keycodes
 
@@ -4237,7 +3275,7 @@ for (var alias in aliases) {
   codes[alias] = aliases[alias]
 }
 
-},{}],"/mnt/c/swiggis.original/node_modules/lodash-compat/array/last.js":[function(require,module,exports){
+},{}],"C:\\swiggis.austin\\node_modules\\lodash-compat\\array\\last.js":[function(require,module,exports){
 /**
  * Gets the last element of `array`.
  *
@@ -4258,7 +3296,7 @@ function last(array) {
 
 module.exports = last;
 
-},{}],"/mnt/c/swiggis.original/node_modules/lodash-compat/collection/find.js":[function(require,module,exports){
+},{}],"C:\\swiggis.austin\\node_modules\\lodash-compat\\collection\\find.js":[function(require,module,exports){
 var baseEach = require('../internal/baseEach'),
     createFind = require('../internal/createFind');
 
@@ -4316,7 +3354,7 @@ var find = createFind(baseEach);
 
 module.exports = find;
 
-},{"../internal/baseEach":"/mnt/c/swiggis.original/node_modules/lodash-compat/internal/baseEach.js","../internal/createFind":"/mnt/c/swiggis.original/node_modules/lodash-compat/internal/createFind.js"}],"/mnt/c/swiggis.original/node_modules/lodash-compat/function/restParam.js":[function(require,module,exports){
+},{"../internal/baseEach":"C:\\swiggis.austin\\node_modules\\lodash-compat\\internal\\baseEach.js","../internal/createFind":"C:\\swiggis.austin\\node_modules\\lodash-compat\\internal\\createFind.js"}],"C:\\swiggis.austin\\node_modules\\lodash-compat\\function\\restParam.js":[function(require,module,exports){
 /** Used as the `TypeError` message for "Functions" methods. */
 var FUNC_ERROR_TEXT = 'Expected a function';
 
@@ -4376,7 +3414,7 @@ function restParam(func, start) {
 
 module.exports = restParam;
 
-},{}],"/mnt/c/swiggis.original/node_modules/lodash-compat/internal/SetCache.js":[function(require,module,exports){
+},{}],"C:\\swiggis.austin\\node_modules\\lodash-compat\\internal\\SetCache.js":[function(require,module,exports){
 (function (global){
 var cachePush = require('./cachePush'),
     getNative = require('./getNative');
@@ -4409,7 +3447,7 @@ SetCache.prototype.push = cachePush;
 module.exports = SetCache;
 
 }).call(this,typeof global !== "undefined" ? global : typeof self !== "undefined" ? self : typeof window !== "undefined" ? window : {})
-},{"./cachePush":"/mnt/c/swiggis.original/node_modules/lodash-compat/internal/cachePush.js","./getNative":"/mnt/c/swiggis.original/node_modules/lodash-compat/internal/getNative.js"}],"/mnt/c/swiggis.original/node_modules/lodash-compat/internal/arrayEach.js":[function(require,module,exports){
+},{"./cachePush":"C:\\swiggis.austin\\node_modules\\lodash-compat\\internal\\cachePush.js","./getNative":"C:\\swiggis.austin\\node_modules\\lodash-compat\\internal\\getNative.js"}],"C:\\swiggis.austin\\node_modules\\lodash-compat\\internal\\arrayEach.js":[function(require,module,exports){
 /**
  * A specialized version of `_.forEach` for arrays without support for callback
  * shorthands and `this` binding.
@@ -4433,7 +3471,7 @@ function arrayEach(array, iteratee) {
 
 module.exports = arrayEach;
 
-},{}],"/mnt/c/swiggis.original/node_modules/lodash-compat/internal/arrayMap.js":[function(require,module,exports){
+},{}],"C:\\swiggis.austin\\node_modules\\lodash-compat\\internal\\arrayMap.js":[function(require,module,exports){
 /**
  * A specialized version of `_.map` for arrays without support for callback
  * shorthands and `this` binding.
@@ -4456,7 +3494,7 @@ function arrayMap(array, iteratee) {
 
 module.exports = arrayMap;
 
-},{}],"/mnt/c/swiggis.original/node_modules/lodash-compat/internal/arrayPush.js":[function(require,module,exports){
+},{}],"C:\\swiggis.austin\\node_modules\\lodash-compat\\internal\\arrayPush.js":[function(require,module,exports){
 /**
  * Appends the elements of `values` to `array`.
  *
@@ -4478,7 +3516,7 @@ function arrayPush(array, values) {
 
 module.exports = arrayPush;
 
-},{}],"/mnt/c/swiggis.original/node_modules/lodash-compat/internal/arraySome.js":[function(require,module,exports){
+},{}],"C:\\swiggis.austin\\node_modules\\lodash-compat\\internal\\arraySome.js":[function(require,module,exports){
 /**
  * A specialized version of `_.some` for arrays without support for callback
  * shorthands and `this` binding.
@@ -4503,7 +3541,7 @@ function arraySome(array, predicate) {
 
 module.exports = arraySome;
 
-},{}],"/mnt/c/swiggis.original/node_modules/lodash-compat/internal/baseCallback.js":[function(require,module,exports){
+},{}],"C:\\swiggis.austin\\node_modules\\lodash-compat\\internal\\baseCallback.js":[function(require,module,exports){
 var baseMatches = require('./baseMatches'),
     baseMatchesProperty = require('./baseMatchesProperty'),
     bindCallback = require('./bindCallback'),
@@ -4540,7 +3578,7 @@ function baseCallback(func, thisArg, argCount) {
 
 module.exports = baseCallback;
 
-},{"../utility/identity":"/mnt/c/swiggis.original/node_modules/lodash-compat/utility/identity.js","../utility/property":"/mnt/c/swiggis.original/node_modules/lodash-compat/utility/property.js","./baseMatches":"/mnt/c/swiggis.original/node_modules/lodash-compat/internal/baseMatches.js","./baseMatchesProperty":"/mnt/c/swiggis.original/node_modules/lodash-compat/internal/baseMatchesProperty.js","./bindCallback":"/mnt/c/swiggis.original/node_modules/lodash-compat/internal/bindCallback.js"}],"/mnt/c/swiggis.original/node_modules/lodash-compat/internal/baseDifference.js":[function(require,module,exports){
+},{"../utility/identity":"C:\\swiggis.austin\\node_modules\\lodash-compat\\utility\\identity.js","../utility/property":"C:\\swiggis.austin\\node_modules\\lodash-compat\\utility\\property.js","./baseMatches":"C:\\swiggis.austin\\node_modules\\lodash-compat\\internal\\baseMatches.js","./baseMatchesProperty":"C:\\swiggis.austin\\node_modules\\lodash-compat\\internal\\baseMatchesProperty.js","./bindCallback":"C:\\swiggis.austin\\node_modules\\lodash-compat\\internal\\bindCallback.js"}],"C:\\swiggis.austin\\node_modules\\lodash-compat\\internal\\baseDifference.js":[function(require,module,exports){
 var baseIndexOf = require('./baseIndexOf'),
     cacheIndexOf = require('./cacheIndexOf'),
     createCache = require('./createCache');
@@ -4597,7 +3635,7 @@ function baseDifference(array, values) {
 
 module.exports = baseDifference;
 
-},{"./baseIndexOf":"/mnt/c/swiggis.original/node_modules/lodash-compat/internal/baseIndexOf.js","./cacheIndexOf":"/mnt/c/swiggis.original/node_modules/lodash-compat/internal/cacheIndexOf.js","./createCache":"/mnt/c/swiggis.original/node_modules/lodash-compat/internal/createCache.js"}],"/mnt/c/swiggis.original/node_modules/lodash-compat/internal/baseEach.js":[function(require,module,exports){
+},{"./baseIndexOf":"C:\\swiggis.austin\\node_modules\\lodash-compat\\internal\\baseIndexOf.js","./cacheIndexOf":"C:\\swiggis.austin\\node_modules\\lodash-compat\\internal\\cacheIndexOf.js","./createCache":"C:\\swiggis.austin\\node_modules\\lodash-compat\\internal\\createCache.js"}],"C:\\swiggis.austin\\node_modules\\lodash-compat\\internal\\baseEach.js":[function(require,module,exports){
 var baseForOwn = require('./baseForOwn'),
     createBaseEach = require('./createBaseEach');
 
@@ -4614,7 +3652,7 @@ var baseEach = createBaseEach(baseForOwn);
 
 module.exports = baseEach;
 
-},{"./baseForOwn":"/mnt/c/swiggis.original/node_modules/lodash-compat/internal/baseForOwn.js","./createBaseEach":"/mnt/c/swiggis.original/node_modules/lodash-compat/internal/createBaseEach.js"}],"/mnt/c/swiggis.original/node_modules/lodash-compat/internal/baseFind.js":[function(require,module,exports){
+},{"./baseForOwn":"C:\\swiggis.austin\\node_modules\\lodash-compat\\internal\\baseForOwn.js","./createBaseEach":"C:\\swiggis.austin\\node_modules\\lodash-compat\\internal\\createBaseEach.js"}],"C:\\swiggis.austin\\node_modules\\lodash-compat\\internal\\baseFind.js":[function(require,module,exports){
 /**
  * The base implementation of `_.find`, `_.findLast`, `_.findKey`, and `_.findLastKey`,
  * without support for callback shorthands and `this` binding, which iterates
@@ -4641,7 +3679,7 @@ function baseFind(collection, predicate, eachFunc, retKey) {
 
 module.exports = baseFind;
 
-},{}],"/mnt/c/swiggis.original/node_modules/lodash-compat/internal/baseFindIndex.js":[function(require,module,exports){
+},{}],"C:\\swiggis.austin\\node_modules\\lodash-compat\\internal\\baseFindIndex.js":[function(require,module,exports){
 /**
  * The base implementation of `_.findIndex` and `_.findLastIndex` without
  * support for callback shorthands and `this` binding.
@@ -4666,7 +3704,7 @@ function baseFindIndex(array, predicate, fromRight) {
 
 module.exports = baseFindIndex;
 
-},{}],"/mnt/c/swiggis.original/node_modules/lodash-compat/internal/baseFlatten.js":[function(require,module,exports){
+},{}],"C:\\swiggis.austin\\node_modules\\lodash-compat\\internal\\baseFlatten.js":[function(require,module,exports){
 var arrayPush = require('./arrayPush'),
     isArguments = require('../lang/isArguments'),
     isArray = require('../lang/isArray'),
@@ -4709,7 +3747,7 @@ function baseFlatten(array, isDeep, isStrict, result) {
 
 module.exports = baseFlatten;
 
-},{"../lang/isArguments":"/mnt/c/swiggis.original/node_modules/lodash-compat/lang/isArguments.js","../lang/isArray":"/mnt/c/swiggis.original/node_modules/lodash-compat/lang/isArray.js","./arrayPush":"/mnt/c/swiggis.original/node_modules/lodash-compat/internal/arrayPush.js","./isArrayLike":"/mnt/c/swiggis.original/node_modules/lodash-compat/internal/isArrayLike.js","./isObjectLike":"/mnt/c/swiggis.original/node_modules/lodash-compat/internal/isObjectLike.js"}],"/mnt/c/swiggis.original/node_modules/lodash-compat/internal/baseFor.js":[function(require,module,exports){
+},{"../lang/isArguments":"C:\\swiggis.austin\\node_modules\\lodash-compat\\lang\\isArguments.js","../lang/isArray":"C:\\swiggis.austin\\node_modules\\lodash-compat\\lang\\isArray.js","./arrayPush":"C:\\swiggis.austin\\node_modules\\lodash-compat\\internal\\arrayPush.js","./isArrayLike":"C:\\swiggis.austin\\node_modules\\lodash-compat\\internal\\isArrayLike.js","./isObjectLike":"C:\\swiggis.austin\\node_modules\\lodash-compat\\internal\\isObjectLike.js"}],"C:\\swiggis.austin\\node_modules\\lodash-compat\\internal\\baseFor.js":[function(require,module,exports){
 var createBaseFor = require('./createBaseFor');
 
 /**
@@ -4728,7 +3766,7 @@ var baseFor = createBaseFor();
 
 module.exports = baseFor;
 
-},{"./createBaseFor":"/mnt/c/swiggis.original/node_modules/lodash-compat/internal/createBaseFor.js"}],"/mnt/c/swiggis.original/node_modules/lodash-compat/internal/baseForIn.js":[function(require,module,exports){
+},{"./createBaseFor":"C:\\swiggis.austin\\node_modules\\lodash-compat\\internal\\createBaseFor.js"}],"C:\\swiggis.austin\\node_modules\\lodash-compat\\internal\\baseForIn.js":[function(require,module,exports){
 var baseFor = require('./baseFor'),
     keysIn = require('../object/keysIn');
 
@@ -4747,7 +3785,7 @@ function baseForIn(object, iteratee) {
 
 module.exports = baseForIn;
 
-},{"../object/keysIn":"/mnt/c/swiggis.original/node_modules/lodash-compat/object/keysIn.js","./baseFor":"/mnt/c/swiggis.original/node_modules/lodash-compat/internal/baseFor.js"}],"/mnt/c/swiggis.original/node_modules/lodash-compat/internal/baseForOwn.js":[function(require,module,exports){
+},{"../object/keysIn":"C:\\swiggis.austin\\node_modules\\lodash-compat\\object\\keysIn.js","./baseFor":"C:\\swiggis.austin\\node_modules\\lodash-compat\\internal\\baseFor.js"}],"C:\\swiggis.austin\\node_modules\\lodash-compat\\internal\\baseForOwn.js":[function(require,module,exports){
 var baseFor = require('./baseFor'),
     keys = require('../object/keys');
 
@@ -4766,7 +3804,7 @@ function baseForOwn(object, iteratee) {
 
 module.exports = baseForOwn;
 
-},{"../object/keys":"/mnt/c/swiggis.original/node_modules/lodash-compat/object/keys.js","./baseFor":"/mnt/c/swiggis.original/node_modules/lodash-compat/internal/baseFor.js"}],"/mnt/c/swiggis.original/node_modules/lodash-compat/internal/baseGet.js":[function(require,module,exports){
+},{"../object/keys":"C:\\swiggis.austin\\node_modules\\lodash-compat\\object\\keys.js","./baseFor":"C:\\swiggis.austin\\node_modules\\lodash-compat\\internal\\baseFor.js"}],"C:\\swiggis.austin\\node_modules\\lodash-compat\\internal\\baseGet.js":[function(require,module,exports){
 var toObject = require('./toObject');
 
 /**
@@ -4798,7 +3836,7 @@ function baseGet(object, path, pathKey) {
 
 module.exports = baseGet;
 
-},{"./toObject":"/mnt/c/swiggis.original/node_modules/lodash-compat/internal/toObject.js"}],"/mnt/c/swiggis.original/node_modules/lodash-compat/internal/baseIndexOf.js":[function(require,module,exports){
+},{"./toObject":"C:\\swiggis.austin\\node_modules\\lodash-compat\\internal\\toObject.js"}],"C:\\swiggis.austin\\node_modules\\lodash-compat\\internal\\baseIndexOf.js":[function(require,module,exports){
 var indexOfNaN = require('./indexOfNaN');
 
 /**
@@ -4827,7 +3865,7 @@ function baseIndexOf(array, value, fromIndex) {
 
 module.exports = baseIndexOf;
 
-},{"./indexOfNaN":"/mnt/c/swiggis.original/node_modules/lodash-compat/internal/indexOfNaN.js"}],"/mnt/c/swiggis.original/node_modules/lodash-compat/internal/baseIsEqual.js":[function(require,module,exports){
+},{"./indexOfNaN":"C:\\swiggis.austin\\node_modules\\lodash-compat\\internal\\indexOfNaN.js"}],"C:\\swiggis.austin\\node_modules\\lodash-compat\\internal\\baseIsEqual.js":[function(require,module,exports){
 var baseIsEqualDeep = require('./baseIsEqualDeep'),
     isObject = require('../lang/isObject'),
     isObjectLike = require('./isObjectLike');
@@ -4857,7 +3895,7 @@ function baseIsEqual(value, other, customizer, isLoose, stackA, stackB) {
 
 module.exports = baseIsEqual;
 
-},{"../lang/isObject":"/mnt/c/swiggis.original/node_modules/lodash-compat/lang/isObject.js","./baseIsEqualDeep":"/mnt/c/swiggis.original/node_modules/lodash-compat/internal/baseIsEqualDeep.js","./isObjectLike":"/mnt/c/swiggis.original/node_modules/lodash-compat/internal/isObjectLike.js"}],"/mnt/c/swiggis.original/node_modules/lodash-compat/internal/baseIsEqualDeep.js":[function(require,module,exports){
+},{"../lang/isObject":"C:\\swiggis.austin\\node_modules\\lodash-compat\\lang\\isObject.js","./baseIsEqualDeep":"C:\\swiggis.austin\\node_modules\\lodash-compat\\internal\\baseIsEqualDeep.js","./isObjectLike":"C:\\swiggis.austin\\node_modules\\lodash-compat\\internal\\isObjectLike.js"}],"C:\\swiggis.austin\\node_modules\\lodash-compat\\internal\\baseIsEqualDeep.js":[function(require,module,exports){
 var equalArrays = require('./equalArrays'),
     equalByTag = require('./equalByTag'),
     equalObjects = require('./equalObjects'),
@@ -4962,7 +4000,7 @@ function baseIsEqualDeep(object, other, equalFunc, customizer, isLoose, stackA, 
 
 module.exports = baseIsEqualDeep;
 
-},{"../lang/isArray":"/mnt/c/swiggis.original/node_modules/lodash-compat/lang/isArray.js","../lang/isTypedArray":"/mnt/c/swiggis.original/node_modules/lodash-compat/lang/isTypedArray.js","./equalArrays":"/mnt/c/swiggis.original/node_modules/lodash-compat/internal/equalArrays.js","./equalByTag":"/mnt/c/swiggis.original/node_modules/lodash-compat/internal/equalByTag.js","./equalObjects":"/mnt/c/swiggis.original/node_modules/lodash-compat/internal/equalObjects.js","./isHostObject":"/mnt/c/swiggis.original/node_modules/lodash-compat/internal/isHostObject.js"}],"/mnt/c/swiggis.original/node_modules/lodash-compat/internal/baseIsMatch.js":[function(require,module,exports){
+},{"../lang/isArray":"C:\\swiggis.austin\\node_modules\\lodash-compat\\lang\\isArray.js","../lang/isTypedArray":"C:\\swiggis.austin\\node_modules\\lodash-compat\\lang\\isTypedArray.js","./equalArrays":"C:\\swiggis.austin\\node_modules\\lodash-compat\\internal\\equalArrays.js","./equalByTag":"C:\\swiggis.austin\\node_modules\\lodash-compat\\internal\\equalByTag.js","./equalObjects":"C:\\swiggis.austin\\node_modules\\lodash-compat\\internal\\equalObjects.js","./isHostObject":"C:\\swiggis.austin\\node_modules\\lodash-compat\\internal\\isHostObject.js"}],"C:\\swiggis.austin\\node_modules\\lodash-compat\\internal\\baseIsMatch.js":[function(require,module,exports){
 var baseIsEqual = require('./baseIsEqual'),
     toObject = require('./toObject');
 
@@ -5016,7 +4054,7 @@ function baseIsMatch(object, matchData, customizer) {
 
 module.exports = baseIsMatch;
 
-},{"./baseIsEqual":"/mnt/c/swiggis.original/node_modules/lodash-compat/internal/baseIsEqual.js","./toObject":"/mnt/c/swiggis.original/node_modules/lodash-compat/internal/toObject.js"}],"/mnt/c/swiggis.original/node_modules/lodash-compat/internal/baseMatches.js":[function(require,module,exports){
+},{"./baseIsEqual":"C:\\swiggis.austin\\node_modules\\lodash-compat\\internal\\baseIsEqual.js","./toObject":"C:\\swiggis.austin\\node_modules\\lodash-compat\\internal\\toObject.js"}],"C:\\swiggis.austin\\node_modules\\lodash-compat\\internal\\baseMatches.js":[function(require,module,exports){
 var baseIsMatch = require('./baseIsMatch'),
     getMatchData = require('./getMatchData'),
     toObject = require('./toObject');
@@ -5049,7 +4087,7 @@ function baseMatches(source) {
 
 module.exports = baseMatches;
 
-},{"./baseIsMatch":"/mnt/c/swiggis.original/node_modules/lodash-compat/internal/baseIsMatch.js","./getMatchData":"/mnt/c/swiggis.original/node_modules/lodash-compat/internal/getMatchData.js","./toObject":"/mnt/c/swiggis.original/node_modules/lodash-compat/internal/toObject.js"}],"/mnt/c/swiggis.original/node_modules/lodash-compat/internal/baseMatchesProperty.js":[function(require,module,exports){
+},{"./baseIsMatch":"C:\\swiggis.austin\\node_modules\\lodash-compat\\internal\\baseIsMatch.js","./getMatchData":"C:\\swiggis.austin\\node_modules\\lodash-compat\\internal\\getMatchData.js","./toObject":"C:\\swiggis.austin\\node_modules\\lodash-compat\\internal\\toObject.js"}],"C:\\swiggis.austin\\node_modules\\lodash-compat\\internal\\baseMatchesProperty.js":[function(require,module,exports){
 var baseGet = require('./baseGet'),
     baseIsEqual = require('./baseIsEqual'),
     baseSlice = require('./baseSlice'),
@@ -5096,7 +4134,7 @@ function baseMatchesProperty(path, srcValue) {
 
 module.exports = baseMatchesProperty;
 
-},{"../array/last":"/mnt/c/swiggis.original/node_modules/lodash-compat/array/last.js","../lang/isArray":"/mnt/c/swiggis.original/node_modules/lodash-compat/lang/isArray.js","./baseGet":"/mnt/c/swiggis.original/node_modules/lodash-compat/internal/baseGet.js","./baseIsEqual":"/mnt/c/swiggis.original/node_modules/lodash-compat/internal/baseIsEqual.js","./baseSlice":"/mnt/c/swiggis.original/node_modules/lodash-compat/internal/baseSlice.js","./isKey":"/mnt/c/swiggis.original/node_modules/lodash-compat/internal/isKey.js","./isStrictComparable":"/mnt/c/swiggis.original/node_modules/lodash-compat/internal/isStrictComparable.js","./toObject":"/mnt/c/swiggis.original/node_modules/lodash-compat/internal/toObject.js","./toPath":"/mnt/c/swiggis.original/node_modules/lodash-compat/internal/toPath.js"}],"/mnt/c/swiggis.original/node_modules/lodash-compat/internal/baseProperty.js":[function(require,module,exports){
+},{"../array/last":"C:\\swiggis.austin\\node_modules\\lodash-compat\\array\\last.js","../lang/isArray":"C:\\swiggis.austin\\node_modules\\lodash-compat\\lang\\isArray.js","./baseGet":"C:\\swiggis.austin\\node_modules\\lodash-compat\\internal\\baseGet.js","./baseIsEqual":"C:\\swiggis.austin\\node_modules\\lodash-compat\\internal\\baseIsEqual.js","./baseSlice":"C:\\swiggis.austin\\node_modules\\lodash-compat\\internal\\baseSlice.js","./isKey":"C:\\swiggis.austin\\node_modules\\lodash-compat\\internal\\isKey.js","./isStrictComparable":"C:\\swiggis.austin\\node_modules\\lodash-compat\\internal\\isStrictComparable.js","./toObject":"C:\\swiggis.austin\\node_modules\\lodash-compat\\internal\\toObject.js","./toPath":"C:\\swiggis.austin\\node_modules\\lodash-compat\\internal\\toPath.js"}],"C:\\swiggis.austin\\node_modules\\lodash-compat\\internal\\baseProperty.js":[function(require,module,exports){
 var toObject = require('./toObject');
 
 /**
@@ -5114,7 +4152,7 @@ function baseProperty(key) {
 
 module.exports = baseProperty;
 
-},{"./toObject":"/mnt/c/swiggis.original/node_modules/lodash-compat/internal/toObject.js"}],"/mnt/c/swiggis.original/node_modules/lodash-compat/internal/basePropertyDeep.js":[function(require,module,exports){
+},{"./toObject":"C:\\swiggis.austin\\node_modules\\lodash-compat\\internal\\toObject.js"}],"C:\\swiggis.austin\\node_modules\\lodash-compat\\internal\\basePropertyDeep.js":[function(require,module,exports){
 var baseGet = require('./baseGet'),
     toPath = require('./toPath');
 
@@ -5135,7 +4173,7 @@ function basePropertyDeep(path) {
 
 module.exports = basePropertyDeep;
 
-},{"./baseGet":"/mnt/c/swiggis.original/node_modules/lodash-compat/internal/baseGet.js","./toPath":"/mnt/c/swiggis.original/node_modules/lodash-compat/internal/toPath.js"}],"/mnt/c/swiggis.original/node_modules/lodash-compat/internal/baseSlice.js":[function(require,module,exports){
+},{"./baseGet":"C:\\swiggis.austin\\node_modules\\lodash-compat\\internal\\baseGet.js","./toPath":"C:\\swiggis.austin\\node_modules\\lodash-compat\\internal\\toPath.js"}],"C:\\swiggis.austin\\node_modules\\lodash-compat\\internal\\baseSlice.js":[function(require,module,exports){
 /**
  * The base implementation of `_.slice` without an iteratee call guard.
  *
@@ -5169,7 +4207,7 @@ function baseSlice(array, start, end) {
 
 module.exports = baseSlice;
 
-},{}],"/mnt/c/swiggis.original/node_modules/lodash-compat/internal/baseToString.js":[function(require,module,exports){
+},{}],"C:\\swiggis.austin\\node_modules\\lodash-compat\\internal\\baseToString.js":[function(require,module,exports){
 /**
  * Converts `value` to a string if it's not one. An empty string is returned
  * for `null` or `undefined` values.
@@ -5184,7 +4222,7 @@ function baseToString(value) {
 
 module.exports = baseToString;
 
-},{}],"/mnt/c/swiggis.original/node_modules/lodash-compat/internal/bindCallback.js":[function(require,module,exports){
+},{}],"C:\\swiggis.austin\\node_modules\\lodash-compat\\internal\\bindCallback.js":[function(require,module,exports){
 var identity = require('../utility/identity');
 
 /**
@@ -5225,7 +4263,7 @@ function bindCallback(func, thisArg, argCount) {
 
 module.exports = bindCallback;
 
-},{"../utility/identity":"/mnt/c/swiggis.original/node_modules/lodash-compat/utility/identity.js"}],"/mnt/c/swiggis.original/node_modules/lodash-compat/internal/cacheIndexOf.js":[function(require,module,exports){
+},{"../utility/identity":"C:\\swiggis.austin\\node_modules\\lodash-compat\\utility\\identity.js"}],"C:\\swiggis.austin\\node_modules\\lodash-compat\\internal\\cacheIndexOf.js":[function(require,module,exports){
 var isObject = require('../lang/isObject');
 
 /**
@@ -5246,7 +4284,7 @@ function cacheIndexOf(cache, value) {
 
 module.exports = cacheIndexOf;
 
-},{"../lang/isObject":"/mnt/c/swiggis.original/node_modules/lodash-compat/lang/isObject.js"}],"/mnt/c/swiggis.original/node_modules/lodash-compat/internal/cachePush.js":[function(require,module,exports){
+},{"../lang/isObject":"C:\\swiggis.austin\\node_modules\\lodash-compat\\lang\\isObject.js"}],"C:\\swiggis.austin\\node_modules\\lodash-compat\\internal\\cachePush.js":[function(require,module,exports){
 var isObject = require('../lang/isObject');
 
 /**
@@ -5268,7 +4306,7 @@ function cachePush(value) {
 
 module.exports = cachePush;
 
-},{"../lang/isObject":"/mnt/c/swiggis.original/node_modules/lodash-compat/lang/isObject.js"}],"/mnt/c/swiggis.original/node_modules/lodash-compat/internal/createBaseEach.js":[function(require,module,exports){
+},{"../lang/isObject":"C:\\swiggis.austin\\node_modules\\lodash-compat\\lang\\isObject.js"}],"C:\\swiggis.austin\\node_modules\\lodash-compat\\internal\\createBaseEach.js":[function(require,module,exports){
 var getLength = require('./getLength'),
     isLength = require('./isLength'),
     toObject = require('./toObject');
@@ -5301,7 +4339,7 @@ function createBaseEach(eachFunc, fromRight) {
 
 module.exports = createBaseEach;
 
-},{"./getLength":"/mnt/c/swiggis.original/node_modules/lodash-compat/internal/getLength.js","./isLength":"/mnt/c/swiggis.original/node_modules/lodash-compat/internal/isLength.js","./toObject":"/mnt/c/swiggis.original/node_modules/lodash-compat/internal/toObject.js"}],"/mnt/c/swiggis.original/node_modules/lodash-compat/internal/createBaseFor.js":[function(require,module,exports){
+},{"./getLength":"C:\\swiggis.austin\\node_modules\\lodash-compat\\internal\\getLength.js","./isLength":"C:\\swiggis.austin\\node_modules\\lodash-compat\\internal\\isLength.js","./toObject":"C:\\swiggis.austin\\node_modules\\lodash-compat\\internal\\toObject.js"}],"C:\\swiggis.austin\\node_modules\\lodash-compat\\internal\\createBaseFor.js":[function(require,module,exports){
 var toObject = require('./toObject');
 
 /**
@@ -5330,7 +4368,7 @@ function createBaseFor(fromRight) {
 
 module.exports = createBaseFor;
 
-},{"./toObject":"/mnt/c/swiggis.original/node_modules/lodash-compat/internal/toObject.js"}],"/mnt/c/swiggis.original/node_modules/lodash-compat/internal/createCache.js":[function(require,module,exports){
+},{"./toObject":"C:\\swiggis.austin\\node_modules\\lodash-compat\\internal\\toObject.js"}],"C:\\swiggis.austin\\node_modules\\lodash-compat\\internal\\createCache.js":[function(require,module,exports){
 (function (global){
 var SetCache = require('./SetCache'),
     getNative = require('./getNative');
@@ -5355,7 +4393,7 @@ function createCache(values) {
 module.exports = createCache;
 
 }).call(this,typeof global !== "undefined" ? global : typeof self !== "undefined" ? self : typeof window !== "undefined" ? window : {})
-},{"./SetCache":"/mnt/c/swiggis.original/node_modules/lodash-compat/internal/SetCache.js","./getNative":"/mnt/c/swiggis.original/node_modules/lodash-compat/internal/getNative.js"}],"/mnt/c/swiggis.original/node_modules/lodash-compat/internal/createFind.js":[function(require,module,exports){
+},{"./SetCache":"C:\\swiggis.austin\\node_modules\\lodash-compat\\internal\\SetCache.js","./getNative":"C:\\swiggis.austin\\node_modules\\lodash-compat\\internal\\getNative.js"}],"C:\\swiggis.austin\\node_modules\\lodash-compat\\internal\\createFind.js":[function(require,module,exports){
 var baseCallback = require('./baseCallback'),
     baseFind = require('./baseFind'),
     baseFindIndex = require('./baseFindIndex'),
@@ -5382,7 +4420,7 @@ function createFind(eachFunc, fromRight) {
 
 module.exports = createFind;
 
-},{"../lang/isArray":"/mnt/c/swiggis.original/node_modules/lodash-compat/lang/isArray.js","./baseCallback":"/mnt/c/swiggis.original/node_modules/lodash-compat/internal/baseCallback.js","./baseFind":"/mnt/c/swiggis.original/node_modules/lodash-compat/internal/baseFind.js","./baseFindIndex":"/mnt/c/swiggis.original/node_modules/lodash-compat/internal/baseFindIndex.js"}],"/mnt/c/swiggis.original/node_modules/lodash-compat/internal/equalArrays.js":[function(require,module,exports){
+},{"../lang/isArray":"C:\\swiggis.austin\\node_modules\\lodash-compat\\lang\\isArray.js","./baseCallback":"C:\\swiggis.austin\\node_modules\\lodash-compat\\internal\\baseCallback.js","./baseFind":"C:\\swiggis.austin\\node_modules\\lodash-compat\\internal\\baseFind.js","./baseFindIndex":"C:\\swiggis.austin\\node_modules\\lodash-compat\\internal\\baseFindIndex.js"}],"C:\\swiggis.austin\\node_modules\\lodash-compat\\internal\\equalArrays.js":[function(require,module,exports){
 var arraySome = require('./arraySome');
 
 /**
@@ -5435,7 +4473,7 @@ function equalArrays(array, other, equalFunc, customizer, isLoose, stackA, stack
 
 module.exports = equalArrays;
 
-},{"./arraySome":"/mnt/c/swiggis.original/node_modules/lodash-compat/internal/arraySome.js"}],"/mnt/c/swiggis.original/node_modules/lodash-compat/internal/equalByTag.js":[function(require,module,exports){
+},{"./arraySome":"C:\\swiggis.austin\\node_modules\\lodash-compat\\internal\\arraySome.js"}],"C:\\swiggis.austin\\node_modules\\lodash-compat\\internal\\equalByTag.js":[function(require,module,exports){
 /** `Object#toString` result references. */
 var boolTag = '[object Boolean]',
     dateTag = '[object Date]',
@@ -5485,7 +4523,7 @@ function equalByTag(object, other, tag) {
 
 module.exports = equalByTag;
 
-},{}],"/mnt/c/swiggis.original/node_modules/lodash-compat/internal/equalObjects.js":[function(require,module,exports){
+},{}],"C:\\swiggis.austin\\node_modules\\lodash-compat\\internal\\equalObjects.js":[function(require,module,exports){
 var keys = require('../object/keys');
 
 /** Used for native method references. */
@@ -5554,7 +4592,7 @@ function equalObjects(object, other, equalFunc, customizer, isLoose, stackA, sta
 
 module.exports = equalObjects;
 
-},{"../object/keys":"/mnt/c/swiggis.original/node_modules/lodash-compat/object/keys.js"}],"/mnt/c/swiggis.original/node_modules/lodash-compat/internal/getLength.js":[function(require,module,exports){
+},{"../object/keys":"C:\\swiggis.austin\\node_modules\\lodash-compat\\object\\keys.js"}],"C:\\swiggis.austin\\node_modules\\lodash-compat\\internal\\getLength.js":[function(require,module,exports){
 var baseProperty = require('./baseProperty');
 
 /**
@@ -5571,7 +4609,7 @@ var getLength = baseProperty('length');
 
 module.exports = getLength;
 
-},{"./baseProperty":"/mnt/c/swiggis.original/node_modules/lodash-compat/internal/baseProperty.js"}],"/mnt/c/swiggis.original/node_modules/lodash-compat/internal/getMatchData.js":[function(require,module,exports){
+},{"./baseProperty":"C:\\swiggis.austin\\node_modules\\lodash-compat\\internal\\baseProperty.js"}],"C:\\swiggis.austin\\node_modules\\lodash-compat\\internal\\getMatchData.js":[function(require,module,exports){
 var isStrictComparable = require('./isStrictComparable'),
     pairs = require('../object/pairs');
 
@@ -5594,7 +4632,7 @@ function getMatchData(object) {
 
 module.exports = getMatchData;
 
-},{"../object/pairs":"/mnt/c/swiggis.original/node_modules/lodash-compat/object/pairs.js","./isStrictComparable":"/mnt/c/swiggis.original/node_modules/lodash-compat/internal/isStrictComparable.js"}],"/mnt/c/swiggis.original/node_modules/lodash-compat/internal/getNative.js":[function(require,module,exports){
+},{"../object/pairs":"C:\\swiggis.austin\\node_modules\\lodash-compat\\object\\pairs.js","./isStrictComparable":"C:\\swiggis.austin\\node_modules\\lodash-compat\\internal\\isStrictComparable.js"}],"C:\\swiggis.austin\\node_modules\\lodash-compat\\internal\\getNative.js":[function(require,module,exports){
 var isNative = require('../lang/isNative');
 
 /**
@@ -5612,7 +4650,7 @@ function getNative(object, key) {
 
 module.exports = getNative;
 
-},{"../lang/isNative":"/mnt/c/swiggis.original/node_modules/lodash-compat/lang/isNative.js"}],"/mnt/c/swiggis.original/node_modules/lodash-compat/internal/indexOfNaN.js":[function(require,module,exports){
+},{"../lang/isNative":"C:\\swiggis.austin\\node_modules\\lodash-compat\\lang\\isNative.js"}],"C:\\swiggis.austin\\node_modules\\lodash-compat\\internal\\indexOfNaN.js":[function(require,module,exports){
 /**
  * Gets the index at which the first occurrence of `NaN` is found in `array`.
  *
@@ -5637,7 +4675,7 @@ function indexOfNaN(array, fromIndex, fromRight) {
 
 module.exports = indexOfNaN;
 
-},{}],"/mnt/c/swiggis.original/node_modules/lodash-compat/internal/isArrayLike.js":[function(require,module,exports){
+},{}],"C:\\swiggis.austin\\node_modules\\lodash-compat\\internal\\isArrayLike.js":[function(require,module,exports){
 var getLength = require('./getLength'),
     isLength = require('./isLength');
 
@@ -5654,7 +4692,7 @@ function isArrayLike(value) {
 
 module.exports = isArrayLike;
 
-},{"./getLength":"/mnt/c/swiggis.original/node_modules/lodash-compat/internal/getLength.js","./isLength":"/mnt/c/swiggis.original/node_modules/lodash-compat/internal/isLength.js"}],"/mnt/c/swiggis.original/node_modules/lodash-compat/internal/isHostObject.js":[function(require,module,exports){
+},{"./getLength":"C:\\swiggis.austin\\node_modules\\lodash-compat\\internal\\getLength.js","./isLength":"C:\\swiggis.austin\\node_modules\\lodash-compat\\internal\\isLength.js"}],"C:\\swiggis.austin\\node_modules\\lodash-compat\\internal\\isHostObject.js":[function(require,module,exports){
 /**
  * Checks if `value` is a host object in IE < 9.
  *
@@ -5677,7 +4715,7 @@ var isHostObject = (function() {
 
 module.exports = isHostObject;
 
-},{}],"/mnt/c/swiggis.original/node_modules/lodash-compat/internal/isIndex.js":[function(require,module,exports){
+},{}],"C:\\swiggis.austin\\node_modules\\lodash-compat\\internal\\isIndex.js":[function(require,module,exports){
 /** Used to detect unsigned integer values. */
 var reIsUint = /^\d+$/;
 
@@ -5703,7 +4741,7 @@ function isIndex(value, length) {
 
 module.exports = isIndex;
 
-},{}],"/mnt/c/swiggis.original/node_modules/lodash-compat/internal/isKey.js":[function(require,module,exports){
+},{}],"C:\\swiggis.austin\\node_modules\\lodash-compat\\internal\\isKey.js":[function(require,module,exports){
 var isArray = require('../lang/isArray'),
     toObject = require('./toObject');
 
@@ -5733,7 +4771,7 @@ function isKey(value, object) {
 
 module.exports = isKey;
 
-},{"../lang/isArray":"/mnt/c/swiggis.original/node_modules/lodash-compat/lang/isArray.js","./toObject":"/mnt/c/swiggis.original/node_modules/lodash-compat/internal/toObject.js"}],"/mnt/c/swiggis.original/node_modules/lodash-compat/internal/isLength.js":[function(require,module,exports){
+},{"../lang/isArray":"C:\\swiggis.austin\\node_modules\\lodash-compat\\lang\\isArray.js","./toObject":"C:\\swiggis.austin\\node_modules\\lodash-compat\\internal\\toObject.js"}],"C:\\swiggis.austin\\node_modules\\lodash-compat\\internal\\isLength.js":[function(require,module,exports){
 /**
  * Used as the [maximum length](http://ecma-international.org/ecma-262/6.0/#sec-number.max_safe_integer)
  * of an array-like value.
@@ -5755,7 +4793,7 @@ function isLength(value) {
 
 module.exports = isLength;
 
-},{}],"/mnt/c/swiggis.original/node_modules/lodash-compat/internal/isObjectLike.js":[function(require,module,exports){
+},{}],"C:\\swiggis.austin\\node_modules\\lodash-compat\\internal\\isObjectLike.js":[function(require,module,exports){
 /**
  * Checks if `value` is object-like.
  *
@@ -5769,7 +4807,7 @@ function isObjectLike(value) {
 
 module.exports = isObjectLike;
 
-},{}],"/mnt/c/swiggis.original/node_modules/lodash-compat/internal/isStrictComparable.js":[function(require,module,exports){
+},{}],"C:\\swiggis.austin\\node_modules\\lodash-compat\\internal\\isStrictComparable.js":[function(require,module,exports){
 var isObject = require('../lang/isObject');
 
 /**
@@ -5786,7 +4824,7 @@ function isStrictComparable(value) {
 
 module.exports = isStrictComparable;
 
-},{"../lang/isObject":"/mnt/c/swiggis.original/node_modules/lodash-compat/lang/isObject.js"}],"/mnt/c/swiggis.original/node_modules/lodash-compat/internal/pickByArray.js":[function(require,module,exports){
+},{"../lang/isObject":"C:\\swiggis.austin\\node_modules\\lodash-compat\\lang\\isObject.js"}],"C:\\swiggis.austin\\node_modules\\lodash-compat\\internal\\pickByArray.js":[function(require,module,exports){
 var toObject = require('./toObject');
 
 /**
@@ -5816,7 +4854,7 @@ function pickByArray(object, props) {
 
 module.exports = pickByArray;
 
-},{"./toObject":"/mnt/c/swiggis.original/node_modules/lodash-compat/internal/toObject.js"}],"/mnt/c/swiggis.original/node_modules/lodash-compat/internal/pickByCallback.js":[function(require,module,exports){
+},{"./toObject":"C:\\swiggis.austin\\node_modules\\lodash-compat\\internal\\toObject.js"}],"C:\\swiggis.austin\\node_modules\\lodash-compat\\internal\\pickByCallback.js":[function(require,module,exports){
 var baseForIn = require('./baseForIn');
 
 /**
@@ -5840,7 +4878,7 @@ function pickByCallback(object, predicate) {
 
 module.exports = pickByCallback;
 
-},{"./baseForIn":"/mnt/c/swiggis.original/node_modules/lodash-compat/internal/baseForIn.js"}],"/mnt/c/swiggis.original/node_modules/lodash-compat/internal/shimKeys.js":[function(require,module,exports){
+},{"./baseForIn":"C:\\swiggis.austin\\node_modules\\lodash-compat\\internal\\baseForIn.js"}],"C:\\swiggis.austin\\node_modules\\lodash-compat\\internal\\shimKeys.js":[function(require,module,exports){
 var isArguments = require('../lang/isArguments'),
     isArray = require('../lang/isArray'),
     isIndex = require('./isIndex'),
@@ -5884,7 +4922,7 @@ function shimKeys(object) {
 
 module.exports = shimKeys;
 
-},{"../lang/isArguments":"/mnt/c/swiggis.original/node_modules/lodash-compat/lang/isArguments.js","../lang/isArray":"/mnt/c/swiggis.original/node_modules/lodash-compat/lang/isArray.js","../lang/isString":"/mnt/c/swiggis.original/node_modules/lodash-compat/lang/isString.js","../object/keysIn":"/mnt/c/swiggis.original/node_modules/lodash-compat/object/keysIn.js","./isIndex":"/mnt/c/swiggis.original/node_modules/lodash-compat/internal/isIndex.js","./isLength":"/mnt/c/swiggis.original/node_modules/lodash-compat/internal/isLength.js"}],"/mnt/c/swiggis.original/node_modules/lodash-compat/internal/toObject.js":[function(require,module,exports){
+},{"../lang/isArguments":"C:\\swiggis.austin\\node_modules\\lodash-compat\\lang\\isArguments.js","../lang/isArray":"C:\\swiggis.austin\\node_modules\\lodash-compat\\lang\\isArray.js","../lang/isString":"C:\\swiggis.austin\\node_modules\\lodash-compat\\lang\\isString.js","../object/keysIn":"C:\\swiggis.austin\\node_modules\\lodash-compat\\object\\keysIn.js","./isIndex":"C:\\swiggis.austin\\node_modules\\lodash-compat\\internal\\isIndex.js","./isLength":"C:\\swiggis.austin\\node_modules\\lodash-compat\\internal\\isLength.js"}],"C:\\swiggis.austin\\node_modules\\lodash-compat\\internal\\toObject.js":[function(require,module,exports){
 var isObject = require('../lang/isObject'),
     isString = require('../lang/isString'),
     support = require('../support');
@@ -5912,7 +4950,7 @@ function toObject(value) {
 
 module.exports = toObject;
 
-},{"../lang/isObject":"/mnt/c/swiggis.original/node_modules/lodash-compat/lang/isObject.js","../lang/isString":"/mnt/c/swiggis.original/node_modules/lodash-compat/lang/isString.js","../support":"/mnt/c/swiggis.original/node_modules/lodash-compat/support.js"}],"/mnt/c/swiggis.original/node_modules/lodash-compat/internal/toPath.js":[function(require,module,exports){
+},{"../lang/isObject":"C:\\swiggis.austin\\node_modules\\lodash-compat\\lang\\isObject.js","../lang/isString":"C:\\swiggis.austin\\node_modules\\lodash-compat\\lang\\isString.js","../support":"C:\\swiggis.austin\\node_modules\\lodash-compat\\support.js"}],"C:\\swiggis.austin\\node_modules\\lodash-compat\\internal\\toPath.js":[function(require,module,exports){
 var baseToString = require('./baseToString'),
     isArray = require('../lang/isArray');
 
@@ -5942,7 +4980,7 @@ function toPath(value) {
 
 module.exports = toPath;
 
-},{"../lang/isArray":"/mnt/c/swiggis.original/node_modules/lodash-compat/lang/isArray.js","./baseToString":"/mnt/c/swiggis.original/node_modules/lodash-compat/internal/baseToString.js"}],"/mnt/c/swiggis.original/node_modules/lodash-compat/lang/isArguments.js":[function(require,module,exports){
+},{"../lang/isArray":"C:\\swiggis.austin\\node_modules\\lodash-compat\\lang\\isArray.js","./baseToString":"C:\\swiggis.austin\\node_modules\\lodash-compat\\internal\\baseToString.js"}],"C:\\swiggis.austin\\node_modules\\lodash-compat\\lang\\isArguments.js":[function(require,module,exports){
 var isArrayLike = require('../internal/isArrayLike'),
     isObjectLike = require('../internal/isObjectLike');
 
@@ -5978,7 +5016,7 @@ function isArguments(value) {
 
 module.exports = isArguments;
 
-},{"../internal/isArrayLike":"/mnt/c/swiggis.original/node_modules/lodash-compat/internal/isArrayLike.js","../internal/isObjectLike":"/mnt/c/swiggis.original/node_modules/lodash-compat/internal/isObjectLike.js"}],"/mnt/c/swiggis.original/node_modules/lodash-compat/lang/isArray.js":[function(require,module,exports){
+},{"../internal/isArrayLike":"C:\\swiggis.austin\\node_modules\\lodash-compat\\internal\\isArrayLike.js","../internal/isObjectLike":"C:\\swiggis.austin\\node_modules\\lodash-compat\\internal\\isObjectLike.js"}],"C:\\swiggis.austin\\node_modules\\lodash-compat\\lang\\isArray.js":[function(require,module,exports){
 var getNative = require('../internal/getNative'),
     isLength = require('../internal/isLength'),
     isObjectLike = require('../internal/isObjectLike');
@@ -6020,7 +5058,7 @@ var isArray = nativeIsArray || function(value) {
 
 module.exports = isArray;
 
-},{"../internal/getNative":"/mnt/c/swiggis.original/node_modules/lodash-compat/internal/getNative.js","../internal/isLength":"/mnt/c/swiggis.original/node_modules/lodash-compat/internal/isLength.js","../internal/isObjectLike":"/mnt/c/swiggis.original/node_modules/lodash-compat/internal/isObjectLike.js"}],"/mnt/c/swiggis.original/node_modules/lodash-compat/lang/isFunction.js":[function(require,module,exports){
+},{"../internal/getNative":"C:\\swiggis.austin\\node_modules\\lodash-compat\\internal\\getNative.js","../internal/isLength":"C:\\swiggis.austin\\node_modules\\lodash-compat\\internal\\isLength.js","../internal/isObjectLike":"C:\\swiggis.austin\\node_modules\\lodash-compat\\internal\\isObjectLike.js"}],"C:\\swiggis.austin\\node_modules\\lodash-compat\\lang\\isFunction.js":[function(require,module,exports){
 var isObject = require('./isObject');
 
 /** `Object#toString` result references. */
@@ -6060,7 +5098,7 @@ function isFunction(value) {
 
 module.exports = isFunction;
 
-},{"./isObject":"/mnt/c/swiggis.original/node_modules/lodash-compat/lang/isObject.js"}],"/mnt/c/swiggis.original/node_modules/lodash-compat/lang/isNative.js":[function(require,module,exports){
+},{"./isObject":"C:\\swiggis.austin\\node_modules\\lodash-compat\\lang\\isObject.js"}],"C:\\swiggis.austin\\node_modules\\lodash-compat\\lang\\isNative.js":[function(require,module,exports){
 var isFunction = require('./isFunction'),
     isHostObject = require('../internal/isHostObject'),
     isObjectLike = require('../internal/isObjectLike');
@@ -6111,7 +5149,7 @@ function isNative(value) {
 
 module.exports = isNative;
 
-},{"../internal/isHostObject":"/mnt/c/swiggis.original/node_modules/lodash-compat/internal/isHostObject.js","../internal/isObjectLike":"/mnt/c/swiggis.original/node_modules/lodash-compat/internal/isObjectLike.js","./isFunction":"/mnt/c/swiggis.original/node_modules/lodash-compat/lang/isFunction.js"}],"/mnt/c/swiggis.original/node_modules/lodash-compat/lang/isObject.js":[function(require,module,exports){
+},{"../internal/isHostObject":"C:\\swiggis.austin\\node_modules\\lodash-compat\\internal\\isHostObject.js","../internal/isObjectLike":"C:\\swiggis.austin\\node_modules\\lodash-compat\\internal\\isObjectLike.js","./isFunction":"C:\\swiggis.austin\\node_modules\\lodash-compat\\lang\\isFunction.js"}],"C:\\swiggis.austin\\node_modules\\lodash-compat\\lang\\isObject.js":[function(require,module,exports){
 /**
  * Checks if `value` is the [language type](https://es5.github.io/#x8) of `Object`.
  * (e.g. arrays, functions, objects, regexes, `new Number(0)`, and `new String('')`)
@@ -6141,7 +5179,7 @@ function isObject(value) {
 
 module.exports = isObject;
 
-},{}],"/mnt/c/swiggis.original/node_modules/lodash-compat/lang/isString.js":[function(require,module,exports){
+},{}],"C:\\swiggis.austin\\node_modules\\lodash-compat\\lang\\isString.js":[function(require,module,exports){
 var isObjectLike = require('../internal/isObjectLike');
 
 /** `Object#toString` result references. */
@@ -6178,7 +5216,7 @@ function isString(value) {
 
 module.exports = isString;
 
-},{"../internal/isObjectLike":"/mnt/c/swiggis.original/node_modules/lodash-compat/internal/isObjectLike.js"}],"/mnt/c/swiggis.original/node_modules/lodash-compat/lang/isTypedArray.js":[function(require,module,exports){
+},{"../internal/isObjectLike":"C:\\swiggis.austin\\node_modules\\lodash-compat\\internal\\isObjectLike.js"}],"C:\\swiggis.austin\\node_modules\\lodash-compat\\lang\\isTypedArray.js":[function(require,module,exports){
 var isLength = require('../internal/isLength'),
     isObjectLike = require('../internal/isObjectLike');
 
@@ -6254,7 +5292,7 @@ function isTypedArray(value) {
 
 module.exports = isTypedArray;
 
-},{"../internal/isLength":"/mnt/c/swiggis.original/node_modules/lodash-compat/internal/isLength.js","../internal/isObjectLike":"/mnt/c/swiggis.original/node_modules/lodash-compat/internal/isObjectLike.js"}],"/mnt/c/swiggis.original/node_modules/lodash-compat/object/keys.js":[function(require,module,exports){
+},{"../internal/isLength":"C:\\swiggis.austin\\node_modules\\lodash-compat\\internal\\isLength.js","../internal/isObjectLike":"C:\\swiggis.austin\\node_modules\\lodash-compat\\internal\\isObjectLike.js"}],"C:\\swiggis.austin\\node_modules\\lodash-compat\\object\\keys.js":[function(require,module,exports){
 var getNative = require('../internal/getNative'),
     isArrayLike = require('../internal/isArrayLike'),
     isObject = require('../lang/isObject'),
@@ -6302,7 +5340,7 @@ var keys = !nativeKeys ? shimKeys : function(object) {
 
 module.exports = keys;
 
-},{"../internal/getNative":"/mnt/c/swiggis.original/node_modules/lodash-compat/internal/getNative.js","../internal/isArrayLike":"/mnt/c/swiggis.original/node_modules/lodash-compat/internal/isArrayLike.js","../internal/shimKeys":"/mnt/c/swiggis.original/node_modules/lodash-compat/internal/shimKeys.js","../lang/isObject":"/mnt/c/swiggis.original/node_modules/lodash-compat/lang/isObject.js","../support":"/mnt/c/swiggis.original/node_modules/lodash-compat/support.js"}],"/mnt/c/swiggis.original/node_modules/lodash-compat/object/keysIn.js":[function(require,module,exports){
+},{"../internal/getNative":"C:\\swiggis.austin\\node_modules\\lodash-compat\\internal\\getNative.js","../internal/isArrayLike":"C:\\swiggis.austin\\node_modules\\lodash-compat\\internal\\isArrayLike.js","../internal/shimKeys":"C:\\swiggis.austin\\node_modules\\lodash-compat\\internal\\shimKeys.js","../lang/isObject":"C:\\swiggis.austin\\node_modules\\lodash-compat\\lang\\isObject.js","../support":"C:\\swiggis.austin\\node_modules\\lodash-compat\\support.js"}],"C:\\swiggis.austin\\node_modules\\lodash-compat\\object\\keysIn.js":[function(require,module,exports){
 var arrayEach = require('../internal/arrayEach'),
     isArguments = require('../lang/isArguments'),
     isArray = require('../lang/isArray'),
@@ -6440,7 +5478,7 @@ function keysIn(object) {
 
 module.exports = keysIn;
 
-},{"../internal/arrayEach":"/mnt/c/swiggis.original/node_modules/lodash-compat/internal/arrayEach.js","../internal/isIndex":"/mnt/c/swiggis.original/node_modules/lodash-compat/internal/isIndex.js","../internal/isLength":"/mnt/c/swiggis.original/node_modules/lodash-compat/internal/isLength.js","../lang/isArguments":"/mnt/c/swiggis.original/node_modules/lodash-compat/lang/isArguments.js","../lang/isArray":"/mnt/c/swiggis.original/node_modules/lodash-compat/lang/isArray.js","../lang/isFunction":"/mnt/c/swiggis.original/node_modules/lodash-compat/lang/isFunction.js","../lang/isObject":"/mnt/c/swiggis.original/node_modules/lodash-compat/lang/isObject.js","../lang/isString":"/mnt/c/swiggis.original/node_modules/lodash-compat/lang/isString.js","../support":"/mnt/c/swiggis.original/node_modules/lodash-compat/support.js"}],"/mnt/c/swiggis.original/node_modules/lodash-compat/object/omit.js":[function(require,module,exports){
+},{"../internal/arrayEach":"C:\\swiggis.austin\\node_modules\\lodash-compat\\internal\\arrayEach.js","../internal/isIndex":"C:\\swiggis.austin\\node_modules\\lodash-compat\\internal\\isIndex.js","../internal/isLength":"C:\\swiggis.austin\\node_modules\\lodash-compat\\internal\\isLength.js","../lang/isArguments":"C:\\swiggis.austin\\node_modules\\lodash-compat\\lang\\isArguments.js","../lang/isArray":"C:\\swiggis.austin\\node_modules\\lodash-compat\\lang\\isArray.js","../lang/isFunction":"C:\\swiggis.austin\\node_modules\\lodash-compat\\lang\\isFunction.js","../lang/isObject":"C:\\swiggis.austin\\node_modules\\lodash-compat\\lang\\isObject.js","../lang/isString":"C:\\swiggis.austin\\node_modules\\lodash-compat\\lang\\isString.js","../support":"C:\\swiggis.austin\\node_modules\\lodash-compat\\support.js"}],"C:\\swiggis.austin\\node_modules\\lodash-compat\\object\\omit.js":[function(require,module,exports){
 var arrayMap = require('../internal/arrayMap'),
     baseDifference = require('../internal/baseDifference'),
     baseFlatten = require('../internal/baseFlatten'),
@@ -6489,7 +5527,7 @@ var omit = restParam(function(object, props) {
 
 module.exports = omit;
 
-},{"../function/restParam":"/mnt/c/swiggis.original/node_modules/lodash-compat/function/restParam.js","../internal/arrayMap":"/mnt/c/swiggis.original/node_modules/lodash-compat/internal/arrayMap.js","../internal/baseDifference":"/mnt/c/swiggis.original/node_modules/lodash-compat/internal/baseDifference.js","../internal/baseFlatten":"/mnt/c/swiggis.original/node_modules/lodash-compat/internal/baseFlatten.js","../internal/bindCallback":"/mnt/c/swiggis.original/node_modules/lodash-compat/internal/bindCallback.js","../internal/pickByArray":"/mnt/c/swiggis.original/node_modules/lodash-compat/internal/pickByArray.js","../internal/pickByCallback":"/mnt/c/swiggis.original/node_modules/lodash-compat/internal/pickByCallback.js","./keysIn":"/mnt/c/swiggis.original/node_modules/lodash-compat/object/keysIn.js"}],"/mnt/c/swiggis.original/node_modules/lodash-compat/object/pairs.js":[function(require,module,exports){
+},{"../function/restParam":"C:\\swiggis.austin\\node_modules\\lodash-compat\\function\\restParam.js","../internal/arrayMap":"C:\\swiggis.austin\\node_modules\\lodash-compat\\internal\\arrayMap.js","../internal/baseDifference":"C:\\swiggis.austin\\node_modules\\lodash-compat\\internal\\baseDifference.js","../internal/baseFlatten":"C:\\swiggis.austin\\node_modules\\lodash-compat\\internal\\baseFlatten.js","../internal/bindCallback":"C:\\swiggis.austin\\node_modules\\lodash-compat\\internal\\bindCallback.js","../internal/pickByArray":"C:\\swiggis.austin\\node_modules\\lodash-compat\\internal\\pickByArray.js","../internal/pickByCallback":"C:\\swiggis.austin\\node_modules\\lodash-compat\\internal\\pickByCallback.js","./keysIn":"C:\\swiggis.austin\\node_modules\\lodash-compat\\object\\keysIn.js"}],"C:\\swiggis.austin\\node_modules\\lodash-compat\\object\\pairs.js":[function(require,module,exports){
 var keys = require('./keys'),
     toObject = require('../internal/toObject');
 
@@ -6524,7 +5562,7 @@ function pairs(object) {
 
 module.exports = pairs;
 
-},{"../internal/toObject":"/mnt/c/swiggis.original/node_modules/lodash-compat/internal/toObject.js","./keys":"/mnt/c/swiggis.original/node_modules/lodash-compat/object/keys.js"}],"/mnt/c/swiggis.original/node_modules/lodash-compat/object/pick.js":[function(require,module,exports){
+},{"../internal/toObject":"C:\\swiggis.austin\\node_modules\\lodash-compat\\internal\\toObject.js","./keys":"C:\\swiggis.austin\\node_modules\\lodash-compat\\object\\keys.js"}],"C:\\swiggis.austin\\node_modules\\lodash-compat\\object\\pick.js":[function(require,module,exports){
 var baseFlatten = require('../internal/baseFlatten'),
     bindCallback = require('../internal/bindCallback'),
     pickByArray = require('../internal/pickByArray'),
@@ -6568,7 +5606,7 @@ var pick = restParam(function(object, props) {
 
 module.exports = pick;
 
-},{"../function/restParam":"/mnt/c/swiggis.original/node_modules/lodash-compat/function/restParam.js","../internal/baseFlatten":"/mnt/c/swiggis.original/node_modules/lodash-compat/internal/baseFlatten.js","../internal/bindCallback":"/mnt/c/swiggis.original/node_modules/lodash-compat/internal/bindCallback.js","../internal/pickByArray":"/mnt/c/swiggis.original/node_modules/lodash-compat/internal/pickByArray.js","../internal/pickByCallback":"/mnt/c/swiggis.original/node_modules/lodash-compat/internal/pickByCallback.js"}],"/mnt/c/swiggis.original/node_modules/lodash-compat/support.js":[function(require,module,exports){
+},{"../function/restParam":"C:\\swiggis.austin\\node_modules\\lodash-compat\\function\\restParam.js","../internal/baseFlatten":"C:\\swiggis.austin\\node_modules\\lodash-compat\\internal\\baseFlatten.js","../internal/bindCallback":"C:\\swiggis.austin\\node_modules\\lodash-compat\\internal\\bindCallback.js","../internal/pickByArray":"C:\\swiggis.austin\\node_modules\\lodash-compat\\internal\\pickByArray.js","../internal/pickByCallback":"C:\\swiggis.austin\\node_modules\\lodash-compat\\internal\\pickByCallback.js"}],"C:\\swiggis.austin\\node_modules\\lodash-compat\\support.js":[function(require,module,exports){
 /** Used for native method references. */
 var arrayProto = Array.prototype,
     errorProto = Error.prototype,
@@ -6666,7 +5704,7 @@ var support = {};
 
 module.exports = support;
 
-},{}],"/mnt/c/swiggis.original/node_modules/lodash-compat/utility/identity.js":[function(require,module,exports){
+},{}],"C:\\swiggis.austin\\node_modules\\lodash-compat\\utility\\identity.js":[function(require,module,exports){
 /**
  * This method returns the first argument provided to it.
  *
@@ -6688,7 +5726,7 @@ function identity(value) {
 
 module.exports = identity;
 
-},{}],"/mnt/c/swiggis.original/node_modules/lodash-compat/utility/property.js":[function(require,module,exports){
+},{}],"C:\\swiggis.austin\\node_modules\\lodash-compat\\utility\\property.js":[function(require,module,exports){
 var baseProperty = require('../internal/baseProperty'),
     basePropertyDeep = require('../internal/basePropertyDeep'),
     isKey = require('../internal/isKey');
@@ -6721,7 +5759,7 @@ function property(path) {
 
 module.exports = property;
 
-},{"../internal/baseProperty":"/mnt/c/swiggis.original/node_modules/lodash-compat/internal/baseProperty.js","../internal/basePropertyDeep":"/mnt/c/swiggis.original/node_modules/lodash-compat/internal/basePropertyDeep.js","../internal/isKey":"/mnt/c/swiggis.original/node_modules/lodash-compat/internal/isKey.js"}],"/mnt/c/swiggis.original/node_modules/lodash/index.js":[function(require,module,exports){
+},{"../internal/baseProperty":"C:\\swiggis.austin\\node_modules\\lodash-compat\\internal\\baseProperty.js","../internal/basePropertyDeep":"C:\\swiggis.austin\\node_modules\\lodash-compat\\internal\\basePropertyDeep.js","../internal/isKey":"C:\\swiggis.austin\\node_modules\\lodash-compat\\internal\\isKey.js"}],"C:\\swiggis.austin\\node_modules\\lodash\\index.js":[function(require,module,exports){
 (function (global){
 /**
  * @license
@@ -19076,7 +18114,7 @@ module.exports = property;
 }.call(this));
 
 }).call(this,typeof global !== "undefined" ? global : typeof self !== "undefined" ? self : typeof window !== "undefined" ? window : {})
-},{}],"/mnt/c/swiggis.original/node_modules/process/browser.js":[function(require,module,exports){
+},{}],"C:\\swiggis.austin\\node_modules\\process\\browser.js":[function(require,module,exports){
 // shim for using process in browser
 
 var process = module.exports = {};
@@ -19136,7 +18174,7 @@ process.chdir = function (dir) {
 };
 process.umask = function() { return 0; };
 
-},{}],"/mnt/c/swiggis.original/node_modules/prop-types/checkPropTypes.js":[function(require,module,exports){
+},{}],"C:\\swiggis.austin\\node_modules\\prop-types\\checkPropTypes.js":[function(require,module,exports){
 (function (process){
 /**
  * Copyright (c) 2013-present, Facebook, Inc.
@@ -19199,7 +18237,7 @@ function checkPropTypes(typeSpecs, values, location, componentName, getStack) {
 module.exports = checkPropTypes;
 
 }).call(this,require('_process'))
-},{"./lib/ReactPropTypesSecret":"/mnt/c/swiggis.original/node_modules/prop-types/lib/ReactPropTypesSecret.js","_process":"/mnt/c/swiggis.original/node_modules/process/browser.js","fbjs/lib/invariant":"/mnt/c/swiggis.original/node_modules/fbjs/lib/invariant.js","fbjs/lib/warning":"/mnt/c/swiggis.original/node_modules/fbjs/lib/warning.js"}],"/mnt/c/swiggis.original/node_modules/prop-types/factory.js":[function(require,module,exports){
+},{"./lib/ReactPropTypesSecret":"C:\\swiggis.austin\\node_modules\\prop-types\\lib\\ReactPropTypesSecret.js","_process":"C:\\swiggis.austin\\node_modules\\process\\browser.js","fbjs/lib/invariant":"C:\\swiggis.austin\\node_modules\\fbjs\\lib\\invariant.js","fbjs/lib/warning":"C:\\swiggis.austin\\node_modules\\fbjs\\lib\\warning.js"}],"C:\\swiggis.austin\\node_modules\\prop-types\\factory.js":[function(require,module,exports){
 /**
  * Copyright (c) 2013-present, Facebook, Inc.
  *
@@ -19220,7 +18258,7 @@ module.exports = function(isValidElement) {
   return factory(isValidElement, throwOnDirectAccess);
 };
 
-},{"./factoryWithTypeCheckers":"/mnt/c/swiggis.original/node_modules/prop-types/factoryWithTypeCheckers.js"}],"/mnt/c/swiggis.original/node_modules/prop-types/factoryWithThrowingShims.js":[function(require,module,exports){
+},{"./factoryWithTypeCheckers":"C:\\swiggis.austin\\node_modules\\prop-types\\factoryWithTypeCheckers.js"}],"C:\\swiggis.austin\\node_modules\\prop-types\\factoryWithThrowingShims.js":[function(require,module,exports){
 /**
  * Copyright (c) 2013-present, Facebook, Inc.
  *
@@ -19280,7 +18318,7 @@ module.exports = function() {
   return ReactPropTypes;
 };
 
-},{"./lib/ReactPropTypesSecret":"/mnt/c/swiggis.original/node_modules/prop-types/lib/ReactPropTypesSecret.js","fbjs/lib/emptyFunction":"/mnt/c/swiggis.original/node_modules/fbjs/lib/emptyFunction.js","fbjs/lib/invariant":"/mnt/c/swiggis.original/node_modules/fbjs/lib/invariant.js"}],"/mnt/c/swiggis.original/node_modules/prop-types/factoryWithTypeCheckers.js":[function(require,module,exports){
+},{"./lib/ReactPropTypesSecret":"C:\\swiggis.austin\\node_modules\\prop-types\\lib\\ReactPropTypesSecret.js","fbjs/lib/emptyFunction":"C:\\swiggis.austin\\node_modules\\fbjs\\lib\\emptyFunction.js","fbjs/lib/invariant":"C:\\swiggis.austin\\node_modules\\fbjs\\lib\\invariant.js"}],"C:\\swiggis.austin\\node_modules\\prop-types\\factoryWithTypeCheckers.js":[function(require,module,exports){
 (function (process){
 /**
  * Copyright (c) 2013-present, Facebook, Inc.
@@ -19826,7 +18864,7 @@ module.exports = function(isValidElement, throwOnDirectAccess) {
 };
 
 }).call(this,require('_process'))
-},{"./checkPropTypes":"/mnt/c/swiggis.original/node_modules/prop-types/checkPropTypes.js","./lib/ReactPropTypesSecret":"/mnt/c/swiggis.original/node_modules/prop-types/lib/ReactPropTypesSecret.js","_process":"/mnt/c/swiggis.original/node_modules/process/browser.js","fbjs/lib/emptyFunction":"/mnt/c/swiggis.original/node_modules/fbjs/lib/emptyFunction.js","fbjs/lib/invariant":"/mnt/c/swiggis.original/node_modules/fbjs/lib/invariant.js","fbjs/lib/warning":"/mnt/c/swiggis.original/node_modules/fbjs/lib/warning.js","object-assign":"/mnt/c/swiggis.original/node_modules/prop-types/node_modules/object-assign/index.js"}],"/mnt/c/swiggis.original/node_modules/prop-types/index.js":[function(require,module,exports){
+},{"./checkPropTypes":"C:\\swiggis.austin\\node_modules\\prop-types\\checkPropTypes.js","./lib/ReactPropTypesSecret":"C:\\swiggis.austin\\node_modules\\prop-types\\lib\\ReactPropTypesSecret.js","_process":"C:\\swiggis.austin\\node_modules\\process\\browser.js","fbjs/lib/emptyFunction":"C:\\swiggis.austin\\node_modules\\fbjs\\lib\\emptyFunction.js","fbjs/lib/invariant":"C:\\swiggis.austin\\node_modules\\fbjs\\lib\\invariant.js","fbjs/lib/warning":"C:\\swiggis.austin\\node_modules\\fbjs\\lib\\warning.js","object-assign":"C:\\swiggis.austin\\node_modules\\prop-types\\node_modules\\object-assign\\index.js"}],"C:\\swiggis.austin\\node_modules\\prop-types\\index.js":[function(require,module,exports){
 (function (process){
 /**
  * Copyright (c) 2013-present, Facebook, Inc.
@@ -19858,7 +18896,7 @@ if (process.env.NODE_ENV !== 'production') {
 }
 
 }).call(this,require('_process'))
-},{"./factoryWithThrowingShims":"/mnt/c/swiggis.original/node_modules/prop-types/factoryWithThrowingShims.js","./factoryWithTypeCheckers":"/mnt/c/swiggis.original/node_modules/prop-types/factoryWithTypeCheckers.js","_process":"/mnt/c/swiggis.original/node_modules/process/browser.js"}],"/mnt/c/swiggis.original/node_modules/prop-types/lib/ReactPropTypesSecret.js":[function(require,module,exports){
+},{"./factoryWithThrowingShims":"C:\\swiggis.austin\\node_modules\\prop-types\\factoryWithThrowingShims.js","./factoryWithTypeCheckers":"C:\\swiggis.austin\\node_modules\\prop-types\\factoryWithTypeCheckers.js","_process":"C:\\swiggis.austin\\node_modules\\process\\browser.js"}],"C:\\swiggis.austin\\node_modules\\prop-types\\lib\\ReactPropTypesSecret.js":[function(require,module,exports){
 /**
  * Copyright (c) 2013-present, Facebook, Inc.
  *
@@ -19872,9 +18910,9 @@ var ReactPropTypesSecret = 'SECRET_DO_NOT_PASS_THIS_OR_YOU_WILL_BE_FIRED';
 
 module.exports = ReactPropTypesSecret;
 
-},{}],"/mnt/c/swiggis.original/node_modules/prop-types/node_modules/object-assign/index.js":[function(require,module,exports){
-arguments[4]["/mnt/c/swiggis.original/node_modules/create-react-class/node_modules/object-assign/index.js"][0].apply(exports,arguments)
-},{}],"/mnt/c/swiggis.original/node_modules/query-string/index.js":[function(require,module,exports){
+},{}],"C:\\swiggis.austin\\node_modules\\prop-types\\node_modules\\object-assign\\index.js":[function(require,module,exports){
+arguments[4]["C:\\swiggis.austin\\node_modules\\create-react-class\\node_modules\\object-assign\\index.js"][0].apply(exports,arguments)
+},{}],"C:\\swiggis.austin\\node_modules\\query-string\\index.js":[function(require,module,exports){
 'use strict';
 var strictUriEncode = require('strict-uri-encode');
 
@@ -19942,7 +18980,7 @@ exports.stringify = function (obj) {
 	}).join('&') : '';
 };
 
-},{"strict-uri-encode":"/mnt/c/swiggis.original/node_modules/strict-uri-encode/index.js"}],"/mnt/c/swiggis.original/node_modules/react-bootstrap/lib/Accordion.js":[function(require,module,exports){
+},{"strict-uri-encode":"C:\\swiggis.austin\\node_modules\\strict-uri-encode\\index.js"}],"C:\\swiggis.austin\\node_modules\\react-bootstrap\\lib\\Accordion.js":[function(require,module,exports){
 'use strict';
 
 var _extends = require('babel-runtime/helpers/extends')['default'];
@@ -19973,7 +19011,7 @@ var Accordion = _react2['default'].createClass({
 
 exports['default'] = Accordion;
 module.exports = exports['default'];
-},{"./PanelGroup":"/mnt/c/swiggis.original/node_modules/react-bootstrap/lib/PanelGroup.js","babel-runtime/helpers/extends":"/mnt/c/swiggis.original/node_modules/babel-runtime/helpers/extends.js","babel-runtime/helpers/interop-require-default":"/mnt/c/swiggis.original/node_modules/babel-runtime/helpers/interop-require-default.js","react":"/mnt/c/swiggis.original/node_modules/react/react.js"}],"/mnt/c/swiggis.original/node_modules/react-bootstrap/lib/Alert.js":[function(require,module,exports){
+},{"./PanelGroup":"C:\\swiggis.austin\\node_modules\\react-bootstrap\\lib\\PanelGroup.js","babel-runtime/helpers/extends":"C:\\swiggis.austin\\node_modules\\babel-runtime\\helpers\\extends.js","babel-runtime/helpers/interop-require-default":"C:\\swiggis.austin\\node_modules\\babel-runtime\\helpers\\interop-require-default.js","react":"C:\\swiggis.austin\\node_modules\\react\\react.js"}],"C:\\swiggis.austin\\node_modules\\react-bootstrap\\lib\\Alert.js":[function(require,module,exports){
 'use strict';
 
 var _extends = require('babel-runtime/helpers/extends')['default'];
@@ -20067,7 +19105,7 @@ var Alert = _react2['default'].createClass({
 
 exports['default'] = _utilsBootstrapUtils.bsStyles(_styleMaps.State.values(), _styleMaps.State.INFO, _utilsBootstrapUtils.bsClass('alert', Alert));
 module.exports = exports['default'];
-},{"./styleMaps":"/mnt/c/swiggis.original/node_modules/react-bootstrap/lib/styleMaps.js","./utils/bootstrapUtils":"/mnt/c/swiggis.original/node_modules/react-bootstrap/lib/utils/bootstrapUtils.js","babel-runtime/helpers/extends":"/mnt/c/swiggis.original/node_modules/babel-runtime/helpers/extends.js","babel-runtime/helpers/interop-require-default":"/mnt/c/swiggis.original/node_modules/babel-runtime/helpers/interop-require-default.js","classnames":"/mnt/c/swiggis.original/node_modules/classnames/index.js","react":"/mnt/c/swiggis.original/node_modules/react/react.js"}],"/mnt/c/swiggis.original/node_modules/react-bootstrap/lib/Badge.js":[function(require,module,exports){
+},{"./styleMaps":"C:\\swiggis.austin\\node_modules\\react-bootstrap\\lib\\styleMaps.js","./utils/bootstrapUtils":"C:\\swiggis.austin\\node_modules\\react-bootstrap\\lib\\utils\\bootstrapUtils.js","babel-runtime/helpers/extends":"C:\\swiggis.austin\\node_modules\\babel-runtime\\helpers\\extends.js","babel-runtime/helpers/interop-require-default":"C:\\swiggis.austin\\node_modules\\babel-runtime\\helpers\\interop-require-default.js","classnames":"C:\\swiggis.austin\\node_modules\\classnames\\index.js","react":"C:\\swiggis.austin\\node_modules\\react\\react.js"}],"C:\\swiggis.austin\\node_modules\\react-bootstrap\\lib\\Badge.js":[function(require,module,exports){
 'use strict';
 
 var _extends = require('babel-runtime/helpers/extends')['default'];
@@ -20127,7 +19165,7 @@ var Badge = _react2['default'].createClass({
 
 exports['default'] = Badge;
 module.exports = exports['default'];
-},{"./utils/ValidComponentChildren":"/mnt/c/swiggis.original/node_modules/react-bootstrap/lib/utils/ValidComponentChildren.js","./utils/bootstrapUtils":"/mnt/c/swiggis.original/node_modules/react-bootstrap/lib/utils/bootstrapUtils.js","babel-runtime/helpers/extends":"/mnt/c/swiggis.original/node_modules/babel-runtime/helpers/extends.js","babel-runtime/helpers/interop-require-default":"/mnt/c/swiggis.original/node_modules/babel-runtime/helpers/interop-require-default.js","classnames":"/mnt/c/swiggis.original/node_modules/classnames/index.js","react":"/mnt/c/swiggis.original/node_modules/react/react.js"}],"/mnt/c/swiggis.original/node_modules/react-bootstrap/lib/Breadcrumb.js":[function(require,module,exports){
+},{"./utils/ValidComponentChildren":"C:\\swiggis.austin\\node_modules\\react-bootstrap\\lib\\utils\\ValidComponentChildren.js","./utils/bootstrapUtils":"C:\\swiggis.austin\\node_modules\\react-bootstrap\\lib\\utils\\bootstrapUtils.js","babel-runtime/helpers/extends":"C:\\swiggis.austin\\node_modules\\babel-runtime\\helpers\\extends.js","babel-runtime/helpers/interop-require-default":"C:\\swiggis.austin\\node_modules\\babel-runtime\\helpers\\interop-require-default.js","classnames":"C:\\swiggis.austin\\node_modules\\classnames\\index.js","react":"C:\\swiggis.austin\\node_modules\\react\\react.js"}],"C:\\swiggis.austin\\node_modules\\react-bootstrap\\lib\\Breadcrumb.js":[function(require,module,exports){
 'use strict';
 
 var _objectWithoutProperties = require('babel-runtime/helpers/object-without-properties')['default'];
@@ -20196,7 +19234,7 @@ Breadcrumb.Item = _BreadcrumbItem2['default'];
 
 exports['default'] = Breadcrumb;
 module.exports = exports['default'];
-},{"./BreadcrumbItem":"/mnt/c/swiggis.original/node_modules/react-bootstrap/lib/BreadcrumbItem.js","./utils/ValidComponentChildren":"/mnt/c/swiggis.original/node_modules/react-bootstrap/lib/utils/ValidComponentChildren.js","babel-runtime/helpers/extends":"/mnt/c/swiggis.original/node_modules/babel-runtime/helpers/extends.js","babel-runtime/helpers/interop-require-default":"/mnt/c/swiggis.original/node_modules/babel-runtime/helpers/interop-require-default.js","babel-runtime/helpers/object-without-properties":"/mnt/c/swiggis.original/node_modules/babel-runtime/helpers/object-without-properties.js","classnames":"/mnt/c/swiggis.original/node_modules/classnames/index.js","react":"/mnt/c/swiggis.original/node_modules/react/react.js"}],"/mnt/c/swiggis.original/node_modules/react-bootstrap/lib/BreadcrumbItem.js":[function(require,module,exports){
+},{"./BreadcrumbItem":"C:\\swiggis.austin\\node_modules\\react-bootstrap\\lib\\BreadcrumbItem.js","./utils/ValidComponentChildren":"C:\\swiggis.austin\\node_modules\\react-bootstrap\\lib\\utils\\ValidComponentChildren.js","babel-runtime/helpers/extends":"C:\\swiggis.austin\\node_modules\\babel-runtime\\helpers\\extends.js","babel-runtime/helpers/interop-require-default":"C:\\swiggis.austin\\node_modules\\babel-runtime\\helpers\\interop-require-default.js","babel-runtime/helpers/object-without-properties":"C:\\swiggis.austin\\node_modules\\babel-runtime\\helpers\\object-without-properties.js","classnames":"C:\\swiggis.austin\\node_modules\\classnames\\index.js","react":"C:\\swiggis.austin\\node_modules\\react\\react.js"}],"C:\\swiggis.austin\\node_modules\\react-bootstrap\\lib\\BreadcrumbItem.js":[function(require,module,exports){
 'use strict';
 
 var _objectWithoutProperties = require('babel-runtime/helpers/object-without-properties')['default'];
@@ -20293,7 +19331,7 @@ var BreadcrumbItem = _react2['default'].createClass({
 
 exports['default'] = BreadcrumbItem;
 module.exports = exports['default'];
-},{"./SafeAnchor":"/mnt/c/swiggis.original/node_modules/react-bootstrap/lib/SafeAnchor.js","babel-runtime/helpers/extends":"/mnt/c/swiggis.original/node_modules/babel-runtime/helpers/extends.js","babel-runtime/helpers/interop-require-default":"/mnt/c/swiggis.original/node_modules/babel-runtime/helpers/interop-require-default.js","babel-runtime/helpers/object-without-properties":"/mnt/c/swiggis.original/node_modules/babel-runtime/helpers/object-without-properties.js","classnames":"/mnt/c/swiggis.original/node_modules/classnames/index.js","react":"/mnt/c/swiggis.original/node_modules/react/react.js"}],"/mnt/c/swiggis.original/node_modules/react-bootstrap/lib/Button.js":[function(require,module,exports){
+},{"./SafeAnchor":"C:\\swiggis.austin\\node_modules\\react-bootstrap\\lib\\SafeAnchor.js","babel-runtime/helpers/extends":"C:\\swiggis.austin\\node_modules\\babel-runtime\\helpers\\extends.js","babel-runtime/helpers/interop-require-default":"C:\\swiggis.austin\\node_modules\\babel-runtime\\helpers\\interop-require-default.js","babel-runtime/helpers/object-without-properties":"C:\\swiggis.austin\\node_modules\\babel-runtime\\helpers\\object-without-properties.js","classnames":"C:\\swiggis.austin\\node_modules\\classnames\\index.js","react":"C:\\swiggis.austin\\node_modules\\react\\react.js"}],"C:\\swiggis.austin\\node_modules\\react-bootstrap\\lib\\Button.js":[function(require,module,exports){
 'use strict';
 
 var _extends = require('babel-runtime/helpers/extends')['default'];
@@ -20422,7 +19460,7 @@ Button.types = types;
 
 exports['default'] = _utilsBootstrapUtils.bsStyles(ButtonStyles, _styleMaps.DEFAULT, _utilsBootstrapUtils.bsSizes([_styleMaps.Sizes.LARGE, _styleMaps.Sizes.SMALL, _styleMaps.Sizes.XSMALL], _utilsBootstrapUtils.bsClass('btn', Button)));
 module.exports = exports['default'];
-},{"./styleMaps":"/mnt/c/swiggis.original/node_modules/react-bootstrap/lib/styleMaps.js","./utils/bootstrapUtils":"/mnt/c/swiggis.original/node_modules/react-bootstrap/lib/utils/bootstrapUtils.js","babel-runtime/helpers/extends":"/mnt/c/swiggis.original/node_modules/babel-runtime/helpers/extends.js","babel-runtime/helpers/interop-require-default":"/mnt/c/swiggis.original/node_modules/babel-runtime/helpers/interop-require-default.js","classnames":"/mnt/c/swiggis.original/node_modules/classnames/index.js","react":"/mnt/c/swiggis.original/node_modules/react/react.js","react-prop-types/lib/elementType":"/mnt/c/swiggis.original/node_modules/react-prop-types/lib/elementType.js"}],"/mnt/c/swiggis.original/node_modules/react-bootstrap/lib/ButtonGroup.js":[function(require,module,exports){
+},{"./styleMaps":"C:\\swiggis.austin\\node_modules\\react-bootstrap\\lib\\styleMaps.js","./utils/bootstrapUtils":"C:\\swiggis.austin\\node_modules\\react-bootstrap\\lib\\utils\\bootstrapUtils.js","babel-runtime/helpers/extends":"C:\\swiggis.austin\\node_modules\\babel-runtime\\helpers\\extends.js","babel-runtime/helpers/interop-require-default":"C:\\swiggis.austin\\node_modules\\babel-runtime\\helpers\\interop-require-default.js","classnames":"C:\\swiggis.austin\\node_modules\\classnames\\index.js","react":"C:\\swiggis.austin\\node_modules\\react\\react.js","react-prop-types/lib/elementType":"C:\\swiggis.austin\\node_modules\\react-prop-types\\lib\\elementType.js"}],"C:\\swiggis.austin\\node_modules\\react-bootstrap\\lib\\ButtonGroup.js":[function(require,module,exports){
 'use strict';
 
 var _extends = require('babel-runtime/helpers/extends')['default'];
@@ -20497,7 +19535,7 @@ var ButtonGroup = _react2['default'].createClass({
 
 exports['default'] = _utilsBootstrapUtils.bsClass('btn-group', ButtonGroup);
 module.exports = exports['default'];
-},{"./Button":"/mnt/c/swiggis.original/node_modules/react-bootstrap/lib/Button.js","./utils/bootstrapUtils":"/mnt/c/swiggis.original/node_modules/react-bootstrap/lib/utils/bootstrapUtils.js","babel-runtime/helpers/extends":"/mnt/c/swiggis.original/node_modules/babel-runtime/helpers/extends.js","babel-runtime/helpers/interop-require-default":"/mnt/c/swiggis.original/node_modules/babel-runtime/helpers/interop-require-default.js","classnames":"/mnt/c/swiggis.original/node_modules/classnames/index.js","react":"/mnt/c/swiggis.original/node_modules/react/react.js","react-prop-types/lib/all":"/mnt/c/swiggis.original/node_modules/react-prop-types/lib/all.js"}],"/mnt/c/swiggis.original/node_modules/react-bootstrap/lib/ButtonInput.js":[function(require,module,exports){
+},{"./Button":"C:\\swiggis.austin\\node_modules\\react-bootstrap\\lib\\Button.js","./utils/bootstrapUtils":"C:\\swiggis.austin\\node_modules\\react-bootstrap\\lib\\utils\\bootstrapUtils.js","babel-runtime/helpers/extends":"C:\\swiggis.austin\\node_modules\\babel-runtime\\helpers\\extends.js","babel-runtime/helpers/interop-require-default":"C:\\swiggis.austin\\node_modules\\babel-runtime\\helpers\\interop-require-default.js","classnames":"C:\\swiggis.austin\\node_modules\\classnames\\index.js","react":"C:\\swiggis.austin\\node_modules\\react\\react.js","react-prop-types/lib/all":"C:\\swiggis.austin\\node_modules\\react-prop-types\\lib\\all.js"}],"C:\\swiggis.austin\\node_modules\\react-bootstrap\\lib\\ButtonInput.js":[function(require,module,exports){
 'use strict';
 
 var _inherits = require('babel-runtime/helpers/inherits')['default'];
@@ -20587,7 +19625,7 @@ ButtonInput.propTypes = {
 
 exports['default'] = ButtonInput;
 module.exports = exports['default'];
-},{"./Button":"/mnt/c/swiggis.original/node_modules/react-bootstrap/lib/Button.js","./FormGroup":"/mnt/c/swiggis.original/node_modules/react-bootstrap/lib/FormGroup.js","./InputBase":"/mnt/c/swiggis.original/node_modules/react-bootstrap/lib/InputBase.js","./utils/childrenValueInputValidation":"/mnt/c/swiggis.original/node_modules/react-bootstrap/lib/utils/childrenValueInputValidation.js","babel-runtime/helpers/class-call-check":"/mnt/c/swiggis.original/node_modules/babel-runtime/helpers/class-call-check.js","babel-runtime/helpers/extends":"/mnt/c/swiggis.original/node_modules/babel-runtime/helpers/extends.js","babel-runtime/helpers/inherits":"/mnt/c/swiggis.original/node_modules/babel-runtime/helpers/inherits.js","babel-runtime/helpers/interop-require-default":"/mnt/c/swiggis.original/node_modules/babel-runtime/helpers/interop-require-default.js","babel-runtime/helpers/object-without-properties":"/mnt/c/swiggis.original/node_modules/babel-runtime/helpers/object-without-properties.js","react":"/mnt/c/swiggis.original/node_modules/react/react.js"}],"/mnt/c/swiggis.original/node_modules/react-bootstrap/lib/ButtonToolbar.js":[function(require,module,exports){
+},{"./Button":"C:\\swiggis.austin\\node_modules\\react-bootstrap\\lib\\Button.js","./FormGroup":"C:\\swiggis.austin\\node_modules\\react-bootstrap\\lib\\FormGroup.js","./InputBase":"C:\\swiggis.austin\\node_modules\\react-bootstrap\\lib\\InputBase.js","./utils/childrenValueInputValidation":"C:\\swiggis.austin\\node_modules\\react-bootstrap\\lib\\utils\\childrenValueInputValidation.js","babel-runtime/helpers/class-call-check":"C:\\swiggis.austin\\node_modules\\babel-runtime\\helpers\\class-call-check.js","babel-runtime/helpers/extends":"C:\\swiggis.austin\\node_modules\\babel-runtime\\helpers\\extends.js","babel-runtime/helpers/inherits":"C:\\swiggis.austin\\node_modules\\babel-runtime\\helpers\\inherits.js","babel-runtime/helpers/interop-require-default":"C:\\swiggis.austin\\node_modules\\babel-runtime\\helpers\\interop-require-default.js","babel-runtime/helpers/object-without-properties":"C:\\swiggis.austin\\node_modules\\babel-runtime\\helpers\\object-without-properties.js","react":"C:\\swiggis.austin\\node_modules\\react\\react.js"}],"C:\\swiggis.austin\\node_modules\\react-bootstrap\\lib\\ButtonToolbar.js":[function(require,module,exports){
 'use strict';
 
 var _extends = require('babel-runtime/helpers/extends')['default'];
@@ -20640,7 +19678,7 @@ var ButtonToolbar = _react2['default'].createClass({
 
 exports['default'] = ButtonToolbar;
 module.exports = exports['default'];
-},{"./Button":"/mnt/c/swiggis.original/node_modules/react-bootstrap/lib/Button.js","./utils/bootstrapUtils":"/mnt/c/swiggis.original/node_modules/react-bootstrap/lib/utils/bootstrapUtils.js","babel-runtime/helpers/extends":"/mnt/c/swiggis.original/node_modules/babel-runtime/helpers/extends.js","babel-runtime/helpers/interop-require-default":"/mnt/c/swiggis.original/node_modules/babel-runtime/helpers/interop-require-default.js","classnames":"/mnt/c/swiggis.original/node_modules/classnames/index.js","react":"/mnt/c/swiggis.original/node_modules/react/react.js"}],"/mnt/c/swiggis.original/node_modules/react-bootstrap/lib/Carousel.js":[function(require,module,exports){
+},{"./Button":"C:\\swiggis.austin\\node_modules\\react-bootstrap\\lib\\Button.js","./utils/bootstrapUtils":"C:\\swiggis.austin\\node_modules\\react-bootstrap\\lib\\utils\\bootstrapUtils.js","babel-runtime/helpers/extends":"C:\\swiggis.austin\\node_modules\\babel-runtime\\helpers\\extends.js","babel-runtime/helpers/interop-require-default":"C:\\swiggis.austin\\node_modules\\babel-runtime\\helpers\\interop-require-default.js","classnames":"C:\\swiggis.austin\\node_modules\\classnames\\index.js","react":"C:\\swiggis.austin\\node_modules\\react\\react.js"}],"C:\\swiggis.austin\\node_modules\\react-bootstrap\\lib\\Carousel.js":[function(require,module,exports){
 'use strict';
 
 var _extends = require('babel-runtime/helpers/extends')['default'];
@@ -20963,7 +20001,7 @@ Carousel = _Object$assign(Carousel, { Caption: _CarouselCaption2['default'], Ite
 
 exports['default'] = Carousel;
 module.exports = exports['default'];
-},{"./CarouselCaption":"/mnt/c/swiggis.original/node_modules/react-bootstrap/lib/CarouselCaption.js","./CarouselItem":"/mnt/c/swiggis.original/node_modules/react-bootstrap/lib/CarouselItem.js","./Glyphicon":"/mnt/c/swiggis.original/node_modules/react-bootstrap/lib/Glyphicon.js","./utils/ValidComponentChildren":"/mnt/c/swiggis.original/node_modules/react-bootstrap/lib/utils/ValidComponentChildren.js","./utils/bootstrapUtils":"/mnt/c/swiggis.original/node_modules/react-bootstrap/lib/utils/bootstrapUtils.js","babel-runtime/core-js/object/assign":"/mnt/c/swiggis.original/node_modules/babel-runtime/core-js/object/assign.js","babel-runtime/helpers/extends":"/mnt/c/swiggis.original/node_modules/babel-runtime/helpers/extends.js","babel-runtime/helpers/interop-require-default":"/mnt/c/swiggis.original/node_modules/babel-runtime/helpers/interop-require-default.js","classnames":"/mnt/c/swiggis.original/node_modules/classnames/index.js","react":"/mnt/c/swiggis.original/node_modules/react/react.js"}],"/mnt/c/swiggis.original/node_modules/react-bootstrap/lib/CarouselCaption.js":[function(require,module,exports){
+},{"./CarouselCaption":"C:\\swiggis.austin\\node_modules\\react-bootstrap\\lib\\CarouselCaption.js","./CarouselItem":"C:\\swiggis.austin\\node_modules\\react-bootstrap\\lib\\CarouselItem.js","./Glyphicon":"C:\\swiggis.austin\\node_modules\\react-bootstrap\\lib\\Glyphicon.js","./utils/ValidComponentChildren":"C:\\swiggis.austin\\node_modules\\react-bootstrap\\lib\\utils\\ValidComponentChildren.js","./utils/bootstrapUtils":"C:\\swiggis.austin\\node_modules\\react-bootstrap\\lib\\utils\\bootstrapUtils.js","babel-runtime/core-js/object/assign":"C:\\swiggis.austin\\node_modules\\babel-runtime\\core-js\\object\\assign.js","babel-runtime/helpers/extends":"C:\\swiggis.austin\\node_modules\\babel-runtime\\helpers\\extends.js","babel-runtime/helpers/interop-require-default":"C:\\swiggis.austin\\node_modules\\babel-runtime\\helpers\\interop-require-default.js","classnames":"C:\\swiggis.austin\\node_modules\\classnames\\index.js","react":"C:\\swiggis.austin\\node_modules\\react\\react.js"}],"C:\\swiggis.austin\\node_modules\\react-bootstrap\\lib\\CarouselCaption.js":[function(require,module,exports){
 'use strict';
 
 var _extends = require('babel-runtime/helpers/extends')['default'];
@@ -21012,7 +20050,7 @@ var CarouselCaption = _react2['default'].createClass({
 
 exports['default'] = CarouselCaption;
 module.exports = exports['default'];
-},{"babel-runtime/helpers/extends":"/mnt/c/swiggis.original/node_modules/babel-runtime/helpers/extends.js","babel-runtime/helpers/interop-require-default":"/mnt/c/swiggis.original/node_modules/babel-runtime/helpers/interop-require-default.js","classnames":"/mnt/c/swiggis.original/node_modules/classnames/index.js","react":"/mnt/c/swiggis.original/node_modules/react/react.js","react-prop-types/lib/elementType":"/mnt/c/swiggis.original/node_modules/react-prop-types/lib/elementType.js"}],"/mnt/c/swiggis.original/node_modules/react-bootstrap/lib/CarouselItem.js":[function(require,module,exports){
+},{"babel-runtime/helpers/extends":"C:\\swiggis.austin\\node_modules\\babel-runtime\\helpers\\extends.js","babel-runtime/helpers/interop-require-default":"C:\\swiggis.austin\\node_modules\\babel-runtime\\helpers\\interop-require-default.js","classnames":"C:\\swiggis.austin\\node_modules\\classnames\\index.js","react":"C:\\swiggis.austin\\node_modules\\react\\react.js","react-prop-types/lib/elementType":"C:\\swiggis.austin\\node_modules\\react-prop-types\\lib\\elementType.js"}],"C:\\swiggis.austin\\node_modules\\react-bootstrap\\lib\\CarouselItem.js":[function(require,module,exports){
 'use strict';
 
 var _extends = require('babel-runtime/helpers/extends')['default'];
@@ -21136,7 +20174,7 @@ var CarouselItem = _react2['default'].createClass({
 
 exports['default'] = CarouselItem;
 module.exports = exports['default'];
-},{"./utils/TransitionEvents":"/mnt/c/swiggis.original/node_modules/react-bootstrap/lib/utils/TransitionEvents.js","./utils/bootstrapUtils":"/mnt/c/swiggis.original/node_modules/react-bootstrap/lib/utils/bootstrapUtils.js","babel-runtime/helpers/extends":"/mnt/c/swiggis.original/node_modules/babel-runtime/helpers/extends.js","babel-runtime/helpers/interop-require-default":"/mnt/c/swiggis.original/node_modules/babel-runtime/helpers/interop-require-default.js","classnames":"/mnt/c/swiggis.original/node_modules/classnames/index.js","react":"/mnt/c/swiggis.original/node_modules/react/react.js","react-dom":"/mnt/c/swiggis.original/node_modules/react-dom/index.js"}],"/mnt/c/swiggis.original/node_modules/react-bootstrap/lib/Clearfix.js":[function(require,module,exports){
+},{"./utils/TransitionEvents":"C:\\swiggis.austin\\node_modules\\react-bootstrap\\lib\\utils\\TransitionEvents.js","./utils/bootstrapUtils":"C:\\swiggis.austin\\node_modules\\react-bootstrap\\lib\\utils\\bootstrapUtils.js","babel-runtime/helpers/extends":"C:\\swiggis.austin\\node_modules\\babel-runtime\\helpers\\extends.js","babel-runtime/helpers/interop-require-default":"C:\\swiggis.austin\\node_modules\\babel-runtime\\helpers\\interop-require-default.js","classnames":"C:\\swiggis.austin\\node_modules\\classnames\\index.js","react":"C:\\swiggis.austin\\node_modules\\react\\react.js","react-dom":"C:\\swiggis.austin\\node_modules\\react-dom\\index.js"}],"C:\\swiggis.austin\\node_modules\\react-bootstrap\\lib\\Clearfix.js":[function(require,module,exports){
 'use strict';
 
 var _extends = require('babel-runtime/helpers/extends')['default'];
@@ -21234,7 +20272,7 @@ var Clearfix = _react2['default'].createClass({
 
 exports['default'] = Clearfix;
 module.exports = exports['default'];
-},{"./styleMaps":"/mnt/c/swiggis.original/node_modules/react-bootstrap/lib/styleMaps.js","babel-runtime/core-js/object/keys":"/mnt/c/swiggis.original/node_modules/babel-runtime/core-js/object/keys.js","babel-runtime/helpers/extends":"/mnt/c/swiggis.original/node_modules/babel-runtime/helpers/extends.js","babel-runtime/helpers/interop-require-default":"/mnt/c/swiggis.original/node_modules/babel-runtime/helpers/interop-require-default.js","classnames":"/mnt/c/swiggis.original/node_modules/classnames/index.js","react":"/mnt/c/swiggis.original/node_modules/react/react.js","react-prop-types/lib/elementType":"/mnt/c/swiggis.original/node_modules/react-prop-types/lib/elementType.js"}],"/mnt/c/swiggis.original/node_modules/react-bootstrap/lib/Col.js":[function(require,module,exports){
+},{"./styleMaps":"C:\\swiggis.austin\\node_modules\\react-bootstrap\\lib\\styleMaps.js","babel-runtime/core-js/object/keys":"C:\\swiggis.austin\\node_modules\\babel-runtime\\core-js\\object\\keys.js","babel-runtime/helpers/extends":"C:\\swiggis.austin\\node_modules\\babel-runtime\\helpers\\extends.js","babel-runtime/helpers/interop-require-default":"C:\\swiggis.austin\\node_modules\\babel-runtime\\helpers\\interop-require-default.js","classnames":"C:\\swiggis.austin\\node_modules\\classnames\\index.js","react":"C:\\swiggis.austin\\node_modules\\react\\react.js","react-prop-types/lib/elementType":"C:\\swiggis.austin\\node_modules\\react-prop-types\\lib\\elementType.js"}],"C:\\swiggis.austin\\node_modules\\react-bootstrap\\lib\\Col.js":[function(require,module,exports){
 'use strict';
 
 var _extends = require('babel-runtime/helpers/extends')['default'];
@@ -21483,7 +20521,7 @@ var Col = _react2['default'].createClass({
 
 exports['default'] = Col;
 module.exports = exports['default'];
-},{"./styleMaps":"/mnt/c/swiggis.original/node_modules/react-bootstrap/lib/styleMaps.js","babel-runtime/core-js/object/keys":"/mnt/c/swiggis.original/node_modules/babel-runtime/core-js/object/keys.js","babel-runtime/helpers/extends":"/mnt/c/swiggis.original/node_modules/babel-runtime/helpers/extends.js","babel-runtime/helpers/interop-require-default":"/mnt/c/swiggis.original/node_modules/babel-runtime/helpers/interop-require-default.js","classnames":"/mnt/c/swiggis.original/node_modules/classnames/index.js","react":"/mnt/c/swiggis.original/node_modules/react/react.js","react-prop-types/lib/elementType":"/mnt/c/swiggis.original/node_modules/react-prop-types/lib/elementType.js"}],"/mnt/c/swiggis.original/node_modules/react-bootstrap/lib/Collapse.js":[function(require,module,exports){
+},{"./styleMaps":"C:\\swiggis.austin\\node_modules\\react-bootstrap\\lib\\styleMaps.js","babel-runtime/core-js/object/keys":"C:\\swiggis.austin\\node_modules\\babel-runtime\\core-js\\object\\keys.js","babel-runtime/helpers/extends":"C:\\swiggis.austin\\node_modules\\babel-runtime\\helpers\\extends.js","babel-runtime/helpers/interop-require-default":"C:\\swiggis.austin\\node_modules\\babel-runtime\\helpers\\interop-require-default.js","classnames":"C:\\swiggis.austin\\node_modules\\classnames\\index.js","react":"C:\\swiggis.austin\\node_modules\\react\\react.js","react-prop-types/lib/elementType":"C:\\swiggis.austin\\node_modules\\react-prop-types\\lib\\elementType.js"}],"C:\\swiggis.austin\\node_modules\\react-bootstrap\\lib\\Collapse.js":[function(require,module,exports){
 'use strict';
 
 var _inherits = require('babel-runtime/helpers/inherits')['default'];
@@ -21730,7 +20768,7 @@ Collapse.defaultProps = {
 
 exports['default'] = Collapse;
 module.exports = exports['default'];
-},{"./utils/createChainedFunction":"/mnt/c/swiggis.original/node_modules/react-bootstrap/lib/utils/createChainedFunction.js","babel-runtime/helpers/class-call-check":"/mnt/c/swiggis.original/node_modules/babel-runtime/helpers/class-call-check.js","babel-runtime/helpers/extends":"/mnt/c/swiggis.original/node_modules/babel-runtime/helpers/extends.js","babel-runtime/helpers/inherits":"/mnt/c/swiggis.original/node_modules/babel-runtime/helpers/inherits.js","babel-runtime/helpers/interop-require-default":"/mnt/c/swiggis.original/node_modules/babel-runtime/helpers/interop-require-default.js","classnames":"/mnt/c/swiggis.original/node_modules/classnames/index.js","dom-helpers/style":"/mnt/c/swiggis.original/node_modules/dom-helpers/style/index.js","react":"/mnt/c/swiggis.original/node_modules/react/react.js","react-overlays/lib/Transition":"/mnt/c/swiggis.original/node_modules/react-overlays/lib/Transition.js","react-prop-types/lib/deprecated":"/mnt/c/swiggis.original/node_modules/react-prop-types/lib/deprecated.js"}],"/mnt/c/swiggis.original/node_modules/react-bootstrap/lib/CollapsibleNav.js":[function(require,module,exports){
+},{"./utils/createChainedFunction":"C:\\swiggis.austin\\node_modules\\react-bootstrap\\lib\\utils\\createChainedFunction.js","babel-runtime/helpers/class-call-check":"C:\\swiggis.austin\\node_modules\\babel-runtime\\helpers\\class-call-check.js","babel-runtime/helpers/extends":"C:\\swiggis.austin\\node_modules\\babel-runtime\\helpers\\extends.js","babel-runtime/helpers/inherits":"C:\\swiggis.austin\\node_modules\\babel-runtime\\helpers\\inherits.js","babel-runtime/helpers/interop-require-default":"C:\\swiggis.austin\\node_modules\\babel-runtime\\helpers\\interop-require-default.js","classnames":"C:\\swiggis.austin\\node_modules\\classnames\\index.js","dom-helpers/style":"C:\\swiggis.austin\\node_modules\\dom-helpers\\style\\index.js","react":"C:\\swiggis.austin\\node_modules\\react\\react.js","react-overlays/lib/Transition":"C:\\swiggis.austin\\node_modules\\react-overlays\\lib\\Transition.js","react-prop-types/lib/deprecated":"C:\\swiggis.austin\\node_modules\\react-prop-types\\lib\\deprecated.js"}],"C:\\swiggis.austin\\node_modules\\react-bootstrap\\lib\\CollapsibleNav.js":[function(require,module,exports){
 'use strict';
 
 var _interopRequireDefault = require('babel-runtime/helpers/interop-require-default')['default'];
@@ -21848,7 +20886,7 @@ var CollapsibleNav = _react2['default'].createClass({
 
 exports['default'] = _utilsDeprecationWarning2['default'].wrapper(CollapsibleNav, 'CollapsibleNav', 'Navbar.Collapse', 'http://react-bootstrap.github.io/components.html#navbars');
 module.exports = exports['default'];
-},{"./Collapse":"/mnt/c/swiggis.original/node_modules/react-bootstrap/lib/Collapse.js","./utils/ValidComponentChildren":"/mnt/c/swiggis.original/node_modules/react-bootstrap/lib/utils/ValidComponentChildren.js","./utils/createChainedFunction":"/mnt/c/swiggis.original/node_modules/react-bootstrap/lib/utils/createChainedFunction.js","./utils/deprecationWarning":"/mnt/c/swiggis.original/node_modules/react-bootstrap/lib/utils/deprecationWarning.js","babel-runtime/helpers/interop-require-default":"/mnt/c/swiggis.original/node_modules/babel-runtime/helpers/interop-require-default.js","classnames":"/mnt/c/swiggis.original/node_modules/classnames/index.js","react":"/mnt/c/swiggis.original/node_modules/react/react.js"}],"/mnt/c/swiggis.original/node_modules/react-bootstrap/lib/Dropdown.js":[function(require,module,exports){
+},{"./Collapse":"C:\\swiggis.austin\\node_modules\\react-bootstrap\\lib\\Collapse.js","./utils/ValidComponentChildren":"C:\\swiggis.austin\\node_modules\\react-bootstrap\\lib\\utils\\ValidComponentChildren.js","./utils/createChainedFunction":"C:\\swiggis.austin\\node_modules\\react-bootstrap\\lib\\utils\\createChainedFunction.js","./utils/deprecationWarning":"C:\\swiggis.austin\\node_modules\\react-bootstrap\\lib\\utils\\deprecationWarning.js","babel-runtime/helpers/interop-require-default":"C:\\swiggis.austin\\node_modules\\babel-runtime\\helpers\\interop-require-default.js","classnames":"C:\\swiggis.austin\\node_modules\\classnames\\index.js","react":"C:\\swiggis.austin\\node_modules\\react\\react.js"}],"C:\\swiggis.austin\\node_modules\\react-bootstrap\\lib\\Dropdown.js":[function(require,module,exports){
 'use strict';
 
 var _inherits = require('babel-runtime/helpers/inherits')['default'];
@@ -22249,7 +21287,7 @@ Dropdown.Menu = _DropdownMenu2['default'];
 
 exports['default'] = Dropdown;
 module.exports = exports['default'];
-},{"./ButtonGroup":"/mnt/c/swiggis.original/node_modules/react-bootstrap/lib/ButtonGroup.js","./DropdownMenu":"/mnt/c/swiggis.original/node_modules/react-bootstrap/lib/DropdownMenu.js","./DropdownToggle":"/mnt/c/swiggis.original/node_modules/react-bootstrap/lib/DropdownToggle.js","./utils/CustomPropTypes":"/mnt/c/swiggis.original/node_modules/react-bootstrap/lib/utils/CustomPropTypes.js","./utils/ValidComponentChildren":"/mnt/c/swiggis.original/node_modules/react-bootstrap/lib/utils/ValidComponentChildren.js","./utils/bootstrapUtils":"/mnt/c/swiggis.original/node_modules/react-bootstrap/lib/utils/bootstrapUtils.js","./utils/createChainedFunction":"/mnt/c/swiggis.original/node_modules/react-bootstrap/lib/utils/createChainedFunction.js","babel-runtime/helpers/class-call-check":"/mnt/c/swiggis.original/node_modules/babel-runtime/helpers/class-call-check.js","babel-runtime/helpers/extends":"/mnt/c/swiggis.original/node_modules/babel-runtime/helpers/extends.js","babel-runtime/helpers/inherits":"/mnt/c/swiggis.original/node_modules/babel-runtime/helpers/inherits.js","babel-runtime/helpers/interop-require-default":"/mnt/c/swiggis.original/node_modules/babel-runtime/helpers/interop-require-default.js","classnames":"/mnt/c/swiggis.original/node_modules/classnames/index.js","dom-helpers/activeElement":"/mnt/c/swiggis.original/node_modules/dom-helpers/activeElement.js","dom-helpers/query/contains":"/mnt/c/swiggis.original/node_modules/dom-helpers/query/contains.js","keycode":"/mnt/c/swiggis.original/node_modules/keycode/index.js","lodash-compat/collection/find":"/mnt/c/swiggis.original/node_modules/lodash-compat/collection/find.js","lodash-compat/object/omit":"/mnt/c/swiggis.original/node_modules/lodash-compat/object/omit.js","react":"/mnt/c/swiggis.original/node_modules/react/react.js","react-dom":"/mnt/c/swiggis.original/node_modules/react-dom/index.js","react-prop-types/lib/all":"/mnt/c/swiggis.original/node_modules/react-prop-types/lib/all.js","react-prop-types/lib/elementType":"/mnt/c/swiggis.original/node_modules/react-prop-types/lib/elementType.js","react-prop-types/lib/isRequiredForA11y":"/mnt/c/swiggis.original/node_modules/react-prop-types/lib/isRequiredForA11y.js","uncontrollable":"/mnt/c/swiggis.original/node_modules/uncontrollable/index.js"}],"/mnt/c/swiggis.original/node_modules/react-bootstrap/lib/DropdownButton.js":[function(require,module,exports){
+},{"./ButtonGroup":"C:\\swiggis.austin\\node_modules\\react-bootstrap\\lib\\ButtonGroup.js","./DropdownMenu":"C:\\swiggis.austin\\node_modules\\react-bootstrap\\lib\\DropdownMenu.js","./DropdownToggle":"C:\\swiggis.austin\\node_modules\\react-bootstrap\\lib\\DropdownToggle.js","./utils/CustomPropTypes":"C:\\swiggis.austin\\node_modules\\react-bootstrap\\lib\\utils\\CustomPropTypes.js","./utils/ValidComponentChildren":"C:\\swiggis.austin\\node_modules\\react-bootstrap\\lib\\utils\\ValidComponentChildren.js","./utils/bootstrapUtils":"C:\\swiggis.austin\\node_modules\\react-bootstrap\\lib\\utils\\bootstrapUtils.js","./utils/createChainedFunction":"C:\\swiggis.austin\\node_modules\\react-bootstrap\\lib\\utils\\createChainedFunction.js","babel-runtime/helpers/class-call-check":"C:\\swiggis.austin\\node_modules\\babel-runtime\\helpers\\class-call-check.js","babel-runtime/helpers/extends":"C:\\swiggis.austin\\node_modules\\babel-runtime\\helpers\\extends.js","babel-runtime/helpers/inherits":"C:\\swiggis.austin\\node_modules\\babel-runtime\\helpers\\inherits.js","babel-runtime/helpers/interop-require-default":"C:\\swiggis.austin\\node_modules\\babel-runtime\\helpers\\interop-require-default.js","classnames":"C:\\swiggis.austin\\node_modules\\classnames\\index.js","dom-helpers/activeElement":"C:\\swiggis.austin\\node_modules\\dom-helpers\\activeElement.js","dom-helpers/query/contains":"C:\\swiggis.austin\\node_modules\\dom-helpers\\query\\contains.js","keycode":"C:\\swiggis.austin\\node_modules\\keycode\\index.js","lodash-compat/collection/find":"C:\\swiggis.austin\\node_modules\\lodash-compat\\collection\\find.js","lodash-compat/object/omit":"C:\\swiggis.austin\\node_modules\\lodash-compat\\object\\omit.js","react":"C:\\swiggis.austin\\node_modules\\react\\react.js","react-dom":"C:\\swiggis.austin\\node_modules\\react-dom\\index.js","react-prop-types/lib/all":"C:\\swiggis.austin\\node_modules\\react-prop-types\\lib\\all.js","react-prop-types/lib/elementType":"C:\\swiggis.austin\\node_modules\\react-prop-types\\lib\\elementType.js","react-prop-types/lib/isRequiredForA11y":"C:\\swiggis.austin\\node_modules\\react-prop-types\\lib\\isRequiredForA11y.js","uncontrollable":"C:\\swiggis.austin\\node_modules\\uncontrollable\\index.js"}],"C:\\swiggis.austin\\node_modules\\react-bootstrap\\lib\\DropdownButton.js":[function(require,module,exports){
 'use strict';
 
 var _inherits = require('babel-runtime/helpers/inherits')['default'];
@@ -22356,7 +21394,7 @@ DropdownButton.defaultProps = {
 
 exports['default'] = DropdownButton;
 module.exports = exports['default'];
-},{"./Button":"/mnt/c/swiggis.original/node_modules/react-bootstrap/lib/Button.js","./Dropdown":"/mnt/c/swiggis.original/node_modules/react-bootstrap/lib/Dropdown.js","babel-runtime/core-js/object/keys":"/mnt/c/swiggis.original/node_modules/babel-runtime/core-js/object/keys.js","babel-runtime/helpers/class-call-check":"/mnt/c/swiggis.original/node_modules/babel-runtime/helpers/class-call-check.js","babel-runtime/helpers/extends":"/mnt/c/swiggis.original/node_modules/babel-runtime/helpers/extends.js","babel-runtime/helpers/inherits":"/mnt/c/swiggis.original/node_modules/babel-runtime/helpers/inherits.js","babel-runtime/helpers/interop-require-default":"/mnt/c/swiggis.original/node_modules/babel-runtime/helpers/interop-require-default.js","babel-runtime/helpers/object-without-properties":"/mnt/c/swiggis.original/node_modules/babel-runtime/helpers/object-without-properties.js","lodash-compat/object/omit":"/mnt/c/swiggis.original/node_modules/lodash-compat/object/omit.js","lodash-compat/object/pick":"/mnt/c/swiggis.original/node_modules/lodash-compat/object/pick.js","react":"/mnt/c/swiggis.original/node_modules/react/react.js"}],"/mnt/c/swiggis.original/node_modules/react-bootstrap/lib/DropdownMenu.js":[function(require,module,exports){
+},{"./Button":"C:\\swiggis.austin\\node_modules\\react-bootstrap\\lib\\Button.js","./Dropdown":"C:\\swiggis.austin\\node_modules\\react-bootstrap\\lib\\Dropdown.js","babel-runtime/core-js/object/keys":"C:\\swiggis.austin\\node_modules\\babel-runtime\\core-js\\object\\keys.js","babel-runtime/helpers/class-call-check":"C:\\swiggis.austin\\node_modules\\babel-runtime\\helpers\\class-call-check.js","babel-runtime/helpers/extends":"C:\\swiggis.austin\\node_modules\\babel-runtime\\helpers\\extends.js","babel-runtime/helpers/inherits":"C:\\swiggis.austin\\node_modules\\babel-runtime\\helpers\\inherits.js","babel-runtime/helpers/interop-require-default":"C:\\swiggis.austin\\node_modules\\babel-runtime\\helpers\\interop-require-default.js","babel-runtime/helpers/object-without-properties":"C:\\swiggis.austin\\node_modules\\babel-runtime\\helpers\\object-without-properties.js","lodash-compat/object/omit":"C:\\swiggis.austin\\node_modules\\lodash-compat\\object\\omit.js","lodash-compat/object/pick":"C:\\swiggis.austin\\node_modules\\lodash-compat\\object\\pick.js","react":"C:\\swiggis.austin\\node_modules\\react\\react.js"}],"C:\\swiggis.austin\\node_modules\\react-bootstrap\\lib\\DropdownMenu.js":[function(require,module,exports){
 'use strict';
 
 var _inherits = require('babel-runtime/helpers/inherits')['default'];
@@ -22553,7 +21591,7 @@ DropdownMenu.propTypes = {
 
 exports['default'] = DropdownMenu;
 module.exports = exports['default'];
-},{"./utils/ValidComponentChildren":"/mnt/c/swiggis.original/node_modules/react-bootstrap/lib/utils/ValidComponentChildren.js","./utils/bootstrapUtils":"/mnt/c/swiggis.original/node_modules/react-bootstrap/lib/utils/bootstrapUtils.js","./utils/createChainedFunction":"/mnt/c/swiggis.original/node_modules/react-bootstrap/lib/utils/createChainedFunction.js","babel-runtime/helpers/class-call-check":"/mnt/c/swiggis.original/node_modules/babel-runtime/helpers/class-call-check.js","babel-runtime/helpers/extends":"/mnt/c/swiggis.original/node_modules/babel-runtime/helpers/extends.js","babel-runtime/helpers/inherits":"/mnt/c/swiggis.original/node_modules/babel-runtime/helpers/inherits.js","babel-runtime/helpers/interop-require-default":"/mnt/c/swiggis.original/node_modules/babel-runtime/helpers/interop-require-default.js","babel-runtime/helpers/object-without-properties":"/mnt/c/swiggis.original/node_modules/babel-runtime/helpers/object-without-properties.js","classnames":"/mnt/c/swiggis.original/node_modules/classnames/index.js","keycode":"/mnt/c/swiggis.original/node_modules/keycode/index.js","react":"/mnt/c/swiggis.original/node_modules/react/react.js","react-dom":"/mnt/c/swiggis.original/node_modules/react-dom/index.js","react-overlays/lib/RootCloseWrapper":"/mnt/c/swiggis.original/node_modules/react-overlays/lib/RootCloseWrapper.js"}],"/mnt/c/swiggis.original/node_modules/react-bootstrap/lib/DropdownToggle.js":[function(require,module,exports){
+},{"./utils/ValidComponentChildren":"C:\\swiggis.austin\\node_modules\\react-bootstrap\\lib\\utils\\ValidComponentChildren.js","./utils/bootstrapUtils":"C:\\swiggis.austin\\node_modules\\react-bootstrap\\lib\\utils\\bootstrapUtils.js","./utils/createChainedFunction":"C:\\swiggis.austin\\node_modules\\react-bootstrap\\lib\\utils\\createChainedFunction.js","babel-runtime/helpers/class-call-check":"C:\\swiggis.austin\\node_modules\\babel-runtime\\helpers\\class-call-check.js","babel-runtime/helpers/extends":"C:\\swiggis.austin\\node_modules\\babel-runtime\\helpers\\extends.js","babel-runtime/helpers/inherits":"C:\\swiggis.austin\\node_modules\\babel-runtime\\helpers\\inherits.js","babel-runtime/helpers/interop-require-default":"C:\\swiggis.austin\\node_modules\\babel-runtime\\helpers\\interop-require-default.js","babel-runtime/helpers/object-without-properties":"C:\\swiggis.austin\\node_modules\\babel-runtime\\helpers\\object-without-properties.js","classnames":"C:\\swiggis.austin\\node_modules\\classnames\\index.js","keycode":"C:\\swiggis.austin\\node_modules\\keycode\\index.js","react":"C:\\swiggis.austin\\node_modules\\react\\react.js","react-dom":"C:\\swiggis.austin\\node_modules\\react-dom\\index.js","react-overlays/lib/RootCloseWrapper":"C:\\swiggis.austin\\node_modules\\react-overlays\\lib\\RootCloseWrapper.js"}],"C:\\swiggis.austin\\node_modules\\react-bootstrap\\lib\\DropdownToggle.js":[function(require,module,exports){
 'use strict';
 
 var _inherits = require('babel-runtime/helpers/inherits')['default'];
@@ -22642,7 +21680,7 @@ DropdownToggle.isToggle = true;
 DropdownToggle.titleProp = 'title';
 DropdownToggle.onClickProp = 'onClick';
 module.exports = exports['default'];
-},{"./Button":"/mnt/c/swiggis.original/node_modules/react-bootstrap/lib/Button.js","./SafeAnchor":"/mnt/c/swiggis.original/node_modules/react-bootstrap/lib/SafeAnchor.js","babel-runtime/helpers/class-call-check":"/mnt/c/swiggis.original/node_modules/babel-runtime/helpers/class-call-check.js","babel-runtime/helpers/extends":"/mnt/c/swiggis.original/node_modules/babel-runtime/helpers/extends.js","babel-runtime/helpers/inherits":"/mnt/c/swiggis.original/node_modules/babel-runtime/helpers/inherits.js","babel-runtime/helpers/interop-require-default":"/mnt/c/swiggis.original/node_modules/babel-runtime/helpers/interop-require-default.js","classnames":"/mnt/c/swiggis.original/node_modules/classnames/index.js","react":"/mnt/c/swiggis.original/node_modules/react/react.js"}],"/mnt/c/swiggis.original/node_modules/react-bootstrap/lib/Fade.js":[function(require,module,exports){
+},{"./Button":"C:\\swiggis.austin\\node_modules\\react-bootstrap\\lib\\Button.js","./SafeAnchor":"C:\\swiggis.austin\\node_modules\\react-bootstrap\\lib\\SafeAnchor.js","babel-runtime/helpers/class-call-check":"C:\\swiggis.austin\\node_modules\\babel-runtime\\helpers\\class-call-check.js","babel-runtime/helpers/extends":"C:\\swiggis.austin\\node_modules\\babel-runtime\\helpers\\extends.js","babel-runtime/helpers/inherits":"C:\\swiggis.austin\\node_modules\\babel-runtime\\helpers\\inherits.js","babel-runtime/helpers/interop-require-default":"C:\\swiggis.austin\\node_modules\\babel-runtime\\helpers\\interop-require-default.js","classnames":"C:\\swiggis.austin\\node_modules\\classnames\\index.js","react":"C:\\swiggis.austin\\node_modules\\react\\react.js"}],"C:\\swiggis.austin\\node_modules\\react-bootstrap\\lib\\Fade.js":[function(require,module,exports){
 'use strict';
 
 var _inherits = require('babel-runtime/helpers/inherits')['default'];
@@ -22766,7 +21804,7 @@ Fade.defaultProps = {
 
 exports['default'] = Fade;
 module.exports = exports['default'];
-},{"babel-runtime/helpers/class-call-check":"/mnt/c/swiggis.original/node_modules/babel-runtime/helpers/class-call-check.js","babel-runtime/helpers/extends":"/mnt/c/swiggis.original/node_modules/babel-runtime/helpers/extends.js","babel-runtime/helpers/inherits":"/mnt/c/swiggis.original/node_modules/babel-runtime/helpers/inherits.js","babel-runtime/helpers/interop-require-default":"/mnt/c/swiggis.original/node_modules/babel-runtime/helpers/interop-require-default.js","classnames":"/mnt/c/swiggis.original/node_modules/classnames/index.js","react":"/mnt/c/swiggis.original/node_modules/react/react.js","react-overlays/lib/Transition":"/mnt/c/swiggis.original/node_modules/react-overlays/lib/Transition.js","react-prop-types/lib/deprecated":"/mnt/c/swiggis.original/node_modules/react-prop-types/lib/deprecated.js"}],"/mnt/c/swiggis.original/node_modules/react-bootstrap/lib/FormControls/Static.js":[function(require,module,exports){
+},{"babel-runtime/helpers/class-call-check":"C:\\swiggis.austin\\node_modules\\babel-runtime\\helpers\\class-call-check.js","babel-runtime/helpers/extends":"C:\\swiggis.austin\\node_modules\\babel-runtime\\helpers\\extends.js","babel-runtime/helpers/inherits":"C:\\swiggis.austin\\node_modules\\babel-runtime\\helpers\\inherits.js","babel-runtime/helpers/interop-require-default":"C:\\swiggis.austin\\node_modules\\babel-runtime\\helpers\\interop-require-default.js","classnames":"C:\\swiggis.austin\\node_modules\\classnames\\index.js","react":"C:\\swiggis.austin\\node_modules\\react\\react.js","react-overlays/lib/Transition":"C:\\swiggis.austin\\node_modules\\react-overlays\\lib\\Transition.js","react-prop-types/lib/deprecated":"C:\\swiggis.austin\\node_modules\\react-prop-types\\lib\\deprecated.js"}],"C:\\swiggis.austin\\node_modules\\react-bootstrap\\lib\\FormControls\\Static.js":[function(require,module,exports){
 'use strict';
 
 var _inherits = require('babel-runtime/helpers/inherits')['default'];
@@ -22849,7 +21887,7 @@ Static.defaultProps = {
 
 exports['default'] = Static;
 module.exports = exports['default'];
-},{"../InputBase":"/mnt/c/swiggis.original/node_modules/react-bootstrap/lib/InputBase.js","../utils/childrenValueInputValidation":"/mnt/c/swiggis.original/node_modules/react-bootstrap/lib/utils/childrenValueInputValidation.js","babel-runtime/helpers/class-call-check":"/mnt/c/swiggis.original/node_modules/babel-runtime/helpers/class-call-check.js","babel-runtime/helpers/extends":"/mnt/c/swiggis.original/node_modules/babel-runtime/helpers/extends.js","babel-runtime/helpers/inherits":"/mnt/c/swiggis.original/node_modules/babel-runtime/helpers/inherits.js","babel-runtime/helpers/interop-require-default":"/mnt/c/swiggis.original/node_modules/babel-runtime/helpers/interop-require-default.js","babel-runtime/helpers/object-without-properties":"/mnt/c/swiggis.original/node_modules/babel-runtime/helpers/object-without-properties.js","classnames":"/mnt/c/swiggis.original/node_modules/classnames/index.js","react":"/mnt/c/swiggis.original/node_modules/react/react.js","react-prop-types/lib/elementType":"/mnt/c/swiggis.original/node_modules/react-prop-types/lib/elementType.js"}],"/mnt/c/swiggis.original/node_modules/react-bootstrap/lib/FormControls/index.js":[function(require,module,exports){
+},{"../InputBase":"C:\\swiggis.austin\\node_modules\\react-bootstrap\\lib\\InputBase.js","../utils/childrenValueInputValidation":"C:\\swiggis.austin\\node_modules\\react-bootstrap\\lib\\utils\\childrenValueInputValidation.js","babel-runtime/helpers/class-call-check":"C:\\swiggis.austin\\node_modules\\babel-runtime\\helpers\\class-call-check.js","babel-runtime/helpers/extends":"C:\\swiggis.austin\\node_modules\\babel-runtime\\helpers\\extends.js","babel-runtime/helpers/inherits":"C:\\swiggis.austin\\node_modules\\babel-runtime\\helpers\\inherits.js","babel-runtime/helpers/interop-require-default":"C:\\swiggis.austin\\node_modules\\babel-runtime\\helpers\\interop-require-default.js","babel-runtime/helpers/object-without-properties":"C:\\swiggis.austin\\node_modules\\babel-runtime\\helpers\\object-without-properties.js","classnames":"C:\\swiggis.austin\\node_modules\\classnames\\index.js","react":"C:\\swiggis.austin\\node_modules\\react\\react.js","react-prop-types/lib/elementType":"C:\\swiggis.austin\\node_modules\\react-prop-types\\lib\\elementType.js"}],"C:\\swiggis.austin\\node_modules\\react-bootstrap\\lib\\FormControls\\index.js":[function(require,module,exports){
 'use strict';
 
 var _interopRequireDefault = require('babel-runtime/helpers/interop-require-default')['default'];
@@ -22861,7 +21899,7 @@ var _Static2 = require('./Static');
 var _Static3 = _interopRequireDefault(_Static2);
 
 exports.Static = _Static3['default'];
-},{"./Static":"/mnt/c/swiggis.original/node_modules/react-bootstrap/lib/FormControls/Static.js","babel-runtime/helpers/interop-require-default":"/mnt/c/swiggis.original/node_modules/babel-runtime/helpers/interop-require-default.js"}],"/mnt/c/swiggis.original/node_modules/react-bootstrap/lib/FormGroup.js":[function(require,module,exports){
+},{"./Static":"C:\\swiggis.austin\\node_modules\\react-bootstrap\\lib\\FormControls\\Static.js","babel-runtime/helpers/interop-require-default":"C:\\swiggis.austin\\node_modules\\babel-runtime\\helpers\\interop-require-default.js"}],"C:\\swiggis.austin\\node_modules\\react-bootstrap\\lib\\FormGroup.js":[function(require,module,exports){
 'use strict';
 
 var _inherits = require('babel-runtime/helpers/inherits')['default'];
@@ -22931,7 +21969,7 @@ FormGroup.propTypes = {
 
 exports['default'] = FormGroup;
 module.exports = exports['default'];
-},{"babel-runtime/helpers/class-call-check":"/mnt/c/swiggis.original/node_modules/babel-runtime/helpers/class-call-check.js","babel-runtime/helpers/inherits":"/mnt/c/swiggis.original/node_modules/babel-runtime/helpers/inherits.js","babel-runtime/helpers/interop-require-default":"/mnt/c/swiggis.original/node_modules/babel-runtime/helpers/interop-require-default.js","classnames":"/mnt/c/swiggis.original/node_modules/classnames/index.js","react":"/mnt/c/swiggis.original/node_modules/react/react.js"}],"/mnt/c/swiggis.original/node_modules/react-bootstrap/lib/Glyphicon.js":[function(require,module,exports){
+},{"babel-runtime/helpers/class-call-check":"C:\\swiggis.austin\\node_modules\\babel-runtime\\helpers\\class-call-check.js","babel-runtime/helpers/inherits":"C:\\swiggis.austin\\node_modules\\babel-runtime\\helpers\\inherits.js","babel-runtime/helpers/interop-require-default":"C:\\swiggis.austin\\node_modules\\babel-runtime\\helpers\\interop-require-default.js","classnames":"C:\\swiggis.austin\\node_modules\\classnames\\index.js","react":"C:\\swiggis.austin\\node_modules\\react\\react.js"}],"C:\\swiggis.austin\\node_modules\\react-bootstrap\\lib\\Glyphicon.js":[function(require,module,exports){
 'use strict';
 
 var _extends = require('babel-runtime/helpers/extends')['default'];
@@ -22990,7 +22028,7 @@ var Glyphicon = _react2['default'].createClass({
 
 exports['default'] = Glyphicon;
 module.exports = exports['default'];
-},{"babel-runtime/helpers/extends":"/mnt/c/swiggis.original/node_modules/babel-runtime/helpers/extends.js","babel-runtime/helpers/interop-require-default":"/mnt/c/swiggis.original/node_modules/babel-runtime/helpers/interop-require-default.js","classnames":"/mnt/c/swiggis.original/node_modules/classnames/index.js","react":"/mnt/c/swiggis.original/node_modules/react/react.js"}],"/mnt/c/swiggis.original/node_modules/react-bootstrap/lib/Grid.js":[function(require,module,exports){
+},{"babel-runtime/helpers/extends":"C:\\swiggis.austin\\node_modules\\babel-runtime\\helpers\\extends.js","babel-runtime/helpers/interop-require-default":"C:\\swiggis.austin\\node_modules\\babel-runtime\\helpers\\interop-require-default.js","classnames":"C:\\swiggis.austin\\node_modules\\classnames\\index.js","react":"C:\\swiggis.austin\\node_modules\\react\\react.js"}],"C:\\swiggis.austin\\node_modules\\react-bootstrap\\lib\\Grid.js":[function(require,module,exports){
 'use strict';
 
 var _extends = require('babel-runtime/helpers/extends')['default'];
@@ -23049,7 +22087,7 @@ var Grid = _react2['default'].createClass({
 
 exports['default'] = Grid;
 module.exports = exports['default'];
-},{"babel-runtime/helpers/extends":"/mnt/c/swiggis.original/node_modules/babel-runtime/helpers/extends.js","babel-runtime/helpers/interop-require-default":"/mnt/c/swiggis.original/node_modules/babel-runtime/helpers/interop-require-default.js","classnames":"/mnt/c/swiggis.original/node_modules/classnames/index.js","react":"/mnt/c/swiggis.original/node_modules/react/react.js","react-prop-types/lib/elementType":"/mnt/c/swiggis.original/node_modules/react-prop-types/lib/elementType.js"}],"/mnt/c/swiggis.original/node_modules/react-bootstrap/lib/Image.js":[function(require,module,exports){
+},{"babel-runtime/helpers/extends":"C:\\swiggis.austin\\node_modules\\babel-runtime\\helpers\\extends.js","babel-runtime/helpers/interop-require-default":"C:\\swiggis.austin\\node_modules\\babel-runtime\\helpers\\interop-require-default.js","classnames":"C:\\swiggis.austin\\node_modules\\classnames\\index.js","react":"C:\\swiggis.austin\\node_modules\\react\\react.js","react-prop-types/lib/elementType":"C:\\swiggis.austin\\node_modules\\react-prop-types\\lib\\elementType.js"}],"C:\\swiggis.austin\\node_modules\\react-bootstrap\\lib\\Image.js":[function(require,module,exports){
 'use strict';
 
 var _extends = require('babel-runtime/helpers/extends')['default'];
@@ -23115,7 +22153,7 @@ var Image = _react2['default'].createClass({
 
 exports['default'] = Image;
 module.exports = exports['default'];
-},{"babel-runtime/helpers/extends":"/mnt/c/swiggis.original/node_modules/babel-runtime/helpers/extends.js","babel-runtime/helpers/interop-require-default":"/mnt/c/swiggis.original/node_modules/babel-runtime/helpers/interop-require-default.js","classnames":"/mnt/c/swiggis.original/node_modules/classnames/index.js","react":"/mnt/c/swiggis.original/node_modules/react/react.js"}],"/mnt/c/swiggis.original/node_modules/react-bootstrap/lib/Input.js":[function(require,module,exports){
+},{"babel-runtime/helpers/extends":"C:\\swiggis.austin\\node_modules\\babel-runtime\\helpers\\extends.js","babel-runtime/helpers/interop-require-default":"C:\\swiggis.austin\\node_modules\\babel-runtime\\helpers\\interop-require-default.js","classnames":"C:\\swiggis.austin\\node_modules\\classnames\\index.js","react":"C:\\swiggis.austin\\node_modules\\react\\react.js"}],"C:\\swiggis.austin\\node_modules\\react-bootstrap\\lib\\Input.js":[function(require,module,exports){
 'use strict';
 
 var _inherits = require('babel-runtime/helpers/inherits')['default'];
@@ -23171,7 +22209,7 @@ Input.propTypes = {
 
 exports['default'] = Input;
 module.exports = exports['default'];
-},{"./FormControls":"/mnt/c/swiggis.original/node_modules/react-bootstrap/lib/FormControls/index.js","./InputBase":"/mnt/c/swiggis.original/node_modules/react-bootstrap/lib/InputBase.js","./utils/deprecationWarning":"/mnt/c/swiggis.original/node_modules/react-bootstrap/lib/utils/deprecationWarning.js","babel-runtime/helpers/class-call-check":"/mnt/c/swiggis.original/node_modules/babel-runtime/helpers/class-call-check.js","babel-runtime/helpers/inherits":"/mnt/c/swiggis.original/node_modules/babel-runtime/helpers/inherits.js","babel-runtime/helpers/interop-require-default":"/mnt/c/swiggis.original/node_modules/babel-runtime/helpers/interop-require-default.js","babel-runtime/helpers/interop-require-wildcard":"/mnt/c/swiggis.original/node_modules/babel-runtime/helpers/interop-require-wildcard.js","react":"/mnt/c/swiggis.original/node_modules/react/react.js"}],"/mnt/c/swiggis.original/node_modules/react-bootstrap/lib/InputBase.js":[function(require,module,exports){
+},{"./FormControls":"C:\\swiggis.austin\\node_modules\\react-bootstrap\\lib\\FormControls\\index.js","./InputBase":"C:\\swiggis.austin\\node_modules\\react-bootstrap\\lib\\InputBase.js","./utils/deprecationWarning":"C:\\swiggis.austin\\node_modules\\react-bootstrap\\lib\\utils\\deprecationWarning.js","babel-runtime/helpers/class-call-check":"C:\\swiggis.austin\\node_modules\\babel-runtime\\helpers\\class-call-check.js","babel-runtime/helpers/inherits":"C:\\swiggis.austin\\node_modules\\babel-runtime\\helpers\\inherits.js","babel-runtime/helpers/interop-require-default":"C:\\swiggis.austin\\node_modules\\babel-runtime\\helpers\\interop-require-default.js","babel-runtime/helpers/interop-require-wildcard":"C:\\swiggis.austin\\node_modules\\babel-runtime\\helpers\\interop-require-wildcard.js","react":"C:\\swiggis.austin\\node_modules\\react\\react.js"}],"C:\\swiggis.austin\\node_modules\\react-bootstrap\\lib\\InputBase.js":[function(require,module,exports){
 'use strict';
 
 var _inherits = require('babel-runtime/helpers/inherits')['default'];
@@ -23434,7 +22472,7 @@ InputBase.defaultProps = {
 
 exports['default'] = InputBase;
 module.exports = exports['default'];
-},{"./FormGroup":"/mnt/c/swiggis.original/node_modules/react-bootstrap/lib/FormGroup.js","./Glyphicon":"/mnt/c/swiggis.original/node_modules/react-bootstrap/lib/Glyphicon.js","babel-runtime/helpers/class-call-check":"/mnt/c/swiggis.original/node_modules/babel-runtime/helpers/class-call-check.js","babel-runtime/helpers/extends":"/mnt/c/swiggis.original/node_modules/babel-runtime/helpers/extends.js","babel-runtime/helpers/inherits":"/mnt/c/swiggis.original/node_modules/babel-runtime/helpers/inherits.js","babel-runtime/helpers/interop-require-default":"/mnt/c/swiggis.original/node_modules/babel-runtime/helpers/interop-require-default.js","classnames":"/mnt/c/swiggis.original/node_modules/classnames/index.js","react":"/mnt/c/swiggis.original/node_modules/react/react.js"}],"/mnt/c/swiggis.original/node_modules/react-bootstrap/lib/Interpolate.js":[function(require,module,exports){
+},{"./FormGroup":"C:\\swiggis.austin\\node_modules\\react-bootstrap\\lib\\FormGroup.js","./Glyphicon":"C:\\swiggis.austin\\node_modules\\react-bootstrap\\lib\\Glyphicon.js","babel-runtime/helpers/class-call-check":"C:\\swiggis.austin\\node_modules\\babel-runtime\\helpers\\class-call-check.js","babel-runtime/helpers/extends":"C:\\swiggis.austin\\node_modules\\babel-runtime\\helpers\\extends.js","babel-runtime/helpers/inherits":"C:\\swiggis.austin\\node_modules\\babel-runtime\\helpers\\inherits.js","babel-runtime/helpers/interop-require-default":"C:\\swiggis.austin\\node_modules\\babel-runtime\\helpers\\interop-require-default.js","classnames":"C:\\swiggis.austin\\node_modules\\classnames\\index.js","react":"C:\\swiggis.austin\\node_modules\\react\\react.js"}],"C:\\swiggis.austin\\node_modules\\react-bootstrap\\lib\\Interpolate.js":[function(require,module,exports){
 // https://www.npmjs.org/package/react-interpolate-component
 // TODO: Drop this in favor of es6 string interpolation
 
@@ -23532,7 +22570,7 @@ var Interpolate = _react2['default'].createClass({
 
 exports['default'] = Interpolate;
 module.exports = exports['default'];
-},{"./utils/ValidComponentChildren":"/mnt/c/swiggis.original/node_modules/react-bootstrap/lib/utils/ValidComponentChildren.js","babel-runtime/helpers/extends":"/mnt/c/swiggis.original/node_modules/babel-runtime/helpers/extends.js","babel-runtime/helpers/interop-require-default":"/mnt/c/swiggis.original/node_modules/babel-runtime/helpers/interop-require-default.js","react":"/mnt/c/swiggis.original/node_modules/react/react.js"}],"/mnt/c/swiggis.original/node_modules/react-bootstrap/lib/Jumbotron.js":[function(require,module,exports){
+},{"./utils/ValidComponentChildren":"C:\\swiggis.austin\\node_modules\\react-bootstrap\\lib\\utils\\ValidComponentChildren.js","babel-runtime/helpers/extends":"C:\\swiggis.austin\\node_modules\\babel-runtime\\helpers\\extends.js","babel-runtime/helpers/interop-require-default":"C:\\swiggis.austin\\node_modules\\babel-runtime\\helpers\\interop-require-default.js","react":"C:\\swiggis.austin\\node_modules\\react\\react.js"}],"C:\\swiggis.austin\\node_modules\\react-bootstrap\\lib\\Jumbotron.js":[function(require,module,exports){
 'use strict';
 
 var _extends = require('babel-runtime/helpers/extends')['default'];
@@ -23580,7 +22618,7 @@ var Jumbotron = _react2['default'].createClass({
 
 exports['default'] = Jumbotron;
 module.exports = exports['default'];
-},{"babel-runtime/helpers/extends":"/mnt/c/swiggis.original/node_modules/babel-runtime/helpers/extends.js","babel-runtime/helpers/interop-require-default":"/mnt/c/swiggis.original/node_modules/babel-runtime/helpers/interop-require-default.js","classnames":"/mnt/c/swiggis.original/node_modules/classnames/index.js","react":"/mnt/c/swiggis.original/node_modules/react/react.js","react-prop-types/lib/elementType":"/mnt/c/swiggis.original/node_modules/react-prop-types/lib/elementType.js"}],"/mnt/c/swiggis.original/node_modules/react-bootstrap/lib/Label.js":[function(require,module,exports){
+},{"babel-runtime/helpers/extends":"C:\\swiggis.austin\\node_modules\\babel-runtime\\helpers\\extends.js","babel-runtime/helpers/interop-require-default":"C:\\swiggis.austin\\node_modules\\babel-runtime\\helpers\\interop-require-default.js","classnames":"C:\\swiggis.austin\\node_modules\\classnames\\index.js","react":"C:\\swiggis.austin\\node_modules\\react\\react.js","react-prop-types/lib/elementType":"C:\\swiggis.austin\\node_modules\\react-prop-types\\lib\\elementType.js"}],"C:\\swiggis.austin\\node_modules\\react-bootstrap\\lib\\Label.js":[function(require,module,exports){
 'use strict';
 
 var _inherits = require('babel-runtime/helpers/inherits')['default'];
@@ -23634,7 +22672,7 @@ var Label = (function (_React$Component) {
 
 exports['default'] = Label;
 module.exports = exports['default'];
-},{"./styleMaps":"/mnt/c/swiggis.original/node_modules/react-bootstrap/lib/styleMaps.js","./utils/bootstrapUtils":"/mnt/c/swiggis.original/node_modules/react-bootstrap/lib/utils/bootstrapUtils.js","babel-runtime/helpers/class-call-check":"/mnt/c/swiggis.original/node_modules/babel-runtime/helpers/class-call-check.js","babel-runtime/helpers/extends":"/mnt/c/swiggis.original/node_modules/babel-runtime/helpers/extends.js","babel-runtime/helpers/inherits":"/mnt/c/swiggis.original/node_modules/babel-runtime/helpers/inherits.js","babel-runtime/helpers/interop-require-default":"/mnt/c/swiggis.original/node_modules/babel-runtime/helpers/interop-require-default.js","classnames":"/mnt/c/swiggis.original/node_modules/classnames/index.js","react":"/mnt/c/swiggis.original/node_modules/react/react.js"}],"/mnt/c/swiggis.original/node_modules/react-bootstrap/lib/ListGroup.js":[function(require,module,exports){
+},{"./styleMaps":"C:\\swiggis.austin\\node_modules\\react-bootstrap\\lib\\styleMaps.js","./utils/bootstrapUtils":"C:\\swiggis.austin\\node_modules\\react-bootstrap\\lib\\utils\\bootstrapUtils.js","babel-runtime/helpers/class-call-check":"C:\\swiggis.austin\\node_modules\\babel-runtime\\helpers\\class-call-check.js","babel-runtime/helpers/extends":"C:\\swiggis.austin\\node_modules\\babel-runtime\\helpers\\extends.js","babel-runtime/helpers/inherits":"C:\\swiggis.austin\\node_modules\\babel-runtime\\helpers\\inherits.js","babel-runtime/helpers/interop-require-default":"C:\\swiggis.austin\\node_modules\\babel-runtime\\helpers\\interop-require-default.js","classnames":"C:\\swiggis.austin\\node_modules\\classnames\\index.js","react":"C:\\swiggis.austin\\node_modules\\react\\react.js"}],"C:\\swiggis.austin\\node_modules\\react-bootstrap\\lib\\ListGroup.js":[function(require,module,exports){
 'use strict';
 
 var _inherits = require('babel-runtime/helpers/inherits')['default'];
@@ -23762,7 +22800,7 @@ ListGroup.propTypes = {
 
 exports['default'] = ListGroup;
 module.exports = exports['default'];
-},{"./ListGroupItem":"/mnt/c/swiggis.original/node_modules/react-bootstrap/lib/ListGroupItem.js","./utils/ValidComponentChildren":"/mnt/c/swiggis.original/node_modules/react-bootstrap/lib/utils/ValidComponentChildren.js","babel-runtime/helpers/class-call-check":"/mnt/c/swiggis.original/node_modules/babel-runtime/helpers/class-call-check.js","babel-runtime/helpers/extends":"/mnt/c/swiggis.original/node_modules/babel-runtime/helpers/extends.js","babel-runtime/helpers/inherits":"/mnt/c/swiggis.original/node_modules/babel-runtime/helpers/inherits.js","babel-runtime/helpers/interop-require-default":"/mnt/c/swiggis.original/node_modules/babel-runtime/helpers/interop-require-default.js","classnames":"/mnt/c/swiggis.original/node_modules/classnames/index.js","react":"/mnt/c/swiggis.original/node_modules/react/react.js"}],"/mnt/c/swiggis.original/node_modules/react-bootstrap/lib/ListGroupItem.js":[function(require,module,exports){
+},{"./ListGroupItem":"C:\\swiggis.austin\\node_modules\\react-bootstrap\\lib\\ListGroupItem.js","./utils/ValidComponentChildren":"C:\\swiggis.austin\\node_modules\\react-bootstrap\\lib\\utils\\ValidComponentChildren.js","babel-runtime/helpers/class-call-check":"C:\\swiggis.austin\\node_modules\\babel-runtime\\helpers\\class-call-check.js","babel-runtime/helpers/extends":"C:\\swiggis.austin\\node_modules\\babel-runtime\\helpers\\extends.js","babel-runtime/helpers/inherits":"C:\\swiggis.austin\\node_modules\\babel-runtime\\helpers\\inherits.js","babel-runtime/helpers/interop-require-default":"C:\\swiggis.austin\\node_modules\\babel-runtime\\helpers\\interop-require-default.js","classnames":"C:\\swiggis.austin\\node_modules\\classnames\\index.js","react":"C:\\swiggis.austin\\node_modules\\react\\react.js"}],"C:\\swiggis.austin\\node_modules\\react-bootstrap\\lib\\ListGroupItem.js":[function(require,module,exports){
 'use strict';
 
 var _inherits = require('babel-runtime/helpers/inherits')['default'];
@@ -23899,7 +22937,7 @@ ListGroupItem.defaultTypes = {
 
 exports['default'] = _utilsBootstrapUtils.bsStyles(_styleMaps.State.values(), _utilsBootstrapUtils.bsClass('list-group-item', ListGroupItem));
 module.exports = exports['default'];
-},{"./styleMaps":"/mnt/c/swiggis.original/node_modules/react-bootstrap/lib/styleMaps.js","./utils/bootstrapUtils":"/mnt/c/swiggis.original/node_modules/react-bootstrap/lib/utils/bootstrapUtils.js","babel-runtime/helpers/class-call-check":"/mnt/c/swiggis.original/node_modules/babel-runtime/helpers/class-call-check.js","babel-runtime/helpers/extends":"/mnt/c/swiggis.original/node_modules/babel-runtime/helpers/extends.js","babel-runtime/helpers/inherits":"/mnt/c/swiggis.original/node_modules/babel-runtime/helpers/inherits.js","babel-runtime/helpers/interop-require-default":"/mnt/c/swiggis.original/node_modules/babel-runtime/helpers/interop-require-default.js","classnames":"/mnt/c/swiggis.original/node_modules/classnames/index.js","react":"/mnt/c/swiggis.original/node_modules/react/react.js"}],"/mnt/c/swiggis.original/node_modules/react-bootstrap/lib/Media.js":[function(require,module,exports){
+},{"./styleMaps":"C:\\swiggis.austin\\node_modules\\react-bootstrap\\lib\\styleMaps.js","./utils/bootstrapUtils":"C:\\swiggis.austin\\node_modules\\react-bootstrap\\lib\\utils\\bootstrapUtils.js","babel-runtime/helpers/class-call-check":"C:\\swiggis.austin\\node_modules\\babel-runtime\\helpers\\class-call-check.js","babel-runtime/helpers/extends":"C:\\swiggis.austin\\node_modules\\babel-runtime\\helpers\\extends.js","babel-runtime/helpers/inherits":"C:\\swiggis.austin\\node_modules\\babel-runtime\\helpers\\inherits.js","babel-runtime/helpers/interop-require-default":"C:\\swiggis.austin\\node_modules\\babel-runtime\\helpers\\interop-require-default.js","classnames":"C:\\swiggis.austin\\node_modules\\classnames\\index.js","react":"C:\\swiggis.austin\\node_modules\\react\\react.js"}],"C:\\swiggis.austin\\node_modules\\react-bootstrap\\lib\\Media.js":[function(require,module,exports){
 'use strict';
 
 var _objectWithoutProperties = require('babel-runtime/helpers/object-without-properties')['default'];
@@ -23978,7 +23016,7 @@ Media = _Object$assign(Media, { Heading: _MediaHeading2['default'], Body: _Media
 
 exports['default'] = Media;
 module.exports = exports['default'];
-},{"./MediaBody":"/mnt/c/swiggis.original/node_modules/react-bootstrap/lib/MediaBody.js","./MediaHeading":"/mnt/c/swiggis.original/node_modules/react-bootstrap/lib/MediaHeading.js","./MediaLeft":"/mnt/c/swiggis.original/node_modules/react-bootstrap/lib/MediaLeft.js","./MediaList":"/mnt/c/swiggis.original/node_modules/react-bootstrap/lib/MediaList.js","./MediaListItem":"/mnt/c/swiggis.original/node_modules/react-bootstrap/lib/MediaListItem.js","./MediaRight":"/mnt/c/swiggis.original/node_modules/react-bootstrap/lib/MediaRight.js","babel-runtime/core-js/object/assign":"/mnt/c/swiggis.original/node_modules/babel-runtime/core-js/object/assign.js","babel-runtime/helpers/extends":"/mnt/c/swiggis.original/node_modules/babel-runtime/helpers/extends.js","babel-runtime/helpers/interop-require-default":"/mnt/c/swiggis.original/node_modules/babel-runtime/helpers/interop-require-default.js","babel-runtime/helpers/object-without-properties":"/mnt/c/swiggis.original/node_modules/babel-runtime/helpers/object-without-properties.js","classnames":"/mnt/c/swiggis.original/node_modules/classnames/index.js","react":"/mnt/c/swiggis.original/node_modules/react/react.js","react-prop-types/lib/elementType":"/mnt/c/swiggis.original/node_modules/react-prop-types/lib/elementType.js"}],"/mnt/c/swiggis.original/node_modules/react-bootstrap/lib/MediaBody.js":[function(require,module,exports){
+},{"./MediaBody":"C:\\swiggis.austin\\node_modules\\react-bootstrap\\lib\\MediaBody.js","./MediaHeading":"C:\\swiggis.austin\\node_modules\\react-bootstrap\\lib\\MediaHeading.js","./MediaLeft":"C:\\swiggis.austin\\node_modules\\react-bootstrap\\lib\\MediaLeft.js","./MediaList":"C:\\swiggis.austin\\node_modules\\react-bootstrap\\lib\\MediaList.js","./MediaListItem":"C:\\swiggis.austin\\node_modules\\react-bootstrap\\lib\\MediaListItem.js","./MediaRight":"C:\\swiggis.austin\\node_modules\\react-bootstrap\\lib\\MediaRight.js","babel-runtime/core-js/object/assign":"C:\\swiggis.austin\\node_modules\\babel-runtime\\core-js\\object\\assign.js","babel-runtime/helpers/extends":"C:\\swiggis.austin\\node_modules\\babel-runtime\\helpers\\extends.js","babel-runtime/helpers/interop-require-default":"C:\\swiggis.austin\\node_modules\\babel-runtime\\helpers\\interop-require-default.js","babel-runtime/helpers/object-without-properties":"C:\\swiggis.austin\\node_modules\\babel-runtime\\helpers\\object-without-properties.js","classnames":"C:\\swiggis.austin\\node_modules\\classnames\\index.js","react":"C:\\swiggis.austin\\node_modules\\react\\react.js","react-prop-types/lib/elementType":"C:\\swiggis.austin\\node_modules\\react-prop-types\\lib\\elementType.js"}],"C:\\swiggis.austin\\node_modules\\react-bootstrap\\lib\\MediaBody.js":[function(require,module,exports){
 'use strict';
 
 var _objectWithoutProperties = require('babel-runtime/helpers/object-without-properties')['default'];
@@ -24029,7 +23067,7 @@ var MediaBody = _react2['default'].createClass({
 
 exports['default'] = MediaBody;
 module.exports = exports['default'];
-},{"babel-runtime/helpers/extends":"/mnt/c/swiggis.original/node_modules/babel-runtime/helpers/extends.js","babel-runtime/helpers/interop-require-default":"/mnt/c/swiggis.original/node_modules/babel-runtime/helpers/interop-require-default.js","babel-runtime/helpers/object-without-properties":"/mnt/c/swiggis.original/node_modules/babel-runtime/helpers/object-without-properties.js","classnames":"/mnt/c/swiggis.original/node_modules/classnames/index.js","react":"/mnt/c/swiggis.original/node_modules/react/react.js","react-prop-types/lib/elementType":"/mnt/c/swiggis.original/node_modules/react-prop-types/lib/elementType.js"}],"/mnt/c/swiggis.original/node_modules/react-bootstrap/lib/MediaHeading.js":[function(require,module,exports){
+},{"babel-runtime/helpers/extends":"C:\\swiggis.austin\\node_modules\\babel-runtime\\helpers\\extends.js","babel-runtime/helpers/interop-require-default":"C:\\swiggis.austin\\node_modules\\babel-runtime\\helpers\\interop-require-default.js","babel-runtime/helpers/object-without-properties":"C:\\swiggis.austin\\node_modules\\babel-runtime\\helpers\\object-without-properties.js","classnames":"C:\\swiggis.austin\\node_modules\\classnames\\index.js","react":"C:\\swiggis.austin\\node_modules\\react\\react.js","react-prop-types/lib/elementType":"C:\\swiggis.austin\\node_modules\\react-prop-types\\lib\\elementType.js"}],"C:\\swiggis.austin\\node_modules\\react-bootstrap\\lib\\MediaHeading.js":[function(require,module,exports){
 'use strict';
 
 var _objectWithoutProperties = require('babel-runtime/helpers/object-without-properties')['default'];
@@ -24080,7 +23118,7 @@ var MediaHeading = _react2['default'].createClass({
 
 exports['default'] = MediaHeading;
 module.exports = exports['default'];
-},{"babel-runtime/helpers/extends":"/mnt/c/swiggis.original/node_modules/babel-runtime/helpers/extends.js","babel-runtime/helpers/interop-require-default":"/mnt/c/swiggis.original/node_modules/babel-runtime/helpers/interop-require-default.js","babel-runtime/helpers/object-without-properties":"/mnt/c/swiggis.original/node_modules/babel-runtime/helpers/object-without-properties.js","classnames":"/mnt/c/swiggis.original/node_modules/classnames/index.js","react":"/mnt/c/swiggis.original/node_modules/react/react.js","react-prop-types/lib/elementType":"/mnt/c/swiggis.original/node_modules/react-prop-types/lib/elementType.js"}],"/mnt/c/swiggis.original/node_modules/react-bootstrap/lib/MediaLeft.js":[function(require,module,exports){
+},{"babel-runtime/helpers/extends":"C:\\swiggis.austin\\node_modules\\babel-runtime\\helpers\\extends.js","babel-runtime/helpers/interop-require-default":"C:\\swiggis.austin\\node_modules\\babel-runtime\\helpers\\interop-require-default.js","babel-runtime/helpers/object-without-properties":"C:\\swiggis.austin\\node_modules\\babel-runtime\\helpers\\object-without-properties.js","classnames":"C:\\swiggis.austin\\node_modules\\classnames\\index.js","react":"C:\\swiggis.austin\\node_modules\\react\\react.js","react-prop-types/lib/elementType":"C:\\swiggis.austin\\node_modules\\react-prop-types\\lib\\elementType.js"}],"C:\\swiggis.austin\\node_modules\\react-bootstrap\\lib\\MediaLeft.js":[function(require,module,exports){
 'use strict';
 
 var _objectWithoutProperties = require('babel-runtime/helpers/object-without-properties')['default'];
@@ -24127,7 +23165,7 @@ var MediaLeft = _react2['default'].createClass({
 
 exports['default'] = MediaLeft;
 module.exports = exports['default'];
-},{"babel-runtime/helpers/extends":"/mnt/c/swiggis.original/node_modules/babel-runtime/helpers/extends.js","babel-runtime/helpers/interop-require-default":"/mnt/c/swiggis.original/node_modules/babel-runtime/helpers/interop-require-default.js","babel-runtime/helpers/object-without-properties":"/mnt/c/swiggis.original/node_modules/babel-runtime/helpers/object-without-properties.js","classnames":"/mnt/c/swiggis.original/node_modules/classnames/index.js","react":"/mnt/c/swiggis.original/node_modules/react/react.js"}],"/mnt/c/swiggis.original/node_modules/react-bootstrap/lib/MediaList.js":[function(require,module,exports){
+},{"babel-runtime/helpers/extends":"C:\\swiggis.austin\\node_modules\\babel-runtime\\helpers\\extends.js","babel-runtime/helpers/interop-require-default":"C:\\swiggis.austin\\node_modules\\babel-runtime\\helpers\\interop-require-default.js","babel-runtime/helpers/object-without-properties":"C:\\swiggis.austin\\node_modules\\babel-runtime\\helpers\\object-without-properties.js","classnames":"C:\\swiggis.austin\\node_modules\\classnames\\index.js","react":"C:\\swiggis.austin\\node_modules\\react\\react.js"}],"C:\\swiggis.austin\\node_modules\\react-bootstrap\\lib\\MediaList.js":[function(require,module,exports){
 'use strict';
 
 var _objectWithoutProperties = require('babel-runtime/helpers/object-without-properties')['default'];
@@ -24160,7 +23198,7 @@ var MediaList = _react2['default'].createClass({
 
 exports['default'] = MediaList;
 module.exports = exports['default'];
-},{"babel-runtime/helpers/extends":"/mnt/c/swiggis.original/node_modules/babel-runtime/helpers/extends.js","babel-runtime/helpers/interop-require-default":"/mnt/c/swiggis.original/node_modules/babel-runtime/helpers/interop-require-default.js","babel-runtime/helpers/object-without-properties":"/mnt/c/swiggis.original/node_modules/babel-runtime/helpers/object-without-properties.js","classnames":"/mnt/c/swiggis.original/node_modules/classnames/index.js","react":"/mnt/c/swiggis.original/node_modules/react/react.js"}],"/mnt/c/swiggis.original/node_modules/react-bootstrap/lib/MediaListItem.js":[function(require,module,exports){
+},{"babel-runtime/helpers/extends":"C:\\swiggis.austin\\node_modules\\babel-runtime\\helpers\\extends.js","babel-runtime/helpers/interop-require-default":"C:\\swiggis.austin\\node_modules\\babel-runtime\\helpers\\interop-require-default.js","babel-runtime/helpers/object-without-properties":"C:\\swiggis.austin\\node_modules\\babel-runtime\\helpers\\object-without-properties.js","classnames":"C:\\swiggis.austin\\node_modules\\classnames\\index.js","react":"C:\\swiggis.austin\\node_modules\\react\\react.js"}],"C:\\swiggis.austin\\node_modules\\react-bootstrap\\lib\\MediaListItem.js":[function(require,module,exports){
 'use strict';
 
 var _objectWithoutProperties = require('babel-runtime/helpers/object-without-properties')['default'];
@@ -24193,7 +23231,7 @@ var MediaListItem = _react2['default'].createClass({
 
 exports['default'] = MediaListItem;
 module.exports = exports['default'];
-},{"babel-runtime/helpers/extends":"/mnt/c/swiggis.original/node_modules/babel-runtime/helpers/extends.js","babel-runtime/helpers/interop-require-default":"/mnt/c/swiggis.original/node_modules/babel-runtime/helpers/interop-require-default.js","babel-runtime/helpers/object-without-properties":"/mnt/c/swiggis.original/node_modules/babel-runtime/helpers/object-without-properties.js","classnames":"/mnt/c/swiggis.original/node_modules/classnames/index.js","react":"/mnt/c/swiggis.original/node_modules/react/react.js"}],"/mnt/c/swiggis.original/node_modules/react-bootstrap/lib/MediaRight.js":[function(require,module,exports){
+},{"babel-runtime/helpers/extends":"C:\\swiggis.austin\\node_modules\\babel-runtime\\helpers\\extends.js","babel-runtime/helpers/interop-require-default":"C:\\swiggis.austin\\node_modules\\babel-runtime\\helpers\\interop-require-default.js","babel-runtime/helpers/object-without-properties":"C:\\swiggis.austin\\node_modules\\babel-runtime\\helpers\\object-without-properties.js","classnames":"C:\\swiggis.austin\\node_modules\\classnames\\index.js","react":"C:\\swiggis.austin\\node_modules\\react\\react.js"}],"C:\\swiggis.austin\\node_modules\\react-bootstrap\\lib\\MediaRight.js":[function(require,module,exports){
 'use strict';
 
 var _objectWithoutProperties = require('babel-runtime/helpers/object-without-properties')['default'];
@@ -24240,7 +23278,7 @@ var MediaRight = _react2['default'].createClass({
 
 exports['default'] = MediaRight;
 module.exports = exports['default'];
-},{"babel-runtime/helpers/extends":"/mnt/c/swiggis.original/node_modules/babel-runtime/helpers/extends.js","babel-runtime/helpers/interop-require-default":"/mnt/c/swiggis.original/node_modules/babel-runtime/helpers/interop-require-default.js","babel-runtime/helpers/object-without-properties":"/mnt/c/swiggis.original/node_modules/babel-runtime/helpers/object-without-properties.js","classnames":"/mnt/c/swiggis.original/node_modules/classnames/index.js","react":"/mnt/c/swiggis.original/node_modules/react/react.js"}],"/mnt/c/swiggis.original/node_modules/react-bootstrap/lib/MenuItem.js":[function(require,module,exports){
+},{"babel-runtime/helpers/extends":"C:\\swiggis.austin\\node_modules\\babel-runtime\\helpers\\extends.js","babel-runtime/helpers/interop-require-default":"C:\\swiggis.austin\\node_modules\\babel-runtime\\helpers\\interop-require-default.js","babel-runtime/helpers/object-without-properties":"C:\\swiggis.austin\\node_modules\\babel-runtime\\helpers\\object-without-properties.js","classnames":"C:\\swiggis.austin\\node_modules\\classnames\\index.js","react":"C:\\swiggis.austin\\node_modules\\react\\react.js"}],"C:\\swiggis.austin\\node_modules\\react-bootstrap\\lib\\MenuItem.js":[function(require,module,exports){
 'use strict';
 
 var _inherits = require('babel-runtime/helpers/inherits')['default'];
@@ -24433,7 +23471,7 @@ MenuItem.defaultProps = {
 
 exports['default'] = _utilsBootstrapUtils.bsClass('dropdown', MenuItem);
 module.exports = exports['default'];
-},{"./SafeAnchor":"/mnt/c/swiggis.original/node_modules/react-bootstrap/lib/SafeAnchor.js","./utils/bootstrapUtils":"/mnt/c/swiggis.original/node_modules/react-bootstrap/lib/utils/bootstrapUtils.js","./utils/createChainedFunction":"/mnt/c/swiggis.original/node_modules/react-bootstrap/lib/utils/createChainedFunction.js","babel-runtime/helpers/class-call-check":"/mnt/c/swiggis.original/node_modules/babel-runtime/helpers/class-call-check.js","babel-runtime/helpers/extends":"/mnt/c/swiggis.original/node_modules/babel-runtime/helpers/extends.js","babel-runtime/helpers/inherits":"/mnt/c/swiggis.original/node_modules/babel-runtime/helpers/inherits.js","babel-runtime/helpers/interop-require-default":"/mnt/c/swiggis.original/node_modules/babel-runtime/helpers/interop-require-default.js","babel-runtime/helpers/object-without-properties":"/mnt/c/swiggis.original/node_modules/babel-runtime/helpers/object-without-properties.js","classnames":"/mnt/c/swiggis.original/node_modules/classnames/index.js","react":"/mnt/c/swiggis.original/node_modules/react/react.js","react-prop-types/lib/all":"/mnt/c/swiggis.original/node_modules/react-prop-types/lib/all.js"}],"/mnt/c/swiggis.original/node_modules/react-bootstrap/lib/Modal.js":[function(require,module,exports){
+},{"./SafeAnchor":"C:\\swiggis.austin\\node_modules\\react-bootstrap\\lib\\SafeAnchor.js","./utils/bootstrapUtils":"C:\\swiggis.austin\\node_modules\\react-bootstrap\\lib\\utils\\bootstrapUtils.js","./utils/createChainedFunction":"C:\\swiggis.austin\\node_modules\\react-bootstrap\\lib\\utils\\createChainedFunction.js","babel-runtime/helpers/class-call-check":"C:\\swiggis.austin\\node_modules\\babel-runtime\\helpers\\class-call-check.js","babel-runtime/helpers/extends":"C:\\swiggis.austin\\node_modules\\babel-runtime\\helpers\\extends.js","babel-runtime/helpers/inherits":"C:\\swiggis.austin\\node_modules\\babel-runtime\\helpers\\inherits.js","babel-runtime/helpers/interop-require-default":"C:\\swiggis.austin\\node_modules\\babel-runtime\\helpers\\interop-require-default.js","babel-runtime/helpers/object-without-properties":"C:\\swiggis.austin\\node_modules\\babel-runtime\\helpers\\object-without-properties.js","classnames":"C:\\swiggis.austin\\node_modules\\classnames\\index.js","react":"C:\\swiggis.austin\\node_modules\\react\\react.js","react-prop-types/lib/all":"C:\\swiggis.austin\\node_modules\\react-prop-types\\lib\\all.js"}],"C:\\swiggis.austin\\node_modules\\react-bootstrap\\lib\\Modal.js":[function(require,module,exports){
 
 /* eslint-disable react/prop-types */
 'use strict';
@@ -24759,7 +23797,7 @@ Modal.BACKDROP_TRANSITION_DURATION = 150;
 
 exports['default'] = _utilsBootstrapUtils.bsSizes([_styleMaps.Sizes.LARGE, _styleMaps.Sizes.SMALL], _utilsBootstrapUtils.bsClass('modal', Modal));
 module.exports = exports['default'];
-},{"./Fade":"/mnt/c/swiggis.original/node_modules/react-bootstrap/lib/Fade.js","./ModalBody":"/mnt/c/swiggis.original/node_modules/react-bootstrap/lib/ModalBody.js","./ModalDialog":"/mnt/c/swiggis.original/node_modules/react-bootstrap/lib/ModalDialog.js","./ModalFooter":"/mnt/c/swiggis.original/node_modules/react-bootstrap/lib/ModalFooter.js","./ModalHeader":"/mnt/c/swiggis.original/node_modules/react-bootstrap/lib/ModalHeader.js","./ModalTitle":"/mnt/c/swiggis.original/node_modules/react-bootstrap/lib/ModalTitle.js","./styleMaps":"/mnt/c/swiggis.original/node_modules/react-bootstrap/lib/styleMaps.js","./utils/bootstrapUtils":"/mnt/c/swiggis.original/node_modules/react-bootstrap/lib/utils/bootstrapUtils.js","babel-runtime/core-js/object/keys":"/mnt/c/swiggis.original/node_modules/babel-runtime/core-js/object/keys.js","babel-runtime/helpers/extends":"/mnt/c/swiggis.original/node_modules/babel-runtime/helpers/extends.js","babel-runtime/helpers/interop-require-default":"/mnt/c/swiggis.original/node_modules/babel-runtime/helpers/interop-require-default.js","babel-runtime/helpers/object-without-properties":"/mnt/c/swiggis.original/node_modules/babel-runtime/helpers/object-without-properties.js","classnames":"/mnt/c/swiggis.original/node_modules/classnames/index.js","dom-helpers/events":"/mnt/c/swiggis.original/node_modules/dom-helpers/events/index.js","dom-helpers/ownerDocument":"/mnt/c/swiggis.original/node_modules/dom-helpers/ownerDocument.js","dom-helpers/util/inDOM":"/mnt/c/swiggis.original/node_modules/dom-helpers/util/inDOM.js","dom-helpers/util/scrollbarSize":"/mnt/c/swiggis.original/node_modules/dom-helpers/util/scrollbarSize.js","lodash-compat/object/pick":"/mnt/c/swiggis.original/node_modules/lodash-compat/object/pick.js","react":"/mnt/c/swiggis.original/node_modules/react/react.js","react-dom":"/mnt/c/swiggis.original/node_modules/react-dom/index.js","react-overlays/lib/Modal":"/mnt/c/swiggis.original/node_modules/react-overlays/lib/Modal.js","react-overlays/lib/utils/isOverflowing":"/mnt/c/swiggis.original/node_modules/react-overlays/lib/utils/isOverflowing.js","react-prop-types/lib/elementType":"/mnt/c/swiggis.original/node_modules/react-prop-types/lib/elementType.js"}],"/mnt/c/swiggis.original/node_modules/react-bootstrap/lib/ModalBody.js":[function(require,module,exports){
+},{"./Fade":"C:\\swiggis.austin\\node_modules\\react-bootstrap\\lib\\Fade.js","./ModalBody":"C:\\swiggis.austin\\node_modules\\react-bootstrap\\lib\\ModalBody.js","./ModalDialog":"C:\\swiggis.austin\\node_modules\\react-bootstrap\\lib\\ModalDialog.js","./ModalFooter":"C:\\swiggis.austin\\node_modules\\react-bootstrap\\lib\\ModalFooter.js","./ModalHeader":"C:\\swiggis.austin\\node_modules\\react-bootstrap\\lib\\ModalHeader.js","./ModalTitle":"C:\\swiggis.austin\\node_modules\\react-bootstrap\\lib\\ModalTitle.js","./styleMaps":"C:\\swiggis.austin\\node_modules\\react-bootstrap\\lib\\styleMaps.js","./utils/bootstrapUtils":"C:\\swiggis.austin\\node_modules\\react-bootstrap\\lib\\utils\\bootstrapUtils.js","babel-runtime/core-js/object/keys":"C:\\swiggis.austin\\node_modules\\babel-runtime\\core-js\\object\\keys.js","babel-runtime/helpers/extends":"C:\\swiggis.austin\\node_modules\\babel-runtime\\helpers\\extends.js","babel-runtime/helpers/interop-require-default":"C:\\swiggis.austin\\node_modules\\babel-runtime\\helpers\\interop-require-default.js","babel-runtime/helpers/object-without-properties":"C:\\swiggis.austin\\node_modules\\babel-runtime\\helpers\\object-without-properties.js","classnames":"C:\\swiggis.austin\\node_modules\\classnames\\index.js","dom-helpers/events":"C:\\swiggis.austin\\node_modules\\dom-helpers\\events\\index.js","dom-helpers/ownerDocument":"C:\\swiggis.austin\\node_modules\\dom-helpers\\ownerDocument.js","dom-helpers/util/inDOM":"C:\\swiggis.austin\\node_modules\\dom-helpers\\util\\inDOM.js","dom-helpers/util/scrollbarSize":"C:\\swiggis.austin\\node_modules\\dom-helpers\\util\\scrollbarSize.js","lodash-compat/object/pick":"C:\\swiggis.austin\\node_modules\\lodash-compat\\object\\pick.js","react":"C:\\swiggis.austin\\node_modules\\react\\react.js","react-dom":"C:\\swiggis.austin\\node_modules\\react-dom\\index.js","react-overlays/lib/Modal":"C:\\swiggis.austin\\node_modules\\react-overlays\\lib\\Modal.js","react-overlays/lib/utils/isOverflowing":"C:\\swiggis.austin\\node_modules\\react-overlays\\lib\\utils\\isOverflowing.js","react-prop-types/lib/elementType":"C:\\swiggis.austin\\node_modules\\react-prop-types\\lib\\elementType.js"}],"C:\\swiggis.austin\\node_modules\\react-bootstrap\\lib\\ModalBody.js":[function(require,module,exports){
 'use strict';
 
 var _inherits = require('babel-runtime/helpers/inherits')['default'];
@@ -24807,7 +23845,7 @@ var ModalBody = (function (_React$Component) {
 
 exports['default'] = _utilsBootstrapUtils.bsClass('modal', ModalBody);
 module.exports = exports['default'];
-},{"./utils/bootstrapUtils":"/mnt/c/swiggis.original/node_modules/react-bootstrap/lib/utils/bootstrapUtils.js","babel-runtime/helpers/class-call-check":"/mnt/c/swiggis.original/node_modules/babel-runtime/helpers/class-call-check.js","babel-runtime/helpers/extends":"/mnt/c/swiggis.original/node_modules/babel-runtime/helpers/extends.js","babel-runtime/helpers/inherits":"/mnt/c/swiggis.original/node_modules/babel-runtime/helpers/inherits.js","babel-runtime/helpers/interop-require-default":"/mnt/c/swiggis.original/node_modules/babel-runtime/helpers/interop-require-default.js","classnames":"/mnt/c/swiggis.original/node_modules/classnames/index.js","react":"/mnt/c/swiggis.original/node_modules/react/react.js"}],"/mnt/c/swiggis.original/node_modules/react-bootstrap/lib/ModalDialog.js":[function(require,module,exports){
+},{"./utils/bootstrapUtils":"C:\\swiggis.austin\\node_modules\\react-bootstrap\\lib\\utils\\bootstrapUtils.js","babel-runtime/helpers/class-call-check":"C:\\swiggis.austin\\node_modules\\babel-runtime\\helpers\\class-call-check.js","babel-runtime/helpers/extends":"C:\\swiggis.austin\\node_modules\\babel-runtime\\helpers\\extends.js","babel-runtime/helpers/inherits":"C:\\swiggis.austin\\node_modules\\babel-runtime\\helpers\\inherits.js","babel-runtime/helpers/interop-require-default":"C:\\swiggis.austin\\node_modules\\babel-runtime\\helpers\\interop-require-default.js","classnames":"C:\\swiggis.austin\\node_modules\\classnames\\index.js","react":"C:\\swiggis.austin\\node_modules\\react\\react.js"}],"C:\\swiggis.austin\\node_modules\\react-bootstrap\\lib\\ModalDialog.js":[function(require,module,exports){
 /* eslint-disable react/prop-types */
 'use strict';
 
@@ -24875,7 +23913,7 @@ var ModalDialog = _react2['default'].createClass({
 
 exports['default'] = _utilsBootstrapUtils.bsSizes([_styleMaps.Sizes.LARGE, _styleMaps.Sizes.SMALL], _utilsBootstrapUtils.bsClass('modal', ModalDialog));
 module.exports = exports['default'];
-},{"./styleMaps":"/mnt/c/swiggis.original/node_modules/react-bootstrap/lib/styleMaps.js","./utils/bootstrapUtils":"/mnt/c/swiggis.original/node_modules/react-bootstrap/lib/utils/bootstrapUtils.js","babel-runtime/helpers/extends":"/mnt/c/swiggis.original/node_modules/babel-runtime/helpers/extends.js","babel-runtime/helpers/interop-require-default":"/mnt/c/swiggis.original/node_modules/babel-runtime/helpers/interop-require-default.js","classnames":"/mnt/c/swiggis.original/node_modules/classnames/index.js","react":"/mnt/c/swiggis.original/node_modules/react/react.js"}],"/mnt/c/swiggis.original/node_modules/react-bootstrap/lib/ModalFooter.js":[function(require,module,exports){
+},{"./styleMaps":"C:\\swiggis.austin\\node_modules\\react-bootstrap\\lib\\styleMaps.js","./utils/bootstrapUtils":"C:\\swiggis.austin\\node_modules\\react-bootstrap\\lib\\utils\\bootstrapUtils.js","babel-runtime/helpers/extends":"C:\\swiggis.austin\\node_modules\\babel-runtime\\helpers\\extends.js","babel-runtime/helpers/interop-require-default":"C:\\swiggis.austin\\node_modules\\babel-runtime\\helpers\\interop-require-default.js","classnames":"C:\\swiggis.austin\\node_modules\\classnames\\index.js","react":"C:\\swiggis.austin\\node_modules\\react\\react.js"}],"C:\\swiggis.austin\\node_modules\\react-bootstrap\\lib\\ModalFooter.js":[function(require,module,exports){
 'use strict';
 
 var _inherits = require('babel-runtime/helpers/inherits')['default'];
@@ -24934,7 +23972,7 @@ ModalFooter.defaultProps = {
 
 exports['default'] = _utilsBootstrapUtils.bsClass('modal', ModalFooter);
 module.exports = exports['default'];
-},{"./utils/bootstrapUtils":"/mnt/c/swiggis.original/node_modules/react-bootstrap/lib/utils/bootstrapUtils.js","babel-runtime/helpers/class-call-check":"/mnt/c/swiggis.original/node_modules/babel-runtime/helpers/class-call-check.js","babel-runtime/helpers/extends":"/mnt/c/swiggis.original/node_modules/babel-runtime/helpers/extends.js","babel-runtime/helpers/inherits":"/mnt/c/swiggis.original/node_modules/babel-runtime/helpers/inherits.js","babel-runtime/helpers/interop-require-default":"/mnt/c/swiggis.original/node_modules/babel-runtime/helpers/interop-require-default.js","classnames":"/mnt/c/swiggis.original/node_modules/classnames/index.js","react":"/mnt/c/swiggis.original/node_modules/react/react.js"}],"/mnt/c/swiggis.original/node_modules/react-bootstrap/lib/ModalHeader.js":[function(require,module,exports){
+},{"./utils/bootstrapUtils":"C:\\swiggis.austin\\node_modules\\react-bootstrap\\lib\\utils\\bootstrapUtils.js","babel-runtime/helpers/class-call-check":"C:\\swiggis.austin\\node_modules\\babel-runtime\\helpers\\class-call-check.js","babel-runtime/helpers/extends":"C:\\swiggis.austin\\node_modules\\babel-runtime\\helpers\\extends.js","babel-runtime/helpers/inherits":"C:\\swiggis.austin\\node_modules\\babel-runtime\\helpers\\inherits.js","babel-runtime/helpers/interop-require-default":"C:\\swiggis.austin\\node_modules\\babel-runtime\\helpers\\interop-require-default.js","classnames":"C:\\swiggis.austin\\node_modules\\classnames\\index.js","react":"C:\\swiggis.austin\\node_modules\\react\\react.js"}],"C:\\swiggis.austin\\node_modules\\react-bootstrap\\lib\\ModalHeader.js":[function(require,module,exports){
 'use strict';
 
 var _inherits = require('babel-runtime/helpers/inherits')['default'];
@@ -25039,7 +24077,7 @@ ModalHeader.defaultProps = {
 
 exports['default'] = _utilsBootstrapUtils.bsClass('modal', ModalHeader);
 module.exports = exports['default'];
-},{"./utils/bootstrapUtils":"/mnt/c/swiggis.original/node_modules/react-bootstrap/lib/utils/bootstrapUtils.js","./utils/createChainedFunction":"/mnt/c/swiggis.original/node_modules/react-bootstrap/lib/utils/createChainedFunction.js","babel-runtime/helpers/class-call-check":"/mnt/c/swiggis.original/node_modules/babel-runtime/helpers/class-call-check.js","babel-runtime/helpers/extends":"/mnt/c/swiggis.original/node_modules/babel-runtime/helpers/extends.js","babel-runtime/helpers/inherits":"/mnt/c/swiggis.original/node_modules/babel-runtime/helpers/inherits.js","babel-runtime/helpers/interop-require-default":"/mnt/c/swiggis.original/node_modules/babel-runtime/helpers/interop-require-default.js","babel-runtime/helpers/object-without-properties":"/mnt/c/swiggis.original/node_modules/babel-runtime/helpers/object-without-properties.js","classnames":"/mnt/c/swiggis.original/node_modules/classnames/index.js","react":"/mnt/c/swiggis.original/node_modules/react/react.js"}],"/mnt/c/swiggis.original/node_modules/react-bootstrap/lib/ModalTitle.js":[function(require,module,exports){
+},{"./utils/bootstrapUtils":"C:\\swiggis.austin\\node_modules\\react-bootstrap\\lib\\utils\\bootstrapUtils.js","./utils/createChainedFunction":"C:\\swiggis.austin\\node_modules\\react-bootstrap\\lib\\utils\\createChainedFunction.js","babel-runtime/helpers/class-call-check":"C:\\swiggis.austin\\node_modules\\babel-runtime\\helpers\\class-call-check.js","babel-runtime/helpers/extends":"C:\\swiggis.austin\\node_modules\\babel-runtime\\helpers\\extends.js","babel-runtime/helpers/inherits":"C:\\swiggis.austin\\node_modules\\babel-runtime\\helpers\\inherits.js","babel-runtime/helpers/interop-require-default":"C:\\swiggis.austin\\node_modules\\babel-runtime\\helpers\\interop-require-default.js","babel-runtime/helpers/object-without-properties":"C:\\swiggis.austin\\node_modules\\babel-runtime\\helpers\\object-without-properties.js","classnames":"C:\\swiggis.austin\\node_modules\\classnames\\index.js","react":"C:\\swiggis.austin\\node_modules\\react\\react.js"}],"C:\\swiggis.austin\\node_modules\\react-bootstrap\\lib\\ModalTitle.js":[function(require,module,exports){
 'use strict';
 
 var _inherits = require('babel-runtime/helpers/inherits')['default'];
@@ -25087,7 +24125,7 @@ var ModalTitle = (function (_React$Component) {
 
 exports['default'] = _utilsBootstrapUtils.bsClass('modal', ModalTitle);
 module.exports = exports['default'];
-},{"./utils/bootstrapUtils":"/mnt/c/swiggis.original/node_modules/react-bootstrap/lib/utils/bootstrapUtils.js","babel-runtime/helpers/class-call-check":"/mnt/c/swiggis.original/node_modules/babel-runtime/helpers/class-call-check.js","babel-runtime/helpers/extends":"/mnt/c/swiggis.original/node_modules/babel-runtime/helpers/extends.js","babel-runtime/helpers/inherits":"/mnt/c/swiggis.original/node_modules/babel-runtime/helpers/inherits.js","babel-runtime/helpers/interop-require-default":"/mnt/c/swiggis.original/node_modules/babel-runtime/helpers/interop-require-default.js","classnames":"/mnt/c/swiggis.original/node_modules/classnames/index.js","react":"/mnt/c/swiggis.original/node_modules/react/react.js"}],"/mnt/c/swiggis.original/node_modules/react-bootstrap/lib/Nav.js":[function(require,module,exports){
+},{"./utils/bootstrapUtils":"C:\\swiggis.austin\\node_modules\\react-bootstrap\\lib\\utils\\bootstrapUtils.js","babel-runtime/helpers/class-call-check":"C:\\swiggis.austin\\node_modules\\babel-runtime\\helpers\\class-call-check.js","babel-runtime/helpers/extends":"C:\\swiggis.austin\\node_modules\\babel-runtime\\helpers\\extends.js","babel-runtime/helpers/inherits":"C:\\swiggis.austin\\node_modules\\babel-runtime\\helpers\\inherits.js","babel-runtime/helpers/interop-require-default":"C:\\swiggis.austin\\node_modules\\babel-runtime\\helpers\\interop-require-default.js","classnames":"C:\\swiggis.austin\\node_modules\\classnames\\index.js","react":"C:\\swiggis.austin\\node_modules\\react\\react.js"}],"C:\\swiggis.austin\\node_modules\\react-bootstrap\\lib\\Nav.js":[function(require,module,exports){
 'use strict';
 
 var _inherits = require('babel-runtime/helpers/inherits')['default'];
@@ -25301,7 +24339,7 @@ Nav.defaultProps = {
 
 exports['default'] = _utilsBootstrapUtils.bsClass('nav', _utilsBootstrapUtils.bsStyles(['tabs', 'pills'], Nav));
 module.exports = exports['default'];
-},{"./Collapse":"/mnt/c/swiggis.original/node_modules/react-bootstrap/lib/Collapse.js","./utils/ValidComponentChildren":"/mnt/c/swiggis.original/node_modules/react-bootstrap/lib/utils/ValidComponentChildren.js","./utils/bootstrapUtils":"/mnt/c/swiggis.original/node_modules/react-bootstrap/lib/utils/bootstrapUtils.js","./utils/createChainedFunction":"/mnt/c/swiggis.original/node_modules/react-bootstrap/lib/utils/createChainedFunction.js","babel-runtime/helpers/class-call-check":"/mnt/c/swiggis.original/node_modules/babel-runtime/helpers/class-call-check.js","babel-runtime/helpers/extends":"/mnt/c/swiggis.original/node_modules/babel-runtime/helpers/extends.js","babel-runtime/helpers/inherits":"/mnt/c/swiggis.original/node_modules/babel-runtime/helpers/inherits.js","babel-runtime/helpers/interop-require-default":"/mnt/c/swiggis.original/node_modules/babel-runtime/helpers/interop-require-default.js","classnames":"/mnt/c/swiggis.original/node_modules/classnames/index.js","react":"/mnt/c/swiggis.original/node_modules/react/react.js","react-prop-types/lib/all":"/mnt/c/swiggis.original/node_modules/react-prop-types/lib/all.js","react-prop-types/lib/deprecated":"/mnt/c/swiggis.original/node_modules/react-prop-types/lib/deprecated.js"}],"/mnt/c/swiggis.original/node_modules/react-bootstrap/lib/NavBrand.js":[function(require,module,exports){
+},{"./Collapse":"C:\\swiggis.austin\\node_modules\\react-bootstrap\\lib\\Collapse.js","./utils/ValidComponentChildren":"C:\\swiggis.austin\\node_modules\\react-bootstrap\\lib\\utils\\ValidComponentChildren.js","./utils/bootstrapUtils":"C:\\swiggis.austin\\node_modules\\react-bootstrap\\lib\\utils\\bootstrapUtils.js","./utils/createChainedFunction":"C:\\swiggis.austin\\node_modules\\react-bootstrap\\lib\\utils\\createChainedFunction.js","babel-runtime/helpers/class-call-check":"C:\\swiggis.austin\\node_modules\\babel-runtime\\helpers\\class-call-check.js","babel-runtime/helpers/extends":"C:\\swiggis.austin\\node_modules\\babel-runtime\\helpers\\extends.js","babel-runtime/helpers/inherits":"C:\\swiggis.austin\\node_modules\\babel-runtime\\helpers\\inherits.js","babel-runtime/helpers/interop-require-default":"C:\\swiggis.austin\\node_modules\\babel-runtime\\helpers\\interop-require-default.js","classnames":"C:\\swiggis.austin\\node_modules\\classnames\\index.js","react":"C:\\swiggis.austin\\node_modules\\react\\react.js","react-prop-types/lib/all":"C:\\swiggis.austin\\node_modules\\react-prop-types\\lib\\all.js","react-prop-types/lib/deprecated":"C:\\swiggis.austin\\node_modules\\react-prop-types\\lib\\deprecated.js"}],"C:\\swiggis.austin\\node_modules\\react-bootstrap\\lib\\NavBrand.js":[function(require,module,exports){
 'use strict';
 
 var _interopRequireDefault = require('babel-runtime/helpers/interop-require-default')['default'];
@@ -25320,7 +24358,7 @@ exports['default'] = _utilsDeprecationWarning2['default'].wrapper(_NavbarBrand2[
   message: 'The `NavBrand` component has been renamed to: `NavbarBrand`. ' + 'Please use that component instead; this alias will be removed in an upcoming release'
 });
 module.exports = exports['default'];
-},{"./NavbarBrand":"/mnt/c/swiggis.original/node_modules/react-bootstrap/lib/NavbarBrand.js","./utils/deprecationWarning":"/mnt/c/swiggis.original/node_modules/react-bootstrap/lib/utils/deprecationWarning.js","babel-runtime/helpers/interop-require-default":"/mnt/c/swiggis.original/node_modules/babel-runtime/helpers/interop-require-default.js"}],"/mnt/c/swiggis.original/node_modules/react-bootstrap/lib/NavDropdown.js":[function(require,module,exports){
+},{"./NavbarBrand":"C:\\swiggis.austin\\node_modules\\react-bootstrap\\lib\\NavbarBrand.js","./utils/deprecationWarning":"C:\\swiggis.austin\\node_modules\\react-bootstrap\\lib\\utils\\deprecationWarning.js","babel-runtime/helpers/interop-require-default":"C:\\swiggis.austin\\node_modules\\babel-runtime\\helpers\\interop-require-default.js"}],"C:\\swiggis.austin\\node_modules\\react-bootstrap\\lib\\NavDropdown.js":[function(require,module,exports){
 'use strict';
 
 var _inherits = require('babel-runtime/helpers/inherits')['default'];
@@ -25390,7 +24428,7 @@ NavDropdown.propTypes = _extends({
 
 exports['default'] = NavDropdown;
 module.exports = exports['default'];
-},{"./Dropdown":"/mnt/c/swiggis.original/node_modules/react-bootstrap/lib/Dropdown.js","babel-runtime/helpers/class-call-check":"/mnt/c/swiggis.original/node_modules/babel-runtime/helpers/class-call-check.js","babel-runtime/helpers/extends":"/mnt/c/swiggis.original/node_modules/babel-runtime/helpers/extends.js","babel-runtime/helpers/inherits":"/mnt/c/swiggis.original/node_modules/babel-runtime/helpers/inherits.js","babel-runtime/helpers/interop-require-default":"/mnt/c/swiggis.original/node_modules/babel-runtime/helpers/interop-require-default.js","babel-runtime/helpers/object-without-properties":"/mnt/c/swiggis.original/node_modules/babel-runtime/helpers/object-without-properties.js","react":"/mnt/c/swiggis.original/node_modules/react/react.js"}],"/mnt/c/swiggis.original/node_modules/react-bootstrap/lib/NavItem.js":[function(require,module,exports){
+},{"./Dropdown":"C:\\swiggis.austin\\node_modules\\react-bootstrap\\lib\\Dropdown.js","babel-runtime/helpers/class-call-check":"C:\\swiggis.austin\\node_modules\\babel-runtime\\helpers\\class-call-check.js","babel-runtime/helpers/extends":"C:\\swiggis.austin\\node_modules\\babel-runtime\\helpers\\extends.js","babel-runtime/helpers/inherits":"C:\\swiggis.austin\\node_modules\\babel-runtime\\helpers\\inherits.js","babel-runtime/helpers/interop-require-default":"C:\\swiggis.austin\\node_modules\\babel-runtime\\helpers\\interop-require-default.js","babel-runtime/helpers/object-without-properties":"C:\\swiggis.austin\\node_modules\\babel-runtime\\helpers\\object-without-properties.js","react":"C:\\swiggis.austin\\node_modules\\react\\react.js"}],"C:\\swiggis.austin\\node_modules\\react-bootstrap\\lib\\NavItem.js":[function(require,module,exports){
 'use strict';
 
 var _objectWithoutProperties = require('babel-runtime/helpers/object-without-properties')['default'];
@@ -25502,7 +24540,7 @@ var NavItem = _react2['default'].createClass({
 exports['default'] = NavItem;
 module.exports = exports['default'];
 //eslint-disable-line
-},{"./SafeAnchor":"/mnt/c/swiggis.original/node_modules/react-bootstrap/lib/SafeAnchor.js","./utils/createChainedFunction":"/mnt/c/swiggis.original/node_modules/react-bootstrap/lib/utils/createChainedFunction.js","babel-runtime/helpers/extends":"/mnt/c/swiggis.original/node_modules/babel-runtime/helpers/extends.js","babel-runtime/helpers/interop-require-default":"/mnt/c/swiggis.original/node_modules/babel-runtime/helpers/interop-require-default.js","babel-runtime/helpers/object-without-properties":"/mnt/c/swiggis.original/node_modules/babel-runtime/helpers/object-without-properties.js","classnames":"/mnt/c/swiggis.original/node_modules/classnames/index.js","react":"/mnt/c/swiggis.original/node_modules/react/react.js"}],"/mnt/c/swiggis.original/node_modules/react-bootstrap/lib/Navbar.js":[function(require,module,exports){
+},{"./SafeAnchor":"C:\\swiggis.austin\\node_modules\\react-bootstrap\\lib\\SafeAnchor.js","./utils/createChainedFunction":"C:\\swiggis.austin\\node_modules\\react-bootstrap\\lib\\utils\\createChainedFunction.js","babel-runtime/helpers/extends":"C:\\swiggis.austin\\node_modules\\babel-runtime\\helpers\\extends.js","babel-runtime/helpers/interop-require-default":"C:\\swiggis.austin\\node_modules\\babel-runtime\\helpers\\interop-require-default.js","babel-runtime/helpers/object-without-properties":"C:\\swiggis.austin\\node_modules\\babel-runtime\\helpers\\object-without-properties.js","classnames":"C:\\swiggis.austin\\node_modules\\classnames\\index.js","react":"C:\\swiggis.austin\\node_modules\\react\\react.js"}],"C:\\swiggis.austin\\node_modules\\react-bootstrap\\lib\\Navbar.js":[function(require,module,exports){
 /* eslint react/no-multi-comp: 0 */
 'use strict';
 
@@ -25771,7 +24809,7 @@ Navbar.Link = createSimpleWrapper('a', 'link', 'NavbarLink');
 
 exports['default'] = Navbar;
 module.exports = exports['default'];
-},{"./Grid":"/mnt/c/swiggis.original/node_modules/react-bootstrap/lib/Grid.js","./NavbarBrand":"/mnt/c/swiggis.original/node_modules/react-bootstrap/lib/NavbarBrand.js","./NavbarCollapse":"/mnt/c/swiggis.original/node_modules/react-bootstrap/lib/NavbarCollapse.js","./NavbarHeader":"/mnt/c/swiggis.original/node_modules/react-bootstrap/lib/NavbarHeader.js","./NavbarToggle":"/mnt/c/swiggis.original/node_modules/react-bootstrap/lib/NavbarToggle.js","./deprecated/Navbar":"/mnt/c/swiggis.original/node_modules/react-bootstrap/lib/deprecated/Navbar.js","./styleMaps":"/mnt/c/swiggis.original/node_modules/react-bootstrap/lib/styleMaps.js","./utils/ValidComponentChildren":"/mnt/c/swiggis.original/node_modules/react-bootstrap/lib/utils/ValidComponentChildren.js","./utils/bootstrapUtils":"/mnt/c/swiggis.original/node_modules/react-bootstrap/lib/utils/bootstrapUtils.js","./utils/deprecationWarning":"/mnt/c/swiggis.original/node_modules/react-bootstrap/lib/utils/deprecationWarning.js","babel-runtime/helpers/extends":"/mnt/c/swiggis.original/node_modules/babel-runtime/helpers/extends.js","babel-runtime/helpers/interop-require-default":"/mnt/c/swiggis.original/node_modules/babel-runtime/helpers/interop-require-default.js","babel-runtime/helpers/object-without-properties":"/mnt/c/swiggis.original/node_modules/babel-runtime/helpers/object-without-properties.js","classnames":"/mnt/c/swiggis.original/node_modules/classnames/index.js","react":"/mnt/c/swiggis.original/node_modules/react/react.js","react-prop-types/lib/deprecated":"/mnt/c/swiggis.original/node_modules/react-prop-types/lib/deprecated.js","react-prop-types/lib/elementType":"/mnt/c/swiggis.original/node_modules/react-prop-types/lib/elementType.js","uncontrollable":"/mnt/c/swiggis.original/node_modules/uncontrollable/index.js"}],"/mnt/c/swiggis.original/node_modules/react-bootstrap/lib/NavbarBrand.js":[function(require,module,exports){
+},{"./Grid":"C:\\swiggis.austin\\node_modules\\react-bootstrap\\lib\\Grid.js","./NavbarBrand":"C:\\swiggis.austin\\node_modules\\react-bootstrap\\lib\\NavbarBrand.js","./NavbarCollapse":"C:\\swiggis.austin\\node_modules\\react-bootstrap\\lib\\NavbarCollapse.js","./NavbarHeader":"C:\\swiggis.austin\\node_modules\\react-bootstrap\\lib\\NavbarHeader.js","./NavbarToggle":"C:\\swiggis.austin\\node_modules\\react-bootstrap\\lib\\NavbarToggle.js","./deprecated/Navbar":"C:\\swiggis.austin\\node_modules\\react-bootstrap\\lib\\deprecated\\Navbar.js","./styleMaps":"C:\\swiggis.austin\\node_modules\\react-bootstrap\\lib\\styleMaps.js","./utils/ValidComponentChildren":"C:\\swiggis.austin\\node_modules\\react-bootstrap\\lib\\utils\\ValidComponentChildren.js","./utils/bootstrapUtils":"C:\\swiggis.austin\\node_modules\\react-bootstrap\\lib\\utils\\bootstrapUtils.js","./utils/deprecationWarning":"C:\\swiggis.austin\\node_modules\\react-bootstrap\\lib\\utils\\deprecationWarning.js","babel-runtime/helpers/extends":"C:\\swiggis.austin\\node_modules\\babel-runtime\\helpers\\extends.js","babel-runtime/helpers/interop-require-default":"C:\\swiggis.austin\\node_modules\\babel-runtime\\helpers\\interop-require-default.js","babel-runtime/helpers/object-without-properties":"C:\\swiggis.austin\\node_modules\\babel-runtime\\helpers\\object-without-properties.js","classnames":"C:\\swiggis.austin\\node_modules\\classnames\\index.js","react":"C:\\swiggis.austin\\node_modules\\react\\react.js","react-prop-types/lib/deprecated":"C:\\swiggis.austin\\node_modules\\react-prop-types\\lib\\deprecated.js","react-prop-types/lib/elementType":"C:\\swiggis.austin\\node_modules\\react-prop-types\\lib\\elementType.js","uncontrollable":"C:\\swiggis.austin\\node_modules\\uncontrollable\\index.js"}],"C:\\swiggis.austin\\node_modules\\react-bootstrap\\lib\\NavbarBrand.js":[function(require,module,exports){
 'use strict';
 
 var _inherits = require('babel-runtime/helpers/inherits')['default'];
@@ -25841,7 +24879,7 @@ NavbarBrand.contextTypes = {
 
 exports['default'] = NavbarBrand;
 module.exports = exports['default'];
-},{"./utils/bootstrapUtils":"/mnt/c/swiggis.original/node_modules/react-bootstrap/lib/utils/bootstrapUtils.js","babel-runtime/helpers/class-call-check":"/mnt/c/swiggis.original/node_modules/babel-runtime/helpers/class-call-check.js","babel-runtime/helpers/extends":"/mnt/c/swiggis.original/node_modules/babel-runtime/helpers/extends.js","babel-runtime/helpers/inherits":"/mnt/c/swiggis.original/node_modules/babel-runtime/helpers/inherits.js","babel-runtime/helpers/interop-require-default":"/mnt/c/swiggis.original/node_modules/babel-runtime/helpers/interop-require-default.js","babel-runtime/helpers/object-without-properties":"/mnt/c/swiggis.original/node_modules/babel-runtime/helpers/object-without-properties.js","classnames":"/mnt/c/swiggis.original/node_modules/classnames/index.js","react":"/mnt/c/swiggis.original/node_modules/react/react.js"}],"/mnt/c/swiggis.original/node_modules/react-bootstrap/lib/NavbarCollapse.js":[function(require,module,exports){
+},{"./utils/bootstrapUtils":"C:\\swiggis.austin\\node_modules\\react-bootstrap\\lib\\utils\\bootstrapUtils.js","babel-runtime/helpers/class-call-check":"C:\\swiggis.austin\\node_modules\\babel-runtime\\helpers\\class-call-check.js","babel-runtime/helpers/extends":"C:\\swiggis.austin\\node_modules\\babel-runtime\\helpers\\extends.js","babel-runtime/helpers/inherits":"C:\\swiggis.austin\\node_modules\\babel-runtime\\helpers\\inherits.js","babel-runtime/helpers/interop-require-default":"C:\\swiggis.austin\\node_modules\\babel-runtime\\helpers\\interop-require-default.js","babel-runtime/helpers/object-without-properties":"C:\\swiggis.austin\\node_modules\\babel-runtime\\helpers\\object-without-properties.js","classnames":"C:\\swiggis.austin\\node_modules\\classnames\\index.js","react":"C:\\swiggis.austin\\node_modules\\react\\react.js"}],"C:\\swiggis.austin\\node_modules\\react-bootstrap\\lib\\NavbarCollapse.js":[function(require,module,exports){
 'use strict';
 
 var _objectWithoutProperties = require('babel-runtime/helpers/object-without-properties')['default'];
@@ -25897,7 +24935,7 @@ var NavbarCollapse = _react2['default'].createClass({
 
 exports['default'] = NavbarCollapse;
 module.exports = exports['default'];
-},{"./Collapse":"/mnt/c/swiggis.original/node_modules/react-bootstrap/lib/Collapse.js","./utils/bootstrapUtils":"/mnt/c/swiggis.original/node_modules/react-bootstrap/lib/utils/bootstrapUtils.js","babel-runtime/helpers/extends":"/mnt/c/swiggis.original/node_modules/babel-runtime/helpers/extends.js","babel-runtime/helpers/interop-require-default":"/mnt/c/swiggis.original/node_modules/babel-runtime/helpers/interop-require-default.js","babel-runtime/helpers/object-without-properties":"/mnt/c/swiggis.original/node_modules/babel-runtime/helpers/object-without-properties.js","react":"/mnt/c/swiggis.original/node_modules/react/react.js"}],"/mnt/c/swiggis.original/node_modules/react-bootstrap/lib/NavbarHeader.js":[function(require,module,exports){
+},{"./Collapse":"C:\\swiggis.austin\\node_modules\\react-bootstrap\\lib\\Collapse.js","./utils/bootstrapUtils":"C:\\swiggis.austin\\node_modules\\react-bootstrap\\lib\\utils\\bootstrapUtils.js","babel-runtime/helpers/extends":"C:\\swiggis.austin\\node_modules\\babel-runtime\\helpers\\extends.js","babel-runtime/helpers/interop-require-default":"C:\\swiggis.austin\\node_modules\\babel-runtime\\helpers\\interop-require-default.js","babel-runtime/helpers/object-without-properties":"C:\\swiggis.austin\\node_modules\\babel-runtime\\helpers\\object-without-properties.js","react":"C:\\swiggis.austin\\node_modules\\react\\react.js"}],"C:\\swiggis.austin\\node_modules\\react-bootstrap\\lib\\NavbarHeader.js":[function(require,module,exports){
 'use strict';
 
 var _objectWithoutProperties = require('babel-runtime/helpers/object-without-properties')['default'];
@@ -25944,7 +24982,7 @@ var NavbarHeader = _react2['default'].createClass({
 
 exports['default'] = NavbarHeader;
 module.exports = exports['default'];
-},{"./utils/bootstrapUtils":"/mnt/c/swiggis.original/node_modules/react-bootstrap/lib/utils/bootstrapUtils.js","babel-runtime/helpers/extends":"/mnt/c/swiggis.original/node_modules/babel-runtime/helpers/extends.js","babel-runtime/helpers/interop-require-default":"/mnt/c/swiggis.original/node_modules/babel-runtime/helpers/interop-require-default.js","babel-runtime/helpers/object-without-properties":"/mnt/c/swiggis.original/node_modules/babel-runtime/helpers/object-without-properties.js","classnames":"/mnt/c/swiggis.original/node_modules/classnames/index.js","react":"/mnt/c/swiggis.original/node_modules/react/react.js"}],"/mnt/c/swiggis.original/node_modules/react-bootstrap/lib/NavbarToggle.js":[function(require,module,exports){
+},{"./utils/bootstrapUtils":"C:\\swiggis.austin\\node_modules\\react-bootstrap\\lib\\utils\\bootstrapUtils.js","babel-runtime/helpers/extends":"C:\\swiggis.austin\\node_modules\\babel-runtime\\helpers\\extends.js","babel-runtime/helpers/interop-require-default":"C:\\swiggis.austin\\node_modules\\babel-runtime\\helpers\\interop-require-default.js","babel-runtime/helpers/object-without-properties":"C:\\swiggis.austin\\node_modules\\babel-runtime\\helpers\\object-without-properties.js","classnames":"C:\\swiggis.austin\\node_modules\\classnames\\index.js","react":"C:\\swiggis.austin\\node_modules\\react\\react.js"}],"C:\\swiggis.austin\\node_modules\\react-bootstrap\\lib\\NavbarToggle.js":[function(require,module,exports){
 'use strict';
 
 var _extends = require('babel-runtime/helpers/extends')['default'];
@@ -26032,7 +25070,7 @@ var NavbarToggle = _react2['default'].createClass({
 
 exports['default'] = NavbarToggle;
 module.exports = exports['default'];
-},{"./utils/bootstrapUtils":"/mnt/c/swiggis.original/node_modules/react-bootstrap/lib/utils/bootstrapUtils.js","./utils/createChainedFunction":"/mnt/c/swiggis.original/node_modules/react-bootstrap/lib/utils/createChainedFunction.js","babel-runtime/helpers/extends":"/mnt/c/swiggis.original/node_modules/babel-runtime/helpers/extends.js","babel-runtime/helpers/interop-require-default":"/mnt/c/swiggis.original/node_modules/babel-runtime/helpers/interop-require-default.js","babel-runtime/helpers/object-without-properties":"/mnt/c/swiggis.original/node_modules/babel-runtime/helpers/object-without-properties.js","classnames":"/mnt/c/swiggis.original/node_modules/classnames/index.js","react":"/mnt/c/swiggis.original/node_modules/react/react.js"}],"/mnt/c/swiggis.original/node_modules/react-bootstrap/lib/Overlay.js":[function(require,module,exports){
+},{"./utils/bootstrapUtils":"C:\\swiggis.austin\\node_modules\\react-bootstrap\\lib\\utils\\bootstrapUtils.js","./utils/createChainedFunction":"C:\\swiggis.austin\\node_modules\\react-bootstrap\\lib\\utils\\createChainedFunction.js","babel-runtime/helpers/extends":"C:\\swiggis.austin\\node_modules\\babel-runtime\\helpers\\extends.js","babel-runtime/helpers/interop-require-default":"C:\\swiggis.austin\\node_modules\\babel-runtime\\helpers\\interop-require-default.js","babel-runtime/helpers/object-without-properties":"C:\\swiggis.austin\\node_modules\\babel-runtime\\helpers\\object-without-properties.js","classnames":"C:\\swiggis.austin\\node_modules\\classnames\\index.js","react":"C:\\swiggis.austin\\node_modules\\react\\react.js"}],"C:\\swiggis.austin\\node_modules\\react-bootstrap\\lib\\Overlay.js":[function(require,module,exports){
 /* eslint react/prop-types: [2, {ignore: ["container", "containerPadding", "target", "placement", "children"] }] */
 /* These properties are validated in 'Portal' and 'Position' components */
 
@@ -26172,7 +25210,7 @@ Overlay.defaultProps = {
 
 exports['default'] = Overlay;
 module.exports = exports['default'];
-},{"./Fade":"/mnt/c/swiggis.original/node_modules/react-bootstrap/lib/Fade.js","babel-runtime/helpers/class-call-check":"/mnt/c/swiggis.original/node_modules/babel-runtime/helpers/class-call-check.js","babel-runtime/helpers/extends":"/mnt/c/swiggis.original/node_modules/babel-runtime/helpers/extends.js","babel-runtime/helpers/inherits":"/mnt/c/swiggis.original/node_modules/babel-runtime/helpers/inherits.js","babel-runtime/helpers/interop-require-default":"/mnt/c/swiggis.original/node_modules/babel-runtime/helpers/interop-require-default.js","babel-runtime/helpers/object-without-properties":"/mnt/c/swiggis.original/node_modules/babel-runtime/helpers/object-without-properties.js","classnames":"/mnt/c/swiggis.original/node_modules/classnames/index.js","react":"/mnt/c/swiggis.original/node_modules/react/react.js","react-overlays/lib/Overlay":"/mnt/c/swiggis.original/node_modules/react-overlays/lib/Overlay.js","react-prop-types/lib/elementType":"/mnt/c/swiggis.original/node_modules/react-prop-types/lib/elementType.js"}],"/mnt/c/swiggis.original/node_modules/react-bootstrap/lib/OverlayTrigger.js":[function(require,module,exports){
+},{"./Fade":"C:\\swiggis.austin\\node_modules\\react-bootstrap\\lib\\Fade.js","babel-runtime/helpers/class-call-check":"C:\\swiggis.austin\\node_modules\\babel-runtime\\helpers\\class-call-check.js","babel-runtime/helpers/extends":"C:\\swiggis.austin\\node_modules\\babel-runtime\\helpers\\extends.js","babel-runtime/helpers/inherits":"C:\\swiggis.austin\\node_modules\\babel-runtime\\helpers\\inherits.js","babel-runtime/helpers/interop-require-default":"C:\\swiggis.austin\\node_modules\\babel-runtime\\helpers\\interop-require-default.js","babel-runtime/helpers/object-without-properties":"C:\\swiggis.austin\\node_modules\\babel-runtime\\helpers\\object-without-properties.js","classnames":"C:\\swiggis.austin\\node_modules\\classnames\\index.js","react":"C:\\swiggis.austin\\node_modules\\react\\react.js","react-overlays/lib/Overlay":"C:\\swiggis.austin\\node_modules\\react-overlays\\lib\\Overlay.js","react-prop-types/lib/elementType":"C:\\swiggis.austin\\node_modules\\react-prop-types\\lib\\elementType.js"}],"C:\\swiggis.austin\\node_modules\\react-bootstrap\\lib\\OverlayTrigger.js":[function(require,module,exports){
 (function (process){
 /* eslint-disable react/prop-types */
 
@@ -26489,7 +25527,7 @@ var OverlayTrigger = _react2['default'].createClass({
 exports['default'] = OverlayTrigger;
 module.exports = exports['default'];
 }).call(this,require('_process'))
-},{"./Overlay":"/mnt/c/swiggis.original/node_modules/react-bootstrap/lib/Overlay.js","./utils/createChainedFunction":"/mnt/c/swiggis.original/node_modules/react-bootstrap/lib/utils/createChainedFunction.js","_process":"/mnt/c/swiggis.original/node_modules/process/browser.js","babel-runtime/core-js/object/keys":"/mnt/c/swiggis.original/node_modules/babel-runtime/core-js/object/keys.js","babel-runtime/helpers/extends":"/mnt/c/swiggis.original/node_modules/babel-runtime/helpers/extends.js","babel-runtime/helpers/interop-require-default":"/mnt/c/swiggis.original/node_modules/babel-runtime/helpers/interop-require-default.js","dom-helpers/query/contains":"/mnt/c/swiggis.original/node_modules/dom-helpers/query/contains.js","lodash-compat/object/pick":"/mnt/c/swiggis.original/node_modules/lodash-compat/object/pick.js","react":"/mnt/c/swiggis.original/node_modules/react/react.js","react-dom":"/mnt/c/swiggis.original/node_modules/react-dom/index.js","warning":"/mnt/c/swiggis.original/node_modules/warning/browser.js"}],"/mnt/c/swiggis.original/node_modules/react-bootstrap/lib/PageHeader.js":[function(require,module,exports){
+},{"./Overlay":"C:\\swiggis.austin\\node_modules\\react-bootstrap\\lib\\Overlay.js","./utils/createChainedFunction":"C:\\swiggis.austin\\node_modules\\react-bootstrap\\lib\\utils\\createChainedFunction.js","_process":"C:\\swiggis.austin\\node_modules\\process\\browser.js","babel-runtime/core-js/object/keys":"C:\\swiggis.austin\\node_modules\\babel-runtime\\core-js\\object\\keys.js","babel-runtime/helpers/extends":"C:\\swiggis.austin\\node_modules\\babel-runtime\\helpers\\extends.js","babel-runtime/helpers/interop-require-default":"C:\\swiggis.austin\\node_modules\\babel-runtime\\helpers\\interop-require-default.js","dom-helpers/query/contains":"C:\\swiggis.austin\\node_modules\\dom-helpers\\query\\contains.js","lodash-compat/object/pick":"C:\\swiggis.austin\\node_modules\\lodash-compat\\object\\pick.js","react":"C:\\swiggis.austin\\node_modules\\react\\react.js","react-dom":"C:\\swiggis.austin\\node_modules\\react-dom\\index.js","warning":"C:\\swiggis.austin\\node_modules\\warning\\browser.js"}],"C:\\swiggis.austin\\node_modules\\react-bootstrap\\lib\\PageHeader.js":[function(require,module,exports){
 'use strict';
 
 var _extends = require('babel-runtime/helpers/extends')['default'];
@@ -26524,7 +25562,7 @@ var PageHeader = _react2['default'].createClass({
 
 exports['default'] = PageHeader;
 module.exports = exports['default'];
-},{"babel-runtime/helpers/extends":"/mnt/c/swiggis.original/node_modules/babel-runtime/helpers/extends.js","babel-runtime/helpers/interop-require-default":"/mnt/c/swiggis.original/node_modules/babel-runtime/helpers/interop-require-default.js","classnames":"/mnt/c/swiggis.original/node_modules/classnames/index.js","react":"/mnt/c/swiggis.original/node_modules/react/react.js"}],"/mnt/c/swiggis.original/node_modules/react-bootstrap/lib/PageItem.js":[function(require,module,exports){
+},{"babel-runtime/helpers/extends":"C:\\swiggis.austin\\node_modules\\babel-runtime\\helpers\\extends.js","babel-runtime/helpers/interop-require-default":"C:\\swiggis.austin\\node_modules\\babel-runtime\\helpers\\interop-require-default.js","classnames":"C:\\swiggis.austin\\node_modules\\classnames\\index.js","react":"C:\\swiggis.austin\\node_modules\\react\\react.js"}],"C:\\swiggis.austin\\node_modules\\react-bootstrap\\lib\\PageItem.js":[function(require,module,exports){
 'use strict';
 
 var _extends = require('babel-runtime/helpers/extends')['default'];
@@ -26603,7 +25641,7 @@ var PageItem = _react2['default'].createClass({
 
 exports['default'] = PageItem;
 module.exports = exports['default'];
-},{"./SafeAnchor":"/mnt/c/swiggis.original/node_modules/react-bootstrap/lib/SafeAnchor.js","babel-runtime/helpers/extends":"/mnt/c/swiggis.original/node_modules/babel-runtime/helpers/extends.js","babel-runtime/helpers/interop-require-default":"/mnt/c/swiggis.original/node_modules/babel-runtime/helpers/interop-require-default.js","classnames":"/mnt/c/swiggis.original/node_modules/classnames/index.js","react":"/mnt/c/swiggis.original/node_modules/react/react.js"}],"/mnt/c/swiggis.original/node_modules/react-bootstrap/lib/Pager.js":[function(require,module,exports){
+},{"./SafeAnchor":"C:\\swiggis.austin\\node_modules\\react-bootstrap\\lib\\SafeAnchor.js","babel-runtime/helpers/extends":"C:\\swiggis.austin\\node_modules\\babel-runtime\\helpers\\extends.js","babel-runtime/helpers/interop-require-default":"C:\\swiggis.austin\\node_modules\\babel-runtime\\helpers\\interop-require-default.js","classnames":"C:\\swiggis.austin\\node_modules\\classnames\\index.js","react":"C:\\swiggis.austin\\node_modules\\react\\react.js"}],"C:\\swiggis.austin\\node_modules\\react-bootstrap\\lib\\Pager.js":[function(require,module,exports){
 'use strict';
 
 var _extends = require('babel-runtime/helpers/extends')['default'];
@@ -26654,7 +25692,7 @@ var Pager = _react2['default'].createClass({
 
 exports['default'] = Pager;
 module.exports = exports['default'];
-},{"./utils/ValidComponentChildren":"/mnt/c/swiggis.original/node_modules/react-bootstrap/lib/utils/ValidComponentChildren.js","./utils/createChainedFunction":"/mnt/c/swiggis.original/node_modules/react-bootstrap/lib/utils/createChainedFunction.js","babel-runtime/helpers/extends":"/mnt/c/swiggis.original/node_modules/babel-runtime/helpers/extends.js","babel-runtime/helpers/interop-require-default":"/mnt/c/swiggis.original/node_modules/babel-runtime/helpers/interop-require-default.js","classnames":"/mnt/c/swiggis.original/node_modules/classnames/index.js","react":"/mnt/c/swiggis.original/node_modules/react/react.js"}],"/mnt/c/swiggis.original/node_modules/react-bootstrap/lib/Pagination.js":[function(require,module,exports){
+},{"./utils/ValidComponentChildren":"C:\\swiggis.austin\\node_modules\\react-bootstrap\\lib\\utils\\ValidComponentChildren.js","./utils/createChainedFunction":"C:\\swiggis.austin\\node_modules\\react-bootstrap\\lib\\utils\\createChainedFunction.js","babel-runtime/helpers/extends":"C:\\swiggis.austin\\node_modules\\babel-runtime\\helpers\\extends.js","babel-runtime/helpers/interop-require-default":"C:\\swiggis.austin\\node_modules\\babel-runtime\\helpers\\interop-require-default.js","classnames":"C:\\swiggis.austin\\node_modules\\classnames\\index.js","react":"C:\\swiggis.austin\\node_modules\\react\\react.js"}],"C:\\swiggis.austin\\node_modules\\react-bootstrap\\lib\\Pagination.js":[function(require,module,exports){
 'use strict';
 
 var _extends = require('babel-runtime/helpers/extends')['default'];
@@ -26949,7 +25987,7 @@ var Pagination = _react2['default'].createClass({
 
 exports['default'] = _utilsBootstrapUtils.bsClass('pagination', Pagination);
 module.exports = exports['default'];
-},{"./PaginationButton":"/mnt/c/swiggis.original/node_modules/react-bootstrap/lib/PaginationButton.js","./SafeAnchor":"/mnt/c/swiggis.original/node_modules/react-bootstrap/lib/SafeAnchor.js","./utils/bootstrapUtils":"/mnt/c/swiggis.original/node_modules/react-bootstrap/lib/utils/bootstrapUtils.js","babel-runtime/helpers/extends":"/mnt/c/swiggis.original/node_modules/babel-runtime/helpers/extends.js","babel-runtime/helpers/interop-require-default":"/mnt/c/swiggis.original/node_modules/babel-runtime/helpers/interop-require-default.js","classnames":"/mnt/c/swiggis.original/node_modules/classnames/index.js","react":"/mnt/c/swiggis.original/node_modules/react/react.js","react-prop-types/lib/elementType":"/mnt/c/swiggis.original/node_modules/react-prop-types/lib/elementType.js"}],"/mnt/c/swiggis.original/node_modules/react-bootstrap/lib/PaginationButton.js":[function(require,module,exports){
+},{"./PaginationButton":"C:\\swiggis.austin\\node_modules\\react-bootstrap\\lib\\PaginationButton.js","./SafeAnchor":"C:\\swiggis.austin\\node_modules\\react-bootstrap\\lib\\SafeAnchor.js","./utils/bootstrapUtils":"C:\\swiggis.austin\\node_modules\\react-bootstrap\\lib\\utils\\bootstrapUtils.js","babel-runtime/helpers/extends":"C:\\swiggis.austin\\node_modules\\babel-runtime\\helpers\\extends.js","babel-runtime/helpers/interop-require-default":"C:\\swiggis.austin\\node_modules\\babel-runtime\\helpers\\interop-require-default.js","classnames":"C:\\swiggis.austin\\node_modules\\classnames\\index.js","react":"C:\\swiggis.austin\\node_modules\\react\\react.js","react-prop-types/lib/elementType":"C:\\swiggis.austin\\node_modules\\react-prop-types\\lib\\elementType.js"}],"C:\\swiggis.austin\\node_modules\\react-bootstrap\\lib\\PaginationButton.js":[function(require,module,exports){
 'use strict';
 
 var _objectWithoutProperties = require('babel-runtime/helpers/object-without-properties')['default'];
@@ -27033,7 +26071,7 @@ var PaginationButton = _react2['default'].createClass({
 
 exports['default'] = PaginationButton;
 module.exports = exports['default'];
-},{"./utils/createSelectedEvent":"/mnt/c/swiggis.original/node_modules/react-bootstrap/lib/utils/createSelectedEvent.js","babel-runtime/helpers/extends":"/mnt/c/swiggis.original/node_modules/babel-runtime/helpers/extends.js","babel-runtime/helpers/interop-require-default":"/mnt/c/swiggis.original/node_modules/babel-runtime/helpers/interop-require-default.js","babel-runtime/helpers/object-without-properties":"/mnt/c/swiggis.original/node_modules/babel-runtime/helpers/object-without-properties.js","classnames":"/mnt/c/swiggis.original/node_modules/classnames/index.js","react":"/mnt/c/swiggis.original/node_modules/react/react.js","react-prop-types/lib/elementType":"/mnt/c/swiggis.original/node_modules/react-prop-types/lib/elementType.js"}],"/mnt/c/swiggis.original/node_modules/react-bootstrap/lib/Panel.js":[function(require,module,exports){
+},{"./utils/createSelectedEvent":"C:\\swiggis.austin\\node_modules\\react-bootstrap\\lib\\utils\\createSelectedEvent.js","babel-runtime/helpers/extends":"C:\\swiggis.austin\\node_modules\\babel-runtime\\helpers\\extends.js","babel-runtime/helpers/interop-require-default":"C:\\swiggis.austin\\node_modules\\babel-runtime\\helpers\\interop-require-default.js","babel-runtime/helpers/object-without-properties":"C:\\swiggis.austin\\node_modules\\babel-runtime\\helpers\\object-without-properties.js","classnames":"C:\\swiggis.austin\\node_modules\\classnames\\index.js","react":"C:\\swiggis.austin\\node_modules\\react\\react.js","react-prop-types/lib/elementType":"C:\\swiggis.austin\\node_modules\\react-prop-types\\lib\\elementType.js"}],"C:\\swiggis.austin\\node_modules\\react-bootstrap\\lib\\Panel.js":[function(require,module,exports){
 'use strict';
 
 var _objectWithoutProperties = require('babel-runtime/helpers/object-without-properties')['default'];
@@ -27299,7 +26337,7 @@ var PANEL_STATES = _styleMaps.State.values().concat(_styleMaps.DEFAULT, _styleMa
 
 exports['default'] = _utilsBootstrapUtils.bsStyles(PANEL_STATES, _styleMaps.DEFAULT, _utilsBootstrapUtils.bsClass('panel', Panel));
 module.exports = exports['default'];
-},{"./Collapse":"/mnt/c/swiggis.original/node_modules/react-bootstrap/lib/Collapse.js","./styleMaps":"/mnt/c/swiggis.original/node_modules/react-bootstrap/lib/styleMaps.js","./utils/bootstrapUtils":"/mnt/c/swiggis.original/node_modules/react-bootstrap/lib/utils/bootstrapUtils.js","babel-runtime/helpers/extends":"/mnt/c/swiggis.original/node_modules/babel-runtime/helpers/extends.js","babel-runtime/helpers/interop-require-default":"/mnt/c/swiggis.original/node_modules/babel-runtime/helpers/interop-require-default.js","babel-runtime/helpers/object-without-properties":"/mnt/c/swiggis.original/node_modules/babel-runtime/helpers/object-without-properties.js","classnames":"/mnt/c/swiggis.original/node_modules/classnames/index.js","react":"/mnt/c/swiggis.original/node_modules/react/react.js"}],"/mnt/c/swiggis.original/node_modules/react-bootstrap/lib/PanelGroup.js":[function(require,module,exports){
+},{"./Collapse":"C:\\swiggis.austin\\node_modules\\react-bootstrap\\lib\\Collapse.js","./styleMaps":"C:\\swiggis.austin\\node_modules\\react-bootstrap\\lib\\styleMaps.js","./utils/bootstrapUtils":"C:\\swiggis.austin\\node_modules\\react-bootstrap\\lib\\utils\\bootstrapUtils.js","babel-runtime/helpers/extends":"C:\\swiggis.austin\\node_modules\\babel-runtime\\helpers\\extends.js","babel-runtime/helpers/interop-require-default":"C:\\swiggis.austin\\node_modules\\babel-runtime\\helpers\\interop-require-default.js","babel-runtime/helpers/object-without-properties":"C:\\swiggis.austin\\node_modules\\babel-runtime\\helpers\\object-without-properties.js","classnames":"C:\\swiggis.austin\\node_modules\\classnames\\index.js","react":"C:\\swiggis.austin\\node_modules\\react\\react.js"}],"C:\\swiggis.austin\\node_modules\\react-bootstrap\\lib\\PanelGroup.js":[function(require,module,exports){
 'use strict';
 
 var _objectWithoutProperties = require('babel-runtime/helpers/object-without-properties')['default'];
@@ -27415,7 +26453,7 @@ var PanelGroup = _react2['default'].createClass({
 
 exports['default'] = _utilsBootstrapUtils.bsClass('panel-group', PanelGroup);
 module.exports = exports['default'];
-},{"./utils/ValidComponentChildren":"/mnt/c/swiggis.original/node_modules/react-bootstrap/lib/utils/ValidComponentChildren.js","./utils/bootstrapUtils":"/mnt/c/swiggis.original/node_modules/react-bootstrap/lib/utils/bootstrapUtils.js","babel-runtime/helpers/extends":"/mnt/c/swiggis.original/node_modules/babel-runtime/helpers/extends.js","babel-runtime/helpers/interop-require-default":"/mnt/c/swiggis.original/node_modules/babel-runtime/helpers/interop-require-default.js","babel-runtime/helpers/object-without-properties":"/mnt/c/swiggis.original/node_modules/babel-runtime/helpers/object-without-properties.js","classnames":"/mnt/c/swiggis.original/node_modules/classnames/index.js","react":"/mnt/c/swiggis.original/node_modules/react/react.js"}],"/mnt/c/swiggis.original/node_modules/react-bootstrap/lib/Popover.js":[function(require,module,exports){
+},{"./utils/ValidComponentChildren":"C:\\swiggis.austin\\node_modules\\react-bootstrap\\lib\\utils\\ValidComponentChildren.js","./utils/bootstrapUtils":"C:\\swiggis.austin\\node_modules\\react-bootstrap\\lib\\utils\\bootstrapUtils.js","babel-runtime/helpers/extends":"C:\\swiggis.austin\\node_modules\\babel-runtime\\helpers\\extends.js","babel-runtime/helpers/interop-require-default":"C:\\swiggis.austin\\node_modules\\babel-runtime\\helpers\\interop-require-default.js","babel-runtime/helpers/object-without-properties":"C:\\swiggis.austin\\node_modules\\babel-runtime\\helpers\\object-without-properties.js","classnames":"C:\\swiggis.austin\\node_modules\\classnames\\index.js","react":"C:\\swiggis.austin\\node_modules\\react\\react.js"}],"C:\\swiggis.austin\\node_modules\\react-bootstrap\\lib\\Popover.js":[function(require,module,exports){
 'use strict';
 
 var _extends = require('babel-runtime/helpers/extends')['default'];
@@ -27528,7 +26566,7 @@ var Popover = _react2['default'].createClass({
 exports['default'] = Popover;
 module.exports = exports['default'];
 // we don't want to expose the `style` property
-},{"./utils/bootstrapUtils":"/mnt/c/swiggis.original/node_modules/react-bootstrap/lib/utils/bootstrapUtils.js","babel-runtime/helpers/extends":"/mnt/c/swiggis.original/node_modules/babel-runtime/helpers/extends.js","babel-runtime/helpers/interop-require-default":"/mnt/c/swiggis.original/node_modules/babel-runtime/helpers/interop-require-default.js","classnames":"/mnt/c/swiggis.original/node_modules/classnames/index.js","react":"/mnt/c/swiggis.original/node_modules/react/react.js","react-prop-types/lib/isRequiredForA11y":"/mnt/c/swiggis.original/node_modules/react-prop-types/lib/isRequiredForA11y.js"}],"/mnt/c/swiggis.original/node_modules/react-bootstrap/lib/ProgressBar.js":[function(require,module,exports){
+},{"./utils/bootstrapUtils":"C:\\swiggis.austin\\node_modules\\react-bootstrap\\lib\\utils\\bootstrapUtils.js","babel-runtime/helpers/extends":"C:\\swiggis.austin\\node_modules\\babel-runtime\\helpers\\extends.js","babel-runtime/helpers/interop-require-default":"C:\\swiggis.austin\\node_modules\\babel-runtime\\helpers\\interop-require-default.js","classnames":"C:\\swiggis.austin\\node_modules\\classnames\\index.js","react":"C:\\swiggis.austin\\node_modules\\react\\react.js","react-prop-types/lib/isRequiredForA11y":"C:\\swiggis.austin\\node_modules\\react-prop-types\\lib\\isRequiredForA11y.js"}],"C:\\swiggis.austin\\node_modules\\react-bootstrap\\lib\\ProgressBar.js":[function(require,module,exports){
 'use strict';
 
 var _inherits = require('babel-runtime/helpers/inherits')['default'];
@@ -27728,7 +26766,7 @@ ProgressBar.defaultProps = _extends({}, ProgressBar.defaultProps, {
 
 exports['default'] = _utilsBootstrapUtils.bsStyles(_styleMaps.State.values(), _utilsBootstrapUtils.bsClass('progress-bar', ProgressBar));
 module.exports = exports['default'];
-},{"./Interpolate":"/mnt/c/swiggis.original/node_modules/react-bootstrap/lib/Interpolate.js","./styleMaps":"/mnt/c/swiggis.original/node_modules/react-bootstrap/lib/styleMaps.js","./utils/ValidComponentChildren":"/mnt/c/swiggis.original/node_modules/react-bootstrap/lib/utils/ValidComponentChildren.js","./utils/bootstrapUtils":"/mnt/c/swiggis.original/node_modules/react-bootstrap/lib/utils/bootstrapUtils.js","babel-runtime/helpers/class-call-check":"/mnt/c/swiggis.original/node_modules/babel-runtime/helpers/class-call-check.js","babel-runtime/helpers/extends":"/mnt/c/swiggis.original/node_modules/babel-runtime/helpers/extends.js","babel-runtime/helpers/inherits":"/mnt/c/swiggis.original/node_modules/babel-runtime/helpers/inherits.js","babel-runtime/helpers/interop-require-default":"/mnt/c/swiggis.original/node_modules/babel-runtime/helpers/interop-require-default.js","babel-runtime/helpers/object-without-properties":"/mnt/c/swiggis.original/node_modules/babel-runtime/helpers/object-without-properties.js","classnames":"/mnt/c/swiggis.original/node_modules/classnames/index.js","react":"/mnt/c/swiggis.original/node_modules/react/react.js"}],"/mnt/c/swiggis.original/node_modules/react-bootstrap/lib/ResponsiveEmbed.js":[function(require,module,exports){
+},{"./Interpolate":"C:\\swiggis.austin\\node_modules\\react-bootstrap\\lib\\Interpolate.js","./styleMaps":"C:\\swiggis.austin\\node_modules\\react-bootstrap\\lib\\styleMaps.js","./utils/ValidComponentChildren":"C:\\swiggis.austin\\node_modules\\react-bootstrap\\lib\\utils\\ValidComponentChildren.js","./utils/bootstrapUtils":"C:\\swiggis.austin\\node_modules\\react-bootstrap\\lib\\utils\\bootstrapUtils.js","babel-runtime/helpers/class-call-check":"C:\\swiggis.austin\\node_modules\\babel-runtime\\helpers\\class-call-check.js","babel-runtime/helpers/extends":"C:\\swiggis.austin\\node_modules\\babel-runtime\\helpers\\extends.js","babel-runtime/helpers/inherits":"C:\\swiggis.austin\\node_modules\\babel-runtime\\helpers\\inherits.js","babel-runtime/helpers/interop-require-default":"C:\\swiggis.austin\\node_modules\\babel-runtime\\helpers\\interop-require-default.js","babel-runtime/helpers/object-without-properties":"C:\\swiggis.austin\\node_modules\\babel-runtime\\helpers\\object-without-properties.js","classnames":"C:\\swiggis.austin\\node_modules\\classnames\\index.js","react":"C:\\swiggis.austin\\node_modules\\react\\react.js"}],"C:\\swiggis.austin\\node_modules\\react-bootstrap\\lib\\ResponsiveEmbed.js":[function(require,module,exports){
 (function (process){
 'use strict';
 
@@ -27824,7 +26862,7 @@ ResponsiveEmbed.propTypes = {
 exports['default'] = ResponsiveEmbed;
 module.exports = exports['default'];
 }).call(this,require('_process'))
-},{"_process":"/mnt/c/swiggis.original/node_modules/process/browser.js","babel-runtime/helpers/class-call-check":"/mnt/c/swiggis.original/node_modules/babel-runtime/helpers/class-call-check.js","babel-runtime/helpers/extends":"/mnt/c/swiggis.original/node_modules/babel-runtime/helpers/extends.js","babel-runtime/helpers/inherits":"/mnt/c/swiggis.original/node_modules/babel-runtime/helpers/inherits.js","babel-runtime/helpers/interop-require-default":"/mnt/c/swiggis.original/node_modules/babel-runtime/helpers/interop-require-default.js","babel-runtime/helpers/object-without-properties":"/mnt/c/swiggis.original/node_modules/babel-runtime/helpers/object-without-properties.js","classnames":"/mnt/c/swiggis.original/node_modules/classnames/index.js","react":"/mnt/c/swiggis.original/node_modules/react/react.js","warning":"/mnt/c/swiggis.original/node_modules/warning/browser.js"}],"/mnt/c/swiggis.original/node_modules/react-bootstrap/lib/Row.js":[function(require,module,exports){
+},{"_process":"C:\\swiggis.austin\\node_modules\\process\\browser.js","babel-runtime/helpers/class-call-check":"C:\\swiggis.austin\\node_modules\\babel-runtime\\helpers\\class-call-check.js","babel-runtime/helpers/extends":"C:\\swiggis.austin\\node_modules\\babel-runtime\\helpers\\extends.js","babel-runtime/helpers/inherits":"C:\\swiggis.austin\\node_modules\\babel-runtime\\helpers\\inherits.js","babel-runtime/helpers/interop-require-default":"C:\\swiggis.austin\\node_modules\\babel-runtime\\helpers\\interop-require-default.js","babel-runtime/helpers/object-without-properties":"C:\\swiggis.austin\\node_modules\\babel-runtime\\helpers\\object-without-properties.js","classnames":"C:\\swiggis.austin\\node_modules\\classnames\\index.js","react":"C:\\swiggis.austin\\node_modules\\react\\react.js","warning":"C:\\swiggis.austin\\node_modules\\warning\\browser.js"}],"C:\\swiggis.austin\\node_modules\\react-bootstrap\\lib\\Row.js":[function(require,module,exports){
 'use strict';
 
 var _extends = require('babel-runtime/helpers/extends')['default'];
@@ -27874,7 +26912,7 @@ var Row = _react2['default'].createClass({
 
 exports['default'] = Row;
 module.exports = exports['default'];
-},{"babel-runtime/helpers/extends":"/mnt/c/swiggis.original/node_modules/babel-runtime/helpers/extends.js","babel-runtime/helpers/interop-require-default":"/mnt/c/swiggis.original/node_modules/babel-runtime/helpers/interop-require-default.js","classnames":"/mnt/c/swiggis.original/node_modules/classnames/index.js","react":"/mnt/c/swiggis.original/node_modules/react/react.js","react-prop-types/lib/elementType":"/mnt/c/swiggis.original/node_modules/react-prop-types/lib/elementType.js"}],"/mnt/c/swiggis.original/node_modules/react-bootstrap/lib/SafeAnchor.js":[function(require,module,exports){
+},{"babel-runtime/helpers/extends":"C:\\swiggis.austin\\node_modules\\babel-runtime\\helpers\\extends.js","babel-runtime/helpers/interop-require-default":"C:\\swiggis.austin\\node_modules\\babel-runtime\\helpers\\interop-require-default.js","classnames":"C:\\swiggis.austin\\node_modules\\classnames\\index.js","react":"C:\\swiggis.austin\\node_modules\\react\\react.js","react-prop-types/lib/elementType":"C:\\swiggis.austin\\node_modules\\react-prop-types\\lib\\elementType.js"}],"C:\\swiggis.austin\\node_modules\\react-bootstrap\\lib\\SafeAnchor.js":[function(require,module,exports){
 'use strict';
 
 var _inherits = require('babel-runtime/helpers/inherits')['default'];
@@ -27935,7 +26973,7 @@ SafeAnchor.propTypes = {
   onClick: _react2['default'].PropTypes.func
 };
 module.exports = exports['default'];
-},{"./utils/createChainedFunction":"/mnt/c/swiggis.original/node_modules/react-bootstrap/lib/utils/createChainedFunction.js","babel-runtime/helpers/class-call-check":"/mnt/c/swiggis.original/node_modules/babel-runtime/helpers/class-call-check.js","babel-runtime/helpers/extends":"/mnt/c/swiggis.original/node_modules/babel-runtime/helpers/extends.js","babel-runtime/helpers/inherits":"/mnt/c/swiggis.original/node_modules/babel-runtime/helpers/inherits.js","babel-runtime/helpers/interop-require-default":"/mnt/c/swiggis.original/node_modules/babel-runtime/helpers/interop-require-default.js","react":"/mnt/c/swiggis.original/node_modules/react/react.js"}],"/mnt/c/swiggis.original/node_modules/react-bootstrap/lib/SplitButton.js":[function(require,module,exports){
+},{"./utils/createChainedFunction":"C:\\swiggis.austin\\node_modules\\react-bootstrap\\lib\\utils\\createChainedFunction.js","babel-runtime/helpers/class-call-check":"C:\\swiggis.austin\\node_modules\\babel-runtime\\helpers\\class-call-check.js","babel-runtime/helpers/extends":"C:\\swiggis.austin\\node_modules\\babel-runtime\\helpers\\extends.js","babel-runtime/helpers/inherits":"C:\\swiggis.austin\\node_modules\\babel-runtime\\helpers\\inherits.js","babel-runtime/helpers/interop-require-default":"C:\\swiggis.austin\\node_modules\\babel-runtime\\helpers\\interop-require-default.js","react":"C:\\swiggis.austin\\node_modules\\react\\react.js"}],"C:\\swiggis.austin\\node_modules\\react-bootstrap\\lib\\SplitButton.js":[function(require,module,exports){
 'use strict';
 
 var _inherits = require('babel-runtime/helpers/inherits')['default'];
@@ -28064,7 +27102,7 @@ SplitButton.Toggle = _SplitToggle2['default'];
 
 exports['default'] = SplitButton;
 module.exports = exports['default'];
-},{"./Button":"/mnt/c/swiggis.original/node_modules/react-bootstrap/lib/Button.js","./Dropdown":"/mnt/c/swiggis.original/node_modules/react-bootstrap/lib/Dropdown.js","./SplitToggle":"/mnt/c/swiggis.original/node_modules/react-bootstrap/lib/SplitToggle.js","babel-runtime/core-js/object/keys":"/mnt/c/swiggis.original/node_modules/babel-runtime/core-js/object/keys.js","babel-runtime/helpers/class-call-check":"/mnt/c/swiggis.original/node_modules/babel-runtime/helpers/class-call-check.js","babel-runtime/helpers/extends":"/mnt/c/swiggis.original/node_modules/babel-runtime/helpers/extends.js","babel-runtime/helpers/inherits":"/mnt/c/swiggis.original/node_modules/babel-runtime/helpers/inherits.js","babel-runtime/helpers/interop-require-default":"/mnt/c/swiggis.original/node_modules/babel-runtime/helpers/interop-require-default.js","babel-runtime/helpers/object-without-properties":"/mnt/c/swiggis.original/node_modules/babel-runtime/helpers/object-without-properties.js","lodash-compat/object/omit":"/mnt/c/swiggis.original/node_modules/lodash-compat/object/omit.js","lodash-compat/object/pick":"/mnt/c/swiggis.original/node_modules/lodash-compat/object/pick.js","react":"/mnt/c/swiggis.original/node_modules/react/react.js"}],"/mnt/c/swiggis.original/node_modules/react-bootstrap/lib/SplitToggle.js":[function(require,module,exports){
+},{"./Button":"C:\\swiggis.austin\\node_modules\\react-bootstrap\\lib\\Button.js","./Dropdown":"C:\\swiggis.austin\\node_modules\\react-bootstrap\\lib\\Dropdown.js","./SplitToggle":"C:\\swiggis.austin\\node_modules\\react-bootstrap\\lib\\SplitToggle.js","babel-runtime/core-js/object/keys":"C:\\swiggis.austin\\node_modules\\babel-runtime\\core-js\\object\\keys.js","babel-runtime/helpers/class-call-check":"C:\\swiggis.austin\\node_modules\\babel-runtime\\helpers\\class-call-check.js","babel-runtime/helpers/extends":"C:\\swiggis.austin\\node_modules\\babel-runtime\\helpers\\extends.js","babel-runtime/helpers/inherits":"C:\\swiggis.austin\\node_modules\\babel-runtime\\helpers\\inherits.js","babel-runtime/helpers/interop-require-default":"C:\\swiggis.austin\\node_modules\\babel-runtime\\helpers\\interop-require-default.js","babel-runtime/helpers/object-without-properties":"C:\\swiggis.austin\\node_modules\\babel-runtime\\helpers\\object-without-properties.js","lodash-compat/object/omit":"C:\\swiggis.austin\\node_modules\\lodash-compat\\object\\omit.js","lodash-compat/object/pick":"C:\\swiggis.austin\\node_modules\\lodash-compat\\object\\pick.js","react":"C:\\swiggis.austin\\node_modules\\react\\react.js"}],"C:\\swiggis.austin\\node_modules\\react-bootstrap\\lib\\SplitToggle.js":[function(require,module,exports){
 'use strict';
 
 var _inherits = require('babel-runtime/helpers/inherits')['default'];
@@ -28108,7 +27146,7 @@ exports['default'] = SplitToggle;
 
 SplitToggle.defaultProps = _DropdownToggle2['default'].defaultProps;
 module.exports = exports['default'];
-},{"./DropdownToggle":"/mnt/c/swiggis.original/node_modules/react-bootstrap/lib/DropdownToggle.js","babel-runtime/helpers/class-call-check":"/mnt/c/swiggis.original/node_modules/babel-runtime/helpers/class-call-check.js","babel-runtime/helpers/extends":"/mnt/c/swiggis.original/node_modules/babel-runtime/helpers/extends.js","babel-runtime/helpers/inherits":"/mnt/c/swiggis.original/node_modules/babel-runtime/helpers/inherits.js","babel-runtime/helpers/interop-require-default":"/mnt/c/swiggis.original/node_modules/babel-runtime/helpers/interop-require-default.js","react":"/mnt/c/swiggis.original/node_modules/react/react.js"}],"/mnt/c/swiggis.original/node_modules/react-bootstrap/lib/Tab.js":[function(require,module,exports){
+},{"./DropdownToggle":"C:\\swiggis.austin\\node_modules\\react-bootstrap\\lib\\DropdownToggle.js","babel-runtime/helpers/class-call-check":"C:\\swiggis.austin\\node_modules\\babel-runtime\\helpers\\class-call-check.js","babel-runtime/helpers/extends":"C:\\swiggis.austin\\node_modules\\babel-runtime\\helpers\\extends.js","babel-runtime/helpers/inherits":"C:\\swiggis.austin\\node_modules\\babel-runtime\\helpers\\inherits.js","babel-runtime/helpers/interop-require-default":"C:\\swiggis.austin\\node_modules\\babel-runtime\\helpers\\interop-require-default.js","react":"C:\\swiggis.austin\\node_modules\\react\\react.js"}],"C:\\swiggis.austin\\node_modules\\react-bootstrap\\lib\\Tab.js":[function(require,module,exports){
 'use strict';
 
 var _extends = require('babel-runtime/helpers/extends')['default'];
@@ -28236,7 +27274,7 @@ var Tab = _react2['default'].createClass({
 
 exports['default'] = Tab;
 module.exports = exports['default'];
-},{"./utils/TransitionEvents":"/mnt/c/swiggis.original/node_modules/react-bootstrap/lib/utils/TransitionEvents.js","./utils/bootstrapUtils":"/mnt/c/swiggis.original/node_modules/react-bootstrap/lib/utils/bootstrapUtils.js","babel-runtime/helpers/extends":"/mnt/c/swiggis.original/node_modules/babel-runtime/helpers/extends.js","babel-runtime/helpers/interop-require-default":"/mnt/c/swiggis.original/node_modules/babel-runtime/helpers/interop-require-default.js","classnames":"/mnt/c/swiggis.original/node_modules/classnames/index.js","react":"/mnt/c/swiggis.original/node_modules/react/react.js","react-dom":"/mnt/c/swiggis.original/node_modules/react-dom/index.js"}],"/mnt/c/swiggis.original/node_modules/react-bootstrap/lib/Table.js":[function(require,module,exports){
+},{"./utils/TransitionEvents":"C:\\swiggis.austin\\node_modules\\react-bootstrap\\lib\\utils\\TransitionEvents.js","./utils/bootstrapUtils":"C:\\swiggis.austin\\node_modules\\react-bootstrap\\lib\\utils\\bootstrapUtils.js","babel-runtime/helpers/extends":"C:\\swiggis.austin\\node_modules\\babel-runtime\\helpers\\extends.js","babel-runtime/helpers/interop-require-default":"C:\\swiggis.austin\\node_modules\\babel-runtime\\helpers\\interop-require-default.js","classnames":"C:\\swiggis.austin\\node_modules\\classnames\\index.js","react":"C:\\swiggis.austin\\node_modules\\react\\react.js","react-dom":"C:\\swiggis.austin\\node_modules\\react-dom\\index.js"}],"C:\\swiggis.austin\\node_modules\\react-bootstrap\\lib\\Table.js":[function(require,module,exports){
 'use strict';
 
 var _extends = require('babel-runtime/helpers/extends')['default'];
@@ -28298,7 +27336,7 @@ var Table = _react2['default'].createClass({
 
 exports['default'] = Table;
 module.exports = exports['default'];
-},{"babel-runtime/helpers/extends":"/mnt/c/swiggis.original/node_modules/babel-runtime/helpers/extends.js","babel-runtime/helpers/interop-require-default":"/mnt/c/swiggis.original/node_modules/babel-runtime/helpers/interop-require-default.js","classnames":"/mnt/c/swiggis.original/node_modules/classnames/index.js","react":"/mnt/c/swiggis.original/node_modules/react/react.js"}],"/mnt/c/swiggis.original/node_modules/react-bootstrap/lib/Tabs.js":[function(require,module,exports){
+},{"babel-runtime/helpers/extends":"C:\\swiggis.austin\\node_modules\\babel-runtime\\helpers\\extends.js","babel-runtime/helpers/interop-require-default":"C:\\swiggis.austin\\node_modules\\babel-runtime\\helpers\\interop-require-default.js","classnames":"C:\\swiggis.austin\\node_modules\\classnames\\index.js","react":"C:\\swiggis.austin\\node_modules\\react\\react.js"}],"C:\\swiggis.austin\\node_modules\\react-bootstrap\\lib\\Tabs.js":[function(require,module,exports){
 'use strict';
 
 var _extends = require('babel-runtime/helpers/extends')['default'];
@@ -28742,7 +27780,7 @@ var Tabs = _react2['default'].createClass({
 
 exports['default'] = Tabs;
 module.exports = exports['default'];
-},{"./Col":"/mnt/c/swiggis.original/node_modules/react-bootstrap/lib/Col.js","./Nav":"/mnt/c/swiggis.original/node_modules/react-bootstrap/lib/Nav.js","./NavItem":"/mnt/c/swiggis.original/node_modules/react-bootstrap/lib/NavItem.js","./styleMaps":"/mnt/c/swiggis.original/node_modules/react-bootstrap/lib/styleMaps.js","./utils/ValidComponentChildren":"/mnt/c/swiggis.original/node_modules/react-bootstrap/lib/utils/ValidComponentChildren.js","./utils/bootstrapUtils":"/mnt/c/swiggis.original/node_modules/react-bootstrap/lib/utils/bootstrapUtils.js","./utils/createChainedFunction":"/mnt/c/swiggis.original/node_modules/react-bootstrap/lib/utils/createChainedFunction.js","babel-runtime/core-js/object/keys":"/mnt/c/swiggis.original/node_modules/babel-runtime/core-js/object/keys.js","babel-runtime/helpers/extends":"/mnt/c/swiggis.original/node_modules/babel-runtime/helpers/extends.js","babel-runtime/helpers/interop-require-default":"/mnt/c/swiggis.original/node_modules/babel-runtime/helpers/interop-require-default.js","babel-runtime/helpers/object-without-properties":"/mnt/c/swiggis.original/node_modules/babel-runtime/helpers/object-without-properties.js","classnames":"/mnt/c/swiggis.original/node_modules/classnames/index.js","keycode":"/mnt/c/swiggis.original/node_modules/keycode/index.js","react":"/mnt/c/swiggis.original/node_modules/react/react.js","react-dom":"/mnt/c/swiggis.original/node_modules/react-dom/index.js"}],"/mnt/c/swiggis.original/node_modules/react-bootstrap/lib/Thumbnail.js":[function(require,module,exports){
+},{"./Col":"C:\\swiggis.austin\\node_modules\\react-bootstrap\\lib\\Col.js","./Nav":"C:\\swiggis.austin\\node_modules\\react-bootstrap\\lib\\Nav.js","./NavItem":"C:\\swiggis.austin\\node_modules\\react-bootstrap\\lib\\NavItem.js","./styleMaps":"C:\\swiggis.austin\\node_modules\\react-bootstrap\\lib\\styleMaps.js","./utils/ValidComponentChildren":"C:\\swiggis.austin\\node_modules\\react-bootstrap\\lib\\utils\\ValidComponentChildren.js","./utils/bootstrapUtils":"C:\\swiggis.austin\\node_modules\\react-bootstrap\\lib\\utils\\bootstrapUtils.js","./utils/createChainedFunction":"C:\\swiggis.austin\\node_modules\\react-bootstrap\\lib\\utils\\createChainedFunction.js","babel-runtime/core-js/object/keys":"C:\\swiggis.austin\\node_modules\\babel-runtime\\core-js\\object\\keys.js","babel-runtime/helpers/extends":"C:\\swiggis.austin\\node_modules\\babel-runtime\\helpers\\extends.js","babel-runtime/helpers/interop-require-default":"C:\\swiggis.austin\\node_modules\\babel-runtime\\helpers\\interop-require-default.js","babel-runtime/helpers/object-without-properties":"C:\\swiggis.austin\\node_modules\\babel-runtime\\helpers\\object-without-properties.js","classnames":"C:\\swiggis.austin\\node_modules\\classnames\\index.js","keycode":"C:\\swiggis.austin\\node_modules\\keycode\\index.js","react":"C:\\swiggis.austin\\node_modules\\react\\react.js","react-dom":"C:\\swiggis.austin\\node_modules\\react-dom\\index.js"}],"C:\\swiggis.austin\\node_modules\\react-bootstrap\\lib\\Thumbnail.js":[function(require,module,exports){
 'use strict';
 
 var _extends = require('babel-runtime/helpers/extends')['default'];
@@ -28810,7 +27848,7 @@ var Thumbnail = _react2['default'].createClass({
 
 exports['default'] = _utilsBootstrapUtils.bsClass('thumbnail', Thumbnail);
 module.exports = exports['default'];
-},{"./SafeAnchor":"/mnt/c/swiggis.original/node_modules/react-bootstrap/lib/SafeAnchor.js","./utils/bootstrapUtils":"/mnt/c/swiggis.original/node_modules/react-bootstrap/lib/utils/bootstrapUtils.js","babel-runtime/helpers/extends":"/mnt/c/swiggis.original/node_modules/babel-runtime/helpers/extends.js","babel-runtime/helpers/interop-require-default":"/mnt/c/swiggis.original/node_modules/babel-runtime/helpers/interop-require-default.js","classnames":"/mnt/c/swiggis.original/node_modules/classnames/index.js","react":"/mnt/c/swiggis.original/node_modules/react/react.js"}],"/mnt/c/swiggis.original/node_modules/react-bootstrap/lib/Tooltip.js":[function(require,module,exports){
+},{"./SafeAnchor":"C:\\swiggis.austin\\node_modules\\react-bootstrap\\lib\\SafeAnchor.js","./utils/bootstrapUtils":"C:\\swiggis.austin\\node_modules\\react-bootstrap\\lib\\utils\\bootstrapUtils.js","babel-runtime/helpers/extends":"C:\\swiggis.austin\\node_modules\\babel-runtime\\helpers\\extends.js","babel-runtime/helpers/interop-require-default":"C:\\swiggis.austin\\node_modules\\babel-runtime\\helpers\\interop-require-default.js","classnames":"C:\\swiggis.austin\\node_modules\\classnames\\index.js","react":"C:\\swiggis.austin\\node_modules\\react\\react.js"}],"C:\\swiggis.austin\\node_modules\\react-bootstrap\\lib\\Tooltip.js":[function(require,module,exports){
 'use strict';
 
 var _extends = require('babel-runtime/helpers/extends')['default'];
@@ -28910,7 +27948,7 @@ var Tooltip = _react2['default'].createClass({
 
 exports['default'] = Tooltip;
 module.exports = exports['default'];
-},{"./utils/bootstrapUtils":"/mnt/c/swiggis.original/node_modules/react-bootstrap/lib/utils/bootstrapUtils.js","babel-runtime/helpers/extends":"/mnt/c/swiggis.original/node_modules/babel-runtime/helpers/extends.js","babel-runtime/helpers/interop-require-default":"/mnt/c/swiggis.original/node_modules/babel-runtime/helpers/interop-require-default.js","classnames":"/mnt/c/swiggis.original/node_modules/classnames/index.js","react":"/mnt/c/swiggis.original/node_modules/react/react.js","react-prop-types/lib/isRequiredForA11y":"/mnt/c/swiggis.original/node_modules/react-prop-types/lib/isRequiredForA11y.js"}],"/mnt/c/swiggis.original/node_modules/react-bootstrap/lib/Well.js":[function(require,module,exports){
+},{"./utils/bootstrapUtils":"C:\\swiggis.austin\\node_modules\\react-bootstrap\\lib\\utils\\bootstrapUtils.js","babel-runtime/helpers/extends":"C:\\swiggis.austin\\node_modules\\babel-runtime\\helpers\\extends.js","babel-runtime/helpers/interop-require-default":"C:\\swiggis.austin\\node_modules\\babel-runtime\\helpers\\interop-require-default.js","classnames":"C:\\swiggis.austin\\node_modules\\classnames\\index.js","react":"C:\\swiggis.austin\\node_modules\\react\\react.js","react-prop-types/lib/isRequiredForA11y":"C:\\swiggis.austin\\node_modules\\react-prop-types\\lib\\isRequiredForA11y.js"}],"C:\\swiggis.austin\\node_modules\\react-bootstrap\\lib\\Well.js":[function(require,module,exports){
 'use strict';
 
 var _inherits = require('babel-runtime/helpers/inherits')['default'];
@@ -28964,7 +28002,7 @@ var Well = (function (_React$Component) {
 
 exports['default'] = Well;
 module.exports = exports['default'];
-},{"./styleMaps":"/mnt/c/swiggis.original/node_modules/react-bootstrap/lib/styleMaps.js","./utils/bootstrapUtils":"/mnt/c/swiggis.original/node_modules/react-bootstrap/lib/utils/bootstrapUtils.js","babel-runtime/helpers/class-call-check":"/mnt/c/swiggis.original/node_modules/babel-runtime/helpers/class-call-check.js","babel-runtime/helpers/extends":"/mnt/c/swiggis.original/node_modules/babel-runtime/helpers/extends.js","babel-runtime/helpers/inherits":"/mnt/c/swiggis.original/node_modules/babel-runtime/helpers/inherits.js","babel-runtime/helpers/interop-require-default":"/mnt/c/swiggis.original/node_modules/babel-runtime/helpers/interop-require-default.js","classnames":"/mnt/c/swiggis.original/node_modules/classnames/index.js","react":"/mnt/c/swiggis.original/node_modules/react/react.js"}],"/mnt/c/swiggis.original/node_modules/react-bootstrap/lib/deprecated/Navbar.js":[function(require,module,exports){
+},{"./styleMaps":"C:\\swiggis.austin\\node_modules\\react-bootstrap\\lib\\styleMaps.js","./utils/bootstrapUtils":"C:\\swiggis.austin\\node_modules\\react-bootstrap\\lib\\utils\\bootstrapUtils.js","babel-runtime/helpers/class-call-check":"C:\\swiggis.austin\\node_modules\\babel-runtime\\helpers\\class-call-check.js","babel-runtime/helpers/extends":"C:\\swiggis.austin\\node_modules\\babel-runtime\\helpers\\extends.js","babel-runtime/helpers/inherits":"C:\\swiggis.austin\\node_modules\\babel-runtime\\helpers\\inherits.js","babel-runtime/helpers/interop-require-default":"C:\\swiggis.austin\\node_modules\\babel-runtime\\helpers\\interop-require-default.js","classnames":"C:\\swiggis.austin\\node_modules\\classnames\\index.js","react":"C:\\swiggis.austin\\node_modules\\react\\react.js"}],"C:\\swiggis.austin\\node_modules\\react-bootstrap\\lib\\deprecated\\Navbar.js":[function(require,module,exports){
 'use strict';
 
 var _objectWithoutProperties = require('babel-runtime/helpers/object-without-properties')['default'];
@@ -29224,7 +28262,7 @@ var NAVBAR_STATES = [_styleMaps.DEFAULT, _styleMaps.INVERSE];
 
 exports['default'] = _utilsBootstrapUtils.bsStyles(NAVBAR_STATES, _styleMaps.DEFAULT, _utilsBootstrapUtils.bsClass('navbar', Navbar));
 module.exports = exports['default'];
-},{"../Grid":"/mnt/c/swiggis.original/node_modules/react-bootstrap/lib/Grid.js","../NavBrand":"/mnt/c/swiggis.original/node_modules/react-bootstrap/lib/NavBrand.js","../styleMaps":"/mnt/c/swiggis.original/node_modules/react-bootstrap/lib/styleMaps.js","../utils/ValidComponentChildren":"/mnt/c/swiggis.original/node_modules/react-bootstrap/lib/utils/ValidComponentChildren.js","../utils/bootstrapUtils":"/mnt/c/swiggis.original/node_modules/react-bootstrap/lib/utils/bootstrapUtils.js","../utils/createChainedFunction":"/mnt/c/swiggis.original/node_modules/react-bootstrap/lib/utils/createChainedFunction.js","babel-runtime/helpers/extends":"/mnt/c/swiggis.original/node_modules/babel-runtime/helpers/extends.js","babel-runtime/helpers/interop-require-default":"/mnt/c/swiggis.original/node_modules/babel-runtime/helpers/interop-require-default.js","babel-runtime/helpers/object-without-properties":"/mnt/c/swiggis.original/node_modules/babel-runtime/helpers/object-without-properties.js","classnames":"/mnt/c/swiggis.original/node_modules/classnames/index.js","react":"/mnt/c/swiggis.original/node_modules/react/react.js","react-prop-types/lib/deprecated":"/mnt/c/swiggis.original/node_modules/react-prop-types/lib/deprecated.js","react-prop-types/lib/elementType":"/mnt/c/swiggis.original/node_modules/react-prop-types/lib/elementType.js"}],"/mnt/c/swiggis.original/node_modules/react-bootstrap/lib/index.js":[function(require,module,exports){
+},{"../Grid":"C:\\swiggis.austin\\node_modules\\react-bootstrap\\lib\\Grid.js","../NavBrand":"C:\\swiggis.austin\\node_modules\\react-bootstrap\\lib\\NavBrand.js","../styleMaps":"C:\\swiggis.austin\\node_modules\\react-bootstrap\\lib\\styleMaps.js","../utils/ValidComponentChildren":"C:\\swiggis.austin\\node_modules\\react-bootstrap\\lib\\utils\\ValidComponentChildren.js","../utils/bootstrapUtils":"C:\\swiggis.austin\\node_modules\\react-bootstrap\\lib\\utils\\bootstrapUtils.js","../utils/createChainedFunction":"C:\\swiggis.austin\\node_modules\\react-bootstrap\\lib\\utils\\createChainedFunction.js","babel-runtime/helpers/extends":"C:\\swiggis.austin\\node_modules\\babel-runtime\\helpers\\extends.js","babel-runtime/helpers/interop-require-default":"C:\\swiggis.austin\\node_modules\\babel-runtime\\helpers\\interop-require-default.js","babel-runtime/helpers/object-without-properties":"C:\\swiggis.austin\\node_modules\\babel-runtime\\helpers\\object-without-properties.js","classnames":"C:\\swiggis.austin\\node_modules\\classnames\\index.js","react":"C:\\swiggis.austin\\node_modules\\react\\react.js","react-prop-types/lib/deprecated":"C:\\swiggis.austin\\node_modules\\react-prop-types\\lib\\deprecated.js","react-prop-types/lib/elementType":"C:\\swiggis.austin\\node_modules\\react-prop-types\\lib\\elementType.js"}],"C:\\swiggis.austin\\node_modules\\react-bootstrap\\lib\\index.js":[function(require,module,exports){
 'use strict';
 
 var _interopRequireDefault = require('babel-runtime/helpers/interop-require-default')['default'];
@@ -29621,7 +28659,7 @@ var utils = {
   ValidComponentChildren: _utilsValidComponentChildren2['default']
 };
 exports.utils = utils;
-},{"./Accordion":"/mnt/c/swiggis.original/node_modules/react-bootstrap/lib/Accordion.js","./Alert":"/mnt/c/swiggis.original/node_modules/react-bootstrap/lib/Alert.js","./Badge":"/mnt/c/swiggis.original/node_modules/react-bootstrap/lib/Badge.js","./Breadcrumb":"/mnt/c/swiggis.original/node_modules/react-bootstrap/lib/Breadcrumb.js","./BreadcrumbItem":"/mnt/c/swiggis.original/node_modules/react-bootstrap/lib/BreadcrumbItem.js","./Button":"/mnt/c/swiggis.original/node_modules/react-bootstrap/lib/Button.js","./ButtonGroup":"/mnt/c/swiggis.original/node_modules/react-bootstrap/lib/ButtonGroup.js","./ButtonInput":"/mnt/c/swiggis.original/node_modules/react-bootstrap/lib/ButtonInput.js","./ButtonToolbar":"/mnt/c/swiggis.original/node_modules/react-bootstrap/lib/ButtonToolbar.js","./Carousel":"/mnt/c/swiggis.original/node_modules/react-bootstrap/lib/Carousel.js","./CarouselItem":"/mnt/c/swiggis.original/node_modules/react-bootstrap/lib/CarouselItem.js","./Clearfix":"/mnt/c/swiggis.original/node_modules/react-bootstrap/lib/Clearfix.js","./Col":"/mnt/c/swiggis.original/node_modules/react-bootstrap/lib/Col.js","./Collapse":"/mnt/c/swiggis.original/node_modules/react-bootstrap/lib/Collapse.js","./CollapsibleNav":"/mnt/c/swiggis.original/node_modules/react-bootstrap/lib/CollapsibleNav.js","./Dropdown":"/mnt/c/swiggis.original/node_modules/react-bootstrap/lib/Dropdown.js","./DropdownButton":"/mnt/c/swiggis.original/node_modules/react-bootstrap/lib/DropdownButton.js","./Fade":"/mnt/c/swiggis.original/node_modules/react-bootstrap/lib/Fade.js","./FormControls":"/mnt/c/swiggis.original/node_modules/react-bootstrap/lib/FormControls/index.js","./Glyphicon":"/mnt/c/swiggis.original/node_modules/react-bootstrap/lib/Glyphicon.js","./Grid":"/mnt/c/swiggis.original/node_modules/react-bootstrap/lib/Grid.js","./Image":"/mnt/c/swiggis.original/node_modules/react-bootstrap/lib/Image.js","./Input":"/mnt/c/swiggis.original/node_modules/react-bootstrap/lib/Input.js","./Interpolate":"/mnt/c/swiggis.original/node_modules/react-bootstrap/lib/Interpolate.js","./Jumbotron":"/mnt/c/swiggis.original/node_modules/react-bootstrap/lib/Jumbotron.js","./Label":"/mnt/c/swiggis.original/node_modules/react-bootstrap/lib/Label.js","./ListGroup":"/mnt/c/swiggis.original/node_modules/react-bootstrap/lib/ListGroup.js","./ListGroupItem":"/mnt/c/swiggis.original/node_modules/react-bootstrap/lib/ListGroupItem.js","./Media":"/mnt/c/swiggis.original/node_modules/react-bootstrap/lib/Media.js","./MenuItem":"/mnt/c/swiggis.original/node_modules/react-bootstrap/lib/MenuItem.js","./Modal":"/mnt/c/swiggis.original/node_modules/react-bootstrap/lib/Modal.js","./ModalBody":"/mnt/c/swiggis.original/node_modules/react-bootstrap/lib/ModalBody.js","./ModalFooter":"/mnt/c/swiggis.original/node_modules/react-bootstrap/lib/ModalFooter.js","./ModalHeader":"/mnt/c/swiggis.original/node_modules/react-bootstrap/lib/ModalHeader.js","./ModalTitle":"/mnt/c/swiggis.original/node_modules/react-bootstrap/lib/ModalTitle.js","./Nav":"/mnt/c/swiggis.original/node_modules/react-bootstrap/lib/Nav.js","./NavBrand":"/mnt/c/swiggis.original/node_modules/react-bootstrap/lib/NavBrand.js","./NavDropdown":"/mnt/c/swiggis.original/node_modules/react-bootstrap/lib/NavDropdown.js","./NavItem":"/mnt/c/swiggis.original/node_modules/react-bootstrap/lib/NavItem.js","./Navbar":"/mnt/c/swiggis.original/node_modules/react-bootstrap/lib/Navbar.js","./NavbarBrand":"/mnt/c/swiggis.original/node_modules/react-bootstrap/lib/NavbarBrand.js","./Overlay":"/mnt/c/swiggis.original/node_modules/react-bootstrap/lib/Overlay.js","./OverlayTrigger":"/mnt/c/swiggis.original/node_modules/react-bootstrap/lib/OverlayTrigger.js","./PageHeader":"/mnt/c/swiggis.original/node_modules/react-bootstrap/lib/PageHeader.js","./PageItem":"/mnt/c/swiggis.original/node_modules/react-bootstrap/lib/PageItem.js","./Pager":"/mnt/c/swiggis.original/node_modules/react-bootstrap/lib/Pager.js","./Pagination":"/mnt/c/swiggis.original/node_modules/react-bootstrap/lib/Pagination.js","./Panel":"/mnt/c/swiggis.original/node_modules/react-bootstrap/lib/Panel.js","./PanelGroup":"/mnt/c/swiggis.original/node_modules/react-bootstrap/lib/PanelGroup.js","./Popover":"/mnt/c/swiggis.original/node_modules/react-bootstrap/lib/Popover.js","./ProgressBar":"/mnt/c/swiggis.original/node_modules/react-bootstrap/lib/ProgressBar.js","./ResponsiveEmbed":"/mnt/c/swiggis.original/node_modules/react-bootstrap/lib/ResponsiveEmbed.js","./Row":"/mnt/c/swiggis.original/node_modules/react-bootstrap/lib/Row.js","./SafeAnchor":"/mnt/c/swiggis.original/node_modules/react-bootstrap/lib/SafeAnchor.js","./SplitButton":"/mnt/c/swiggis.original/node_modules/react-bootstrap/lib/SplitButton.js","./Tab":"/mnt/c/swiggis.original/node_modules/react-bootstrap/lib/Tab.js","./Table":"/mnt/c/swiggis.original/node_modules/react-bootstrap/lib/Table.js","./Tabs":"/mnt/c/swiggis.original/node_modules/react-bootstrap/lib/Tabs.js","./Thumbnail":"/mnt/c/swiggis.original/node_modules/react-bootstrap/lib/Thumbnail.js","./Tooltip":"/mnt/c/swiggis.original/node_modules/react-bootstrap/lib/Tooltip.js","./Well":"/mnt/c/swiggis.original/node_modules/react-bootstrap/lib/Well.js","./utils/ValidComponentChildren":"/mnt/c/swiggis.original/node_modules/react-bootstrap/lib/utils/ValidComponentChildren.js","./utils/bootstrapUtils":"/mnt/c/swiggis.original/node_modules/react-bootstrap/lib/utils/bootstrapUtils.js","./utils/childrenValueInputValidation":"/mnt/c/swiggis.original/node_modules/react-bootstrap/lib/utils/childrenValueInputValidation.js","./utils/createChainedFunction":"/mnt/c/swiggis.original/node_modules/react-bootstrap/lib/utils/createChainedFunction.js","babel-runtime/helpers/interop-require-default":"/mnt/c/swiggis.original/node_modules/babel-runtime/helpers/interop-require-default.js","babel-runtime/helpers/interop-require-wildcard":"/mnt/c/swiggis.original/node_modules/babel-runtime/helpers/interop-require-wildcard.js"}],"/mnt/c/swiggis.original/node_modules/react-bootstrap/lib/styleMaps.js":[function(require,module,exports){
+},{"./Accordion":"C:\\swiggis.austin\\node_modules\\react-bootstrap\\lib\\Accordion.js","./Alert":"C:\\swiggis.austin\\node_modules\\react-bootstrap\\lib\\Alert.js","./Badge":"C:\\swiggis.austin\\node_modules\\react-bootstrap\\lib\\Badge.js","./Breadcrumb":"C:\\swiggis.austin\\node_modules\\react-bootstrap\\lib\\Breadcrumb.js","./BreadcrumbItem":"C:\\swiggis.austin\\node_modules\\react-bootstrap\\lib\\BreadcrumbItem.js","./Button":"C:\\swiggis.austin\\node_modules\\react-bootstrap\\lib\\Button.js","./ButtonGroup":"C:\\swiggis.austin\\node_modules\\react-bootstrap\\lib\\ButtonGroup.js","./ButtonInput":"C:\\swiggis.austin\\node_modules\\react-bootstrap\\lib\\ButtonInput.js","./ButtonToolbar":"C:\\swiggis.austin\\node_modules\\react-bootstrap\\lib\\ButtonToolbar.js","./Carousel":"C:\\swiggis.austin\\node_modules\\react-bootstrap\\lib\\Carousel.js","./CarouselItem":"C:\\swiggis.austin\\node_modules\\react-bootstrap\\lib\\CarouselItem.js","./Clearfix":"C:\\swiggis.austin\\node_modules\\react-bootstrap\\lib\\Clearfix.js","./Col":"C:\\swiggis.austin\\node_modules\\react-bootstrap\\lib\\Col.js","./Collapse":"C:\\swiggis.austin\\node_modules\\react-bootstrap\\lib\\Collapse.js","./CollapsibleNav":"C:\\swiggis.austin\\node_modules\\react-bootstrap\\lib\\CollapsibleNav.js","./Dropdown":"C:\\swiggis.austin\\node_modules\\react-bootstrap\\lib\\Dropdown.js","./DropdownButton":"C:\\swiggis.austin\\node_modules\\react-bootstrap\\lib\\DropdownButton.js","./Fade":"C:\\swiggis.austin\\node_modules\\react-bootstrap\\lib\\Fade.js","./FormControls":"C:\\swiggis.austin\\node_modules\\react-bootstrap\\lib\\FormControls\\index.js","./Glyphicon":"C:\\swiggis.austin\\node_modules\\react-bootstrap\\lib\\Glyphicon.js","./Grid":"C:\\swiggis.austin\\node_modules\\react-bootstrap\\lib\\Grid.js","./Image":"C:\\swiggis.austin\\node_modules\\react-bootstrap\\lib\\Image.js","./Input":"C:\\swiggis.austin\\node_modules\\react-bootstrap\\lib\\Input.js","./Interpolate":"C:\\swiggis.austin\\node_modules\\react-bootstrap\\lib\\Interpolate.js","./Jumbotron":"C:\\swiggis.austin\\node_modules\\react-bootstrap\\lib\\Jumbotron.js","./Label":"C:\\swiggis.austin\\node_modules\\react-bootstrap\\lib\\Label.js","./ListGroup":"C:\\swiggis.austin\\node_modules\\react-bootstrap\\lib\\ListGroup.js","./ListGroupItem":"C:\\swiggis.austin\\node_modules\\react-bootstrap\\lib\\ListGroupItem.js","./Media":"C:\\swiggis.austin\\node_modules\\react-bootstrap\\lib\\Media.js","./MenuItem":"C:\\swiggis.austin\\node_modules\\react-bootstrap\\lib\\MenuItem.js","./Modal":"C:\\swiggis.austin\\node_modules\\react-bootstrap\\lib\\Modal.js","./ModalBody":"C:\\swiggis.austin\\node_modules\\react-bootstrap\\lib\\ModalBody.js","./ModalFooter":"C:\\swiggis.austin\\node_modules\\react-bootstrap\\lib\\ModalFooter.js","./ModalHeader":"C:\\swiggis.austin\\node_modules\\react-bootstrap\\lib\\ModalHeader.js","./ModalTitle":"C:\\swiggis.austin\\node_modules\\react-bootstrap\\lib\\ModalTitle.js","./Nav":"C:\\swiggis.austin\\node_modules\\react-bootstrap\\lib\\Nav.js","./NavBrand":"C:\\swiggis.austin\\node_modules\\react-bootstrap\\lib\\NavBrand.js","./NavDropdown":"C:\\swiggis.austin\\node_modules\\react-bootstrap\\lib\\NavDropdown.js","./NavItem":"C:\\swiggis.austin\\node_modules\\react-bootstrap\\lib\\NavItem.js","./Navbar":"C:\\swiggis.austin\\node_modules\\react-bootstrap\\lib\\Navbar.js","./NavbarBrand":"C:\\swiggis.austin\\node_modules\\react-bootstrap\\lib\\NavbarBrand.js","./Overlay":"C:\\swiggis.austin\\node_modules\\react-bootstrap\\lib\\Overlay.js","./OverlayTrigger":"C:\\swiggis.austin\\node_modules\\react-bootstrap\\lib\\OverlayTrigger.js","./PageHeader":"C:\\swiggis.austin\\node_modules\\react-bootstrap\\lib\\PageHeader.js","./PageItem":"C:\\swiggis.austin\\node_modules\\react-bootstrap\\lib\\PageItem.js","./Pager":"C:\\swiggis.austin\\node_modules\\react-bootstrap\\lib\\Pager.js","./Pagination":"C:\\swiggis.austin\\node_modules\\react-bootstrap\\lib\\Pagination.js","./Panel":"C:\\swiggis.austin\\node_modules\\react-bootstrap\\lib\\Panel.js","./PanelGroup":"C:\\swiggis.austin\\node_modules\\react-bootstrap\\lib\\PanelGroup.js","./Popover":"C:\\swiggis.austin\\node_modules\\react-bootstrap\\lib\\Popover.js","./ProgressBar":"C:\\swiggis.austin\\node_modules\\react-bootstrap\\lib\\ProgressBar.js","./ResponsiveEmbed":"C:\\swiggis.austin\\node_modules\\react-bootstrap\\lib\\ResponsiveEmbed.js","./Row":"C:\\swiggis.austin\\node_modules\\react-bootstrap\\lib\\Row.js","./SafeAnchor":"C:\\swiggis.austin\\node_modules\\react-bootstrap\\lib\\SafeAnchor.js","./SplitButton":"C:\\swiggis.austin\\node_modules\\react-bootstrap\\lib\\SplitButton.js","./Tab":"C:\\swiggis.austin\\node_modules\\react-bootstrap\\lib\\Tab.js","./Table":"C:\\swiggis.austin\\node_modules\\react-bootstrap\\lib\\Table.js","./Tabs":"C:\\swiggis.austin\\node_modules\\react-bootstrap\\lib\\Tabs.js","./Thumbnail":"C:\\swiggis.austin\\node_modules\\react-bootstrap\\lib\\Thumbnail.js","./Tooltip":"C:\\swiggis.austin\\node_modules\\react-bootstrap\\lib\\Tooltip.js","./Well":"C:\\swiggis.austin\\node_modules\\react-bootstrap\\lib\\Well.js","./utils/ValidComponentChildren":"C:\\swiggis.austin\\node_modules\\react-bootstrap\\lib\\utils\\ValidComponentChildren.js","./utils/bootstrapUtils":"C:\\swiggis.austin\\node_modules\\react-bootstrap\\lib\\utils\\bootstrapUtils.js","./utils/childrenValueInputValidation":"C:\\swiggis.austin\\node_modules\\react-bootstrap\\lib\\utils\\childrenValueInputValidation.js","./utils/createChainedFunction":"C:\\swiggis.austin\\node_modules\\react-bootstrap\\lib\\utils\\createChainedFunction.js","babel-runtime/helpers/interop-require-default":"C:\\swiggis.austin\\node_modules\\babel-runtime\\helpers\\interop-require-default.js","babel-runtime/helpers/interop-require-wildcard":"C:\\swiggis.austin\\node_modules\\babel-runtime\\helpers\\interop-require-wildcard.js"}],"C:\\swiggis.austin\\node_modules\\react-bootstrap\\lib\\styleMaps.js":[function(require,module,exports){
 'use strict';
 
 var _Object$assign = require('babel-runtime/core-js/object/assign')['default'];
@@ -29685,7 +28723,7 @@ var INVERSE = 'inverse';
 
 exports.INVERSE = INVERSE;
 exports['default'] = styleMaps;
-},{"babel-runtime/core-js/object/assign":"/mnt/c/swiggis.original/node_modules/babel-runtime/core-js/object/assign.js","babel-runtime/core-js/object/create":"/mnt/c/swiggis.original/node_modules/babel-runtime/core-js/object/create.js","babel-runtime/core-js/object/keys":"/mnt/c/swiggis.original/node_modules/babel-runtime/core-js/object/keys.js"}],"/mnt/c/swiggis.original/node_modules/react-bootstrap/lib/utils/CustomPropTypes.js":[function(require,module,exports){
+},{"babel-runtime/core-js/object/assign":"C:\\swiggis.austin\\node_modules\\babel-runtime\\core-js\\object\\assign.js","babel-runtime/core-js/object/create":"C:\\swiggis.austin\\node_modules\\babel-runtime\\core-js\\object\\create.js","babel-runtime/core-js/object/keys":"C:\\swiggis.austin\\node_modules\\babel-runtime\\core-js\\object\\keys.js"}],"C:\\swiggis.austin\\node_modules\\react-bootstrap\\lib\\utils\\CustomPropTypes.js":[function(require,module,exports){
 'use strict';
 
 var _interopRequireDefault = require('babel-runtime/helpers/interop-require-default')['default'];
@@ -29757,7 +28795,7 @@ exports['default'] = {
   }
 };
 module.exports = exports['default'];
-},{"./childrenToArray":"/mnt/c/swiggis.original/node_modules/react-bootstrap/lib/utils/childrenToArray.js","babel-runtime/helpers/interop-require-default":"/mnt/c/swiggis.original/node_modules/babel-runtime/helpers/interop-require-default.js","react-prop-types/lib/common":"/mnt/c/swiggis.original/node_modules/react-prop-types/lib/common.js"}],"/mnt/c/swiggis.original/node_modules/react-bootstrap/lib/utils/TransitionEvents.js":[function(require,module,exports){
+},{"./childrenToArray":"C:\\swiggis.austin\\node_modules\\react-bootstrap\\lib\\utils\\childrenToArray.js","babel-runtime/helpers/interop-require-default":"C:\\swiggis.austin\\node_modules\\babel-runtime\\helpers\\interop-require-default.js","react-prop-types/lib/common":"C:\\swiggis.austin\\node_modules\\react-prop-types\\lib\\common.js"}],"C:\\swiggis.austin\\node_modules\\react-bootstrap\\lib\\utils\\TransitionEvents.js":[function(require,module,exports){
 /**
  * Copyright 2013-2014, Facebook, Inc.
  * All rights reserved.
@@ -29872,7 +28910,7 @@ var ReactTransitionEvents = {
 
 exports['default'] = ReactTransitionEvents;
 module.exports = exports['default'];
-},{}],"/mnt/c/swiggis.original/node_modules/react-bootstrap/lib/utils/ValidComponentChildren.js":[function(require,module,exports){
+},{}],"C:\\swiggis.austin\\node_modules\\react-bootstrap\\lib\\utils\\ValidComponentChildren.js":[function(require,module,exports){
 'use strict';
 
 var _interopRequireDefault = require('babel-runtime/helpers/interop-require-default')['default'];
@@ -30016,7 +29054,7 @@ exports['default'] = {
   hasValidComponent: hasValidComponent
 };
 module.exports = exports['default'];
-},{"babel-runtime/helpers/interop-require-default":"/mnt/c/swiggis.original/node_modules/babel-runtime/helpers/interop-require-default.js","react":"/mnt/c/swiggis.original/node_modules/react/react.js"}],"/mnt/c/swiggis.original/node_modules/react-bootstrap/lib/utils/bootstrapUtils.js":[function(require,module,exports){
+},{"babel-runtime/helpers/interop-require-default":"C:\\swiggis.austin\\node_modules\\babel-runtime\\helpers\\interop-require-default.js","react":"C:\\swiggis.austin\\node_modules\\react\\react.js"}],"C:\\swiggis.austin\\node_modules\\react-bootstrap\\lib\\utils\\bootstrapUtils.js":[function(require,module,exports){
 (function (process){
 'use strict';
 
@@ -30195,7 +29233,7 @@ exports['default'] = {
 var _curry = curry;
 exports._curry = _curry;
 }).call(this,require('_process'))
-},{"../styleMaps":"/mnt/c/swiggis.original/node_modules/react-bootstrap/lib/styleMaps.js","_process":"/mnt/c/swiggis.original/node_modules/process/browser.js","babel-runtime/helpers/extends":"/mnt/c/swiggis.original/node_modules/babel-runtime/helpers/extends.js","babel-runtime/helpers/interop-require-default":"/mnt/c/swiggis.original/node_modules/babel-runtime/helpers/interop-require-default.js","invariant":"/mnt/c/swiggis.original/node_modules/invariant/browser.js","react":"/mnt/c/swiggis.original/node_modules/react/react.js","warning":"/mnt/c/swiggis.original/node_modules/warning/browser.js"}],"/mnt/c/swiggis.original/node_modules/react-bootstrap/lib/utils/childrenToArray.js":[function(require,module,exports){
+},{"../styleMaps":"C:\\swiggis.austin\\node_modules\\react-bootstrap\\lib\\styleMaps.js","_process":"C:\\swiggis.austin\\node_modules\\process\\browser.js","babel-runtime/helpers/extends":"C:\\swiggis.austin\\node_modules\\babel-runtime\\helpers\\extends.js","babel-runtime/helpers/interop-require-default":"C:\\swiggis.austin\\node_modules\\babel-runtime\\helpers\\interop-require-default.js","invariant":"C:\\swiggis.austin\\node_modules\\invariant\\browser.js","react":"C:\\swiggis.austin\\node_modules\\react\\react.js","warning":"C:\\swiggis.austin\\node_modules\\warning\\browser.js"}],"C:\\swiggis.austin\\node_modules\\react-bootstrap\\lib\\utils\\childrenToArray.js":[function(require,module,exports){
 'use strict';
 
 var _interopRequireDefault = require('babel-runtime/helpers/interop-require-default')['default'];
@@ -30222,7 +29260,7 @@ function childrenAsArray(children) {
 }
 
 module.exports = exports['default'];
-},{"./ValidComponentChildren":"/mnt/c/swiggis.original/node_modules/react-bootstrap/lib/utils/ValidComponentChildren.js","babel-runtime/helpers/interop-require-default":"/mnt/c/swiggis.original/node_modules/babel-runtime/helpers/interop-require-default.js"}],"/mnt/c/swiggis.original/node_modules/react-bootstrap/lib/utils/childrenValueInputValidation.js":[function(require,module,exports){
+},{"./ValidComponentChildren":"C:\\swiggis.austin\\node_modules\\react-bootstrap\\lib\\utils\\ValidComponentChildren.js","babel-runtime/helpers/interop-require-default":"C:\\swiggis.austin\\node_modules\\babel-runtime\\helpers\\interop-require-default.js"}],"C:\\swiggis.austin\\node_modules\\react-bootstrap\\lib\\utils\\childrenValueInputValidation.js":[function(require,module,exports){
 'use strict';
 
 var _interopRequireDefault = require('babel-runtime/helpers/interop-require-default')['default'];
@@ -30249,7 +29287,7 @@ function valueValidation(props, propName, componentName) {
 }
 
 module.exports = exports['default'];
-},{"babel-runtime/helpers/interop-require-default":"/mnt/c/swiggis.original/node_modules/babel-runtime/helpers/interop-require-default.js","react":"/mnt/c/swiggis.original/node_modules/react/react.js","react-prop-types/lib/singlePropFrom":"/mnt/c/swiggis.original/node_modules/react-prop-types/lib/singlePropFrom.js"}],"/mnt/c/swiggis.original/node_modules/react-bootstrap/lib/utils/createChainedFunction.js":[function(require,module,exports){
+},{"babel-runtime/helpers/interop-require-default":"C:\\swiggis.austin\\node_modules\\babel-runtime\\helpers\\interop-require-default.js","react":"C:\\swiggis.austin\\node_modules\\react\\react.js","react-prop-types/lib/singlePropFrom":"C:\\swiggis.austin\\node_modules\\react-prop-types\\lib\\singlePropFrom.js"}],"C:\\swiggis.austin\\node_modules\\react-bootstrap\\lib\\utils\\createChainedFunction.js":[function(require,module,exports){
 /**
  * Safe chained function
  *
@@ -30291,7 +29329,7 @@ function createChainedFunction() {
 
 exports['default'] = createChainedFunction;
 module.exports = exports['default'];
-},{}],"/mnt/c/swiggis.original/node_modules/react-bootstrap/lib/utils/createSelectedEvent.js":[function(require,module,exports){
+},{}],"C:\\swiggis.austin\\node_modules\\react-bootstrap\\lib\\utils\\createSelectedEvent.js":[function(require,module,exports){
 "use strict";
 
 exports.__esModule = true;
@@ -30314,7 +29352,7 @@ function createSelectedEvent(eventKey) {
 }
 
 module.exports = exports["default"];
-},{}],"/mnt/c/swiggis.original/node_modules/react-bootstrap/lib/utils/deprecationWarning.js":[function(require,module,exports){
+},{}],"C:\\swiggis.austin\\node_modules\\react-bootstrap\\lib\\utils\\deprecationWarning.js":[function(require,module,exports){
 (function (process){
 'use strict';
 
@@ -30388,12 +29426,12 @@ deprecationWarning.wrapper = function (Component) {
 exports['default'] = deprecationWarning;
 module.exports = exports['default'];
 }).call(this,require('_process'))
-},{"_process":"/mnt/c/swiggis.original/node_modules/process/browser.js","babel-runtime/helpers/class-call-check":"/mnt/c/swiggis.original/node_modules/babel-runtime/helpers/class-call-check.js","babel-runtime/helpers/inherits":"/mnt/c/swiggis.original/node_modules/babel-runtime/helpers/inherits.js","babel-runtime/helpers/interop-require-default":"/mnt/c/swiggis.original/node_modules/babel-runtime/helpers/interop-require-default.js","warning":"/mnt/c/swiggis.original/node_modules/warning/browser.js"}],"/mnt/c/swiggis.original/node_modules/react-dom/index.js":[function(require,module,exports){
+},{"_process":"C:\\swiggis.austin\\node_modules\\process\\browser.js","babel-runtime/helpers/class-call-check":"C:\\swiggis.austin\\node_modules\\babel-runtime\\helpers\\class-call-check.js","babel-runtime/helpers/inherits":"C:\\swiggis.austin\\node_modules\\babel-runtime\\helpers\\inherits.js","babel-runtime/helpers/interop-require-default":"C:\\swiggis.austin\\node_modules\\babel-runtime\\helpers\\interop-require-default.js","warning":"C:\\swiggis.austin\\node_modules\\warning\\browser.js"}],"C:\\swiggis.austin\\node_modules\\react-dom\\index.js":[function(require,module,exports){
 'use strict';
 
 module.exports = require('./lib/ReactDOM');
 
-},{"./lib/ReactDOM":"/mnt/c/swiggis.original/node_modules/react-dom/lib/ReactDOM.js"}],"/mnt/c/swiggis.original/node_modules/react-dom/lib/ARIADOMPropertyConfig.js":[function(require,module,exports){
+},{"./lib/ReactDOM":"C:\\swiggis.austin\\node_modules\\react-dom\\lib\\ReactDOM.js"}],"C:\\swiggis.austin\\node_modules\\react-dom\\lib\\ARIADOMPropertyConfig.js":[function(require,module,exports){
 /**
  * Copyright (c) 2013-present, Facebook, Inc.
  *
@@ -30465,7 +29503,7 @@ var ARIADOMPropertyConfig = {
 };
 
 module.exports = ARIADOMPropertyConfig;
-},{}],"/mnt/c/swiggis.original/node_modules/react-dom/lib/AutoFocusUtils.js":[function(require,module,exports){
+},{}],"C:\\swiggis.austin\\node_modules\\react-dom\\lib\\AutoFocusUtils.js":[function(require,module,exports){
 /**
  * Copyright (c) 2013-present, Facebook, Inc.
  *
@@ -30487,7 +29525,7 @@ var AutoFocusUtils = {
 };
 
 module.exports = AutoFocusUtils;
-},{"./ReactDOMComponentTree":"/mnt/c/swiggis.original/node_modules/react-dom/lib/ReactDOMComponentTree.js","fbjs/lib/focusNode":"/mnt/c/swiggis.original/node_modules/fbjs/lib/focusNode.js"}],"/mnt/c/swiggis.original/node_modules/react-dom/lib/BeforeInputEventPlugin.js":[function(require,module,exports){
+},{"./ReactDOMComponentTree":"C:\\swiggis.austin\\node_modules\\react-dom\\lib\\ReactDOMComponentTree.js","fbjs/lib/focusNode":"C:\\swiggis.austin\\node_modules\\fbjs\\lib\\focusNode.js"}],"C:\\swiggis.austin\\node_modules\\react-dom\\lib\\BeforeInputEventPlugin.js":[function(require,module,exports){
 /**
  * Copyright (c) 2013-present, Facebook, Inc.
  *
@@ -30869,7 +29907,7 @@ var BeforeInputEventPlugin = {
 };
 
 module.exports = BeforeInputEventPlugin;
-},{"./EventPropagators":"/mnt/c/swiggis.original/node_modules/react-dom/lib/EventPropagators.js","./FallbackCompositionState":"/mnt/c/swiggis.original/node_modules/react-dom/lib/FallbackCompositionState.js","./SyntheticCompositionEvent":"/mnt/c/swiggis.original/node_modules/react-dom/lib/SyntheticCompositionEvent.js","./SyntheticInputEvent":"/mnt/c/swiggis.original/node_modules/react-dom/lib/SyntheticInputEvent.js","fbjs/lib/ExecutionEnvironment":"/mnt/c/swiggis.original/node_modules/fbjs/lib/ExecutionEnvironment.js"}],"/mnt/c/swiggis.original/node_modules/react-dom/lib/CSSProperty.js":[function(require,module,exports){
+},{"./EventPropagators":"C:\\swiggis.austin\\node_modules\\react-dom\\lib\\EventPropagators.js","./FallbackCompositionState":"C:\\swiggis.austin\\node_modules\\react-dom\\lib\\FallbackCompositionState.js","./SyntheticCompositionEvent":"C:\\swiggis.austin\\node_modules\\react-dom\\lib\\SyntheticCompositionEvent.js","./SyntheticInputEvent":"C:\\swiggis.austin\\node_modules\\react-dom\\lib\\SyntheticInputEvent.js","fbjs/lib/ExecutionEnvironment":"C:\\swiggis.austin\\node_modules\\fbjs\\lib\\ExecutionEnvironment.js"}],"C:\\swiggis.austin\\node_modules\\react-dom\\lib\\CSSProperty.js":[function(require,module,exports){
 /**
  * Copyright (c) 2013-present, Facebook, Inc.
  *
@@ -31022,7 +30060,7 @@ var CSSProperty = {
 };
 
 module.exports = CSSProperty;
-},{}],"/mnt/c/swiggis.original/node_modules/react-dom/lib/CSSPropertyOperations.js":[function(require,module,exports){
+},{}],"C:\\swiggis.austin\\node_modules\\react-dom\\lib\\CSSPropertyOperations.js":[function(require,module,exports){
 (function (process){
 /**
  * Copyright (c) 2013-present, Facebook, Inc.
@@ -31237,7 +30275,7 @@ var CSSPropertyOperations = {
 
 module.exports = CSSPropertyOperations;
 }).call(this,require('_process'))
-},{"./CSSProperty":"/mnt/c/swiggis.original/node_modules/react-dom/lib/CSSProperty.js","./ReactInstrumentation":"/mnt/c/swiggis.original/node_modules/react-dom/lib/ReactInstrumentation.js","./dangerousStyleValue":"/mnt/c/swiggis.original/node_modules/react-dom/lib/dangerousStyleValue.js","_process":"/mnt/c/swiggis.original/node_modules/process/browser.js","fbjs/lib/ExecutionEnvironment":"/mnt/c/swiggis.original/node_modules/fbjs/lib/ExecutionEnvironment.js","fbjs/lib/camelizeStyleName":"/mnt/c/swiggis.original/node_modules/fbjs/lib/camelizeStyleName.js","fbjs/lib/hyphenateStyleName":"/mnt/c/swiggis.original/node_modules/fbjs/lib/hyphenateStyleName.js","fbjs/lib/memoizeStringOnly":"/mnt/c/swiggis.original/node_modules/fbjs/lib/memoizeStringOnly.js","fbjs/lib/warning":"/mnt/c/swiggis.original/node_modules/fbjs/lib/warning.js"}],"/mnt/c/swiggis.original/node_modules/react-dom/lib/CallbackQueue.js":[function(require,module,exports){
+},{"./CSSProperty":"C:\\swiggis.austin\\node_modules\\react-dom\\lib\\CSSProperty.js","./ReactInstrumentation":"C:\\swiggis.austin\\node_modules\\react-dom\\lib\\ReactInstrumentation.js","./dangerousStyleValue":"C:\\swiggis.austin\\node_modules\\react-dom\\lib\\dangerousStyleValue.js","_process":"C:\\swiggis.austin\\node_modules\\process\\browser.js","fbjs/lib/ExecutionEnvironment":"C:\\swiggis.austin\\node_modules\\fbjs\\lib\\ExecutionEnvironment.js","fbjs/lib/camelizeStyleName":"C:\\swiggis.austin\\node_modules\\fbjs\\lib\\camelizeStyleName.js","fbjs/lib/hyphenateStyleName":"C:\\swiggis.austin\\node_modules\\fbjs\\lib\\hyphenateStyleName.js","fbjs/lib/memoizeStringOnly":"C:\\swiggis.austin\\node_modules\\fbjs\\lib\\memoizeStringOnly.js","fbjs/lib/warning":"C:\\swiggis.austin\\node_modules\\fbjs\\lib\\warning.js"}],"C:\\swiggis.austin\\node_modules\\react-dom\\lib\\CallbackQueue.js":[function(require,module,exports){
 (function (process){
 /**
  * Copyright (c) 2013-present, Facebook, Inc.
@@ -31356,7 +30394,7 @@ var CallbackQueue = function () {
 
 module.exports = PooledClass.addPoolingTo(CallbackQueue);
 }).call(this,require('_process'))
-},{"./PooledClass":"/mnt/c/swiggis.original/node_modules/react-dom/lib/PooledClass.js","./reactProdInvariant":"/mnt/c/swiggis.original/node_modules/react-dom/lib/reactProdInvariant.js","_process":"/mnt/c/swiggis.original/node_modules/process/browser.js","fbjs/lib/invariant":"/mnt/c/swiggis.original/node_modules/fbjs/lib/invariant.js"}],"/mnt/c/swiggis.original/node_modules/react-dom/lib/ChangeEventPlugin.js":[function(require,module,exports){
+},{"./PooledClass":"C:\\swiggis.austin\\node_modules\\react-dom\\lib\\PooledClass.js","./reactProdInvariant":"C:\\swiggis.austin\\node_modules\\react-dom\\lib\\reactProdInvariant.js","_process":"C:\\swiggis.austin\\node_modules\\process\\browser.js","fbjs/lib/invariant":"C:\\swiggis.austin\\node_modules\\fbjs\\lib\\invariant.js"}],"C:\\swiggis.austin\\node_modules\\react-dom\\lib\\ChangeEventPlugin.js":[function(require,module,exports){
 /**
  * Copyright (c) 2013-present, Facebook, Inc.
  *
@@ -31666,7 +30704,7 @@ var ChangeEventPlugin = {
 };
 
 module.exports = ChangeEventPlugin;
-},{"./EventPluginHub":"/mnt/c/swiggis.original/node_modules/react-dom/lib/EventPluginHub.js","./EventPropagators":"/mnt/c/swiggis.original/node_modules/react-dom/lib/EventPropagators.js","./ReactDOMComponentTree":"/mnt/c/swiggis.original/node_modules/react-dom/lib/ReactDOMComponentTree.js","./ReactUpdates":"/mnt/c/swiggis.original/node_modules/react-dom/lib/ReactUpdates.js","./SyntheticEvent":"/mnt/c/swiggis.original/node_modules/react-dom/lib/SyntheticEvent.js","./getEventTarget":"/mnt/c/swiggis.original/node_modules/react-dom/lib/getEventTarget.js","./inputValueTracking":"/mnt/c/swiggis.original/node_modules/react-dom/lib/inputValueTracking.js","./isEventSupported":"/mnt/c/swiggis.original/node_modules/react-dom/lib/isEventSupported.js","./isTextInputElement":"/mnt/c/swiggis.original/node_modules/react-dom/lib/isTextInputElement.js","fbjs/lib/ExecutionEnvironment":"/mnt/c/swiggis.original/node_modules/fbjs/lib/ExecutionEnvironment.js"}],"/mnt/c/swiggis.original/node_modules/react-dom/lib/DOMChildrenOperations.js":[function(require,module,exports){
+},{"./EventPluginHub":"C:\\swiggis.austin\\node_modules\\react-dom\\lib\\EventPluginHub.js","./EventPropagators":"C:\\swiggis.austin\\node_modules\\react-dom\\lib\\EventPropagators.js","./ReactDOMComponentTree":"C:\\swiggis.austin\\node_modules\\react-dom\\lib\\ReactDOMComponentTree.js","./ReactUpdates":"C:\\swiggis.austin\\node_modules\\react-dom\\lib\\ReactUpdates.js","./SyntheticEvent":"C:\\swiggis.austin\\node_modules\\react-dom\\lib\\SyntheticEvent.js","./getEventTarget":"C:\\swiggis.austin\\node_modules\\react-dom\\lib\\getEventTarget.js","./inputValueTracking":"C:\\swiggis.austin\\node_modules\\react-dom\\lib\\inputValueTracking.js","./isEventSupported":"C:\\swiggis.austin\\node_modules\\react-dom\\lib\\isEventSupported.js","./isTextInputElement":"C:\\swiggis.austin\\node_modules\\react-dom\\lib\\isTextInputElement.js","fbjs/lib/ExecutionEnvironment":"C:\\swiggis.austin\\node_modules\\fbjs\\lib\\ExecutionEnvironment.js"}],"C:\\swiggis.austin\\node_modules\\react-dom\\lib\\DOMChildrenOperations.js":[function(require,module,exports){
 (function (process){
 /**
  * Copyright (c) 2013-present, Facebook, Inc.
@@ -31892,7 +30930,7 @@ var DOMChildrenOperations = {
 
 module.exports = DOMChildrenOperations;
 }).call(this,require('_process'))
-},{"./DOMLazyTree":"/mnt/c/swiggis.original/node_modules/react-dom/lib/DOMLazyTree.js","./Danger":"/mnt/c/swiggis.original/node_modules/react-dom/lib/Danger.js","./ReactDOMComponentTree":"/mnt/c/swiggis.original/node_modules/react-dom/lib/ReactDOMComponentTree.js","./ReactInstrumentation":"/mnt/c/swiggis.original/node_modules/react-dom/lib/ReactInstrumentation.js","./createMicrosoftUnsafeLocalFunction":"/mnt/c/swiggis.original/node_modules/react-dom/lib/createMicrosoftUnsafeLocalFunction.js","./setInnerHTML":"/mnt/c/swiggis.original/node_modules/react-dom/lib/setInnerHTML.js","./setTextContent":"/mnt/c/swiggis.original/node_modules/react-dom/lib/setTextContent.js","_process":"/mnt/c/swiggis.original/node_modules/process/browser.js"}],"/mnt/c/swiggis.original/node_modules/react-dom/lib/DOMLazyTree.js":[function(require,module,exports){
+},{"./DOMLazyTree":"C:\\swiggis.austin\\node_modules\\react-dom\\lib\\DOMLazyTree.js","./Danger":"C:\\swiggis.austin\\node_modules\\react-dom\\lib\\Danger.js","./ReactDOMComponentTree":"C:\\swiggis.austin\\node_modules\\react-dom\\lib\\ReactDOMComponentTree.js","./ReactInstrumentation":"C:\\swiggis.austin\\node_modules\\react-dom\\lib\\ReactInstrumentation.js","./createMicrosoftUnsafeLocalFunction":"C:\\swiggis.austin\\node_modules\\react-dom\\lib\\createMicrosoftUnsafeLocalFunction.js","./setInnerHTML":"C:\\swiggis.austin\\node_modules\\react-dom\\lib\\setInnerHTML.js","./setTextContent":"C:\\swiggis.austin\\node_modules\\react-dom\\lib\\setTextContent.js","_process":"C:\\swiggis.austin\\node_modules\\process\\browser.js"}],"C:\\swiggis.austin\\node_modules\\react-dom\\lib\\DOMLazyTree.js":[function(require,module,exports){
 /**
  * Copyright (c) 2015-present, Facebook, Inc.
  *
@@ -32008,7 +31046,7 @@ DOMLazyTree.queueHTML = queueHTML;
 DOMLazyTree.queueText = queueText;
 
 module.exports = DOMLazyTree;
-},{"./DOMNamespaces":"/mnt/c/swiggis.original/node_modules/react-dom/lib/DOMNamespaces.js","./createMicrosoftUnsafeLocalFunction":"/mnt/c/swiggis.original/node_modules/react-dom/lib/createMicrosoftUnsafeLocalFunction.js","./setInnerHTML":"/mnt/c/swiggis.original/node_modules/react-dom/lib/setInnerHTML.js","./setTextContent":"/mnt/c/swiggis.original/node_modules/react-dom/lib/setTextContent.js"}],"/mnt/c/swiggis.original/node_modules/react-dom/lib/DOMNamespaces.js":[function(require,module,exports){
+},{"./DOMNamespaces":"C:\\swiggis.austin\\node_modules\\react-dom\\lib\\DOMNamespaces.js","./createMicrosoftUnsafeLocalFunction":"C:\\swiggis.austin\\node_modules\\react-dom\\lib\\createMicrosoftUnsafeLocalFunction.js","./setInnerHTML":"C:\\swiggis.austin\\node_modules\\react-dom\\lib\\setInnerHTML.js","./setTextContent":"C:\\swiggis.austin\\node_modules\\react-dom\\lib\\setTextContent.js"}],"C:\\swiggis.austin\\node_modules\\react-dom\\lib\\DOMNamespaces.js":[function(require,module,exports){
 /**
  * Copyright (c) 2013-present, Facebook, Inc.
  *
@@ -32026,7 +31064,7 @@ var DOMNamespaces = {
 };
 
 module.exports = DOMNamespaces;
-},{}],"/mnt/c/swiggis.original/node_modules/react-dom/lib/DOMProperty.js":[function(require,module,exports){
+},{}],"C:\\swiggis.austin\\node_modules\\react-dom\\lib\\DOMProperty.js":[function(require,module,exports){
 (function (process){
 /**
  * Copyright (c) 2013-present, Facebook, Inc.
@@ -32235,7 +31273,7 @@ var DOMProperty = {
 
 module.exports = DOMProperty;
 }).call(this,require('_process'))
-},{"./reactProdInvariant":"/mnt/c/swiggis.original/node_modules/react-dom/lib/reactProdInvariant.js","_process":"/mnt/c/swiggis.original/node_modules/process/browser.js","fbjs/lib/invariant":"/mnt/c/swiggis.original/node_modules/fbjs/lib/invariant.js"}],"/mnt/c/swiggis.original/node_modules/react-dom/lib/DOMPropertyOperations.js":[function(require,module,exports){
+},{"./reactProdInvariant":"C:\\swiggis.austin\\node_modules\\react-dom\\lib\\reactProdInvariant.js","_process":"C:\\swiggis.austin\\node_modules\\process\\browser.js","fbjs/lib/invariant":"C:\\swiggis.austin\\node_modules\\fbjs\\lib\\invariant.js"}],"C:\\swiggis.austin\\node_modules\\react-dom\\lib\\DOMPropertyOperations.js":[function(require,module,exports){
 (function (process){
 /**
  * Copyright (c) 2013-present, Facebook, Inc.
@@ -32470,7 +31508,7 @@ var DOMPropertyOperations = {
 
 module.exports = DOMPropertyOperations;
 }).call(this,require('_process'))
-},{"./DOMProperty":"/mnt/c/swiggis.original/node_modules/react-dom/lib/DOMProperty.js","./ReactDOMComponentTree":"/mnt/c/swiggis.original/node_modules/react-dom/lib/ReactDOMComponentTree.js","./ReactInstrumentation":"/mnt/c/swiggis.original/node_modules/react-dom/lib/ReactInstrumentation.js","./quoteAttributeValueForBrowser":"/mnt/c/swiggis.original/node_modules/react-dom/lib/quoteAttributeValueForBrowser.js","_process":"/mnt/c/swiggis.original/node_modules/process/browser.js","fbjs/lib/warning":"/mnt/c/swiggis.original/node_modules/fbjs/lib/warning.js"}],"/mnt/c/swiggis.original/node_modules/react-dom/lib/Danger.js":[function(require,module,exports){
+},{"./DOMProperty":"C:\\swiggis.austin\\node_modules\\react-dom\\lib\\DOMProperty.js","./ReactDOMComponentTree":"C:\\swiggis.austin\\node_modules\\react-dom\\lib\\ReactDOMComponentTree.js","./ReactInstrumentation":"C:\\swiggis.austin\\node_modules\\react-dom\\lib\\ReactInstrumentation.js","./quoteAttributeValueForBrowser":"C:\\swiggis.austin\\node_modules\\react-dom\\lib\\quoteAttributeValueForBrowser.js","_process":"C:\\swiggis.austin\\node_modules\\process\\browser.js","fbjs/lib/warning":"C:\\swiggis.austin\\node_modules\\fbjs\\lib\\warning.js"}],"C:\\swiggis.austin\\node_modules\\react-dom\\lib\\Danger.js":[function(require,module,exports){
 (function (process){
 /**
  * Copyright (c) 2013-present, Facebook, Inc.
@@ -32516,7 +31554,7 @@ var Danger = {
 
 module.exports = Danger;
 }).call(this,require('_process'))
-},{"./DOMLazyTree":"/mnt/c/swiggis.original/node_modules/react-dom/lib/DOMLazyTree.js","./reactProdInvariant":"/mnt/c/swiggis.original/node_modules/react-dom/lib/reactProdInvariant.js","_process":"/mnt/c/swiggis.original/node_modules/process/browser.js","fbjs/lib/ExecutionEnvironment":"/mnt/c/swiggis.original/node_modules/fbjs/lib/ExecutionEnvironment.js","fbjs/lib/createNodesFromMarkup":"/mnt/c/swiggis.original/node_modules/fbjs/lib/createNodesFromMarkup.js","fbjs/lib/emptyFunction":"/mnt/c/swiggis.original/node_modules/fbjs/lib/emptyFunction.js","fbjs/lib/invariant":"/mnt/c/swiggis.original/node_modules/fbjs/lib/invariant.js"}],"/mnt/c/swiggis.original/node_modules/react-dom/lib/DefaultEventPluginOrder.js":[function(require,module,exports){
+},{"./DOMLazyTree":"C:\\swiggis.austin\\node_modules\\react-dom\\lib\\DOMLazyTree.js","./reactProdInvariant":"C:\\swiggis.austin\\node_modules\\react-dom\\lib\\reactProdInvariant.js","_process":"C:\\swiggis.austin\\node_modules\\process\\browser.js","fbjs/lib/ExecutionEnvironment":"C:\\swiggis.austin\\node_modules\\fbjs\\lib\\ExecutionEnvironment.js","fbjs/lib/createNodesFromMarkup":"C:\\swiggis.austin\\node_modules\\fbjs\\lib\\createNodesFromMarkup.js","fbjs/lib/emptyFunction":"C:\\swiggis.austin\\node_modules\\fbjs\\lib\\emptyFunction.js","fbjs/lib/invariant":"C:\\swiggis.austin\\node_modules\\fbjs\\lib\\invariant.js"}],"C:\\swiggis.austin\\node_modules\\react-dom\\lib\\DefaultEventPluginOrder.js":[function(require,module,exports){
 /**
  * Copyright (c) 2013-present, Facebook, Inc.
  *
@@ -32540,7 +31578,7 @@ module.exports = Danger;
 var DefaultEventPluginOrder = ['ResponderEventPlugin', 'SimpleEventPlugin', 'TapEventPlugin', 'EnterLeaveEventPlugin', 'ChangeEventPlugin', 'SelectEventPlugin', 'BeforeInputEventPlugin'];
 
 module.exports = DefaultEventPluginOrder;
-},{}],"/mnt/c/swiggis.original/node_modules/react-dom/lib/EnterLeaveEventPlugin.js":[function(require,module,exports){
+},{}],"C:\\swiggis.austin\\node_modules\\react-dom\\lib\\EnterLeaveEventPlugin.js":[function(require,module,exports){
 /**
  * Copyright (c) 2013-present, Facebook, Inc.
  *
@@ -32636,7 +31674,7 @@ var EnterLeaveEventPlugin = {
 };
 
 module.exports = EnterLeaveEventPlugin;
-},{"./EventPropagators":"/mnt/c/swiggis.original/node_modules/react-dom/lib/EventPropagators.js","./ReactDOMComponentTree":"/mnt/c/swiggis.original/node_modules/react-dom/lib/ReactDOMComponentTree.js","./SyntheticMouseEvent":"/mnt/c/swiggis.original/node_modules/react-dom/lib/SyntheticMouseEvent.js"}],"/mnt/c/swiggis.original/node_modules/react-dom/lib/EventPluginHub.js":[function(require,module,exports){
+},{"./EventPropagators":"C:\\swiggis.austin\\node_modules\\react-dom\\lib\\EventPropagators.js","./ReactDOMComponentTree":"C:\\swiggis.austin\\node_modules\\react-dom\\lib\\ReactDOMComponentTree.js","./SyntheticMouseEvent":"C:\\swiggis.austin\\node_modules\\react-dom\\lib\\SyntheticMouseEvent.js"}],"C:\\swiggis.austin\\node_modules\\react-dom\\lib\\EventPluginHub.js":[function(require,module,exports){
 (function (process){
 /**
  * Copyright (c) 2013-present, Facebook, Inc.
@@ -32910,7 +31948,7 @@ var EventPluginHub = {
 
 module.exports = EventPluginHub;
 }).call(this,require('_process'))
-},{"./EventPluginRegistry":"/mnt/c/swiggis.original/node_modules/react-dom/lib/EventPluginRegistry.js","./EventPluginUtils":"/mnt/c/swiggis.original/node_modules/react-dom/lib/EventPluginUtils.js","./ReactErrorUtils":"/mnt/c/swiggis.original/node_modules/react-dom/lib/ReactErrorUtils.js","./accumulateInto":"/mnt/c/swiggis.original/node_modules/react-dom/lib/accumulateInto.js","./forEachAccumulated":"/mnt/c/swiggis.original/node_modules/react-dom/lib/forEachAccumulated.js","./reactProdInvariant":"/mnt/c/swiggis.original/node_modules/react-dom/lib/reactProdInvariant.js","_process":"/mnt/c/swiggis.original/node_modules/process/browser.js","fbjs/lib/invariant":"/mnt/c/swiggis.original/node_modules/fbjs/lib/invariant.js"}],"/mnt/c/swiggis.original/node_modules/react-dom/lib/EventPluginRegistry.js":[function(require,module,exports){
+},{"./EventPluginRegistry":"C:\\swiggis.austin\\node_modules\\react-dom\\lib\\EventPluginRegistry.js","./EventPluginUtils":"C:\\swiggis.austin\\node_modules\\react-dom\\lib\\EventPluginUtils.js","./ReactErrorUtils":"C:\\swiggis.austin\\node_modules\\react-dom\\lib\\ReactErrorUtils.js","./accumulateInto":"C:\\swiggis.austin\\node_modules\\react-dom\\lib\\accumulateInto.js","./forEachAccumulated":"C:\\swiggis.austin\\node_modules\\react-dom\\lib\\forEachAccumulated.js","./reactProdInvariant":"C:\\swiggis.austin\\node_modules\\react-dom\\lib\\reactProdInvariant.js","_process":"C:\\swiggis.austin\\node_modules\\process\\browser.js","fbjs/lib/invariant":"C:\\swiggis.austin\\node_modules\\fbjs\\lib\\invariant.js"}],"C:\\swiggis.austin\\node_modules\\react-dom\\lib\\EventPluginRegistry.js":[function(require,module,exports){
 (function (process){
 /**
  * Copyright (c) 2013-present, Facebook, Inc.
@@ -33163,7 +32201,7 @@ var EventPluginRegistry = {
 
 module.exports = EventPluginRegistry;
 }).call(this,require('_process'))
-},{"./reactProdInvariant":"/mnt/c/swiggis.original/node_modules/react-dom/lib/reactProdInvariant.js","_process":"/mnt/c/swiggis.original/node_modules/process/browser.js","fbjs/lib/invariant":"/mnt/c/swiggis.original/node_modules/fbjs/lib/invariant.js"}],"/mnt/c/swiggis.original/node_modules/react-dom/lib/EventPluginUtils.js":[function(require,module,exports){
+},{"./reactProdInvariant":"C:\\swiggis.austin\\node_modules\\react-dom\\lib\\reactProdInvariant.js","_process":"C:\\swiggis.austin\\node_modules\\process\\browser.js","fbjs/lib/invariant":"C:\\swiggis.austin\\node_modules\\fbjs\\lib\\invariant.js"}],"C:\\swiggis.austin\\node_modules\\react-dom\\lib\\EventPluginUtils.js":[function(require,module,exports){
 (function (process){
 /**
  * Copyright (c) 2013-present, Facebook, Inc.
@@ -33389,7 +32427,7 @@ var EventPluginUtils = {
 
 module.exports = EventPluginUtils;
 }).call(this,require('_process'))
-},{"./ReactErrorUtils":"/mnt/c/swiggis.original/node_modules/react-dom/lib/ReactErrorUtils.js","./reactProdInvariant":"/mnt/c/swiggis.original/node_modules/react-dom/lib/reactProdInvariant.js","_process":"/mnt/c/swiggis.original/node_modules/process/browser.js","fbjs/lib/invariant":"/mnt/c/swiggis.original/node_modules/fbjs/lib/invariant.js","fbjs/lib/warning":"/mnt/c/swiggis.original/node_modules/fbjs/lib/warning.js"}],"/mnt/c/swiggis.original/node_modules/react-dom/lib/EventPropagators.js":[function(require,module,exports){
+},{"./ReactErrorUtils":"C:\\swiggis.austin\\node_modules\\react-dom\\lib\\ReactErrorUtils.js","./reactProdInvariant":"C:\\swiggis.austin\\node_modules\\react-dom\\lib\\reactProdInvariant.js","_process":"C:\\swiggis.austin\\node_modules\\process\\browser.js","fbjs/lib/invariant":"C:\\swiggis.austin\\node_modules\\fbjs\\lib\\invariant.js","fbjs/lib/warning":"C:\\swiggis.austin\\node_modules\\fbjs\\lib\\warning.js"}],"C:\\swiggis.austin\\node_modules\\react-dom\\lib\\EventPropagators.js":[function(require,module,exports){
 (function (process){
 /**
  * Copyright (c) 2013-present, Facebook, Inc.
@@ -33523,7 +32561,7 @@ var EventPropagators = {
 
 module.exports = EventPropagators;
 }).call(this,require('_process'))
-},{"./EventPluginHub":"/mnt/c/swiggis.original/node_modules/react-dom/lib/EventPluginHub.js","./EventPluginUtils":"/mnt/c/swiggis.original/node_modules/react-dom/lib/EventPluginUtils.js","./accumulateInto":"/mnt/c/swiggis.original/node_modules/react-dom/lib/accumulateInto.js","./forEachAccumulated":"/mnt/c/swiggis.original/node_modules/react-dom/lib/forEachAccumulated.js","_process":"/mnt/c/swiggis.original/node_modules/process/browser.js","fbjs/lib/warning":"/mnt/c/swiggis.original/node_modules/fbjs/lib/warning.js"}],"/mnt/c/swiggis.original/node_modules/react-dom/lib/FallbackCompositionState.js":[function(require,module,exports){
+},{"./EventPluginHub":"C:\\swiggis.austin\\node_modules\\react-dom\\lib\\EventPluginHub.js","./EventPluginUtils":"C:\\swiggis.austin\\node_modules\\react-dom\\lib\\EventPluginUtils.js","./accumulateInto":"C:\\swiggis.austin\\node_modules\\react-dom\\lib\\accumulateInto.js","./forEachAccumulated":"C:\\swiggis.austin\\node_modules\\react-dom\\lib\\forEachAccumulated.js","_process":"C:\\swiggis.austin\\node_modules\\process\\browser.js","fbjs/lib/warning":"C:\\swiggis.austin\\node_modules\\fbjs\\lib\\warning.js"}],"C:\\swiggis.austin\\node_modules\\react-dom\\lib\\FallbackCompositionState.js":[function(require,module,exports){
 /**
  * Copyright (c) 2013-present, Facebook, Inc.
  *
@@ -33616,7 +32654,7 @@ _assign(FallbackCompositionState.prototype, {
 PooledClass.addPoolingTo(FallbackCompositionState);
 
 module.exports = FallbackCompositionState;
-},{"./PooledClass":"/mnt/c/swiggis.original/node_modules/react-dom/lib/PooledClass.js","./getTextContentAccessor":"/mnt/c/swiggis.original/node_modules/react-dom/lib/getTextContentAccessor.js","object-assign":"/mnt/c/swiggis.original/node_modules/react-dom/node_modules/object-assign/index.js"}],"/mnt/c/swiggis.original/node_modules/react-dom/lib/HTMLDOMPropertyConfig.js":[function(require,module,exports){
+},{"./PooledClass":"C:\\swiggis.austin\\node_modules\\react-dom\\lib\\PooledClass.js","./getTextContentAccessor":"C:\\swiggis.austin\\node_modules\\react-dom\\lib\\getTextContentAccessor.js","object-assign":"C:\\swiggis.austin\\node_modules\\react-dom\\node_modules\\object-assign\\index.js"}],"C:\\swiggis.austin\\node_modules\\react-dom\\lib\\HTMLDOMPropertyConfig.js":[function(require,module,exports){
 /**
  * Copyright (c) 2013-present, Facebook, Inc.
  *
@@ -33851,7 +32889,7 @@ var HTMLDOMPropertyConfig = {
 };
 
 module.exports = HTMLDOMPropertyConfig;
-},{"./DOMProperty":"/mnt/c/swiggis.original/node_modules/react-dom/lib/DOMProperty.js"}],"/mnt/c/swiggis.original/node_modules/react-dom/lib/KeyEscapeUtils.js":[function(require,module,exports){
+},{"./DOMProperty":"C:\\swiggis.austin\\node_modules\\react-dom\\lib\\DOMProperty.js"}],"C:\\swiggis.austin\\node_modules\\react-dom\\lib\\KeyEscapeUtils.js":[function(require,module,exports){
 /**
  * Copyright (c) 2013-present, Facebook, Inc.
  *
@@ -33908,7 +32946,7 @@ var KeyEscapeUtils = {
 };
 
 module.exports = KeyEscapeUtils;
-},{}],"/mnt/c/swiggis.original/node_modules/react-dom/lib/LinkedValueUtils.js":[function(require,module,exports){
+},{}],"C:\\swiggis.austin\\node_modules\\react-dom\\lib\\LinkedValueUtils.js":[function(require,module,exports){
 (function (process){
 /**
  * Copyright (c) 2013-present, Facebook, Inc.
@@ -34046,7 +33084,7 @@ var LinkedValueUtils = {
 
 module.exports = LinkedValueUtils;
 }).call(this,require('_process'))
-},{"./ReactPropTypesSecret":"/mnt/c/swiggis.original/node_modules/react-dom/lib/ReactPropTypesSecret.js","./reactProdInvariant":"/mnt/c/swiggis.original/node_modules/react-dom/lib/reactProdInvariant.js","_process":"/mnt/c/swiggis.original/node_modules/process/browser.js","fbjs/lib/invariant":"/mnt/c/swiggis.original/node_modules/fbjs/lib/invariant.js","fbjs/lib/warning":"/mnt/c/swiggis.original/node_modules/fbjs/lib/warning.js","prop-types/factory":"/mnt/c/swiggis.original/node_modules/prop-types/factory.js","react/lib/React":"/mnt/c/swiggis.original/node_modules/react/lib/React.js"}],"/mnt/c/swiggis.original/node_modules/react-dom/lib/PooledClass.js":[function(require,module,exports){
+},{"./ReactPropTypesSecret":"C:\\swiggis.austin\\node_modules\\react-dom\\lib\\ReactPropTypesSecret.js","./reactProdInvariant":"C:\\swiggis.austin\\node_modules\\react-dom\\lib\\reactProdInvariant.js","_process":"C:\\swiggis.austin\\node_modules\\process\\browser.js","fbjs/lib/invariant":"C:\\swiggis.austin\\node_modules\\fbjs\\lib\\invariant.js","fbjs/lib/warning":"C:\\swiggis.austin\\node_modules\\fbjs\\lib\\warning.js","prop-types/factory":"C:\\swiggis.austin\\node_modules\\prop-types\\factory.js","react/lib/React":"C:\\swiggis.austin\\node_modules\\react\\lib\\React.js"}],"C:\\swiggis.austin\\node_modules\\react-dom\\lib\\PooledClass.js":[function(require,module,exports){
 (function (process){
 /**
  * Copyright (c) 2013-present, Facebook, Inc.
@@ -34158,7 +33196,7 @@ var PooledClass = {
 
 module.exports = PooledClass;
 }).call(this,require('_process'))
-},{"./reactProdInvariant":"/mnt/c/swiggis.original/node_modules/react-dom/lib/reactProdInvariant.js","_process":"/mnt/c/swiggis.original/node_modules/process/browser.js","fbjs/lib/invariant":"/mnt/c/swiggis.original/node_modules/fbjs/lib/invariant.js"}],"/mnt/c/swiggis.original/node_modules/react-dom/lib/ReactBrowserEventEmitter.js":[function(require,module,exports){
+},{"./reactProdInvariant":"C:\\swiggis.austin\\node_modules\\react-dom\\lib\\reactProdInvariant.js","_process":"C:\\swiggis.austin\\node_modules\\process\\browser.js","fbjs/lib/invariant":"C:\\swiggis.austin\\node_modules\\fbjs\\lib\\invariant.js"}],"C:\\swiggis.austin\\node_modules\\react-dom\\lib\\ReactBrowserEventEmitter.js":[function(require,module,exports){
 /**
  * Copyright (c) 2013-present, Facebook, Inc.
  *
@@ -34480,7 +33518,7 @@ var ReactBrowserEventEmitter = _assign({}, ReactEventEmitterMixin, {
 });
 
 module.exports = ReactBrowserEventEmitter;
-},{"./EventPluginRegistry":"/mnt/c/swiggis.original/node_modules/react-dom/lib/EventPluginRegistry.js","./ReactEventEmitterMixin":"/mnt/c/swiggis.original/node_modules/react-dom/lib/ReactEventEmitterMixin.js","./ViewportMetrics":"/mnt/c/swiggis.original/node_modules/react-dom/lib/ViewportMetrics.js","./getVendorPrefixedEventName":"/mnt/c/swiggis.original/node_modules/react-dom/lib/getVendorPrefixedEventName.js","./isEventSupported":"/mnt/c/swiggis.original/node_modules/react-dom/lib/isEventSupported.js","object-assign":"/mnt/c/swiggis.original/node_modules/react-dom/node_modules/object-assign/index.js"}],"/mnt/c/swiggis.original/node_modules/react-dom/lib/ReactChildReconciler.js":[function(require,module,exports){
+},{"./EventPluginRegistry":"C:\\swiggis.austin\\node_modules\\react-dom\\lib\\EventPluginRegistry.js","./ReactEventEmitterMixin":"C:\\swiggis.austin\\node_modules\\react-dom\\lib\\ReactEventEmitterMixin.js","./ViewportMetrics":"C:\\swiggis.austin\\node_modules\\react-dom\\lib\\ViewportMetrics.js","./getVendorPrefixedEventName":"C:\\swiggis.austin\\node_modules\\react-dom\\lib\\getVendorPrefixedEventName.js","./isEventSupported":"C:\\swiggis.austin\\node_modules\\react-dom\\lib\\isEventSupported.js","object-assign":"C:\\swiggis.austin\\node_modules\\react-dom\\node_modules\\object-assign\\index.js"}],"C:\\swiggis.austin\\node_modules\\react-dom\\lib\\ReactChildReconciler.js":[function(require,module,exports){
 (function (process){
 /**
  * Copyright (c) 2014-present, Facebook, Inc.
@@ -34633,7 +33671,7 @@ var ReactChildReconciler = {
 
 module.exports = ReactChildReconciler;
 }).call(this,require('_process'))
-},{"./KeyEscapeUtils":"/mnt/c/swiggis.original/node_modules/react-dom/lib/KeyEscapeUtils.js","./ReactReconciler":"/mnt/c/swiggis.original/node_modules/react-dom/lib/ReactReconciler.js","./instantiateReactComponent":"/mnt/c/swiggis.original/node_modules/react-dom/lib/instantiateReactComponent.js","./shouldUpdateReactComponent":"/mnt/c/swiggis.original/node_modules/react-dom/lib/shouldUpdateReactComponent.js","./traverseAllChildren":"/mnt/c/swiggis.original/node_modules/react-dom/lib/traverseAllChildren.js","_process":"/mnt/c/swiggis.original/node_modules/process/browser.js","fbjs/lib/warning":"/mnt/c/swiggis.original/node_modules/fbjs/lib/warning.js","react/lib/ReactComponentTreeHook":"/mnt/c/swiggis.original/node_modules/react/lib/ReactComponentTreeHook.js"}],"/mnt/c/swiggis.original/node_modules/react-dom/lib/ReactComponentBrowserEnvironment.js":[function(require,module,exports){
+},{"./KeyEscapeUtils":"C:\\swiggis.austin\\node_modules\\react-dom\\lib\\KeyEscapeUtils.js","./ReactReconciler":"C:\\swiggis.austin\\node_modules\\react-dom\\lib\\ReactReconciler.js","./instantiateReactComponent":"C:\\swiggis.austin\\node_modules\\react-dom\\lib\\instantiateReactComponent.js","./shouldUpdateReactComponent":"C:\\swiggis.austin\\node_modules\\react-dom\\lib\\shouldUpdateReactComponent.js","./traverseAllChildren":"C:\\swiggis.austin\\node_modules\\react-dom\\lib\\traverseAllChildren.js","_process":"C:\\swiggis.austin\\node_modules\\process\\browser.js","fbjs/lib/warning":"C:\\swiggis.austin\\node_modules\\fbjs\\lib\\warning.js","react/lib/ReactComponentTreeHook":"C:\\swiggis.austin\\node_modules\\react\\lib\\ReactComponentTreeHook.js"}],"C:\\swiggis.austin\\node_modules\\react-dom\\lib\\ReactComponentBrowserEnvironment.js":[function(require,module,exports){
 /**
  * Copyright (c) 2013-present, Facebook, Inc.
  *
@@ -34659,7 +33697,7 @@ var ReactComponentBrowserEnvironment = {
 };
 
 module.exports = ReactComponentBrowserEnvironment;
-},{"./DOMChildrenOperations":"/mnt/c/swiggis.original/node_modules/react-dom/lib/DOMChildrenOperations.js","./ReactDOMIDOperations":"/mnt/c/swiggis.original/node_modules/react-dom/lib/ReactDOMIDOperations.js"}],"/mnt/c/swiggis.original/node_modules/react-dom/lib/ReactComponentEnvironment.js":[function(require,module,exports){
+},{"./DOMChildrenOperations":"C:\\swiggis.austin\\node_modules\\react-dom\\lib\\DOMChildrenOperations.js","./ReactDOMIDOperations":"C:\\swiggis.austin\\node_modules\\react-dom\\lib\\ReactDOMIDOperations.js"}],"C:\\swiggis.austin\\node_modules\\react-dom\\lib\\ReactComponentEnvironment.js":[function(require,module,exports){
 (function (process){
 /**
  * Copyright (c) 2014-present, Facebook, Inc.
@@ -34703,7 +33741,7 @@ var ReactComponentEnvironment = {
 
 module.exports = ReactComponentEnvironment;
 }).call(this,require('_process'))
-},{"./reactProdInvariant":"/mnt/c/swiggis.original/node_modules/react-dom/lib/reactProdInvariant.js","_process":"/mnt/c/swiggis.original/node_modules/process/browser.js","fbjs/lib/invariant":"/mnt/c/swiggis.original/node_modules/fbjs/lib/invariant.js"}],"/mnt/c/swiggis.original/node_modules/react-dom/lib/ReactCompositeComponent.js":[function(require,module,exports){
+},{"./reactProdInvariant":"C:\\swiggis.austin\\node_modules\\react-dom\\lib\\reactProdInvariant.js","_process":"C:\\swiggis.austin\\node_modules\\process\\browser.js","fbjs/lib/invariant":"C:\\swiggis.austin\\node_modules\\fbjs\\lib\\invariant.js"}],"C:\\swiggis.austin\\node_modules\\react-dom\\lib\\ReactCompositeComponent.js":[function(require,module,exports){
 (function (process){
 /**
  * Copyright (c) 2013-present, Facebook, Inc.
@@ -35603,7 +34641,7 @@ var ReactCompositeComponent = {
 
 module.exports = ReactCompositeComponent;
 }).call(this,require('_process'))
-},{"./ReactComponentEnvironment":"/mnt/c/swiggis.original/node_modules/react-dom/lib/ReactComponentEnvironment.js","./ReactErrorUtils":"/mnt/c/swiggis.original/node_modules/react-dom/lib/ReactErrorUtils.js","./ReactInstanceMap":"/mnt/c/swiggis.original/node_modules/react-dom/lib/ReactInstanceMap.js","./ReactInstrumentation":"/mnt/c/swiggis.original/node_modules/react-dom/lib/ReactInstrumentation.js","./ReactNodeTypes":"/mnt/c/swiggis.original/node_modules/react-dom/lib/ReactNodeTypes.js","./ReactReconciler":"/mnt/c/swiggis.original/node_modules/react-dom/lib/ReactReconciler.js","./checkReactTypeSpec":"/mnt/c/swiggis.original/node_modules/react-dom/lib/checkReactTypeSpec.js","./reactProdInvariant":"/mnt/c/swiggis.original/node_modules/react-dom/lib/reactProdInvariant.js","./shouldUpdateReactComponent":"/mnt/c/swiggis.original/node_modules/react-dom/lib/shouldUpdateReactComponent.js","_process":"/mnt/c/swiggis.original/node_modules/process/browser.js","fbjs/lib/emptyObject":"/mnt/c/swiggis.original/node_modules/fbjs/lib/emptyObject.js","fbjs/lib/invariant":"/mnt/c/swiggis.original/node_modules/fbjs/lib/invariant.js","fbjs/lib/shallowEqual":"/mnt/c/swiggis.original/node_modules/fbjs/lib/shallowEqual.js","fbjs/lib/warning":"/mnt/c/swiggis.original/node_modules/fbjs/lib/warning.js","object-assign":"/mnt/c/swiggis.original/node_modules/react-dom/node_modules/object-assign/index.js","react/lib/React":"/mnt/c/swiggis.original/node_modules/react/lib/React.js","react/lib/ReactCurrentOwner":"/mnt/c/swiggis.original/node_modules/react/lib/ReactCurrentOwner.js"}],"/mnt/c/swiggis.original/node_modules/react-dom/lib/ReactDOM.js":[function(require,module,exports){
+},{"./ReactComponentEnvironment":"C:\\swiggis.austin\\node_modules\\react-dom\\lib\\ReactComponentEnvironment.js","./ReactErrorUtils":"C:\\swiggis.austin\\node_modules\\react-dom\\lib\\ReactErrorUtils.js","./ReactInstanceMap":"C:\\swiggis.austin\\node_modules\\react-dom\\lib\\ReactInstanceMap.js","./ReactInstrumentation":"C:\\swiggis.austin\\node_modules\\react-dom\\lib\\ReactInstrumentation.js","./ReactNodeTypes":"C:\\swiggis.austin\\node_modules\\react-dom\\lib\\ReactNodeTypes.js","./ReactReconciler":"C:\\swiggis.austin\\node_modules\\react-dom\\lib\\ReactReconciler.js","./checkReactTypeSpec":"C:\\swiggis.austin\\node_modules\\react-dom\\lib\\checkReactTypeSpec.js","./reactProdInvariant":"C:\\swiggis.austin\\node_modules\\react-dom\\lib\\reactProdInvariant.js","./shouldUpdateReactComponent":"C:\\swiggis.austin\\node_modules\\react-dom\\lib\\shouldUpdateReactComponent.js","_process":"C:\\swiggis.austin\\node_modules\\process\\browser.js","fbjs/lib/emptyObject":"C:\\swiggis.austin\\node_modules\\fbjs\\lib\\emptyObject.js","fbjs/lib/invariant":"C:\\swiggis.austin\\node_modules\\fbjs\\lib\\invariant.js","fbjs/lib/shallowEqual":"C:\\swiggis.austin\\node_modules\\fbjs\\lib\\shallowEqual.js","fbjs/lib/warning":"C:\\swiggis.austin\\node_modules\\fbjs\\lib\\warning.js","object-assign":"C:\\swiggis.austin\\node_modules\\react-dom\\node_modules\\object-assign\\index.js","react/lib/React":"C:\\swiggis.austin\\node_modules\\react\\lib\\React.js","react/lib/ReactCurrentOwner":"C:\\swiggis.austin\\node_modules\\react\\lib\\ReactCurrentOwner.js"}],"C:\\swiggis.austin\\node_modules\\react-dom\\lib\\ReactDOM.js":[function(require,module,exports){
 (function (process){
 /**
  * Copyright (c) 2013-present, Facebook, Inc.
@@ -35714,7 +34752,7 @@ if (process.env.NODE_ENV !== 'production') {
 
 module.exports = ReactDOM;
 }).call(this,require('_process'))
-},{"./ReactDOMComponentTree":"/mnt/c/swiggis.original/node_modules/react-dom/lib/ReactDOMComponentTree.js","./ReactDOMInvalidARIAHook":"/mnt/c/swiggis.original/node_modules/react-dom/lib/ReactDOMInvalidARIAHook.js","./ReactDOMNullInputValuePropHook":"/mnt/c/swiggis.original/node_modules/react-dom/lib/ReactDOMNullInputValuePropHook.js","./ReactDOMUnknownPropertyHook":"/mnt/c/swiggis.original/node_modules/react-dom/lib/ReactDOMUnknownPropertyHook.js","./ReactDefaultInjection":"/mnt/c/swiggis.original/node_modules/react-dom/lib/ReactDefaultInjection.js","./ReactInstrumentation":"/mnt/c/swiggis.original/node_modules/react-dom/lib/ReactInstrumentation.js","./ReactMount":"/mnt/c/swiggis.original/node_modules/react-dom/lib/ReactMount.js","./ReactReconciler":"/mnt/c/swiggis.original/node_modules/react-dom/lib/ReactReconciler.js","./ReactUpdates":"/mnt/c/swiggis.original/node_modules/react-dom/lib/ReactUpdates.js","./ReactVersion":"/mnt/c/swiggis.original/node_modules/react-dom/lib/ReactVersion.js","./findDOMNode":"/mnt/c/swiggis.original/node_modules/react-dom/lib/findDOMNode.js","./getHostComponentFromComposite":"/mnt/c/swiggis.original/node_modules/react-dom/lib/getHostComponentFromComposite.js","./renderSubtreeIntoContainer":"/mnt/c/swiggis.original/node_modules/react-dom/lib/renderSubtreeIntoContainer.js","_process":"/mnt/c/swiggis.original/node_modules/process/browser.js","fbjs/lib/ExecutionEnvironment":"/mnt/c/swiggis.original/node_modules/fbjs/lib/ExecutionEnvironment.js","fbjs/lib/warning":"/mnt/c/swiggis.original/node_modules/fbjs/lib/warning.js"}],"/mnt/c/swiggis.original/node_modules/react-dom/lib/ReactDOMComponent.js":[function(require,module,exports){
+},{"./ReactDOMComponentTree":"C:\\swiggis.austin\\node_modules\\react-dom\\lib\\ReactDOMComponentTree.js","./ReactDOMInvalidARIAHook":"C:\\swiggis.austin\\node_modules\\react-dom\\lib\\ReactDOMInvalidARIAHook.js","./ReactDOMNullInputValuePropHook":"C:\\swiggis.austin\\node_modules\\react-dom\\lib\\ReactDOMNullInputValuePropHook.js","./ReactDOMUnknownPropertyHook":"C:\\swiggis.austin\\node_modules\\react-dom\\lib\\ReactDOMUnknownPropertyHook.js","./ReactDefaultInjection":"C:\\swiggis.austin\\node_modules\\react-dom\\lib\\ReactDefaultInjection.js","./ReactInstrumentation":"C:\\swiggis.austin\\node_modules\\react-dom\\lib\\ReactInstrumentation.js","./ReactMount":"C:\\swiggis.austin\\node_modules\\react-dom\\lib\\ReactMount.js","./ReactReconciler":"C:\\swiggis.austin\\node_modules\\react-dom\\lib\\ReactReconciler.js","./ReactUpdates":"C:\\swiggis.austin\\node_modules\\react-dom\\lib\\ReactUpdates.js","./ReactVersion":"C:\\swiggis.austin\\node_modules\\react-dom\\lib\\ReactVersion.js","./findDOMNode":"C:\\swiggis.austin\\node_modules\\react-dom\\lib\\findDOMNode.js","./getHostComponentFromComposite":"C:\\swiggis.austin\\node_modules\\react-dom\\lib\\getHostComponentFromComposite.js","./renderSubtreeIntoContainer":"C:\\swiggis.austin\\node_modules\\react-dom\\lib\\renderSubtreeIntoContainer.js","_process":"C:\\swiggis.austin\\node_modules\\process\\browser.js","fbjs/lib/ExecutionEnvironment":"C:\\swiggis.austin\\node_modules\\fbjs\\lib\\ExecutionEnvironment.js","fbjs/lib/warning":"C:\\swiggis.austin\\node_modules\\fbjs\\lib\\warning.js"}],"C:\\swiggis.austin\\node_modules\\react-dom\\lib\\ReactDOMComponent.js":[function(require,module,exports){
 (function (process){
 /**
  * Copyright (c) 2013-present, Facebook, Inc.
@@ -36728,7 +35766,7 @@ _assign(ReactDOMComponent.prototype, ReactDOMComponent.Mixin, ReactMultiChild.Mi
 
 module.exports = ReactDOMComponent;
 }).call(this,require('_process'))
-},{"./AutoFocusUtils":"/mnt/c/swiggis.original/node_modules/react-dom/lib/AutoFocusUtils.js","./CSSPropertyOperations":"/mnt/c/swiggis.original/node_modules/react-dom/lib/CSSPropertyOperations.js","./DOMLazyTree":"/mnt/c/swiggis.original/node_modules/react-dom/lib/DOMLazyTree.js","./DOMNamespaces":"/mnt/c/swiggis.original/node_modules/react-dom/lib/DOMNamespaces.js","./DOMProperty":"/mnt/c/swiggis.original/node_modules/react-dom/lib/DOMProperty.js","./DOMPropertyOperations":"/mnt/c/swiggis.original/node_modules/react-dom/lib/DOMPropertyOperations.js","./EventPluginHub":"/mnt/c/swiggis.original/node_modules/react-dom/lib/EventPluginHub.js","./EventPluginRegistry":"/mnt/c/swiggis.original/node_modules/react-dom/lib/EventPluginRegistry.js","./ReactBrowserEventEmitter":"/mnt/c/swiggis.original/node_modules/react-dom/lib/ReactBrowserEventEmitter.js","./ReactDOMComponentFlags":"/mnt/c/swiggis.original/node_modules/react-dom/lib/ReactDOMComponentFlags.js","./ReactDOMComponentTree":"/mnt/c/swiggis.original/node_modules/react-dom/lib/ReactDOMComponentTree.js","./ReactDOMInput":"/mnt/c/swiggis.original/node_modules/react-dom/lib/ReactDOMInput.js","./ReactDOMOption":"/mnt/c/swiggis.original/node_modules/react-dom/lib/ReactDOMOption.js","./ReactDOMSelect":"/mnt/c/swiggis.original/node_modules/react-dom/lib/ReactDOMSelect.js","./ReactDOMTextarea":"/mnt/c/swiggis.original/node_modules/react-dom/lib/ReactDOMTextarea.js","./ReactInstrumentation":"/mnt/c/swiggis.original/node_modules/react-dom/lib/ReactInstrumentation.js","./ReactMultiChild":"/mnt/c/swiggis.original/node_modules/react-dom/lib/ReactMultiChild.js","./ReactServerRenderingTransaction":"/mnt/c/swiggis.original/node_modules/react-dom/lib/ReactServerRenderingTransaction.js","./escapeTextContentForBrowser":"/mnt/c/swiggis.original/node_modules/react-dom/lib/escapeTextContentForBrowser.js","./inputValueTracking":"/mnt/c/swiggis.original/node_modules/react-dom/lib/inputValueTracking.js","./isEventSupported":"/mnt/c/swiggis.original/node_modules/react-dom/lib/isEventSupported.js","./reactProdInvariant":"/mnt/c/swiggis.original/node_modules/react-dom/lib/reactProdInvariant.js","./validateDOMNesting":"/mnt/c/swiggis.original/node_modules/react-dom/lib/validateDOMNesting.js","_process":"/mnt/c/swiggis.original/node_modules/process/browser.js","fbjs/lib/emptyFunction":"/mnt/c/swiggis.original/node_modules/fbjs/lib/emptyFunction.js","fbjs/lib/invariant":"/mnt/c/swiggis.original/node_modules/fbjs/lib/invariant.js","fbjs/lib/shallowEqual":"/mnt/c/swiggis.original/node_modules/fbjs/lib/shallowEqual.js","fbjs/lib/warning":"/mnt/c/swiggis.original/node_modules/fbjs/lib/warning.js","object-assign":"/mnt/c/swiggis.original/node_modules/react-dom/node_modules/object-assign/index.js"}],"/mnt/c/swiggis.original/node_modules/react-dom/lib/ReactDOMComponentFlags.js":[function(require,module,exports){
+},{"./AutoFocusUtils":"C:\\swiggis.austin\\node_modules\\react-dom\\lib\\AutoFocusUtils.js","./CSSPropertyOperations":"C:\\swiggis.austin\\node_modules\\react-dom\\lib\\CSSPropertyOperations.js","./DOMLazyTree":"C:\\swiggis.austin\\node_modules\\react-dom\\lib\\DOMLazyTree.js","./DOMNamespaces":"C:\\swiggis.austin\\node_modules\\react-dom\\lib\\DOMNamespaces.js","./DOMProperty":"C:\\swiggis.austin\\node_modules\\react-dom\\lib\\DOMProperty.js","./DOMPropertyOperations":"C:\\swiggis.austin\\node_modules\\react-dom\\lib\\DOMPropertyOperations.js","./EventPluginHub":"C:\\swiggis.austin\\node_modules\\react-dom\\lib\\EventPluginHub.js","./EventPluginRegistry":"C:\\swiggis.austin\\node_modules\\react-dom\\lib\\EventPluginRegistry.js","./ReactBrowserEventEmitter":"C:\\swiggis.austin\\node_modules\\react-dom\\lib\\ReactBrowserEventEmitter.js","./ReactDOMComponentFlags":"C:\\swiggis.austin\\node_modules\\react-dom\\lib\\ReactDOMComponentFlags.js","./ReactDOMComponentTree":"C:\\swiggis.austin\\node_modules\\react-dom\\lib\\ReactDOMComponentTree.js","./ReactDOMInput":"C:\\swiggis.austin\\node_modules\\react-dom\\lib\\ReactDOMInput.js","./ReactDOMOption":"C:\\swiggis.austin\\node_modules\\react-dom\\lib\\ReactDOMOption.js","./ReactDOMSelect":"C:\\swiggis.austin\\node_modules\\react-dom\\lib\\ReactDOMSelect.js","./ReactDOMTextarea":"C:\\swiggis.austin\\node_modules\\react-dom\\lib\\ReactDOMTextarea.js","./ReactInstrumentation":"C:\\swiggis.austin\\node_modules\\react-dom\\lib\\ReactInstrumentation.js","./ReactMultiChild":"C:\\swiggis.austin\\node_modules\\react-dom\\lib\\ReactMultiChild.js","./ReactServerRenderingTransaction":"C:\\swiggis.austin\\node_modules\\react-dom\\lib\\ReactServerRenderingTransaction.js","./escapeTextContentForBrowser":"C:\\swiggis.austin\\node_modules\\react-dom\\lib\\escapeTextContentForBrowser.js","./inputValueTracking":"C:\\swiggis.austin\\node_modules\\react-dom\\lib\\inputValueTracking.js","./isEventSupported":"C:\\swiggis.austin\\node_modules\\react-dom\\lib\\isEventSupported.js","./reactProdInvariant":"C:\\swiggis.austin\\node_modules\\react-dom\\lib\\reactProdInvariant.js","./validateDOMNesting":"C:\\swiggis.austin\\node_modules\\react-dom\\lib\\validateDOMNesting.js","_process":"C:\\swiggis.austin\\node_modules\\process\\browser.js","fbjs/lib/emptyFunction":"C:\\swiggis.austin\\node_modules\\fbjs\\lib\\emptyFunction.js","fbjs/lib/invariant":"C:\\swiggis.austin\\node_modules\\fbjs\\lib\\invariant.js","fbjs/lib/shallowEqual":"C:\\swiggis.austin\\node_modules\\fbjs\\lib\\shallowEqual.js","fbjs/lib/warning":"C:\\swiggis.austin\\node_modules\\fbjs\\lib\\warning.js","object-assign":"C:\\swiggis.austin\\node_modules\\react-dom\\node_modules\\object-assign\\index.js"}],"C:\\swiggis.austin\\node_modules\\react-dom\\lib\\ReactDOMComponentFlags.js":[function(require,module,exports){
 /**
  * Copyright (c) 2015-present, Facebook, Inc.
  *
@@ -36744,7 +35782,7 @@ var ReactDOMComponentFlags = {
 };
 
 module.exports = ReactDOMComponentFlags;
-},{}],"/mnt/c/swiggis.original/node_modules/react-dom/lib/ReactDOMComponentTree.js":[function(require,module,exports){
+},{}],"C:\\swiggis.austin\\node_modules\\react-dom\\lib\\ReactDOMComponentTree.js":[function(require,module,exports){
 (function (process){
 /**
  * Copyright (c) 2013-present, Facebook, Inc.
@@ -36939,7 +35977,7 @@ var ReactDOMComponentTree = {
 
 module.exports = ReactDOMComponentTree;
 }).call(this,require('_process'))
-},{"./DOMProperty":"/mnt/c/swiggis.original/node_modules/react-dom/lib/DOMProperty.js","./ReactDOMComponentFlags":"/mnt/c/swiggis.original/node_modules/react-dom/lib/ReactDOMComponentFlags.js","./reactProdInvariant":"/mnt/c/swiggis.original/node_modules/react-dom/lib/reactProdInvariant.js","_process":"/mnt/c/swiggis.original/node_modules/process/browser.js","fbjs/lib/invariant":"/mnt/c/swiggis.original/node_modules/fbjs/lib/invariant.js"}],"/mnt/c/swiggis.original/node_modules/react-dom/lib/ReactDOMContainerInfo.js":[function(require,module,exports){
+},{"./DOMProperty":"C:\\swiggis.austin\\node_modules\\react-dom\\lib\\DOMProperty.js","./ReactDOMComponentFlags":"C:\\swiggis.austin\\node_modules\\react-dom\\lib\\ReactDOMComponentFlags.js","./reactProdInvariant":"C:\\swiggis.austin\\node_modules\\react-dom\\lib\\reactProdInvariant.js","_process":"C:\\swiggis.austin\\node_modules\\process\\browser.js","fbjs/lib/invariant":"C:\\swiggis.austin\\node_modules\\fbjs\\lib\\invariant.js"}],"C:\\swiggis.austin\\node_modules\\react-dom\\lib\\ReactDOMContainerInfo.js":[function(require,module,exports){
 (function (process){
 /**
  * Copyright (c) 2013-present, Facebook, Inc.
@@ -36972,7 +36010,7 @@ function ReactDOMContainerInfo(topLevelWrapper, node) {
 
 module.exports = ReactDOMContainerInfo;
 }).call(this,require('_process'))
-},{"./validateDOMNesting":"/mnt/c/swiggis.original/node_modules/react-dom/lib/validateDOMNesting.js","_process":"/mnt/c/swiggis.original/node_modules/process/browser.js"}],"/mnt/c/swiggis.original/node_modules/react-dom/lib/ReactDOMEmptyComponent.js":[function(require,module,exports){
+},{"./validateDOMNesting":"C:\\swiggis.austin\\node_modules\\react-dom\\lib\\validateDOMNesting.js","_process":"C:\\swiggis.austin\\node_modules\\process\\browser.js"}],"C:\\swiggis.austin\\node_modules\\react-dom\\lib\\ReactDOMEmptyComponent.js":[function(require,module,exports){
 /**
  * Copyright (c) 2014-present, Facebook, Inc.
  *
@@ -37030,7 +36068,7 @@ _assign(ReactDOMEmptyComponent.prototype, {
 });
 
 module.exports = ReactDOMEmptyComponent;
-},{"./DOMLazyTree":"/mnt/c/swiggis.original/node_modules/react-dom/lib/DOMLazyTree.js","./ReactDOMComponentTree":"/mnt/c/swiggis.original/node_modules/react-dom/lib/ReactDOMComponentTree.js","object-assign":"/mnt/c/swiggis.original/node_modules/react-dom/node_modules/object-assign/index.js"}],"/mnt/c/swiggis.original/node_modules/react-dom/lib/ReactDOMFeatureFlags.js":[function(require,module,exports){
+},{"./DOMLazyTree":"C:\\swiggis.austin\\node_modules\\react-dom\\lib\\DOMLazyTree.js","./ReactDOMComponentTree":"C:\\swiggis.austin\\node_modules\\react-dom\\lib\\ReactDOMComponentTree.js","object-assign":"C:\\swiggis.austin\\node_modules\\react-dom\\node_modules\\object-assign\\index.js"}],"C:\\swiggis.austin\\node_modules\\react-dom\\lib\\ReactDOMFeatureFlags.js":[function(require,module,exports){
 /**
  * Copyright (c) 2013-present, Facebook, Inc.
  *
@@ -37047,7 +36085,7 @@ var ReactDOMFeatureFlags = {
 };
 
 module.exports = ReactDOMFeatureFlags;
-},{}],"/mnt/c/swiggis.original/node_modules/react-dom/lib/ReactDOMIDOperations.js":[function(require,module,exports){
+},{}],"C:\\swiggis.austin\\node_modules\\react-dom\\lib\\ReactDOMIDOperations.js":[function(require,module,exports){
 /**
  * Copyright (c) 2013-present, Facebook, Inc.
  *
@@ -37078,7 +36116,7 @@ var ReactDOMIDOperations = {
 };
 
 module.exports = ReactDOMIDOperations;
-},{"./DOMChildrenOperations":"/mnt/c/swiggis.original/node_modules/react-dom/lib/DOMChildrenOperations.js","./ReactDOMComponentTree":"/mnt/c/swiggis.original/node_modules/react-dom/lib/ReactDOMComponentTree.js"}],"/mnt/c/swiggis.original/node_modules/react-dom/lib/ReactDOMInput.js":[function(require,module,exports){
+},{"./DOMChildrenOperations":"C:\\swiggis.austin\\node_modules\\react-dom\\lib\\DOMChildrenOperations.js","./ReactDOMComponentTree":"C:\\swiggis.austin\\node_modules\\react-dom\\lib\\ReactDOMComponentTree.js"}],"C:\\swiggis.austin\\node_modules\\react-dom\\lib\\ReactDOMInput.js":[function(require,module,exports){
 (function (process){
 /**
  * Copyright (c) 2013-present, Facebook, Inc.
@@ -37365,7 +36403,7 @@ function _handleChange(event) {
 
 module.exports = ReactDOMInput;
 }).call(this,require('_process'))
-},{"./DOMPropertyOperations":"/mnt/c/swiggis.original/node_modules/react-dom/lib/DOMPropertyOperations.js","./LinkedValueUtils":"/mnt/c/swiggis.original/node_modules/react-dom/lib/LinkedValueUtils.js","./ReactDOMComponentTree":"/mnt/c/swiggis.original/node_modules/react-dom/lib/ReactDOMComponentTree.js","./ReactUpdates":"/mnt/c/swiggis.original/node_modules/react-dom/lib/ReactUpdates.js","./reactProdInvariant":"/mnt/c/swiggis.original/node_modules/react-dom/lib/reactProdInvariant.js","_process":"/mnt/c/swiggis.original/node_modules/process/browser.js","fbjs/lib/invariant":"/mnt/c/swiggis.original/node_modules/fbjs/lib/invariant.js","fbjs/lib/warning":"/mnt/c/swiggis.original/node_modules/fbjs/lib/warning.js","object-assign":"/mnt/c/swiggis.original/node_modules/react-dom/node_modules/object-assign/index.js"}],"/mnt/c/swiggis.original/node_modules/react-dom/lib/ReactDOMInvalidARIAHook.js":[function(require,module,exports){
+},{"./DOMPropertyOperations":"C:\\swiggis.austin\\node_modules\\react-dom\\lib\\DOMPropertyOperations.js","./LinkedValueUtils":"C:\\swiggis.austin\\node_modules\\react-dom\\lib\\LinkedValueUtils.js","./ReactDOMComponentTree":"C:\\swiggis.austin\\node_modules\\react-dom\\lib\\ReactDOMComponentTree.js","./ReactUpdates":"C:\\swiggis.austin\\node_modules\\react-dom\\lib\\ReactUpdates.js","./reactProdInvariant":"C:\\swiggis.austin\\node_modules\\react-dom\\lib\\reactProdInvariant.js","_process":"C:\\swiggis.austin\\node_modules\\process\\browser.js","fbjs/lib/invariant":"C:\\swiggis.austin\\node_modules\\fbjs\\lib\\invariant.js","fbjs/lib/warning":"C:\\swiggis.austin\\node_modules\\fbjs\\lib\\warning.js","object-assign":"C:\\swiggis.austin\\node_modules\\react-dom\\node_modules\\object-assign\\index.js"}],"C:\\swiggis.austin\\node_modules\\react-dom\\lib\\ReactDOMInvalidARIAHook.js":[function(require,module,exports){
 (function (process){
 /**
  * Copyright (c) 2013-present, Facebook, Inc.
@@ -37458,7 +36496,7 @@ var ReactDOMInvalidARIAHook = {
 
 module.exports = ReactDOMInvalidARIAHook;
 }).call(this,require('_process'))
-},{"./DOMProperty":"/mnt/c/swiggis.original/node_modules/react-dom/lib/DOMProperty.js","_process":"/mnt/c/swiggis.original/node_modules/process/browser.js","fbjs/lib/warning":"/mnt/c/swiggis.original/node_modules/fbjs/lib/warning.js","react/lib/ReactComponentTreeHook":"/mnt/c/swiggis.original/node_modules/react/lib/ReactComponentTreeHook.js"}],"/mnt/c/swiggis.original/node_modules/react-dom/lib/ReactDOMNullInputValuePropHook.js":[function(require,module,exports){
+},{"./DOMProperty":"C:\\swiggis.austin\\node_modules\\react-dom\\lib\\DOMProperty.js","_process":"C:\\swiggis.austin\\node_modules\\process\\browser.js","fbjs/lib/warning":"C:\\swiggis.austin\\node_modules\\fbjs\\lib\\warning.js","react/lib/ReactComponentTreeHook":"C:\\swiggis.austin\\node_modules\\react\\lib\\ReactComponentTreeHook.js"}],"C:\\swiggis.austin\\node_modules\\react-dom\\lib\\ReactDOMNullInputValuePropHook.js":[function(require,module,exports){
 (function (process){
 /**
  * Copyright (c) 2013-present, Facebook, Inc.
@@ -37501,7 +36539,7 @@ var ReactDOMNullInputValuePropHook = {
 
 module.exports = ReactDOMNullInputValuePropHook;
 }).call(this,require('_process'))
-},{"_process":"/mnt/c/swiggis.original/node_modules/process/browser.js","fbjs/lib/warning":"/mnt/c/swiggis.original/node_modules/fbjs/lib/warning.js","react/lib/ReactComponentTreeHook":"/mnt/c/swiggis.original/node_modules/react/lib/ReactComponentTreeHook.js"}],"/mnt/c/swiggis.original/node_modules/react-dom/lib/ReactDOMOption.js":[function(require,module,exports){
+},{"_process":"C:\\swiggis.austin\\node_modules\\process\\browser.js","fbjs/lib/warning":"C:\\swiggis.austin\\node_modules\\fbjs\\lib\\warning.js","react/lib/ReactComponentTreeHook":"C:\\swiggis.austin\\node_modules\\react\\lib\\ReactComponentTreeHook.js"}],"C:\\swiggis.austin\\node_modules\\react-dom\\lib\\ReactDOMOption.js":[function(require,module,exports){
 (function (process){
 /**
  * Copyright (c) 2013-present, Facebook, Inc.
@@ -37623,7 +36661,7 @@ var ReactDOMOption = {
 
 module.exports = ReactDOMOption;
 }).call(this,require('_process'))
-},{"./ReactDOMComponentTree":"/mnt/c/swiggis.original/node_modules/react-dom/lib/ReactDOMComponentTree.js","./ReactDOMSelect":"/mnt/c/swiggis.original/node_modules/react-dom/lib/ReactDOMSelect.js","_process":"/mnt/c/swiggis.original/node_modules/process/browser.js","fbjs/lib/warning":"/mnt/c/swiggis.original/node_modules/fbjs/lib/warning.js","object-assign":"/mnt/c/swiggis.original/node_modules/react-dom/node_modules/object-assign/index.js","react/lib/React":"/mnt/c/swiggis.original/node_modules/react/lib/React.js"}],"/mnt/c/swiggis.original/node_modules/react-dom/lib/ReactDOMSelect.js":[function(require,module,exports){
+},{"./ReactDOMComponentTree":"C:\\swiggis.austin\\node_modules\\react-dom\\lib\\ReactDOMComponentTree.js","./ReactDOMSelect":"C:\\swiggis.austin\\node_modules\\react-dom\\lib\\ReactDOMSelect.js","_process":"C:\\swiggis.austin\\node_modules\\process\\browser.js","fbjs/lib/warning":"C:\\swiggis.austin\\node_modules\\fbjs\\lib\\warning.js","object-assign":"C:\\swiggis.austin\\node_modules\\react-dom\\node_modules\\object-assign\\index.js","react/lib/React":"C:\\swiggis.austin\\node_modules\\react\\lib\\React.js"}],"C:\\swiggis.austin\\node_modules\\react-dom\\lib\\ReactDOMSelect.js":[function(require,module,exports){
 (function (process){
 /**
  * Copyright (c) 2013-present, Facebook, Inc.
@@ -37823,7 +36861,7 @@ function _handleChange(event) {
 
 module.exports = ReactDOMSelect;
 }).call(this,require('_process'))
-},{"./LinkedValueUtils":"/mnt/c/swiggis.original/node_modules/react-dom/lib/LinkedValueUtils.js","./ReactDOMComponentTree":"/mnt/c/swiggis.original/node_modules/react-dom/lib/ReactDOMComponentTree.js","./ReactUpdates":"/mnt/c/swiggis.original/node_modules/react-dom/lib/ReactUpdates.js","_process":"/mnt/c/swiggis.original/node_modules/process/browser.js","fbjs/lib/warning":"/mnt/c/swiggis.original/node_modules/fbjs/lib/warning.js","object-assign":"/mnt/c/swiggis.original/node_modules/react-dom/node_modules/object-assign/index.js"}],"/mnt/c/swiggis.original/node_modules/react-dom/lib/ReactDOMSelection.js":[function(require,module,exports){
+},{"./LinkedValueUtils":"C:\\swiggis.austin\\node_modules\\react-dom\\lib\\LinkedValueUtils.js","./ReactDOMComponentTree":"C:\\swiggis.austin\\node_modules\\react-dom\\lib\\ReactDOMComponentTree.js","./ReactUpdates":"C:\\swiggis.austin\\node_modules\\react-dom\\lib\\ReactUpdates.js","_process":"C:\\swiggis.austin\\node_modules\\process\\browser.js","fbjs/lib/warning":"C:\\swiggis.austin\\node_modules\\fbjs\\lib\\warning.js","object-assign":"C:\\swiggis.austin\\node_modules\\react-dom\\node_modules\\object-assign\\index.js"}],"C:\\swiggis.austin\\node_modules\\react-dom\\lib\\ReactDOMSelection.js":[function(require,module,exports){
 /**
  * Copyright (c) 2013-present, Facebook, Inc.
  *
@@ -38033,7 +37071,7 @@ var ReactDOMSelection = {
 };
 
 module.exports = ReactDOMSelection;
-},{"./getNodeForCharacterOffset":"/mnt/c/swiggis.original/node_modules/react-dom/lib/getNodeForCharacterOffset.js","./getTextContentAccessor":"/mnt/c/swiggis.original/node_modules/react-dom/lib/getTextContentAccessor.js","fbjs/lib/ExecutionEnvironment":"/mnt/c/swiggis.original/node_modules/fbjs/lib/ExecutionEnvironment.js"}],"/mnt/c/swiggis.original/node_modules/react-dom/lib/ReactDOMTextComponent.js":[function(require,module,exports){
+},{"./getNodeForCharacterOffset":"C:\\swiggis.austin\\node_modules\\react-dom\\lib\\getNodeForCharacterOffset.js","./getTextContentAccessor":"C:\\swiggis.austin\\node_modules\\react-dom\\lib\\getTextContentAccessor.js","fbjs/lib/ExecutionEnvironment":"C:\\swiggis.austin\\node_modules\\fbjs\\lib\\ExecutionEnvironment.js"}],"C:\\swiggis.austin\\node_modules\\react-dom\\lib\\ReactDOMTextComponent.js":[function(require,module,exports){
 (function (process){
 /**
  * Copyright (c) 2013-present, Facebook, Inc.
@@ -38195,7 +37233,7 @@ _assign(ReactDOMTextComponent.prototype, {
 
 module.exports = ReactDOMTextComponent;
 }).call(this,require('_process'))
-},{"./DOMChildrenOperations":"/mnt/c/swiggis.original/node_modules/react-dom/lib/DOMChildrenOperations.js","./DOMLazyTree":"/mnt/c/swiggis.original/node_modules/react-dom/lib/DOMLazyTree.js","./ReactDOMComponentTree":"/mnt/c/swiggis.original/node_modules/react-dom/lib/ReactDOMComponentTree.js","./escapeTextContentForBrowser":"/mnt/c/swiggis.original/node_modules/react-dom/lib/escapeTextContentForBrowser.js","./reactProdInvariant":"/mnt/c/swiggis.original/node_modules/react-dom/lib/reactProdInvariant.js","./validateDOMNesting":"/mnt/c/swiggis.original/node_modules/react-dom/lib/validateDOMNesting.js","_process":"/mnt/c/swiggis.original/node_modules/process/browser.js","fbjs/lib/invariant":"/mnt/c/swiggis.original/node_modules/fbjs/lib/invariant.js","object-assign":"/mnt/c/swiggis.original/node_modules/react-dom/node_modules/object-assign/index.js"}],"/mnt/c/swiggis.original/node_modules/react-dom/lib/ReactDOMTextarea.js":[function(require,module,exports){
+},{"./DOMChildrenOperations":"C:\\swiggis.austin\\node_modules\\react-dom\\lib\\DOMChildrenOperations.js","./DOMLazyTree":"C:\\swiggis.austin\\node_modules\\react-dom\\lib\\DOMLazyTree.js","./ReactDOMComponentTree":"C:\\swiggis.austin\\node_modules\\react-dom\\lib\\ReactDOMComponentTree.js","./escapeTextContentForBrowser":"C:\\swiggis.austin\\node_modules\\react-dom\\lib\\escapeTextContentForBrowser.js","./reactProdInvariant":"C:\\swiggis.austin\\node_modules\\react-dom\\lib\\reactProdInvariant.js","./validateDOMNesting":"C:\\swiggis.austin\\node_modules\\react-dom\\lib\\validateDOMNesting.js","_process":"C:\\swiggis.austin\\node_modules\\process\\browser.js","fbjs/lib/invariant":"C:\\swiggis.austin\\node_modules\\fbjs\\lib\\invariant.js","object-assign":"C:\\swiggis.austin\\node_modules\\react-dom\\node_modules\\object-assign\\index.js"}],"C:\\swiggis.austin\\node_modules\\react-dom\\lib\\ReactDOMTextarea.js":[function(require,module,exports){
 (function (process){
 /**
  * Copyright (c) 2013-present, Facebook, Inc.
@@ -38355,7 +37393,7 @@ function _handleChange(event) {
 
 module.exports = ReactDOMTextarea;
 }).call(this,require('_process'))
-},{"./LinkedValueUtils":"/mnt/c/swiggis.original/node_modules/react-dom/lib/LinkedValueUtils.js","./ReactDOMComponentTree":"/mnt/c/swiggis.original/node_modules/react-dom/lib/ReactDOMComponentTree.js","./ReactUpdates":"/mnt/c/swiggis.original/node_modules/react-dom/lib/ReactUpdates.js","./reactProdInvariant":"/mnt/c/swiggis.original/node_modules/react-dom/lib/reactProdInvariant.js","_process":"/mnt/c/swiggis.original/node_modules/process/browser.js","fbjs/lib/invariant":"/mnt/c/swiggis.original/node_modules/fbjs/lib/invariant.js","fbjs/lib/warning":"/mnt/c/swiggis.original/node_modules/fbjs/lib/warning.js","object-assign":"/mnt/c/swiggis.original/node_modules/react-dom/node_modules/object-assign/index.js"}],"/mnt/c/swiggis.original/node_modules/react-dom/lib/ReactDOMTreeTraversal.js":[function(require,module,exports){
+},{"./LinkedValueUtils":"C:\\swiggis.austin\\node_modules\\react-dom\\lib\\LinkedValueUtils.js","./ReactDOMComponentTree":"C:\\swiggis.austin\\node_modules\\react-dom\\lib\\ReactDOMComponentTree.js","./ReactUpdates":"C:\\swiggis.austin\\node_modules\\react-dom\\lib\\ReactUpdates.js","./reactProdInvariant":"C:\\swiggis.austin\\node_modules\\react-dom\\lib\\reactProdInvariant.js","_process":"C:\\swiggis.austin\\node_modules\\process\\browser.js","fbjs/lib/invariant":"C:\\swiggis.austin\\node_modules\\fbjs\\lib\\invariant.js","fbjs/lib/warning":"C:\\swiggis.austin\\node_modules\\fbjs\\lib\\warning.js","object-assign":"C:\\swiggis.austin\\node_modules\\react-dom\\node_modules\\object-assign\\index.js"}],"C:\\swiggis.austin\\node_modules\\react-dom\\lib\\ReactDOMTreeTraversal.js":[function(require,module,exports){
 (function (process){
 /**
  * Copyright (c) 2015-present, Facebook, Inc.
@@ -38491,7 +37529,7 @@ module.exports = {
   traverseEnterLeave: traverseEnterLeave
 };
 }).call(this,require('_process'))
-},{"./reactProdInvariant":"/mnt/c/swiggis.original/node_modules/react-dom/lib/reactProdInvariant.js","_process":"/mnt/c/swiggis.original/node_modules/process/browser.js","fbjs/lib/invariant":"/mnt/c/swiggis.original/node_modules/fbjs/lib/invariant.js"}],"/mnt/c/swiggis.original/node_modules/react-dom/lib/ReactDOMUnknownPropertyHook.js":[function(require,module,exports){
+},{"./reactProdInvariant":"C:\\swiggis.austin\\node_modules\\react-dom\\lib\\reactProdInvariant.js","_process":"C:\\swiggis.austin\\node_modules\\process\\browser.js","fbjs/lib/invariant":"C:\\swiggis.austin\\node_modules\\fbjs\\lib\\invariant.js"}],"C:\\swiggis.austin\\node_modules\\react-dom\\lib\\ReactDOMUnknownPropertyHook.js":[function(require,module,exports){
 (function (process){
 /**
  * Copyright (c) 2013-present, Facebook, Inc.
@@ -38603,7 +37641,7 @@ var ReactDOMUnknownPropertyHook = {
 
 module.exports = ReactDOMUnknownPropertyHook;
 }).call(this,require('_process'))
-},{"./DOMProperty":"/mnt/c/swiggis.original/node_modules/react-dom/lib/DOMProperty.js","./EventPluginRegistry":"/mnt/c/swiggis.original/node_modules/react-dom/lib/EventPluginRegistry.js","_process":"/mnt/c/swiggis.original/node_modules/process/browser.js","fbjs/lib/warning":"/mnt/c/swiggis.original/node_modules/fbjs/lib/warning.js","react/lib/ReactComponentTreeHook":"/mnt/c/swiggis.original/node_modules/react/lib/ReactComponentTreeHook.js"}],"/mnt/c/swiggis.original/node_modules/react-dom/lib/ReactDebugTool.js":[function(require,module,exports){
+},{"./DOMProperty":"C:\\swiggis.austin\\node_modules\\react-dom\\lib\\DOMProperty.js","./EventPluginRegistry":"C:\\swiggis.austin\\node_modules\\react-dom\\lib\\EventPluginRegistry.js","_process":"C:\\swiggis.austin\\node_modules\\process\\browser.js","fbjs/lib/warning":"C:\\swiggis.austin\\node_modules\\fbjs\\lib\\warning.js","react/lib/ReactComponentTreeHook":"C:\\swiggis.austin\\node_modules\\react\\lib\\ReactComponentTreeHook.js"}],"C:\\swiggis.austin\\node_modules\\react-dom\\lib\\ReactDebugTool.js":[function(require,module,exports){
 (function (process){
 /**
  * Copyright (c) 2016-present, Facebook, Inc.
@@ -38964,7 +38002,7 @@ if (/[?&]react_perf\b/.test(url)) {
 
 module.exports = ReactDebugTool;
 }).call(this,require('_process'))
-},{"./ReactHostOperationHistoryHook":"/mnt/c/swiggis.original/node_modules/react-dom/lib/ReactHostOperationHistoryHook.js","./ReactInvalidSetStateWarningHook":"/mnt/c/swiggis.original/node_modules/react-dom/lib/ReactInvalidSetStateWarningHook.js","_process":"/mnt/c/swiggis.original/node_modules/process/browser.js","fbjs/lib/ExecutionEnvironment":"/mnt/c/swiggis.original/node_modules/fbjs/lib/ExecutionEnvironment.js","fbjs/lib/performanceNow":"/mnt/c/swiggis.original/node_modules/fbjs/lib/performanceNow.js","fbjs/lib/warning":"/mnt/c/swiggis.original/node_modules/fbjs/lib/warning.js","react/lib/ReactComponentTreeHook":"/mnt/c/swiggis.original/node_modules/react/lib/ReactComponentTreeHook.js"}],"/mnt/c/swiggis.original/node_modules/react-dom/lib/ReactDefaultBatchingStrategy.js":[function(require,module,exports){
+},{"./ReactHostOperationHistoryHook":"C:\\swiggis.austin\\node_modules\\react-dom\\lib\\ReactHostOperationHistoryHook.js","./ReactInvalidSetStateWarningHook":"C:\\swiggis.austin\\node_modules\\react-dom\\lib\\ReactInvalidSetStateWarningHook.js","_process":"C:\\swiggis.austin\\node_modules\\process\\browser.js","fbjs/lib/ExecutionEnvironment":"C:\\swiggis.austin\\node_modules\\fbjs\\lib\\ExecutionEnvironment.js","fbjs/lib/performanceNow":"C:\\swiggis.austin\\node_modules\\fbjs\\lib\\performanceNow.js","fbjs/lib/warning":"C:\\swiggis.austin\\node_modules\\fbjs\\lib\\warning.js","react/lib/ReactComponentTreeHook":"C:\\swiggis.austin\\node_modules\\react\\lib\\ReactComponentTreeHook.js"}],"C:\\swiggis.austin\\node_modules\\react-dom\\lib\\ReactDefaultBatchingStrategy.js":[function(require,module,exports){
 /**
  * Copyright (c) 2013-present, Facebook, Inc.
  *
@@ -39030,7 +38068,7 @@ var ReactDefaultBatchingStrategy = {
 };
 
 module.exports = ReactDefaultBatchingStrategy;
-},{"./ReactUpdates":"/mnt/c/swiggis.original/node_modules/react-dom/lib/ReactUpdates.js","./Transaction":"/mnt/c/swiggis.original/node_modules/react-dom/lib/Transaction.js","fbjs/lib/emptyFunction":"/mnt/c/swiggis.original/node_modules/fbjs/lib/emptyFunction.js","object-assign":"/mnt/c/swiggis.original/node_modules/react-dom/node_modules/object-assign/index.js"}],"/mnt/c/swiggis.original/node_modules/react-dom/lib/ReactDefaultInjection.js":[function(require,module,exports){
+},{"./ReactUpdates":"C:\\swiggis.austin\\node_modules\\react-dom\\lib\\ReactUpdates.js","./Transaction":"C:\\swiggis.austin\\node_modules\\react-dom\\lib\\Transaction.js","fbjs/lib/emptyFunction":"C:\\swiggis.austin\\node_modules\\fbjs\\lib\\emptyFunction.js","object-assign":"C:\\swiggis.austin\\node_modules\\react-dom\\node_modules\\object-assign\\index.js"}],"C:\\swiggis.austin\\node_modules\\react-dom\\lib\\ReactDefaultInjection.js":[function(require,module,exports){
 /**
  * Copyright (c) 2013-present, Facebook, Inc.
  *
@@ -39114,7 +38152,7 @@ function inject() {
 module.exports = {
   inject: inject
 };
-},{"./ARIADOMPropertyConfig":"/mnt/c/swiggis.original/node_modules/react-dom/lib/ARIADOMPropertyConfig.js","./BeforeInputEventPlugin":"/mnt/c/swiggis.original/node_modules/react-dom/lib/BeforeInputEventPlugin.js","./ChangeEventPlugin":"/mnt/c/swiggis.original/node_modules/react-dom/lib/ChangeEventPlugin.js","./DefaultEventPluginOrder":"/mnt/c/swiggis.original/node_modules/react-dom/lib/DefaultEventPluginOrder.js","./EnterLeaveEventPlugin":"/mnt/c/swiggis.original/node_modules/react-dom/lib/EnterLeaveEventPlugin.js","./HTMLDOMPropertyConfig":"/mnt/c/swiggis.original/node_modules/react-dom/lib/HTMLDOMPropertyConfig.js","./ReactComponentBrowserEnvironment":"/mnt/c/swiggis.original/node_modules/react-dom/lib/ReactComponentBrowserEnvironment.js","./ReactDOMComponent":"/mnt/c/swiggis.original/node_modules/react-dom/lib/ReactDOMComponent.js","./ReactDOMComponentTree":"/mnt/c/swiggis.original/node_modules/react-dom/lib/ReactDOMComponentTree.js","./ReactDOMEmptyComponent":"/mnt/c/swiggis.original/node_modules/react-dom/lib/ReactDOMEmptyComponent.js","./ReactDOMTextComponent":"/mnt/c/swiggis.original/node_modules/react-dom/lib/ReactDOMTextComponent.js","./ReactDOMTreeTraversal":"/mnt/c/swiggis.original/node_modules/react-dom/lib/ReactDOMTreeTraversal.js","./ReactDefaultBatchingStrategy":"/mnt/c/swiggis.original/node_modules/react-dom/lib/ReactDefaultBatchingStrategy.js","./ReactEventListener":"/mnt/c/swiggis.original/node_modules/react-dom/lib/ReactEventListener.js","./ReactInjection":"/mnt/c/swiggis.original/node_modules/react-dom/lib/ReactInjection.js","./ReactReconcileTransaction":"/mnt/c/swiggis.original/node_modules/react-dom/lib/ReactReconcileTransaction.js","./SVGDOMPropertyConfig":"/mnt/c/swiggis.original/node_modules/react-dom/lib/SVGDOMPropertyConfig.js","./SelectEventPlugin":"/mnt/c/swiggis.original/node_modules/react-dom/lib/SelectEventPlugin.js","./SimpleEventPlugin":"/mnt/c/swiggis.original/node_modules/react-dom/lib/SimpleEventPlugin.js"}],"/mnt/c/swiggis.original/node_modules/react-dom/lib/ReactElementSymbol.js":[function(require,module,exports){
+},{"./ARIADOMPropertyConfig":"C:\\swiggis.austin\\node_modules\\react-dom\\lib\\ARIADOMPropertyConfig.js","./BeforeInputEventPlugin":"C:\\swiggis.austin\\node_modules\\react-dom\\lib\\BeforeInputEventPlugin.js","./ChangeEventPlugin":"C:\\swiggis.austin\\node_modules\\react-dom\\lib\\ChangeEventPlugin.js","./DefaultEventPluginOrder":"C:\\swiggis.austin\\node_modules\\react-dom\\lib\\DefaultEventPluginOrder.js","./EnterLeaveEventPlugin":"C:\\swiggis.austin\\node_modules\\react-dom\\lib\\EnterLeaveEventPlugin.js","./HTMLDOMPropertyConfig":"C:\\swiggis.austin\\node_modules\\react-dom\\lib\\HTMLDOMPropertyConfig.js","./ReactComponentBrowserEnvironment":"C:\\swiggis.austin\\node_modules\\react-dom\\lib\\ReactComponentBrowserEnvironment.js","./ReactDOMComponent":"C:\\swiggis.austin\\node_modules\\react-dom\\lib\\ReactDOMComponent.js","./ReactDOMComponentTree":"C:\\swiggis.austin\\node_modules\\react-dom\\lib\\ReactDOMComponentTree.js","./ReactDOMEmptyComponent":"C:\\swiggis.austin\\node_modules\\react-dom\\lib\\ReactDOMEmptyComponent.js","./ReactDOMTextComponent":"C:\\swiggis.austin\\node_modules\\react-dom\\lib\\ReactDOMTextComponent.js","./ReactDOMTreeTraversal":"C:\\swiggis.austin\\node_modules\\react-dom\\lib\\ReactDOMTreeTraversal.js","./ReactDefaultBatchingStrategy":"C:\\swiggis.austin\\node_modules\\react-dom\\lib\\ReactDefaultBatchingStrategy.js","./ReactEventListener":"C:\\swiggis.austin\\node_modules\\react-dom\\lib\\ReactEventListener.js","./ReactInjection":"C:\\swiggis.austin\\node_modules\\react-dom\\lib\\ReactInjection.js","./ReactReconcileTransaction":"C:\\swiggis.austin\\node_modules\\react-dom\\lib\\ReactReconcileTransaction.js","./SVGDOMPropertyConfig":"C:\\swiggis.austin\\node_modules\\react-dom\\lib\\SVGDOMPropertyConfig.js","./SelectEventPlugin":"C:\\swiggis.austin\\node_modules\\react-dom\\lib\\SelectEventPlugin.js","./SimpleEventPlugin":"C:\\swiggis.austin\\node_modules\\react-dom\\lib\\SimpleEventPlugin.js"}],"C:\\swiggis.austin\\node_modules\\react-dom\\lib\\ReactElementSymbol.js":[function(require,module,exports){
 /**
  * Copyright (c) 2014-present, Facebook, Inc.
  *
@@ -39132,7 +38170,7 @@ module.exports = {
 var REACT_ELEMENT_TYPE = typeof Symbol === 'function' && Symbol['for'] && Symbol['for']('react.element') || 0xeac7;
 
 module.exports = REACT_ELEMENT_TYPE;
-},{}],"/mnt/c/swiggis.original/node_modules/react-dom/lib/ReactEmptyComponent.js":[function(require,module,exports){
+},{}],"C:\\swiggis.austin\\node_modules\\react-dom\\lib\\ReactEmptyComponent.js":[function(require,module,exports){
 /**
  * Copyright (c) 2014-present, Facebook, Inc.
  *
@@ -39160,7 +38198,7 @@ var ReactEmptyComponent = {
 ReactEmptyComponent.injection = ReactEmptyComponentInjection;
 
 module.exports = ReactEmptyComponent;
-},{}],"/mnt/c/swiggis.original/node_modules/react-dom/lib/ReactErrorUtils.js":[function(require,module,exports){
+},{}],"C:\\swiggis.austin\\node_modules\\react-dom\\lib\\ReactErrorUtils.js":[function(require,module,exports){
 (function (process){
 /**
  * Copyright (c) 2013-present, Facebook, Inc.
@@ -39238,7 +38276,7 @@ if (process.env.NODE_ENV !== 'production') {
 
 module.exports = ReactErrorUtils;
 }).call(this,require('_process'))
-},{"_process":"/mnt/c/swiggis.original/node_modules/process/browser.js"}],"/mnt/c/swiggis.original/node_modules/react-dom/lib/ReactEventEmitterMixin.js":[function(require,module,exports){
+},{"_process":"C:\\swiggis.austin\\node_modules\\process\\browser.js"}],"C:\\swiggis.austin\\node_modules\\react-dom\\lib\\ReactEventEmitterMixin.js":[function(require,module,exports){
 /**
  * Copyright (c) 2013-present, Facebook, Inc.
  *
@@ -39268,7 +38306,7 @@ var ReactEventEmitterMixin = {
 };
 
 module.exports = ReactEventEmitterMixin;
-},{"./EventPluginHub":"/mnt/c/swiggis.original/node_modules/react-dom/lib/EventPluginHub.js"}],"/mnt/c/swiggis.original/node_modules/react-dom/lib/ReactEventListener.js":[function(require,module,exports){
+},{"./EventPluginHub":"C:\\swiggis.austin\\node_modules\\react-dom\\lib\\EventPluginHub.js"}],"C:\\swiggis.austin\\node_modules\\react-dom\\lib\\ReactEventListener.js":[function(require,module,exports){
 /**
  * Copyright (c) 2013-present, Facebook, Inc.
  *
@@ -39421,7 +38459,7 @@ var ReactEventListener = {
 };
 
 module.exports = ReactEventListener;
-},{"./PooledClass":"/mnt/c/swiggis.original/node_modules/react-dom/lib/PooledClass.js","./ReactDOMComponentTree":"/mnt/c/swiggis.original/node_modules/react-dom/lib/ReactDOMComponentTree.js","./ReactUpdates":"/mnt/c/swiggis.original/node_modules/react-dom/lib/ReactUpdates.js","./getEventTarget":"/mnt/c/swiggis.original/node_modules/react-dom/lib/getEventTarget.js","fbjs/lib/EventListener":"/mnt/c/swiggis.original/node_modules/fbjs/lib/EventListener.js","fbjs/lib/ExecutionEnvironment":"/mnt/c/swiggis.original/node_modules/fbjs/lib/ExecutionEnvironment.js","fbjs/lib/getUnboundedScrollPosition":"/mnt/c/swiggis.original/node_modules/fbjs/lib/getUnboundedScrollPosition.js","object-assign":"/mnt/c/swiggis.original/node_modules/react-dom/node_modules/object-assign/index.js"}],"/mnt/c/swiggis.original/node_modules/react-dom/lib/ReactFeatureFlags.js":[function(require,module,exports){
+},{"./PooledClass":"C:\\swiggis.austin\\node_modules\\react-dom\\lib\\PooledClass.js","./ReactDOMComponentTree":"C:\\swiggis.austin\\node_modules\\react-dom\\lib\\ReactDOMComponentTree.js","./ReactUpdates":"C:\\swiggis.austin\\node_modules\\react-dom\\lib\\ReactUpdates.js","./getEventTarget":"C:\\swiggis.austin\\node_modules\\react-dom\\lib\\getEventTarget.js","fbjs/lib/EventListener":"C:\\swiggis.austin\\node_modules\\fbjs\\lib\\EventListener.js","fbjs/lib/ExecutionEnvironment":"C:\\swiggis.austin\\node_modules\\fbjs\\lib\\ExecutionEnvironment.js","fbjs/lib/getUnboundedScrollPosition":"C:\\swiggis.austin\\node_modules\\fbjs\\lib\\getUnboundedScrollPosition.js","object-assign":"C:\\swiggis.austin\\node_modules\\react-dom\\node_modules\\object-assign\\index.js"}],"C:\\swiggis.austin\\node_modules\\react-dom\\lib\\ReactFeatureFlags.js":[function(require,module,exports){
 /**
  * Copyright (c) 2013-present, Facebook, Inc.
  *
@@ -39441,7 +38479,7 @@ var ReactFeatureFlags = {
 };
 
 module.exports = ReactFeatureFlags;
-},{}],"/mnt/c/swiggis.original/node_modules/react-dom/lib/ReactHostComponent.js":[function(require,module,exports){
+},{}],"C:\\swiggis.austin\\node_modules\\react-dom\\lib\\ReactHostComponent.js":[function(require,module,exports){
 (function (process){
 /**
  * Copyright (c) 2014-present, Facebook, Inc.
@@ -39509,7 +38547,7 @@ var ReactHostComponent = {
 
 module.exports = ReactHostComponent;
 }).call(this,require('_process'))
-},{"./reactProdInvariant":"/mnt/c/swiggis.original/node_modules/react-dom/lib/reactProdInvariant.js","_process":"/mnt/c/swiggis.original/node_modules/process/browser.js","fbjs/lib/invariant":"/mnt/c/swiggis.original/node_modules/fbjs/lib/invariant.js"}],"/mnt/c/swiggis.original/node_modules/react-dom/lib/ReactHostOperationHistoryHook.js":[function(require,module,exports){
+},{"./reactProdInvariant":"C:\\swiggis.austin\\node_modules\\react-dom\\lib\\reactProdInvariant.js","_process":"C:\\swiggis.austin\\node_modules\\process\\browser.js","fbjs/lib/invariant":"C:\\swiggis.austin\\node_modules\\fbjs\\lib\\invariant.js"}],"C:\\swiggis.austin\\node_modules\\react-dom\\lib\\ReactHostOperationHistoryHook.js":[function(require,module,exports){
 /**
  * Copyright (c) 2016-present, Facebook, Inc.
  *
@@ -39541,7 +38579,7 @@ var ReactHostOperationHistoryHook = {
 };
 
 module.exports = ReactHostOperationHistoryHook;
-},{}],"/mnt/c/swiggis.original/node_modules/react-dom/lib/ReactInjection.js":[function(require,module,exports){
+},{}],"C:\\swiggis.austin\\node_modules\\react-dom\\lib\\ReactInjection.js":[function(require,module,exports){
 /**
  * Copyright (c) 2013-present, Facebook, Inc.
  *
@@ -39573,7 +38611,7 @@ var ReactInjection = {
 };
 
 module.exports = ReactInjection;
-},{"./DOMProperty":"/mnt/c/swiggis.original/node_modules/react-dom/lib/DOMProperty.js","./EventPluginHub":"/mnt/c/swiggis.original/node_modules/react-dom/lib/EventPluginHub.js","./EventPluginUtils":"/mnt/c/swiggis.original/node_modules/react-dom/lib/EventPluginUtils.js","./ReactBrowserEventEmitter":"/mnt/c/swiggis.original/node_modules/react-dom/lib/ReactBrowserEventEmitter.js","./ReactComponentEnvironment":"/mnt/c/swiggis.original/node_modules/react-dom/lib/ReactComponentEnvironment.js","./ReactEmptyComponent":"/mnt/c/swiggis.original/node_modules/react-dom/lib/ReactEmptyComponent.js","./ReactHostComponent":"/mnt/c/swiggis.original/node_modules/react-dom/lib/ReactHostComponent.js","./ReactUpdates":"/mnt/c/swiggis.original/node_modules/react-dom/lib/ReactUpdates.js"}],"/mnt/c/swiggis.original/node_modules/react-dom/lib/ReactInputSelection.js":[function(require,module,exports){
+},{"./DOMProperty":"C:\\swiggis.austin\\node_modules\\react-dom\\lib\\DOMProperty.js","./EventPluginHub":"C:\\swiggis.austin\\node_modules\\react-dom\\lib\\EventPluginHub.js","./EventPluginUtils":"C:\\swiggis.austin\\node_modules\\react-dom\\lib\\EventPluginUtils.js","./ReactBrowserEventEmitter":"C:\\swiggis.austin\\node_modules\\react-dom\\lib\\ReactBrowserEventEmitter.js","./ReactComponentEnvironment":"C:\\swiggis.austin\\node_modules\\react-dom\\lib\\ReactComponentEnvironment.js","./ReactEmptyComponent":"C:\\swiggis.austin\\node_modules\\react-dom\\lib\\ReactEmptyComponent.js","./ReactHostComponent":"C:\\swiggis.austin\\node_modules\\react-dom\\lib\\ReactHostComponent.js","./ReactUpdates":"C:\\swiggis.austin\\node_modules\\react-dom\\lib\\ReactUpdates.js"}],"C:\\swiggis.austin\\node_modules\\react-dom\\lib\\ReactInputSelection.js":[function(require,module,exports){
 /**
  * Copyright (c) 2013-present, Facebook, Inc.
  *
@@ -39694,7 +38732,7 @@ var ReactInputSelection = {
 };
 
 module.exports = ReactInputSelection;
-},{"./ReactDOMSelection":"/mnt/c/swiggis.original/node_modules/react-dom/lib/ReactDOMSelection.js","fbjs/lib/containsNode":"/mnt/c/swiggis.original/node_modules/fbjs/lib/containsNode.js","fbjs/lib/focusNode":"/mnt/c/swiggis.original/node_modules/fbjs/lib/focusNode.js","fbjs/lib/getActiveElement":"/mnt/c/swiggis.original/node_modules/fbjs/lib/getActiveElement.js"}],"/mnt/c/swiggis.original/node_modules/react-dom/lib/ReactInstanceMap.js":[function(require,module,exports){
+},{"./ReactDOMSelection":"C:\\swiggis.austin\\node_modules\\react-dom\\lib\\ReactDOMSelection.js","fbjs/lib/containsNode":"C:\\swiggis.austin\\node_modules\\fbjs\\lib\\containsNode.js","fbjs/lib/focusNode":"C:\\swiggis.austin\\node_modules\\fbjs\\lib\\focusNode.js","fbjs/lib/getActiveElement":"C:\\swiggis.austin\\node_modules\\fbjs\\lib\\getActiveElement.js"}],"C:\\swiggis.austin\\node_modules\\react-dom\\lib\\ReactInstanceMap.js":[function(require,module,exports){
 /**
  * Copyright (c) 2013-present, Facebook, Inc.
  *
@@ -39738,7 +38776,7 @@ var ReactInstanceMap = {
 };
 
 module.exports = ReactInstanceMap;
-},{}],"/mnt/c/swiggis.original/node_modules/react-dom/lib/ReactInstrumentation.js":[function(require,module,exports){
+},{}],"C:\\swiggis.austin\\node_modules\\react-dom\\lib\\ReactInstrumentation.js":[function(require,module,exports){
 (function (process){
 /**
  * Copyright (c) 2016-present, Facebook, Inc.
@@ -39762,7 +38800,7 @@ if (process.env.NODE_ENV !== 'production') {
 
 module.exports = { debugTool: debugTool };
 }).call(this,require('_process'))
-},{"./ReactDebugTool":"/mnt/c/swiggis.original/node_modules/react-dom/lib/ReactDebugTool.js","_process":"/mnt/c/swiggis.original/node_modules/process/browser.js"}],"/mnt/c/swiggis.original/node_modules/react-dom/lib/ReactInvalidSetStateWarningHook.js":[function(require,module,exports){
+},{"./ReactDebugTool":"C:\\swiggis.austin\\node_modules\\react-dom\\lib\\ReactDebugTool.js","_process":"C:\\swiggis.austin\\node_modules\\process\\browser.js"}],"C:\\swiggis.austin\\node_modules\\react-dom\\lib\\ReactInvalidSetStateWarningHook.js":[function(require,module,exports){
 (function (process){
 /**
  * Copyright (c) 2016-present, Facebook, Inc.
@@ -39799,7 +38837,7 @@ var ReactInvalidSetStateWarningHook = {
 
 module.exports = ReactInvalidSetStateWarningHook;
 }).call(this,require('_process'))
-},{"_process":"/mnt/c/swiggis.original/node_modules/process/browser.js","fbjs/lib/warning":"/mnt/c/swiggis.original/node_modules/fbjs/lib/warning.js"}],"/mnt/c/swiggis.original/node_modules/react-dom/lib/ReactMarkupChecksum.js":[function(require,module,exports){
+},{"_process":"C:\\swiggis.austin\\node_modules\\process\\browser.js","fbjs/lib/warning":"C:\\swiggis.austin\\node_modules\\fbjs\\lib\\warning.js"}],"C:\\swiggis.austin\\node_modules\\react-dom\\lib\\ReactMarkupChecksum.js":[function(require,module,exports){
 /**
  * Copyright (c) 2013-present, Facebook, Inc.
  *
@@ -39847,7 +38885,7 @@ var ReactMarkupChecksum = {
 };
 
 module.exports = ReactMarkupChecksum;
-},{"./adler32":"/mnt/c/swiggis.original/node_modules/react-dom/lib/adler32.js"}],"/mnt/c/swiggis.original/node_modules/react-dom/lib/ReactMount.js":[function(require,module,exports){
+},{"./adler32":"C:\\swiggis.austin\\node_modules\\react-dom\\lib\\adler32.js"}],"C:\\swiggis.austin\\node_modules\\react-dom\\lib\\ReactMount.js":[function(require,module,exports){
 (function (process){
 /**
  * Copyright (c) 2013-present, Facebook, Inc.
@@ -40385,7 +39423,7 @@ var ReactMount = {
 
 module.exports = ReactMount;
 }).call(this,require('_process'))
-},{"./DOMLazyTree":"/mnt/c/swiggis.original/node_modules/react-dom/lib/DOMLazyTree.js","./DOMProperty":"/mnt/c/swiggis.original/node_modules/react-dom/lib/DOMProperty.js","./ReactBrowserEventEmitter":"/mnt/c/swiggis.original/node_modules/react-dom/lib/ReactBrowserEventEmitter.js","./ReactDOMComponentTree":"/mnt/c/swiggis.original/node_modules/react-dom/lib/ReactDOMComponentTree.js","./ReactDOMContainerInfo":"/mnt/c/swiggis.original/node_modules/react-dom/lib/ReactDOMContainerInfo.js","./ReactDOMFeatureFlags":"/mnt/c/swiggis.original/node_modules/react-dom/lib/ReactDOMFeatureFlags.js","./ReactFeatureFlags":"/mnt/c/swiggis.original/node_modules/react-dom/lib/ReactFeatureFlags.js","./ReactInstanceMap":"/mnt/c/swiggis.original/node_modules/react-dom/lib/ReactInstanceMap.js","./ReactInstrumentation":"/mnt/c/swiggis.original/node_modules/react-dom/lib/ReactInstrumentation.js","./ReactMarkupChecksum":"/mnt/c/swiggis.original/node_modules/react-dom/lib/ReactMarkupChecksum.js","./ReactReconciler":"/mnt/c/swiggis.original/node_modules/react-dom/lib/ReactReconciler.js","./ReactUpdateQueue":"/mnt/c/swiggis.original/node_modules/react-dom/lib/ReactUpdateQueue.js","./ReactUpdates":"/mnt/c/swiggis.original/node_modules/react-dom/lib/ReactUpdates.js","./instantiateReactComponent":"/mnt/c/swiggis.original/node_modules/react-dom/lib/instantiateReactComponent.js","./reactProdInvariant":"/mnt/c/swiggis.original/node_modules/react-dom/lib/reactProdInvariant.js","./setInnerHTML":"/mnt/c/swiggis.original/node_modules/react-dom/lib/setInnerHTML.js","./shouldUpdateReactComponent":"/mnt/c/swiggis.original/node_modules/react-dom/lib/shouldUpdateReactComponent.js","_process":"/mnt/c/swiggis.original/node_modules/process/browser.js","fbjs/lib/emptyObject":"/mnt/c/swiggis.original/node_modules/fbjs/lib/emptyObject.js","fbjs/lib/invariant":"/mnt/c/swiggis.original/node_modules/fbjs/lib/invariant.js","fbjs/lib/warning":"/mnt/c/swiggis.original/node_modules/fbjs/lib/warning.js","react/lib/React":"/mnt/c/swiggis.original/node_modules/react/lib/React.js","react/lib/ReactCurrentOwner":"/mnt/c/swiggis.original/node_modules/react/lib/ReactCurrentOwner.js"}],"/mnt/c/swiggis.original/node_modules/react-dom/lib/ReactMultiChild.js":[function(require,module,exports){
+},{"./DOMLazyTree":"C:\\swiggis.austin\\node_modules\\react-dom\\lib\\DOMLazyTree.js","./DOMProperty":"C:\\swiggis.austin\\node_modules\\react-dom\\lib\\DOMProperty.js","./ReactBrowserEventEmitter":"C:\\swiggis.austin\\node_modules\\react-dom\\lib\\ReactBrowserEventEmitter.js","./ReactDOMComponentTree":"C:\\swiggis.austin\\node_modules\\react-dom\\lib\\ReactDOMComponentTree.js","./ReactDOMContainerInfo":"C:\\swiggis.austin\\node_modules\\react-dom\\lib\\ReactDOMContainerInfo.js","./ReactDOMFeatureFlags":"C:\\swiggis.austin\\node_modules\\react-dom\\lib\\ReactDOMFeatureFlags.js","./ReactFeatureFlags":"C:\\swiggis.austin\\node_modules\\react-dom\\lib\\ReactFeatureFlags.js","./ReactInstanceMap":"C:\\swiggis.austin\\node_modules\\react-dom\\lib\\ReactInstanceMap.js","./ReactInstrumentation":"C:\\swiggis.austin\\node_modules\\react-dom\\lib\\ReactInstrumentation.js","./ReactMarkupChecksum":"C:\\swiggis.austin\\node_modules\\react-dom\\lib\\ReactMarkupChecksum.js","./ReactReconciler":"C:\\swiggis.austin\\node_modules\\react-dom\\lib\\ReactReconciler.js","./ReactUpdateQueue":"C:\\swiggis.austin\\node_modules\\react-dom\\lib\\ReactUpdateQueue.js","./ReactUpdates":"C:\\swiggis.austin\\node_modules\\react-dom\\lib\\ReactUpdates.js","./instantiateReactComponent":"C:\\swiggis.austin\\node_modules\\react-dom\\lib\\instantiateReactComponent.js","./reactProdInvariant":"C:\\swiggis.austin\\node_modules\\react-dom\\lib\\reactProdInvariant.js","./setInnerHTML":"C:\\swiggis.austin\\node_modules\\react-dom\\lib\\setInnerHTML.js","./shouldUpdateReactComponent":"C:\\swiggis.austin\\node_modules\\react-dom\\lib\\shouldUpdateReactComponent.js","_process":"C:\\swiggis.austin\\node_modules\\process\\browser.js","fbjs/lib/emptyObject":"C:\\swiggis.austin\\node_modules\\fbjs\\lib\\emptyObject.js","fbjs/lib/invariant":"C:\\swiggis.austin\\node_modules\\fbjs\\lib\\invariant.js","fbjs/lib/warning":"C:\\swiggis.austin\\node_modules\\fbjs\\lib\\warning.js","react/lib/React":"C:\\swiggis.austin\\node_modules\\react\\lib\\React.js","react/lib/ReactCurrentOwner":"C:\\swiggis.austin\\node_modules\\react\\lib\\ReactCurrentOwner.js"}],"C:\\swiggis.austin\\node_modules\\react-dom\\lib\\ReactMultiChild.js":[function(require,module,exports){
 (function (process){
 /**
  * Copyright (c) 2013-present, Facebook, Inc.
@@ -40831,7 +39869,7 @@ var ReactMultiChild = {
 
 module.exports = ReactMultiChild;
 }).call(this,require('_process'))
-},{"./ReactChildReconciler":"/mnt/c/swiggis.original/node_modules/react-dom/lib/ReactChildReconciler.js","./ReactComponentEnvironment":"/mnt/c/swiggis.original/node_modules/react-dom/lib/ReactComponentEnvironment.js","./ReactInstanceMap":"/mnt/c/swiggis.original/node_modules/react-dom/lib/ReactInstanceMap.js","./ReactInstrumentation":"/mnt/c/swiggis.original/node_modules/react-dom/lib/ReactInstrumentation.js","./ReactReconciler":"/mnt/c/swiggis.original/node_modules/react-dom/lib/ReactReconciler.js","./flattenChildren":"/mnt/c/swiggis.original/node_modules/react-dom/lib/flattenChildren.js","./reactProdInvariant":"/mnt/c/swiggis.original/node_modules/react-dom/lib/reactProdInvariant.js","_process":"/mnt/c/swiggis.original/node_modules/process/browser.js","fbjs/lib/emptyFunction":"/mnt/c/swiggis.original/node_modules/fbjs/lib/emptyFunction.js","fbjs/lib/invariant":"/mnt/c/swiggis.original/node_modules/fbjs/lib/invariant.js","react/lib/ReactCurrentOwner":"/mnt/c/swiggis.original/node_modules/react/lib/ReactCurrentOwner.js"}],"/mnt/c/swiggis.original/node_modules/react-dom/lib/ReactNodeTypes.js":[function(require,module,exports){
+},{"./ReactChildReconciler":"C:\\swiggis.austin\\node_modules\\react-dom\\lib\\ReactChildReconciler.js","./ReactComponentEnvironment":"C:\\swiggis.austin\\node_modules\\react-dom\\lib\\ReactComponentEnvironment.js","./ReactInstanceMap":"C:\\swiggis.austin\\node_modules\\react-dom\\lib\\ReactInstanceMap.js","./ReactInstrumentation":"C:\\swiggis.austin\\node_modules\\react-dom\\lib\\ReactInstrumentation.js","./ReactReconciler":"C:\\swiggis.austin\\node_modules\\react-dom\\lib\\ReactReconciler.js","./flattenChildren":"C:\\swiggis.austin\\node_modules\\react-dom\\lib\\flattenChildren.js","./reactProdInvariant":"C:\\swiggis.austin\\node_modules\\react-dom\\lib\\reactProdInvariant.js","_process":"C:\\swiggis.austin\\node_modules\\process\\browser.js","fbjs/lib/emptyFunction":"C:\\swiggis.austin\\node_modules\\fbjs\\lib\\emptyFunction.js","fbjs/lib/invariant":"C:\\swiggis.austin\\node_modules\\fbjs\\lib\\invariant.js","react/lib/ReactCurrentOwner":"C:\\swiggis.austin\\node_modules\\react\\lib\\ReactCurrentOwner.js"}],"C:\\swiggis.austin\\node_modules\\react-dom\\lib\\ReactNodeTypes.js":[function(require,module,exports){
 (function (process){
 /**
  * Copyright (c) 2013-present, Facebook, Inc.
@@ -40871,7 +39909,7 @@ var ReactNodeTypes = {
 
 module.exports = ReactNodeTypes;
 }).call(this,require('_process'))
-},{"./reactProdInvariant":"/mnt/c/swiggis.original/node_modules/react-dom/lib/reactProdInvariant.js","_process":"/mnt/c/swiggis.original/node_modules/process/browser.js","fbjs/lib/invariant":"/mnt/c/swiggis.original/node_modules/fbjs/lib/invariant.js","react/lib/React":"/mnt/c/swiggis.original/node_modules/react/lib/React.js"}],"/mnt/c/swiggis.original/node_modules/react-dom/lib/ReactOwner.js":[function(require,module,exports){
+},{"./reactProdInvariant":"C:\\swiggis.austin\\node_modules\\react-dom\\lib\\reactProdInvariant.js","_process":"C:\\swiggis.austin\\node_modules\\process\\browser.js","fbjs/lib/invariant":"C:\\swiggis.austin\\node_modules\\fbjs\\lib\\invariant.js","react/lib/React":"C:\\swiggis.austin\\node_modules\\react\\lib\\React.js"}],"C:\\swiggis.austin\\node_modules\\react-dom\\lib\\ReactOwner.js":[function(require,module,exports){
 (function (process){
 /**
  * Copyright (c) 2013-present, Facebook, Inc.
@@ -40964,7 +40002,7 @@ var ReactOwner = {
 
 module.exports = ReactOwner;
 }).call(this,require('_process'))
-},{"./reactProdInvariant":"/mnt/c/swiggis.original/node_modules/react-dom/lib/reactProdInvariant.js","_process":"/mnt/c/swiggis.original/node_modules/process/browser.js","fbjs/lib/invariant":"/mnt/c/swiggis.original/node_modules/fbjs/lib/invariant.js"}],"/mnt/c/swiggis.original/node_modules/react-dom/lib/ReactPropTypeLocationNames.js":[function(require,module,exports){
+},{"./reactProdInvariant":"C:\\swiggis.austin\\node_modules\\react-dom\\lib\\reactProdInvariant.js","_process":"C:\\swiggis.austin\\node_modules\\process\\browser.js","fbjs/lib/invariant":"C:\\swiggis.austin\\node_modules\\fbjs\\lib\\invariant.js"}],"C:\\swiggis.austin\\node_modules\\react-dom\\lib\\ReactPropTypeLocationNames.js":[function(require,module,exports){
 (function (process){
 /**
  * Copyright (c) 2013-present, Facebook, Inc.
@@ -40989,7 +40027,7 @@ if (process.env.NODE_ENV !== 'production') {
 
 module.exports = ReactPropTypeLocationNames;
 }).call(this,require('_process'))
-},{"_process":"/mnt/c/swiggis.original/node_modules/process/browser.js"}],"/mnt/c/swiggis.original/node_modules/react-dom/lib/ReactPropTypesSecret.js":[function(require,module,exports){
+},{"_process":"C:\\swiggis.austin\\node_modules\\process\\browser.js"}],"C:\\swiggis.austin\\node_modules\\react-dom\\lib\\ReactPropTypesSecret.js":[function(require,module,exports){
 /**
  * Copyright (c) 2013-present, Facebook, Inc.
  *
@@ -41004,7 +40042,7 @@ module.exports = ReactPropTypeLocationNames;
 var ReactPropTypesSecret = 'SECRET_DO_NOT_PASS_THIS_OR_YOU_WILL_BE_FIRED';
 
 module.exports = ReactPropTypesSecret;
-},{}],"/mnt/c/swiggis.original/node_modules/react-dom/lib/ReactReconcileTransaction.js":[function(require,module,exports){
+},{}],"C:\\swiggis.austin\\node_modules\\react-dom\\lib\\ReactReconcileTransaction.js":[function(require,module,exports){
 (function (process){
 /**
  * Copyright (c) 2013-present, Facebook, Inc.
@@ -41182,7 +40220,7 @@ PooledClass.addPoolingTo(ReactReconcileTransaction);
 
 module.exports = ReactReconcileTransaction;
 }).call(this,require('_process'))
-},{"./CallbackQueue":"/mnt/c/swiggis.original/node_modules/react-dom/lib/CallbackQueue.js","./PooledClass":"/mnt/c/swiggis.original/node_modules/react-dom/lib/PooledClass.js","./ReactBrowserEventEmitter":"/mnt/c/swiggis.original/node_modules/react-dom/lib/ReactBrowserEventEmitter.js","./ReactInputSelection":"/mnt/c/swiggis.original/node_modules/react-dom/lib/ReactInputSelection.js","./ReactInstrumentation":"/mnt/c/swiggis.original/node_modules/react-dom/lib/ReactInstrumentation.js","./ReactUpdateQueue":"/mnt/c/swiggis.original/node_modules/react-dom/lib/ReactUpdateQueue.js","./Transaction":"/mnt/c/swiggis.original/node_modules/react-dom/lib/Transaction.js","_process":"/mnt/c/swiggis.original/node_modules/process/browser.js","object-assign":"/mnt/c/swiggis.original/node_modules/react-dom/node_modules/object-assign/index.js"}],"/mnt/c/swiggis.original/node_modules/react-dom/lib/ReactReconciler.js":[function(require,module,exports){
+},{"./CallbackQueue":"C:\\swiggis.austin\\node_modules\\react-dom\\lib\\CallbackQueue.js","./PooledClass":"C:\\swiggis.austin\\node_modules\\react-dom\\lib\\PooledClass.js","./ReactBrowserEventEmitter":"C:\\swiggis.austin\\node_modules\\react-dom\\lib\\ReactBrowserEventEmitter.js","./ReactInputSelection":"C:\\swiggis.austin\\node_modules\\react-dom\\lib\\ReactInputSelection.js","./ReactInstrumentation":"C:\\swiggis.austin\\node_modules\\react-dom\\lib\\ReactInstrumentation.js","./ReactUpdateQueue":"C:\\swiggis.austin\\node_modules\\react-dom\\lib\\ReactUpdateQueue.js","./Transaction":"C:\\swiggis.austin\\node_modules\\react-dom\\lib\\Transaction.js","_process":"C:\\swiggis.austin\\node_modules\\process\\browser.js","object-assign":"C:\\swiggis.austin\\node_modules\\react-dom\\node_modules\\object-assign\\index.js"}],"C:\\swiggis.austin\\node_modules\\react-dom\\lib\\ReactReconciler.js":[function(require,module,exports){
 (function (process){
 /**
  * Copyright (c) 2013-present, Facebook, Inc.
@@ -41348,7 +40386,7 @@ var ReactReconciler = {
 
 module.exports = ReactReconciler;
 }).call(this,require('_process'))
-},{"./ReactInstrumentation":"/mnt/c/swiggis.original/node_modules/react-dom/lib/ReactInstrumentation.js","./ReactRef":"/mnt/c/swiggis.original/node_modules/react-dom/lib/ReactRef.js","_process":"/mnt/c/swiggis.original/node_modules/process/browser.js","fbjs/lib/warning":"/mnt/c/swiggis.original/node_modules/fbjs/lib/warning.js"}],"/mnt/c/swiggis.original/node_modules/react-dom/lib/ReactRef.js":[function(require,module,exports){
+},{"./ReactInstrumentation":"C:\\swiggis.austin\\node_modules\\react-dom\\lib\\ReactInstrumentation.js","./ReactRef":"C:\\swiggis.austin\\node_modules\\react-dom\\lib\\ReactRef.js","_process":"C:\\swiggis.austin\\node_modules\\process\\browser.js","fbjs/lib/warning":"C:\\swiggis.austin\\node_modules\\fbjs\\lib\\warning.js"}],"C:\\swiggis.austin\\node_modules\\react-dom\\lib\\ReactRef.js":[function(require,module,exports){
 /**
  * Copyright (c) 2013-present, Facebook, Inc.
  *
@@ -41435,7 +40473,7 @@ ReactRef.detachRefs = function (instance, element) {
 };
 
 module.exports = ReactRef;
-},{"./ReactOwner":"/mnt/c/swiggis.original/node_modules/react-dom/lib/ReactOwner.js"}],"/mnt/c/swiggis.original/node_modules/react-dom/lib/ReactServerRenderingTransaction.js":[function(require,module,exports){
+},{"./ReactOwner":"C:\\swiggis.austin\\node_modules\\react-dom\\lib\\ReactOwner.js"}],"C:\\swiggis.austin\\node_modules\\react-dom\\lib\\ReactServerRenderingTransaction.js":[function(require,module,exports){
 (function (process){
 /**
  * Copyright (c) 2014-present, Facebook, Inc.
@@ -41525,7 +40563,7 @@ PooledClass.addPoolingTo(ReactServerRenderingTransaction);
 
 module.exports = ReactServerRenderingTransaction;
 }).call(this,require('_process'))
-},{"./PooledClass":"/mnt/c/swiggis.original/node_modules/react-dom/lib/PooledClass.js","./ReactInstrumentation":"/mnt/c/swiggis.original/node_modules/react-dom/lib/ReactInstrumentation.js","./ReactServerUpdateQueue":"/mnt/c/swiggis.original/node_modules/react-dom/lib/ReactServerUpdateQueue.js","./Transaction":"/mnt/c/swiggis.original/node_modules/react-dom/lib/Transaction.js","_process":"/mnt/c/swiggis.original/node_modules/process/browser.js","object-assign":"/mnt/c/swiggis.original/node_modules/react-dom/node_modules/object-assign/index.js"}],"/mnt/c/swiggis.original/node_modules/react-dom/lib/ReactServerUpdateQueue.js":[function(require,module,exports){
+},{"./PooledClass":"C:\\swiggis.austin\\node_modules\\react-dom\\lib\\PooledClass.js","./ReactInstrumentation":"C:\\swiggis.austin\\node_modules\\react-dom\\lib\\ReactInstrumentation.js","./ReactServerUpdateQueue":"C:\\swiggis.austin\\node_modules\\react-dom\\lib\\ReactServerUpdateQueue.js","./Transaction":"C:\\swiggis.austin\\node_modules\\react-dom\\lib\\Transaction.js","_process":"C:\\swiggis.austin\\node_modules\\process\\browser.js","object-assign":"C:\\swiggis.austin\\node_modules\\react-dom\\node_modules\\object-assign\\index.js"}],"C:\\swiggis.austin\\node_modules\\react-dom\\lib\\ReactServerUpdateQueue.js":[function(require,module,exports){
 (function (process){
 /**
  * Copyright (c) 2015-present, Facebook, Inc.
@@ -41664,7 +40702,7 @@ var ReactServerUpdateQueue = function () {
 
 module.exports = ReactServerUpdateQueue;
 }).call(this,require('_process'))
-},{"./ReactUpdateQueue":"/mnt/c/swiggis.original/node_modules/react-dom/lib/ReactUpdateQueue.js","_process":"/mnt/c/swiggis.original/node_modules/process/browser.js","fbjs/lib/warning":"/mnt/c/swiggis.original/node_modules/fbjs/lib/warning.js"}],"/mnt/c/swiggis.original/node_modules/react-dom/lib/ReactUpdateQueue.js":[function(require,module,exports){
+},{"./ReactUpdateQueue":"C:\\swiggis.austin\\node_modules\\react-dom\\lib\\ReactUpdateQueue.js","_process":"C:\\swiggis.austin\\node_modules\\process\\browser.js","fbjs/lib/warning":"C:\\swiggis.austin\\node_modules\\fbjs\\lib\\warning.js"}],"C:\\swiggis.austin\\node_modules\\react-dom\\lib\\ReactUpdateQueue.js":[function(require,module,exports){
 (function (process){
 /**
  * Copyright (c) 2015-present, Facebook, Inc.
@@ -41898,7 +40936,7 @@ var ReactUpdateQueue = {
 
 module.exports = ReactUpdateQueue;
 }).call(this,require('_process'))
-},{"./ReactInstanceMap":"/mnt/c/swiggis.original/node_modules/react-dom/lib/ReactInstanceMap.js","./ReactInstrumentation":"/mnt/c/swiggis.original/node_modules/react-dom/lib/ReactInstrumentation.js","./ReactUpdates":"/mnt/c/swiggis.original/node_modules/react-dom/lib/ReactUpdates.js","./reactProdInvariant":"/mnt/c/swiggis.original/node_modules/react-dom/lib/reactProdInvariant.js","_process":"/mnt/c/swiggis.original/node_modules/process/browser.js","fbjs/lib/invariant":"/mnt/c/swiggis.original/node_modules/fbjs/lib/invariant.js","fbjs/lib/warning":"/mnt/c/swiggis.original/node_modules/fbjs/lib/warning.js","react/lib/ReactCurrentOwner":"/mnt/c/swiggis.original/node_modules/react/lib/ReactCurrentOwner.js"}],"/mnt/c/swiggis.original/node_modules/react-dom/lib/ReactUpdates.js":[function(require,module,exports){
+},{"./ReactInstanceMap":"C:\\swiggis.austin\\node_modules\\react-dom\\lib\\ReactInstanceMap.js","./ReactInstrumentation":"C:\\swiggis.austin\\node_modules\\react-dom\\lib\\ReactInstrumentation.js","./ReactUpdates":"C:\\swiggis.austin\\node_modules\\react-dom\\lib\\ReactUpdates.js","./reactProdInvariant":"C:\\swiggis.austin\\node_modules\\react-dom\\lib\\reactProdInvariant.js","_process":"C:\\swiggis.austin\\node_modules\\process\\browser.js","fbjs/lib/invariant":"C:\\swiggis.austin\\node_modules\\fbjs\\lib\\invariant.js","fbjs/lib/warning":"C:\\swiggis.austin\\node_modules\\fbjs\\lib\\warning.js","react/lib/ReactCurrentOwner":"C:\\swiggis.austin\\node_modules\\react\\lib\\ReactCurrentOwner.js"}],"C:\\swiggis.austin\\node_modules\\react-dom\\lib\\ReactUpdates.js":[function(require,module,exports){
 (function (process){
 /**
  * Copyright (c) 2013-present, Facebook, Inc.
@@ -42149,7 +41187,7 @@ var ReactUpdates = {
 
 module.exports = ReactUpdates;
 }).call(this,require('_process'))
-},{"./CallbackQueue":"/mnt/c/swiggis.original/node_modules/react-dom/lib/CallbackQueue.js","./PooledClass":"/mnt/c/swiggis.original/node_modules/react-dom/lib/PooledClass.js","./ReactFeatureFlags":"/mnt/c/swiggis.original/node_modules/react-dom/lib/ReactFeatureFlags.js","./ReactReconciler":"/mnt/c/swiggis.original/node_modules/react-dom/lib/ReactReconciler.js","./Transaction":"/mnt/c/swiggis.original/node_modules/react-dom/lib/Transaction.js","./reactProdInvariant":"/mnt/c/swiggis.original/node_modules/react-dom/lib/reactProdInvariant.js","_process":"/mnt/c/swiggis.original/node_modules/process/browser.js","fbjs/lib/invariant":"/mnt/c/swiggis.original/node_modules/fbjs/lib/invariant.js","object-assign":"/mnt/c/swiggis.original/node_modules/react-dom/node_modules/object-assign/index.js"}],"/mnt/c/swiggis.original/node_modules/react-dom/lib/ReactVersion.js":[function(require,module,exports){
+},{"./CallbackQueue":"C:\\swiggis.austin\\node_modules\\react-dom\\lib\\CallbackQueue.js","./PooledClass":"C:\\swiggis.austin\\node_modules\\react-dom\\lib\\PooledClass.js","./ReactFeatureFlags":"C:\\swiggis.austin\\node_modules\\react-dom\\lib\\ReactFeatureFlags.js","./ReactReconciler":"C:\\swiggis.austin\\node_modules\\react-dom\\lib\\ReactReconciler.js","./Transaction":"C:\\swiggis.austin\\node_modules\\react-dom\\lib\\Transaction.js","./reactProdInvariant":"C:\\swiggis.austin\\node_modules\\react-dom\\lib\\reactProdInvariant.js","_process":"C:\\swiggis.austin\\node_modules\\process\\browser.js","fbjs/lib/invariant":"C:\\swiggis.austin\\node_modules\\fbjs\\lib\\invariant.js","object-assign":"C:\\swiggis.austin\\node_modules\\react-dom\\node_modules\\object-assign\\index.js"}],"C:\\swiggis.austin\\node_modules\\react-dom\\lib\\ReactVersion.js":[function(require,module,exports){
 /**
  * Copyright (c) 2013-present, Facebook, Inc.
  *
@@ -42161,7 +41199,7 @@ module.exports = ReactUpdates;
 'use strict';
 
 module.exports = '15.6.2';
-},{}],"/mnt/c/swiggis.original/node_modules/react-dom/lib/SVGDOMPropertyConfig.js":[function(require,module,exports){
+},{}],"C:\\swiggis.austin\\node_modules\\react-dom\\lib\\SVGDOMPropertyConfig.js":[function(require,module,exports){
 /**
  * Copyright (c) 2013-present, Facebook, Inc.
  *
@@ -42461,7 +41499,7 @@ Object.keys(ATTRS).forEach(function (key) {
 });
 
 module.exports = SVGDOMPropertyConfig;
-},{}],"/mnt/c/swiggis.original/node_modules/react-dom/lib/SelectEventPlugin.js":[function(require,module,exports){
+},{}],"C:\\swiggis.austin\\node_modules\\react-dom\\lib\\SelectEventPlugin.js":[function(require,module,exports){
 /**
  * Copyright (c) 2013-present, Facebook, Inc.
  *
@@ -42647,7 +41685,7 @@ var SelectEventPlugin = {
 };
 
 module.exports = SelectEventPlugin;
-},{"./EventPropagators":"/mnt/c/swiggis.original/node_modules/react-dom/lib/EventPropagators.js","./ReactDOMComponentTree":"/mnt/c/swiggis.original/node_modules/react-dom/lib/ReactDOMComponentTree.js","./ReactInputSelection":"/mnt/c/swiggis.original/node_modules/react-dom/lib/ReactInputSelection.js","./SyntheticEvent":"/mnt/c/swiggis.original/node_modules/react-dom/lib/SyntheticEvent.js","./isTextInputElement":"/mnt/c/swiggis.original/node_modules/react-dom/lib/isTextInputElement.js","fbjs/lib/ExecutionEnvironment":"/mnt/c/swiggis.original/node_modules/fbjs/lib/ExecutionEnvironment.js","fbjs/lib/getActiveElement":"/mnt/c/swiggis.original/node_modules/fbjs/lib/getActiveElement.js","fbjs/lib/shallowEqual":"/mnt/c/swiggis.original/node_modules/fbjs/lib/shallowEqual.js"}],"/mnt/c/swiggis.original/node_modules/react-dom/lib/SimpleEventPlugin.js":[function(require,module,exports){
+},{"./EventPropagators":"C:\\swiggis.austin\\node_modules\\react-dom\\lib\\EventPropagators.js","./ReactDOMComponentTree":"C:\\swiggis.austin\\node_modules\\react-dom\\lib\\ReactDOMComponentTree.js","./ReactInputSelection":"C:\\swiggis.austin\\node_modules\\react-dom\\lib\\ReactInputSelection.js","./SyntheticEvent":"C:\\swiggis.austin\\node_modules\\react-dom\\lib\\SyntheticEvent.js","./isTextInputElement":"C:\\swiggis.austin\\node_modules\\react-dom\\lib\\isTextInputElement.js","fbjs/lib/ExecutionEnvironment":"C:\\swiggis.austin\\node_modules\\fbjs\\lib\\ExecutionEnvironment.js","fbjs/lib/getActiveElement":"C:\\swiggis.austin\\node_modules\\fbjs\\lib\\getActiveElement.js","fbjs/lib/shallowEqual":"C:\\swiggis.austin\\node_modules\\fbjs\\lib\\shallowEqual.js"}],"C:\\swiggis.austin\\node_modules\\react-dom\\lib\\SimpleEventPlugin.js":[function(require,module,exports){
 (function (process){
 /**
  * Copyright (c) 2013-present, Facebook, Inc.
@@ -42873,7 +41911,7 @@ var SimpleEventPlugin = {
 
 module.exports = SimpleEventPlugin;
 }).call(this,require('_process'))
-},{"./EventPropagators":"/mnt/c/swiggis.original/node_modules/react-dom/lib/EventPropagators.js","./ReactDOMComponentTree":"/mnt/c/swiggis.original/node_modules/react-dom/lib/ReactDOMComponentTree.js","./SyntheticAnimationEvent":"/mnt/c/swiggis.original/node_modules/react-dom/lib/SyntheticAnimationEvent.js","./SyntheticClipboardEvent":"/mnt/c/swiggis.original/node_modules/react-dom/lib/SyntheticClipboardEvent.js","./SyntheticDragEvent":"/mnt/c/swiggis.original/node_modules/react-dom/lib/SyntheticDragEvent.js","./SyntheticEvent":"/mnt/c/swiggis.original/node_modules/react-dom/lib/SyntheticEvent.js","./SyntheticFocusEvent":"/mnt/c/swiggis.original/node_modules/react-dom/lib/SyntheticFocusEvent.js","./SyntheticKeyboardEvent":"/mnt/c/swiggis.original/node_modules/react-dom/lib/SyntheticKeyboardEvent.js","./SyntheticMouseEvent":"/mnt/c/swiggis.original/node_modules/react-dom/lib/SyntheticMouseEvent.js","./SyntheticTouchEvent":"/mnt/c/swiggis.original/node_modules/react-dom/lib/SyntheticTouchEvent.js","./SyntheticTransitionEvent":"/mnt/c/swiggis.original/node_modules/react-dom/lib/SyntheticTransitionEvent.js","./SyntheticUIEvent":"/mnt/c/swiggis.original/node_modules/react-dom/lib/SyntheticUIEvent.js","./SyntheticWheelEvent":"/mnt/c/swiggis.original/node_modules/react-dom/lib/SyntheticWheelEvent.js","./getEventCharCode":"/mnt/c/swiggis.original/node_modules/react-dom/lib/getEventCharCode.js","./reactProdInvariant":"/mnt/c/swiggis.original/node_modules/react-dom/lib/reactProdInvariant.js","_process":"/mnt/c/swiggis.original/node_modules/process/browser.js","fbjs/lib/EventListener":"/mnt/c/swiggis.original/node_modules/fbjs/lib/EventListener.js","fbjs/lib/emptyFunction":"/mnt/c/swiggis.original/node_modules/fbjs/lib/emptyFunction.js","fbjs/lib/invariant":"/mnt/c/swiggis.original/node_modules/fbjs/lib/invariant.js"}],"/mnt/c/swiggis.original/node_modules/react-dom/lib/SyntheticAnimationEvent.js":[function(require,module,exports){
+},{"./EventPropagators":"C:\\swiggis.austin\\node_modules\\react-dom\\lib\\EventPropagators.js","./ReactDOMComponentTree":"C:\\swiggis.austin\\node_modules\\react-dom\\lib\\ReactDOMComponentTree.js","./SyntheticAnimationEvent":"C:\\swiggis.austin\\node_modules\\react-dom\\lib\\SyntheticAnimationEvent.js","./SyntheticClipboardEvent":"C:\\swiggis.austin\\node_modules\\react-dom\\lib\\SyntheticClipboardEvent.js","./SyntheticDragEvent":"C:\\swiggis.austin\\node_modules\\react-dom\\lib\\SyntheticDragEvent.js","./SyntheticEvent":"C:\\swiggis.austin\\node_modules\\react-dom\\lib\\SyntheticEvent.js","./SyntheticFocusEvent":"C:\\swiggis.austin\\node_modules\\react-dom\\lib\\SyntheticFocusEvent.js","./SyntheticKeyboardEvent":"C:\\swiggis.austin\\node_modules\\react-dom\\lib\\SyntheticKeyboardEvent.js","./SyntheticMouseEvent":"C:\\swiggis.austin\\node_modules\\react-dom\\lib\\SyntheticMouseEvent.js","./SyntheticTouchEvent":"C:\\swiggis.austin\\node_modules\\react-dom\\lib\\SyntheticTouchEvent.js","./SyntheticTransitionEvent":"C:\\swiggis.austin\\node_modules\\react-dom\\lib\\SyntheticTransitionEvent.js","./SyntheticUIEvent":"C:\\swiggis.austin\\node_modules\\react-dom\\lib\\SyntheticUIEvent.js","./SyntheticWheelEvent":"C:\\swiggis.austin\\node_modules\\react-dom\\lib\\SyntheticWheelEvent.js","./getEventCharCode":"C:\\swiggis.austin\\node_modules\\react-dom\\lib\\getEventCharCode.js","./reactProdInvariant":"C:\\swiggis.austin\\node_modules\\react-dom\\lib\\reactProdInvariant.js","_process":"C:\\swiggis.austin\\node_modules\\process\\browser.js","fbjs/lib/EventListener":"C:\\swiggis.austin\\node_modules\\fbjs\\lib\\EventListener.js","fbjs/lib/emptyFunction":"C:\\swiggis.austin\\node_modules\\fbjs\\lib\\emptyFunction.js","fbjs/lib/invariant":"C:\\swiggis.austin\\node_modules\\fbjs\\lib\\invariant.js"}],"C:\\swiggis.austin\\node_modules\\react-dom\\lib\\SyntheticAnimationEvent.js":[function(require,module,exports){
 /**
  * Copyright (c) 2013-present, Facebook, Inc.
  *
@@ -42910,7 +41948,7 @@ function SyntheticAnimationEvent(dispatchConfig, dispatchMarker, nativeEvent, na
 SyntheticEvent.augmentClass(SyntheticAnimationEvent, AnimationEventInterface);
 
 module.exports = SyntheticAnimationEvent;
-},{"./SyntheticEvent":"/mnt/c/swiggis.original/node_modules/react-dom/lib/SyntheticEvent.js"}],"/mnt/c/swiggis.original/node_modules/react-dom/lib/SyntheticClipboardEvent.js":[function(require,module,exports){
+},{"./SyntheticEvent":"C:\\swiggis.austin\\node_modules\\react-dom\\lib\\SyntheticEvent.js"}],"C:\\swiggis.austin\\node_modules\\react-dom\\lib\\SyntheticClipboardEvent.js":[function(require,module,exports){
 /**
  * Copyright (c) 2013-present, Facebook, Inc.
  *
@@ -42946,7 +41984,7 @@ function SyntheticClipboardEvent(dispatchConfig, dispatchMarker, nativeEvent, na
 SyntheticEvent.augmentClass(SyntheticClipboardEvent, ClipboardEventInterface);
 
 module.exports = SyntheticClipboardEvent;
-},{"./SyntheticEvent":"/mnt/c/swiggis.original/node_modules/react-dom/lib/SyntheticEvent.js"}],"/mnt/c/swiggis.original/node_modules/react-dom/lib/SyntheticCompositionEvent.js":[function(require,module,exports){
+},{"./SyntheticEvent":"C:\\swiggis.austin\\node_modules\\react-dom\\lib\\SyntheticEvent.js"}],"C:\\swiggis.austin\\node_modules\\react-dom\\lib\\SyntheticCompositionEvent.js":[function(require,module,exports){
 /**
  * Copyright (c) 2013-present, Facebook, Inc.
  *
@@ -42980,7 +42018,7 @@ function SyntheticCompositionEvent(dispatchConfig, dispatchMarker, nativeEvent, 
 SyntheticEvent.augmentClass(SyntheticCompositionEvent, CompositionEventInterface);
 
 module.exports = SyntheticCompositionEvent;
-},{"./SyntheticEvent":"/mnt/c/swiggis.original/node_modules/react-dom/lib/SyntheticEvent.js"}],"/mnt/c/swiggis.original/node_modules/react-dom/lib/SyntheticDragEvent.js":[function(require,module,exports){
+},{"./SyntheticEvent":"C:\\swiggis.austin\\node_modules\\react-dom\\lib\\SyntheticEvent.js"}],"C:\\swiggis.austin\\node_modules\\react-dom\\lib\\SyntheticDragEvent.js":[function(require,module,exports){
 /**
  * Copyright (c) 2013-present, Facebook, Inc.
  *
@@ -43014,7 +42052,7 @@ function SyntheticDragEvent(dispatchConfig, dispatchMarker, nativeEvent, nativeE
 SyntheticMouseEvent.augmentClass(SyntheticDragEvent, DragEventInterface);
 
 module.exports = SyntheticDragEvent;
-},{"./SyntheticMouseEvent":"/mnt/c/swiggis.original/node_modules/react-dom/lib/SyntheticMouseEvent.js"}],"/mnt/c/swiggis.original/node_modules/react-dom/lib/SyntheticEvent.js":[function(require,module,exports){
+},{"./SyntheticMouseEvent":"C:\\swiggis.austin\\node_modules\\react-dom\\lib\\SyntheticMouseEvent.js"}],"C:\\swiggis.austin\\node_modules\\react-dom\\lib\\SyntheticEvent.js":[function(require,module,exports){
 (function (process){
 /**
  * Copyright (c) 2013-present, Facebook, Inc.
@@ -43285,7 +42323,7 @@ function getPooledWarningPropertyDefinition(propName, getVal) {
   }
 }
 }).call(this,require('_process'))
-},{"./PooledClass":"/mnt/c/swiggis.original/node_modules/react-dom/lib/PooledClass.js","_process":"/mnt/c/swiggis.original/node_modules/process/browser.js","fbjs/lib/emptyFunction":"/mnt/c/swiggis.original/node_modules/fbjs/lib/emptyFunction.js","fbjs/lib/warning":"/mnt/c/swiggis.original/node_modules/fbjs/lib/warning.js","object-assign":"/mnt/c/swiggis.original/node_modules/react-dom/node_modules/object-assign/index.js"}],"/mnt/c/swiggis.original/node_modules/react-dom/lib/SyntheticFocusEvent.js":[function(require,module,exports){
+},{"./PooledClass":"C:\\swiggis.austin\\node_modules\\react-dom\\lib\\PooledClass.js","_process":"C:\\swiggis.austin\\node_modules\\process\\browser.js","fbjs/lib/emptyFunction":"C:\\swiggis.austin\\node_modules\\fbjs\\lib\\emptyFunction.js","fbjs/lib/warning":"C:\\swiggis.austin\\node_modules\\fbjs\\lib\\warning.js","object-assign":"C:\\swiggis.austin\\node_modules\\react-dom\\node_modules\\object-assign\\index.js"}],"C:\\swiggis.austin\\node_modules\\react-dom\\lib\\SyntheticFocusEvent.js":[function(require,module,exports){
 /**
  * Copyright (c) 2013-present, Facebook, Inc.
  *
@@ -43319,7 +42357,7 @@ function SyntheticFocusEvent(dispatchConfig, dispatchMarker, nativeEvent, native
 SyntheticUIEvent.augmentClass(SyntheticFocusEvent, FocusEventInterface);
 
 module.exports = SyntheticFocusEvent;
-},{"./SyntheticUIEvent":"/mnt/c/swiggis.original/node_modules/react-dom/lib/SyntheticUIEvent.js"}],"/mnt/c/swiggis.original/node_modules/react-dom/lib/SyntheticInputEvent.js":[function(require,module,exports){
+},{"./SyntheticUIEvent":"C:\\swiggis.austin\\node_modules\\react-dom\\lib\\SyntheticUIEvent.js"}],"C:\\swiggis.austin\\node_modules\\react-dom\\lib\\SyntheticInputEvent.js":[function(require,module,exports){
 /**
  * Copyright (c) 2013-present, Facebook, Inc.
  *
@@ -43354,7 +42392,7 @@ function SyntheticInputEvent(dispatchConfig, dispatchMarker, nativeEvent, native
 SyntheticEvent.augmentClass(SyntheticInputEvent, InputEventInterface);
 
 module.exports = SyntheticInputEvent;
-},{"./SyntheticEvent":"/mnt/c/swiggis.original/node_modules/react-dom/lib/SyntheticEvent.js"}],"/mnt/c/swiggis.original/node_modules/react-dom/lib/SyntheticKeyboardEvent.js":[function(require,module,exports){
+},{"./SyntheticEvent":"C:\\swiggis.austin\\node_modules\\react-dom\\lib\\SyntheticEvent.js"}],"C:\\swiggis.austin\\node_modules\\react-dom\\lib\\SyntheticKeyboardEvent.js":[function(require,module,exports){
 /**
  * Copyright (c) 2013-present, Facebook, Inc.
  *
@@ -43436,7 +42474,7 @@ function SyntheticKeyboardEvent(dispatchConfig, dispatchMarker, nativeEvent, nat
 SyntheticUIEvent.augmentClass(SyntheticKeyboardEvent, KeyboardEventInterface);
 
 module.exports = SyntheticKeyboardEvent;
-},{"./SyntheticUIEvent":"/mnt/c/swiggis.original/node_modules/react-dom/lib/SyntheticUIEvent.js","./getEventCharCode":"/mnt/c/swiggis.original/node_modules/react-dom/lib/getEventCharCode.js","./getEventKey":"/mnt/c/swiggis.original/node_modules/react-dom/lib/getEventKey.js","./getEventModifierState":"/mnt/c/swiggis.original/node_modules/react-dom/lib/getEventModifierState.js"}],"/mnt/c/swiggis.original/node_modules/react-dom/lib/SyntheticMouseEvent.js":[function(require,module,exports){
+},{"./SyntheticUIEvent":"C:\\swiggis.austin\\node_modules\\react-dom\\lib\\SyntheticUIEvent.js","./getEventCharCode":"C:\\swiggis.austin\\node_modules\\react-dom\\lib\\getEventCharCode.js","./getEventKey":"C:\\swiggis.austin\\node_modules\\react-dom\\lib\\getEventKey.js","./getEventModifierState":"C:\\swiggis.austin\\node_modules\\react-dom\\lib\\getEventModifierState.js"}],"C:\\swiggis.austin\\node_modules\\react-dom\\lib\\SyntheticMouseEvent.js":[function(require,module,exports){
 /**
  * Copyright (c) 2013-present, Facebook, Inc.
  *
@@ -43506,7 +42544,7 @@ function SyntheticMouseEvent(dispatchConfig, dispatchMarker, nativeEvent, native
 SyntheticUIEvent.augmentClass(SyntheticMouseEvent, MouseEventInterface);
 
 module.exports = SyntheticMouseEvent;
-},{"./SyntheticUIEvent":"/mnt/c/swiggis.original/node_modules/react-dom/lib/SyntheticUIEvent.js","./ViewportMetrics":"/mnt/c/swiggis.original/node_modules/react-dom/lib/ViewportMetrics.js","./getEventModifierState":"/mnt/c/swiggis.original/node_modules/react-dom/lib/getEventModifierState.js"}],"/mnt/c/swiggis.original/node_modules/react-dom/lib/SyntheticTouchEvent.js":[function(require,module,exports){
+},{"./SyntheticUIEvent":"C:\\swiggis.austin\\node_modules\\react-dom\\lib\\SyntheticUIEvent.js","./ViewportMetrics":"C:\\swiggis.austin\\node_modules\\react-dom\\lib\\ViewportMetrics.js","./getEventModifierState":"C:\\swiggis.austin\\node_modules\\react-dom\\lib\\getEventModifierState.js"}],"C:\\swiggis.austin\\node_modules\\react-dom\\lib\\SyntheticTouchEvent.js":[function(require,module,exports){
 /**
  * Copyright (c) 2013-present, Facebook, Inc.
  *
@@ -43549,7 +42587,7 @@ function SyntheticTouchEvent(dispatchConfig, dispatchMarker, nativeEvent, native
 SyntheticUIEvent.augmentClass(SyntheticTouchEvent, TouchEventInterface);
 
 module.exports = SyntheticTouchEvent;
-},{"./SyntheticUIEvent":"/mnt/c/swiggis.original/node_modules/react-dom/lib/SyntheticUIEvent.js","./getEventModifierState":"/mnt/c/swiggis.original/node_modules/react-dom/lib/getEventModifierState.js"}],"/mnt/c/swiggis.original/node_modules/react-dom/lib/SyntheticTransitionEvent.js":[function(require,module,exports){
+},{"./SyntheticUIEvent":"C:\\swiggis.austin\\node_modules\\react-dom\\lib\\SyntheticUIEvent.js","./getEventModifierState":"C:\\swiggis.austin\\node_modules\\react-dom\\lib\\getEventModifierState.js"}],"C:\\swiggis.austin\\node_modules\\react-dom\\lib\\SyntheticTransitionEvent.js":[function(require,module,exports){
 /**
  * Copyright (c) 2013-present, Facebook, Inc.
  *
@@ -43586,7 +42624,7 @@ function SyntheticTransitionEvent(dispatchConfig, dispatchMarker, nativeEvent, n
 SyntheticEvent.augmentClass(SyntheticTransitionEvent, TransitionEventInterface);
 
 module.exports = SyntheticTransitionEvent;
-},{"./SyntheticEvent":"/mnt/c/swiggis.original/node_modules/react-dom/lib/SyntheticEvent.js"}],"/mnt/c/swiggis.original/node_modules/react-dom/lib/SyntheticUIEvent.js":[function(require,module,exports){
+},{"./SyntheticEvent":"C:\\swiggis.austin\\node_modules\\react-dom\\lib\\SyntheticEvent.js"}],"C:\\swiggis.austin\\node_modules\\react-dom\\lib\\SyntheticUIEvent.js":[function(require,module,exports){
 /**
  * Copyright (c) 2013-present, Facebook, Inc.
  *
@@ -43643,7 +42681,7 @@ function SyntheticUIEvent(dispatchConfig, dispatchMarker, nativeEvent, nativeEve
 SyntheticEvent.augmentClass(SyntheticUIEvent, UIEventInterface);
 
 module.exports = SyntheticUIEvent;
-},{"./SyntheticEvent":"/mnt/c/swiggis.original/node_modules/react-dom/lib/SyntheticEvent.js","./getEventTarget":"/mnt/c/swiggis.original/node_modules/react-dom/lib/getEventTarget.js"}],"/mnt/c/swiggis.original/node_modules/react-dom/lib/SyntheticWheelEvent.js":[function(require,module,exports){
+},{"./SyntheticEvent":"C:\\swiggis.austin\\node_modules\\react-dom\\lib\\SyntheticEvent.js","./getEventTarget":"C:\\swiggis.austin\\node_modules\\react-dom\\lib\\getEventTarget.js"}],"C:\\swiggis.austin\\node_modules\\react-dom\\lib\\SyntheticWheelEvent.js":[function(require,module,exports){
 /**
  * Copyright (c) 2013-present, Facebook, Inc.
  *
@@ -43692,7 +42730,7 @@ function SyntheticWheelEvent(dispatchConfig, dispatchMarker, nativeEvent, native
 SyntheticMouseEvent.augmentClass(SyntheticWheelEvent, WheelEventInterface);
 
 module.exports = SyntheticWheelEvent;
-},{"./SyntheticMouseEvent":"/mnt/c/swiggis.original/node_modules/react-dom/lib/SyntheticMouseEvent.js"}],"/mnt/c/swiggis.original/node_modules/react-dom/lib/Transaction.js":[function(require,module,exports){
+},{"./SyntheticMouseEvent":"C:\\swiggis.austin\\node_modules\\react-dom\\lib\\SyntheticMouseEvent.js"}],"C:\\swiggis.austin\\node_modules\\react-dom\\lib\\Transaction.js":[function(require,module,exports){
 (function (process){
 /**
  * Copyright (c) 2013-present, Facebook, Inc.
@@ -43920,7 +42958,7 @@ var TransactionImpl = {
 
 module.exports = TransactionImpl;
 }).call(this,require('_process'))
-},{"./reactProdInvariant":"/mnt/c/swiggis.original/node_modules/react-dom/lib/reactProdInvariant.js","_process":"/mnt/c/swiggis.original/node_modules/process/browser.js","fbjs/lib/invariant":"/mnt/c/swiggis.original/node_modules/fbjs/lib/invariant.js"}],"/mnt/c/swiggis.original/node_modules/react-dom/lib/ViewportMetrics.js":[function(require,module,exports){
+},{"./reactProdInvariant":"C:\\swiggis.austin\\node_modules\\react-dom\\lib\\reactProdInvariant.js","_process":"C:\\swiggis.austin\\node_modules\\process\\browser.js","fbjs/lib/invariant":"C:\\swiggis.austin\\node_modules\\fbjs\\lib\\invariant.js"}],"C:\\swiggis.austin\\node_modules\\react-dom\\lib\\ViewportMetrics.js":[function(require,module,exports){
 /**
  * Copyright (c) 2013-present, Facebook, Inc.
  *
@@ -43943,7 +42981,7 @@ var ViewportMetrics = {
 };
 
 module.exports = ViewportMetrics;
-},{}],"/mnt/c/swiggis.original/node_modules/react-dom/lib/accumulateInto.js":[function(require,module,exports){
+},{}],"C:\\swiggis.austin\\node_modules\\react-dom\\lib\\accumulateInto.js":[function(require,module,exports){
 (function (process){
 /**
  * Copyright (c) 2014-present, Facebook, Inc.
@@ -44001,7 +43039,7 @@ function accumulateInto(current, next) {
 
 module.exports = accumulateInto;
 }).call(this,require('_process'))
-},{"./reactProdInvariant":"/mnt/c/swiggis.original/node_modules/react-dom/lib/reactProdInvariant.js","_process":"/mnt/c/swiggis.original/node_modules/process/browser.js","fbjs/lib/invariant":"/mnt/c/swiggis.original/node_modules/fbjs/lib/invariant.js"}],"/mnt/c/swiggis.original/node_modules/react-dom/lib/adler32.js":[function(require,module,exports){
+},{"./reactProdInvariant":"C:\\swiggis.austin\\node_modules\\react-dom\\lib\\reactProdInvariant.js","_process":"C:\\swiggis.austin\\node_modules\\process\\browser.js","fbjs/lib/invariant":"C:\\swiggis.austin\\node_modules\\fbjs\\lib\\invariant.js"}],"C:\\swiggis.austin\\node_modules\\react-dom\\lib\\adler32.js":[function(require,module,exports){
 /**
  * Copyright (c) 2013-present, Facebook, Inc.
  *
@@ -44043,7 +43081,7 @@ function adler32(data) {
 }
 
 module.exports = adler32;
-},{}],"/mnt/c/swiggis.original/node_modules/react-dom/lib/checkReactTypeSpec.js":[function(require,module,exports){
+},{}],"C:\\swiggis.austin\\node_modules\\react-dom\\lib\\checkReactTypeSpec.js":[function(require,module,exports){
 (function (process){
 /**
  * Copyright (c) 2013-present, Facebook, Inc.
@@ -44130,7 +43168,7 @@ function checkReactTypeSpec(typeSpecs, values, location, componentName, element,
 
 module.exports = checkReactTypeSpec;
 }).call(this,require('_process'))
-},{"./ReactPropTypeLocationNames":"/mnt/c/swiggis.original/node_modules/react-dom/lib/ReactPropTypeLocationNames.js","./ReactPropTypesSecret":"/mnt/c/swiggis.original/node_modules/react-dom/lib/ReactPropTypesSecret.js","./reactProdInvariant":"/mnt/c/swiggis.original/node_modules/react-dom/lib/reactProdInvariant.js","_process":"/mnt/c/swiggis.original/node_modules/process/browser.js","fbjs/lib/invariant":"/mnt/c/swiggis.original/node_modules/fbjs/lib/invariant.js","fbjs/lib/warning":"/mnt/c/swiggis.original/node_modules/fbjs/lib/warning.js","react/lib/ReactComponentTreeHook":"/mnt/c/swiggis.original/node_modules/react/lib/ReactComponentTreeHook.js"}],"/mnt/c/swiggis.original/node_modules/react-dom/lib/createMicrosoftUnsafeLocalFunction.js":[function(require,module,exports){
+},{"./ReactPropTypeLocationNames":"C:\\swiggis.austin\\node_modules\\react-dom\\lib\\ReactPropTypeLocationNames.js","./ReactPropTypesSecret":"C:\\swiggis.austin\\node_modules\\react-dom\\lib\\ReactPropTypesSecret.js","./reactProdInvariant":"C:\\swiggis.austin\\node_modules\\react-dom\\lib\\reactProdInvariant.js","_process":"C:\\swiggis.austin\\node_modules\\process\\browser.js","fbjs/lib/invariant":"C:\\swiggis.austin\\node_modules\\fbjs\\lib\\invariant.js","fbjs/lib/warning":"C:\\swiggis.austin\\node_modules\\fbjs\\lib\\warning.js","react/lib/ReactComponentTreeHook":"C:\\swiggis.austin\\node_modules\\react\\lib\\ReactComponentTreeHook.js"}],"C:\\swiggis.austin\\node_modules\\react-dom\\lib\\createMicrosoftUnsafeLocalFunction.js":[function(require,module,exports){
 /**
  * Copyright (c) 2013-present, Facebook, Inc.
  *
@@ -44160,7 +43198,7 @@ var createMicrosoftUnsafeLocalFunction = function (func) {
 };
 
 module.exports = createMicrosoftUnsafeLocalFunction;
-},{}],"/mnt/c/swiggis.original/node_modules/react-dom/lib/dangerousStyleValue.js":[function(require,module,exports){
+},{}],"C:\\swiggis.austin\\node_modules\\react-dom\\lib\\dangerousStyleValue.js":[function(require,module,exports){
 (function (process){
 /**
  * Copyright (c) 2013-present, Facebook, Inc.
@@ -44239,7 +43277,7 @@ function dangerousStyleValue(name, value, component, isCustomProperty) {
 
 module.exports = dangerousStyleValue;
 }).call(this,require('_process'))
-},{"./CSSProperty":"/mnt/c/swiggis.original/node_modules/react-dom/lib/CSSProperty.js","_process":"/mnt/c/swiggis.original/node_modules/process/browser.js","fbjs/lib/warning":"/mnt/c/swiggis.original/node_modules/fbjs/lib/warning.js"}],"/mnt/c/swiggis.original/node_modules/react-dom/lib/escapeTextContentForBrowser.js":[function(require,module,exports){
+},{"./CSSProperty":"C:\\swiggis.austin\\node_modules\\react-dom\\lib\\CSSProperty.js","_process":"C:\\swiggis.austin\\node_modules\\process\\browser.js","fbjs/lib/warning":"C:\\swiggis.austin\\node_modules\\fbjs\\lib\\warning.js"}],"C:\\swiggis.austin\\node_modules\\react-dom\\lib\\escapeTextContentForBrowser.js":[function(require,module,exports){
 /**
  * Copyright (c) 2016-present, Facebook, Inc.
  *
@@ -44359,7 +43397,7 @@ function escapeTextContentForBrowser(text) {
 }
 
 module.exports = escapeTextContentForBrowser;
-},{}],"/mnt/c/swiggis.original/node_modules/react-dom/lib/findDOMNode.js":[function(require,module,exports){
+},{}],"C:\\swiggis.austin\\node_modules\\react-dom\\lib\\findDOMNode.js":[function(require,module,exports){
 (function (process){
 /**
  * Copyright (c) 2013-present, Facebook, Inc.
@@ -44419,7 +43457,7 @@ function findDOMNode(componentOrElement) {
 
 module.exports = findDOMNode;
 }).call(this,require('_process'))
-},{"./ReactDOMComponentTree":"/mnt/c/swiggis.original/node_modules/react-dom/lib/ReactDOMComponentTree.js","./ReactInstanceMap":"/mnt/c/swiggis.original/node_modules/react-dom/lib/ReactInstanceMap.js","./getHostComponentFromComposite":"/mnt/c/swiggis.original/node_modules/react-dom/lib/getHostComponentFromComposite.js","./reactProdInvariant":"/mnt/c/swiggis.original/node_modules/react-dom/lib/reactProdInvariant.js","_process":"/mnt/c/swiggis.original/node_modules/process/browser.js","fbjs/lib/invariant":"/mnt/c/swiggis.original/node_modules/fbjs/lib/invariant.js","fbjs/lib/warning":"/mnt/c/swiggis.original/node_modules/fbjs/lib/warning.js","react/lib/ReactCurrentOwner":"/mnt/c/swiggis.original/node_modules/react/lib/ReactCurrentOwner.js"}],"/mnt/c/swiggis.original/node_modules/react-dom/lib/flattenChildren.js":[function(require,module,exports){
+},{"./ReactDOMComponentTree":"C:\\swiggis.austin\\node_modules\\react-dom\\lib\\ReactDOMComponentTree.js","./ReactInstanceMap":"C:\\swiggis.austin\\node_modules\\react-dom\\lib\\ReactInstanceMap.js","./getHostComponentFromComposite":"C:\\swiggis.austin\\node_modules\\react-dom\\lib\\getHostComponentFromComposite.js","./reactProdInvariant":"C:\\swiggis.austin\\node_modules\\react-dom\\lib\\reactProdInvariant.js","_process":"C:\\swiggis.austin\\node_modules\\process\\browser.js","fbjs/lib/invariant":"C:\\swiggis.austin\\node_modules\\fbjs\\lib\\invariant.js","fbjs/lib/warning":"C:\\swiggis.austin\\node_modules\\fbjs\\lib\\warning.js","react/lib/ReactCurrentOwner":"C:\\swiggis.austin\\node_modules\\react\\lib\\ReactCurrentOwner.js"}],"C:\\swiggis.austin\\node_modules\\react-dom\\lib\\flattenChildren.js":[function(require,module,exports){
 (function (process){
 /**
  * Copyright (c) 2013-present, Facebook, Inc.
@@ -44495,7 +43533,7 @@ function flattenChildren(children, selfDebugID) {
 
 module.exports = flattenChildren;
 }).call(this,require('_process'))
-},{"./KeyEscapeUtils":"/mnt/c/swiggis.original/node_modules/react-dom/lib/KeyEscapeUtils.js","./traverseAllChildren":"/mnt/c/swiggis.original/node_modules/react-dom/lib/traverseAllChildren.js","_process":"/mnt/c/swiggis.original/node_modules/process/browser.js","fbjs/lib/warning":"/mnt/c/swiggis.original/node_modules/fbjs/lib/warning.js","react/lib/ReactComponentTreeHook":"/mnt/c/swiggis.original/node_modules/react/lib/ReactComponentTreeHook.js"}],"/mnt/c/swiggis.original/node_modules/react-dom/lib/forEachAccumulated.js":[function(require,module,exports){
+},{"./KeyEscapeUtils":"C:\\swiggis.austin\\node_modules\\react-dom\\lib\\KeyEscapeUtils.js","./traverseAllChildren":"C:\\swiggis.austin\\node_modules\\react-dom\\lib\\traverseAllChildren.js","_process":"C:\\swiggis.austin\\node_modules\\process\\browser.js","fbjs/lib/warning":"C:\\swiggis.austin\\node_modules\\fbjs\\lib\\warning.js","react/lib/ReactComponentTreeHook":"C:\\swiggis.austin\\node_modules\\react\\lib\\ReactComponentTreeHook.js"}],"C:\\swiggis.austin\\node_modules\\react-dom\\lib\\forEachAccumulated.js":[function(require,module,exports){
 /**
  * Copyright (c) 2013-present, Facebook, Inc.
  *
@@ -44524,7 +43562,7 @@ function forEachAccumulated(arr, cb, scope) {
 }
 
 module.exports = forEachAccumulated;
-},{}],"/mnt/c/swiggis.original/node_modules/react-dom/lib/getEventCharCode.js":[function(require,module,exports){
+},{}],"C:\\swiggis.austin\\node_modules\\react-dom\\lib\\getEventCharCode.js":[function(require,module,exports){
 /**
  * Copyright (c) 2013-present, Facebook, Inc.
  *
@@ -44572,7 +43610,7 @@ function getEventCharCode(nativeEvent) {
 }
 
 module.exports = getEventCharCode;
-},{}],"/mnt/c/swiggis.original/node_modules/react-dom/lib/getEventKey.js":[function(require,module,exports){
+},{}],"C:\\swiggis.austin\\node_modules\\react-dom\\lib\\getEventKey.js":[function(require,module,exports){
 /**
  * Copyright (c) 2013-present, Facebook, Inc.
  *
@@ -44682,7 +43720,7 @@ function getEventKey(nativeEvent) {
 }
 
 module.exports = getEventKey;
-},{"./getEventCharCode":"/mnt/c/swiggis.original/node_modules/react-dom/lib/getEventCharCode.js"}],"/mnt/c/swiggis.original/node_modules/react-dom/lib/getEventModifierState.js":[function(require,module,exports){
+},{"./getEventCharCode":"C:\\swiggis.austin\\node_modules\\react-dom\\lib\\getEventCharCode.js"}],"C:\\swiggis.austin\\node_modules\\react-dom\\lib\\getEventModifierState.js":[function(require,module,exports){
 /**
  * Copyright (c) 2013-present, Facebook, Inc.
  *
@@ -44723,7 +43761,7 @@ function getEventModifierState(nativeEvent) {
 }
 
 module.exports = getEventModifierState;
-},{}],"/mnt/c/swiggis.original/node_modules/react-dom/lib/getEventTarget.js":[function(require,module,exports){
+},{}],"C:\\swiggis.austin\\node_modules\\react-dom\\lib\\getEventTarget.js":[function(require,module,exports){
 /**
  * Copyright (c) 2013-present, Facebook, Inc.
  *
@@ -44756,7 +43794,7 @@ function getEventTarget(nativeEvent) {
 }
 
 module.exports = getEventTarget;
-},{}],"/mnt/c/swiggis.original/node_modules/react-dom/lib/getHostComponentFromComposite.js":[function(require,module,exports){
+},{}],"C:\\swiggis.austin\\node_modules\\react-dom\\lib\\getHostComponentFromComposite.js":[function(require,module,exports){
 /**
  * Copyright (c) 2013-present, Facebook, Inc.
  *
@@ -44784,7 +43822,7 @@ function getHostComponentFromComposite(inst) {
 }
 
 module.exports = getHostComponentFromComposite;
-},{"./ReactNodeTypes":"/mnt/c/swiggis.original/node_modules/react-dom/lib/ReactNodeTypes.js"}],"/mnt/c/swiggis.original/node_modules/react-dom/lib/getIteratorFn.js":[function(require,module,exports){
+},{"./ReactNodeTypes":"C:\\swiggis.austin\\node_modules\\react-dom\\lib\\ReactNodeTypes.js"}],"C:\\swiggis.austin\\node_modules\\react-dom\\lib\\getIteratorFn.js":[function(require,module,exports){
 /**
  * Copyright (c) 2013-present, Facebook, Inc.
  *
@@ -44823,7 +43861,7 @@ function getIteratorFn(maybeIterable) {
 }
 
 module.exports = getIteratorFn;
-},{}],"/mnt/c/swiggis.original/node_modules/react-dom/lib/getNodeForCharacterOffset.js":[function(require,module,exports){
+},{}],"C:\\swiggis.austin\\node_modules\\react-dom\\lib\\getNodeForCharacterOffset.js":[function(require,module,exports){
 /**
  * Copyright (c) 2013-present, Facebook, Inc.
  *
@@ -44895,7 +43933,7 @@ function getNodeForCharacterOffset(root, offset) {
 }
 
 module.exports = getNodeForCharacterOffset;
-},{}],"/mnt/c/swiggis.original/node_modules/react-dom/lib/getTextContentAccessor.js":[function(require,module,exports){
+},{}],"C:\\swiggis.austin\\node_modules\\react-dom\\lib\\getTextContentAccessor.js":[function(require,module,exports){
 /**
  * Copyright (c) 2013-present, Facebook, Inc.
  *
@@ -44926,7 +43964,7 @@ function getTextContentAccessor() {
 }
 
 module.exports = getTextContentAccessor;
-},{"fbjs/lib/ExecutionEnvironment":"/mnt/c/swiggis.original/node_modules/fbjs/lib/ExecutionEnvironment.js"}],"/mnt/c/swiggis.original/node_modules/react-dom/lib/getVendorPrefixedEventName.js":[function(require,module,exports){
+},{"fbjs/lib/ExecutionEnvironment":"C:\\swiggis.austin\\node_modules\\fbjs\\lib\\ExecutionEnvironment.js"}],"C:\\swiggis.austin\\node_modules\\react-dom\\lib\\getVendorPrefixedEventName.js":[function(require,module,exports){
 /**
  * Copyright (c) 2013-present, Facebook, Inc.
  *
@@ -45025,7 +44063,7 @@ function getVendorPrefixedEventName(eventName) {
 }
 
 module.exports = getVendorPrefixedEventName;
-},{"fbjs/lib/ExecutionEnvironment":"/mnt/c/swiggis.original/node_modules/fbjs/lib/ExecutionEnvironment.js"}],"/mnt/c/swiggis.original/node_modules/react-dom/lib/inputValueTracking.js":[function(require,module,exports){
+},{"fbjs/lib/ExecutionEnvironment":"C:\\swiggis.austin\\node_modules\\fbjs\\lib\\ExecutionEnvironment.js"}],"C:\\swiggis.austin\\node_modules\\react-dom\\lib\\inputValueTracking.js":[function(require,module,exports){
 /**
  * Copyright (c) 2013-present, Facebook, Inc.
  *
@@ -45146,7 +44184,7 @@ var inputValueTracking = {
 };
 
 module.exports = inputValueTracking;
-},{"./ReactDOMComponentTree":"/mnt/c/swiggis.original/node_modules/react-dom/lib/ReactDOMComponentTree.js"}],"/mnt/c/swiggis.original/node_modules/react-dom/lib/instantiateReactComponent.js":[function(require,module,exports){
+},{"./ReactDOMComponentTree":"C:\\swiggis.austin\\node_modules\\react-dom\\lib\\ReactDOMComponentTree.js"}],"C:\\swiggis.austin\\node_modules\\react-dom\\lib\\instantiateReactComponent.js":[function(require,module,exports){
 (function (process){
 /**
  * Copyright (c) 2013-present, Facebook, Inc.
@@ -45275,7 +44313,7 @@ _assign(ReactCompositeComponentWrapper.prototype, ReactCompositeComponent, {
 
 module.exports = instantiateReactComponent;
 }).call(this,require('_process'))
-},{"./ReactCompositeComponent":"/mnt/c/swiggis.original/node_modules/react-dom/lib/ReactCompositeComponent.js","./ReactEmptyComponent":"/mnt/c/swiggis.original/node_modules/react-dom/lib/ReactEmptyComponent.js","./ReactHostComponent":"/mnt/c/swiggis.original/node_modules/react-dom/lib/ReactHostComponent.js","./reactProdInvariant":"/mnt/c/swiggis.original/node_modules/react-dom/lib/reactProdInvariant.js","_process":"/mnt/c/swiggis.original/node_modules/process/browser.js","fbjs/lib/invariant":"/mnt/c/swiggis.original/node_modules/fbjs/lib/invariant.js","fbjs/lib/warning":"/mnt/c/swiggis.original/node_modules/fbjs/lib/warning.js","object-assign":"/mnt/c/swiggis.original/node_modules/react-dom/node_modules/object-assign/index.js","react/lib/getNextDebugID":"/mnt/c/swiggis.original/node_modules/react/lib/getNextDebugID.js"}],"/mnt/c/swiggis.original/node_modules/react-dom/lib/isEventSupported.js":[function(require,module,exports){
+},{"./ReactCompositeComponent":"C:\\swiggis.austin\\node_modules\\react-dom\\lib\\ReactCompositeComponent.js","./ReactEmptyComponent":"C:\\swiggis.austin\\node_modules\\react-dom\\lib\\ReactEmptyComponent.js","./ReactHostComponent":"C:\\swiggis.austin\\node_modules\\react-dom\\lib\\ReactHostComponent.js","./reactProdInvariant":"C:\\swiggis.austin\\node_modules\\react-dom\\lib\\reactProdInvariant.js","_process":"C:\\swiggis.austin\\node_modules\\process\\browser.js","fbjs/lib/invariant":"C:\\swiggis.austin\\node_modules\\fbjs\\lib\\invariant.js","fbjs/lib/warning":"C:\\swiggis.austin\\node_modules\\fbjs\\lib\\warning.js","object-assign":"C:\\swiggis.austin\\node_modules\\react-dom\\node_modules\\object-assign\\index.js","react/lib/getNextDebugID":"C:\\swiggis.austin\\node_modules\\react\\lib\\getNextDebugID.js"}],"C:\\swiggis.austin\\node_modules\\react-dom\\lib\\isEventSupported.js":[function(require,module,exports){
 /**
  * Copyright (c) 2013-present, Facebook, Inc.
  *
@@ -45333,7 +44371,7 @@ function isEventSupported(eventNameSuffix, capture) {
 }
 
 module.exports = isEventSupported;
-},{"fbjs/lib/ExecutionEnvironment":"/mnt/c/swiggis.original/node_modules/fbjs/lib/ExecutionEnvironment.js"}],"/mnt/c/swiggis.original/node_modules/react-dom/lib/isTextInputElement.js":[function(require,module,exports){
+},{"fbjs/lib/ExecutionEnvironment":"C:\\swiggis.austin\\node_modules\\fbjs\\lib\\ExecutionEnvironment.js"}],"C:\\swiggis.austin\\node_modules\\react-dom\\lib\\isTextInputElement.js":[function(require,module,exports){
 /**
  * Copyright (c) 2013-present, Facebook, Inc.
  *
@@ -45382,7 +44420,7 @@ function isTextInputElement(elem) {
 }
 
 module.exports = isTextInputElement;
-},{}],"/mnt/c/swiggis.original/node_modules/react-dom/lib/quoteAttributeValueForBrowser.js":[function(require,module,exports){
+},{}],"C:\\swiggis.austin\\node_modules\\react-dom\\lib\\quoteAttributeValueForBrowser.js":[function(require,module,exports){
 /**
  * Copyright (c) 2013-present, Facebook, Inc.
  *
@@ -45406,7 +44444,7 @@ function quoteAttributeValueForBrowser(value) {
 }
 
 module.exports = quoteAttributeValueForBrowser;
-},{"./escapeTextContentForBrowser":"/mnt/c/swiggis.original/node_modules/react-dom/lib/escapeTextContentForBrowser.js"}],"/mnt/c/swiggis.original/node_modules/react-dom/lib/reactProdInvariant.js":[function(require,module,exports){
+},{"./escapeTextContentForBrowser":"C:\\swiggis.austin\\node_modules\\react-dom\\lib\\escapeTextContentForBrowser.js"}],"C:\\swiggis.austin\\node_modules\\react-dom\\lib\\reactProdInvariant.js":[function(require,module,exports){
 /**
  * Copyright (c) 2013-present, Facebook, Inc.
  *
@@ -45443,7 +44481,7 @@ function reactProdInvariant(code) {
 }
 
 module.exports = reactProdInvariant;
-},{}],"/mnt/c/swiggis.original/node_modules/react-dom/lib/renderSubtreeIntoContainer.js":[function(require,module,exports){
+},{}],"C:\\swiggis.austin\\node_modules\\react-dom\\lib\\renderSubtreeIntoContainer.js":[function(require,module,exports){
 /**
  * Copyright (c) 2013-present, Facebook, Inc.
  *
@@ -45457,7 +44495,7 @@ module.exports = reactProdInvariant;
 var ReactMount = require('./ReactMount');
 
 module.exports = ReactMount.renderSubtreeIntoContainer;
-},{"./ReactMount":"/mnt/c/swiggis.original/node_modules/react-dom/lib/ReactMount.js"}],"/mnt/c/swiggis.original/node_modules/react-dom/lib/setInnerHTML.js":[function(require,module,exports){
+},{"./ReactMount":"C:\\swiggis.austin\\node_modules\\react-dom\\lib\\ReactMount.js"}],"C:\\swiggis.austin\\node_modules\\react-dom\\lib\\setInnerHTML.js":[function(require,module,exports){
 /**
  * Copyright (c) 2013-present, Facebook, Inc.
  *
@@ -45553,7 +44591,7 @@ if (ExecutionEnvironment.canUseDOM) {
 }
 
 module.exports = setInnerHTML;
-},{"./DOMNamespaces":"/mnt/c/swiggis.original/node_modules/react-dom/lib/DOMNamespaces.js","./createMicrosoftUnsafeLocalFunction":"/mnt/c/swiggis.original/node_modules/react-dom/lib/createMicrosoftUnsafeLocalFunction.js","fbjs/lib/ExecutionEnvironment":"/mnt/c/swiggis.original/node_modules/fbjs/lib/ExecutionEnvironment.js"}],"/mnt/c/swiggis.original/node_modules/react-dom/lib/setTextContent.js":[function(require,module,exports){
+},{"./DOMNamespaces":"C:\\swiggis.austin\\node_modules\\react-dom\\lib\\DOMNamespaces.js","./createMicrosoftUnsafeLocalFunction":"C:\\swiggis.austin\\node_modules\\react-dom\\lib\\createMicrosoftUnsafeLocalFunction.js","fbjs/lib/ExecutionEnvironment":"C:\\swiggis.austin\\node_modules\\fbjs\\lib\\ExecutionEnvironment.js"}],"C:\\swiggis.austin\\node_modules\\react-dom\\lib\\setTextContent.js":[function(require,module,exports){
 /**
  * Copyright (c) 2013-present, Facebook, Inc.
  *
@@ -45603,7 +44641,7 @@ if (ExecutionEnvironment.canUseDOM) {
 }
 
 module.exports = setTextContent;
-},{"./escapeTextContentForBrowser":"/mnt/c/swiggis.original/node_modules/react-dom/lib/escapeTextContentForBrowser.js","./setInnerHTML":"/mnt/c/swiggis.original/node_modules/react-dom/lib/setInnerHTML.js","fbjs/lib/ExecutionEnvironment":"/mnt/c/swiggis.original/node_modules/fbjs/lib/ExecutionEnvironment.js"}],"/mnt/c/swiggis.original/node_modules/react-dom/lib/shouldUpdateReactComponent.js":[function(require,module,exports){
+},{"./escapeTextContentForBrowser":"C:\\swiggis.austin\\node_modules\\react-dom\\lib\\escapeTextContentForBrowser.js","./setInnerHTML":"C:\\swiggis.austin\\node_modules\\react-dom\\lib\\setInnerHTML.js","fbjs/lib/ExecutionEnvironment":"C:\\swiggis.austin\\node_modules\\fbjs\\lib\\ExecutionEnvironment.js"}],"C:\\swiggis.austin\\node_modules\\react-dom\\lib\\shouldUpdateReactComponent.js":[function(require,module,exports){
 /**
  * Copyright (c) 2013-present, Facebook, Inc.
  *
@@ -45643,7 +44681,7 @@ function shouldUpdateReactComponent(prevElement, nextElement) {
 }
 
 module.exports = shouldUpdateReactComponent;
-},{}],"/mnt/c/swiggis.original/node_modules/react-dom/lib/traverseAllChildren.js":[function(require,module,exports){
+},{}],"C:\\swiggis.austin\\node_modules\\react-dom\\lib\\traverseAllChildren.js":[function(require,module,exports){
 (function (process){
 /**
  * Copyright (c) 2013-present, Facebook, Inc.
@@ -45819,7 +44857,7 @@ function traverseAllChildren(children, callback, traverseContext) {
 
 module.exports = traverseAllChildren;
 }).call(this,require('_process'))
-},{"./KeyEscapeUtils":"/mnt/c/swiggis.original/node_modules/react-dom/lib/KeyEscapeUtils.js","./ReactElementSymbol":"/mnt/c/swiggis.original/node_modules/react-dom/lib/ReactElementSymbol.js","./getIteratorFn":"/mnt/c/swiggis.original/node_modules/react-dom/lib/getIteratorFn.js","./reactProdInvariant":"/mnt/c/swiggis.original/node_modules/react-dom/lib/reactProdInvariant.js","_process":"/mnt/c/swiggis.original/node_modules/process/browser.js","fbjs/lib/invariant":"/mnt/c/swiggis.original/node_modules/fbjs/lib/invariant.js","fbjs/lib/warning":"/mnt/c/swiggis.original/node_modules/fbjs/lib/warning.js","react/lib/ReactCurrentOwner":"/mnt/c/swiggis.original/node_modules/react/lib/ReactCurrentOwner.js"}],"/mnt/c/swiggis.original/node_modules/react-dom/lib/validateDOMNesting.js":[function(require,module,exports){
+},{"./KeyEscapeUtils":"C:\\swiggis.austin\\node_modules\\react-dom\\lib\\KeyEscapeUtils.js","./ReactElementSymbol":"C:\\swiggis.austin\\node_modules\\react-dom\\lib\\ReactElementSymbol.js","./getIteratorFn":"C:\\swiggis.austin\\node_modules\\react-dom\\lib\\getIteratorFn.js","./reactProdInvariant":"C:\\swiggis.austin\\node_modules\\react-dom\\lib\\reactProdInvariant.js","_process":"C:\\swiggis.austin\\node_modules\\process\\browser.js","fbjs/lib/invariant":"C:\\swiggis.austin\\node_modules\\fbjs\\lib\\invariant.js","fbjs/lib/warning":"C:\\swiggis.austin\\node_modules\\fbjs\\lib\\warning.js","react/lib/ReactCurrentOwner":"C:\\swiggis.austin\\node_modules\\react\\lib\\ReactCurrentOwner.js"}],"C:\\swiggis.austin\\node_modules\\react-dom\\lib\\validateDOMNesting.js":[function(require,module,exports){
 (function (process){
 /**
  * Copyright (c) 2015-present, Facebook, Inc.
@@ -46190,9 +45228,9 @@ if (process.env.NODE_ENV !== 'production') {
 
 module.exports = validateDOMNesting;
 }).call(this,require('_process'))
-},{"_process":"/mnt/c/swiggis.original/node_modules/process/browser.js","fbjs/lib/emptyFunction":"/mnt/c/swiggis.original/node_modules/fbjs/lib/emptyFunction.js","fbjs/lib/warning":"/mnt/c/swiggis.original/node_modules/fbjs/lib/warning.js","object-assign":"/mnt/c/swiggis.original/node_modules/react-dom/node_modules/object-assign/index.js"}],"/mnt/c/swiggis.original/node_modules/react-dom/node_modules/object-assign/index.js":[function(require,module,exports){
-arguments[4]["/mnt/c/swiggis.original/node_modules/create-react-class/node_modules/object-assign/index.js"][0].apply(exports,arguments)
-},{}],"/mnt/c/swiggis.original/node_modules/react-overlays/lib/Modal.js":[function(require,module,exports){
+},{"_process":"C:\\swiggis.austin\\node_modules\\process\\browser.js","fbjs/lib/emptyFunction":"C:\\swiggis.austin\\node_modules\\fbjs\\lib\\emptyFunction.js","fbjs/lib/warning":"C:\\swiggis.austin\\node_modules\\fbjs\\lib\\warning.js","object-assign":"C:\\swiggis.austin\\node_modules\\react-dom\\node_modules\\object-assign\\index.js"}],"C:\\swiggis.austin\\node_modules\\react-dom\\node_modules\\object-assign\\index.js":[function(require,module,exports){
+arguments[4]["C:\\swiggis.austin\\node_modules\\create-react-class\\node_modules\\object-assign\\index.js"][0].apply(exports,arguments)
+},{}],"C:\\swiggis.austin\\node_modules\\react-overlays\\lib\\Modal.js":[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -46746,7 +45784,7 @@ Modal.Manager = _ModalManager2.default;
 
 exports.default = Modal;
 module.exports = exports['default'];
-},{"./ModalManager":"/mnt/c/swiggis.original/node_modules/react-overlays/lib/ModalManager.js","./Portal":"/mnt/c/swiggis.original/node_modules/react-overlays/lib/Portal.js","./utils/addEventListener":"/mnt/c/swiggis.original/node_modules/react-overlays/lib/utils/addEventListener.js","./utils/addFocusListener":"/mnt/c/swiggis.original/node_modules/react-overlays/lib/utils/addFocusListener.js","./utils/getContainer":"/mnt/c/swiggis.original/node_modules/react-overlays/lib/utils/getContainer.js","./utils/ownerDocument":"/mnt/c/swiggis.original/node_modules/react-overlays/lib/utils/ownerDocument.js","dom-helpers/activeElement":"/mnt/c/swiggis.original/node_modules/react-overlays/node_modules/dom-helpers/activeElement.js","dom-helpers/query/contains":"/mnt/c/swiggis.original/node_modules/react-overlays/node_modules/dom-helpers/query/contains.js","dom-helpers/util/inDOM":"/mnt/c/swiggis.original/node_modules/react-overlays/node_modules/dom-helpers/util/inDOM.js","react":"/mnt/c/swiggis.original/node_modules/react/react.js","react-prop-types/lib/componentOrElement":"/mnt/c/swiggis.original/node_modules/react-overlays/node_modules/react-prop-types/lib/componentOrElement.js","react-prop-types/lib/elementType":"/mnt/c/swiggis.original/node_modules/react-overlays/node_modules/react-prop-types/lib/elementType.js","warning":"/mnt/c/swiggis.original/node_modules/react-overlays/node_modules/warning/browser.js"}],"/mnt/c/swiggis.original/node_modules/react-overlays/lib/ModalManager.js":[function(require,module,exports){
+},{"./ModalManager":"C:\\swiggis.austin\\node_modules\\react-overlays\\lib\\ModalManager.js","./Portal":"C:\\swiggis.austin\\node_modules\\react-overlays\\lib\\Portal.js","./utils/addEventListener":"C:\\swiggis.austin\\node_modules\\react-overlays\\lib\\utils\\addEventListener.js","./utils/addFocusListener":"C:\\swiggis.austin\\node_modules\\react-overlays\\lib\\utils\\addFocusListener.js","./utils/getContainer":"C:\\swiggis.austin\\node_modules\\react-overlays\\lib\\utils\\getContainer.js","./utils/ownerDocument":"C:\\swiggis.austin\\node_modules\\react-overlays\\lib\\utils\\ownerDocument.js","dom-helpers/activeElement":"C:\\swiggis.austin\\node_modules\\react-overlays\\node_modules\\dom-helpers\\activeElement.js","dom-helpers/query/contains":"C:\\swiggis.austin\\node_modules\\react-overlays\\node_modules\\dom-helpers\\query\\contains.js","dom-helpers/util/inDOM":"C:\\swiggis.austin\\node_modules\\react-overlays\\node_modules\\dom-helpers\\util\\inDOM.js","react":"C:\\swiggis.austin\\node_modules\\react\\react.js","react-prop-types/lib/componentOrElement":"C:\\swiggis.austin\\node_modules\\react-overlays\\node_modules\\react-prop-types\\lib\\componentOrElement.js","react-prop-types/lib/elementType":"C:\\swiggis.austin\\node_modules\\react-overlays\\node_modules\\react-prop-types\\lib\\elementType.js","warning":"C:\\swiggis.austin\\node_modules\\react-overlays\\node_modules\\warning\\browser.js"}],"C:\\swiggis.austin\\node_modules\\react-overlays\\lib\\ModalManager.js":[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -46933,7 +45971,7 @@ var ModalManager = function () {
 
 exports.default = ModalManager;
 module.exports = exports['default'];
-},{"./utils/isOverflowing":"/mnt/c/swiggis.original/node_modules/react-overlays/lib/utils/isOverflowing.js","./utils/manageAriaHidden":"/mnt/c/swiggis.original/node_modules/react-overlays/lib/utils/manageAriaHidden.js","dom-helpers/class":"/mnt/c/swiggis.original/node_modules/react-overlays/node_modules/dom-helpers/class/index.js","dom-helpers/style":"/mnt/c/swiggis.original/node_modules/react-overlays/node_modules/dom-helpers/style/index.js","dom-helpers/util/scrollbarSize":"/mnt/c/swiggis.original/node_modules/react-overlays/node_modules/dom-helpers/util/scrollbarSize.js"}],"/mnt/c/swiggis.original/node_modules/react-overlays/lib/Overlay.js":[function(require,module,exports){
+},{"./utils/isOverflowing":"C:\\swiggis.austin\\node_modules\\react-overlays\\lib\\utils\\isOverflowing.js","./utils/manageAriaHidden":"C:\\swiggis.austin\\node_modules\\react-overlays\\lib\\utils\\manageAriaHidden.js","dom-helpers/class":"C:\\swiggis.austin\\node_modules\\react-overlays\\node_modules\\dom-helpers\\class\\index.js","dom-helpers/style":"C:\\swiggis.austin\\node_modules\\react-overlays\\node_modules\\dom-helpers\\style\\index.js","dom-helpers/util/scrollbarSize":"C:\\swiggis.austin\\node_modules\\react-overlays\\node_modules\\dom-helpers\\util\\scrollbarSize.js"}],"C:\\swiggis.austin\\node_modules\\react-overlays\\lib\\Overlay.js":[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -47161,7 +46199,7 @@ Overlay.propTypes = _extends({}, _Portal2.default.propTypes, _Position2.default.
 
 exports.default = Overlay;
 module.exports = exports['default'];
-},{"./Portal":"/mnt/c/swiggis.original/node_modules/react-overlays/lib/Portal.js","./Position":"/mnt/c/swiggis.original/node_modules/react-overlays/lib/Position.js","./RootCloseWrapper":"/mnt/c/swiggis.original/node_modules/react-overlays/lib/RootCloseWrapper.js","react":"/mnt/c/swiggis.original/node_modules/react/react.js","react-prop-types/lib/elementType":"/mnt/c/swiggis.original/node_modules/react-overlays/node_modules/react-prop-types/lib/elementType.js"}],"/mnt/c/swiggis.original/node_modules/react-overlays/lib/Portal.js":[function(require,module,exports){
+},{"./Portal":"C:\\swiggis.austin\\node_modules\\react-overlays\\lib\\Portal.js","./Position":"C:\\swiggis.austin\\node_modules\\react-overlays\\lib\\Position.js","./RootCloseWrapper":"C:\\swiggis.austin\\node_modules\\react-overlays\\lib\\RootCloseWrapper.js","react":"C:\\swiggis.austin\\node_modules\\react\\react.js","react-prop-types/lib/elementType":"C:\\swiggis.austin\\node_modules\\react-overlays\\node_modules\\react-prop-types\\lib\\elementType.js"}],"C:\\swiggis.austin\\node_modules\\react-overlays\\lib\\Portal.js":[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -47279,7 +46317,7 @@ var Portal = _react2.default.createClass({
 
 exports.default = Portal;
 module.exports = exports['default'];
-},{"./utils/getContainer":"/mnt/c/swiggis.original/node_modules/react-overlays/lib/utils/getContainer.js","./utils/ownerDocument":"/mnt/c/swiggis.original/node_modules/react-overlays/lib/utils/ownerDocument.js","react":"/mnt/c/swiggis.original/node_modules/react/react.js","react-dom":"/mnt/c/swiggis.original/node_modules/react-dom/index.js","react-prop-types/lib/componentOrElement":"/mnt/c/swiggis.original/node_modules/react-overlays/node_modules/react-prop-types/lib/componentOrElement.js"}],"/mnt/c/swiggis.original/node_modules/react-overlays/lib/Position.js":[function(require,module,exports){
+},{"./utils/getContainer":"C:\\swiggis.austin\\node_modules\\react-overlays\\lib\\utils\\getContainer.js","./utils/ownerDocument":"C:\\swiggis.austin\\node_modules\\react-overlays\\lib\\utils\\ownerDocument.js","react":"C:\\swiggis.austin\\node_modules\\react\\react.js","react-dom":"C:\\swiggis.austin\\node_modules\\react-dom\\index.js","react-prop-types/lib/componentOrElement":"C:\\swiggis.austin\\node_modules\\react-overlays\\node_modules\\react-prop-types\\lib\\componentOrElement.js"}],"C:\\swiggis.austin\\node_modules\\react-overlays\\lib\\Position.js":[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -47489,7 +46527,7 @@ Position.defaultProps = {
 
 exports.default = Position;
 module.exports = exports['default'];
-},{"./utils/calculatePosition":"/mnt/c/swiggis.original/node_modules/react-overlays/lib/utils/calculatePosition.js","./utils/getContainer":"/mnt/c/swiggis.original/node_modules/react-overlays/lib/utils/getContainer.js","./utils/ownerDocument":"/mnt/c/swiggis.original/node_modules/react-overlays/lib/utils/ownerDocument.js","classnames":"/mnt/c/swiggis.original/node_modules/classnames/index.js","react":"/mnt/c/swiggis.original/node_modules/react/react.js","react-dom":"/mnt/c/swiggis.original/node_modules/react-dom/index.js","react-prop-types/lib/componentOrElement":"/mnt/c/swiggis.original/node_modules/react-overlays/node_modules/react-prop-types/lib/componentOrElement.js"}],"/mnt/c/swiggis.original/node_modules/react-overlays/lib/RootCloseWrapper.js":[function(require,module,exports){
+},{"./utils/calculatePosition":"C:\\swiggis.austin\\node_modules\\react-overlays\\lib\\utils\\calculatePosition.js","./utils/getContainer":"C:\\swiggis.austin\\node_modules\\react-overlays\\lib\\utils\\getContainer.js","./utils/ownerDocument":"C:\\swiggis.austin\\node_modules\\react-overlays\\lib\\utils\\ownerDocument.js","classnames":"C:\\swiggis.austin\\node_modules\\classnames\\index.js","react":"C:\\swiggis.austin\\node_modules\\react\\react.js","react-dom":"C:\\swiggis.austin\\node_modules\\react-dom\\index.js","react-prop-types/lib/componentOrElement":"C:\\swiggis.austin\\node_modules\\react-overlays\\node_modules\\react-prop-types\\lib\\componentOrElement.js"}],"C:\\swiggis.austin\\node_modules\\react-overlays\\lib\\RootCloseWrapper.js":[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -47662,7 +46700,7 @@ RootCloseWrapper.defaultProps = {
 
 exports.default = RootCloseWrapper;
 module.exports = exports['default'];
-},{"./utils/addEventListener":"/mnt/c/swiggis.original/node_modules/react-overlays/lib/utils/addEventListener.js","./utils/ownerDocument":"/mnt/c/swiggis.original/node_modules/react-overlays/lib/utils/ownerDocument.js","dom-helpers/query/contains":"/mnt/c/swiggis.original/node_modules/react-overlays/node_modules/dom-helpers/query/contains.js","react":"/mnt/c/swiggis.original/node_modules/react/react.js","react-dom":"/mnt/c/swiggis.original/node_modules/react-dom/index.js"}],"/mnt/c/swiggis.original/node_modules/react-overlays/lib/Transition.js":[function(require,module,exports){
+},{"./utils/addEventListener":"C:\\swiggis.austin\\node_modules\\react-overlays\\lib\\utils\\addEventListener.js","./utils/ownerDocument":"C:\\swiggis.austin\\node_modules\\react-overlays\\lib\\utils\\ownerDocument.js","dom-helpers/query/contains":"C:\\swiggis.austin\\node_modules\\react-overlays\\node_modules\\dom-helpers\\query\\contains.js","react":"C:\\swiggis.austin\\node_modules\\react\\react.js","react-dom":"C:\\swiggis.austin\\node_modules\\react-dom\\index.js"}],"C:\\swiggis.austin\\node_modules\\react-overlays\\lib\\Transition.js":[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -48014,7 +47052,7 @@ Transition.defaultProps = {
 };
 
 exports.default = Transition;
-},{"classnames":"/mnt/c/swiggis.original/node_modules/classnames/index.js","dom-helpers/events/on":"/mnt/c/swiggis.original/node_modules/react-overlays/node_modules/dom-helpers/events/on.js","dom-helpers/transition/properties":"/mnt/c/swiggis.original/node_modules/react-overlays/node_modules/dom-helpers/transition/properties.js","react":"/mnt/c/swiggis.original/node_modules/react/react.js","react-dom":"/mnt/c/swiggis.original/node_modules/react-dom/index.js"}],"/mnt/c/swiggis.original/node_modules/react-overlays/lib/utils/addEventListener.js":[function(require,module,exports){
+},{"classnames":"C:\\swiggis.austin\\node_modules\\classnames\\index.js","dom-helpers/events/on":"C:\\swiggis.austin\\node_modules\\react-overlays\\node_modules\\dom-helpers\\events\\on.js","dom-helpers/transition/properties":"C:\\swiggis.austin\\node_modules\\react-overlays\\node_modules\\dom-helpers\\transition\\properties.js","react":"C:\\swiggis.austin\\node_modules\\react\\react.js","react-dom":"C:\\swiggis.austin\\node_modules\\react-dom\\index.js"}],"C:\\swiggis.austin\\node_modules\\react-overlays\\lib\\utils\\addEventListener.js":[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -48042,7 +47080,7 @@ var _off2 = _interopRequireDefault(_off);
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 module.exports = exports['default'];
-},{"dom-helpers/events/off":"/mnt/c/swiggis.original/node_modules/react-overlays/node_modules/dom-helpers/events/off.js","dom-helpers/events/on":"/mnt/c/swiggis.original/node_modules/react-overlays/node_modules/dom-helpers/events/on.js"}],"/mnt/c/swiggis.original/node_modules/react-overlays/lib/utils/addFocusListener.js":[function(require,module,exports){
+},{"dom-helpers/events/off":"C:\\swiggis.austin\\node_modules\\react-overlays\\node_modules\\dom-helpers\\events\\off.js","dom-helpers/events/on":"C:\\swiggis.austin\\node_modules\\react-overlays\\node_modules\\dom-helpers\\events\\on.js"}],"C:\\swiggis.austin\\node_modules\\react-overlays\\lib\\utils\\addFocusListener.js":[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -48074,7 +47112,7 @@ function addFocusListener(handler) {
   return { remove: remove };
 }
 module.exports = exports['default'];
-},{}],"/mnt/c/swiggis.original/node_modules/react-overlays/lib/utils/calculatePosition.js":[function(require,module,exports){
+},{}],"C:\\swiggis.austin\\node_modules\\react-overlays\\lib\\utils\\calculatePosition.js":[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -48202,7 +47240,7 @@ function calculatePosition(placement, overlayNode, target, container, padding) {
   return { positionLeft: positionLeft, positionTop: positionTop, arrowOffsetLeft: arrowOffsetLeft, arrowOffsetTop: arrowOffsetTop };
 }
 module.exports = exports['default'];
-},{"./ownerDocument":"/mnt/c/swiggis.original/node_modules/react-overlays/lib/utils/ownerDocument.js","dom-helpers/query/offset":"/mnt/c/swiggis.original/node_modules/react-overlays/node_modules/dom-helpers/query/offset.js","dom-helpers/query/position":"/mnt/c/swiggis.original/node_modules/react-overlays/node_modules/dom-helpers/query/position.js","dom-helpers/query/scrollTop":"/mnt/c/swiggis.original/node_modules/react-overlays/node_modules/dom-helpers/query/scrollTop.js"}],"/mnt/c/swiggis.original/node_modules/react-overlays/lib/utils/getContainer.js":[function(require,module,exports){
+},{"./ownerDocument":"C:\\swiggis.austin\\node_modules\\react-overlays\\lib\\utils\\ownerDocument.js","dom-helpers/query/offset":"C:\\swiggis.austin\\node_modules\\react-overlays\\node_modules\\dom-helpers\\query\\offset.js","dom-helpers/query/position":"C:\\swiggis.austin\\node_modules\\react-overlays\\node_modules\\dom-helpers\\query\\position.js","dom-helpers/query/scrollTop":"C:\\swiggis.austin\\node_modules\\react-overlays\\node_modules\\dom-helpers\\query\\scrollTop.js"}],"C:\\swiggis.austin\\node_modules\\react-overlays\\lib\\utils\\getContainer.js":[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -48221,7 +47259,7 @@ function getContainer(container, defaultContainer) {
   return _reactDom2.default.findDOMNode(container) || defaultContainer;
 }
 module.exports = exports['default'];
-},{"react-dom":"/mnt/c/swiggis.original/node_modules/react-dom/index.js"}],"/mnt/c/swiggis.original/node_modules/react-overlays/lib/utils/isOverflowing.js":[function(require,module,exports){
+},{"react-dom":"C:\\swiggis.austin\\node_modules\\react-dom\\index.js"}],"C:\\swiggis.austin\\node_modules\\react-overlays\\lib\\utils\\isOverflowing.js":[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -48263,7 +47301,7 @@ function isOverflowing(container) {
   return win || isBody(container) ? bodyIsOverflowing(container) : container.scrollHeight > container.clientHeight;
 }
 module.exports = exports['default'];
-},{"dom-helpers/ownerDocument":"/mnt/c/swiggis.original/node_modules/react-overlays/node_modules/dom-helpers/ownerDocument.js","dom-helpers/query/isWindow":"/mnt/c/swiggis.original/node_modules/react-overlays/node_modules/dom-helpers/query/isWindow.js"}],"/mnt/c/swiggis.original/node_modules/react-overlays/lib/utils/manageAriaHidden.js":[function(require,module,exports){
+},{"dom-helpers/ownerDocument":"C:\\swiggis.austin\\node_modules\\react-overlays\\node_modules\\dom-helpers\\ownerDocument.js","dom-helpers/query/isWindow":"C:\\swiggis.austin\\node_modules\\react-overlays\\node_modules\\dom-helpers\\query\\isWindow.js"}],"C:\\swiggis.austin\\node_modules\\react-overlays\\lib\\utils\\manageAriaHidden.js":[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -48313,7 +47351,7 @@ function showSiblings(container, mountNode) {
     return ariaHidden(false, node);
   });
 }
-},{}],"/mnt/c/swiggis.original/node_modules/react-overlays/lib/utils/ownerDocument.js":[function(require,module,exports){
+},{}],"C:\\swiggis.austin\\node_modules\\react-overlays\\lib\\utils\\ownerDocument.js":[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -48335,7 +47373,7 @@ var _ownerDocument2 = _interopRequireDefault(_ownerDocument);
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 module.exports = exports['default'];
-},{"dom-helpers/ownerDocument":"/mnt/c/swiggis.original/node_modules/react-overlays/node_modules/dom-helpers/ownerDocument.js","react-dom":"/mnt/c/swiggis.original/node_modules/react-dom/index.js"}],"/mnt/c/swiggis.original/node_modules/react-overlays/node_modules/dom-helpers/activeElement.js":[function(require,module,exports){
+},{"dom-helpers/ownerDocument":"C:\\swiggis.austin\\node_modules\\react-overlays\\node_modules\\dom-helpers\\ownerDocument.js","react-dom":"C:\\swiggis.austin\\node_modules\\react-dom\\index.js"}],"C:\\swiggis.austin\\node_modules\\react-overlays\\node_modules\\dom-helpers\\activeElement.js":[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -48357,7 +47395,7 @@ function activeElement() {
   } catch (e) {/* ie throws if no active element */}
 }
 module.exports = exports['default'];
-},{"./ownerDocument":"/mnt/c/swiggis.original/node_modules/react-overlays/node_modules/dom-helpers/ownerDocument.js"}],"/mnt/c/swiggis.original/node_modules/react-overlays/node_modules/dom-helpers/class/addClass.js":[function(require,module,exports){
+},{"./ownerDocument":"C:\\swiggis.austin\\node_modules\\react-overlays\\node_modules\\dom-helpers\\ownerDocument.js"}],"C:\\swiggis.austin\\node_modules\\react-overlays\\node_modules\\dom-helpers\\class\\addClass.js":[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -48375,7 +47413,7 @@ function addClass(element, className) {
   if (element.classList) element.classList.add(className);else if (!(0, _hasClass2.default)(element, className)) if (typeof element.className === 'string') element.className = element.className + ' ' + className;else element.setAttribute('class', (element.className && element.className.baseVal || '') + ' ' + className);
 }
 module.exports = exports['default'];
-},{"./hasClass":"/mnt/c/swiggis.original/node_modules/react-overlays/node_modules/dom-helpers/class/hasClass.js"}],"/mnt/c/swiggis.original/node_modules/react-overlays/node_modules/dom-helpers/class/hasClass.js":[function(require,module,exports){
+},{"./hasClass":"C:\\swiggis.austin\\node_modules\\react-overlays\\node_modules\\dom-helpers\\class\\hasClass.js"}],"C:\\swiggis.austin\\node_modules\\react-overlays\\node_modules\\dom-helpers\\class\\hasClass.js":[function(require,module,exports){
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -48386,7 +47424,7 @@ function hasClass(element, className) {
   if (element.classList) return !!className && element.classList.contains(className);else return (" " + (element.className.baseVal || element.className) + " ").indexOf(" " + className + " ") !== -1;
 }
 module.exports = exports["default"];
-},{}],"/mnt/c/swiggis.original/node_modules/react-overlays/node_modules/dom-helpers/class/index.js":[function(require,module,exports){
+},{}],"C:\\swiggis.austin\\node_modules\\react-overlays\\node_modules\\dom-helpers\\class\\index.js":[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -48412,7 +47450,7 @@ exports.addClass = _addClass2.default;
 exports.removeClass = _removeClass2.default;
 exports.hasClass = _hasClass2.default;
 exports.default = { addClass: _addClass2.default, removeClass: _removeClass2.default, hasClass: _hasClass2.default };
-},{"./addClass":"/mnt/c/swiggis.original/node_modules/react-overlays/node_modules/dom-helpers/class/addClass.js","./hasClass":"/mnt/c/swiggis.original/node_modules/react-overlays/node_modules/dom-helpers/class/hasClass.js","./removeClass":"/mnt/c/swiggis.original/node_modules/react-overlays/node_modules/dom-helpers/class/removeClass.js"}],"/mnt/c/swiggis.original/node_modules/react-overlays/node_modules/dom-helpers/class/removeClass.js":[function(require,module,exports){
+},{"./addClass":"C:\\swiggis.austin\\node_modules\\react-overlays\\node_modules\\dom-helpers\\class\\addClass.js","./hasClass":"C:\\swiggis.austin\\node_modules\\react-overlays\\node_modules\\dom-helpers\\class\\hasClass.js","./removeClass":"C:\\swiggis.austin\\node_modules\\react-overlays\\node_modules\\dom-helpers\\class\\removeClass.js"}],"C:\\swiggis.austin\\node_modules\\react-overlays\\node_modules\\dom-helpers\\class\\removeClass.js":[function(require,module,exports){
 'use strict';
 
 function replaceClassName(origClass, classToRemove) {
@@ -48422,7 +47460,7 @@ function replaceClassName(origClass, classToRemove) {
 module.exports = function removeClass(element, className) {
   if (element.classList) element.classList.remove(className);else if (typeof element.className === 'string') element.className = replaceClassName(element.className, className);else element.setAttribute('class', replaceClassName(element.className && element.className.baseVal || '', className));
 };
-},{}],"/mnt/c/swiggis.original/node_modules/react-overlays/node_modules/dom-helpers/events/off.js":[function(require,module,exports){
+},{}],"C:\\swiggis.austin\\node_modules\\react-overlays\\node_modules\\dom-helpers\\events\\off.js":[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -48448,7 +47486,7 @@ if (_inDOM2.default) {
 
 exports.default = off;
 module.exports = exports['default'];
-},{"../util/inDOM":"/mnt/c/swiggis.original/node_modules/react-overlays/node_modules/dom-helpers/util/inDOM.js"}],"/mnt/c/swiggis.original/node_modules/react-overlays/node_modules/dom-helpers/events/on.js":[function(require,module,exports){
+},{"../util/inDOM":"C:\\swiggis.austin\\node_modules\\react-overlays\\node_modules\\dom-helpers\\util\\inDOM.js"}],"C:\\swiggis.austin\\node_modules\\react-overlays\\node_modules\\dom-helpers\\events\\on.js":[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -48480,7 +47518,7 @@ if (_inDOM2.default) {
 
 exports.default = on;
 module.exports = exports['default'];
-},{"../util/inDOM":"/mnt/c/swiggis.original/node_modules/react-overlays/node_modules/dom-helpers/util/inDOM.js"}],"/mnt/c/swiggis.original/node_modules/react-overlays/node_modules/dom-helpers/ownerDocument.js":[function(require,module,exports){
+},{"../util/inDOM":"C:\\swiggis.austin\\node_modules\\react-overlays\\node_modules\\dom-helpers\\util\\inDOM.js"}],"C:\\swiggis.austin\\node_modules\\react-overlays\\node_modules\\dom-helpers\\ownerDocument.js":[function(require,module,exports){
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -48491,7 +47529,7 @@ function ownerDocument(node) {
   return node && node.ownerDocument || document;
 }
 module.exports = exports["default"];
-},{}],"/mnt/c/swiggis.original/node_modules/react-overlays/node_modules/dom-helpers/query/contains.js":[function(require,module,exports){
+},{}],"C:\\swiggis.austin\\node_modules\\react-overlays\\node_modules\\dom-helpers\\query\\contains.js":[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -48526,7 +47564,7 @@ function fallback(context, node) {
   return false;
 }
 module.exports = exports['default'];
-},{"../util/inDOM":"/mnt/c/swiggis.original/node_modules/react-overlays/node_modules/dom-helpers/util/inDOM.js"}],"/mnt/c/swiggis.original/node_modules/react-overlays/node_modules/dom-helpers/query/isWindow.js":[function(require,module,exports){
+},{"../util/inDOM":"C:\\swiggis.austin\\node_modules\\react-overlays\\node_modules\\dom-helpers\\util\\inDOM.js"}],"C:\\swiggis.austin\\node_modules\\react-overlays\\node_modules\\dom-helpers\\query\\isWindow.js":[function(require,module,exports){
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -48537,7 +47575,7 @@ function getWindow(node) {
   return node === node.window ? node : node.nodeType === 9 ? node.defaultView || node.parentWindow : false;
 }
 module.exports = exports["default"];
-},{}],"/mnt/c/swiggis.original/node_modules/react-overlays/node_modules/dom-helpers/query/offset.js":[function(require,module,exports){
+},{}],"C:\\swiggis.austin\\node_modules\\react-overlays\\node_modules\\dom-helpers\\query\\offset.js":[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -48583,7 +47621,7 @@ function offset(node) {
   return box;
 }
 module.exports = exports['default'];
-},{"../ownerDocument":"/mnt/c/swiggis.original/node_modules/react-overlays/node_modules/dom-helpers/ownerDocument.js","./contains":"/mnt/c/swiggis.original/node_modules/react-overlays/node_modules/dom-helpers/query/contains.js","./isWindow":"/mnt/c/swiggis.original/node_modules/react-overlays/node_modules/dom-helpers/query/isWindow.js"}],"/mnt/c/swiggis.original/node_modules/react-overlays/node_modules/dom-helpers/query/offsetParent.js":[function(require,module,exports){
+},{"../ownerDocument":"C:\\swiggis.austin\\node_modules\\react-overlays\\node_modules\\dom-helpers\\ownerDocument.js","./contains":"C:\\swiggis.austin\\node_modules\\react-overlays\\node_modules\\dom-helpers\\query\\contains.js","./isWindow":"C:\\swiggis.austin\\node_modules\\react-overlays\\node_modules\\dom-helpers\\query\\isWindow.js"}],"C:\\swiggis.austin\\node_modules\\react-overlays\\node_modules\\dom-helpers\\query\\offsetParent.js":[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -48616,7 +47654,7 @@ function offsetParent(node) {
   return offsetParent || doc.documentElement;
 }
 module.exports = exports['default'];
-},{"../ownerDocument":"/mnt/c/swiggis.original/node_modules/react-overlays/node_modules/dom-helpers/ownerDocument.js","../style":"/mnt/c/swiggis.original/node_modules/react-overlays/node_modules/dom-helpers/style/index.js"}],"/mnt/c/swiggis.original/node_modules/react-overlays/node_modules/dom-helpers/query/position.js":[function(require,module,exports){
+},{"../ownerDocument":"C:\\swiggis.austin\\node_modules\\react-overlays\\node_modules\\dom-helpers\\ownerDocument.js","../style":"C:\\swiggis.austin\\node_modules\\react-overlays\\node_modules\\dom-helpers\\style\\index.js"}],"C:\\swiggis.austin\\node_modules\\react-overlays\\node_modules\\dom-helpers\\query\\position.js":[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -48678,7 +47716,7 @@ function position(node, offsetParent) {
   });
 }
 module.exports = exports['default'];
-},{"../style":"/mnt/c/swiggis.original/node_modules/react-overlays/node_modules/dom-helpers/style/index.js","./offset":"/mnt/c/swiggis.original/node_modules/react-overlays/node_modules/dom-helpers/query/offset.js","./offsetParent":"/mnt/c/swiggis.original/node_modules/react-overlays/node_modules/dom-helpers/query/offsetParent.js","./scrollLeft":"/mnt/c/swiggis.original/node_modules/react-overlays/node_modules/dom-helpers/query/scrollLeft.js","./scrollTop":"/mnt/c/swiggis.original/node_modules/react-overlays/node_modules/dom-helpers/query/scrollTop.js"}],"/mnt/c/swiggis.original/node_modules/react-overlays/node_modules/dom-helpers/query/scrollLeft.js":[function(require,module,exports){
+},{"../style":"C:\\swiggis.austin\\node_modules\\react-overlays\\node_modules\\dom-helpers\\style\\index.js","./offset":"C:\\swiggis.austin\\node_modules\\react-overlays\\node_modules\\dom-helpers\\query\\offset.js","./offsetParent":"C:\\swiggis.austin\\node_modules\\react-overlays\\node_modules\\dom-helpers\\query\\offsetParent.js","./scrollLeft":"C:\\swiggis.austin\\node_modules\\react-overlays\\node_modules\\dom-helpers\\query\\scrollLeft.js","./scrollTop":"C:\\swiggis.austin\\node_modules\\react-overlays\\node_modules\\dom-helpers\\query\\scrollTop.js"}],"C:\\swiggis.austin\\node_modules\\react-overlays\\node_modules\\dom-helpers\\query\\scrollLeft.js":[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -48700,7 +47738,7 @@ function scrollTop(node, val) {
   if (win) win.scrollTo(val, 'pageYOffset' in win ? win.pageYOffset : win.document.documentElement.scrollTop);else node.scrollLeft = val;
 }
 module.exports = exports['default'];
-},{"./isWindow":"/mnt/c/swiggis.original/node_modules/react-overlays/node_modules/dom-helpers/query/isWindow.js"}],"/mnt/c/swiggis.original/node_modules/react-overlays/node_modules/dom-helpers/query/scrollTop.js":[function(require,module,exports){
+},{"./isWindow":"C:\\swiggis.austin\\node_modules\\react-overlays\\node_modules\\dom-helpers\\query\\isWindow.js"}],"C:\\swiggis.austin\\node_modules\\react-overlays\\node_modules\\dom-helpers\\query\\scrollTop.js":[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -48722,7 +47760,7 @@ function scrollTop(node, val) {
   if (win) win.scrollTo('pageXOffset' in win ? win.pageXOffset : win.document.documentElement.scrollLeft, val);else node.scrollTop = val;
 }
 module.exports = exports['default'];
-},{"./isWindow":"/mnt/c/swiggis.original/node_modules/react-overlays/node_modules/dom-helpers/query/isWindow.js"}],"/mnt/c/swiggis.original/node_modules/react-overlays/node_modules/dom-helpers/style/getComputedStyle.js":[function(require,module,exports){
+},{"./isWindow":"C:\\swiggis.austin\\node_modules\\react-overlays\\node_modules\\dom-helpers\\query\\isWindow.js"}],"C:\\swiggis.austin\\node_modules\\react-overlays\\node_modules\\dom-helpers\\style\\getComputedStyle.js":[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -48778,7 +47816,7 @@ function _getComputedStyle(node) {
   };
 }
 module.exports = exports['default'];
-},{"../util/camelizeStyle":"/mnt/c/swiggis.original/node_modules/react-overlays/node_modules/dom-helpers/util/camelizeStyle.js"}],"/mnt/c/swiggis.original/node_modules/react-overlays/node_modules/dom-helpers/style/index.js":[function(require,module,exports){
+},{"../util/camelizeStyle":"C:\\swiggis.austin\\node_modules\\react-overlays\\node_modules\\dom-helpers\\util\\camelizeStyle.js"}],"C:\\swiggis.austin\\node_modules\\react-overlays\\node_modules\\dom-helpers\\style\\index.js":[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -48841,7 +47879,7 @@ function style(node, property, value) {
   node.style.cssText += ';' + css;
 }
 module.exports = exports['default'];
-},{"../transition/isTransform":"/mnt/c/swiggis.original/node_modules/react-overlays/node_modules/dom-helpers/transition/isTransform.js","../transition/properties":"/mnt/c/swiggis.original/node_modules/react-overlays/node_modules/dom-helpers/transition/properties.js","../util/camelizeStyle":"/mnt/c/swiggis.original/node_modules/react-overlays/node_modules/dom-helpers/util/camelizeStyle.js","../util/hyphenateStyle":"/mnt/c/swiggis.original/node_modules/react-overlays/node_modules/dom-helpers/util/hyphenateStyle.js","./getComputedStyle":"/mnt/c/swiggis.original/node_modules/react-overlays/node_modules/dom-helpers/style/getComputedStyle.js","./removeStyle":"/mnt/c/swiggis.original/node_modules/react-overlays/node_modules/dom-helpers/style/removeStyle.js"}],"/mnt/c/swiggis.original/node_modules/react-overlays/node_modules/dom-helpers/style/removeStyle.js":[function(require,module,exports){
+},{"../transition/isTransform":"C:\\swiggis.austin\\node_modules\\react-overlays\\node_modules\\dom-helpers\\transition\\isTransform.js","../transition/properties":"C:\\swiggis.austin\\node_modules\\react-overlays\\node_modules\\dom-helpers\\transition\\properties.js","../util/camelizeStyle":"C:\\swiggis.austin\\node_modules\\react-overlays\\node_modules\\dom-helpers\\util\\camelizeStyle.js","../util/hyphenateStyle":"C:\\swiggis.austin\\node_modules\\react-overlays\\node_modules\\dom-helpers\\util\\hyphenateStyle.js","./getComputedStyle":"C:\\swiggis.austin\\node_modules\\react-overlays\\node_modules\\dom-helpers\\style\\getComputedStyle.js","./removeStyle":"C:\\swiggis.austin\\node_modules\\react-overlays\\node_modules\\dom-helpers\\style\\removeStyle.js"}],"C:\\swiggis.austin\\node_modules\\react-overlays\\node_modules\\dom-helpers\\style\\removeStyle.js":[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -48852,7 +47890,7 @@ function removeStyle(node, key) {
   return 'removeProperty' in node.style ? node.style.removeProperty(key) : node.style.removeAttribute(key);
 }
 module.exports = exports['default'];
-},{}],"/mnt/c/swiggis.original/node_modules/react-overlays/node_modules/dom-helpers/transition/isTransform.js":[function(require,module,exports){
+},{}],"C:\\swiggis.austin\\node_modules\\react-overlays\\node_modules\\dom-helpers\\transition\\isTransform.js":[function(require,module,exports){
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -48865,7 +47903,7 @@ function isTransform(property) {
   return !!(property && supportedTransforms.test(property));
 }
 module.exports = exports["default"];
-},{}],"/mnt/c/swiggis.original/node_modules/react-overlays/node_modules/dom-helpers/transition/properties.js":[function(require,module,exports){
+},{}],"C:\\swiggis.austin\\node_modules\\react-overlays\\node_modules\\dom-helpers\\transition\\properties.js":[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -48976,7 +48014,7 @@ function getTransitionProperties() {
 
   return { animationEnd: animationEnd, transitionEnd: transitionEnd, prefix: prefix };
 }
-},{"../util/inDOM":"/mnt/c/swiggis.original/node_modules/react-overlays/node_modules/dom-helpers/util/inDOM.js"}],"/mnt/c/swiggis.original/node_modules/react-overlays/node_modules/dom-helpers/util/camelize.js":[function(require,module,exports){
+},{"../util/inDOM":"C:\\swiggis.austin\\node_modules\\react-overlays\\node_modules\\dom-helpers\\util\\inDOM.js"}],"C:\\swiggis.austin\\node_modules\\react-overlays\\node_modules\\dom-helpers\\util\\camelize.js":[function(require,module,exports){
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -48991,7 +48029,7 @@ function camelize(string) {
   });
 }
 module.exports = exports["default"];
-},{}],"/mnt/c/swiggis.original/node_modules/react-overlays/node_modules/dom-helpers/util/camelizeStyle.js":[function(require,module,exports){
+},{}],"C:\\swiggis.austin\\node_modules\\react-overlays\\node_modules\\dom-helpers\\util\\camelizeStyle.js":[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -49014,7 +48052,7 @@ function camelizeStyleName(string) {
   return (0, _camelize2.default)(string.replace(msPattern, 'ms-'));
 }
 module.exports = exports['default'];
-},{"./camelize":"/mnt/c/swiggis.original/node_modules/react-overlays/node_modules/dom-helpers/util/camelize.js"}],"/mnt/c/swiggis.original/node_modules/react-overlays/node_modules/dom-helpers/util/hyphenate.js":[function(require,module,exports){
+},{"./camelize":"C:\\swiggis.austin\\node_modules\\react-overlays\\node_modules\\dom-helpers\\util\\camelize.js"}],"C:\\swiggis.austin\\node_modules\\react-overlays\\node_modules\\dom-helpers\\util\\hyphenate.js":[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -49028,7 +48066,7 @@ function hyphenate(string) {
   return string.replace(rUpper, '-$1').toLowerCase();
 }
 module.exports = exports['default'];
-},{}],"/mnt/c/swiggis.original/node_modules/react-overlays/node_modules/dom-helpers/util/hyphenateStyle.js":[function(require,module,exports){
+},{}],"C:\\swiggis.austin\\node_modules\\react-overlays\\node_modules\\dom-helpers\\util\\hyphenateStyle.js":[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -49052,7 +48090,7 @@ function hyphenateStyleName(string) {
   return (0, _hyphenate2.default)(string).replace(msPattern, '-ms-');
 }
 module.exports = exports['default'];
-},{"./hyphenate":"/mnt/c/swiggis.original/node_modules/react-overlays/node_modules/dom-helpers/util/hyphenate.js"}],"/mnt/c/swiggis.original/node_modules/react-overlays/node_modules/dom-helpers/util/inDOM.js":[function(require,module,exports){
+},{"./hyphenate":"C:\\swiggis.austin\\node_modules\\react-overlays\\node_modules\\dom-helpers\\util\\hyphenate.js"}],"C:\\swiggis.austin\\node_modules\\react-overlays\\node_modules\\dom-helpers\\util\\inDOM.js":[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -49060,7 +48098,7 @@ Object.defineProperty(exports, "__esModule", {
 });
 exports.default = !!(typeof window !== 'undefined' && window.document && window.document.createElement);
 module.exports = exports['default'];
-},{}],"/mnt/c/swiggis.original/node_modules/react-overlays/node_modules/dom-helpers/util/scrollbarSize.js":[function(require,module,exports){
+},{}],"C:\\swiggis.austin\\node_modules\\react-overlays\\node_modules\\dom-helpers\\util\\scrollbarSize.js":[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -49096,7 +48134,7 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 var size = void 0;
 
 module.exports = exports['default'];
-},{"./inDOM":"/mnt/c/swiggis.original/node_modules/react-overlays/node_modules/dom-helpers/util/inDOM.js"}],"/mnt/c/swiggis.original/node_modules/react-overlays/node_modules/react-prop-types/lib/componentOrElement.js":[function(require,module,exports){
+},{"./inDOM":"C:\\swiggis.austin\\node_modules\\react-overlays\\node_modules\\dom-helpers\\util\\inDOM.js"}],"C:\\swiggis.austin\\node_modules\\react-overlays\\node_modules\\react-prop-types\\lib\\componentOrElement.js":[function(require,module,exports){
 'use strict';
 
 exports.__esModule = true;
@@ -49129,7 +48167,7 @@ function validate(props, propName, componentName, location, propFullName) {
 }
 
 exports.default = (0, _createChainableTypeChecker2.default)(validate);
-},{"./utils/createChainableTypeChecker":"/mnt/c/swiggis.original/node_modules/react-overlays/node_modules/react-prop-types/lib/utils/createChainableTypeChecker.js","react":"/mnt/c/swiggis.original/node_modules/react/react.js"}],"/mnt/c/swiggis.original/node_modules/react-overlays/node_modules/react-prop-types/lib/elementType.js":[function(require,module,exports){
+},{"./utils/createChainableTypeChecker":"C:\\swiggis.austin\\node_modules\\react-overlays\\node_modules\\react-prop-types\\lib\\utils\\createChainableTypeChecker.js","react":"C:\\swiggis.austin\\node_modules\\react\\react.js"}],"C:\\swiggis.austin\\node_modules\\react-overlays\\node_modules\\react-prop-types\\lib\\elementType.js":[function(require,module,exports){
 'use strict';
 
 exports.__esModule = true;
@@ -49162,7 +48200,7 @@ function elementType(props, propName, componentName, location, propFullName) {
 }
 
 exports.default = (0, _createChainableTypeChecker2.default)(elementType);
-},{"./utils/createChainableTypeChecker":"/mnt/c/swiggis.original/node_modules/react-overlays/node_modules/react-prop-types/lib/utils/createChainableTypeChecker.js","react":"/mnt/c/swiggis.original/node_modules/react/react.js"}],"/mnt/c/swiggis.original/node_modules/react-overlays/node_modules/react-prop-types/lib/utils/createChainableTypeChecker.js":[function(require,module,exports){
+},{"./utils/createChainableTypeChecker":"C:\\swiggis.austin\\node_modules\\react-overlays\\node_modules\\react-prop-types\\lib\\utils\\createChainableTypeChecker.js","react":"C:\\swiggis.austin\\node_modules\\react\\react.js"}],"C:\\swiggis.austin\\node_modules\\react-overlays\\node_modules\\react-prop-types\\lib\\utils\\createChainableTypeChecker.js":[function(require,module,exports){
 'use strict';
 
 exports.__esModule = true;
@@ -49203,7 +48241,7 @@ function createChainableTypeChecker(validate) {
 
   return chainedCheckType;
 }
-},{}],"/mnt/c/swiggis.original/node_modules/react-overlays/node_modules/warning/browser.js":[function(require,module,exports){
+},{}],"C:\\swiggis.austin\\node_modules\\react-overlays\\node_modules\\warning\\browser.js":[function(require,module,exports){
 (function (process){
 /**
  * Copyright 2014-2015, Facebook, Inc.
@@ -49267,7 +48305,7 @@ if (process.env.NODE_ENV !== 'production') {
 module.exports = warning;
 
 }).call(this,require('_process'))
-},{"_process":"/mnt/c/swiggis.original/node_modules/process/browser.js"}],"/mnt/c/swiggis.original/node_modules/react-prop-types/lib/all.js":[function(require,module,exports){
+},{"_process":"C:\\swiggis.austin\\node_modules\\process\\browser.js"}],"C:\\swiggis.austin\\node_modules\\react-prop-types\\lib\\all.js":[function(require,module,exports){
 'use strict';
 
 exports.__esModule = true;
@@ -49308,7 +48346,7 @@ function all() {
 }
 
 module.exports = exports['default'];
-},{"./common":"/mnt/c/swiggis.original/node_modules/react-prop-types/lib/common.js"}],"/mnt/c/swiggis.original/node_modules/react-prop-types/lib/common.js":[function(require,module,exports){
+},{"./common":"C:\\swiggis.austin\\node_modules\\react-prop-types\\lib\\common.js"}],"C:\\swiggis.austin\\node_modules\\react-prop-types\\lib\\common.js":[function(require,module,exports){
 'use strict';
 
 exports.__esModule = true;
@@ -49343,7 +48381,7 @@ function createChainableTypeChecker(validate) {
 
   return chainedCheckType;
 }
-},{}],"/mnt/c/swiggis.original/node_modules/react-prop-types/lib/deprecated.js":[function(require,module,exports){
+},{}],"C:\\swiggis.austin\\node_modules\\react-prop-types\\lib\\deprecated.js":[function(require,module,exports){
 'use strict';
 
 exports.__esModule = true;
@@ -49377,7 +48415,7 @@ function _resetWarned() {
 
 deprecated._resetWarned = _resetWarned;
 module.exports = exports['default'];
-},{"warning":"/mnt/c/swiggis.original/node_modules/warning/browser.js"}],"/mnt/c/swiggis.original/node_modules/react-prop-types/lib/elementType.js":[function(require,module,exports){
+},{"warning":"C:\\swiggis.austin\\node_modules\\warning\\browser.js"}],"C:\\swiggis.austin\\node_modules\\react-prop-types\\lib\\elementType.js":[function(require,module,exports){
 'use strict';
 
 exports.__esModule = true;
@@ -49419,7 +48457,7 @@ function validate(props, propName, componentName) {
 
 exports['default'] = _common.createChainableTypeChecker(validate);
 module.exports = exports['default'];
-},{"./common":"/mnt/c/swiggis.original/node_modules/react-prop-types/lib/common.js","react":"/mnt/c/swiggis.original/node_modules/react/react.js"}],"/mnt/c/swiggis.original/node_modules/react-prop-types/lib/isRequiredForA11y.js":[function(require,module,exports){
+},{"./common":"C:\\swiggis.austin\\node_modules\\react-prop-types\\lib\\common.js","react":"C:\\swiggis.austin\\node_modules\\react\\react.js"}],"C:\\swiggis.austin\\node_modules\\react-prop-types\\lib\\isRequiredForA11y.js":[function(require,module,exports){
 "use strict";
 
 exports.__esModule = true;
@@ -49436,7 +48474,7 @@ function isRequiredForA11y(propType) {
 }
 
 module.exports = exports["default"];
-},{}],"/mnt/c/swiggis.original/node_modules/react-prop-types/lib/singlePropFrom.js":[function(require,module,exports){
+},{}],"C:\\swiggis.austin\\node_modules\\react-prop-types\\lib\\singlePropFrom.js":[function(require,module,exports){
 /**
  * Checks if only one of the listed properties is in use. An error is given
  * if multiple have a value
@@ -49475,7 +48513,7 @@ function createSinglePropFromChecker() {
 }
 
 module.exports = exports['default'];
-},{}],"/mnt/c/swiggis.original/node_modules/react-router/lib/AsyncUtils.js":[function(require,module,exports){
+},{}],"C:\\swiggis.austin\\node_modules\\react-router\\lib\\AsyncUtils.js":[function(require,module,exports){
 "use strict";
 
 exports.__esModule = true;
@@ -49564,7 +48602,7 @@ function mapAsync(array, work, callback) {
     });
   });
 }
-},{}],"/mnt/c/swiggis.original/node_modules/react-router/lib/History.js":[function(require,module,exports){
+},{}],"C:\\swiggis.austin\\node_modules\\react-router\\lib\\History.js":[function(require,module,exports){
 (function (process){
 'use strict';
 
@@ -49596,7 +48634,7 @@ var History = {
 exports.default = History;
 module.exports = exports['default'];
 }).call(this,require('_process'))
-},{"./InternalPropTypes":"/mnt/c/swiggis.original/node_modules/react-router/lib/InternalPropTypes.js","./routerWarning":"/mnt/c/swiggis.original/node_modules/react-router/lib/routerWarning.js","_process":"/mnt/c/swiggis.original/node_modules/process/browser.js"}],"/mnt/c/swiggis.original/node_modules/react-router/lib/IndexLink.js":[function(require,module,exports){
+},{"./InternalPropTypes":"C:\\swiggis.austin\\node_modules\\react-router\\lib\\InternalPropTypes.js","./routerWarning":"C:\\swiggis.austin\\node_modules\\react-router\\lib\\routerWarning.js","_process":"C:\\swiggis.austin\\node_modules\\process\\browser.js"}],"C:\\swiggis.austin\\node_modules\\react-router\\lib\\IndexLink.js":[function(require,module,exports){
 'use strict';
 
 exports.__esModule = true;
@@ -49625,7 +48663,7 @@ var IndexLink = _react2.default.createClass({
 
 exports.default = IndexLink;
 module.exports = exports['default'];
-},{"./Link":"/mnt/c/swiggis.original/node_modules/react-router/lib/Link.js","react":"/mnt/c/swiggis.original/node_modules/react/react.js"}],"/mnt/c/swiggis.original/node_modules/react-router/lib/IndexRedirect.js":[function(require,module,exports){
+},{"./Link":"C:\\swiggis.austin\\node_modules\\react-router\\lib\\Link.js","react":"C:\\swiggis.austin\\node_modules\\react\\react.js"}],"C:\\swiggis.austin\\node_modules\\react-router\\lib\\IndexRedirect.js":[function(require,module,exports){
 (function (process){
 'use strict';
 
@@ -49691,7 +48729,7 @@ var IndexRedirect = _react2.default.createClass({
 exports.default = IndexRedirect;
 module.exports = exports['default'];
 }).call(this,require('_process'))
-},{"./InternalPropTypes":"/mnt/c/swiggis.original/node_modules/react-router/lib/InternalPropTypes.js","./Redirect":"/mnt/c/swiggis.original/node_modules/react-router/lib/Redirect.js","./routerWarning":"/mnt/c/swiggis.original/node_modules/react-router/lib/routerWarning.js","_process":"/mnt/c/swiggis.original/node_modules/process/browser.js","invariant":"/mnt/c/swiggis.original/node_modules/invariant/browser.js","react":"/mnt/c/swiggis.original/node_modules/react/react.js"}],"/mnt/c/swiggis.original/node_modules/react-router/lib/IndexRoute.js":[function(require,module,exports){
+},{"./InternalPropTypes":"C:\\swiggis.austin\\node_modules\\react-router\\lib\\InternalPropTypes.js","./Redirect":"C:\\swiggis.austin\\node_modules\\react-router\\lib\\Redirect.js","./routerWarning":"C:\\swiggis.austin\\node_modules\\react-router\\lib\\routerWarning.js","_process":"C:\\swiggis.austin\\node_modules\\process\\browser.js","invariant":"C:\\swiggis.austin\\node_modules\\invariant\\browser.js","react":"C:\\swiggis.austin\\node_modules\\react\\react.js"}],"C:\\swiggis.austin\\node_modules\\react-router\\lib\\IndexRoute.js":[function(require,module,exports){
 (function (process){
 'use strict';
 
@@ -49754,7 +48792,7 @@ var IndexRoute = _react2.default.createClass({
 exports.default = IndexRoute;
 module.exports = exports['default'];
 }).call(this,require('_process'))
-},{"./InternalPropTypes":"/mnt/c/swiggis.original/node_modules/react-router/lib/InternalPropTypes.js","./RouteUtils":"/mnt/c/swiggis.original/node_modules/react-router/lib/RouteUtils.js","./routerWarning":"/mnt/c/swiggis.original/node_modules/react-router/lib/routerWarning.js","_process":"/mnt/c/swiggis.original/node_modules/process/browser.js","invariant":"/mnt/c/swiggis.original/node_modules/invariant/browser.js","react":"/mnt/c/swiggis.original/node_modules/react/react.js"}],"/mnt/c/swiggis.original/node_modules/react-router/lib/InternalPropTypes.js":[function(require,module,exports){
+},{"./InternalPropTypes":"C:\\swiggis.austin\\node_modules\\react-router\\lib\\InternalPropTypes.js","./RouteUtils":"C:\\swiggis.austin\\node_modules\\react-router\\lib\\RouteUtils.js","./routerWarning":"C:\\swiggis.austin\\node_modules\\react-router\\lib\\routerWarning.js","_process":"C:\\swiggis.austin\\node_modules\\process\\browser.js","invariant":"C:\\swiggis.austin\\node_modules\\invariant\\browser.js","react":"C:\\swiggis.austin\\node_modules\\react\\react.js"}],"C:\\swiggis.austin\\node_modules\\react-router\\lib\\InternalPropTypes.js":[function(require,module,exports){
 'use strict';
 
 exports.__esModule = true;
@@ -49787,7 +48825,7 @@ var component = exports.component = oneOfType([func, string]);
 var components = exports.components = oneOfType([component, object]);
 var route = exports.route = oneOfType([object, element]);
 var routes = exports.routes = oneOfType([route, arrayOf(route)]);
-},{"react":"/mnt/c/swiggis.original/node_modules/react/react.js"}],"/mnt/c/swiggis.original/node_modules/react-router/lib/Lifecycle.js":[function(require,module,exports){
+},{"react":"C:\\swiggis.austin\\node_modules\\react\\react.js"}],"C:\\swiggis.austin\\node_modules\\react-router\\lib\\Lifecycle.js":[function(require,module,exports){
 (function (process){
 'use strict';
 
@@ -49858,7 +48896,7 @@ var Lifecycle = {
 exports.default = Lifecycle;
 module.exports = exports['default'];
 }).call(this,require('_process'))
-},{"./routerWarning":"/mnt/c/swiggis.original/node_modules/react-router/lib/routerWarning.js","_process":"/mnt/c/swiggis.original/node_modules/process/browser.js","invariant":"/mnt/c/swiggis.original/node_modules/invariant/browser.js","react":"/mnt/c/swiggis.original/node_modules/react/react.js"}],"/mnt/c/swiggis.original/node_modules/react-router/lib/Link.js":[function(require,module,exports){
+},{"./routerWarning":"C:\\swiggis.austin\\node_modules\\react-router\\lib\\routerWarning.js","_process":"C:\\swiggis.austin\\node_modules\\process\\browser.js","invariant":"C:\\swiggis.austin\\node_modules\\invariant\\browser.js","react":"C:\\swiggis.austin\\node_modules\\react\\react.js"}],"C:\\swiggis.austin\\node_modules\\react-router\\lib\\Link.js":[function(require,module,exports){
 (function (process){
 'use strict';
 
@@ -50037,7 +49075,7 @@ var Link = _react2.default.createClass({
 exports.default = Link;
 module.exports = exports['default'];
 }).call(this,require('_process'))
-},{"./PropTypes":"/mnt/c/swiggis.original/node_modules/react-router/lib/PropTypes.js","./routerWarning":"/mnt/c/swiggis.original/node_modules/react-router/lib/routerWarning.js","_process":"/mnt/c/swiggis.original/node_modules/process/browser.js","invariant":"/mnt/c/swiggis.original/node_modules/invariant/browser.js","react":"/mnt/c/swiggis.original/node_modules/react/react.js"}],"/mnt/c/swiggis.original/node_modules/react-router/lib/PatternUtils.js":[function(require,module,exports){
+},{"./PropTypes":"C:\\swiggis.austin\\node_modules\\react-router\\lib\\PropTypes.js","./routerWarning":"C:\\swiggis.austin\\node_modules\\react-router\\lib\\routerWarning.js","_process":"C:\\swiggis.austin\\node_modules\\process\\browser.js","invariant":"C:\\swiggis.austin\\node_modules\\invariant\\browser.js","react":"C:\\swiggis.austin\\node_modules\\react\\react.js"}],"C:\\swiggis.austin\\node_modules\\react-router\\lib\\PatternUtils.js":[function(require,module,exports){
 (function (process){
 'use strict';
 
@@ -50252,7 +49290,7 @@ function formatPattern(pattern, params) {
   return pathname.replace(/\/+/g, '/');
 }
 }).call(this,require('_process'))
-},{"_process":"/mnt/c/swiggis.original/node_modules/process/browser.js","invariant":"/mnt/c/swiggis.original/node_modules/invariant/browser.js"}],"/mnt/c/swiggis.original/node_modules/react-router/lib/PropTypes.js":[function(require,module,exports){
+},{"_process":"C:\\swiggis.austin\\node_modules\\process\\browser.js","invariant":"C:\\swiggis.austin\\node_modules\\invariant\\browser.js"}],"C:\\swiggis.austin\\node_modules\\react-router\\lib\\PropTypes.js":[function(require,module,exports){
 (function (process){
 'use strict';
 
@@ -50356,7 +49394,7 @@ if (process.env.NODE_ENV !== 'production') {
 
 exports.default = defaultExport;
 }).call(this,require('_process'))
-},{"./InternalPropTypes":"/mnt/c/swiggis.original/node_modules/react-router/lib/InternalPropTypes.js","./deprecateObjectProperties":"/mnt/c/swiggis.original/node_modules/react-router/lib/deprecateObjectProperties.js","./routerWarning":"/mnt/c/swiggis.original/node_modules/react-router/lib/routerWarning.js","_process":"/mnt/c/swiggis.original/node_modules/process/browser.js","react":"/mnt/c/swiggis.original/node_modules/react/react.js"}],"/mnt/c/swiggis.original/node_modules/react-router/lib/Redirect.js":[function(require,module,exports){
+},{"./InternalPropTypes":"C:\\swiggis.austin\\node_modules\\react-router\\lib\\InternalPropTypes.js","./deprecateObjectProperties":"C:\\swiggis.austin\\node_modules\\react-router\\lib\\deprecateObjectProperties.js","./routerWarning":"C:\\swiggis.austin\\node_modules\\react-router\\lib\\routerWarning.js","_process":"C:\\swiggis.austin\\node_modules\\process\\browser.js","react":"C:\\swiggis.austin\\node_modules\\react\\react.js"}],"C:\\swiggis.austin\\node_modules\\react-router\\lib\\Redirect.js":[function(require,module,exports){
 (function (process){
 'use strict';
 
@@ -50461,7 +49499,7 @@ var Redirect = _react2.default.createClass({
 exports.default = Redirect;
 module.exports = exports['default'];
 }).call(this,require('_process'))
-},{"./InternalPropTypes":"/mnt/c/swiggis.original/node_modules/react-router/lib/InternalPropTypes.js","./PatternUtils":"/mnt/c/swiggis.original/node_modules/react-router/lib/PatternUtils.js","./RouteUtils":"/mnt/c/swiggis.original/node_modules/react-router/lib/RouteUtils.js","_process":"/mnt/c/swiggis.original/node_modules/process/browser.js","invariant":"/mnt/c/swiggis.original/node_modules/invariant/browser.js","react":"/mnt/c/swiggis.original/node_modules/react/react.js"}],"/mnt/c/swiggis.original/node_modules/react-router/lib/Route.js":[function(require,module,exports){
+},{"./InternalPropTypes":"C:\\swiggis.austin\\node_modules\\react-router\\lib\\InternalPropTypes.js","./PatternUtils":"C:\\swiggis.austin\\node_modules\\react-router\\lib\\PatternUtils.js","./RouteUtils":"C:\\swiggis.austin\\node_modules\\react-router\\lib\\RouteUtils.js","_process":"C:\\swiggis.austin\\node_modules\\process\\browser.js","invariant":"C:\\swiggis.austin\\node_modules\\invariant\\browser.js","react":"C:\\swiggis.austin\\node_modules\\react\\react.js"}],"C:\\swiggis.austin\\node_modules\\react-router\\lib\\Route.js":[function(require,module,exports){
 (function (process){
 'use strict';
 
@@ -50521,7 +49559,7 @@ var Route = _react2.default.createClass({
 exports.default = Route;
 module.exports = exports['default'];
 }).call(this,require('_process'))
-},{"./InternalPropTypes":"/mnt/c/swiggis.original/node_modules/react-router/lib/InternalPropTypes.js","./RouteUtils":"/mnt/c/swiggis.original/node_modules/react-router/lib/RouteUtils.js","_process":"/mnt/c/swiggis.original/node_modules/process/browser.js","invariant":"/mnt/c/swiggis.original/node_modules/invariant/browser.js","react":"/mnt/c/swiggis.original/node_modules/react/react.js"}],"/mnt/c/swiggis.original/node_modules/react-router/lib/RouteContext.js":[function(require,module,exports){
+},{"./InternalPropTypes":"C:\\swiggis.austin\\node_modules\\react-router\\lib\\InternalPropTypes.js","./RouteUtils":"C:\\swiggis.austin\\node_modules\\react-router\\lib\\RouteUtils.js","_process":"C:\\swiggis.austin\\node_modules\\process\\browser.js","invariant":"C:\\swiggis.austin\\node_modules\\invariant\\browser.js","react":"C:\\swiggis.austin\\node_modules\\react\\react.js"}],"C:\\swiggis.austin\\node_modules\\react-router\\lib\\RouteContext.js":[function(require,module,exports){
 (function (process){
 'use strict';
 
@@ -50569,7 +49607,7 @@ var RouteContext = {
 exports.default = RouteContext;
 module.exports = exports['default'];
 }).call(this,require('_process'))
-},{"./routerWarning":"/mnt/c/swiggis.original/node_modules/react-router/lib/routerWarning.js","_process":"/mnt/c/swiggis.original/node_modules/process/browser.js","react":"/mnt/c/swiggis.original/node_modules/react/react.js"}],"/mnt/c/swiggis.original/node_modules/react-router/lib/RouteUtils.js":[function(require,module,exports){
+},{"./routerWarning":"C:\\swiggis.austin\\node_modules\\react-router\\lib\\routerWarning.js","_process":"C:\\swiggis.austin\\node_modules\\process\\browser.js","react":"C:\\swiggis.austin\\node_modules\\react\\react.js"}],"C:\\swiggis.austin\\node_modules\\react-router\\lib\\RouteUtils.js":[function(require,module,exports){
 'use strict';
 
 exports.__esModule = true;
@@ -50663,7 +49701,7 @@ function createRoutes(routes) {
 
   return routes;
 }
-},{"react":"/mnt/c/swiggis.original/node_modules/react/react.js"}],"/mnt/c/swiggis.original/node_modules/react-router/lib/Router.js":[function(require,module,exports){
+},{"react":"C:\\swiggis.austin\\node_modules\\react\\react.js"}],"C:\\swiggis.austin\\node_modules\\react-router\\lib\\Router.js":[function(require,module,exports){
 (function (process){
 'use strict';
 
@@ -50890,7 +49928,7 @@ var Router = _react2.default.createClass({
 exports.default = Router;
 module.exports = exports['default'];
 }).call(this,require('_process'))
-},{"./InternalPropTypes":"/mnt/c/swiggis.original/node_modules/react-router/lib/InternalPropTypes.js","./RouteUtils":"/mnt/c/swiggis.original/node_modules/react-router/lib/RouteUtils.js","./RouterContext":"/mnt/c/swiggis.original/node_modules/react-router/lib/RouterContext.js","./RouterUtils":"/mnt/c/swiggis.original/node_modules/react-router/lib/RouterUtils.js","./createTransitionManager":"/mnt/c/swiggis.original/node_modules/react-router/lib/createTransitionManager.js","./routerWarning":"/mnt/c/swiggis.original/node_modules/react-router/lib/routerWarning.js","_process":"/mnt/c/swiggis.original/node_modules/process/browser.js","history/lib/createHashHistory":"/mnt/c/swiggis.original/node_modules/react-router/node_modules/history/lib/createHashHistory.js","history/lib/useQueries":"/mnt/c/swiggis.original/node_modules/react-router/node_modules/history/lib/useQueries.js","invariant":"/mnt/c/swiggis.original/node_modules/invariant/browser.js","react":"/mnt/c/swiggis.original/node_modules/react/react.js"}],"/mnt/c/swiggis.original/node_modules/react-router/lib/RouterContext.js":[function(require,module,exports){
+},{"./InternalPropTypes":"C:\\swiggis.austin\\node_modules\\react-router\\lib\\InternalPropTypes.js","./RouteUtils":"C:\\swiggis.austin\\node_modules\\react-router\\lib\\RouteUtils.js","./RouterContext":"C:\\swiggis.austin\\node_modules\\react-router\\lib\\RouterContext.js","./RouterUtils":"C:\\swiggis.austin\\node_modules\\react-router\\lib\\RouterUtils.js","./createTransitionManager":"C:\\swiggis.austin\\node_modules\\react-router\\lib\\createTransitionManager.js","./routerWarning":"C:\\swiggis.austin\\node_modules\\react-router\\lib\\routerWarning.js","_process":"C:\\swiggis.austin\\node_modules\\process\\browser.js","history/lib/createHashHistory":"C:\\swiggis.austin\\node_modules\\react-router\\node_modules\\history\\lib\\createHashHistory.js","history/lib/useQueries":"C:\\swiggis.austin\\node_modules\\react-router\\node_modules\\history\\lib\\useQueries.js","invariant":"C:\\swiggis.austin\\node_modules\\invariant\\browser.js","react":"C:\\swiggis.austin\\node_modules\\react\\react.js"}],"C:\\swiggis.austin\\node_modules\\react-router\\lib\\RouterContext.js":[function(require,module,exports){
 (function (process){
 'use strict';
 
@@ -51049,7 +50087,7 @@ var RouterContext = _react2.default.createClass({
 exports.default = RouterContext;
 module.exports = exports['default'];
 }).call(this,require('_process'))
-},{"./RouteUtils":"/mnt/c/swiggis.original/node_modules/react-router/lib/RouteUtils.js","./deprecateObjectProperties":"/mnt/c/swiggis.original/node_modules/react-router/lib/deprecateObjectProperties.js","./getRouteParams":"/mnt/c/swiggis.original/node_modules/react-router/lib/getRouteParams.js","./routerWarning":"/mnt/c/swiggis.original/node_modules/react-router/lib/routerWarning.js","_process":"/mnt/c/swiggis.original/node_modules/process/browser.js","invariant":"/mnt/c/swiggis.original/node_modules/invariant/browser.js","react":"/mnt/c/swiggis.original/node_modules/react/react.js"}],"/mnt/c/swiggis.original/node_modules/react-router/lib/RouterUtils.js":[function(require,module,exports){
+},{"./RouteUtils":"C:\\swiggis.austin\\node_modules\\react-router\\lib\\RouteUtils.js","./deprecateObjectProperties":"C:\\swiggis.austin\\node_modules\\react-router\\lib\\deprecateObjectProperties.js","./getRouteParams":"C:\\swiggis.austin\\node_modules\\react-router\\lib\\getRouteParams.js","./routerWarning":"C:\\swiggis.austin\\node_modules\\react-router\\lib\\routerWarning.js","_process":"C:\\swiggis.austin\\node_modules\\process\\browser.js","invariant":"C:\\swiggis.austin\\node_modules\\invariant\\browser.js","react":"C:\\swiggis.austin\\node_modules\\react\\react.js"}],"C:\\swiggis.austin\\node_modules\\react-router\\lib\\RouterUtils.js":[function(require,module,exports){
 (function (process){
 'use strict';
 
@@ -51084,7 +50122,7 @@ function createRoutingHistory(history, transitionManager) {
   return history;
 }
 }).call(this,require('_process'))
-},{"./deprecateObjectProperties":"/mnt/c/swiggis.original/node_modules/react-router/lib/deprecateObjectProperties.js","_process":"/mnt/c/swiggis.original/node_modules/process/browser.js"}],"/mnt/c/swiggis.original/node_modules/react-router/lib/RoutingContext.js":[function(require,module,exports){
+},{"./deprecateObjectProperties":"C:\\swiggis.austin\\node_modules\\react-router\\lib\\deprecateObjectProperties.js","_process":"C:\\swiggis.austin\\node_modules\\process\\browser.js"}],"C:\\swiggis.austin\\node_modules\\react-router\\lib\\RoutingContext.js":[function(require,module,exports){
 (function (process){
 'use strict';
 
@@ -51117,7 +50155,7 @@ var RoutingContext = _react2.default.createClass({
 exports.default = RoutingContext;
 module.exports = exports['default'];
 }).call(this,require('_process'))
-},{"./RouterContext":"/mnt/c/swiggis.original/node_modules/react-router/lib/RouterContext.js","./routerWarning":"/mnt/c/swiggis.original/node_modules/react-router/lib/routerWarning.js","_process":"/mnt/c/swiggis.original/node_modules/process/browser.js","react":"/mnt/c/swiggis.original/node_modules/react/react.js"}],"/mnt/c/swiggis.original/node_modules/react-router/lib/TransitionUtils.js":[function(require,module,exports){
+},{"./RouterContext":"C:\\swiggis.austin\\node_modules\\react-router\\lib\\RouterContext.js","./routerWarning":"C:\\swiggis.austin\\node_modules\\react-router\\lib\\routerWarning.js","_process":"C:\\swiggis.austin\\node_modules\\process\\browser.js","react":"C:\\swiggis.austin\\node_modules\\react\\react.js"}],"C:\\swiggis.austin\\node_modules\\react-router\\lib\\TransitionUtils.js":[function(require,module,exports){
 (function (process){
 'use strict';
 
@@ -51242,7 +50280,7 @@ function runLeaveHooks(routes, prevState) {
   }
 }
 }).call(this,require('_process'))
-},{"./AsyncUtils":"/mnt/c/swiggis.original/node_modules/react-router/lib/AsyncUtils.js","./routerWarning":"/mnt/c/swiggis.original/node_modules/react-router/lib/routerWarning.js","_process":"/mnt/c/swiggis.original/node_modules/process/browser.js"}],"/mnt/c/swiggis.original/node_modules/react-router/lib/applyRouterMiddleware.js":[function(require,module,exports){
+},{"./AsyncUtils":"C:\\swiggis.austin\\node_modules\\react-router\\lib\\AsyncUtils.js","./routerWarning":"C:\\swiggis.austin\\node_modules\\react-router\\lib\\routerWarning.js","_process":"C:\\swiggis.austin\\node_modules\\process\\browser.js"}],"C:\\swiggis.austin\\node_modules\\react-router\\lib\\applyRouterMiddleware.js":[function(require,module,exports){
 (function (process){
 'use strict';
 
@@ -51302,7 +50340,7 @@ exports.default = function () {
 
 module.exports = exports['default'];
 }).call(this,require('_process'))
-},{"./RouterContext":"/mnt/c/swiggis.original/node_modules/react-router/lib/RouterContext.js","./routerWarning":"/mnt/c/swiggis.original/node_modules/react-router/lib/routerWarning.js","_process":"/mnt/c/swiggis.original/node_modules/process/browser.js","react":"/mnt/c/swiggis.original/node_modules/react/react.js"}],"/mnt/c/swiggis.original/node_modules/react-router/lib/browserHistory.js":[function(require,module,exports){
+},{"./RouterContext":"C:\\swiggis.austin\\node_modules\\react-router\\lib\\RouterContext.js","./routerWarning":"C:\\swiggis.austin\\node_modules\\react-router\\lib\\routerWarning.js","_process":"C:\\swiggis.austin\\node_modules\\process\\browser.js","react":"C:\\swiggis.austin\\node_modules\\react\\react.js"}],"C:\\swiggis.austin\\node_modules\\react-router\\lib\\browserHistory.js":[function(require,module,exports){
 'use strict';
 
 exports.__esModule = true;
@@ -51319,7 +50357,7 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 
 exports.default = (0, _createRouterHistory2.default)(_createBrowserHistory2.default);
 module.exports = exports['default'];
-},{"./createRouterHistory":"/mnt/c/swiggis.original/node_modules/react-router/lib/createRouterHistory.js","history/lib/createBrowserHistory":"/mnt/c/swiggis.original/node_modules/react-router/node_modules/history/lib/createBrowserHistory.js"}],"/mnt/c/swiggis.original/node_modules/react-router/lib/computeChangedRoutes.js":[function(require,module,exports){
+},{"./createRouterHistory":"C:\\swiggis.austin\\node_modules\\react-router\\lib\\createRouterHistory.js","history/lib/createBrowserHistory":"C:\\swiggis.austin\\node_modules\\react-router\\node_modules\\history\\lib\\createBrowserHistory.js"}],"C:\\swiggis.austin\\node_modules\\react-router\\lib\\computeChangedRoutes.js":[function(require,module,exports){
 'use strict';
 
 exports.__esModule = true;
@@ -51397,7 +50435,7 @@ function computeChangedRoutes(prevState, nextState) {
 
 exports.default = computeChangedRoutes;
 module.exports = exports['default'];
-},{"./PatternUtils":"/mnt/c/swiggis.original/node_modules/react-router/lib/PatternUtils.js"}],"/mnt/c/swiggis.original/node_modules/react-router/lib/createMemoryHistory.js":[function(require,module,exports){
+},{"./PatternUtils":"C:\\swiggis.austin\\node_modules\\react-router\\lib\\PatternUtils.js"}],"C:\\swiggis.austin\\node_modules\\react-router\\lib\\createMemoryHistory.js":[function(require,module,exports){
 'use strict';
 
 exports.__esModule = true;
@@ -51430,7 +50468,7 @@ function createMemoryHistory(options) {
   return history;
 }
 module.exports = exports['default'];
-},{"history/lib/createMemoryHistory":"/mnt/c/swiggis.original/node_modules/react-router/node_modules/history/lib/createMemoryHistory.js","history/lib/useBasename":"/mnt/c/swiggis.original/node_modules/react-router/node_modules/history/lib/useBasename.js","history/lib/useQueries":"/mnt/c/swiggis.original/node_modules/react-router/node_modules/history/lib/useQueries.js"}],"/mnt/c/swiggis.original/node_modules/react-router/lib/createRouterHistory.js":[function(require,module,exports){
+},{"history/lib/createMemoryHistory":"C:\\swiggis.austin\\node_modules\\react-router\\node_modules\\history\\lib\\createMemoryHistory.js","history/lib/useBasename":"C:\\swiggis.austin\\node_modules\\react-router\\node_modules\\history\\lib\\useBasename.js","history/lib/useQueries":"C:\\swiggis.austin\\node_modules\\react-router\\node_modules\\history\\lib\\useQueries.js"}],"C:\\swiggis.austin\\node_modules\\react-router\\lib\\createRouterHistory.js":[function(require,module,exports){
 'use strict';
 
 exports.__esModule = true;
@@ -51450,7 +50488,7 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 var canUseDOM = !!(typeof window !== 'undefined' && window.document && window.document.createElement);
 
 module.exports = exports['default'];
-},{"./useRouterHistory":"/mnt/c/swiggis.original/node_modules/react-router/lib/useRouterHistory.js"}],"/mnt/c/swiggis.original/node_modules/react-router/lib/createTransitionManager.js":[function(require,module,exports){
+},{"./useRouterHistory":"C:\\swiggis.austin\\node_modules\\react-router\\lib\\useRouterHistory.js"}],"C:\\swiggis.austin\\node_modules\\react-router\\lib\\createTransitionManager.js":[function(require,module,exports){
 (function (process){
 'use strict';
 
@@ -51755,7 +50793,7 @@ function createTransitionManager(history, routes) {
 
 module.exports = exports['default'];
 }).call(this,require('_process'))
-},{"./TransitionUtils":"/mnt/c/swiggis.original/node_modules/react-router/lib/TransitionUtils.js","./computeChangedRoutes":"/mnt/c/swiggis.original/node_modules/react-router/lib/computeChangedRoutes.js","./getComponents":"/mnt/c/swiggis.original/node_modules/react-router/lib/getComponents.js","./isActive":"/mnt/c/swiggis.original/node_modules/react-router/lib/isActive.js","./matchRoutes":"/mnt/c/swiggis.original/node_modules/react-router/lib/matchRoutes.js","./routerWarning":"/mnt/c/swiggis.original/node_modules/react-router/lib/routerWarning.js","_process":"/mnt/c/swiggis.original/node_modules/process/browser.js"}],"/mnt/c/swiggis.original/node_modules/react-router/lib/deprecateObjectProperties.js":[function(require,module,exports){
+},{"./TransitionUtils":"C:\\swiggis.austin\\node_modules\\react-router\\lib\\TransitionUtils.js","./computeChangedRoutes":"C:\\swiggis.austin\\node_modules\\react-router\\lib\\computeChangedRoutes.js","./getComponents":"C:\\swiggis.austin\\node_modules\\react-router\\lib\\getComponents.js","./isActive":"C:\\swiggis.austin\\node_modules\\react-router\\lib\\isActive.js","./matchRoutes":"C:\\swiggis.austin\\node_modules\\react-router\\lib\\matchRoutes.js","./routerWarning":"C:\\swiggis.austin\\node_modules\\react-router\\lib\\routerWarning.js","_process":"C:\\swiggis.austin\\node_modules\\process\\browser.js"}],"C:\\swiggis.austin\\node_modules\\react-router\\lib\\deprecateObjectProperties.js":[function(require,module,exports){
 (function (process){
 'use strict';
 
@@ -51833,7 +50871,7 @@ if (process.env.NODE_ENV !== 'production') {
 
 exports.default = deprecateObjectProperties;
 }).call(this,require('_process'))
-},{"./routerWarning":"/mnt/c/swiggis.original/node_modules/react-router/lib/routerWarning.js","_process":"/mnt/c/swiggis.original/node_modules/process/browser.js"}],"/mnt/c/swiggis.original/node_modules/react-router/lib/getComponents.js":[function(require,module,exports){
+},{"./routerWarning":"C:\\swiggis.austin\\node_modules\\react-router\\lib\\routerWarning.js","_process":"C:\\swiggis.austin\\node_modules\\process\\browser.js"}],"C:\\swiggis.austin\\node_modules\\react-router\\lib\\getComponents.js":[function(require,module,exports){
 'use strict';
 
 exports.__esModule = true;
@@ -51880,7 +50918,7 @@ function getComponents(nextState, callback) {
 
 exports.default = getComponents;
 module.exports = exports['default'];
-},{"./AsyncUtils":"/mnt/c/swiggis.original/node_modules/react-router/lib/AsyncUtils.js","./makeStateWithLocation":"/mnt/c/swiggis.original/node_modules/react-router/lib/makeStateWithLocation.js"}],"/mnt/c/swiggis.original/node_modules/react-router/lib/getRouteParams.js":[function(require,module,exports){
+},{"./AsyncUtils":"C:\\swiggis.austin\\node_modules\\react-router\\lib\\AsyncUtils.js","./makeStateWithLocation":"C:\\swiggis.austin\\node_modules\\react-router\\lib\\makeStateWithLocation.js"}],"C:\\swiggis.austin\\node_modules\\react-router\\lib\\getRouteParams.js":[function(require,module,exports){
 'use strict';
 
 exports.__esModule = true;
@@ -51907,7 +50945,7 @@ function getRouteParams(route, params) {
 
 exports.default = getRouteParams;
 module.exports = exports['default'];
-},{"./PatternUtils":"/mnt/c/swiggis.original/node_modules/react-router/lib/PatternUtils.js"}],"/mnt/c/swiggis.original/node_modules/react-router/lib/hashHistory.js":[function(require,module,exports){
+},{"./PatternUtils":"C:\\swiggis.austin\\node_modules\\react-router\\lib\\PatternUtils.js"}],"C:\\swiggis.austin\\node_modules\\react-router\\lib\\hashHistory.js":[function(require,module,exports){
 'use strict';
 
 exports.__esModule = true;
@@ -51924,7 +50962,7 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 
 exports.default = (0, _createRouterHistory2.default)(_createHashHistory2.default);
 module.exports = exports['default'];
-},{"./createRouterHistory":"/mnt/c/swiggis.original/node_modules/react-router/lib/createRouterHistory.js","history/lib/createHashHistory":"/mnt/c/swiggis.original/node_modules/react-router/node_modules/history/lib/createHashHistory.js"}],"/mnt/c/swiggis.original/node_modules/react-router/lib/index.js":[function(require,module,exports){
+},{"./createRouterHistory":"C:\\swiggis.austin\\node_modules\\react-router\\lib\\createRouterHistory.js","history/lib/createHashHistory":"C:\\swiggis.austin\\node_modules\\react-router\\node_modules\\history\\lib\\createHashHistory.js"}],"C:\\swiggis.austin\\node_modules\\react-router\\lib\\index.js":[function(require,module,exports){
 'use strict';
 
 exports.__esModule = true;
@@ -52081,7 +51119,7 @@ exports.applyRouterMiddleware = _applyRouterMiddleware3.default;
 exports.browserHistory = _browserHistory3.default;
 exports.hashHistory = _hashHistory3.default;
 exports.createMemoryHistory = _createMemoryHistory3.default;
-},{"./History":"/mnt/c/swiggis.original/node_modules/react-router/lib/History.js","./IndexLink":"/mnt/c/swiggis.original/node_modules/react-router/lib/IndexLink.js","./IndexRedirect":"/mnt/c/swiggis.original/node_modules/react-router/lib/IndexRedirect.js","./IndexRoute":"/mnt/c/swiggis.original/node_modules/react-router/lib/IndexRoute.js","./Lifecycle":"/mnt/c/swiggis.original/node_modules/react-router/lib/Lifecycle.js","./Link":"/mnt/c/swiggis.original/node_modules/react-router/lib/Link.js","./PatternUtils":"/mnt/c/swiggis.original/node_modules/react-router/lib/PatternUtils.js","./PropTypes":"/mnt/c/swiggis.original/node_modules/react-router/lib/PropTypes.js","./Redirect":"/mnt/c/swiggis.original/node_modules/react-router/lib/Redirect.js","./Route":"/mnt/c/swiggis.original/node_modules/react-router/lib/Route.js","./RouteContext":"/mnt/c/swiggis.original/node_modules/react-router/lib/RouteContext.js","./RouteUtils":"/mnt/c/swiggis.original/node_modules/react-router/lib/RouteUtils.js","./Router":"/mnt/c/swiggis.original/node_modules/react-router/lib/Router.js","./RouterContext":"/mnt/c/swiggis.original/node_modules/react-router/lib/RouterContext.js","./RoutingContext":"/mnt/c/swiggis.original/node_modules/react-router/lib/RoutingContext.js","./applyRouterMiddleware":"/mnt/c/swiggis.original/node_modules/react-router/lib/applyRouterMiddleware.js","./browserHistory":"/mnt/c/swiggis.original/node_modules/react-router/lib/browserHistory.js","./createMemoryHistory":"/mnt/c/swiggis.original/node_modules/react-router/lib/createMemoryHistory.js","./hashHistory":"/mnt/c/swiggis.original/node_modules/react-router/lib/hashHistory.js","./match":"/mnt/c/swiggis.original/node_modules/react-router/lib/match.js","./useRouterHistory":"/mnt/c/swiggis.original/node_modules/react-router/lib/useRouterHistory.js","./useRoutes":"/mnt/c/swiggis.original/node_modules/react-router/lib/useRoutes.js","./withRouter":"/mnt/c/swiggis.original/node_modules/react-router/lib/withRouter.js"}],"/mnt/c/swiggis.original/node_modules/react-router/lib/isActive.js":[function(require,module,exports){
+},{"./History":"C:\\swiggis.austin\\node_modules\\react-router\\lib\\History.js","./IndexLink":"C:\\swiggis.austin\\node_modules\\react-router\\lib\\IndexLink.js","./IndexRedirect":"C:\\swiggis.austin\\node_modules\\react-router\\lib\\IndexRedirect.js","./IndexRoute":"C:\\swiggis.austin\\node_modules\\react-router\\lib\\IndexRoute.js","./Lifecycle":"C:\\swiggis.austin\\node_modules\\react-router\\lib\\Lifecycle.js","./Link":"C:\\swiggis.austin\\node_modules\\react-router\\lib\\Link.js","./PatternUtils":"C:\\swiggis.austin\\node_modules\\react-router\\lib\\PatternUtils.js","./PropTypes":"C:\\swiggis.austin\\node_modules\\react-router\\lib\\PropTypes.js","./Redirect":"C:\\swiggis.austin\\node_modules\\react-router\\lib\\Redirect.js","./Route":"C:\\swiggis.austin\\node_modules\\react-router\\lib\\Route.js","./RouteContext":"C:\\swiggis.austin\\node_modules\\react-router\\lib\\RouteContext.js","./RouteUtils":"C:\\swiggis.austin\\node_modules\\react-router\\lib\\RouteUtils.js","./Router":"C:\\swiggis.austin\\node_modules\\react-router\\lib\\Router.js","./RouterContext":"C:\\swiggis.austin\\node_modules\\react-router\\lib\\RouterContext.js","./RoutingContext":"C:\\swiggis.austin\\node_modules\\react-router\\lib\\RoutingContext.js","./applyRouterMiddleware":"C:\\swiggis.austin\\node_modules\\react-router\\lib\\applyRouterMiddleware.js","./browserHistory":"C:\\swiggis.austin\\node_modules\\react-router\\lib\\browserHistory.js","./createMemoryHistory":"C:\\swiggis.austin\\node_modules\\react-router\\lib\\createMemoryHistory.js","./hashHistory":"C:\\swiggis.austin\\node_modules\\react-router\\lib\\hashHistory.js","./match":"C:\\swiggis.austin\\node_modules\\react-router\\lib\\match.js","./useRouterHistory":"C:\\swiggis.austin\\node_modules\\react-router\\lib\\useRouterHistory.js","./useRoutes":"C:\\swiggis.austin\\node_modules\\react-router\\lib\\useRoutes.js","./withRouter":"C:\\swiggis.austin\\node_modules\\react-router\\lib\\withRouter.js"}],"C:\\swiggis.austin\\node_modules\\react-router\\lib\\isActive.js":[function(require,module,exports){
 'use strict';
 
 exports.__esModule = true;
@@ -52234,7 +51272,7 @@ function isActive(_ref, indexOnly, currentLocation, routes, params) {
   return queryIsActive(query, currentLocation.query);
 }
 module.exports = exports['default'];
-},{"./PatternUtils":"/mnt/c/swiggis.original/node_modules/react-router/lib/PatternUtils.js"}],"/mnt/c/swiggis.original/node_modules/react-router/lib/makeStateWithLocation.js":[function(require,module,exports){
+},{"./PatternUtils":"C:\\swiggis.austin\\node_modules\\react-router\\lib\\PatternUtils.js"}],"C:\\swiggis.austin\\node_modules\\react-router\\lib\\makeStateWithLocation.js":[function(require,module,exports){
 (function (process){
 'use strict';
 
@@ -52286,7 +51324,7 @@ function makeStateWithLocation(state, location) {
 }
 module.exports = exports['default'];
 }).call(this,require('_process'))
-},{"./deprecateObjectProperties":"/mnt/c/swiggis.original/node_modules/react-router/lib/deprecateObjectProperties.js","./routerWarning":"/mnt/c/swiggis.original/node_modules/react-router/lib/routerWarning.js","_process":"/mnt/c/swiggis.original/node_modules/process/browser.js"}],"/mnt/c/swiggis.original/node_modules/react-router/lib/match.js":[function(require,module,exports){
+},{"./deprecateObjectProperties":"C:\\swiggis.austin\\node_modules\\react-router\\lib\\deprecateObjectProperties.js","./routerWarning":"C:\\swiggis.austin\\node_modules\\react-router\\lib\\routerWarning.js","_process":"C:\\swiggis.austin\\node_modules\\process\\browser.js"}],"C:\\swiggis.austin\\node_modules\\react-router\\lib\\match.js":[function(require,module,exports){
 (function (process){
 'use strict';
 
@@ -52372,7 +51410,7 @@ function match(_ref, callback) {
 exports.default = match;
 module.exports = exports['default'];
 }).call(this,require('_process'))
-},{"./RouteUtils":"/mnt/c/swiggis.original/node_modules/react-router/lib/RouteUtils.js","./RouterUtils":"/mnt/c/swiggis.original/node_modules/react-router/lib/RouterUtils.js","./createMemoryHistory":"/mnt/c/swiggis.original/node_modules/react-router/lib/createMemoryHistory.js","./createTransitionManager":"/mnt/c/swiggis.original/node_modules/react-router/lib/createTransitionManager.js","_process":"/mnt/c/swiggis.original/node_modules/process/browser.js","history/lib/Actions":"/mnt/c/swiggis.original/node_modules/react-router/node_modules/history/lib/Actions.js","invariant":"/mnt/c/swiggis.original/node_modules/invariant/browser.js"}],"/mnt/c/swiggis.original/node_modules/react-router/lib/matchRoutes.js":[function(require,module,exports){
+},{"./RouteUtils":"C:\\swiggis.austin\\node_modules\\react-router\\lib\\RouteUtils.js","./RouterUtils":"C:\\swiggis.austin\\node_modules\\react-router\\lib\\RouterUtils.js","./createMemoryHistory":"C:\\swiggis.austin\\node_modules\\react-router\\lib\\createMemoryHistory.js","./createTransitionManager":"C:\\swiggis.austin\\node_modules\\react-router\\lib\\createTransitionManager.js","_process":"C:\\swiggis.austin\\node_modules\\process\\browser.js","history/lib/Actions":"C:\\swiggis.austin\\node_modules\\react-router\\node_modules\\history\\lib\\Actions.js","invariant":"C:\\swiggis.austin\\node_modules\\invariant\\browser.js"}],"C:\\swiggis.austin\\node_modules\\react-router\\lib\\matchRoutes.js":[function(require,module,exports){
 (function (process){
 'use strict';
 
@@ -52626,7 +51664,7 @@ function matchRoutes(routes, location, callback, remainingPathname) {
 }
 module.exports = exports['default'];
 }).call(this,require('_process'))
-},{"./AsyncUtils":"/mnt/c/swiggis.original/node_modules/react-router/lib/AsyncUtils.js","./PatternUtils":"/mnt/c/swiggis.original/node_modules/react-router/lib/PatternUtils.js","./RouteUtils":"/mnt/c/swiggis.original/node_modules/react-router/lib/RouteUtils.js","./makeStateWithLocation":"/mnt/c/swiggis.original/node_modules/react-router/lib/makeStateWithLocation.js","./routerWarning":"/mnt/c/swiggis.original/node_modules/react-router/lib/routerWarning.js","_process":"/mnt/c/swiggis.original/node_modules/process/browser.js"}],"/mnt/c/swiggis.original/node_modules/react-router/lib/routerWarning.js":[function(require,module,exports){
+},{"./AsyncUtils":"C:\\swiggis.austin\\node_modules\\react-router\\lib\\AsyncUtils.js","./PatternUtils":"C:\\swiggis.austin\\node_modules\\react-router\\lib\\PatternUtils.js","./RouteUtils":"C:\\swiggis.austin\\node_modules\\react-router\\lib\\RouteUtils.js","./makeStateWithLocation":"C:\\swiggis.austin\\node_modules\\react-router\\lib\\makeStateWithLocation.js","./routerWarning":"C:\\swiggis.austin\\node_modules\\react-router\\lib\\routerWarning.js","_process":"C:\\swiggis.austin\\node_modules\\process\\browser.js"}],"C:\\swiggis.austin\\node_modules\\react-router\\lib\\routerWarning.js":[function(require,module,exports){
 'use strict';
 
 exports.__esModule = true;
@@ -52663,7 +51701,7 @@ function routerWarning(falseToWarn, message) {
 function _resetWarned() {
   warned = {};
 }
-},{"warning":"/mnt/c/swiggis.original/node_modules/react-router/node_modules/warning/browser.js"}],"/mnt/c/swiggis.original/node_modules/react-router/lib/useRouterHistory.js":[function(require,module,exports){
+},{"warning":"C:\\swiggis.austin\\node_modules\\react-router\\node_modules\\warning\\browser.js"}],"C:\\swiggis.austin\\node_modules\\react-router\\lib\\useRouterHistory.js":[function(require,module,exports){
 'use strict';
 
 exports.__esModule = true;
@@ -52687,7 +51725,7 @@ function useRouterHistory(createHistory) {
   };
 }
 module.exports = exports['default'];
-},{"history/lib/useBasename":"/mnt/c/swiggis.original/node_modules/react-router/node_modules/history/lib/useBasename.js","history/lib/useQueries":"/mnt/c/swiggis.original/node_modules/react-router/node_modules/history/lib/useQueries.js"}],"/mnt/c/swiggis.original/node_modules/react-router/lib/useRoutes.js":[function(require,module,exports){
+},{"history/lib/useBasename":"C:\\swiggis.austin\\node_modules\\react-router\\node_modules\\history\\lib\\useBasename.js","history/lib/useQueries":"C:\\swiggis.austin\\node_modules\\react-router\\node_modules\\history\\lib\\useQueries.js"}],"C:\\swiggis.austin\\node_modules\\react-router\\lib\\useRoutes.js":[function(require,module,exports){
 (function (process){
 'use strict';
 
@@ -52741,7 +51779,7 @@ function useRoutes(createHistory) {
 exports.default = useRoutes;
 module.exports = exports['default'];
 }).call(this,require('_process'))
-},{"./createTransitionManager":"/mnt/c/swiggis.original/node_modules/react-router/lib/createTransitionManager.js","./routerWarning":"/mnt/c/swiggis.original/node_modules/react-router/lib/routerWarning.js","_process":"/mnt/c/swiggis.original/node_modules/process/browser.js","history/lib/useQueries":"/mnt/c/swiggis.original/node_modules/react-router/node_modules/history/lib/useQueries.js"}],"/mnt/c/swiggis.original/node_modules/react-router/lib/withRouter.js":[function(require,module,exports){
+},{"./createTransitionManager":"C:\\swiggis.austin\\node_modules\\react-router\\lib\\createTransitionManager.js","./routerWarning":"C:\\swiggis.austin\\node_modules\\react-router\\lib\\routerWarning.js","_process":"C:\\swiggis.austin\\node_modules\\process\\browser.js","history/lib/useQueries":"C:\\swiggis.austin\\node_modules\\react-router\\node_modules\\history\\lib\\useQueries.js"}],"C:\\swiggis.austin\\node_modules\\react-router\\lib\\withRouter.js":[function(require,module,exports){
 (function (process){
 'use strict';
 
@@ -52808,9 +51846,39 @@ function withRouter(WrappedComponent, options) {
 }
 module.exports = exports['default'];
 }).call(this,require('_process'))
-},{"./PropTypes":"/mnt/c/swiggis.original/node_modules/react-router/lib/PropTypes.js","_process":"/mnt/c/swiggis.original/node_modules/process/browser.js","hoist-non-react-statics":"/mnt/c/swiggis.original/node_modules/hoist-non-react-statics/index.js","invariant":"/mnt/c/swiggis.original/node_modules/invariant/browser.js","react":"/mnt/c/swiggis.original/node_modules/react/react.js"}],"/mnt/c/swiggis.original/node_modules/react-router/node_modules/history/lib/Actions.js":[function(require,module,exports){
-arguments[4]["/mnt/c/swiggis.original/node_modules/history/lib/Actions.js"][0].apply(exports,arguments)
-},{}],"/mnt/c/swiggis.original/node_modules/react-router/node_modules/history/lib/AsyncUtils.js":[function(require,module,exports){
+},{"./PropTypes":"C:\\swiggis.austin\\node_modules\\react-router\\lib\\PropTypes.js","_process":"C:\\swiggis.austin\\node_modules\\process\\browser.js","hoist-non-react-statics":"C:\\swiggis.austin\\node_modules\\hoist-non-react-statics\\index.js","invariant":"C:\\swiggis.austin\\node_modules\\invariant\\browser.js","react":"C:\\swiggis.austin\\node_modules\\react\\react.js"}],"C:\\swiggis.austin\\node_modules\\react-router\\node_modules\\history\\lib\\Actions.js":[function(require,module,exports){
+/**
+ * Indicates that navigation was caused by a call to history.push.
+ */
+'use strict';
+
+exports.__esModule = true;
+var PUSH = 'PUSH';
+
+exports.PUSH = PUSH;
+/**
+ * Indicates that navigation was caused by a call to history.replace.
+ */
+var REPLACE = 'REPLACE';
+
+exports.REPLACE = REPLACE;
+/**
+ * Indicates that navigation was caused by some other action such
+ * as using a browser's back/forward buttons and/or manually manipulating
+ * the URL in a browser's location bar. This is the default.
+ *
+ * See https://developer.mozilla.org/en-US/docs/Web/API/WindowEventHandlers/onpopstate
+ * for more information.
+ */
+var POP = 'POP';
+
+exports.POP = POP;
+exports['default'] = {
+  PUSH: PUSH,
+  REPLACE: REPLACE,
+  POP: POP
+};
+},{}],"C:\\swiggis.austin\\node_modules\\react-router\\node_modules\\history\\lib\\AsyncUtils.js":[function(require,module,exports){
 "use strict";
 
 exports.__esModule = true;
@@ -52869,7 +51937,7 @@ function loopAsync(turns, work, callback) {
 
   next();
 }
-},{}],"/mnt/c/swiggis.original/node_modules/react-router/node_modules/history/lib/DOMStateStorage.js":[function(require,module,exports){
+},{}],"C:\\swiggis.austin\\node_modules\\react-router\\node_modules\\history\\lib\\DOMStateStorage.js":[function(require,module,exports){
 (function (process){
 /*eslint-disable no-empty */
 'use strict';
@@ -52945,7 +52013,7 @@ function readState(key) {
   return null;
 }
 }).call(this,require('_process'))
-},{"_process":"/mnt/c/swiggis.original/node_modules/process/browser.js","warning":"/mnt/c/swiggis.original/node_modules/react-router/node_modules/history/node_modules/warning/browser.js"}],"/mnt/c/swiggis.original/node_modules/react-router/node_modules/history/lib/DOMUtils.js":[function(require,module,exports){
+},{"_process":"C:\\swiggis.austin\\node_modules\\process\\browser.js","warning":"C:\\swiggis.austin\\node_modules\\react-router\\node_modules\\history\\node_modules\\warning\\browser.js"}],"C:\\swiggis.austin\\node_modules\\react-router\\node_modules\\history\\lib\\DOMUtils.js":[function(require,module,exports){
 'use strict';
 
 exports.__esModule = true;
@@ -53021,9 +52089,13 @@ function supportsGoWithoutReloadUsingHash() {
   var ua = navigator.userAgent;
   return ua.indexOf('Firefox') === -1;
 }
-},{}],"/mnt/c/swiggis.original/node_modules/react-router/node_modules/history/lib/ExecutionEnvironment.js":[function(require,module,exports){
-arguments[4]["/mnt/c/swiggis.original/node_modules/history/lib/ExecutionEnvironment.js"][0].apply(exports,arguments)
-},{}],"/mnt/c/swiggis.original/node_modules/react-router/node_modules/history/lib/PathUtils.js":[function(require,module,exports){
+},{}],"C:\\swiggis.austin\\node_modules\\react-router\\node_modules\\history\\lib\\ExecutionEnvironment.js":[function(require,module,exports){
+'use strict';
+
+exports.__esModule = true;
+var canUseDOM = !!(typeof window !== 'undefined' && window.document && window.document.createElement);
+exports.canUseDOM = canUseDOM;
+},{}],"C:\\swiggis.austin\\node_modules\\react-router\\node_modules\\history\\lib\\PathUtils.js":[function(require,module,exports){
 (function (process){
 'use strict';
 
@@ -53073,7 +52145,7 @@ function parsePath(path) {
   };
 }
 }).call(this,require('_process'))
-},{"_process":"/mnt/c/swiggis.original/node_modules/process/browser.js","warning":"/mnt/c/swiggis.original/node_modules/react-router/node_modules/history/node_modules/warning/browser.js"}],"/mnt/c/swiggis.original/node_modules/react-router/node_modules/history/lib/createBrowserHistory.js":[function(require,module,exports){
+},{"_process":"C:\\swiggis.austin\\node_modules\\process\\browser.js","warning":"C:\\swiggis.austin\\node_modules\\react-router\\node_modules\\history\\node_modules\\warning\\browser.js"}],"C:\\swiggis.austin\\node_modules\\react-router\\node_modules\\history\\lib\\createBrowserHistory.js":[function(require,module,exports){
 (function (process){
 'use strict';
 
@@ -53256,9 +52328,50 @@ function createBrowserHistory() {
 exports['default'] = createBrowserHistory;
 module.exports = exports['default'];
 }).call(this,require('_process'))
-},{"./Actions":"/mnt/c/swiggis.original/node_modules/react-router/node_modules/history/lib/Actions.js","./DOMStateStorage":"/mnt/c/swiggis.original/node_modules/react-router/node_modules/history/lib/DOMStateStorage.js","./DOMUtils":"/mnt/c/swiggis.original/node_modules/react-router/node_modules/history/lib/DOMUtils.js","./ExecutionEnvironment":"/mnt/c/swiggis.original/node_modules/react-router/node_modules/history/lib/ExecutionEnvironment.js","./PathUtils":"/mnt/c/swiggis.original/node_modules/react-router/node_modules/history/lib/PathUtils.js","./createDOMHistory":"/mnt/c/swiggis.original/node_modules/react-router/node_modules/history/lib/createDOMHistory.js","_process":"/mnt/c/swiggis.original/node_modules/process/browser.js","invariant":"/mnt/c/swiggis.original/node_modules/invariant/browser.js"}],"/mnt/c/swiggis.original/node_modules/react-router/node_modules/history/lib/createDOMHistory.js":[function(require,module,exports){
-arguments[4]["/mnt/c/swiggis.original/node_modules/history/lib/createDOMHistory.js"][0].apply(exports,arguments)
-},{"./DOMUtils":"/mnt/c/swiggis.original/node_modules/react-router/node_modules/history/lib/DOMUtils.js","./ExecutionEnvironment":"/mnt/c/swiggis.original/node_modules/react-router/node_modules/history/lib/ExecutionEnvironment.js","./createHistory":"/mnt/c/swiggis.original/node_modules/react-router/node_modules/history/lib/createHistory.js","_process":"/mnt/c/swiggis.original/node_modules/process/browser.js","invariant":"/mnt/c/swiggis.original/node_modules/invariant/browser.js"}],"/mnt/c/swiggis.original/node_modules/react-router/node_modules/history/lib/createHashHistory.js":[function(require,module,exports){
+},{"./Actions":"C:\\swiggis.austin\\node_modules\\react-router\\node_modules\\history\\lib\\Actions.js","./DOMStateStorage":"C:\\swiggis.austin\\node_modules\\react-router\\node_modules\\history\\lib\\DOMStateStorage.js","./DOMUtils":"C:\\swiggis.austin\\node_modules\\react-router\\node_modules\\history\\lib\\DOMUtils.js","./ExecutionEnvironment":"C:\\swiggis.austin\\node_modules\\react-router\\node_modules\\history\\lib\\ExecutionEnvironment.js","./PathUtils":"C:\\swiggis.austin\\node_modules\\react-router\\node_modules\\history\\lib\\PathUtils.js","./createDOMHistory":"C:\\swiggis.austin\\node_modules\\react-router\\node_modules\\history\\lib\\createDOMHistory.js","_process":"C:\\swiggis.austin\\node_modules\\process\\browser.js","invariant":"C:\\swiggis.austin\\node_modules\\invariant\\browser.js"}],"C:\\swiggis.austin\\node_modules\\react-router\\node_modules\\history\\lib\\createDOMHistory.js":[function(require,module,exports){
+(function (process){
+'use strict';
+
+exports.__esModule = true;
+
+var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { 'default': obj }; }
+
+var _invariant = require('invariant');
+
+var _invariant2 = _interopRequireDefault(_invariant);
+
+var _ExecutionEnvironment = require('./ExecutionEnvironment');
+
+var _DOMUtils = require('./DOMUtils');
+
+var _createHistory = require('./createHistory');
+
+var _createHistory2 = _interopRequireDefault(_createHistory);
+
+function createDOMHistory(options) {
+  var history = _createHistory2['default'](_extends({
+    getUserConfirmation: _DOMUtils.getUserConfirmation
+  }, options, {
+    go: _DOMUtils.go
+  }));
+
+  function listen(listener) {
+    !_ExecutionEnvironment.canUseDOM ? process.env.NODE_ENV !== 'production' ? _invariant2['default'](false, 'DOM history needs a DOM') : _invariant2['default'](false) : undefined;
+
+    return history.listen(listener);
+  }
+
+  return _extends({}, history, {
+    listen: listen
+  });
+}
+
+exports['default'] = createDOMHistory;
+module.exports = exports['default'];
+}).call(this,require('_process'))
+},{"./DOMUtils":"C:\\swiggis.austin\\node_modules\\react-router\\node_modules\\history\\lib\\DOMUtils.js","./ExecutionEnvironment":"C:\\swiggis.austin\\node_modules\\react-router\\node_modules\\history\\lib\\ExecutionEnvironment.js","./createHistory":"C:\\swiggis.austin\\node_modules\\react-router\\node_modules\\history\\lib\\createHistory.js","_process":"C:\\swiggis.austin\\node_modules\\process\\browser.js","invariant":"C:\\swiggis.austin\\node_modules\\invariant\\browser.js"}],"C:\\swiggis.austin\\node_modules\\react-router\\node_modules\\history\\lib\\createHashHistory.js":[function(require,module,exports){
 (function (process){
 'use strict';
 
@@ -53507,7 +52620,7 @@ function createHashHistory() {
 exports['default'] = createHashHistory;
 module.exports = exports['default'];
 }).call(this,require('_process'))
-},{"./Actions":"/mnt/c/swiggis.original/node_modules/react-router/node_modules/history/lib/Actions.js","./DOMStateStorage":"/mnt/c/swiggis.original/node_modules/react-router/node_modules/history/lib/DOMStateStorage.js","./DOMUtils":"/mnt/c/swiggis.original/node_modules/react-router/node_modules/history/lib/DOMUtils.js","./ExecutionEnvironment":"/mnt/c/swiggis.original/node_modules/react-router/node_modules/history/lib/ExecutionEnvironment.js","./PathUtils":"/mnt/c/swiggis.original/node_modules/react-router/node_modules/history/lib/PathUtils.js","./createDOMHistory":"/mnt/c/swiggis.original/node_modules/react-router/node_modules/history/lib/createDOMHistory.js","_process":"/mnt/c/swiggis.original/node_modules/process/browser.js","invariant":"/mnt/c/swiggis.original/node_modules/invariant/browser.js","warning":"/mnt/c/swiggis.original/node_modules/react-router/node_modules/history/node_modules/warning/browser.js"}],"/mnt/c/swiggis.original/node_modules/react-router/node_modules/history/lib/createHistory.js":[function(require,module,exports){
+},{"./Actions":"C:\\swiggis.austin\\node_modules\\react-router\\node_modules\\history\\lib\\Actions.js","./DOMStateStorage":"C:\\swiggis.austin\\node_modules\\react-router\\node_modules\\history\\lib\\DOMStateStorage.js","./DOMUtils":"C:\\swiggis.austin\\node_modules\\react-router\\node_modules\\history\\lib\\DOMUtils.js","./ExecutionEnvironment":"C:\\swiggis.austin\\node_modules\\react-router\\node_modules\\history\\lib\\ExecutionEnvironment.js","./PathUtils":"C:\\swiggis.austin\\node_modules\\react-router\\node_modules\\history\\lib\\PathUtils.js","./createDOMHistory":"C:\\swiggis.austin\\node_modules\\react-router\\node_modules\\history\\lib\\createDOMHistory.js","_process":"C:\\swiggis.austin\\node_modules\\process\\browser.js","invariant":"C:\\swiggis.austin\\node_modules\\invariant\\browser.js","warning":"C:\\swiggis.austin\\node_modules\\react-router\\node_modules\\history\\node_modules\\warning\\browser.js"}],"C:\\swiggis.austin\\node_modules\\react-router\\node_modules\\history\\lib\\createHistory.js":[function(require,module,exports){
 (function (process){
 'use strict';
 
@@ -53798,7 +52911,7 @@ function createHistory() {
 exports['default'] = createHistory;
 module.exports = exports['default'];
 }).call(this,require('_process'))
-},{"./Actions":"/mnt/c/swiggis.original/node_modules/react-router/node_modules/history/lib/Actions.js","./AsyncUtils":"/mnt/c/swiggis.original/node_modules/react-router/node_modules/history/lib/AsyncUtils.js","./PathUtils":"/mnt/c/swiggis.original/node_modules/react-router/node_modules/history/lib/PathUtils.js","./createLocation":"/mnt/c/swiggis.original/node_modules/react-router/node_modules/history/lib/createLocation.js","./deprecate":"/mnt/c/swiggis.original/node_modules/react-router/node_modules/history/lib/deprecate.js","./runTransitionHook":"/mnt/c/swiggis.original/node_modules/react-router/node_modules/history/lib/runTransitionHook.js","_process":"/mnt/c/swiggis.original/node_modules/process/browser.js","deep-equal":"/mnt/c/swiggis.original/node_modules/deep-equal/index.js","warning":"/mnt/c/swiggis.original/node_modules/react-router/node_modules/history/node_modules/warning/browser.js"}],"/mnt/c/swiggis.original/node_modules/react-router/node_modules/history/lib/createLocation.js":[function(require,module,exports){
+},{"./Actions":"C:\\swiggis.austin\\node_modules\\react-router\\node_modules\\history\\lib\\Actions.js","./AsyncUtils":"C:\\swiggis.austin\\node_modules\\react-router\\node_modules\\history\\lib\\AsyncUtils.js","./PathUtils":"C:\\swiggis.austin\\node_modules\\react-router\\node_modules\\history\\lib\\PathUtils.js","./createLocation":"C:\\swiggis.austin\\node_modules\\react-router\\node_modules\\history\\lib\\createLocation.js","./deprecate":"C:\\swiggis.austin\\node_modules\\react-router\\node_modules\\history\\lib\\deprecate.js","./runTransitionHook":"C:\\swiggis.austin\\node_modules\\react-router\\node_modules\\history\\lib\\runTransitionHook.js","_process":"C:\\swiggis.austin\\node_modules\\process\\browser.js","deep-equal":"C:\\swiggis.austin\\node_modules\\deep-equal\\index.js","warning":"C:\\swiggis.austin\\node_modules\\react-router\\node_modules\\history\\node_modules\\warning\\browser.js"}],"C:\\swiggis.austin\\node_modules\\react-router\\node_modules\\history\\lib\\createLocation.js":[function(require,module,exports){
 (function (process){
 'use strict';
 
@@ -53852,7 +52965,7 @@ function createLocation() {
 exports['default'] = createLocation;
 module.exports = exports['default'];
 }).call(this,require('_process'))
-},{"./Actions":"/mnt/c/swiggis.original/node_modules/react-router/node_modules/history/lib/Actions.js","./PathUtils":"/mnt/c/swiggis.original/node_modules/react-router/node_modules/history/lib/PathUtils.js","_process":"/mnt/c/swiggis.original/node_modules/process/browser.js","warning":"/mnt/c/swiggis.original/node_modules/react-router/node_modules/history/node_modules/warning/browser.js"}],"/mnt/c/swiggis.original/node_modules/react-router/node_modules/history/lib/createMemoryHistory.js":[function(require,module,exports){
+},{"./Actions":"C:\\swiggis.austin\\node_modules\\react-router\\node_modules\\history\\lib\\Actions.js","./PathUtils":"C:\\swiggis.austin\\node_modules\\react-router\\node_modules\\history\\lib\\PathUtils.js","_process":"C:\\swiggis.austin\\node_modules\\process\\browser.js","warning":"C:\\swiggis.austin\\node_modules\\react-router\\node_modules\\history\\node_modules\\warning\\browser.js"}],"C:\\swiggis.austin\\node_modules\\react-router\\node_modules\\history\\lib\\createMemoryHistory.js":[function(require,module,exports){
 (function (process){
 'use strict';
 
@@ -54009,7 +53122,7 @@ function createMemoryHistory() {
 exports['default'] = createMemoryHistory;
 module.exports = exports['default'];
 }).call(this,require('_process'))
-},{"./Actions":"/mnt/c/swiggis.original/node_modules/react-router/node_modules/history/lib/Actions.js","./PathUtils":"/mnt/c/swiggis.original/node_modules/react-router/node_modules/history/lib/PathUtils.js","./createHistory":"/mnt/c/swiggis.original/node_modules/react-router/node_modules/history/lib/createHistory.js","_process":"/mnt/c/swiggis.original/node_modules/process/browser.js","invariant":"/mnt/c/swiggis.original/node_modules/invariant/browser.js","warning":"/mnt/c/swiggis.original/node_modules/react-router/node_modules/history/node_modules/warning/browser.js"}],"/mnt/c/swiggis.original/node_modules/react-router/node_modules/history/lib/deprecate.js":[function(require,module,exports){
+},{"./Actions":"C:\\swiggis.austin\\node_modules\\react-router\\node_modules\\history\\lib\\Actions.js","./PathUtils":"C:\\swiggis.austin\\node_modules\\react-router\\node_modules\\history\\lib\\PathUtils.js","./createHistory":"C:\\swiggis.austin\\node_modules\\react-router\\node_modules\\history\\lib\\createHistory.js","_process":"C:\\swiggis.austin\\node_modules\\process\\browser.js","invariant":"C:\\swiggis.austin\\node_modules\\invariant\\browser.js","warning":"C:\\swiggis.austin\\node_modules\\react-router\\node_modules\\history\\node_modules\\warning\\browser.js"}],"C:\\swiggis.austin\\node_modules\\react-router\\node_modules\\history\\lib\\deprecate.js":[function(require,module,exports){
 (function (process){
 'use strict';
 
@@ -54031,9 +53144,34 @@ function deprecate(fn, message) {
 exports['default'] = deprecate;
 module.exports = exports['default'];
 }).call(this,require('_process'))
-},{"_process":"/mnt/c/swiggis.original/node_modules/process/browser.js","warning":"/mnt/c/swiggis.original/node_modules/react-router/node_modules/history/node_modules/warning/browser.js"}],"/mnt/c/swiggis.original/node_modules/react-router/node_modules/history/lib/runTransitionHook.js":[function(require,module,exports){
-arguments[4]["/mnt/c/swiggis.original/node_modules/history/lib/runTransitionHook.js"][0].apply(exports,arguments)
-},{"_process":"/mnt/c/swiggis.original/node_modules/process/browser.js","warning":"/mnt/c/swiggis.original/node_modules/react-router/node_modules/history/node_modules/warning/browser.js"}],"/mnt/c/swiggis.original/node_modules/react-router/node_modules/history/lib/useBasename.js":[function(require,module,exports){
+},{"_process":"C:\\swiggis.austin\\node_modules\\process\\browser.js","warning":"C:\\swiggis.austin\\node_modules\\react-router\\node_modules\\history\\node_modules\\warning\\browser.js"}],"C:\\swiggis.austin\\node_modules\\react-router\\node_modules\\history\\lib\\runTransitionHook.js":[function(require,module,exports){
+(function (process){
+'use strict';
+
+exports.__esModule = true;
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { 'default': obj }; }
+
+var _warning = require('warning');
+
+var _warning2 = _interopRequireDefault(_warning);
+
+function runTransitionHook(hook, location, callback) {
+  var result = hook(location, callback);
+
+  if (hook.length < 2) {
+    // Assume the hook runs synchronously and automatically
+    // call the callback with the return value.
+    callback(result);
+  } else {
+    process.env.NODE_ENV !== 'production' ? _warning2['default'](result === undefined, 'You should not "return" in a transition hook with a callback argument; call the callback instead') : undefined;
+  }
+}
+
+exports['default'] = runTransitionHook;
+module.exports = exports['default'];
+}).call(this,require('_process'))
+},{"_process":"C:\\swiggis.austin\\node_modules\\process\\browser.js","warning":"C:\\swiggis.austin\\node_modules\\react-router\\node_modules\\history\\node_modules\\warning\\browser.js"}],"C:\\swiggis.austin\\node_modules\\react-router\\node_modules\\history\\lib\\useBasename.js":[function(require,module,exports){
 (function (process){
 'use strict';
 
@@ -54194,7 +53332,7 @@ function useBasename(createHistory) {
 exports['default'] = useBasename;
 module.exports = exports['default'];
 }).call(this,require('_process'))
-},{"./ExecutionEnvironment":"/mnt/c/swiggis.original/node_modules/react-router/node_modules/history/lib/ExecutionEnvironment.js","./PathUtils":"/mnt/c/swiggis.original/node_modules/react-router/node_modules/history/lib/PathUtils.js","./deprecate":"/mnt/c/swiggis.original/node_modules/react-router/node_modules/history/lib/deprecate.js","./runTransitionHook":"/mnt/c/swiggis.original/node_modules/react-router/node_modules/history/lib/runTransitionHook.js","_process":"/mnt/c/swiggis.original/node_modules/process/browser.js","warning":"/mnt/c/swiggis.original/node_modules/react-router/node_modules/history/node_modules/warning/browser.js"}],"/mnt/c/swiggis.original/node_modules/react-router/node_modules/history/lib/useQueries.js":[function(require,module,exports){
+},{"./ExecutionEnvironment":"C:\\swiggis.austin\\node_modules\\react-router\\node_modules\\history\\lib\\ExecutionEnvironment.js","./PathUtils":"C:\\swiggis.austin\\node_modules\\react-router\\node_modules\\history\\lib\\PathUtils.js","./deprecate":"C:\\swiggis.austin\\node_modules\\react-router\\node_modules\\history\\lib\\deprecate.js","./runTransitionHook":"C:\\swiggis.austin\\node_modules\\react-router\\node_modules\\history\\lib\\runTransitionHook.js","_process":"C:\\swiggis.austin\\node_modules\\process\\browser.js","warning":"C:\\swiggis.austin\\node_modules\\react-router\\node_modules\\history\\node_modules\\warning\\browser.js"}],"C:\\swiggis.austin\\node_modules\\react-router\\node_modules\\history\\lib\\useQueries.js":[function(require,module,exports){
 (function (process){
 'use strict';
 
@@ -54373,15 +53511,15 @@ function useQueries(createHistory) {
 exports['default'] = useQueries;
 module.exports = exports['default'];
 }).call(this,require('_process'))
-},{"./PathUtils":"/mnt/c/swiggis.original/node_modules/react-router/node_modules/history/lib/PathUtils.js","./deprecate":"/mnt/c/swiggis.original/node_modules/react-router/node_modules/history/lib/deprecate.js","./runTransitionHook":"/mnt/c/swiggis.original/node_modules/react-router/node_modules/history/lib/runTransitionHook.js","_process":"/mnt/c/swiggis.original/node_modules/process/browser.js","query-string":"/mnt/c/swiggis.original/node_modules/query-string/index.js","warning":"/mnt/c/swiggis.original/node_modules/react-router/node_modules/history/node_modules/warning/browser.js"}],"/mnt/c/swiggis.original/node_modules/react-router/node_modules/history/node_modules/warning/browser.js":[function(require,module,exports){
-arguments[4]["/mnt/c/swiggis.original/node_modules/react-overlays/node_modules/warning/browser.js"][0].apply(exports,arguments)
-},{"_process":"/mnt/c/swiggis.original/node_modules/process/browser.js"}],"/mnt/c/swiggis.original/node_modules/react-router/node_modules/warning/browser.js":[function(require,module,exports){
-arguments[4]["/mnt/c/swiggis.original/node_modules/react-overlays/node_modules/warning/browser.js"][0].apply(exports,arguments)
-},{"_process":"/mnt/c/swiggis.original/node_modules/process/browser.js"}],"/mnt/c/swiggis.original/node_modules/react/lib/KeyEscapeUtils.js":[function(require,module,exports){
-arguments[4]["/mnt/c/swiggis.original/node_modules/react-dom/lib/KeyEscapeUtils.js"][0].apply(exports,arguments)
-},{}],"/mnt/c/swiggis.original/node_modules/react/lib/PooledClass.js":[function(require,module,exports){
-arguments[4]["/mnt/c/swiggis.original/node_modules/react-dom/lib/PooledClass.js"][0].apply(exports,arguments)
-},{"./reactProdInvariant":"/mnt/c/swiggis.original/node_modules/react/lib/reactProdInvariant.js","_process":"/mnt/c/swiggis.original/node_modules/process/browser.js","fbjs/lib/invariant":"/mnt/c/swiggis.original/node_modules/fbjs/lib/invariant.js"}],"/mnt/c/swiggis.original/node_modules/react/lib/React.js":[function(require,module,exports){
+},{"./PathUtils":"C:\\swiggis.austin\\node_modules\\react-router\\node_modules\\history\\lib\\PathUtils.js","./deprecate":"C:\\swiggis.austin\\node_modules\\react-router\\node_modules\\history\\lib\\deprecate.js","./runTransitionHook":"C:\\swiggis.austin\\node_modules\\react-router\\node_modules\\history\\lib\\runTransitionHook.js","_process":"C:\\swiggis.austin\\node_modules\\process\\browser.js","query-string":"C:\\swiggis.austin\\node_modules\\query-string\\index.js","warning":"C:\\swiggis.austin\\node_modules\\react-router\\node_modules\\history\\node_modules\\warning\\browser.js"}],"C:\\swiggis.austin\\node_modules\\react-router\\node_modules\\history\\node_modules\\warning\\browser.js":[function(require,module,exports){
+arguments[4]["C:\\swiggis.austin\\node_modules\\react-overlays\\node_modules\\warning\\browser.js"][0].apply(exports,arguments)
+},{"_process":"C:\\swiggis.austin\\node_modules\\process\\browser.js"}],"C:\\swiggis.austin\\node_modules\\react-router\\node_modules\\warning\\browser.js":[function(require,module,exports){
+arguments[4]["C:\\swiggis.austin\\node_modules\\react-overlays\\node_modules\\warning\\browser.js"][0].apply(exports,arguments)
+},{"_process":"C:\\swiggis.austin\\node_modules\\process\\browser.js"}],"C:\\swiggis.austin\\node_modules\\react\\lib\\KeyEscapeUtils.js":[function(require,module,exports){
+arguments[4]["C:\\swiggis.austin\\node_modules\\react-dom\\lib\\KeyEscapeUtils.js"][0].apply(exports,arguments)
+},{}],"C:\\swiggis.austin\\node_modules\\react\\lib\\PooledClass.js":[function(require,module,exports){
+arguments[4]["C:\\swiggis.austin\\node_modules\\react-dom\\lib\\PooledClass.js"][0].apply(exports,arguments)
+},{"./reactProdInvariant":"C:\\swiggis.austin\\node_modules\\react\\lib\\reactProdInvariant.js","_process":"C:\\swiggis.austin\\node_modules\\process\\browser.js","fbjs/lib/invariant":"C:\\swiggis.austin\\node_modules\\fbjs\\lib\\invariant.js"}],"C:\\swiggis.austin\\node_modules\\react\\lib\\React.js":[function(require,module,exports){
 (function (process){
 /**
  * Copyright (c) 2013-present, Facebook, Inc.
@@ -54513,7 +53651,7 @@ if (process.env.NODE_ENV !== 'production') {
 
 module.exports = React;
 }).call(this,require('_process'))
-},{"./ReactBaseClasses":"/mnt/c/swiggis.original/node_modules/react/lib/ReactBaseClasses.js","./ReactChildren":"/mnt/c/swiggis.original/node_modules/react/lib/ReactChildren.js","./ReactDOMFactories":"/mnt/c/swiggis.original/node_modules/react/lib/ReactDOMFactories.js","./ReactElement":"/mnt/c/swiggis.original/node_modules/react/lib/ReactElement.js","./ReactElementValidator":"/mnt/c/swiggis.original/node_modules/react/lib/ReactElementValidator.js","./ReactPropTypes":"/mnt/c/swiggis.original/node_modules/react/lib/ReactPropTypes.js","./ReactVersion":"/mnt/c/swiggis.original/node_modules/react/lib/ReactVersion.js","./canDefineProperty":"/mnt/c/swiggis.original/node_modules/react/lib/canDefineProperty.js","./createClass":"/mnt/c/swiggis.original/node_modules/react/lib/createClass.js","./lowPriorityWarning":"/mnt/c/swiggis.original/node_modules/react/lib/lowPriorityWarning.js","./onlyChild":"/mnt/c/swiggis.original/node_modules/react/lib/onlyChild.js","_process":"/mnt/c/swiggis.original/node_modules/process/browser.js","object-assign":"/mnt/c/swiggis.original/node_modules/react/node_modules/object-assign/index.js"}],"/mnt/c/swiggis.original/node_modules/react/lib/ReactBaseClasses.js":[function(require,module,exports){
+},{"./ReactBaseClasses":"C:\\swiggis.austin\\node_modules\\react\\lib\\ReactBaseClasses.js","./ReactChildren":"C:\\swiggis.austin\\node_modules\\react\\lib\\ReactChildren.js","./ReactDOMFactories":"C:\\swiggis.austin\\node_modules\\react\\lib\\ReactDOMFactories.js","./ReactElement":"C:\\swiggis.austin\\node_modules\\react\\lib\\ReactElement.js","./ReactElementValidator":"C:\\swiggis.austin\\node_modules\\react\\lib\\ReactElementValidator.js","./ReactPropTypes":"C:\\swiggis.austin\\node_modules\\react\\lib\\ReactPropTypes.js","./ReactVersion":"C:\\swiggis.austin\\node_modules\\react\\lib\\ReactVersion.js","./canDefineProperty":"C:\\swiggis.austin\\node_modules\\react\\lib\\canDefineProperty.js","./createClass":"C:\\swiggis.austin\\node_modules\\react\\lib\\createClass.js","./lowPriorityWarning":"C:\\swiggis.austin\\node_modules\\react\\lib\\lowPriorityWarning.js","./onlyChild":"C:\\swiggis.austin\\node_modules\\react\\lib\\onlyChild.js","_process":"C:\\swiggis.austin\\node_modules\\process\\browser.js","object-assign":"C:\\swiggis.austin\\node_modules\\react\\node_modules\\object-assign\\index.js"}],"C:\\swiggis.austin\\node_modules\\react\\lib\\ReactBaseClasses.js":[function(require,module,exports){
 (function (process){
 /**
  * Copyright (c) 2013-present, Facebook, Inc.
@@ -54656,7 +53794,7 @@ module.exports = {
   PureComponent: ReactPureComponent
 };
 }).call(this,require('_process'))
-},{"./ReactNoopUpdateQueue":"/mnt/c/swiggis.original/node_modules/react/lib/ReactNoopUpdateQueue.js","./canDefineProperty":"/mnt/c/swiggis.original/node_modules/react/lib/canDefineProperty.js","./lowPriorityWarning":"/mnt/c/swiggis.original/node_modules/react/lib/lowPriorityWarning.js","./reactProdInvariant":"/mnt/c/swiggis.original/node_modules/react/lib/reactProdInvariant.js","_process":"/mnt/c/swiggis.original/node_modules/process/browser.js","fbjs/lib/emptyObject":"/mnt/c/swiggis.original/node_modules/fbjs/lib/emptyObject.js","fbjs/lib/invariant":"/mnt/c/swiggis.original/node_modules/fbjs/lib/invariant.js","object-assign":"/mnt/c/swiggis.original/node_modules/react/node_modules/object-assign/index.js"}],"/mnt/c/swiggis.original/node_modules/react/lib/ReactChildren.js":[function(require,module,exports){
+},{"./ReactNoopUpdateQueue":"C:\\swiggis.austin\\node_modules\\react\\lib\\ReactNoopUpdateQueue.js","./canDefineProperty":"C:\\swiggis.austin\\node_modules\\react\\lib\\canDefineProperty.js","./lowPriorityWarning":"C:\\swiggis.austin\\node_modules\\react\\lib\\lowPriorityWarning.js","./reactProdInvariant":"C:\\swiggis.austin\\node_modules\\react\\lib\\reactProdInvariant.js","_process":"C:\\swiggis.austin\\node_modules\\process\\browser.js","fbjs/lib/emptyObject":"C:\\swiggis.austin\\node_modules\\fbjs\\lib\\emptyObject.js","fbjs/lib/invariant":"C:\\swiggis.austin\\node_modules\\fbjs\\lib\\invariant.js","object-assign":"C:\\swiggis.austin\\node_modules\\react\\node_modules\\object-assign\\index.js"}],"C:\\swiggis.austin\\node_modules\\react\\lib\\ReactChildren.js":[function(require,module,exports){
 /**
  * Copyright (c) 2013-present, Facebook, Inc.
  *
@@ -54845,7 +53983,7 @@ var ReactChildren = {
 };
 
 module.exports = ReactChildren;
-},{"./PooledClass":"/mnt/c/swiggis.original/node_modules/react/lib/PooledClass.js","./ReactElement":"/mnt/c/swiggis.original/node_modules/react/lib/ReactElement.js","./traverseAllChildren":"/mnt/c/swiggis.original/node_modules/react/lib/traverseAllChildren.js","fbjs/lib/emptyFunction":"/mnt/c/swiggis.original/node_modules/fbjs/lib/emptyFunction.js"}],"/mnt/c/swiggis.original/node_modules/react/lib/ReactComponentTreeHook.js":[function(require,module,exports){
+},{"./PooledClass":"C:\\swiggis.austin\\node_modules\\react\\lib\\PooledClass.js","./ReactElement":"C:\\swiggis.austin\\node_modules\\react\\lib\\ReactElement.js","./traverseAllChildren":"C:\\swiggis.austin\\node_modules\\react\\lib\\traverseAllChildren.js","fbjs/lib/emptyFunction":"C:\\swiggis.austin\\node_modules\\fbjs\\lib\\emptyFunction.js"}],"C:\\swiggis.austin\\node_modules\\react\\lib\\ReactComponentTreeHook.js":[function(require,module,exports){
 (function (process){
 /**
  * Copyright (c) 2016-present, Facebook, Inc.
@@ -55224,7 +54362,7 @@ var ReactComponentTreeHook = {
 
 module.exports = ReactComponentTreeHook;
 }).call(this,require('_process'))
-},{"./ReactCurrentOwner":"/mnt/c/swiggis.original/node_modules/react/lib/ReactCurrentOwner.js","./reactProdInvariant":"/mnt/c/swiggis.original/node_modules/react/lib/reactProdInvariant.js","_process":"/mnt/c/swiggis.original/node_modules/process/browser.js","fbjs/lib/invariant":"/mnt/c/swiggis.original/node_modules/fbjs/lib/invariant.js","fbjs/lib/warning":"/mnt/c/swiggis.original/node_modules/fbjs/lib/warning.js"}],"/mnt/c/swiggis.original/node_modules/react/lib/ReactCurrentOwner.js":[function(require,module,exports){
+},{"./ReactCurrentOwner":"C:\\swiggis.austin\\node_modules\\react\\lib\\ReactCurrentOwner.js","./reactProdInvariant":"C:\\swiggis.austin\\node_modules\\react\\lib\\reactProdInvariant.js","_process":"C:\\swiggis.austin\\node_modules\\process\\browser.js","fbjs/lib/invariant":"C:\\swiggis.austin\\node_modules\\fbjs\\lib\\invariant.js","fbjs/lib/warning":"C:\\swiggis.austin\\node_modules\\fbjs\\lib\\warning.js"}],"C:\\swiggis.austin\\node_modules\\react\\lib\\ReactCurrentOwner.js":[function(require,module,exports){
 /**
  * Copyright (c) 2013-present, Facebook, Inc.
  *
@@ -55251,7 +54389,7 @@ var ReactCurrentOwner = {
 };
 
 module.exports = ReactCurrentOwner;
-},{}],"/mnt/c/swiggis.original/node_modules/react/lib/ReactDOMFactories.js":[function(require,module,exports){
+},{}],"C:\\swiggis.austin\\node_modules\\react\\lib\\ReactDOMFactories.js":[function(require,module,exports){
 (function (process){
 /**
  * Copyright (c) 2013-present, Facebook, Inc.
@@ -55420,7 +54558,7 @@ var ReactDOMFactories = {
 
 module.exports = ReactDOMFactories;
 }).call(this,require('_process'))
-},{"./ReactElement":"/mnt/c/swiggis.original/node_modules/react/lib/ReactElement.js","./ReactElementValidator":"/mnt/c/swiggis.original/node_modules/react/lib/ReactElementValidator.js","_process":"/mnt/c/swiggis.original/node_modules/process/browser.js"}],"/mnt/c/swiggis.original/node_modules/react/lib/ReactElement.js":[function(require,module,exports){
+},{"./ReactElement":"C:\\swiggis.austin\\node_modules\\react\\lib\\ReactElement.js","./ReactElementValidator":"C:\\swiggis.austin\\node_modules\\react\\lib\\ReactElementValidator.js","_process":"C:\\swiggis.austin\\node_modules\\process\\browser.js"}],"C:\\swiggis.austin\\node_modules\\react\\lib\\ReactElement.js":[function(require,module,exports){
 (function (process){
 /**
  * Copyright (c) 2014-present, Facebook, Inc.
@@ -55761,9 +54899,9 @@ ReactElement.isValidElement = function (object) {
 
 module.exports = ReactElement;
 }).call(this,require('_process'))
-},{"./ReactCurrentOwner":"/mnt/c/swiggis.original/node_modules/react/lib/ReactCurrentOwner.js","./ReactElementSymbol":"/mnt/c/swiggis.original/node_modules/react/lib/ReactElementSymbol.js","./canDefineProperty":"/mnt/c/swiggis.original/node_modules/react/lib/canDefineProperty.js","_process":"/mnt/c/swiggis.original/node_modules/process/browser.js","fbjs/lib/warning":"/mnt/c/swiggis.original/node_modules/fbjs/lib/warning.js","object-assign":"/mnt/c/swiggis.original/node_modules/react/node_modules/object-assign/index.js"}],"/mnt/c/swiggis.original/node_modules/react/lib/ReactElementSymbol.js":[function(require,module,exports){
-arguments[4]["/mnt/c/swiggis.original/node_modules/react-dom/lib/ReactElementSymbol.js"][0].apply(exports,arguments)
-},{}],"/mnt/c/swiggis.original/node_modules/react/lib/ReactElementValidator.js":[function(require,module,exports){
+},{"./ReactCurrentOwner":"C:\\swiggis.austin\\node_modules\\react\\lib\\ReactCurrentOwner.js","./ReactElementSymbol":"C:\\swiggis.austin\\node_modules\\react\\lib\\ReactElementSymbol.js","./canDefineProperty":"C:\\swiggis.austin\\node_modules\\react\\lib\\canDefineProperty.js","_process":"C:\\swiggis.austin\\node_modules\\process\\browser.js","fbjs/lib/warning":"C:\\swiggis.austin\\node_modules\\fbjs\\lib\\warning.js","object-assign":"C:\\swiggis.austin\\node_modules\\react\\node_modules\\object-assign\\index.js"}],"C:\\swiggis.austin\\node_modules\\react\\lib\\ReactElementSymbol.js":[function(require,module,exports){
+arguments[4]["C:\\swiggis.austin\\node_modules\\react-dom\\lib\\ReactElementSymbol.js"][0].apply(exports,arguments)
+},{}],"C:\\swiggis.austin\\node_modules\\react\\lib\\ReactElementValidator.js":[function(require,module,exports){
 (function (process){
 /**
  * Copyright (c) 2014-present, Facebook, Inc.
@@ -56018,7 +55156,7 @@ var ReactElementValidator = {
 
 module.exports = ReactElementValidator;
 }).call(this,require('_process'))
-},{"./ReactComponentTreeHook":"/mnt/c/swiggis.original/node_modules/react/lib/ReactComponentTreeHook.js","./ReactCurrentOwner":"/mnt/c/swiggis.original/node_modules/react/lib/ReactCurrentOwner.js","./ReactElement":"/mnt/c/swiggis.original/node_modules/react/lib/ReactElement.js","./canDefineProperty":"/mnt/c/swiggis.original/node_modules/react/lib/canDefineProperty.js","./checkReactTypeSpec":"/mnt/c/swiggis.original/node_modules/react/lib/checkReactTypeSpec.js","./getIteratorFn":"/mnt/c/swiggis.original/node_modules/react/lib/getIteratorFn.js","./lowPriorityWarning":"/mnt/c/swiggis.original/node_modules/react/lib/lowPriorityWarning.js","_process":"/mnt/c/swiggis.original/node_modules/process/browser.js","fbjs/lib/warning":"/mnt/c/swiggis.original/node_modules/fbjs/lib/warning.js"}],"/mnt/c/swiggis.original/node_modules/react/lib/ReactNoopUpdateQueue.js":[function(require,module,exports){
+},{"./ReactComponentTreeHook":"C:\\swiggis.austin\\node_modules\\react\\lib\\ReactComponentTreeHook.js","./ReactCurrentOwner":"C:\\swiggis.austin\\node_modules\\react\\lib\\ReactCurrentOwner.js","./ReactElement":"C:\\swiggis.austin\\node_modules\\react\\lib\\ReactElement.js","./canDefineProperty":"C:\\swiggis.austin\\node_modules\\react\\lib\\canDefineProperty.js","./checkReactTypeSpec":"C:\\swiggis.austin\\node_modules\\react\\lib\\checkReactTypeSpec.js","./getIteratorFn":"C:\\swiggis.austin\\node_modules\\react\\lib\\getIteratorFn.js","./lowPriorityWarning":"C:\\swiggis.austin\\node_modules\\react\\lib\\lowPriorityWarning.js","_process":"C:\\swiggis.austin\\node_modules\\process\\browser.js","fbjs/lib/warning":"C:\\swiggis.austin\\node_modules\\fbjs\\lib\\warning.js"}],"C:\\swiggis.austin\\node_modules\\react\\lib\\ReactNoopUpdateQueue.js":[function(require,module,exports){
 (function (process){
 /**
  * Copyright (c) 2015-present, Facebook, Inc.
@@ -56113,9 +55251,9 @@ var ReactNoopUpdateQueue = {
 
 module.exports = ReactNoopUpdateQueue;
 }).call(this,require('_process'))
-},{"_process":"/mnt/c/swiggis.original/node_modules/process/browser.js","fbjs/lib/warning":"/mnt/c/swiggis.original/node_modules/fbjs/lib/warning.js"}],"/mnt/c/swiggis.original/node_modules/react/lib/ReactPropTypeLocationNames.js":[function(require,module,exports){
-arguments[4]["/mnt/c/swiggis.original/node_modules/react-dom/lib/ReactPropTypeLocationNames.js"][0].apply(exports,arguments)
-},{"_process":"/mnt/c/swiggis.original/node_modules/process/browser.js"}],"/mnt/c/swiggis.original/node_modules/react/lib/ReactPropTypes.js":[function(require,module,exports){
+},{"_process":"C:\\swiggis.austin\\node_modules\\process\\browser.js","fbjs/lib/warning":"C:\\swiggis.austin\\node_modules\\fbjs\\lib\\warning.js"}],"C:\\swiggis.austin\\node_modules\\react\\lib\\ReactPropTypeLocationNames.js":[function(require,module,exports){
+arguments[4]["C:\\swiggis.austin\\node_modules\\react-dom\\lib\\ReactPropTypeLocationNames.js"][0].apply(exports,arguments)
+},{"_process":"C:\\swiggis.austin\\node_modules\\process\\browser.js"}],"C:\\swiggis.austin\\node_modules\\react\\lib\\ReactPropTypes.js":[function(require,module,exports){
 /**
  * Copyright (c) 2013-present, Facebook, Inc.
  *
@@ -56132,11 +55270,11 @@ var _require = require('./ReactElement'),
 var factory = require('prop-types/factory');
 
 module.exports = factory(isValidElement);
-},{"./ReactElement":"/mnt/c/swiggis.original/node_modules/react/lib/ReactElement.js","prop-types/factory":"/mnt/c/swiggis.original/node_modules/prop-types/factory.js"}],"/mnt/c/swiggis.original/node_modules/react/lib/ReactPropTypesSecret.js":[function(require,module,exports){
-arguments[4]["/mnt/c/swiggis.original/node_modules/react-dom/lib/ReactPropTypesSecret.js"][0].apply(exports,arguments)
-},{}],"/mnt/c/swiggis.original/node_modules/react/lib/ReactVersion.js":[function(require,module,exports){
-arguments[4]["/mnt/c/swiggis.original/node_modules/react-dom/lib/ReactVersion.js"][0].apply(exports,arguments)
-},{}],"/mnt/c/swiggis.original/node_modules/react/lib/canDefineProperty.js":[function(require,module,exports){
+},{"./ReactElement":"C:\\swiggis.austin\\node_modules\\react\\lib\\ReactElement.js","prop-types/factory":"C:\\swiggis.austin\\node_modules\\prop-types\\factory.js"}],"C:\\swiggis.austin\\node_modules\\react\\lib\\ReactPropTypesSecret.js":[function(require,module,exports){
+arguments[4]["C:\\swiggis.austin\\node_modules\\react-dom\\lib\\ReactPropTypesSecret.js"][0].apply(exports,arguments)
+},{}],"C:\\swiggis.austin\\node_modules\\react\\lib\\ReactVersion.js":[function(require,module,exports){
+arguments[4]["C:\\swiggis.austin\\node_modules\\react-dom\\lib\\ReactVersion.js"][0].apply(exports,arguments)
+},{}],"C:\\swiggis.austin\\node_modules\\react\\lib\\canDefineProperty.js":[function(require,module,exports){
 (function (process){
 /**
  * Copyright (c) 2013-present, Facebook, Inc.
@@ -56162,7 +55300,7 @@ if (process.env.NODE_ENV !== 'production') {
 
 module.exports = canDefineProperty;
 }).call(this,require('_process'))
-},{"_process":"/mnt/c/swiggis.original/node_modules/process/browser.js"}],"/mnt/c/swiggis.original/node_modules/react/lib/checkReactTypeSpec.js":[function(require,module,exports){
+},{"_process":"C:\\swiggis.austin\\node_modules\\process\\browser.js"}],"C:\\swiggis.austin\\node_modules\\react\\lib\\checkReactTypeSpec.js":[function(require,module,exports){
 (function (process){
 /**
  * Copyright (c) 2013-present, Facebook, Inc.
@@ -56249,7 +55387,7 @@ function checkReactTypeSpec(typeSpecs, values, location, componentName, element,
 
 module.exports = checkReactTypeSpec;
 }).call(this,require('_process'))
-},{"./ReactComponentTreeHook":"/mnt/c/swiggis.original/node_modules/react/lib/ReactComponentTreeHook.js","./ReactPropTypeLocationNames":"/mnt/c/swiggis.original/node_modules/react/lib/ReactPropTypeLocationNames.js","./ReactPropTypesSecret":"/mnt/c/swiggis.original/node_modules/react/lib/ReactPropTypesSecret.js","./reactProdInvariant":"/mnt/c/swiggis.original/node_modules/react/lib/reactProdInvariant.js","_process":"/mnt/c/swiggis.original/node_modules/process/browser.js","fbjs/lib/invariant":"/mnt/c/swiggis.original/node_modules/fbjs/lib/invariant.js","fbjs/lib/warning":"/mnt/c/swiggis.original/node_modules/fbjs/lib/warning.js"}],"/mnt/c/swiggis.original/node_modules/react/lib/createClass.js":[function(require,module,exports){
+},{"./ReactComponentTreeHook":"C:\\swiggis.austin\\node_modules\\react\\lib\\ReactComponentTreeHook.js","./ReactPropTypeLocationNames":"C:\\swiggis.austin\\node_modules\\react\\lib\\ReactPropTypeLocationNames.js","./ReactPropTypesSecret":"C:\\swiggis.austin\\node_modules\\react\\lib\\ReactPropTypesSecret.js","./reactProdInvariant":"C:\\swiggis.austin\\node_modules\\react\\lib\\reactProdInvariant.js","_process":"C:\\swiggis.austin\\node_modules\\process\\browser.js","fbjs/lib/invariant":"C:\\swiggis.austin\\node_modules\\fbjs\\lib\\invariant.js","fbjs/lib/warning":"C:\\swiggis.austin\\node_modules\\fbjs\\lib\\warning.js"}],"C:\\swiggis.austin\\node_modules\\react\\lib\\createClass.js":[function(require,module,exports){
 /**
  * Copyright (c) 2013-present, Facebook, Inc.
  *
@@ -56270,9 +55408,9 @@ var ReactNoopUpdateQueue = require('./ReactNoopUpdateQueue');
 var factory = require('create-react-class/factory');
 
 module.exports = factory(Component, isValidElement, ReactNoopUpdateQueue);
-},{"./ReactBaseClasses":"/mnt/c/swiggis.original/node_modules/react/lib/ReactBaseClasses.js","./ReactElement":"/mnt/c/swiggis.original/node_modules/react/lib/ReactElement.js","./ReactNoopUpdateQueue":"/mnt/c/swiggis.original/node_modules/react/lib/ReactNoopUpdateQueue.js","create-react-class/factory":"/mnt/c/swiggis.original/node_modules/create-react-class/factory.js"}],"/mnt/c/swiggis.original/node_modules/react/lib/getIteratorFn.js":[function(require,module,exports){
-arguments[4]["/mnt/c/swiggis.original/node_modules/react-dom/lib/getIteratorFn.js"][0].apply(exports,arguments)
-},{}],"/mnt/c/swiggis.original/node_modules/react/lib/getNextDebugID.js":[function(require,module,exports){
+},{"./ReactBaseClasses":"C:\\swiggis.austin\\node_modules\\react\\lib\\ReactBaseClasses.js","./ReactElement":"C:\\swiggis.austin\\node_modules\\react\\lib\\ReactElement.js","./ReactNoopUpdateQueue":"C:\\swiggis.austin\\node_modules\\react\\lib\\ReactNoopUpdateQueue.js","create-react-class/factory":"C:\\swiggis.austin\\node_modules\\create-react-class\\factory.js"}],"C:\\swiggis.austin\\node_modules\\react\\lib\\getIteratorFn.js":[function(require,module,exports){
+arguments[4]["C:\\swiggis.austin\\node_modules\\react-dom\\lib\\getIteratorFn.js"][0].apply(exports,arguments)
+},{}],"C:\\swiggis.austin\\node_modules\\react\\lib\\getNextDebugID.js":[function(require,module,exports){
 /**
  * Copyright (c) 2013-present, Facebook, Inc.
  *
@@ -56291,7 +55429,7 @@ function getNextDebugID() {
 }
 
 module.exports = getNextDebugID;
-},{}],"/mnt/c/swiggis.original/node_modules/react/lib/lowPriorityWarning.js":[function(require,module,exports){
+},{}],"C:\\swiggis.austin\\node_modules\\react\\lib\\lowPriorityWarning.js":[function(require,module,exports){
 (function (process){
 /**
  * Copyright (c) 2014-present, Facebook, Inc.
@@ -56356,7 +55494,7 @@ if (process.env.NODE_ENV !== 'production') {
 
 module.exports = lowPriorityWarning;
 }).call(this,require('_process'))
-},{"_process":"/mnt/c/swiggis.original/node_modules/process/browser.js"}],"/mnt/c/swiggis.original/node_modules/react/lib/onlyChild.js":[function(require,module,exports){
+},{"_process":"C:\\swiggis.austin\\node_modules\\process\\browser.js"}],"C:\\swiggis.austin\\node_modules\\react\\lib\\onlyChild.js":[function(require,module,exports){
 (function (process){
 /**
  * Copyright (c) 2013-present, Facebook, Inc.
@@ -56394,9 +55532,9 @@ function onlyChild(children) {
 
 module.exports = onlyChild;
 }).call(this,require('_process'))
-},{"./ReactElement":"/mnt/c/swiggis.original/node_modules/react/lib/ReactElement.js","./reactProdInvariant":"/mnt/c/swiggis.original/node_modules/react/lib/reactProdInvariant.js","_process":"/mnt/c/swiggis.original/node_modules/process/browser.js","fbjs/lib/invariant":"/mnt/c/swiggis.original/node_modules/fbjs/lib/invariant.js"}],"/mnt/c/swiggis.original/node_modules/react/lib/reactProdInvariant.js":[function(require,module,exports){
-arguments[4]["/mnt/c/swiggis.original/node_modules/react-dom/lib/reactProdInvariant.js"][0].apply(exports,arguments)
-},{}],"/mnt/c/swiggis.original/node_modules/react/lib/traverseAllChildren.js":[function(require,module,exports){
+},{"./ReactElement":"C:\\swiggis.austin\\node_modules\\react\\lib\\ReactElement.js","./reactProdInvariant":"C:\\swiggis.austin\\node_modules\\react\\lib\\reactProdInvariant.js","_process":"C:\\swiggis.austin\\node_modules\\process\\browser.js","fbjs/lib/invariant":"C:\\swiggis.austin\\node_modules\\fbjs\\lib\\invariant.js"}],"C:\\swiggis.austin\\node_modules\\react\\lib\\reactProdInvariant.js":[function(require,module,exports){
+arguments[4]["C:\\swiggis.austin\\node_modules\\react-dom\\lib\\reactProdInvariant.js"][0].apply(exports,arguments)
+},{}],"C:\\swiggis.austin\\node_modules\\react\\lib\\traverseAllChildren.js":[function(require,module,exports){
 (function (process){
 /**
  * Copyright (c) 2013-present, Facebook, Inc.
@@ -56572,14 +55710,14 @@ function traverseAllChildren(children, callback, traverseContext) {
 
 module.exports = traverseAllChildren;
 }).call(this,require('_process'))
-},{"./KeyEscapeUtils":"/mnt/c/swiggis.original/node_modules/react/lib/KeyEscapeUtils.js","./ReactCurrentOwner":"/mnt/c/swiggis.original/node_modules/react/lib/ReactCurrentOwner.js","./ReactElementSymbol":"/mnt/c/swiggis.original/node_modules/react/lib/ReactElementSymbol.js","./getIteratorFn":"/mnt/c/swiggis.original/node_modules/react/lib/getIteratorFn.js","./reactProdInvariant":"/mnt/c/swiggis.original/node_modules/react/lib/reactProdInvariant.js","_process":"/mnt/c/swiggis.original/node_modules/process/browser.js","fbjs/lib/invariant":"/mnt/c/swiggis.original/node_modules/fbjs/lib/invariant.js","fbjs/lib/warning":"/mnt/c/swiggis.original/node_modules/fbjs/lib/warning.js"}],"/mnt/c/swiggis.original/node_modules/react/node_modules/object-assign/index.js":[function(require,module,exports){
-arguments[4]["/mnt/c/swiggis.original/node_modules/create-react-class/node_modules/object-assign/index.js"][0].apply(exports,arguments)
-},{}],"/mnt/c/swiggis.original/node_modules/react/react.js":[function(require,module,exports){
+},{"./KeyEscapeUtils":"C:\\swiggis.austin\\node_modules\\react\\lib\\KeyEscapeUtils.js","./ReactCurrentOwner":"C:\\swiggis.austin\\node_modules\\react\\lib\\ReactCurrentOwner.js","./ReactElementSymbol":"C:\\swiggis.austin\\node_modules\\react\\lib\\ReactElementSymbol.js","./getIteratorFn":"C:\\swiggis.austin\\node_modules\\react\\lib\\getIteratorFn.js","./reactProdInvariant":"C:\\swiggis.austin\\node_modules\\react\\lib\\reactProdInvariant.js","_process":"C:\\swiggis.austin\\node_modules\\process\\browser.js","fbjs/lib/invariant":"C:\\swiggis.austin\\node_modules\\fbjs\\lib\\invariant.js","fbjs/lib/warning":"C:\\swiggis.austin\\node_modules\\fbjs\\lib\\warning.js"}],"C:\\swiggis.austin\\node_modules\\react\\node_modules\\object-assign\\index.js":[function(require,module,exports){
+arguments[4]["C:\\swiggis.austin\\node_modules\\create-react-class\\node_modules\\object-assign\\index.js"][0].apply(exports,arguments)
+},{}],"C:\\swiggis.austin\\node_modules\\react\\react.js":[function(require,module,exports){
 'use strict';
 
 module.exports = require('./lib/React');
 
-},{"./lib/React":"/mnt/c/swiggis.original/node_modules/react/lib/React.js"}],"/mnt/c/swiggis.original/node_modules/strict-uri-encode/index.js":[function(require,module,exports){
+},{"./lib/React":"C:\\swiggis.austin\\node_modules\\react\\lib\\React.js"}],"C:\\swiggis.austin\\node_modules\\strict-uri-encode\\index.js":[function(require,module,exports){
 'use strict';
 module.exports = function (str) {
 	return encodeURIComponent(str).replace(/[!'()*]/g, function (c) {
@@ -56587,7 +55725,7 @@ module.exports = function (str) {
 	});
 };
 
-},{}],"/mnt/c/swiggis.original/node_modules/uncontrollable/createUncontrollable.js":[function(require,module,exports){
+},{}],"C:\\swiggis.austin\\node_modules\\uncontrollable\\createUncontrollable.js":[function(require,module,exports){
 'use strict';
 
 exports.__esModule = true;
@@ -56739,7 +55877,7 @@ function createUncontrollable(mixins, set) {
   }
 }
 module.exports = exports['default'];
-},{"./utils":"/mnt/c/swiggis.original/node_modules/uncontrollable/utils.js","invariant":"/mnt/c/swiggis.original/node_modules/invariant/browser.js","react":"/mnt/c/swiggis.original/node_modules/react/react.js"}],"/mnt/c/swiggis.original/node_modules/uncontrollable/index.js":[function(require,module,exports){
+},{"./utils":"C:\\swiggis.austin\\node_modules\\uncontrollable\\utils.js","invariant":"C:\\swiggis.austin\\node_modules\\invariant\\browser.js","react":"C:\\swiggis.austin\\node_modules\\react\\react.js"}],"C:\\swiggis.austin\\node_modules\\uncontrollable\\index.js":[function(require,module,exports){
 'use strict';
 
 exports.__esModule = true;
@@ -56771,7 +55909,7 @@ function set(component, propName, handler, value, args) {
 
 exports.default = (0, _createUncontrollable2.default)([mixin], set);
 module.exports = exports['default'];
-},{"./createUncontrollable":"/mnt/c/swiggis.original/node_modules/uncontrollable/createUncontrollable.js"}],"/mnt/c/swiggis.original/node_modules/uncontrollable/utils.js":[function(require,module,exports){
+},{"./createUncontrollable":"C:\\swiggis.austin\\node_modules\\uncontrollable\\createUncontrollable.js"}],"C:\\swiggis.austin\\node_modules\\uncontrollable\\utils.js":[function(require,module,exports){
 (function (process){
 'use strict';
 
@@ -56899,9 +56037,9 @@ function has(o, k) {
   return o ? Object.prototype.hasOwnProperty.call(o, k) : false;
 }
 }).call(this,require('_process'))
-},{"_process":"/mnt/c/swiggis.original/node_modules/process/browser.js","invariant":"/mnt/c/swiggis.original/node_modules/invariant/browser.js","react":"/mnt/c/swiggis.original/node_modules/react/react.js"}],"/mnt/c/swiggis.original/node_modules/warning/browser.js":[function(require,module,exports){
-arguments[4]["/mnt/c/swiggis.original/node_modules/react-overlays/node_modules/warning/browser.js"][0].apply(exports,arguments)
-},{"_process":"/mnt/c/swiggis.original/node_modules/process/browser.js"}],"/mnt/c/swiggis.original/src/client/js/components/app/app.jsx":[function(require,module,exports){
+},{"_process":"C:\\swiggis.austin\\node_modules\\process\\browser.js","invariant":"C:\\swiggis.austin\\node_modules\\invariant\\browser.js","react":"C:\\swiggis.austin\\node_modules\\react\\react.js"}],"C:\\swiggis.austin\\node_modules\\warning\\browser.js":[function(require,module,exports){
+arguments[4]["C:\\swiggis.austin\\node_modules\\react-overlays\\node_modules\\warning\\browser.js"][0].apply(exports,arguments)
+},{"_process":"C:\\swiggis.austin\\node_modules\\process\\browser.js"}],"C:\\swiggis.austin\\src\\client\\js\\components\\app\\app.jsx":[function(require,module,exports){
 'use strict';
 
 var React = require('react');
@@ -56946,7 +56084,7 @@ var App = function App(drive, views, route) {
             });
         },
         contextTypes: {
-            router: PropTypes.func
+            router: PropTypes.object.isRequired
         },
         loadElement: function loadElement(elementType, elementId, callback) {
             var self = this;
@@ -56996,7 +56134,7 @@ var App = function App(drive, views, route) {
         },
         goToRoute: function goToRoute(route) {
             var self = this;
-            self.props.router.push(route);
+            self.context.router.push(route);
         },
         render: function render() {
             var self = this;
@@ -57017,26 +56155,15 @@ var App = function App(drive, views, route) {
             });
             return React.createElement(
                 'div',
-                {
-                    store: this.state.store,
-                    currentPage: this.state.currentPage,
-                    path: path,
-                    activeHomePanel: this.state.activeHomePanel,
-                    setMainProperty: this.setMainProperty,
-                    menuVisible: this.state.menuVisible,
-                    handleRouting: this.handleRouting,
-                    activeCategory: this.state.activeCategory,
-                    config: this.state.config,
-                    modal: this.state.modal
-                },
+                null,
                 children
             );
         }
     });
 };
 module.exports = App;
-//# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbImFwcC5qc3giXSwibmFtZXMiOlsiUmVhY3QiLCJyZXF1aXJlIiwiUHJvcFR5cGVzIiwiY3JlYXRlUmVhY3RDbGFzcyIsIm5vb3AiLCJBcHAiLCJkcml2ZSIsInZpZXdzIiwicm91dGUiLCJnZXRJbml0aWFsU3RhdGUiLCJzZWxmIiwic3RvcmUiLCJhcnRpY2xlIiwiY2F0ZWdvcnkiLCJjYXRlZ29yaWVzIiwicGFnZSIsInZpZXciLCJjdXJyZW50Um91dGUiLCJyb3V0ZVBhcmFtcyIsImVsZW1lbnRQYXRoIiwiYWN0aXZlSG9tZVBhbmVsIiwiY3VycmVudFBhZ2UiLCJtZW51VmlzaWJsZSIsImFjdGl2ZUNhdGVnb3J5IiwiYWN0aXZlSWQiLCJleHBhbmRlZCIsImNvbmZpZyIsIndpbmRvdyIsImNvbmZpZ1JlYWN0RHJpdmVDbXMiLCJtb2RhbCIsInNob3ciLCJzZXRNYWluUHJvcGVydHkiLCJwcm9wZXJ0eSIsInZhbHVlIiwiY2FsbGJhY2siLCJvYmpNb2QiLCJzZXRTdGF0ZSIsImNvbnRleHRUeXBlcyIsInJvdXRlciIsImZ1bmMiLCJsb2FkRWxlbWVudCIsImVsZW1lbnRUeXBlIiwiZWxlbWVudElkIiwic3RhdGUiLCJmZXRjaEVsZW1lbnREYXRhIiwiZWxlbWVudEZpbGVJZCIsImFydGljbGVzIiwiZ2V0RWxlbWVudEh0bWwiLCJlbGVtZW50SHRtbCIsImVsZW1lbnQiLCJzdGF0ZVVwZGF0ZSIsImhhbmRsZVJvdXRpbmciLCJlIiwicHJldmVudERlZmF1bHQiLCJzdG9wUHJvcGFnYXRpb24iLCJyb3V0ZVNwbGl0IiwidGFyZ2V0IiwiaHJlZiIsInNwbGl0IiwidHlwZSIsImlkIiwiZ29Ub1JvdXRlIiwicHJvcHMiLCJwdXNoIiwicmVuZGVyIiwicGF0aCIsImxvY2F0aW9uIiwicGF0aG5hbWUiLCJjaGlsZHJlbiIsIkNoaWxkcmVuIiwibWFwIiwiY2hpbGQiLCJjbG9uZUVsZW1lbnQiLCJtb2R1bGUiLCJleHBvcnRzIl0sIm1hcHBpbmdzIjoiQUFBQTs7QUFDQSxJQUFJQSxRQUFRQyxRQUFRLE9BQVIsQ0FBWjtBQUNBLElBQUlDLFlBQVlELFFBQVEsWUFBUixDQUFoQjtBQUNBLElBQUlFLG1CQUFtQkYsUUFBUSxvQkFBUixDQUF2Qjs7QUFFQSxJQUFJRyxPQUFPLFNBQVBBLElBQU8sR0FBWSxDQUN0QixDQUREOztBQUdBLElBQUlDLE1BQU0sU0FBTkEsR0FBTSxDQUFVQyxLQUFWLEVBQWlCQyxLQUFqQixFQUF3QkMsS0FBeEIsRUFBK0I7QUFDckMsV0FBT0wsaUJBQWlCO0FBQ3BCTSx5QkFBaUIsMkJBQVk7QUFDekIsZ0JBQUlDLE9BQU8sSUFBWDtBQUNBLG1CQUFPO0FBQ0hDLHVCQUFPO0FBQ0hDLDZCQUFTLEVBRE47QUFFSEMsOEJBQVVOLE1BQU1PLFVBRmI7QUFHSEMsMEJBQU0sRUFISDtBQUlIQywwQkFBTVQ7QUFKSCxpQkFESjtBQU9IVSw4QkFBY1YsTUFBTVcsV0FBTixDQUFrQkMsV0FQN0I7QUFRSEMsaUNBQWlCLFVBUmQ7QUFTSEMsNkJBQWNkLE1BQU1LLE9BQU4sR0FBZ0JMLE1BQU1LLE9BQXRCLEdBQWdDLEVBVDNDO0FBVUhVLDZCQUFhLElBVlY7QUFXSEMsZ0NBQWdCO0FBQ1pDLDhCQUFVLENBREU7QUFFWkMsOEJBQVU7QUFGRSxpQkFYYjtBQWVIQyx3QkFBUUMsT0FBT0MsbUJBZlo7QUFnQkhDLHVCQUFPO0FBQ0hDLDBCQUFNO0FBREg7QUFoQkosYUFBUDtBQW9CSCxTQXZCbUI7O0FBeUJwQkMseUJBQWlCLHlCQUFVQyxRQUFWLEVBQW9CQyxLQUFwQixFQUEyQkMsUUFBM0IsRUFBcUM7QUFDbEQsZ0JBQUl4QixPQUFPLElBQVg7QUFDQXdCLHVCQUFXQSxZQUFZOUIsSUFBdkI7QUFDQSxnQkFBSStCLFNBQVMsRUFBYjtBQUNBQSxtQkFBT0gsUUFBUCxJQUFtQkMsS0FBbkI7QUFDQXZCLGlCQUFLMEIsUUFBTCxDQUFjRCxNQUFkLEVBQXNCLFlBQVk7QUFDOUJELHlCQUFTRCxLQUFUO0FBQ0gsYUFGRDtBQUdILFNBakNtQjtBQWtDcEJJLHNCQUFjO0FBQ1ZDLG9CQUFRcEMsVUFBVXFDO0FBRFIsU0FsQ007QUFxQ3BCQyxxQkFBYSxxQkFBVUMsV0FBVixFQUF1QkMsU0FBdkIsRUFBa0NSLFFBQWxDLEVBQTRDO0FBQ3JELGdCQUFJeEIsT0FBTyxJQUFYO0FBQ0F3Qix1QkFBV0EsWUFBWTlCLElBQXZCO0FBQ0EsZ0JBQUksT0FBT00sS0FBS2lDLEtBQUwsQ0FBV2hDLEtBQVgsQ0FBaUI4QixXQUFqQixFQUE4QkMsU0FBOUIsQ0FBUCxLQUFvRCxXQUF4RCxFQUFxRTtBQUNqRWhDLHFCQUFLMEIsUUFBTCxDQUFjO0FBQ1ZmLGlDQUFhWCxLQUFLaUMsS0FBTCxDQUFXaEMsS0FBWCxDQUFpQjhCLFdBQWpCLEVBQThCQyxTQUE5QjtBQURILGlCQUFkLEVBRUcsWUFBWTtBQUNYUiw2QkFBU3hCLEtBQUtpQyxLQUFMLENBQVdoQyxLQUFYLENBQWlCOEIsV0FBakIsRUFBOEJDLFNBQTlCLENBQVQ7QUFDSCxpQkFKRDtBQUtILGFBTkQsTUFNTztBQUNIaEMscUJBQUtrQyxnQkFBTCxDQUFzQkgsV0FBdEIsRUFBbUNDLFNBQW5DLEVBQThDUixRQUE5QztBQUNIO0FBQ0osU0FqRG1CO0FBa0RwQlUsMEJBQWtCLDBCQUFVSCxXQUFWLEVBQXVCQyxTQUF2QixFQUFrQ1IsUUFBbEMsRUFBNEM7QUFDMUQsZ0JBQUl4QixPQUFPLElBQVg7QUFDQXdCLHVCQUFXQSxZQUFZOUIsSUFBdkI7QUFDQSxvQkFBUXFDLFdBQVI7QUFDSSxxQkFBSyxTQUFMO0FBQ0ksd0JBQUlJLGdCQUFnQm5DLEtBQUtpQyxLQUFMLENBQVdoQyxLQUFYLENBQWlCSyxJQUFqQixDQUFzQjhCLFFBQXRCLENBQStCSixTQUEvQixFQUEwQyxTQUExQyxDQUFwQjtBQUNBcEMsMEJBQU15QyxjQUFOLENBQXFCRixhQUFyQixFQUFvQyxVQUFVRyxXQUFWLEVBQXVCO0FBQ3ZELDRCQUFJQyxVQUFVdkMsS0FBS2lDLEtBQUwsQ0FBV2hDLEtBQVgsQ0FBaUJLLElBQWpCLENBQXNCOEIsUUFBdEIsQ0FBK0JKLFNBQS9CLENBQWQ7QUFDQU8sZ0NBQVEsTUFBUixJQUFrQkQsV0FBbEI7QUFDQSw0QkFBSUUsY0FBYyxFQUFsQjtBQUNBLDRCQUFJdkMsUUFBUUQsS0FBS2lDLEtBQUwsQ0FBV2hDLEtBQXZCO0FBQ0FBLDhCQUFNOEIsV0FBTixFQUFtQkMsU0FBbkIsSUFBZ0NPLE9BQWhDO0FBQ0FDLG9DQUFZLGFBQVosSUFBNkJELE9BQTdCO0FBQ0FDLG9DQUFZLE9BQVosSUFBdUJ2QyxLQUF2QjtBQUNBRCw2QkFBSzBCLFFBQUwsQ0FBY2MsV0FBZCxFQUEyQixZQUFZO0FBQ25DaEIscUNBQVNlLE9BQVQ7QUFDSCx5QkFGRDtBQUdILHFCQVhEO0FBWUE7QUFDSixxQkFBSyxVQUFMO0FBQ0k7QUFqQlI7QUFtQkgsU0F4RW1CO0FBeUVwQkUsdUJBQWUsdUJBQVVGLE9BQVYsRUFBbUJHLENBQW5CLEVBQXNCO0FBQ2pDQSxjQUFFQyxjQUFGO0FBQ0FELGNBQUVFLGVBQUY7QUFDQSxnQkFBSUMsYUFBYUgsRUFBRUksTUFBRixDQUFTQyxJQUFULENBQWNDLEtBQWQsQ0FBb0IsR0FBcEIsQ0FBakI7QUFDQSxnQkFBSWxELFFBQVErQyxXQUFXLENBQVgsQ0FBWjtBQUNBLGdCQUFJN0MsT0FBTyxJQUFYO0FBQ0FBLGlCQUFLOEIsV0FBTCxDQUFpQlMsUUFBUVUsSUFBekIsRUFBK0JWLFFBQVFXLEVBQXZDLEVBQTJDLFlBQVk7QUFDbkRsRCxxQkFBS21ELFNBQUwsQ0FBZXJELEtBQWY7QUFDSCxhQUZEO0FBR0gsU0FsRm1CO0FBbUZwQnFELG1CQUFXLG1CQUFVckQsS0FBVixFQUFpQjtBQUN4QixnQkFBSUUsT0FBTyxJQUFYO0FBQ0FBLGlCQUFLb0QsS0FBTCxDQUFXeEIsTUFBWCxDQUFrQnlCLElBQWxCLENBQXVCdkQsS0FBdkI7QUFDSCxTQXRGbUI7QUF1RnBCd0QsZ0JBQVEsa0JBQVk7QUFDaEIsZ0JBQUl0RCxPQUFPLElBQVg7QUFDQSxnQkFBSXVELE9BQU8sS0FBS0gsS0FBTCxDQUFXSSxRQUFYLENBQW9CQyxRQUEvQjtBQUNBLGdCQUFJQyxXQUFXcEUsTUFBTXFFLFFBQU4sQ0FBZUMsR0FBZixDQUFtQixLQUFLUixLQUFMLENBQVdNLFFBQTlCLEVBQXdDLFVBQVVHLEtBQVYsRUFBaUI7QUFDcEUsdUJBQU92RSxNQUFNd0UsWUFBTixDQUFtQkQsS0FBbkIsRUFBMEI7QUFDN0I1RCwyQkFBT0QsS0FBS2lDLEtBQUwsQ0FBV2hDLEtBRFc7QUFFN0JVLGlDQUFhWCxLQUFLaUMsS0FBTCxDQUFXdEIsV0FGSztBQUc3QjRDLDBCQUFNQSxJQUh1QjtBQUk3QjdDLHFDQUFpQlYsS0FBS2lDLEtBQUwsQ0FBV3ZCLGVBSkM7QUFLN0JXLHFDQUFpQnJCLEtBQUtxQixlQUxPO0FBTTdCVCxpQ0FBYVosS0FBS2lDLEtBQUwsQ0FBV3JCLFdBTks7QUFPN0I2QixtQ0FBZXpDLEtBQUt5QyxhQVBTO0FBUTdCNUIsb0NBQWdCYixLQUFLaUMsS0FBTCxDQUFXcEIsY0FSRTtBQVM3QkcsNEJBQVFoQixLQUFLaUMsS0FBTCxDQUFXakIsTUFUVTtBQVU3QkcsMkJBQU9uQixLQUFLaUMsS0FBTCxDQUFXZDtBQVZXLGlCQUExQixDQUFQO0FBWUgsYUFiYyxDQUFmO0FBY0EsbUJBQ0k7QUFBQTtBQUFBO0FBQ0ksMkJBQU8sS0FBS2MsS0FBTCxDQUFXaEMsS0FEdEI7QUFFSSxpQ0FBYSxLQUFLZ0MsS0FBTCxDQUFXdEIsV0FGNUI7QUFHSSwwQkFBTTRDLElBSFY7QUFJSSxxQ0FBaUIsS0FBS3RCLEtBQUwsQ0FBV3ZCLGVBSmhDO0FBS0kscUNBQWlCLEtBQUtXLGVBTDFCO0FBTUksaUNBQWEsS0FBS1ksS0FBTCxDQUFXckIsV0FONUI7QUFPSSxtQ0FBZSxLQUFLNkIsYUFQeEI7QUFRSSxvQ0FBZ0IsS0FBS1IsS0FBTCxDQUFXcEIsY0FSL0I7QUFTSSw0QkFBUSxLQUFLb0IsS0FBTCxDQUFXakIsTUFUdkI7QUFVSSwyQkFBTyxLQUFLaUIsS0FBTCxDQUFXZDtBQVZ0QjtBQVlDdUM7QUFaRCxhQURKO0FBZ0JIO0FBeEhtQixLQUFqQixDQUFQO0FBMEhILENBM0hEO0FBNEhBSyxPQUFPQyxPQUFQLEdBQWlCckUsR0FBakIiLCJmaWxlIjoiYXBwLmpzeCIsInNvdXJjZXNDb250ZW50IjpbIid1c2Ugc3RyaWN0JztcbnZhciBSZWFjdCA9IHJlcXVpcmUoJ3JlYWN0Jyk7XG52YXIgUHJvcFR5cGVzID0gcmVxdWlyZSgncHJvcC10eXBlcycpO1xudmFyIGNyZWF0ZVJlYWN0Q2xhc3MgPSByZXF1aXJlKCdjcmVhdGUtcmVhY3QtY2xhc3MnKTtcblxudmFyIG5vb3AgPSBmdW5jdGlvbiAoKSB7XG59O1xuXG52YXIgQXBwID0gZnVuY3Rpb24gKGRyaXZlLCB2aWV3cywgcm91dGUpIHtcbiAgICByZXR1cm4gY3JlYXRlUmVhY3RDbGFzcyh7XG4gICAgICAgIGdldEluaXRpYWxTdGF0ZTogZnVuY3Rpb24gKCkge1xuICAgICAgICAgICAgdmFyIHNlbGYgPSB0aGlzO1xuICAgICAgICAgICAgcmV0dXJuIHtcbiAgICAgICAgICAgICAgICBzdG9yZToge1xuICAgICAgICAgICAgICAgICAgICBhcnRpY2xlOiBbXSxcbiAgICAgICAgICAgICAgICAgICAgY2F0ZWdvcnk6IHZpZXdzLmNhdGVnb3JpZXMsXG4gICAgICAgICAgICAgICAgICAgIHBhZ2U6IFtdLFxuICAgICAgICAgICAgICAgICAgICB2aWV3OiB2aWV3c1xuICAgICAgICAgICAgICAgIH0sXG4gICAgICAgICAgICAgICAgY3VycmVudFJvdXRlOiB2aWV3cy5yb3V0ZVBhcmFtcy5lbGVtZW50UGF0aCxcbiAgICAgICAgICAgICAgICBhY3RpdmVIb21lUGFuZWw6ICdhcnRpY2xlcycsXG4gICAgICAgICAgICAgICAgY3VycmVudFBhZ2U6ICh2aWV3cy5hcnRpY2xlID8gdmlld3MuYXJ0aWNsZSA6IHt9KSxcbiAgICAgICAgICAgICAgICBtZW51VmlzaWJsZTogdHJ1ZSxcbiAgICAgICAgICAgICAgICBhY3RpdmVDYXRlZ29yeToge1xuICAgICAgICAgICAgICAgICAgICBhY3RpdmVJZDogMCxcbiAgICAgICAgICAgICAgICAgICAgZXhwYW5kZWQ6IGZhbHNlXG4gICAgICAgICAgICAgICAgfSxcbiAgICAgICAgICAgICAgICBjb25maWc6IHdpbmRvdy5jb25maWdSZWFjdERyaXZlQ21zLFxuICAgICAgICAgICAgICAgIG1vZGFsOiB7XG4gICAgICAgICAgICAgICAgICAgIHNob3c6IGZhbHNlXG4gICAgICAgICAgICAgICAgfVxuICAgICAgICAgICAgfTtcbiAgICAgICAgfSxcblxuICAgICAgICBzZXRNYWluUHJvcGVydHk6IGZ1bmN0aW9uIChwcm9wZXJ0eSwgdmFsdWUsIGNhbGxiYWNrKSB7XG4gICAgICAgICAgICB2YXIgc2VsZiA9IHRoaXM7XG4gICAgICAgICAgICBjYWxsYmFjayA9IGNhbGxiYWNrIHx8IG5vb3A7XG4gICAgICAgICAgICB2YXIgb2JqTW9kID0ge307XG4gICAgICAgICAgICBvYmpNb2RbcHJvcGVydHldID0gdmFsdWU7XG4gICAgICAgICAgICBzZWxmLnNldFN0YXRlKG9iak1vZCwgZnVuY3Rpb24gKCkge1xuICAgICAgICAgICAgICAgIGNhbGxiYWNrKHZhbHVlKTtcbiAgICAgICAgICAgIH0pO1xuICAgICAgICB9LFxuICAgICAgICBjb250ZXh0VHlwZXM6IHtcbiAgICAgICAgICAgIHJvdXRlcjogUHJvcFR5cGVzLmZ1bmNcbiAgICAgICAgfSxcbiAgICAgICAgbG9hZEVsZW1lbnQ6IGZ1bmN0aW9uIChlbGVtZW50VHlwZSwgZWxlbWVudElkLCBjYWxsYmFjaykge1xuICAgICAgICAgICAgdmFyIHNlbGYgPSB0aGlzO1xuICAgICAgICAgICAgY2FsbGJhY2sgPSBjYWxsYmFjayB8fCBub29wO1xuICAgICAgICAgICAgaWYgKHR5cGVvZiBzZWxmLnN0YXRlLnN0b3JlW2VsZW1lbnRUeXBlXVtlbGVtZW50SWRdICE9PSAndW5kZWZpbmVkJykge1xuICAgICAgICAgICAgICAgIHNlbGYuc2V0U3RhdGUoe1xuICAgICAgICAgICAgICAgICAgICBjdXJyZW50UGFnZTogc2VsZi5zdGF0ZS5zdG9yZVtlbGVtZW50VHlwZV1bZWxlbWVudElkXVxuICAgICAgICAgICAgICAgIH0sIGZ1bmN0aW9uICgpIHtcbiAgICAgICAgICAgICAgICAgICAgY2FsbGJhY2soc2VsZi5zdGF0ZS5zdG9yZVtlbGVtZW50VHlwZV1bZWxlbWVudElkXSlcbiAgICAgICAgICAgICAgICB9KTtcbiAgICAgICAgICAgIH0gZWxzZSB7XG4gICAgICAgICAgICAgICAgc2VsZi5mZXRjaEVsZW1lbnREYXRhKGVsZW1lbnRUeXBlLCBlbGVtZW50SWQsIGNhbGxiYWNrKTtcbiAgICAgICAgICAgIH1cbiAgICAgICAgfSxcbiAgICAgICAgZmV0Y2hFbGVtZW50RGF0YTogZnVuY3Rpb24gKGVsZW1lbnRUeXBlLCBlbGVtZW50SWQsIGNhbGxiYWNrKSB7XG4gICAgICAgICAgICB2YXIgc2VsZiA9IHRoaXM7XG4gICAgICAgICAgICBjYWxsYmFjayA9IGNhbGxiYWNrIHx8IG5vb3A7XG4gICAgICAgICAgICBzd2l0Y2ggKGVsZW1lbnRUeXBlKSB7XG4gICAgICAgICAgICAgICAgY2FzZSAnYXJ0aWNsZSc6XG4gICAgICAgICAgICAgICAgICAgIHZhciBlbGVtZW50RmlsZUlkID0gc2VsZi5zdGF0ZS5zdG9yZS52aWV3LmFydGljbGVzW2VsZW1lbnRJZF1bJ2RyaXZlSWQnXTtcbiAgICAgICAgICAgICAgICAgICAgZHJpdmUuZ2V0RWxlbWVudEh0bWwoZWxlbWVudEZpbGVJZCwgZnVuY3Rpb24gKGVsZW1lbnRIdG1sKSB7XG4gICAgICAgICAgICAgICAgICAgICAgICB2YXIgZWxlbWVudCA9IHNlbGYuc3RhdGUuc3RvcmUudmlldy5hcnRpY2xlc1tlbGVtZW50SWRdO1xuICAgICAgICAgICAgICAgICAgICAgICAgZWxlbWVudFsnYm9keSddID0gZWxlbWVudEh0bWw7XG4gICAgICAgICAgICAgICAgICAgICAgICB2YXIgc3RhdGVVcGRhdGUgPSB7fTtcbiAgICAgICAgICAgICAgICAgICAgICAgIHZhciBzdG9yZSA9IHNlbGYuc3RhdGUuc3RvcmU7XG4gICAgICAgICAgICAgICAgICAgICAgICBzdG9yZVtlbGVtZW50VHlwZV1bZWxlbWVudElkXSA9IGVsZW1lbnQ7XG4gICAgICAgICAgICAgICAgICAgICAgICBzdGF0ZVVwZGF0ZVsnY3VycmVudFBhZ2UnXSA9IGVsZW1lbnQ7XG4gICAgICAgICAgICAgICAgICAgICAgICBzdGF0ZVVwZGF0ZVsnc3RvcmUnXSA9IHN0b3JlO1xuICAgICAgICAgICAgICAgICAgICAgICAgc2VsZi5zZXRTdGF0ZShzdGF0ZVVwZGF0ZSwgZnVuY3Rpb24gKCkge1xuICAgICAgICAgICAgICAgICAgICAgICAgICAgIGNhbGxiYWNrKGVsZW1lbnQpO1xuICAgICAgICAgICAgICAgICAgICAgICAgfSk7XG4gICAgICAgICAgICAgICAgICAgIH0pO1xuICAgICAgICAgICAgICAgICAgICBicmVhaztcbiAgICAgICAgICAgICAgICBjYXNlICdjYXRlZ29yeSc6XG4gICAgICAgICAgICAgICAgICAgIGJyZWFrO1xuICAgICAgICAgICAgfVxuICAgICAgICB9LFxuICAgICAgICBoYW5kbGVSb3V0aW5nOiBmdW5jdGlvbiAoZWxlbWVudCwgZSkge1xuICAgICAgICAgICAgZS5wcmV2ZW50RGVmYXVsdCgpO1xuICAgICAgICAgICAgZS5zdG9wUHJvcGFnYXRpb24oKTtcbiAgICAgICAgICAgIHZhciByb3V0ZVNwbGl0ID0gZS50YXJnZXQuaHJlZi5zcGxpdCgnIycpO1xuICAgICAgICAgICAgdmFyIHJvdXRlID0gcm91dGVTcGxpdFsxXTtcbiAgICAgICAgICAgIHZhciBzZWxmID0gdGhpcztcbiAgICAgICAgICAgIHNlbGYubG9hZEVsZW1lbnQoZWxlbWVudC50eXBlLCBlbGVtZW50LmlkLCBmdW5jdGlvbiAoKSB7XG4gICAgICAgICAgICAgICAgc2VsZi5nb1RvUm91dGUocm91dGUpO1xuICAgICAgICAgICAgfSk7XG4gICAgICAgIH0sXG4gICAgICAgIGdvVG9Sb3V0ZTogZnVuY3Rpb24gKHJvdXRlKSB7XG4gICAgICAgICAgICB2YXIgc2VsZiA9IHRoaXM7XG4gICAgICAgICAgICBzZWxmLnByb3BzLnJvdXRlci5wdXNoKHJvdXRlKTtcbiAgICAgICAgfSxcbiAgICAgICAgcmVuZGVyOiBmdW5jdGlvbiAoKSB7XG4gICAgICAgICAgICB2YXIgc2VsZiA9IHRoaXM7XG4gICAgICAgICAgICB2YXIgcGF0aCA9IHRoaXMucHJvcHMubG9jYXRpb24ucGF0aG5hbWU7XG4gICAgICAgICAgICB2YXIgY2hpbGRyZW4gPSBSZWFjdC5DaGlsZHJlbi5tYXAodGhpcy5wcm9wcy5jaGlsZHJlbiwgZnVuY3Rpb24gKGNoaWxkKSB7XG4gICAgICAgICAgICAgICAgcmV0dXJuIFJlYWN0LmNsb25lRWxlbWVudChjaGlsZCwgeyAgICAgICAgICAgICAgICAgICAgIFxuICAgICAgICAgICAgICAgICAgICBzdG9yZTogc2VsZi5zdGF0ZS5zdG9yZSxcbiAgICAgICAgICAgICAgICAgICAgY3VycmVudFBhZ2U6IHNlbGYuc3RhdGUuY3VycmVudFBhZ2UsXG4gICAgICAgICAgICAgICAgICAgIHBhdGg6IHBhdGgsXG4gICAgICAgICAgICAgICAgICAgIGFjdGl2ZUhvbWVQYW5lbDogc2VsZi5zdGF0ZS5hY3RpdmVIb21lUGFuZWwsXG4gICAgICAgICAgICAgICAgICAgIHNldE1haW5Qcm9wZXJ0eTogc2VsZi5zZXRNYWluUHJvcGVydHksXG4gICAgICAgICAgICAgICAgICAgIG1lbnVWaXNpYmxlOiBzZWxmLnN0YXRlLm1lbnVWaXNpYmxlLFxuICAgICAgICAgICAgICAgICAgICBoYW5kbGVSb3V0aW5nOiBzZWxmLmhhbmRsZVJvdXRpbmcsXG4gICAgICAgICAgICAgICAgICAgIGFjdGl2ZUNhdGVnb3J5OiBzZWxmLnN0YXRlLmFjdGl2ZUNhdGVnb3J5LFxuICAgICAgICAgICAgICAgICAgICBjb25maWc6IHNlbGYuc3RhdGUuY29uZmlnLFxuICAgICAgICAgICAgICAgICAgICBtb2RhbDogc2VsZi5zdGF0ZS5tb2RhbFxuICAgICAgICAgICAgICAgIH0pXG4gICAgICAgICAgICB9KTtcbiAgICAgICAgICAgIHJldHVybiAoXG4gICAgICAgICAgICAgICAgPGRpdlxuICAgICAgICAgICAgICAgICAgICBzdG9yZT17dGhpcy5zdGF0ZS5zdG9yZX1cbiAgICAgICAgICAgICAgICAgICAgY3VycmVudFBhZ2U9e3RoaXMuc3RhdGUuY3VycmVudFBhZ2V9XG4gICAgICAgICAgICAgICAgICAgIHBhdGg9e3BhdGh9XG4gICAgICAgICAgICAgICAgICAgIGFjdGl2ZUhvbWVQYW5lbD17dGhpcy5zdGF0ZS5hY3RpdmVIb21lUGFuZWx9XG4gICAgICAgICAgICAgICAgICAgIHNldE1haW5Qcm9wZXJ0eT17dGhpcy5zZXRNYWluUHJvcGVydHl9XG4gICAgICAgICAgICAgICAgICAgIG1lbnVWaXNpYmxlPXt0aGlzLnN0YXRlLm1lbnVWaXNpYmxlfVxuICAgICAgICAgICAgICAgICAgICBoYW5kbGVSb3V0aW5nPXt0aGlzLmhhbmRsZVJvdXRpbmd9XG4gICAgICAgICAgICAgICAgICAgIGFjdGl2ZUNhdGVnb3J5PXt0aGlzLnN0YXRlLmFjdGl2ZUNhdGVnb3J5fVxuICAgICAgICAgICAgICAgICAgICBjb25maWc9e3RoaXMuc3RhdGUuY29uZmlnfVxuICAgICAgICAgICAgICAgICAgICBtb2RhbD17dGhpcy5zdGF0ZS5tb2RhbH0gXG4gICAgICAgICAgICAgICAgPlxuICAgICAgICAgICAgICAgIHtjaGlsZHJlbn1cbiAgICAgICAgICAgICAgICA8L2Rpdj5cbiAgICAgICAgICAgIClcbiAgICAgICAgfVxuICAgIH0pO1xufTtcbm1vZHVsZS5leHBvcnRzID0gQXBwOyJdfQ==
-},{"create-react-class":"/mnt/c/swiggis.original/node_modules/create-react-class/index.js","prop-types":"/mnt/c/swiggis.original/node_modules/prop-types/index.js","react":"/mnt/c/swiggis.original/node_modules/react/react.js"}],"/mnt/c/swiggis.original/src/client/js/components/app/routes.jsx":[function(require,module,exports){
+//# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbImFwcC5qc3giXSwibmFtZXMiOlsiUmVhY3QiLCJyZXF1aXJlIiwiUHJvcFR5cGVzIiwiY3JlYXRlUmVhY3RDbGFzcyIsIm5vb3AiLCJBcHAiLCJkcml2ZSIsInZpZXdzIiwicm91dGUiLCJnZXRJbml0aWFsU3RhdGUiLCJzZWxmIiwic3RvcmUiLCJhcnRpY2xlIiwiY2F0ZWdvcnkiLCJjYXRlZ29yaWVzIiwicGFnZSIsInZpZXciLCJjdXJyZW50Um91dGUiLCJyb3V0ZVBhcmFtcyIsImVsZW1lbnRQYXRoIiwiYWN0aXZlSG9tZVBhbmVsIiwiY3VycmVudFBhZ2UiLCJtZW51VmlzaWJsZSIsImFjdGl2ZUNhdGVnb3J5IiwiYWN0aXZlSWQiLCJleHBhbmRlZCIsImNvbmZpZyIsIndpbmRvdyIsImNvbmZpZ1JlYWN0RHJpdmVDbXMiLCJtb2RhbCIsInNob3ciLCJzZXRNYWluUHJvcGVydHkiLCJwcm9wZXJ0eSIsInZhbHVlIiwiY2FsbGJhY2siLCJvYmpNb2QiLCJzZXRTdGF0ZSIsImNvbnRleHRUeXBlcyIsInJvdXRlciIsIm9iamVjdCIsImlzUmVxdWlyZWQiLCJsb2FkRWxlbWVudCIsImVsZW1lbnRUeXBlIiwiZWxlbWVudElkIiwic3RhdGUiLCJmZXRjaEVsZW1lbnREYXRhIiwiZWxlbWVudEZpbGVJZCIsImFydGljbGVzIiwiZ2V0RWxlbWVudEh0bWwiLCJlbGVtZW50SHRtbCIsImVsZW1lbnQiLCJzdGF0ZVVwZGF0ZSIsImhhbmRsZVJvdXRpbmciLCJlIiwicHJldmVudERlZmF1bHQiLCJzdG9wUHJvcGFnYXRpb24iLCJyb3V0ZVNwbGl0IiwidGFyZ2V0IiwiaHJlZiIsInNwbGl0IiwidHlwZSIsImlkIiwiZ29Ub1JvdXRlIiwiY29udGV4dCIsInB1c2giLCJyZW5kZXIiLCJwYXRoIiwicHJvcHMiLCJsb2NhdGlvbiIsInBhdGhuYW1lIiwiY2hpbGRyZW4iLCJDaGlsZHJlbiIsIm1hcCIsImNoaWxkIiwiY2xvbmVFbGVtZW50IiwibW9kdWxlIiwiZXhwb3J0cyJdLCJtYXBwaW5ncyI6IkFBQUE7O0FBQ0EsSUFBSUEsUUFBUUMsUUFBUSxPQUFSLENBQVo7QUFDQSxJQUFJQyxZQUFZRCxRQUFRLFlBQVIsQ0FBaEI7QUFDQSxJQUFJRSxtQkFBbUJGLFFBQVEsb0JBQVIsQ0FBdkI7O0FBRUEsSUFBSUcsT0FBTyxTQUFQQSxJQUFPLEdBQVksQ0FDdEIsQ0FERDs7QUFHQSxJQUFJQyxNQUFNLFNBQU5BLEdBQU0sQ0FBVUMsS0FBVixFQUFpQkMsS0FBakIsRUFBd0JDLEtBQXhCLEVBQStCO0FBQ3JDLFdBQU9MLGlCQUFpQjtBQUNwQk0seUJBQWlCLDJCQUFZO0FBQ3pCLGdCQUFJQyxPQUFPLElBQVg7QUFDQSxtQkFBTztBQUNIQyx1QkFBTztBQUNIQyw2QkFBUyxFQUROO0FBRUhDLDhCQUFVTixNQUFNTyxVQUZiO0FBR0hDLDBCQUFNLEVBSEg7QUFJSEMsMEJBQU1UO0FBSkgsaUJBREo7QUFPSFUsOEJBQWNWLE1BQU1XLFdBQU4sQ0FBa0JDLFdBUDdCO0FBUUhDLGlDQUFpQixVQVJkO0FBU0hDLDZCQUFjZCxNQUFNSyxPQUFOLEdBQWdCTCxNQUFNSyxPQUF0QixHQUFnQyxFQVQzQztBQVVIVSw2QkFBYSxJQVZWO0FBV0hDLGdDQUFnQjtBQUNaQyw4QkFBVSxDQURFO0FBRVpDLDhCQUFVO0FBRkUsaUJBWGI7QUFlSEMsd0JBQVFDLE9BQU9DLG1CQWZaO0FBZ0JIQyx1QkFBTztBQUNIQywwQkFBTTtBQURIO0FBaEJKLGFBQVA7QUFvQkgsU0F2Qm1COztBQXlCcEJDLHlCQUFpQix5QkFBVUMsUUFBVixFQUFvQkMsS0FBcEIsRUFBMkJDLFFBQTNCLEVBQXFDO0FBQ2xELGdCQUFJeEIsT0FBTyxJQUFYO0FBQ0F3Qix1QkFBV0EsWUFBWTlCLElBQXZCO0FBQ0EsZ0JBQUkrQixTQUFTLEVBQWI7QUFDQUEsbUJBQU9ILFFBQVAsSUFBbUJDLEtBQW5CO0FBQ0F2QixpQkFBSzBCLFFBQUwsQ0FBY0QsTUFBZCxFQUFzQixZQUFZO0FBQzlCRCx5QkFBU0QsS0FBVDtBQUNILGFBRkQ7QUFHSCxTQWpDbUI7QUFrQ3BCSSxzQkFBYztBQUNWQyxvQkFBUXBDLFVBQVVxQyxNQUFWLENBQWlCQztBQURmLFNBbENNO0FBcUNwQkMscUJBQWEscUJBQVVDLFdBQVYsRUFBdUJDLFNBQXZCLEVBQWtDVCxRQUFsQyxFQUE0QztBQUNyRCxnQkFBSXhCLE9BQU8sSUFBWDtBQUNBd0IsdUJBQVdBLFlBQVk5QixJQUF2QjtBQUNBLGdCQUFJLE9BQU9NLEtBQUtrQyxLQUFMLENBQVdqQyxLQUFYLENBQWlCK0IsV0FBakIsRUFBOEJDLFNBQTlCLENBQVAsS0FBb0QsV0FBeEQsRUFBcUU7QUFDakVqQyxxQkFBSzBCLFFBQUwsQ0FBYztBQUNWZixpQ0FBYVgsS0FBS2tDLEtBQUwsQ0FBV2pDLEtBQVgsQ0FBaUIrQixXQUFqQixFQUE4QkMsU0FBOUI7QUFESCxpQkFBZCxFQUVHLFlBQVk7QUFDWFQsNkJBQVN4QixLQUFLa0MsS0FBTCxDQUFXakMsS0FBWCxDQUFpQitCLFdBQWpCLEVBQThCQyxTQUE5QixDQUFUO0FBQ0gsaUJBSkQ7QUFLSCxhQU5ELE1BTU87QUFDSGpDLHFCQUFLbUMsZ0JBQUwsQ0FBc0JILFdBQXRCLEVBQW1DQyxTQUFuQyxFQUE4Q1QsUUFBOUM7QUFDSDtBQUNKLFNBakRtQjtBQWtEcEJXLDBCQUFrQiwwQkFBVUgsV0FBVixFQUF1QkMsU0FBdkIsRUFBa0NULFFBQWxDLEVBQTRDO0FBQzFELGdCQUFJeEIsT0FBTyxJQUFYO0FBQ0F3Qix1QkFBV0EsWUFBWTlCLElBQXZCO0FBQ0Esb0JBQVFzQyxXQUFSO0FBQ0kscUJBQUssU0FBTDtBQUNJLHdCQUFJSSxnQkFBZ0JwQyxLQUFLa0MsS0FBTCxDQUFXakMsS0FBWCxDQUFpQkssSUFBakIsQ0FBc0IrQixRQUF0QixDQUErQkosU0FBL0IsRUFBMEMsU0FBMUMsQ0FBcEI7QUFDQXJDLDBCQUFNMEMsY0FBTixDQUFxQkYsYUFBckIsRUFBb0MsVUFBVUcsV0FBVixFQUF1QjtBQUN2RCw0QkFBSUMsVUFBVXhDLEtBQUtrQyxLQUFMLENBQVdqQyxLQUFYLENBQWlCSyxJQUFqQixDQUFzQitCLFFBQXRCLENBQStCSixTQUEvQixDQUFkO0FBQ0FPLGdDQUFRLE1BQVIsSUFBa0JELFdBQWxCO0FBQ0EsNEJBQUlFLGNBQWMsRUFBbEI7QUFDQSw0QkFBSXhDLFFBQVFELEtBQUtrQyxLQUFMLENBQVdqQyxLQUF2QjtBQUNBQSw4QkFBTStCLFdBQU4sRUFBbUJDLFNBQW5CLElBQWdDTyxPQUFoQztBQUNBQyxvQ0FBWSxhQUFaLElBQTZCRCxPQUE3QjtBQUNBQyxvQ0FBWSxPQUFaLElBQXVCeEMsS0FBdkI7QUFDQUQsNkJBQUswQixRQUFMLENBQWNlLFdBQWQsRUFBMkIsWUFBWTtBQUNuQ2pCLHFDQUFTZ0IsT0FBVDtBQUNILHlCQUZEO0FBR0gscUJBWEQ7QUFZQTtBQUNKLHFCQUFLLFVBQUw7QUFDSTtBQWpCUjtBQW1CSCxTQXhFbUI7QUF5RXBCRSx1QkFBZSx1QkFBVUYsT0FBVixFQUFtQkcsQ0FBbkIsRUFBc0I7QUFDakNBLGNBQUVDLGNBQUY7QUFDQUQsY0FBRUUsZUFBRjtBQUNBLGdCQUFJQyxhQUFhSCxFQUFFSSxNQUFGLENBQVNDLElBQVQsQ0FBY0MsS0FBZCxDQUFvQixHQUFwQixDQUFqQjtBQUNBLGdCQUFJbkQsUUFBUWdELFdBQVcsQ0FBWCxDQUFaO0FBQ0EsZ0JBQUk5QyxPQUFPLElBQVg7QUFDQUEsaUJBQUsrQixXQUFMLENBQWlCUyxRQUFRVSxJQUF6QixFQUErQlYsUUFBUVcsRUFBdkMsRUFBMkMsWUFBWTtBQUNuRG5ELHFCQUFLb0QsU0FBTCxDQUFldEQsS0FBZjtBQUNILGFBRkQ7QUFHSCxTQWxGbUI7QUFtRnBCc0QsbUJBQVcsbUJBQVV0RCxLQUFWLEVBQWlCO0FBQ3hCLGdCQUFJRSxPQUFPLElBQVg7QUFDQUEsaUJBQUtxRCxPQUFMLENBQWF6QixNQUFiLENBQW9CMEIsSUFBcEIsQ0FBeUJ4RCxLQUF6QjtBQUNILFNBdEZtQjtBQXVGcEJ5RCxnQkFBUSxrQkFBWTtBQUNoQixnQkFBSXZELE9BQU8sSUFBWDtBQUNBLGdCQUFJd0QsT0FBTyxLQUFLQyxLQUFMLENBQVdDLFFBQVgsQ0FBb0JDLFFBQS9CO0FBQ0EsZ0JBQUlDLFdBQVd0RSxNQUFNdUUsUUFBTixDQUFlQyxHQUFmLENBQW1CLEtBQUtMLEtBQUwsQ0FBV0csUUFBOUIsRUFBd0MsVUFBVUcsS0FBVixFQUFpQjtBQUNwRSx1QkFBT3pFLE1BQU0wRSxZQUFOLENBQW1CRCxLQUFuQixFQUEwQjtBQUM3QjlELDJCQUFPRCxLQUFLa0MsS0FBTCxDQUFXakMsS0FEVztBQUU3QlUsaUNBQWFYLEtBQUtrQyxLQUFMLENBQVd2QixXQUZLO0FBRzdCNkMsMEJBQU1BLElBSHVCO0FBSTdCOUMscUNBQWlCVixLQUFLa0MsS0FBTCxDQUFXeEIsZUFKQztBQUs3QlcscUNBQWlCckIsS0FBS3FCLGVBTE87QUFNN0JULGlDQUFhWixLQUFLa0MsS0FBTCxDQUFXdEIsV0FOSztBQU83QjhCLG1DQUFlMUMsS0FBSzBDLGFBUFM7QUFRN0I3QixvQ0FBZ0JiLEtBQUtrQyxLQUFMLENBQVdyQixjQVJFO0FBUzdCRyw0QkFBUWhCLEtBQUtrQyxLQUFMLENBQVdsQixNQVRVO0FBVTdCRywyQkFBT25CLEtBQUtrQyxLQUFMLENBQVdmO0FBVlcsaUJBQTFCLENBQVA7QUFZSCxhQWJjLENBQWY7QUFjQSxtQkFDSTtBQUFBO0FBQUE7QUFDQ3lDO0FBREQsYUFESjtBQUtIO0FBN0dtQixLQUFqQixDQUFQO0FBK0dILENBaEhEO0FBaUhBSyxPQUFPQyxPQUFQLEdBQWlCdkUsR0FBakIiLCJmaWxlIjoiYXBwLmpzeCIsInNvdXJjZXNDb250ZW50IjpbIid1c2Ugc3RyaWN0JztcclxudmFyIFJlYWN0ID0gcmVxdWlyZSgncmVhY3QnKTtcclxudmFyIFByb3BUeXBlcyA9IHJlcXVpcmUoJ3Byb3AtdHlwZXMnKTtcclxudmFyIGNyZWF0ZVJlYWN0Q2xhc3MgPSByZXF1aXJlKCdjcmVhdGUtcmVhY3QtY2xhc3MnKTtcclxuXHJcbnZhciBub29wID0gZnVuY3Rpb24gKCkge1xyXG59O1xyXG5cclxudmFyIEFwcCA9IGZ1bmN0aW9uIChkcml2ZSwgdmlld3MsIHJvdXRlKSB7XHJcbiAgICByZXR1cm4gY3JlYXRlUmVhY3RDbGFzcyh7XHJcbiAgICAgICAgZ2V0SW5pdGlhbFN0YXRlOiBmdW5jdGlvbiAoKSB7XHJcbiAgICAgICAgICAgIHZhciBzZWxmID0gdGhpcztcclxuICAgICAgICAgICAgcmV0dXJuIHtcclxuICAgICAgICAgICAgICAgIHN0b3JlOiB7XHJcbiAgICAgICAgICAgICAgICAgICAgYXJ0aWNsZTogW10sXHJcbiAgICAgICAgICAgICAgICAgICAgY2F0ZWdvcnk6IHZpZXdzLmNhdGVnb3JpZXMsXHJcbiAgICAgICAgICAgICAgICAgICAgcGFnZTogW10sXHJcbiAgICAgICAgICAgICAgICAgICAgdmlldzogdmlld3NcclxuICAgICAgICAgICAgICAgIH0sXHJcbiAgICAgICAgICAgICAgICBjdXJyZW50Um91dGU6IHZpZXdzLnJvdXRlUGFyYW1zLmVsZW1lbnRQYXRoLFxyXG4gICAgICAgICAgICAgICAgYWN0aXZlSG9tZVBhbmVsOiAnYXJ0aWNsZXMnLFxyXG4gICAgICAgICAgICAgICAgY3VycmVudFBhZ2U6ICh2aWV3cy5hcnRpY2xlID8gdmlld3MuYXJ0aWNsZSA6IHt9KSxcclxuICAgICAgICAgICAgICAgIG1lbnVWaXNpYmxlOiB0cnVlLFxyXG4gICAgICAgICAgICAgICAgYWN0aXZlQ2F0ZWdvcnk6IHtcclxuICAgICAgICAgICAgICAgICAgICBhY3RpdmVJZDogMCxcclxuICAgICAgICAgICAgICAgICAgICBleHBhbmRlZDogZmFsc2VcclxuICAgICAgICAgICAgICAgIH0sXHJcbiAgICAgICAgICAgICAgICBjb25maWc6IHdpbmRvdy5jb25maWdSZWFjdERyaXZlQ21zLFxyXG4gICAgICAgICAgICAgICAgbW9kYWw6IHtcclxuICAgICAgICAgICAgICAgICAgICBzaG93OiBmYWxzZVxyXG4gICAgICAgICAgICAgICAgfVxyXG4gICAgICAgICAgICB9O1xyXG4gICAgICAgIH0sXHJcblxyXG4gICAgICAgIHNldE1haW5Qcm9wZXJ0eTogZnVuY3Rpb24gKHByb3BlcnR5LCB2YWx1ZSwgY2FsbGJhY2spIHtcclxuICAgICAgICAgICAgdmFyIHNlbGYgPSB0aGlzO1xyXG4gICAgICAgICAgICBjYWxsYmFjayA9IGNhbGxiYWNrIHx8IG5vb3A7XHJcbiAgICAgICAgICAgIHZhciBvYmpNb2QgPSB7fTtcclxuICAgICAgICAgICAgb2JqTW9kW3Byb3BlcnR5XSA9IHZhbHVlO1xyXG4gICAgICAgICAgICBzZWxmLnNldFN0YXRlKG9iak1vZCwgZnVuY3Rpb24gKCkge1xyXG4gICAgICAgICAgICAgICAgY2FsbGJhY2sodmFsdWUpO1xyXG4gICAgICAgICAgICB9KTtcclxuICAgICAgICB9LFxyXG4gICAgICAgIGNvbnRleHRUeXBlczoge1xyXG4gICAgICAgICAgICByb3V0ZXI6IFByb3BUeXBlcy5vYmplY3QuaXNSZXF1aXJlZFxyXG4gICAgICAgIH0sXHJcbiAgICAgICAgbG9hZEVsZW1lbnQ6IGZ1bmN0aW9uIChlbGVtZW50VHlwZSwgZWxlbWVudElkLCBjYWxsYmFjaykge1xyXG4gICAgICAgICAgICB2YXIgc2VsZiA9IHRoaXM7XHJcbiAgICAgICAgICAgIGNhbGxiYWNrID0gY2FsbGJhY2sgfHwgbm9vcDtcclxuICAgICAgICAgICAgaWYgKHR5cGVvZiBzZWxmLnN0YXRlLnN0b3JlW2VsZW1lbnRUeXBlXVtlbGVtZW50SWRdICE9PSAndW5kZWZpbmVkJykge1xyXG4gICAgICAgICAgICAgICAgc2VsZi5zZXRTdGF0ZSh7XHJcbiAgICAgICAgICAgICAgICAgICAgY3VycmVudFBhZ2U6IHNlbGYuc3RhdGUuc3RvcmVbZWxlbWVudFR5cGVdW2VsZW1lbnRJZF1cclxuICAgICAgICAgICAgICAgIH0sIGZ1bmN0aW9uICgpIHtcclxuICAgICAgICAgICAgICAgICAgICBjYWxsYmFjayhzZWxmLnN0YXRlLnN0b3JlW2VsZW1lbnRUeXBlXVtlbGVtZW50SWRdKVxyXG4gICAgICAgICAgICAgICAgfSk7XHJcbiAgICAgICAgICAgIH0gZWxzZSB7XHJcbiAgICAgICAgICAgICAgICBzZWxmLmZldGNoRWxlbWVudERhdGEoZWxlbWVudFR5cGUsIGVsZW1lbnRJZCwgY2FsbGJhY2spO1xyXG4gICAgICAgICAgICB9XHJcbiAgICAgICAgfSxcclxuICAgICAgICBmZXRjaEVsZW1lbnREYXRhOiBmdW5jdGlvbiAoZWxlbWVudFR5cGUsIGVsZW1lbnRJZCwgY2FsbGJhY2spIHtcclxuICAgICAgICAgICAgdmFyIHNlbGYgPSB0aGlzO1xyXG4gICAgICAgICAgICBjYWxsYmFjayA9IGNhbGxiYWNrIHx8IG5vb3A7XHJcbiAgICAgICAgICAgIHN3aXRjaCAoZWxlbWVudFR5cGUpIHtcclxuICAgICAgICAgICAgICAgIGNhc2UgJ2FydGljbGUnOlxyXG4gICAgICAgICAgICAgICAgICAgIHZhciBlbGVtZW50RmlsZUlkID0gc2VsZi5zdGF0ZS5zdG9yZS52aWV3LmFydGljbGVzW2VsZW1lbnRJZF1bJ2RyaXZlSWQnXTtcclxuICAgICAgICAgICAgICAgICAgICBkcml2ZS5nZXRFbGVtZW50SHRtbChlbGVtZW50RmlsZUlkLCBmdW5jdGlvbiAoZWxlbWVudEh0bWwpIHtcclxuICAgICAgICAgICAgICAgICAgICAgICAgdmFyIGVsZW1lbnQgPSBzZWxmLnN0YXRlLnN0b3JlLnZpZXcuYXJ0aWNsZXNbZWxlbWVudElkXTtcclxuICAgICAgICAgICAgICAgICAgICAgICAgZWxlbWVudFsnYm9keSddID0gZWxlbWVudEh0bWw7XHJcbiAgICAgICAgICAgICAgICAgICAgICAgIHZhciBzdGF0ZVVwZGF0ZSA9IHt9O1xyXG4gICAgICAgICAgICAgICAgICAgICAgICB2YXIgc3RvcmUgPSBzZWxmLnN0YXRlLnN0b3JlO1xyXG4gICAgICAgICAgICAgICAgICAgICAgICBzdG9yZVtlbGVtZW50VHlwZV1bZWxlbWVudElkXSA9IGVsZW1lbnQ7XHJcbiAgICAgICAgICAgICAgICAgICAgICAgIHN0YXRlVXBkYXRlWydjdXJyZW50UGFnZSddID0gZWxlbWVudDtcclxuICAgICAgICAgICAgICAgICAgICAgICAgc3RhdGVVcGRhdGVbJ3N0b3JlJ10gPSBzdG9yZTtcclxuICAgICAgICAgICAgICAgICAgICAgICAgc2VsZi5zZXRTdGF0ZShzdGF0ZVVwZGF0ZSwgZnVuY3Rpb24gKCkge1xyXG4gICAgICAgICAgICAgICAgICAgICAgICAgICAgY2FsbGJhY2soZWxlbWVudCk7XHJcbiAgICAgICAgICAgICAgICAgICAgICAgIH0pO1xyXG4gICAgICAgICAgICAgICAgICAgIH0pO1xyXG4gICAgICAgICAgICAgICAgICAgIGJyZWFrO1xyXG4gICAgICAgICAgICAgICAgY2FzZSAnY2F0ZWdvcnknOlxyXG4gICAgICAgICAgICAgICAgICAgIGJyZWFrO1xyXG4gICAgICAgICAgICB9XHJcbiAgICAgICAgfSxcclxuICAgICAgICBoYW5kbGVSb3V0aW5nOiBmdW5jdGlvbiAoZWxlbWVudCwgZSkge1xyXG4gICAgICAgICAgICBlLnByZXZlbnREZWZhdWx0KCk7XHJcbiAgICAgICAgICAgIGUuc3RvcFByb3BhZ2F0aW9uKCk7XHJcbiAgICAgICAgICAgIHZhciByb3V0ZVNwbGl0ID0gZS50YXJnZXQuaHJlZi5zcGxpdCgnIycpO1xyXG4gICAgICAgICAgICB2YXIgcm91dGUgPSByb3V0ZVNwbGl0WzFdO1xyXG4gICAgICAgICAgICB2YXIgc2VsZiA9IHRoaXM7XHJcbiAgICAgICAgICAgIHNlbGYubG9hZEVsZW1lbnQoZWxlbWVudC50eXBlLCBlbGVtZW50LmlkLCBmdW5jdGlvbiAoKSB7XHJcbiAgICAgICAgICAgICAgICBzZWxmLmdvVG9Sb3V0ZShyb3V0ZSk7XHJcbiAgICAgICAgICAgIH0pO1xyXG4gICAgICAgIH0sXHJcbiAgICAgICAgZ29Ub1JvdXRlOiBmdW5jdGlvbiAocm91dGUpIHtcclxuICAgICAgICAgICAgdmFyIHNlbGYgPSB0aGlzO1xyXG4gICAgICAgICAgICBzZWxmLmNvbnRleHQucm91dGVyLnB1c2gocm91dGUpO1xyXG4gICAgICAgIH0sXHJcbiAgICAgICAgcmVuZGVyOiBmdW5jdGlvbiAoKSB7XHJcbiAgICAgICAgICAgIHZhciBzZWxmID0gdGhpcztcclxuICAgICAgICAgICAgdmFyIHBhdGggPSB0aGlzLnByb3BzLmxvY2F0aW9uLnBhdGhuYW1lO1xyXG4gICAgICAgICAgICB2YXIgY2hpbGRyZW4gPSBSZWFjdC5DaGlsZHJlbi5tYXAodGhpcy5wcm9wcy5jaGlsZHJlbiwgZnVuY3Rpb24gKGNoaWxkKSB7XHJcbiAgICAgICAgICAgICAgICByZXR1cm4gUmVhY3QuY2xvbmVFbGVtZW50KGNoaWxkLCB7ICAgICAgICAgICAgICAgICAgICAgXHJcbiAgICAgICAgICAgICAgICAgICAgc3RvcmU6IHNlbGYuc3RhdGUuc3RvcmUsXHJcbiAgICAgICAgICAgICAgICAgICAgY3VycmVudFBhZ2U6IHNlbGYuc3RhdGUuY3VycmVudFBhZ2UsXHJcbiAgICAgICAgICAgICAgICAgICAgcGF0aDogcGF0aCxcclxuICAgICAgICAgICAgICAgICAgICBhY3RpdmVIb21lUGFuZWw6IHNlbGYuc3RhdGUuYWN0aXZlSG9tZVBhbmVsLFxyXG4gICAgICAgICAgICAgICAgICAgIHNldE1haW5Qcm9wZXJ0eTogc2VsZi5zZXRNYWluUHJvcGVydHksXHJcbiAgICAgICAgICAgICAgICAgICAgbWVudVZpc2libGU6IHNlbGYuc3RhdGUubWVudVZpc2libGUsXHJcbiAgICAgICAgICAgICAgICAgICAgaGFuZGxlUm91dGluZzogc2VsZi5oYW5kbGVSb3V0aW5nLFxyXG4gICAgICAgICAgICAgICAgICAgIGFjdGl2ZUNhdGVnb3J5OiBzZWxmLnN0YXRlLmFjdGl2ZUNhdGVnb3J5LFxyXG4gICAgICAgICAgICAgICAgICAgIGNvbmZpZzogc2VsZi5zdGF0ZS5jb25maWcsXHJcbiAgICAgICAgICAgICAgICAgICAgbW9kYWw6IHNlbGYuc3RhdGUubW9kYWxcclxuICAgICAgICAgICAgICAgIH0pXHJcbiAgICAgICAgICAgIH0pO1xyXG4gICAgICAgICAgICByZXR1cm4gKFxyXG4gICAgICAgICAgICAgICAgPGRpdj5cclxuICAgICAgICAgICAgICAgIHtjaGlsZHJlbn1cclxuICAgICAgICAgICAgICAgIDwvZGl2PlxyXG4gICAgICAgICAgICApXHJcbiAgICAgICAgfVxyXG4gICAgfSk7XHJcbn07XHJcbm1vZHVsZS5leHBvcnRzID0gQXBwOyJdfQ==
+},{"create-react-class":"C:\\swiggis.austin\\node_modules\\create-react-class\\index.js","prop-types":"C:\\swiggis.austin\\node_modules\\prop-types\\index.js","react":"C:\\swiggis.austin\\node_modules\\react\\react.js"}],"C:\\swiggis.austin\\src\\client\\js\\components\\app\\routes.jsx":[function(require,module,exports){
 'use strict';
 
 var React = require('react');
@@ -57068,8 +56195,8 @@ var routes = function routes(App) {
     );
 };
 module.exports = routes;
-//# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInJvdXRlcy5qc3giXSwibmFtZXMiOlsiUmVhY3QiLCJyZXF1aXJlIiwiUm91dGVyIiwiUm91dGUiLCJJbmRleFJvdXRlIiwiUmVkaXJlY3QiLCJIb21lIiwiQWJvdXQiLCJNZW1iZXJzaGlwIiwiQ29udGFjdCIsIkFydGljbGUiLCJDYXRlZ29yeSIsInJvdXRlcyIsIkFwcCIsIm1vZHVsZSIsImV4cG9ydHMiXSwibWFwcGluZ3MiOiJBQUFBOztBQUNBLElBQUlBLFFBQVFDLFFBQVEsT0FBUixDQUFaO0FBQ0EsSUFBSUMsU0FBU0QsUUFBUSxjQUFSLENBQWI7QUFDQSxJQUFJRSxRQUFRRCxPQUFPQyxLQUFuQjtBQUNBLElBQUlDLGFBQWFGLE9BQU9FLFVBQXhCO0FBQ0EsSUFBSUMsV0FBV0gsT0FBT0csUUFBdEI7O0FBRUEsSUFBSUMsT0FBT0wsUUFBUSxxQkFBUixDQUFYO0FBQ0EsSUFBSU0sUUFBUU4sUUFBUSxzQkFBUixDQUFaO0FBQ0EsSUFBSU8sYUFBYVAsUUFBUSwyQkFBUixDQUFqQjtBQUNBLElBQUlRLFVBQVVSLFFBQVEsd0JBQVIsQ0FBZDtBQUNBLElBQUlTLFVBQVVULFFBQVEsd0JBQVIsQ0FBZDtBQUNBLElBQUlVLFdBQVdWLFFBQVEseUJBQVIsQ0FBZjs7QUFFQSxJQUFJVyxTQUFTLFNBQVRBLE1BQVMsQ0FBVUMsR0FBVixFQUFlO0FBQ3hCLFdBQ0k7QUFBQyxhQUFEO0FBQUEsVUFBTyxNQUFLLEdBQVosRUFBZ0IsV0FBV0EsR0FBM0I7QUFDSSw0QkFBQyxLQUFELElBQU8sTUFBSyxNQUFaLEVBQW1CLFdBQVdQLElBQTlCLEdBREo7QUFFSSw0QkFBQyxLQUFELElBQU8sTUFBSyxPQUFaLEVBQW9CLFdBQVdDLEtBQS9CLEdBRko7QUFHSSw0QkFBQyxLQUFELElBQU8sTUFBSyxZQUFaLEVBQXlCLFdBQVdDLFVBQXBDLEdBSEo7QUFJSSw0QkFBQyxLQUFELElBQU8sTUFBSyxTQUFaLEVBQXNCLFdBQVdDLE9BQWpDLEdBSko7QUFLSSw0QkFBQyxLQUFELElBQU8sTUFBSyxlQUFaLEVBQTRCLFdBQVdDLE9BQXZDLEdBTEo7QUFNSSw0QkFBQyxLQUFELElBQU8sTUFBSyw0QkFBWixFQUF5QyxXQUFXQyxRQUFwRCxHQU5KO0FBT0ksNEJBQUMsVUFBRCxJQUFZLFdBQVdMLElBQXZCLEdBUEo7QUFRSSw0QkFBQyxRQUFELElBQVUsTUFBSyxHQUFmLEVBQW1CLElBQUcsTUFBdEIsR0FSSjtBQVNJLDRCQUFDLEtBQUQsSUFBTyxNQUFLLEdBQVosRUFBZ0IsV0FBV08sR0FBM0I7QUFUSixLQURKO0FBYUgsQ0FkRDtBQWVBQyxPQUFPQyxPQUFQLEdBQWlCSCxNQUFqQiIsImZpbGUiOiJyb3V0ZXMuanN4Iiwic291cmNlc0NvbnRlbnQiOlsiJ3VzZSBzdHJpY3QnO1xudmFyIFJlYWN0ID0gcmVxdWlyZSgncmVhY3QnKTtcbnZhciBSb3V0ZXIgPSByZXF1aXJlKCdyZWFjdC1yb3V0ZXInKTtcbnZhciBSb3V0ZSA9IFJvdXRlci5Sb3V0ZTtcbnZhciBJbmRleFJvdXRlID0gUm91dGVyLkluZGV4Um91dGU7XG52YXIgUmVkaXJlY3QgPSBSb3V0ZXIuUmVkaXJlY3Q7XG5cbnZhciBIb21lID0gcmVxdWlyZSgnLi8uLi9wYWdlcy9ob21lLmpzeCcpO1xudmFyIEFib3V0ID0gcmVxdWlyZShcIi4vLi4vcGFnZXMvYWJvdXQuanN4XCIpO1xudmFyIE1lbWJlcnNoaXAgPSByZXF1aXJlKFwiLi8uLi9wYWdlcy9tZW1iZXJzaGlwLmpzeFwiKTtcbnZhciBDb250YWN0ID0gcmVxdWlyZShcIi4vLi4vcGFnZXMvY29udGFjdC5qc3hcIik7XG52YXIgQXJ0aWNsZSA9IHJlcXVpcmUoXCIuLy4uL3BhZ2VzL2FydGljbGUuanN4XCIpO1xudmFyIENhdGVnb3J5ID0gcmVxdWlyZShcIi4vLi4vcGFnZXMvY2F0ZWdvcnkuanN4XCIpO1xuXG52YXIgcm91dGVzID0gZnVuY3Rpb24gKEFwcCkge1xuICAgIHJldHVybiAoXG4gICAgICAgIDxSb3V0ZSBwYXRoPVwiL1wiIGNvbXBvbmVudD17QXBwfT5cbiAgICAgICAgICAgIDxSb3V0ZSBwYXRoPVwiaG9tZVwiIGNvbXBvbmVudD17SG9tZX0vPlxuICAgICAgICAgICAgPFJvdXRlIHBhdGg9XCJhYm91dFwiIGNvbXBvbmVudD17QWJvdXR9Lz5cbiAgICAgICAgICAgIDxSb3V0ZSBwYXRoPVwibWVtYmVyc2hpcFwiIGNvbXBvbmVudD17TWVtYmVyc2hpcH0vPlxuICAgICAgICAgICAgPFJvdXRlIHBhdGg9XCJjb250YWN0XCIgY29tcG9uZW50PXtDb250YWN0fS8+XG4gICAgICAgICAgICA8Um91dGUgcGF0aD1cImFydGljbGUvOnNsdWdcIiBjb21wb25lbnQ9e0FydGljbGV9Lz5cbiAgICAgICAgICAgIDxSb3V0ZSBwYXRoPVwiY2F0ZWdvcnkvOmNhdGVnb3J5SWQvOnNsdWdcIiBjb21wb25lbnQ9e0NhdGVnb3J5fS8+XG4gICAgICAgICAgICA8SW5kZXhSb3V0ZSBjb21wb25lbnQ9e0hvbWV9Lz5cbiAgICAgICAgICAgIDxSZWRpcmVjdCBmcm9tPVwiL1wiIHRvPVwiaG9tZVwiIC8+XG4gICAgICAgICAgICA8Um91dGUgcGF0aD1cIipcIiBjb21wb25lbnQ9e0FwcH0vPlxuICAgICAgICA8L1JvdXRlPlxuICAgICk7XG59O1xubW9kdWxlLmV4cG9ydHMgPSByb3V0ZXM7Il19
-},{"./../pages/about.jsx":"/mnt/c/swiggis.original/src/client/js/components/pages/about.jsx","./../pages/article.jsx":"/mnt/c/swiggis.original/src/client/js/components/pages/article.jsx","./../pages/category.jsx":"/mnt/c/swiggis.original/src/client/js/components/pages/category.jsx","./../pages/contact.jsx":"/mnt/c/swiggis.original/src/client/js/components/pages/contact.jsx","./../pages/home.jsx":"/mnt/c/swiggis.original/src/client/js/components/pages/home.jsx","./../pages/membership.jsx":"/mnt/c/swiggis.original/src/client/js/components/pages/membership.jsx","react":"/mnt/c/swiggis.original/node_modules/react/react.js","react-router":"/mnt/c/swiggis.original/node_modules/react-router/lib/index.js"}],"/mnt/c/swiggis.original/src/client/js/components/comments/disqusCount.jsx":[function(require,module,exports){
+//# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInJvdXRlcy5qc3giXSwibmFtZXMiOlsiUmVhY3QiLCJyZXF1aXJlIiwiUm91dGVyIiwiUm91dGUiLCJJbmRleFJvdXRlIiwiUmVkaXJlY3QiLCJIb21lIiwiQWJvdXQiLCJNZW1iZXJzaGlwIiwiQ29udGFjdCIsIkFydGljbGUiLCJDYXRlZ29yeSIsInJvdXRlcyIsIkFwcCIsIm1vZHVsZSIsImV4cG9ydHMiXSwibWFwcGluZ3MiOiJBQUFBOztBQUNBLElBQUlBLFFBQVFDLFFBQVEsT0FBUixDQUFaO0FBQ0EsSUFBSUMsU0FBU0QsUUFBUSxjQUFSLENBQWI7QUFDQSxJQUFJRSxRQUFRRCxPQUFPQyxLQUFuQjtBQUNBLElBQUlDLGFBQWFGLE9BQU9FLFVBQXhCO0FBQ0EsSUFBSUMsV0FBV0gsT0FBT0csUUFBdEI7O0FBRUEsSUFBSUMsT0FBT0wsUUFBUSxxQkFBUixDQUFYO0FBQ0EsSUFBSU0sUUFBUU4sUUFBUSxzQkFBUixDQUFaO0FBQ0EsSUFBSU8sYUFBYVAsUUFBUSwyQkFBUixDQUFqQjtBQUNBLElBQUlRLFVBQVVSLFFBQVEsd0JBQVIsQ0FBZDtBQUNBLElBQUlTLFVBQVVULFFBQVEsd0JBQVIsQ0FBZDtBQUNBLElBQUlVLFdBQVdWLFFBQVEseUJBQVIsQ0FBZjs7QUFFQSxJQUFJVyxTQUFTLFNBQVRBLE1BQVMsQ0FBVUMsR0FBVixFQUFlO0FBQ3hCLFdBQ0k7QUFBQyxhQUFEO0FBQUEsVUFBTyxNQUFLLEdBQVosRUFBZ0IsV0FBV0EsR0FBM0I7QUFDSSw0QkFBQyxLQUFELElBQU8sTUFBSyxNQUFaLEVBQW1CLFdBQVdQLElBQTlCLEdBREo7QUFFSSw0QkFBQyxLQUFELElBQU8sTUFBSyxPQUFaLEVBQW9CLFdBQVdDLEtBQS9CLEdBRko7QUFHSSw0QkFBQyxLQUFELElBQU8sTUFBSyxZQUFaLEVBQXlCLFdBQVdDLFVBQXBDLEdBSEo7QUFJSSw0QkFBQyxLQUFELElBQU8sTUFBSyxTQUFaLEVBQXNCLFdBQVdDLE9BQWpDLEdBSko7QUFLSSw0QkFBQyxLQUFELElBQU8sTUFBSyxlQUFaLEVBQTRCLFdBQVdDLE9BQXZDLEdBTEo7QUFNSSw0QkFBQyxLQUFELElBQU8sTUFBSyw0QkFBWixFQUF5QyxXQUFXQyxRQUFwRCxHQU5KO0FBT0ksNEJBQUMsVUFBRCxJQUFZLFdBQVdMLElBQXZCLEdBUEo7QUFRSSw0QkFBQyxRQUFELElBQVUsTUFBSyxHQUFmLEVBQW1CLElBQUcsTUFBdEIsR0FSSjtBQVNJLDRCQUFDLEtBQUQsSUFBTyxNQUFLLEdBQVosRUFBZ0IsV0FBV08sR0FBM0I7QUFUSixLQURKO0FBYUgsQ0FkRDtBQWVBQyxPQUFPQyxPQUFQLEdBQWlCSCxNQUFqQiIsImZpbGUiOiJyb3V0ZXMuanN4Iiwic291cmNlc0NvbnRlbnQiOlsiJ3VzZSBzdHJpY3QnO1xyXG52YXIgUmVhY3QgPSByZXF1aXJlKCdyZWFjdCcpO1xyXG52YXIgUm91dGVyID0gcmVxdWlyZSgncmVhY3Qtcm91dGVyJyk7XHJcbnZhciBSb3V0ZSA9IFJvdXRlci5Sb3V0ZTtcclxudmFyIEluZGV4Um91dGUgPSBSb3V0ZXIuSW5kZXhSb3V0ZTtcclxudmFyIFJlZGlyZWN0ID0gUm91dGVyLlJlZGlyZWN0O1xyXG5cclxudmFyIEhvbWUgPSByZXF1aXJlKCcuLy4uL3BhZ2VzL2hvbWUuanN4Jyk7XHJcbnZhciBBYm91dCA9IHJlcXVpcmUoXCIuLy4uL3BhZ2VzL2Fib3V0LmpzeFwiKTtcclxudmFyIE1lbWJlcnNoaXAgPSByZXF1aXJlKFwiLi8uLi9wYWdlcy9tZW1iZXJzaGlwLmpzeFwiKTtcclxudmFyIENvbnRhY3QgPSByZXF1aXJlKFwiLi8uLi9wYWdlcy9jb250YWN0LmpzeFwiKTtcclxudmFyIEFydGljbGUgPSByZXF1aXJlKFwiLi8uLi9wYWdlcy9hcnRpY2xlLmpzeFwiKTtcclxudmFyIENhdGVnb3J5ID0gcmVxdWlyZShcIi4vLi4vcGFnZXMvY2F0ZWdvcnkuanN4XCIpO1xyXG5cclxudmFyIHJvdXRlcyA9IGZ1bmN0aW9uIChBcHApIHtcclxuICAgIHJldHVybiAoXHJcbiAgICAgICAgPFJvdXRlIHBhdGg9XCIvXCIgY29tcG9uZW50PXtBcHB9PlxyXG4gICAgICAgICAgICA8Um91dGUgcGF0aD1cImhvbWVcIiBjb21wb25lbnQ9e0hvbWV9Lz5cclxuICAgICAgICAgICAgPFJvdXRlIHBhdGg9XCJhYm91dFwiIGNvbXBvbmVudD17QWJvdXR9Lz5cclxuICAgICAgICAgICAgPFJvdXRlIHBhdGg9XCJtZW1iZXJzaGlwXCIgY29tcG9uZW50PXtNZW1iZXJzaGlwfS8+XHJcbiAgICAgICAgICAgIDxSb3V0ZSBwYXRoPVwiY29udGFjdFwiIGNvbXBvbmVudD17Q29udGFjdH0vPlxyXG4gICAgICAgICAgICA8Um91dGUgcGF0aD1cImFydGljbGUvOnNsdWdcIiBjb21wb25lbnQ9e0FydGljbGV9Lz5cclxuICAgICAgICAgICAgPFJvdXRlIHBhdGg9XCJjYXRlZ29yeS86Y2F0ZWdvcnlJZC86c2x1Z1wiIGNvbXBvbmVudD17Q2F0ZWdvcnl9Lz5cclxuICAgICAgICAgICAgPEluZGV4Um91dGUgY29tcG9uZW50PXtIb21lfS8+XHJcbiAgICAgICAgICAgIDxSZWRpcmVjdCBmcm9tPVwiL1wiIHRvPVwiaG9tZVwiIC8+XHJcbiAgICAgICAgICAgIDxSb3V0ZSBwYXRoPVwiKlwiIGNvbXBvbmVudD17QXBwfS8+XHJcbiAgICAgICAgPC9Sb3V0ZT5cclxuICAgICk7XHJcbn07XHJcbm1vZHVsZS5leHBvcnRzID0gcm91dGVzOyJdfQ==
+},{"./../pages/about.jsx":"C:\\swiggis.austin\\src\\client\\js\\components\\pages\\about.jsx","./../pages/article.jsx":"C:\\swiggis.austin\\src\\client\\js\\components\\pages\\article.jsx","./../pages/category.jsx":"C:\\swiggis.austin\\src\\client\\js\\components\\pages\\category.jsx","./../pages/contact.jsx":"C:\\swiggis.austin\\src\\client\\js\\components\\pages\\contact.jsx","./../pages/home.jsx":"C:\\swiggis.austin\\src\\client\\js\\components\\pages\\home.jsx","./../pages/membership.jsx":"C:\\swiggis.austin\\src\\client\\js\\components\\pages\\membership.jsx","react":"C:\\swiggis.austin\\node_modules\\react\\react.js","react-router":"C:\\swiggis.austin\\node_modules\\react-router\\lib\\index.js"}],"C:\\swiggis.austin\\src\\client\\js\\components\\comments\\disqusCount.jsx":[function(require,module,exports){
 'use strict';
 
 var React = require('react');
@@ -57116,8 +56243,8 @@ var DisqusCount = createReactClass({
     }
 });
 module.exports = DisqusCount;
-//# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbImRpc3F1c0NvdW50LmpzeCJdLCJuYW1lcyI6WyJSZWFjdCIsInJlcXVpcmUiLCJjcmVhdGVSZWFjdENsYXNzIiwiY29uZmlnIiwid2luZG93IiwiY29uZmlnUmVhY3REcml2ZUNtcyIsIkRpc3F1c0NvdW50IiwiYWRkRGlzcXVzU2NyaXB0Iiwic2VsZiIsImNoaWxkIiwiZGlzcXVzQ291bnQiLCJkb2N1bWVudCIsImNyZWF0ZUVsZW1lbnQiLCJwYXJlbnQiLCJnZXRFbGVtZW50c0J5VGFnTmFtZSIsImFzeW5jIiwidHlwZSIsInNyYyIsInNob3J0bmFtZSIsImFwcGVuZENoaWxkIiwicmVtb3ZlRGlzcXVzU2NyaXB0IiwicGFyZW50Tm9kZSIsInJlbW92ZUNoaWxkIiwiY29tcG9uZW50RGlkTW91bnQiLCJkaXNxdXNfc2hvcnRuYW1lIiwiRElTUVVTV0lER0VUUyIsInVuZGVmaW5lZCIsImNvbXBvbmVudFdpbGxVbm1vdW50IiwicmVuZGVyIiwibW9kdWxlIiwiZXhwb3J0cyJdLCJtYXBwaW5ncyI6IkFBQUE7O0FBQ0EsSUFBSUEsUUFBUUMsUUFBUSxPQUFSLENBQVo7QUFDQSxJQUFJQyxtQkFBbUJELFFBQVEsb0JBQVIsQ0FBdkI7O0FBRUEsSUFBSUUsU0FBU0MsT0FBT0MsbUJBQXBCO0FBQ0EsSUFBSUMsY0FBY0osaUJBQWlCO0FBQUE7O0FBQy9CSyxxQkFBaUIsMkJBQVk7QUFDekIsWUFBSUMsT0FBTyxJQUFYO0FBQ0EsWUFBSUMsUUFBUUQsS0FBS0UsV0FBTCxHQUFtQkMsU0FBU0MsYUFBVCxDQUF1QixRQUF2QixDQUEvQjtBQUNBLFlBQUlDLFNBQVNGLFNBQVNHLG9CQUFULENBQThCLE1BQTlCLEVBQXNDLENBQXRDLEtBQ1RILFNBQVNHLG9CQUFULENBQThCLE1BQTlCLEVBQXNDLENBQXRDLENBREo7QUFFQUwsY0FBTU0sS0FBTixHQUFjLElBQWQ7QUFDQU4sY0FBTU8sSUFBTixHQUFhLGlCQUFiO0FBQ0FQLGNBQU1RLEdBQU4sR0FBWSxPQUFPZCxPQUFPZSxTQUFkLEdBQTBCLHNCQUF0QztBQUNBTCxlQUFPTSxXQUFQLENBQW1CVixLQUFuQjtBQUNILEtBVjhCOztBQVkvQlcsd0JBQW9CLDhCQUFZO0FBQzVCLFlBQUlaLE9BQU8sSUFBWDtBQUNBLFlBQUlBLEtBQUtFLFdBQUwsSUFBb0JGLEtBQUtFLFdBQUwsQ0FBaUJXLFVBQXpDLEVBQXFEO0FBQ2pEYixpQkFBS0UsV0FBTCxDQUFpQlcsVUFBakIsQ0FBNEJDLFdBQTVCLENBQXdDZCxLQUFLRSxXQUE3QztBQUNBRixpQkFBS0UsV0FBTCxHQUFtQixJQUFuQjtBQUNIO0FBQ0osS0FsQjhCOztBQW9CL0JhLHVCQUFtQiw2QkFBWTtBQUMzQixZQUFJZixPQUFPLElBQVg7QUFDQUosZUFBT29CLGdCQUFQLEdBQTBCckIsT0FBT2UsU0FBakM7QUFDQSxZQUFJLE9BQU9kLE9BQU9xQixhQUFkLEtBQWdDLFdBQXBDLEVBQWlEO0FBQzdDckIsbUJBQU9xQixhQUFQLEdBQXVCQyxTQUF2QjtBQUNIO0FBQ0RsQixhQUFLRCxlQUFMO0FBQ0gsS0EzQjhCOztBQTZCL0JvQiwwQkFBc0IsZ0NBQVk7QUFDOUIsWUFBSW5CLE9BQU8sSUFBWDtBQUNBQSxhQUFLWSxrQkFBTDtBQUNILEtBaEM4Qjs7QUFrQy9CUSxZQUFRLGtCQUFZO0FBQ2hCLGVBQ0ksOEJBQU0sSUFBRyx1QkFBVCxHQURKO0FBR0g7QUF0QzhCLENBQWpCLENBQWxCO0FBd0NBQyxPQUFPQyxPQUFQLEdBQWlCeEIsV0FBakIiLCJmaWxlIjoiZGlzcXVzQ291bnQuanN4Iiwic291cmNlc0NvbnRlbnQiOlsiJ3VzZSBzdHJpY3QnO1xudmFyIFJlYWN0ID0gcmVxdWlyZSgncmVhY3QnKTtcbnZhciBjcmVhdGVSZWFjdENsYXNzID0gcmVxdWlyZSgnY3JlYXRlLXJlYWN0LWNsYXNzJyk7XG5cbnZhciBjb25maWcgPSB3aW5kb3cuY29uZmlnUmVhY3REcml2ZUNtcztcbnZhciBEaXNxdXNDb3VudCA9IGNyZWF0ZVJlYWN0Q2xhc3Moe1xuICAgIGFkZERpc3F1c1NjcmlwdDogZnVuY3Rpb24gKCkge1xuICAgICAgICB2YXIgc2VsZiA9IHRoaXM7XG4gICAgICAgIHZhciBjaGlsZCA9IHNlbGYuZGlzcXVzQ291bnQgPSBkb2N1bWVudC5jcmVhdGVFbGVtZW50KCdzY3JpcHQnKTtcbiAgICAgICAgdmFyIHBhcmVudCA9IGRvY3VtZW50LmdldEVsZW1lbnRzQnlUYWdOYW1lKCdoZWFkJylbMF0gfHxcbiAgICAgICAgICAgIGRvY3VtZW50LmdldEVsZW1lbnRzQnlUYWdOYW1lKCdib2R5JylbMF07XG4gICAgICAgIGNoaWxkLmFzeW5jID0gdHJ1ZTtcbiAgICAgICAgY2hpbGQudHlwZSA9ICd0ZXh0L2phdmFzY3JpcHQnO1xuICAgICAgICBjaGlsZC5zcmMgPSAnLy8nICsgY29uZmlnLnNob3J0bmFtZSArICcuZGlzcXVzLmNvbS9jb3VudC5qcyc7XG4gICAgICAgIHBhcmVudC5hcHBlbmRDaGlsZChjaGlsZCk7XG4gICAgfSxcblxuICAgIHJlbW92ZURpc3F1c1NjcmlwdDogZnVuY3Rpb24gKCkge1xuICAgICAgICB2YXIgc2VsZiA9IHRoaXM7XG4gICAgICAgIGlmIChzZWxmLmRpc3F1c0NvdW50ICYmIHNlbGYuZGlzcXVzQ291bnQucGFyZW50Tm9kZSkge1xuICAgICAgICAgICAgc2VsZi5kaXNxdXNDb3VudC5wYXJlbnROb2RlLnJlbW92ZUNoaWxkKHNlbGYuZGlzcXVzQ291bnQpO1xuICAgICAgICAgICAgc2VsZi5kaXNxdXNDb3VudCA9IG51bGw7XG4gICAgICAgIH1cbiAgICB9LFxuXG4gICAgY29tcG9uZW50RGlkTW91bnQ6IGZ1bmN0aW9uICgpIHtcbiAgICAgICAgdmFyIHNlbGYgPSB0aGlzO1xuICAgICAgICB3aW5kb3cuZGlzcXVzX3Nob3J0bmFtZSA9IGNvbmZpZy5zaG9ydG5hbWU7XG4gICAgICAgIGlmICh0eXBlb2Ygd2luZG93LkRJU1FVU1dJREdFVFMgIT09IFwidW5kZWZpbmVkXCIpIHtcbiAgICAgICAgICAgIHdpbmRvdy5ESVNRVVNXSURHRVRTID0gdW5kZWZpbmVkO1xuICAgICAgICB9XG4gICAgICAgIHNlbGYuYWRkRGlzcXVzU2NyaXB0KCk7XG4gICAgfSxcblxuICAgIGNvbXBvbmVudFdpbGxVbm1vdW50OiBmdW5jdGlvbiAoKSB7XG4gICAgICAgIHZhciBzZWxmID0gdGhpcztcbiAgICAgICAgc2VsZi5yZW1vdmVEaXNxdXNTY3JpcHQoKTtcbiAgICB9LFxuXG4gICAgcmVuZGVyOiBmdW5jdGlvbiAoKSB7XG4gICAgICAgIHJldHVybiAoXG4gICAgICAgICAgICA8c3BhbiBpZD1cImRpc3F1cy1jb21tZW50cy1jb3VudFwiPjwvc3Bhbj5cbiAgICAgICAgKTtcbiAgICB9XG59KTtcbm1vZHVsZS5leHBvcnRzID0gRGlzcXVzQ291bnQ7Il19
-},{"create-react-class":"/mnt/c/swiggis.original/node_modules/create-react-class/index.js","react":"/mnt/c/swiggis.original/node_modules/react/react.js"}],"/mnt/c/swiggis.original/src/client/js/components/comments/disqusThread.jsx":[function(require,module,exports){
+//# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbImRpc3F1c0NvdW50LmpzeCJdLCJuYW1lcyI6WyJSZWFjdCIsInJlcXVpcmUiLCJjcmVhdGVSZWFjdENsYXNzIiwiY29uZmlnIiwid2luZG93IiwiY29uZmlnUmVhY3REcml2ZUNtcyIsIkRpc3F1c0NvdW50IiwiYWRkRGlzcXVzU2NyaXB0Iiwic2VsZiIsImNoaWxkIiwiZGlzcXVzQ291bnQiLCJkb2N1bWVudCIsImNyZWF0ZUVsZW1lbnQiLCJwYXJlbnQiLCJnZXRFbGVtZW50c0J5VGFnTmFtZSIsImFzeW5jIiwidHlwZSIsInNyYyIsInNob3J0bmFtZSIsImFwcGVuZENoaWxkIiwicmVtb3ZlRGlzcXVzU2NyaXB0IiwicGFyZW50Tm9kZSIsInJlbW92ZUNoaWxkIiwiY29tcG9uZW50RGlkTW91bnQiLCJkaXNxdXNfc2hvcnRuYW1lIiwiRElTUVVTV0lER0VUUyIsInVuZGVmaW5lZCIsImNvbXBvbmVudFdpbGxVbm1vdW50IiwicmVuZGVyIiwibW9kdWxlIiwiZXhwb3J0cyJdLCJtYXBwaW5ncyI6IkFBQUE7O0FBQ0EsSUFBSUEsUUFBUUMsUUFBUSxPQUFSLENBQVo7QUFDQSxJQUFJQyxtQkFBbUJELFFBQVEsb0JBQVIsQ0FBdkI7O0FBRUEsSUFBSUUsU0FBU0MsT0FBT0MsbUJBQXBCO0FBQ0EsSUFBSUMsY0FBY0osaUJBQWlCO0FBQUE7O0FBQy9CSyxxQkFBaUIsMkJBQVk7QUFDekIsWUFBSUMsT0FBTyxJQUFYO0FBQ0EsWUFBSUMsUUFBUUQsS0FBS0UsV0FBTCxHQUFtQkMsU0FBU0MsYUFBVCxDQUF1QixRQUF2QixDQUEvQjtBQUNBLFlBQUlDLFNBQVNGLFNBQVNHLG9CQUFULENBQThCLE1BQTlCLEVBQXNDLENBQXRDLEtBQ1RILFNBQVNHLG9CQUFULENBQThCLE1BQTlCLEVBQXNDLENBQXRDLENBREo7QUFFQUwsY0FBTU0sS0FBTixHQUFjLElBQWQ7QUFDQU4sY0FBTU8sSUFBTixHQUFhLGlCQUFiO0FBQ0FQLGNBQU1RLEdBQU4sR0FBWSxPQUFPZCxPQUFPZSxTQUFkLEdBQTBCLHNCQUF0QztBQUNBTCxlQUFPTSxXQUFQLENBQW1CVixLQUFuQjtBQUNILEtBVjhCOztBQVkvQlcsd0JBQW9CLDhCQUFZO0FBQzVCLFlBQUlaLE9BQU8sSUFBWDtBQUNBLFlBQUlBLEtBQUtFLFdBQUwsSUFBb0JGLEtBQUtFLFdBQUwsQ0FBaUJXLFVBQXpDLEVBQXFEO0FBQ2pEYixpQkFBS0UsV0FBTCxDQUFpQlcsVUFBakIsQ0FBNEJDLFdBQTVCLENBQXdDZCxLQUFLRSxXQUE3QztBQUNBRixpQkFBS0UsV0FBTCxHQUFtQixJQUFuQjtBQUNIO0FBQ0osS0FsQjhCOztBQW9CL0JhLHVCQUFtQiw2QkFBWTtBQUMzQixZQUFJZixPQUFPLElBQVg7QUFDQUosZUFBT29CLGdCQUFQLEdBQTBCckIsT0FBT2UsU0FBakM7QUFDQSxZQUFJLE9BQU9kLE9BQU9xQixhQUFkLEtBQWdDLFdBQXBDLEVBQWlEO0FBQzdDckIsbUJBQU9xQixhQUFQLEdBQXVCQyxTQUF2QjtBQUNIO0FBQ0RsQixhQUFLRCxlQUFMO0FBQ0gsS0EzQjhCOztBQTZCL0JvQiwwQkFBc0IsZ0NBQVk7QUFDOUIsWUFBSW5CLE9BQU8sSUFBWDtBQUNBQSxhQUFLWSxrQkFBTDtBQUNILEtBaEM4Qjs7QUFrQy9CUSxZQUFRLGtCQUFZO0FBQ2hCLGVBQ0ksOEJBQU0sSUFBRyx1QkFBVCxHQURKO0FBR0g7QUF0QzhCLENBQWpCLENBQWxCO0FBd0NBQyxPQUFPQyxPQUFQLEdBQWlCeEIsV0FBakIiLCJmaWxlIjoiZGlzcXVzQ291bnQuanN4Iiwic291cmNlc0NvbnRlbnQiOlsiJ3VzZSBzdHJpY3QnO1xyXG52YXIgUmVhY3QgPSByZXF1aXJlKCdyZWFjdCcpO1xyXG52YXIgY3JlYXRlUmVhY3RDbGFzcyA9IHJlcXVpcmUoJ2NyZWF0ZS1yZWFjdC1jbGFzcycpO1xyXG5cclxudmFyIGNvbmZpZyA9IHdpbmRvdy5jb25maWdSZWFjdERyaXZlQ21zO1xyXG52YXIgRGlzcXVzQ291bnQgPSBjcmVhdGVSZWFjdENsYXNzKHtcclxuICAgIGFkZERpc3F1c1NjcmlwdDogZnVuY3Rpb24gKCkge1xyXG4gICAgICAgIHZhciBzZWxmID0gdGhpcztcclxuICAgICAgICB2YXIgY2hpbGQgPSBzZWxmLmRpc3F1c0NvdW50ID0gZG9jdW1lbnQuY3JlYXRlRWxlbWVudCgnc2NyaXB0Jyk7XHJcbiAgICAgICAgdmFyIHBhcmVudCA9IGRvY3VtZW50LmdldEVsZW1lbnRzQnlUYWdOYW1lKCdoZWFkJylbMF0gfHxcclxuICAgICAgICAgICAgZG9jdW1lbnQuZ2V0RWxlbWVudHNCeVRhZ05hbWUoJ2JvZHknKVswXTtcclxuICAgICAgICBjaGlsZC5hc3luYyA9IHRydWU7XHJcbiAgICAgICAgY2hpbGQudHlwZSA9ICd0ZXh0L2phdmFzY3JpcHQnO1xyXG4gICAgICAgIGNoaWxkLnNyYyA9ICcvLycgKyBjb25maWcuc2hvcnRuYW1lICsgJy5kaXNxdXMuY29tL2NvdW50LmpzJztcclxuICAgICAgICBwYXJlbnQuYXBwZW5kQ2hpbGQoY2hpbGQpO1xyXG4gICAgfSxcclxuXHJcbiAgICByZW1vdmVEaXNxdXNTY3JpcHQ6IGZ1bmN0aW9uICgpIHtcclxuICAgICAgICB2YXIgc2VsZiA9IHRoaXM7XHJcbiAgICAgICAgaWYgKHNlbGYuZGlzcXVzQ291bnQgJiYgc2VsZi5kaXNxdXNDb3VudC5wYXJlbnROb2RlKSB7XHJcbiAgICAgICAgICAgIHNlbGYuZGlzcXVzQ291bnQucGFyZW50Tm9kZS5yZW1vdmVDaGlsZChzZWxmLmRpc3F1c0NvdW50KTtcclxuICAgICAgICAgICAgc2VsZi5kaXNxdXNDb3VudCA9IG51bGw7XHJcbiAgICAgICAgfVxyXG4gICAgfSxcclxuXHJcbiAgICBjb21wb25lbnREaWRNb3VudDogZnVuY3Rpb24gKCkge1xyXG4gICAgICAgIHZhciBzZWxmID0gdGhpcztcclxuICAgICAgICB3aW5kb3cuZGlzcXVzX3Nob3J0bmFtZSA9IGNvbmZpZy5zaG9ydG5hbWU7XHJcbiAgICAgICAgaWYgKHR5cGVvZiB3aW5kb3cuRElTUVVTV0lER0VUUyAhPT0gXCJ1bmRlZmluZWRcIikge1xyXG4gICAgICAgICAgICB3aW5kb3cuRElTUVVTV0lER0VUUyA9IHVuZGVmaW5lZDtcclxuICAgICAgICB9XHJcbiAgICAgICAgc2VsZi5hZGREaXNxdXNTY3JpcHQoKTtcclxuICAgIH0sXHJcblxyXG4gICAgY29tcG9uZW50V2lsbFVubW91bnQ6IGZ1bmN0aW9uICgpIHtcclxuICAgICAgICB2YXIgc2VsZiA9IHRoaXM7XHJcbiAgICAgICAgc2VsZi5yZW1vdmVEaXNxdXNTY3JpcHQoKTtcclxuICAgIH0sXHJcblxyXG4gICAgcmVuZGVyOiBmdW5jdGlvbiAoKSB7XHJcbiAgICAgICAgcmV0dXJuIChcclxuICAgICAgICAgICAgPHNwYW4gaWQ9XCJkaXNxdXMtY29tbWVudHMtY291bnRcIj48L3NwYW4+XHJcbiAgICAgICAgKTtcclxuICAgIH1cclxufSk7XHJcbm1vZHVsZS5leHBvcnRzID0gRGlzcXVzQ291bnQ7Il19
+},{"create-react-class":"C:\\swiggis.austin\\node_modules\\create-react-class\\index.js","react":"C:\\swiggis.austin\\node_modules\\react\\react.js"}],"C:\\swiggis.austin\\src\\client\\js\\components\\comments\\disqusThread.jsx":[function(require,module,exports){
 'use strict';
 
 var React = require('react');
@@ -57171,8 +56298,8 @@ var DisqusThread = createReactClass({
     }
 });
 module.exports = DisqusThread;
-//# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbImRpc3F1c1RocmVhZC5qc3giXSwibmFtZXMiOlsiUmVhY3QiLCJyZXF1aXJlIiwiY3JlYXRlUmVhY3RDbGFzcyIsImNvbmZpZyIsIndpbmRvdyIsImNvbmZpZ1JlYWN0RHJpdmVDbXMiLCJEaXNxdXNUaHJlYWQiLCJhZGREaXNxdXNTY3JpcHQiLCJzZWxmIiwiY2hpbGQiLCJkaXNxdXMiLCJkb2N1bWVudCIsImNyZWF0ZUVsZW1lbnQiLCJwYXJlbnQiLCJnZXRFbGVtZW50c0J5VGFnTmFtZSIsImFzeW5jIiwidHlwZSIsInNyYyIsInNob3J0bmFtZSIsImFwcGVuZENoaWxkIiwicmVtb3ZlRGlzcXVzU2NyaXB0IiwicGFyZW50Tm9kZSIsInJlbW92ZUNoaWxkIiwiY29tcG9uZW50RGlkTW91bnQiLCJkaXNxdXNfc2hvcnRuYW1lIiwiZGlzcXVzX2lkZW50aWZpZXIiLCJwcm9wcyIsImlkIiwiZGlzcXVzX3RpdGxlIiwidGl0bGUiLCJkaXNxdXNfdXJsIiwibG9jYXRpb24iLCJocmVmIiwiRElTUVVTIiwicmVzZXQiLCJyZWxvYWQiLCJjb21wb25lbnRXaWxsVW5tb3VudCIsInJlbmRlciIsIm1vZHVsZSIsImV4cG9ydHMiXSwibWFwcGluZ3MiOiJBQUFBOztBQUNBLElBQUlBLFFBQVFDLFFBQVEsT0FBUixDQUFaO0FBQ0EsSUFBSUMsbUJBQW1CRCxRQUFRLG9CQUFSLENBQXZCOztBQUVBLElBQUlFLFNBQVNDLE9BQU9DLG1CQUFwQjs7QUFFQSxJQUFJQyxlQUFlSixpQkFBaUI7QUFBQTs7O0FBRWhDSyxxQkFBaUIsMkJBQVk7QUFDekIsWUFBSUMsT0FBTyxJQUFYO0FBQ0EsWUFBSUMsUUFBUUQsS0FBS0UsTUFBTCxHQUFjQyxTQUFTQyxhQUFULENBQXVCLFFBQXZCLENBQTFCO0FBQ0EsWUFBSUMsU0FBU0YsU0FBU0csb0JBQVQsQ0FBOEIsTUFBOUIsRUFBc0MsQ0FBdEMsS0FDVEgsU0FBU0csb0JBQVQsQ0FBOEIsTUFBOUIsRUFBc0MsQ0FBdEMsQ0FESjtBQUVBTCxjQUFNTSxLQUFOLEdBQWMsSUFBZDtBQUNBTixjQUFNTyxJQUFOLEdBQWEsaUJBQWI7QUFDQVAsY0FBTVEsR0FBTixHQUFZLE9BQU9kLE9BQU9lLFNBQWQsR0FBMEIsc0JBQXRDO0FBQ0FMLGVBQU9NLFdBQVAsQ0FBbUJWLEtBQW5CO0FBQ0gsS0FYK0I7O0FBYWhDVyx3QkFBb0IsOEJBQVk7QUFDNUIsWUFBSVosT0FBTyxJQUFYO0FBQ0EsWUFBSUEsS0FBS0UsTUFBTCxJQUFlRixLQUFLRSxNQUFMLENBQVlXLFVBQS9CLEVBQTJDO0FBQ3ZDYixpQkFBS0UsTUFBTCxDQUFZVyxVQUFaLENBQXVCQyxXQUF2QixDQUFtQ2QsS0FBS0UsTUFBeEM7QUFDQUYsaUJBQUtFLE1BQUwsR0FBYyxJQUFkO0FBQ0g7QUFDSixLQW5CK0I7O0FBcUJoQ2EsdUJBQW1CLDZCQUFZO0FBQzNCLFlBQUlmLE9BQU8sSUFBWDtBQUNBSixlQUFPb0IsZ0JBQVAsR0FBMEJyQixPQUFPZSxTQUFqQztBQUNBZCxlQUFPcUIsaUJBQVAsR0FBMkJqQixLQUFLa0IsS0FBTCxDQUFXQyxFQUF0QztBQUNBdkIsZUFBT3dCLFlBQVAsR0FBc0JwQixLQUFLa0IsS0FBTCxDQUFXRyxLQUFqQztBQUNBekIsZUFBTzBCLFVBQVAsR0FBb0IxQixPQUFPMkIsUUFBUCxDQUFnQkMsSUFBcEM7O0FBRUEsWUFBSSxPQUFPNUIsT0FBTzZCLE1BQWQsS0FBeUIsV0FBN0IsRUFBMEM7QUFDdEM3QixtQkFBTzZCLE1BQVAsQ0FBY0MsS0FBZCxDQUFvQixFQUFDQyxRQUFRLElBQVQsRUFBcEI7QUFDSCxTQUZELE1BRU87QUFDSDNCLGlCQUFLRCxlQUFMO0FBQ0g7QUFDSixLQWpDK0I7O0FBbUNoQzZCLDBCQUFzQixnQ0FBWTtBQUM5QixZQUFJNUIsT0FBTyxJQUFYO0FBQ0FBLGFBQUtZLGtCQUFMO0FBQ0gsS0F0QytCOztBQXdDaENpQixZQUFRLGtCQUFZO0FBQ2hCLGVBQ0ksNkJBQUssSUFBRyxlQUFSLEdBREo7QUFHSDtBQTVDK0IsQ0FBakIsQ0FBbkI7QUE4Q0FDLE9BQU9DLE9BQVAsR0FBaUJqQyxZQUFqQiIsImZpbGUiOiJkaXNxdXNUaHJlYWQuanN4Iiwic291cmNlc0NvbnRlbnQiOlsiJ3VzZSBzdHJpY3QnO1xudmFyIFJlYWN0ID0gcmVxdWlyZSgncmVhY3QnKTtcbnZhciBjcmVhdGVSZWFjdENsYXNzID0gcmVxdWlyZSgnY3JlYXRlLXJlYWN0LWNsYXNzJyk7XG5cbnZhciBjb25maWcgPSB3aW5kb3cuY29uZmlnUmVhY3REcml2ZUNtcztcblxudmFyIERpc3F1c1RocmVhZCA9IGNyZWF0ZVJlYWN0Q2xhc3Moe1xuXG4gICAgYWRkRGlzcXVzU2NyaXB0OiBmdW5jdGlvbiAoKSB7XG4gICAgICAgIHZhciBzZWxmID0gdGhpcztcbiAgICAgICAgdmFyIGNoaWxkID0gc2VsZi5kaXNxdXMgPSBkb2N1bWVudC5jcmVhdGVFbGVtZW50KCdzY3JpcHQnKTtcbiAgICAgICAgdmFyIHBhcmVudCA9IGRvY3VtZW50LmdldEVsZW1lbnRzQnlUYWdOYW1lKCdoZWFkJylbMF0gfHxcbiAgICAgICAgICAgIGRvY3VtZW50LmdldEVsZW1lbnRzQnlUYWdOYW1lKCdib2R5JylbMF07XG4gICAgICAgIGNoaWxkLmFzeW5jID0gdHJ1ZTtcbiAgICAgICAgY2hpbGQudHlwZSA9ICd0ZXh0L2phdmFzY3JpcHQnO1xuICAgICAgICBjaGlsZC5zcmMgPSAnLy8nICsgY29uZmlnLnNob3J0bmFtZSArICcuZGlzcXVzLmNvbS9lbWJlZC5qcyc7XG4gICAgICAgIHBhcmVudC5hcHBlbmRDaGlsZChjaGlsZCk7XG4gICAgfSxcblxuICAgIHJlbW92ZURpc3F1c1NjcmlwdDogZnVuY3Rpb24gKCkge1xuICAgICAgICB2YXIgc2VsZiA9IHRoaXM7XG4gICAgICAgIGlmIChzZWxmLmRpc3F1cyAmJiBzZWxmLmRpc3F1cy5wYXJlbnROb2RlKSB7XG4gICAgICAgICAgICBzZWxmLmRpc3F1cy5wYXJlbnROb2RlLnJlbW92ZUNoaWxkKHNlbGYuZGlzcXVzKTtcbiAgICAgICAgICAgIHNlbGYuZGlzcXVzID0gbnVsbDtcbiAgICAgICAgfVxuICAgIH0sXG5cbiAgICBjb21wb25lbnREaWRNb3VudDogZnVuY3Rpb24gKCkge1xuICAgICAgICB2YXIgc2VsZiA9IHRoaXM7XG4gICAgICAgIHdpbmRvdy5kaXNxdXNfc2hvcnRuYW1lID0gY29uZmlnLnNob3J0bmFtZTtcbiAgICAgICAgd2luZG93LmRpc3F1c19pZGVudGlmaWVyID0gc2VsZi5wcm9wcy5pZDtcbiAgICAgICAgd2luZG93LmRpc3F1c190aXRsZSA9IHNlbGYucHJvcHMudGl0bGU7XG4gICAgICAgIHdpbmRvdy5kaXNxdXNfdXJsID0gd2luZG93LmxvY2F0aW9uLmhyZWY7XG5cbiAgICAgICAgaWYgKHR5cGVvZiB3aW5kb3cuRElTUVVTICE9PSBcInVuZGVmaW5lZFwiKSB7XG4gICAgICAgICAgICB3aW5kb3cuRElTUVVTLnJlc2V0KHtyZWxvYWQ6IHRydWV9KTtcbiAgICAgICAgfSBlbHNlIHtcbiAgICAgICAgICAgIHNlbGYuYWRkRGlzcXVzU2NyaXB0KCk7XG4gICAgICAgIH1cbiAgICB9LFxuXG4gICAgY29tcG9uZW50V2lsbFVubW91bnQ6IGZ1bmN0aW9uICgpIHtcbiAgICAgICAgdmFyIHNlbGYgPSB0aGlzO1xuICAgICAgICBzZWxmLnJlbW92ZURpc3F1c1NjcmlwdCgpO1xuICAgIH0sXG5cbiAgICByZW5kZXI6IGZ1bmN0aW9uICgpIHtcbiAgICAgICAgcmV0dXJuIChcbiAgICAgICAgICAgIDxkaXYgaWQ9XCJkaXNxdXNfdGhyZWFkXCI+PC9kaXY+XG4gICAgICAgICk7XG4gICAgfVxufSk7XG5tb2R1bGUuZXhwb3J0cyA9IERpc3F1c1RocmVhZDsiXX0=
-},{"create-react-class":"/mnt/c/swiggis.original/node_modules/create-react-class/index.js","react":"/mnt/c/swiggis.original/node_modules/react/react.js"}],"/mnt/c/swiggis.original/src/client/js/components/layout/footer/credits.jsx":[function(require,module,exports){
+//# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbImRpc3F1c1RocmVhZC5qc3giXSwibmFtZXMiOlsiUmVhY3QiLCJyZXF1aXJlIiwiY3JlYXRlUmVhY3RDbGFzcyIsImNvbmZpZyIsIndpbmRvdyIsImNvbmZpZ1JlYWN0RHJpdmVDbXMiLCJEaXNxdXNUaHJlYWQiLCJhZGREaXNxdXNTY3JpcHQiLCJzZWxmIiwiY2hpbGQiLCJkaXNxdXMiLCJkb2N1bWVudCIsImNyZWF0ZUVsZW1lbnQiLCJwYXJlbnQiLCJnZXRFbGVtZW50c0J5VGFnTmFtZSIsImFzeW5jIiwidHlwZSIsInNyYyIsInNob3J0bmFtZSIsImFwcGVuZENoaWxkIiwicmVtb3ZlRGlzcXVzU2NyaXB0IiwicGFyZW50Tm9kZSIsInJlbW92ZUNoaWxkIiwiY29tcG9uZW50RGlkTW91bnQiLCJkaXNxdXNfc2hvcnRuYW1lIiwiZGlzcXVzX2lkZW50aWZpZXIiLCJwcm9wcyIsImlkIiwiZGlzcXVzX3RpdGxlIiwidGl0bGUiLCJkaXNxdXNfdXJsIiwibG9jYXRpb24iLCJocmVmIiwiRElTUVVTIiwicmVzZXQiLCJyZWxvYWQiLCJjb21wb25lbnRXaWxsVW5tb3VudCIsInJlbmRlciIsIm1vZHVsZSIsImV4cG9ydHMiXSwibWFwcGluZ3MiOiJBQUFBOztBQUNBLElBQUlBLFFBQVFDLFFBQVEsT0FBUixDQUFaO0FBQ0EsSUFBSUMsbUJBQW1CRCxRQUFRLG9CQUFSLENBQXZCOztBQUVBLElBQUlFLFNBQVNDLE9BQU9DLG1CQUFwQjs7QUFFQSxJQUFJQyxlQUFlSixpQkFBaUI7QUFBQTs7O0FBRWhDSyxxQkFBaUIsMkJBQVk7QUFDekIsWUFBSUMsT0FBTyxJQUFYO0FBQ0EsWUFBSUMsUUFBUUQsS0FBS0UsTUFBTCxHQUFjQyxTQUFTQyxhQUFULENBQXVCLFFBQXZCLENBQTFCO0FBQ0EsWUFBSUMsU0FBU0YsU0FBU0csb0JBQVQsQ0FBOEIsTUFBOUIsRUFBc0MsQ0FBdEMsS0FDVEgsU0FBU0csb0JBQVQsQ0FBOEIsTUFBOUIsRUFBc0MsQ0FBdEMsQ0FESjtBQUVBTCxjQUFNTSxLQUFOLEdBQWMsSUFBZDtBQUNBTixjQUFNTyxJQUFOLEdBQWEsaUJBQWI7QUFDQVAsY0FBTVEsR0FBTixHQUFZLE9BQU9kLE9BQU9lLFNBQWQsR0FBMEIsc0JBQXRDO0FBQ0FMLGVBQU9NLFdBQVAsQ0FBbUJWLEtBQW5CO0FBQ0gsS0FYK0I7O0FBYWhDVyx3QkFBb0IsOEJBQVk7QUFDNUIsWUFBSVosT0FBTyxJQUFYO0FBQ0EsWUFBSUEsS0FBS0UsTUFBTCxJQUFlRixLQUFLRSxNQUFMLENBQVlXLFVBQS9CLEVBQTJDO0FBQ3ZDYixpQkFBS0UsTUFBTCxDQUFZVyxVQUFaLENBQXVCQyxXQUF2QixDQUFtQ2QsS0FBS0UsTUFBeEM7QUFDQUYsaUJBQUtFLE1BQUwsR0FBYyxJQUFkO0FBQ0g7QUFDSixLQW5CK0I7O0FBcUJoQ2EsdUJBQW1CLDZCQUFZO0FBQzNCLFlBQUlmLE9BQU8sSUFBWDtBQUNBSixlQUFPb0IsZ0JBQVAsR0FBMEJyQixPQUFPZSxTQUFqQztBQUNBZCxlQUFPcUIsaUJBQVAsR0FBMkJqQixLQUFLa0IsS0FBTCxDQUFXQyxFQUF0QztBQUNBdkIsZUFBT3dCLFlBQVAsR0FBc0JwQixLQUFLa0IsS0FBTCxDQUFXRyxLQUFqQztBQUNBekIsZUFBTzBCLFVBQVAsR0FBb0IxQixPQUFPMkIsUUFBUCxDQUFnQkMsSUFBcEM7O0FBRUEsWUFBSSxPQUFPNUIsT0FBTzZCLE1BQWQsS0FBeUIsV0FBN0IsRUFBMEM7QUFDdEM3QixtQkFBTzZCLE1BQVAsQ0FBY0MsS0FBZCxDQUFvQixFQUFDQyxRQUFRLElBQVQsRUFBcEI7QUFDSCxTQUZELE1BRU87QUFDSDNCLGlCQUFLRCxlQUFMO0FBQ0g7QUFDSixLQWpDK0I7O0FBbUNoQzZCLDBCQUFzQixnQ0FBWTtBQUM5QixZQUFJNUIsT0FBTyxJQUFYO0FBQ0FBLGFBQUtZLGtCQUFMO0FBQ0gsS0F0QytCOztBQXdDaENpQixZQUFRLGtCQUFZO0FBQ2hCLGVBQ0ksNkJBQUssSUFBRyxlQUFSLEdBREo7QUFHSDtBQTVDK0IsQ0FBakIsQ0FBbkI7QUE4Q0FDLE9BQU9DLE9BQVAsR0FBaUJqQyxZQUFqQiIsImZpbGUiOiJkaXNxdXNUaHJlYWQuanN4Iiwic291cmNlc0NvbnRlbnQiOlsiJ3VzZSBzdHJpY3QnO1xyXG52YXIgUmVhY3QgPSByZXF1aXJlKCdyZWFjdCcpO1xyXG52YXIgY3JlYXRlUmVhY3RDbGFzcyA9IHJlcXVpcmUoJ2NyZWF0ZS1yZWFjdC1jbGFzcycpO1xyXG5cclxudmFyIGNvbmZpZyA9IHdpbmRvdy5jb25maWdSZWFjdERyaXZlQ21zO1xyXG5cclxudmFyIERpc3F1c1RocmVhZCA9IGNyZWF0ZVJlYWN0Q2xhc3Moe1xyXG5cclxuICAgIGFkZERpc3F1c1NjcmlwdDogZnVuY3Rpb24gKCkge1xyXG4gICAgICAgIHZhciBzZWxmID0gdGhpcztcclxuICAgICAgICB2YXIgY2hpbGQgPSBzZWxmLmRpc3F1cyA9IGRvY3VtZW50LmNyZWF0ZUVsZW1lbnQoJ3NjcmlwdCcpO1xyXG4gICAgICAgIHZhciBwYXJlbnQgPSBkb2N1bWVudC5nZXRFbGVtZW50c0J5VGFnTmFtZSgnaGVhZCcpWzBdIHx8XHJcbiAgICAgICAgICAgIGRvY3VtZW50LmdldEVsZW1lbnRzQnlUYWdOYW1lKCdib2R5JylbMF07XHJcbiAgICAgICAgY2hpbGQuYXN5bmMgPSB0cnVlO1xyXG4gICAgICAgIGNoaWxkLnR5cGUgPSAndGV4dC9qYXZhc2NyaXB0JztcclxuICAgICAgICBjaGlsZC5zcmMgPSAnLy8nICsgY29uZmlnLnNob3J0bmFtZSArICcuZGlzcXVzLmNvbS9lbWJlZC5qcyc7XHJcbiAgICAgICAgcGFyZW50LmFwcGVuZENoaWxkKGNoaWxkKTtcclxuICAgIH0sXHJcblxyXG4gICAgcmVtb3ZlRGlzcXVzU2NyaXB0OiBmdW5jdGlvbiAoKSB7XHJcbiAgICAgICAgdmFyIHNlbGYgPSB0aGlzO1xyXG4gICAgICAgIGlmIChzZWxmLmRpc3F1cyAmJiBzZWxmLmRpc3F1cy5wYXJlbnROb2RlKSB7XHJcbiAgICAgICAgICAgIHNlbGYuZGlzcXVzLnBhcmVudE5vZGUucmVtb3ZlQ2hpbGQoc2VsZi5kaXNxdXMpO1xyXG4gICAgICAgICAgICBzZWxmLmRpc3F1cyA9IG51bGw7XHJcbiAgICAgICAgfVxyXG4gICAgfSxcclxuXHJcbiAgICBjb21wb25lbnREaWRNb3VudDogZnVuY3Rpb24gKCkge1xyXG4gICAgICAgIHZhciBzZWxmID0gdGhpcztcclxuICAgICAgICB3aW5kb3cuZGlzcXVzX3Nob3J0bmFtZSA9IGNvbmZpZy5zaG9ydG5hbWU7XHJcbiAgICAgICAgd2luZG93LmRpc3F1c19pZGVudGlmaWVyID0gc2VsZi5wcm9wcy5pZDtcclxuICAgICAgICB3aW5kb3cuZGlzcXVzX3RpdGxlID0gc2VsZi5wcm9wcy50aXRsZTtcclxuICAgICAgICB3aW5kb3cuZGlzcXVzX3VybCA9IHdpbmRvdy5sb2NhdGlvbi5ocmVmO1xyXG5cclxuICAgICAgICBpZiAodHlwZW9mIHdpbmRvdy5ESVNRVVMgIT09IFwidW5kZWZpbmVkXCIpIHtcclxuICAgICAgICAgICAgd2luZG93LkRJU1FVUy5yZXNldCh7cmVsb2FkOiB0cnVlfSk7XHJcbiAgICAgICAgfSBlbHNlIHtcclxuICAgICAgICAgICAgc2VsZi5hZGREaXNxdXNTY3JpcHQoKTtcclxuICAgICAgICB9XHJcbiAgICB9LFxyXG5cclxuICAgIGNvbXBvbmVudFdpbGxVbm1vdW50OiBmdW5jdGlvbiAoKSB7XHJcbiAgICAgICAgdmFyIHNlbGYgPSB0aGlzO1xyXG4gICAgICAgIHNlbGYucmVtb3ZlRGlzcXVzU2NyaXB0KCk7XHJcbiAgICB9LFxyXG5cclxuICAgIHJlbmRlcjogZnVuY3Rpb24gKCkge1xyXG4gICAgICAgIHJldHVybiAoXHJcbiAgICAgICAgICAgIDxkaXYgaWQ9XCJkaXNxdXNfdGhyZWFkXCI+PC9kaXY+XHJcbiAgICAgICAgKTtcclxuICAgIH1cclxufSk7XHJcbm1vZHVsZS5leHBvcnRzID0gRGlzcXVzVGhyZWFkOyJdfQ==
+},{"create-react-class":"C:\\swiggis.austin\\node_modules\\create-react-class\\index.js","react":"C:\\swiggis.austin\\node_modules\\react\\react.js"}],"C:\\swiggis.austin\\src\\client\\js\\components\\layout\\footer\\credits.jsx":[function(require,module,exports){
 'use strict';
 
 var React = require('react');
@@ -57278,8 +56405,8 @@ var Credits = createReactClass({
     }
 });
 module.exports = Credits;
-//# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbImNyZWRpdHMuanN4Il0sIm5hbWVzIjpbIlJlYWN0IiwicmVxdWlyZSIsImNyZWF0ZVJlYWN0Q2xhc3MiLCJzdHJpbmciLCJSb3ciLCJDcmVkaXRzIiwicmVuZGVyIiwic2VsZiIsImNhdGVnb3J5VXJsIiwicHJvcHMiLCJjYXRlZ29yeSIsImlkIiwic2x1ZyIsInRpdGxlIiwiZGF0ZSIsImZvcm1hdERhdGUiLCJsYXN0VXBkYXRlZCIsImF1dGhvciIsIm1vZHVsZSIsImV4cG9ydHMiXSwibWFwcGluZ3MiOiJBQUFBOztBQUNBLElBQUlBLFFBQVFDLFFBQVEsT0FBUixDQUFaO0FBQ0EsSUFBSUMsbUJBQW1CRCxRQUFRLG9CQUFSLENBQXZCO0FBQ0EsSUFBSUUsU0FBU0YsUUFBUSx3QkFBUixFQUFrQ0UsTUFBL0M7QUFDQSxJQUFJQyxNQUFNSCxRQUFRLGlCQUFSLEVBQTJCRyxHQUFyQztBQUNBLElBQUlDLFVBQVVILGlCQUFpQjtBQUFBOztBQUMzQkksWUFBUSxrQkFBWTtBQUNoQixZQUFJQyxPQUFPLElBQVg7QUFDQSxZQUFJQyxjQUFjLGdCQUFnQkQsS0FBS0UsS0FBTCxDQUFXQyxRQUFYLENBQW9CQyxFQUFwQyxHQUF5QyxHQUF6QyxHQUErQ1IsT0FBT1MsSUFBUCxDQUFZTCxLQUFLRSxLQUFMLENBQVdDLFFBQVgsQ0FBb0JHLEtBQWhDLENBQWpFO0FBQ0EsWUFBSUMsT0FBT1gsT0FBT1ksVUFBUCxDQUFrQlIsS0FBS0UsS0FBTCxDQUFXTyxXQUE3QixDQUFYO0FBQ0EsZUFDSTtBQUFDLGVBQUQ7QUFBQTtBQUNJO0FBQUE7QUFBQSxrQkFBSyxXQUFVLG9CQUFmO0FBQ0k7QUFBQTtBQUFBLHNCQUFHLE1BQUssU0FBUjtBQUNJLGlEQUFLLEtBQUkseUJBQVQsRUFBbUMsV0FBVSxZQUE3QyxFQUEwRCxLQUFJLFlBQTlEO0FBREo7QUFESixhQURKO0FBTUk7QUFBQTtBQUFBLGtCQUFLLFdBQVUsb0JBQWY7QUFDSTtBQUFBO0FBQUEsc0JBQUssV0FBVSxjQUFmO0FBQ0k7QUFBQTtBQUFBO0FBQUE7QUFDSTtBQUFBO0FBQUEsOEJBQU0sV0FBVSxtQkFBaEI7QUFBcUNGO0FBQXJDO0FBREoscUJBREo7QUFJSTtBQUFBO0FBQUE7QUFDSTtBQUFBO0FBQUEsOEJBQU0sV0FBVSxtQkFBaEI7QUFBQTtBQUFBLHlCQURKO0FBRUk7QUFBQTtBQUFBLDhCQUFHLE1BQUssU0FBUjtBQUNLUCxpQ0FBS0UsS0FBTCxDQUFXUTtBQURoQix5QkFGSjtBQUtJO0FBQUE7QUFBQSw4QkFBTSxXQUFVLG1CQUFoQjtBQUFBO0FBQUEseUJBTEo7QUFNSTtBQUFBO0FBQUE7QUFDSSxzQ0FBTVQ7QUFEVjtBQUdLRCxpQ0FBS0UsS0FBTCxDQUFXQyxRQUFYLENBQW9CRztBQUh6QjtBQU5KO0FBSko7QUFESixhQU5KO0FBeUJJO0FBQUE7QUFBQSxrQkFBSyxXQUFVLG9CQUFmO0FBQ0k7QUFBQTtBQUFBLHNCQUFLLFdBQVUsUUFBZjtBQUNJO0FBQUE7QUFBQTtBQUFBO0FBQUEscUJBREo7QUFFSTtBQUFBO0FBQUEsMEJBQUssV0FBVSxjQUFmO0FBQ0k7QUFBQTtBQUFBLDhCQUFHLFdBQVUsYUFBYixFQUEyQixNQUFLLG1DQUFoQyxFQUFvRSxRQUFPLFFBQTNFO0FBQ0ksdURBQUcsV0FBVSxlQUFiO0FBREoseUJBREo7QUFLSTtBQUFBO0FBQUEsOEJBQUcsV0FBVSxhQUFiLEVBQTJCLE1BQUssdURBQWhDLEVBQXdGLFFBQU8sUUFBL0Y7QUFDSSx1REFBRyxXQUFVLGdCQUFiO0FBREoseUJBTEo7QUFTSTtBQUFBO0FBQUEsOEJBQUcsV0FBVSxhQUFiLEVBQTJCLE1BQUssdUNBQWhDLEVBQXdFLFFBQU8sUUFBL0U7QUFDSSx1REFBRyxXQUFVLGdCQUFiO0FBREo7QUFUSjtBQUZKO0FBREo7QUF6QkosU0FESjtBQThDSDtBQW5EMEIsQ0FBakIsQ0FBZDtBQXFEQUssT0FBT0MsT0FBUCxHQUFpQmQsT0FBakIiLCJmaWxlIjoiY3JlZGl0cy5qc3giLCJzb3VyY2VzQ29udGVudCI6WyIndXNlIHN0cmljdCc7XG52YXIgUmVhY3QgPSByZXF1aXJlKCdyZWFjdCcpO1xudmFyIGNyZWF0ZVJlYWN0Q2xhc3MgPSByZXF1aXJlKCdjcmVhdGUtcmVhY3QtY2xhc3MnKTtcbnZhciBzdHJpbmcgPSByZXF1aXJlKCcuLy4uLy4uLy4uL3V0aWxzL3V0aWxzJykuc3RyaW5nO1xudmFyIFJvdyA9IHJlcXVpcmUoJ3JlYWN0LWJvb3RzdHJhcCcpLlJvdztcbnZhciBDcmVkaXRzID0gY3JlYXRlUmVhY3RDbGFzcyh7XG4gICAgcmVuZGVyOiBmdW5jdGlvbiAoKSB7XG4gICAgICAgIHZhciBzZWxmID0gdGhpcztcbiAgICAgICAgdmFyIGNhdGVnb3J5VXJsID0gJyMvY2F0ZWdvcnkvJyArIHNlbGYucHJvcHMuY2F0ZWdvcnkuaWQgKyAnLycgKyBzdHJpbmcuc2x1ZyhzZWxmLnByb3BzLmNhdGVnb3J5LnRpdGxlKTtcbiAgICAgICAgdmFyIGRhdGUgPSBzdHJpbmcuZm9ybWF0RGF0ZShzZWxmLnByb3BzLmxhc3RVcGRhdGVkKTtcbiAgICAgICAgcmV0dXJuIChcbiAgICAgICAgICAgIDxSb3cgPlxuICAgICAgICAgICAgICAgIDxkaXYgY2xhc3NOYW1lPVwiY29sLXhzLTEyIGNvbC1zbS0yXCI+XG4gICAgICAgICAgICAgICAgICAgIDxhIGhyZWY9XCIjL2Fib3V0XCI+XG4gICAgICAgICAgICAgICAgICAgICAgICA8aW1nIHNyYz1cImltYWdlcy9TV0lHR0lTX2ljb24ucG5nXCIgY2xhc3NOYW1lPVwidXNlci1pY29uIFwiIGFsdD1cInVzZXItaW1hZ2VcIiAvPlxuICAgICAgICAgICAgICAgICAgICA8L2E+XG4gICAgICAgICAgICAgICAgPC9kaXY+XG4gICAgICAgICAgICAgICAgPGRpdiBjbGFzc05hbWU9XCJjb2wteHMtMTIgY29sLXNtLTZcIj5cbiAgICAgICAgICAgICAgICAgICAgPGRpdiBjbGFzc05hbWU9XCJjcmVkaXRzLWluZm9cIj5cbiAgICAgICAgICAgICAgICAgICAgICAgIDxwPlB1Ymxpc2hlZCBvbiB0aGVcbiAgICAgICAgICAgICAgICAgICAgICAgICAgICA8c3BhbiBjbGFzc05hbWU9XCJjcmVkaXRzLXVuZGVybGluZVwiPntkYXRlfTwvc3Bhbj5cbiAgICAgICAgICAgICAgICAgICAgICAgIDwvcD5cbiAgICAgICAgICAgICAgICAgICAgICAgIDxwPlxuICAgICAgICAgICAgICAgICAgICAgICAgICAgIDxzcGFuIGNsYXNzTmFtZT1cImNyZWRpdHMtc2VwYXJhdG9yXCI+Ynk8L3NwYW4+XG4gICAgICAgICAgICAgICAgICAgICAgICAgICAgPGEgaHJlZj1cIiMvYWJvdXRcIj5cbiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAge3NlbGYucHJvcHMuYXV0aG9yfVxuICAgICAgICAgICAgICAgICAgICAgICAgICAgIDwvYT5cbiAgICAgICAgICAgICAgICAgICAgICAgICAgICA8c3BhbiBjbGFzc05hbWU9XCJjcmVkaXRzLXNlcGFyYXRvclwiPmluPC9zcGFuPlxuICAgICAgICAgICAgICAgICAgICAgICAgICAgIDxhXG4gICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIGhyZWY9e2NhdGVnb3J5VXJsfVxuICAgICAgICAgICAgICAgICAgICAgICAgICAgID5cbiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAge3NlbGYucHJvcHMuY2F0ZWdvcnkudGl0bGV9XG4gICAgICAgICAgICAgICAgICAgICAgICAgICAgPC9hPlxuICAgICAgICAgICAgICAgICAgICAgICAgPC9wPlxuICAgICAgICAgICAgICAgICAgICA8L2Rpdj5cbiAgICAgICAgICAgICAgICA8L2Rpdj5cbiAgICAgICAgICAgICAgICA8ZGl2IGNsYXNzTmFtZT1cImNvbC14cy0xMiBjb2wtc20tNFwiPlxuICAgICAgICAgICAgICAgICAgICA8ZGl2IGNsYXNzTmFtZT1cInNvY2lhbFwiPlxuICAgICAgICAgICAgICAgICAgICAgICAgPHA+Q29ubmVjdCB3aXRoIFNXSUdHSVM8L3A+XG4gICAgICAgICAgICAgICAgICAgICAgICA8ZGl2IGNsYXNzTmFtZT1cInNvY2lhbC1saW5rc1wiPlxuICAgICAgICAgICAgICAgICAgICAgICAgICAgIDxhIGNsYXNzTmFtZT1cInNvY2lhbC1pY29uXCIgaHJlZj1cImh0dHBzOi8vdHdpdHRlci5jb20vU1dJR0dJU0F1c3RpblwiIHRhcmdldD1cIl9ibGFua1wiID5cbiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgPGkgY2xhc3NOYW1lPVwiZmEgZmEtdHdpdHRlclwiPjwvaT5cbiAgICAgICAgICAgICAgICAgICAgICAgICAgICA8L2E+XG5cbiAgICAgICAgICAgICAgICAgICAgICAgICAgICA8YSBjbGFzc05hbWU9XCJzb2NpYWwtaWNvblwiIGhyZWY9XCJodHRwczovL3d3dy5saW5rZWRpbi5jb20vaW4vc3dpZ2dpcy1hdXN0aW4tODYyOTlhMTVhL1wiIHRhcmdldD1cIl9ibGFua1wiID5cbiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgPGkgY2xhc3NOYW1lPVwiZmEgZmEtbGlua2VkaW5cIj48L2k+XG4gICAgICAgICAgICAgICAgICAgICAgICAgICAgPC9hPlxuXG4gICAgICAgICAgICAgICAgICAgICAgICAgICAgPGEgY2xhc3NOYW1lPVwic29jaWFsLWljb25cIiBocmVmPVwiaHR0cHM6Ly93d3cubWVldHVwLmNvbS9TV0lHR0lTQXVzdGluL1wiIHRhcmdldD1cIl9ibGFua1wiID5cbiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgPGkgY2xhc3NOYW1lPVwiZmEgZmEtY2FsZW5kYXJcIj48L2k+XG4gICAgICAgICAgICAgICAgICAgICAgICAgICAgPC9hPlxuICAgICAgICAgICAgICAgICAgICAgICAgPC9kaXY+XG4gICAgICAgICAgICAgICAgICAgIDwvZGl2PlxuICAgICAgICAgICAgICAgIDwvZGl2PlxuICAgICAgICAgICAgPC9Sb3c+XG4gICAgICAgIClcbiAgICB9XG59KTtcbm1vZHVsZS5leHBvcnRzID0gQ3JlZGl0czsiXX0=
-},{"./../../../utils/utils":"/mnt/c/swiggis.original/src/client/js/utils/utils.js","create-react-class":"/mnt/c/swiggis.original/node_modules/create-react-class/index.js","react":"/mnt/c/swiggis.original/node_modules/react/react.js","react-bootstrap":"/mnt/c/swiggis.original/node_modules/react-bootstrap/lib/index.js"}],"/mnt/c/swiggis.original/src/client/js/components/layout/footer/footer.jsx":[function(require,module,exports){
+//# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbImNyZWRpdHMuanN4Il0sIm5hbWVzIjpbIlJlYWN0IiwicmVxdWlyZSIsImNyZWF0ZVJlYWN0Q2xhc3MiLCJzdHJpbmciLCJSb3ciLCJDcmVkaXRzIiwicmVuZGVyIiwic2VsZiIsImNhdGVnb3J5VXJsIiwicHJvcHMiLCJjYXRlZ29yeSIsImlkIiwic2x1ZyIsInRpdGxlIiwiZGF0ZSIsImZvcm1hdERhdGUiLCJsYXN0VXBkYXRlZCIsImF1dGhvciIsIm1vZHVsZSIsImV4cG9ydHMiXSwibWFwcGluZ3MiOiJBQUFBOztBQUNBLElBQUlBLFFBQVFDLFFBQVEsT0FBUixDQUFaO0FBQ0EsSUFBSUMsbUJBQW1CRCxRQUFRLG9CQUFSLENBQXZCO0FBQ0EsSUFBSUUsU0FBU0YsUUFBUSx3QkFBUixFQUFrQ0UsTUFBL0M7QUFDQSxJQUFJQyxNQUFNSCxRQUFRLGlCQUFSLEVBQTJCRyxHQUFyQztBQUNBLElBQUlDLFVBQVVILGlCQUFpQjtBQUFBOztBQUMzQkksWUFBUSxrQkFBWTtBQUNoQixZQUFJQyxPQUFPLElBQVg7QUFDQSxZQUFJQyxjQUFjLGdCQUFnQkQsS0FBS0UsS0FBTCxDQUFXQyxRQUFYLENBQW9CQyxFQUFwQyxHQUF5QyxHQUF6QyxHQUErQ1IsT0FBT1MsSUFBUCxDQUFZTCxLQUFLRSxLQUFMLENBQVdDLFFBQVgsQ0FBb0JHLEtBQWhDLENBQWpFO0FBQ0EsWUFBSUMsT0FBT1gsT0FBT1ksVUFBUCxDQUFrQlIsS0FBS0UsS0FBTCxDQUFXTyxXQUE3QixDQUFYO0FBQ0EsZUFDSTtBQUFDLGVBQUQ7QUFBQTtBQUNJO0FBQUE7QUFBQSxrQkFBSyxXQUFVLG9CQUFmO0FBQ0k7QUFBQTtBQUFBLHNCQUFHLE1BQUssU0FBUjtBQUNJLGlEQUFLLEtBQUkseUJBQVQsRUFBbUMsV0FBVSxZQUE3QyxFQUEwRCxLQUFJLFlBQTlEO0FBREo7QUFESixhQURKO0FBTUk7QUFBQTtBQUFBLGtCQUFLLFdBQVUsb0JBQWY7QUFDSTtBQUFBO0FBQUEsc0JBQUssV0FBVSxjQUFmO0FBQ0k7QUFBQTtBQUFBO0FBQUE7QUFDSTtBQUFBO0FBQUEsOEJBQU0sV0FBVSxtQkFBaEI7QUFBcUNGO0FBQXJDO0FBREoscUJBREo7QUFJSTtBQUFBO0FBQUE7QUFDSTtBQUFBO0FBQUEsOEJBQU0sV0FBVSxtQkFBaEI7QUFBQTtBQUFBLHlCQURKO0FBRUk7QUFBQTtBQUFBLDhCQUFHLE1BQUssU0FBUjtBQUNLUCxpQ0FBS0UsS0FBTCxDQUFXUTtBQURoQix5QkFGSjtBQUtJO0FBQUE7QUFBQSw4QkFBTSxXQUFVLG1CQUFoQjtBQUFBO0FBQUEseUJBTEo7QUFNSTtBQUFBO0FBQUE7QUFDSSxzQ0FBTVQ7QUFEVjtBQUdLRCxpQ0FBS0UsS0FBTCxDQUFXQyxRQUFYLENBQW9CRztBQUh6QjtBQU5KO0FBSko7QUFESixhQU5KO0FBeUJJO0FBQUE7QUFBQSxrQkFBSyxXQUFVLG9CQUFmO0FBQ0k7QUFBQTtBQUFBLHNCQUFLLFdBQVUsUUFBZjtBQUNJO0FBQUE7QUFBQTtBQUFBO0FBQUEscUJBREo7QUFFSTtBQUFBO0FBQUEsMEJBQUssV0FBVSxjQUFmO0FBQ0k7QUFBQTtBQUFBLDhCQUFHLFdBQVUsYUFBYixFQUEyQixNQUFLLG1DQUFoQyxFQUFvRSxRQUFPLFFBQTNFO0FBQ0ksdURBQUcsV0FBVSxlQUFiO0FBREoseUJBREo7QUFLSTtBQUFBO0FBQUEsOEJBQUcsV0FBVSxhQUFiLEVBQTJCLE1BQUssdURBQWhDLEVBQXdGLFFBQU8sUUFBL0Y7QUFDSSx1REFBRyxXQUFVLGdCQUFiO0FBREoseUJBTEo7QUFTSTtBQUFBO0FBQUEsOEJBQUcsV0FBVSxhQUFiLEVBQTJCLE1BQUssdUNBQWhDLEVBQXdFLFFBQU8sUUFBL0U7QUFDSSx1REFBRyxXQUFVLGdCQUFiO0FBREo7QUFUSjtBQUZKO0FBREo7QUF6QkosU0FESjtBQThDSDtBQW5EMEIsQ0FBakIsQ0FBZDtBQXFEQUssT0FBT0MsT0FBUCxHQUFpQmQsT0FBakIiLCJmaWxlIjoiY3JlZGl0cy5qc3giLCJzb3VyY2VzQ29udGVudCI6WyIndXNlIHN0cmljdCc7XHJcbnZhciBSZWFjdCA9IHJlcXVpcmUoJ3JlYWN0Jyk7XHJcbnZhciBjcmVhdGVSZWFjdENsYXNzID0gcmVxdWlyZSgnY3JlYXRlLXJlYWN0LWNsYXNzJyk7XHJcbnZhciBzdHJpbmcgPSByZXF1aXJlKCcuLy4uLy4uLy4uL3V0aWxzL3V0aWxzJykuc3RyaW5nO1xyXG52YXIgUm93ID0gcmVxdWlyZSgncmVhY3QtYm9vdHN0cmFwJykuUm93O1xyXG52YXIgQ3JlZGl0cyA9IGNyZWF0ZVJlYWN0Q2xhc3Moe1xyXG4gICAgcmVuZGVyOiBmdW5jdGlvbiAoKSB7XHJcbiAgICAgICAgdmFyIHNlbGYgPSB0aGlzO1xyXG4gICAgICAgIHZhciBjYXRlZ29yeVVybCA9ICcjL2NhdGVnb3J5LycgKyBzZWxmLnByb3BzLmNhdGVnb3J5LmlkICsgJy8nICsgc3RyaW5nLnNsdWcoc2VsZi5wcm9wcy5jYXRlZ29yeS50aXRsZSk7XHJcbiAgICAgICAgdmFyIGRhdGUgPSBzdHJpbmcuZm9ybWF0RGF0ZShzZWxmLnByb3BzLmxhc3RVcGRhdGVkKTtcclxuICAgICAgICByZXR1cm4gKFxyXG4gICAgICAgICAgICA8Um93ID5cclxuICAgICAgICAgICAgICAgIDxkaXYgY2xhc3NOYW1lPVwiY29sLXhzLTEyIGNvbC1zbS0yXCI+XHJcbiAgICAgICAgICAgICAgICAgICAgPGEgaHJlZj1cIiMvYWJvdXRcIj5cclxuICAgICAgICAgICAgICAgICAgICAgICAgPGltZyBzcmM9XCJpbWFnZXMvU1dJR0dJU19pY29uLnBuZ1wiIGNsYXNzTmFtZT1cInVzZXItaWNvbiBcIiBhbHQ9XCJ1c2VyLWltYWdlXCIgLz5cclxuICAgICAgICAgICAgICAgICAgICA8L2E+XHJcbiAgICAgICAgICAgICAgICA8L2Rpdj5cclxuICAgICAgICAgICAgICAgIDxkaXYgY2xhc3NOYW1lPVwiY29sLXhzLTEyIGNvbC1zbS02XCI+XHJcbiAgICAgICAgICAgICAgICAgICAgPGRpdiBjbGFzc05hbWU9XCJjcmVkaXRzLWluZm9cIj5cclxuICAgICAgICAgICAgICAgICAgICAgICAgPHA+UHVibGlzaGVkIG9uIHRoZVxyXG4gICAgICAgICAgICAgICAgICAgICAgICAgICAgPHNwYW4gY2xhc3NOYW1lPVwiY3JlZGl0cy11bmRlcmxpbmVcIj57ZGF0ZX08L3NwYW4+XHJcbiAgICAgICAgICAgICAgICAgICAgICAgIDwvcD5cclxuICAgICAgICAgICAgICAgICAgICAgICAgPHA+XHJcbiAgICAgICAgICAgICAgICAgICAgICAgICAgICA8c3BhbiBjbGFzc05hbWU9XCJjcmVkaXRzLXNlcGFyYXRvclwiPmJ5PC9zcGFuPlxyXG4gICAgICAgICAgICAgICAgICAgICAgICAgICAgPGEgaHJlZj1cIiMvYWJvdXRcIj5cclxuICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICB7c2VsZi5wcm9wcy5hdXRob3J9XHJcbiAgICAgICAgICAgICAgICAgICAgICAgICAgICA8L2E+XHJcbiAgICAgICAgICAgICAgICAgICAgICAgICAgICA8c3BhbiBjbGFzc05hbWU9XCJjcmVkaXRzLXNlcGFyYXRvclwiPmluPC9zcGFuPlxyXG4gICAgICAgICAgICAgICAgICAgICAgICAgICAgPGFcclxuICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICBocmVmPXtjYXRlZ29yeVVybH1cclxuICAgICAgICAgICAgICAgICAgICAgICAgICAgID5cclxuICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICB7c2VsZi5wcm9wcy5jYXRlZ29yeS50aXRsZX1cclxuICAgICAgICAgICAgICAgICAgICAgICAgICAgIDwvYT5cclxuICAgICAgICAgICAgICAgICAgICAgICAgPC9wPlxyXG4gICAgICAgICAgICAgICAgICAgIDwvZGl2PlxyXG4gICAgICAgICAgICAgICAgPC9kaXY+XHJcbiAgICAgICAgICAgICAgICA8ZGl2IGNsYXNzTmFtZT1cImNvbC14cy0xMiBjb2wtc20tNFwiPlxyXG4gICAgICAgICAgICAgICAgICAgIDxkaXYgY2xhc3NOYW1lPVwic29jaWFsXCI+XHJcbiAgICAgICAgICAgICAgICAgICAgICAgIDxwPkNvbm5lY3Qgd2l0aCBTV0lHR0lTPC9wPlxyXG4gICAgICAgICAgICAgICAgICAgICAgICA8ZGl2IGNsYXNzTmFtZT1cInNvY2lhbC1saW5rc1wiPlxyXG4gICAgICAgICAgICAgICAgICAgICAgICAgICAgPGEgY2xhc3NOYW1lPVwic29jaWFsLWljb25cIiBocmVmPVwiaHR0cHM6Ly90d2l0dGVyLmNvbS9TV0lHR0lTQXVzdGluXCIgdGFyZ2V0PVwiX2JsYW5rXCIgPlxyXG4gICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIDxpIGNsYXNzTmFtZT1cImZhIGZhLXR3aXR0ZXJcIj48L2k+XHJcbiAgICAgICAgICAgICAgICAgICAgICAgICAgICA8L2E+XHJcblxyXG4gICAgICAgICAgICAgICAgICAgICAgICAgICAgPGEgY2xhc3NOYW1lPVwic29jaWFsLWljb25cIiBocmVmPVwiaHR0cHM6Ly93d3cubGlua2VkaW4uY29tL2luL3N3aWdnaXMtYXVzdGluLTg2Mjk5YTE1YS9cIiB0YXJnZXQ9XCJfYmxhbmtcIiA+XHJcbiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgPGkgY2xhc3NOYW1lPVwiZmEgZmEtbGlua2VkaW5cIj48L2k+XHJcbiAgICAgICAgICAgICAgICAgICAgICAgICAgICA8L2E+XHJcblxyXG4gICAgICAgICAgICAgICAgICAgICAgICAgICAgPGEgY2xhc3NOYW1lPVwic29jaWFsLWljb25cIiBocmVmPVwiaHR0cHM6Ly93d3cubWVldHVwLmNvbS9TV0lHR0lTQXVzdGluL1wiIHRhcmdldD1cIl9ibGFua1wiID5cclxuICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICA8aSBjbGFzc05hbWU9XCJmYSBmYS1jYWxlbmRhclwiPjwvaT5cclxuICAgICAgICAgICAgICAgICAgICAgICAgICAgIDwvYT5cclxuICAgICAgICAgICAgICAgICAgICAgICAgPC9kaXY+XHJcbiAgICAgICAgICAgICAgICAgICAgPC9kaXY+XHJcbiAgICAgICAgICAgICAgICA8L2Rpdj5cclxuICAgICAgICAgICAgPC9Sb3c+XHJcbiAgICAgICAgKVxyXG4gICAgfVxyXG59KTtcclxubW9kdWxlLmV4cG9ydHMgPSBDcmVkaXRzOyJdfQ==
+},{"./../../../utils/utils":"C:\\swiggis.austin\\src\\client\\js\\utils\\utils.js","create-react-class":"C:\\swiggis.austin\\node_modules\\create-react-class\\index.js","react":"C:\\swiggis.austin\\node_modules\\react\\react.js","react-bootstrap":"C:\\swiggis.austin\\node_modules\\react-bootstrap\\lib\\index.js"}],"C:\\swiggis.austin\\src\\client\\js\\components\\layout\\footer\\footer.jsx":[function(require,module,exports){
 'use strict';
 
 var React = require('react');
@@ -57302,8 +56429,8 @@ var Footer = createReactClass({
     }
 });
 module.exports = Footer;
-//# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbImZvb3Rlci5qc3giXSwibmFtZXMiOlsiUmVhY3QiLCJyZXF1aXJlIiwiY3JlYXRlUmVhY3RDbGFzcyIsIlJlYWRPdGhlciIsIkNyZWRpdHMiLCJGb290ZXIiLCJyZW5kZXIiLCJwcm9wcyIsImxhc3RVcGRhdGVkIiwiY2F0ZWdvcnkiLCJhdXRob3IiLCJtb2R1bGUiLCJleHBvcnRzIl0sIm1hcHBpbmdzIjoiQUFBQTs7QUFDQSxJQUFJQSxRQUFRQyxRQUFRLE9BQVIsQ0FBWjtBQUNBLElBQUlDLG1CQUFtQkQsUUFBUSxvQkFBUixDQUF2QjtBQUNBLElBQUlFLFlBQVlGLFFBQVEsaUJBQVIsQ0FBaEI7QUFDQSxJQUFJRyxVQUFVSCxRQUFRLGVBQVIsQ0FBZDtBQUNBLElBQUlJLFNBQVNILGlCQUFpQjtBQUFBOztBQUMxQkksWUFBUSxrQkFBWTtBQUNoQixlQUNJO0FBQUE7QUFBQSxjQUFRLFdBQVUsUUFBbEI7QUFDSSxnQ0FBQyxPQUFEO0FBQ0ksNkJBQWEsS0FBS0MsS0FBTCxDQUFXQyxXQUQ1QjtBQUVJLDBCQUFVLEtBQUtELEtBQUwsQ0FBV0UsUUFGekI7QUFHSSx3QkFBUSxLQUFLRixLQUFMLENBQVdHO0FBSHZCO0FBREosU0FESjtBQVNIO0FBWHlCLENBQWpCLENBQWI7QUFhQUMsT0FBT0MsT0FBUCxHQUFpQlAsTUFBakIiLCJmaWxlIjoiZm9vdGVyLmpzeCIsInNvdXJjZXNDb250ZW50IjpbIid1c2Ugc3RyaWN0JztcbnZhciBSZWFjdCA9IHJlcXVpcmUoJ3JlYWN0Jyk7XG52YXIgY3JlYXRlUmVhY3RDbGFzcyA9IHJlcXVpcmUoJ2NyZWF0ZS1yZWFjdC1jbGFzcycpO1xudmFyIFJlYWRPdGhlciA9IHJlcXVpcmUoJy4vcmVhZE90aGVyLmpzeCcpO1xudmFyIENyZWRpdHMgPSByZXF1aXJlKCcuL2NyZWRpdHMuanN4Jyk7XG52YXIgRm9vdGVyID0gY3JlYXRlUmVhY3RDbGFzcyh7XG4gICAgcmVuZGVyOiBmdW5jdGlvbiAoKSB7XG4gICAgICAgIHJldHVybiAoXG4gICAgICAgICAgICA8Zm9vdGVyIGNsYXNzTmFtZT1cInNpbmdsZVwiPlxuICAgICAgICAgICAgICAgIDxDcmVkaXRzXG4gICAgICAgICAgICAgICAgICAgIGxhc3RVcGRhdGVkPXt0aGlzLnByb3BzLmxhc3RVcGRhdGVkfVxuICAgICAgICAgICAgICAgICAgICBjYXRlZ29yeT17dGhpcy5wcm9wcy5jYXRlZ29yeX1cbiAgICAgICAgICAgICAgICAgICAgYXV0aG9yPXt0aGlzLnByb3BzLmF1dGhvcn1cbiAgICAgICAgICAgICAgICAvPlxuICAgICAgICAgICAgPC9mb290ZXI+XG4gICAgICAgIClcbiAgICB9XG59KTtcbm1vZHVsZS5leHBvcnRzID0gRm9vdGVyOyJdfQ==
-},{"./credits.jsx":"/mnt/c/swiggis.original/src/client/js/components/layout/footer/credits.jsx","./readOther.jsx":"/mnt/c/swiggis.original/src/client/js/components/layout/footer/readOther.jsx","create-react-class":"/mnt/c/swiggis.original/node_modules/create-react-class/index.js","react":"/mnt/c/swiggis.original/node_modules/react/react.js"}],"/mnt/c/swiggis.original/src/client/js/components/layout/footer/otherArticle.jsx":[function(require,module,exports){
+//# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbImZvb3Rlci5qc3giXSwibmFtZXMiOlsiUmVhY3QiLCJyZXF1aXJlIiwiY3JlYXRlUmVhY3RDbGFzcyIsIlJlYWRPdGhlciIsIkNyZWRpdHMiLCJGb290ZXIiLCJyZW5kZXIiLCJwcm9wcyIsImxhc3RVcGRhdGVkIiwiY2F0ZWdvcnkiLCJhdXRob3IiLCJtb2R1bGUiLCJleHBvcnRzIl0sIm1hcHBpbmdzIjoiQUFBQTs7QUFDQSxJQUFJQSxRQUFRQyxRQUFRLE9BQVIsQ0FBWjtBQUNBLElBQUlDLG1CQUFtQkQsUUFBUSxvQkFBUixDQUF2QjtBQUNBLElBQUlFLFlBQVlGLFFBQVEsaUJBQVIsQ0FBaEI7QUFDQSxJQUFJRyxVQUFVSCxRQUFRLGVBQVIsQ0FBZDtBQUNBLElBQUlJLFNBQVNILGlCQUFpQjtBQUFBOztBQUMxQkksWUFBUSxrQkFBWTtBQUNoQixlQUNJO0FBQUE7QUFBQSxjQUFRLFdBQVUsUUFBbEI7QUFDSSxnQ0FBQyxPQUFEO0FBQ0ksNkJBQWEsS0FBS0MsS0FBTCxDQUFXQyxXQUQ1QjtBQUVJLDBCQUFVLEtBQUtELEtBQUwsQ0FBV0UsUUFGekI7QUFHSSx3QkFBUSxLQUFLRixLQUFMLENBQVdHO0FBSHZCO0FBREosU0FESjtBQVNIO0FBWHlCLENBQWpCLENBQWI7QUFhQUMsT0FBT0MsT0FBUCxHQUFpQlAsTUFBakIiLCJmaWxlIjoiZm9vdGVyLmpzeCIsInNvdXJjZXNDb250ZW50IjpbIid1c2Ugc3RyaWN0JztcclxudmFyIFJlYWN0ID0gcmVxdWlyZSgncmVhY3QnKTtcclxudmFyIGNyZWF0ZVJlYWN0Q2xhc3MgPSByZXF1aXJlKCdjcmVhdGUtcmVhY3QtY2xhc3MnKTtcclxudmFyIFJlYWRPdGhlciA9IHJlcXVpcmUoJy4vcmVhZE90aGVyLmpzeCcpO1xyXG52YXIgQ3JlZGl0cyA9IHJlcXVpcmUoJy4vY3JlZGl0cy5qc3gnKTtcclxudmFyIEZvb3RlciA9IGNyZWF0ZVJlYWN0Q2xhc3Moe1xyXG4gICAgcmVuZGVyOiBmdW5jdGlvbiAoKSB7XHJcbiAgICAgICAgcmV0dXJuIChcclxuICAgICAgICAgICAgPGZvb3RlciBjbGFzc05hbWU9XCJzaW5nbGVcIj5cclxuICAgICAgICAgICAgICAgIDxDcmVkaXRzXHJcbiAgICAgICAgICAgICAgICAgICAgbGFzdFVwZGF0ZWQ9e3RoaXMucHJvcHMubGFzdFVwZGF0ZWR9XHJcbiAgICAgICAgICAgICAgICAgICAgY2F0ZWdvcnk9e3RoaXMucHJvcHMuY2F0ZWdvcnl9XHJcbiAgICAgICAgICAgICAgICAgICAgYXV0aG9yPXt0aGlzLnByb3BzLmF1dGhvcn1cclxuICAgICAgICAgICAgICAgIC8+XHJcbiAgICAgICAgICAgIDwvZm9vdGVyPlxyXG4gICAgICAgIClcclxuICAgIH1cclxufSk7XHJcbm1vZHVsZS5leHBvcnRzID0gRm9vdGVyOyJdfQ==
+},{"./credits.jsx":"C:\\swiggis.austin\\src\\client\\js\\components\\layout\\footer\\credits.jsx","./readOther.jsx":"C:\\swiggis.austin\\src\\client\\js\\components\\layout\\footer\\readOther.jsx","create-react-class":"C:\\swiggis.austin\\node_modules\\create-react-class\\index.js","react":"C:\\swiggis.austin\\node_modules\\react\\react.js"}],"C:\\swiggis.austin\\src\\client\\js\\components\\layout\\footer\\otherArticle.jsx":[function(require,module,exports){
 'use strict';
 
 var React = require('react');
@@ -57321,7 +56448,7 @@ var OtherArticle = createReactClass({
         var articleUrl = '#/article/' + string.slug(self.props.article.title);
         return React.createElement(
             'div',
-            { key: this.props.key, className: 'col-sm-6 col-md-2 no-gutter read-another-container image-read-another', style: otherArticleStyle },
+            { key: this.props.id, className: 'col-sm-6 col-md-2 no-gutter read-another-container image-read-another', style: otherArticleStyle },
             React.createElement('div', { className: 'overlay' }),
             React.createElement(
                 'h3',
@@ -57342,8 +56469,8 @@ var OtherArticle = createReactClass({
     }
 });
 module.exports = OtherArticle;
-//# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIm90aGVyQXJ0aWNsZS5qc3giXSwibmFtZXMiOlsiUmVhY3QiLCJyZXF1aXJlIiwiY3JlYXRlUmVhY3RDbGFzcyIsInN0cmluZyIsIk90aGVyQXJ0aWNsZSIsInJlbmRlciIsInNlbGYiLCJvdGhlckFydGljbGVTdHlsZSIsImJhY2tncm91bmRJbWFnZSIsInByb3BzIiwiYXJ0aWNsZSIsImltYWdlIiwiYXJ0aWNsZVVybCIsInNsdWciLCJ0aXRsZSIsImtleSIsImhhbmRsZVJvdXRpbmciLCJiaW5kIiwibW9kdWxlIiwiZXhwb3J0cyJdLCJtYXBwaW5ncyI6IkFBQUE7O0FBQ0EsSUFBSUEsUUFBUUMsUUFBUSxPQUFSLENBQVo7QUFDQSxJQUFJQyxtQkFBbUJELFFBQVEsb0JBQVIsQ0FBdkI7QUFDQSxJQUFJRSxTQUFTRixRQUFRLHdCQUFSLEVBQWtDRSxNQUEvQztBQUNBLElBQUlDLGVBQWVGLGlCQUFpQjtBQUFBOztBQUNoQ0csWUFBUSxrQkFBWTtBQUNoQixZQUFJQyxPQUFPLElBQVg7O0FBRUEsWUFBSUMsb0JBQW9CO0FBQ3BCQyw2QkFBaUIsU0FBUyxLQUFLQyxLQUFMLENBQVdDLE9BQVgsQ0FBbUJDLEtBQTVCLEdBQW9DO0FBRGpDLFNBQXhCO0FBR0EsWUFBSUMsYUFBYSxlQUFlVCxPQUFPVSxJQUFQLENBQVlQLEtBQUtHLEtBQUwsQ0FBV0MsT0FBWCxDQUFtQkksS0FBL0IsQ0FBaEM7QUFDQSxlQUVJO0FBQUE7QUFBQSxjQUFLLEtBQUssS0FBS0wsS0FBTCxDQUFXTSxHQUFyQixFQUEwQixXQUFVLHVFQUFwQyxFQUE0RyxPQUFPUixpQkFBbkg7QUFDSSx5Q0FBSyxXQUFVLFNBQWYsR0FESjtBQUdJO0FBQUE7QUFBQSxrQkFBSSxXQUFVLGNBQWQ7QUFDSTtBQUFBO0FBQUE7QUFDSSxtQ0FBVSxtQkFEZDtBQUVJLDhCQUFLLFFBRlQ7QUFHSSxpQ0FBU0QsS0FBS0csS0FBTCxDQUFXTyxhQUFYLENBQXlCQyxJQUF6QixDQUE4QixJQUE5QixFQUFvQyxLQUFLUixLQUFMLENBQVdDLE9BQS9DLENBSGI7QUFJSSw4QkFBTUUsVUFKVjtBQUtJLCtCQUFPLEtBQUtILEtBQUwsQ0FBV0MsT0FBWCxDQUFtQkk7QUFMOUI7QUFPQyx5QkFBS0wsS0FBTCxDQUFXQyxPQUFYLENBQW1CSTtBQVBwQjtBQURKO0FBSEosU0FGSjtBQWtCSDtBQTFCK0IsQ0FBakIsQ0FBbkI7QUE0QkFJLE9BQU9DLE9BQVAsR0FBaUJmLFlBQWpCIiwiZmlsZSI6Im90aGVyQXJ0aWNsZS5qc3giLCJzb3VyY2VzQ29udGVudCI6WyIndXNlIHN0cmljdCc7XG52YXIgUmVhY3QgPSByZXF1aXJlKCdyZWFjdCcpO1xudmFyIGNyZWF0ZVJlYWN0Q2xhc3MgPSByZXF1aXJlKCdjcmVhdGUtcmVhY3QtY2xhc3MnKTtcbnZhciBzdHJpbmcgPSByZXF1aXJlKCcuLy4uLy4uLy4uL3V0aWxzL3V0aWxzJykuc3RyaW5nO1xudmFyIE90aGVyQXJ0aWNsZSA9IGNyZWF0ZVJlYWN0Q2xhc3Moe1xuICAgIHJlbmRlcjogZnVuY3Rpb24gKCkge1xuICAgICAgICB2YXIgc2VsZiA9IHRoaXM7XG5cbiAgICAgICAgdmFyIG90aGVyQXJ0aWNsZVN0eWxlID0ge1xuICAgICAgICAgICAgYmFja2dyb3VuZEltYWdlOiAndXJsKCcgKyB0aGlzLnByb3BzLmFydGljbGUuaW1hZ2UgKyAnKSdcbiAgICAgICAgfTtcbiAgICAgICAgdmFyIGFydGljbGVVcmwgPSAnIy9hcnRpY2xlLycgKyBzdHJpbmcuc2x1ZyhzZWxmLnByb3BzLmFydGljbGUudGl0bGUpO1xuICAgICAgICByZXR1cm4gKFxuXG4gICAgICAgICAgICA8ZGl2IGtleT17dGhpcy5wcm9wcy5rZXl9IGNsYXNzTmFtZT1cImNvbC1zbS02IGNvbC1tZC0yIG5vLWd1dHRlciByZWFkLWFub3RoZXItY29udGFpbmVyIGltYWdlLXJlYWQtYW5vdGhlclwiIHN0eWxlPXtvdGhlckFydGljbGVTdHlsZX0+XG4gICAgICAgICAgICAgICAgPGRpdiBjbGFzc05hbWU9XCJvdmVybGF5XCI+PC9kaXY+XG5cbiAgICAgICAgICAgICAgICA8aDMgY2xhc3NOYW1lPVwicmVhZC1hbm90aGVyXCI+XG4gICAgICAgICAgICAgICAgICAgIDxhXG4gICAgICAgICAgICAgICAgICAgICAgICBjbGFzc05hbWU9XCJyZWFkLWFub3RoZXItbGlua1wiXG4gICAgICAgICAgICAgICAgICAgICAgICByb2xlPSdidXR0b24nXG4gICAgICAgICAgICAgICAgICAgICAgICBvbkNsaWNrPXtzZWxmLnByb3BzLmhhbmRsZVJvdXRpbmcuYmluZChudWxsLCB0aGlzLnByb3BzLmFydGljbGUpfVxuICAgICAgICAgICAgICAgICAgICAgICAgaHJlZj17YXJ0aWNsZVVybH1cbiAgICAgICAgICAgICAgICAgICAgICAgIHRpdGxlPXt0aGlzLnByb3BzLmFydGljbGUudGl0bGV9XG4gICAgICAgICAgICAgICAgICAgID5cbiAgICAgICAgICAgICAgICAgICAge3RoaXMucHJvcHMuYXJ0aWNsZS50aXRsZX1cbiAgICAgICAgICAgICAgICAgICAgPC9hPlxuICAgICAgICAgICAgICAgIDwvaDM+XG4gICAgICAgICAgICA8L2Rpdj5cbiAgICAgICAgKVxuICAgIH1cbn0pO1xubW9kdWxlLmV4cG9ydHMgPSBPdGhlckFydGljbGU7Il19
-},{"./../../../utils/utils":"/mnt/c/swiggis.original/src/client/js/utils/utils.js","create-react-class":"/mnt/c/swiggis.original/node_modules/create-react-class/index.js","react":"/mnt/c/swiggis.original/node_modules/react/react.js"}],"/mnt/c/swiggis.original/src/client/js/components/layout/footer/readOther.jsx":[function(require,module,exports){
+//# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIm90aGVyQXJ0aWNsZS5qc3giXSwibmFtZXMiOlsiUmVhY3QiLCJyZXF1aXJlIiwiY3JlYXRlUmVhY3RDbGFzcyIsInN0cmluZyIsIk90aGVyQXJ0aWNsZSIsInJlbmRlciIsInNlbGYiLCJvdGhlckFydGljbGVTdHlsZSIsImJhY2tncm91bmRJbWFnZSIsInByb3BzIiwiYXJ0aWNsZSIsImltYWdlIiwiYXJ0aWNsZVVybCIsInNsdWciLCJ0aXRsZSIsImlkIiwiaGFuZGxlUm91dGluZyIsImJpbmQiLCJtb2R1bGUiLCJleHBvcnRzIl0sIm1hcHBpbmdzIjoiQUFBQTs7QUFDQSxJQUFJQSxRQUFRQyxRQUFRLE9BQVIsQ0FBWjtBQUNBLElBQUlDLG1CQUFtQkQsUUFBUSxvQkFBUixDQUF2QjtBQUNBLElBQUlFLFNBQVNGLFFBQVEsd0JBQVIsRUFBa0NFLE1BQS9DO0FBQ0EsSUFBSUMsZUFBZUYsaUJBQWlCO0FBQUE7O0FBQ2hDRyxZQUFRLGtCQUFZO0FBQ2hCLFlBQUlDLE9BQU8sSUFBWDs7QUFFQSxZQUFJQyxvQkFBb0I7QUFDcEJDLDZCQUFpQixTQUFTLEtBQUtDLEtBQUwsQ0FBV0MsT0FBWCxDQUFtQkMsS0FBNUIsR0FBb0M7QUFEakMsU0FBeEI7QUFHQSxZQUFJQyxhQUFhLGVBQWVULE9BQU9VLElBQVAsQ0FBWVAsS0FBS0csS0FBTCxDQUFXQyxPQUFYLENBQW1CSSxLQUEvQixDQUFoQztBQUNBLGVBRUk7QUFBQTtBQUFBLGNBQUssS0FBSyxLQUFLTCxLQUFMLENBQVdNLEVBQXJCLEVBQXlCLFdBQVUsdUVBQW5DLEVBQTJHLE9BQU9SLGlCQUFsSDtBQUNJLHlDQUFLLFdBQVUsU0FBZixHQURKO0FBR0k7QUFBQTtBQUFBLGtCQUFJLFdBQVUsY0FBZDtBQUNJO0FBQUE7QUFBQTtBQUNJLG1DQUFVLG1CQURkO0FBRUksOEJBQUssUUFGVDtBQUdJLGlDQUFTRCxLQUFLRyxLQUFMLENBQVdPLGFBQVgsQ0FBeUJDLElBQXpCLENBQThCLElBQTlCLEVBQW9DLEtBQUtSLEtBQUwsQ0FBV0MsT0FBL0MsQ0FIYjtBQUlJLDhCQUFNRSxVQUpWO0FBS0ksK0JBQU8sS0FBS0gsS0FBTCxDQUFXQyxPQUFYLENBQW1CSTtBQUw5QjtBQU9DLHlCQUFLTCxLQUFMLENBQVdDLE9BQVgsQ0FBbUJJO0FBUHBCO0FBREo7QUFISixTQUZKO0FBa0JIO0FBMUIrQixDQUFqQixDQUFuQjtBQTRCQUksT0FBT0MsT0FBUCxHQUFpQmYsWUFBakIiLCJmaWxlIjoib3RoZXJBcnRpY2xlLmpzeCIsInNvdXJjZXNDb250ZW50IjpbIid1c2Ugc3RyaWN0JztcclxudmFyIFJlYWN0ID0gcmVxdWlyZSgncmVhY3QnKTtcclxudmFyIGNyZWF0ZVJlYWN0Q2xhc3MgPSByZXF1aXJlKCdjcmVhdGUtcmVhY3QtY2xhc3MnKTtcclxudmFyIHN0cmluZyA9IHJlcXVpcmUoJy4vLi4vLi4vLi4vdXRpbHMvdXRpbHMnKS5zdHJpbmc7XHJcbnZhciBPdGhlckFydGljbGUgPSBjcmVhdGVSZWFjdENsYXNzKHtcclxuICAgIHJlbmRlcjogZnVuY3Rpb24gKCkge1xyXG4gICAgICAgIHZhciBzZWxmID0gdGhpcztcclxuXHJcbiAgICAgICAgdmFyIG90aGVyQXJ0aWNsZVN0eWxlID0ge1xyXG4gICAgICAgICAgICBiYWNrZ3JvdW5kSW1hZ2U6ICd1cmwoJyArIHRoaXMucHJvcHMuYXJ0aWNsZS5pbWFnZSArICcpJ1xyXG4gICAgICAgIH07XHJcbiAgICAgICAgdmFyIGFydGljbGVVcmwgPSAnIy9hcnRpY2xlLycgKyBzdHJpbmcuc2x1ZyhzZWxmLnByb3BzLmFydGljbGUudGl0bGUpO1xyXG4gICAgICAgIHJldHVybiAoXHJcblxyXG4gICAgICAgICAgICA8ZGl2IGtleT17dGhpcy5wcm9wcy5pZH0gY2xhc3NOYW1lPVwiY29sLXNtLTYgY29sLW1kLTIgbm8tZ3V0dGVyIHJlYWQtYW5vdGhlci1jb250YWluZXIgaW1hZ2UtcmVhZC1hbm90aGVyXCIgc3R5bGU9e290aGVyQXJ0aWNsZVN0eWxlfT5cclxuICAgICAgICAgICAgICAgIDxkaXYgY2xhc3NOYW1lPVwib3ZlcmxheVwiPjwvZGl2PlxyXG5cclxuICAgICAgICAgICAgICAgIDxoMyBjbGFzc05hbWU9XCJyZWFkLWFub3RoZXJcIj5cclxuICAgICAgICAgICAgICAgICAgICA8YVxyXG4gICAgICAgICAgICAgICAgICAgICAgICBjbGFzc05hbWU9XCJyZWFkLWFub3RoZXItbGlua1wiXHJcbiAgICAgICAgICAgICAgICAgICAgICAgIHJvbGU9J2J1dHRvbidcclxuICAgICAgICAgICAgICAgICAgICAgICAgb25DbGljaz17c2VsZi5wcm9wcy5oYW5kbGVSb3V0aW5nLmJpbmQobnVsbCwgdGhpcy5wcm9wcy5hcnRpY2xlKX1cclxuICAgICAgICAgICAgICAgICAgICAgICAgaHJlZj17YXJ0aWNsZVVybH1cclxuICAgICAgICAgICAgICAgICAgICAgICAgdGl0bGU9e3RoaXMucHJvcHMuYXJ0aWNsZS50aXRsZX1cclxuICAgICAgICAgICAgICAgICAgICA+XHJcbiAgICAgICAgICAgICAgICAgICAge3RoaXMucHJvcHMuYXJ0aWNsZS50aXRsZX1cclxuICAgICAgICAgICAgICAgICAgICA8L2E+XHJcbiAgICAgICAgICAgICAgICA8L2gzPlxyXG4gICAgICAgICAgICA8L2Rpdj5cclxuICAgICAgICApXHJcbiAgICB9XHJcbn0pO1xyXG5tb2R1bGUuZXhwb3J0cyA9IE90aGVyQXJ0aWNsZTsiXX0=
+},{"./../../../utils/utils":"C:\\swiggis.austin\\src\\client\\js\\utils\\utils.js","create-react-class":"C:\\swiggis.austin\\node_modules\\create-react-class\\index.js","react":"C:\\swiggis.austin\\node_modules\\react\\react.js"}],"C:\\swiggis.austin\\src\\client\\js\\components\\layout\\footer\\readOther.jsx":[function(require,module,exports){
 'use strict';
 
 var React = require('react');
@@ -57362,6 +56489,7 @@ var ReadOther = createReactClass({
                 return React.createElement(OtherArticle, {
                     article: article,
                     key: i,
+                    id: i,
                     handleRouting: self.props.handleRouting
                 });
             })
@@ -57369,8 +56497,8 @@ var ReadOther = createReactClass({
     }
 });
 module.exports = ReadOther;
-//# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInJlYWRPdGhlci5qc3giXSwibmFtZXMiOlsiUmVhY3QiLCJyZXF1aXJlIiwiY3JlYXRlUmVhY3RDbGFzcyIsIk90aGVyQXJ0aWNsZSIsIlJlYWRPdGhlciIsInJlbmRlciIsInNlbGYiLCJwcm9wcyIsImFydGljbGVzIiwibWFwIiwiYXJ0aWNsZSIsImkiLCJoYW5kbGVSb3V0aW5nIiwibW9kdWxlIiwiZXhwb3J0cyJdLCJtYXBwaW5ncyI6IkFBQUE7O0FBQ0EsSUFBSUEsUUFBUUMsUUFBUSxPQUFSLENBQVo7QUFDQSxJQUFJQyxtQkFBbUJELFFBQVEsb0JBQVIsQ0FBdkI7QUFDQSxJQUFJRSxlQUFlRixRQUFRLG9CQUFSLENBQW5CO0FBQ0EsSUFBSUcsWUFBWUYsaUJBQWlCO0FBQUE7O0FBQzdCRyxZQUFRLGtCQUFZO0FBQ2hCLFlBQUlDLE9BQU8sSUFBWDtBQUNBLGVBQ0k7QUFBQTtBQUFBLGNBQUssV0FBVSwwQkFBZjtBQUNLLGlCQUFLQyxLQUFMLENBQVdDLFFBQVgsQ0FBb0JDLEdBQXBCLENBQXdCLFVBQVVDLE9BQVYsRUFBbUJDLENBQW5CLEVBQXNCOztBQUUzQyx1QkFBTyxvQkFBQyxZQUFEO0FBQ0gsNkJBQVNELE9BRE47QUFFSCx5QkFBS0MsQ0FGRjtBQUdILG1DQUFlTCxLQUFLQyxLQUFMLENBQVdLO0FBSHZCLGtCQUFQO0FBS0gsYUFQQTtBQURMLFNBREo7QUFZSDtBQWY0QixDQUFqQixDQUFoQjtBQWlCQUMsT0FBT0MsT0FBUCxHQUFpQlYsU0FBakIiLCJmaWxlIjoicmVhZE90aGVyLmpzeCIsInNvdXJjZXNDb250ZW50IjpbIid1c2Ugc3RyaWN0JztcbnZhciBSZWFjdCA9IHJlcXVpcmUoJ3JlYWN0Jyk7XG52YXIgY3JlYXRlUmVhY3RDbGFzcyA9IHJlcXVpcmUoJ2NyZWF0ZS1yZWFjdC1jbGFzcycpO1xudmFyIE90aGVyQXJ0aWNsZSA9IHJlcXVpcmUoJy4vb3RoZXJBcnRpY2xlLmpzeCcpO1xudmFyIFJlYWRPdGhlciA9IGNyZWF0ZVJlYWN0Q2xhc3Moe1xuICAgIHJlbmRlcjogZnVuY3Rpb24gKCkge1xuICAgICAgICB2YXIgc2VsZiA9IHRoaXM7XG4gICAgICAgIHJldHVybiAoXG4gICAgICAgICAgICA8ZGl2IGNsYXNzTmFtZT1cInJvdyByZWFkLWFub3RoZXItc2VjdGlvblwiPlxuICAgICAgICAgICAgICAgIHt0aGlzLnByb3BzLmFydGljbGVzLm1hcChmdW5jdGlvbiAoYXJ0aWNsZSwgaSkge1xuXG4gICAgICAgICAgICAgICAgICAgIHJldHVybiA8T3RoZXJBcnRpY2xlXG4gICAgICAgICAgICAgICAgICAgICAgICBhcnRpY2xlPXthcnRpY2xlfVxuICAgICAgICAgICAgICAgICAgICAgICAga2V5PXtpfVxuICAgICAgICAgICAgICAgICAgICAgICAgaGFuZGxlUm91dGluZz17c2VsZi5wcm9wcy5oYW5kbGVSb3V0aW5nfVxuICAgICAgICAgICAgICAgICAgICAvPjtcbiAgICAgICAgICAgICAgICB9KX1cbiAgICAgICAgICAgIDwvZGl2PlxuICAgICAgICApXG4gICAgfVxufSk7XG5tb2R1bGUuZXhwb3J0cyA9IFJlYWRPdGhlcjsiXX0=
-},{"./otherArticle.jsx":"/mnt/c/swiggis.original/src/client/js/components/layout/footer/otherArticle.jsx","create-react-class":"/mnt/c/swiggis.original/node_modules/create-react-class/index.js","react":"/mnt/c/swiggis.original/node_modules/react/react.js"}],"/mnt/c/swiggis.original/src/client/js/components/layout/menu/menu.jsx":[function(require,module,exports){
+//# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInJlYWRPdGhlci5qc3giXSwibmFtZXMiOlsiUmVhY3QiLCJyZXF1aXJlIiwiY3JlYXRlUmVhY3RDbGFzcyIsIk90aGVyQXJ0aWNsZSIsIlJlYWRPdGhlciIsInJlbmRlciIsInNlbGYiLCJwcm9wcyIsImFydGljbGVzIiwibWFwIiwiYXJ0aWNsZSIsImkiLCJoYW5kbGVSb3V0aW5nIiwibW9kdWxlIiwiZXhwb3J0cyJdLCJtYXBwaW5ncyI6IkFBQUE7O0FBQ0EsSUFBSUEsUUFBUUMsUUFBUSxPQUFSLENBQVo7QUFDQSxJQUFJQyxtQkFBbUJELFFBQVEsb0JBQVIsQ0FBdkI7QUFDQSxJQUFJRSxlQUFlRixRQUFRLG9CQUFSLENBQW5CO0FBQ0EsSUFBSUcsWUFBWUYsaUJBQWlCO0FBQUE7O0FBQzdCRyxZQUFRLGtCQUFZO0FBQ2hCLFlBQUlDLE9BQU8sSUFBWDtBQUNBLGVBQ0k7QUFBQTtBQUFBLGNBQUssV0FBVSwwQkFBZjtBQUNLLGlCQUFLQyxLQUFMLENBQVdDLFFBQVgsQ0FBb0JDLEdBQXBCLENBQXdCLFVBQVVDLE9BQVYsRUFBbUJDLENBQW5CLEVBQXNCOztBQUUzQyx1QkFBTyxvQkFBQyxZQUFEO0FBQ0gsNkJBQVNELE9BRE47QUFFSCx5QkFBS0MsQ0FGRjtBQUdILHdCQUFJQSxDQUhEO0FBSUgsbUNBQWVMLEtBQUtDLEtBQUwsQ0FBV0s7QUFKdkIsa0JBQVA7QUFNSCxhQVJBO0FBREwsU0FESjtBQWFIO0FBaEI0QixDQUFqQixDQUFoQjtBQWtCQUMsT0FBT0MsT0FBUCxHQUFpQlYsU0FBakIiLCJmaWxlIjoicmVhZE90aGVyLmpzeCIsInNvdXJjZXNDb250ZW50IjpbIid1c2Ugc3RyaWN0JztcclxudmFyIFJlYWN0ID0gcmVxdWlyZSgncmVhY3QnKTtcclxudmFyIGNyZWF0ZVJlYWN0Q2xhc3MgPSByZXF1aXJlKCdjcmVhdGUtcmVhY3QtY2xhc3MnKTtcclxudmFyIE90aGVyQXJ0aWNsZSA9IHJlcXVpcmUoJy4vb3RoZXJBcnRpY2xlLmpzeCcpO1xyXG52YXIgUmVhZE90aGVyID0gY3JlYXRlUmVhY3RDbGFzcyh7XHJcbiAgICByZW5kZXI6IGZ1bmN0aW9uICgpIHtcclxuICAgICAgICB2YXIgc2VsZiA9IHRoaXM7XHJcbiAgICAgICAgcmV0dXJuIChcclxuICAgICAgICAgICAgPGRpdiBjbGFzc05hbWU9XCJyb3cgcmVhZC1hbm90aGVyLXNlY3Rpb25cIj5cclxuICAgICAgICAgICAgICAgIHt0aGlzLnByb3BzLmFydGljbGVzLm1hcChmdW5jdGlvbiAoYXJ0aWNsZSwgaSkge1xyXG5cclxuICAgICAgICAgICAgICAgICAgICByZXR1cm4gPE90aGVyQXJ0aWNsZVxyXG4gICAgICAgICAgICAgICAgICAgICAgICBhcnRpY2xlPXthcnRpY2xlfVxyXG4gICAgICAgICAgICAgICAgICAgICAgICBrZXk9e2l9XHJcbiAgICAgICAgICAgICAgICAgICAgICAgIGlkPXtpfVxyXG4gICAgICAgICAgICAgICAgICAgICAgICBoYW5kbGVSb3V0aW5nPXtzZWxmLnByb3BzLmhhbmRsZVJvdXRpbmd9XHJcbiAgICAgICAgICAgICAgICAgICAgLz47XHJcbiAgICAgICAgICAgICAgICB9KX1cclxuICAgICAgICAgICAgPC9kaXY+XHJcbiAgICAgICAgKVxyXG4gICAgfVxyXG59KTtcclxubW9kdWxlLmV4cG9ydHMgPSBSZWFkT3RoZXI7Il19
+},{"./otherArticle.jsx":"C:\\swiggis.austin\\src\\client\\js\\components\\layout\\footer\\otherArticle.jsx","create-react-class":"C:\\swiggis.austin\\node_modules\\create-react-class\\index.js","react":"C:\\swiggis.austin\\node_modules\\react\\react.js"}],"C:\\swiggis.austin\\src\\client\\js\\components\\layout\\menu\\menu.jsx":[function(require,module,exports){
 'use strict';
 
 var React = require('react');
@@ -57435,6 +56563,7 @@ var Menu = createReactClass({
                 self.props.categories.map(function (category, i) {
                     return React.createElement(MenuCategory, {
                         key: i,
+                        id: i,
                         category: category,
                         handleRouting: self.props.handleRouting,
                         setMainProperty: self.props.setMainProperty,
@@ -57446,8 +56575,8 @@ var Menu = createReactClass({
     }
 });
 module.exports = Menu;
-//# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIm1lbnUuanN4Il0sIm5hbWVzIjpbIlJlYWN0IiwicmVxdWlyZSIsImNyZWF0ZVJlYWN0Q2xhc3MiLCJNZW51Q2F0ZWdvcnkiLCJNZW51IiwicmVuZGVyIiwic2VsZiIsInByb3BzIiwibWVudVZpc2libGUiLCJjYXRlZ29yaWVzIiwibWFwIiwiY2F0ZWdvcnkiLCJpIiwiaGFuZGxlUm91dGluZyIsInNldE1haW5Qcm9wZXJ0eSIsImFjdGl2ZUNhdGVnb3J5IiwibW9kdWxlIiwiZXhwb3J0cyJdLCJtYXBwaW5ncyI6IkFBQUE7O0FBQ0EsSUFBSUEsUUFBUUMsUUFBUSxPQUFSLENBQVo7QUFDQSxJQUFJQyxtQkFBbUJELFFBQVEsb0JBQVIsQ0FBdkI7QUFDQSxJQUFJRSxlQUFlRixRQUFRLG9CQUFSLENBQW5CO0FBQ0EsSUFBSUcsT0FBT0YsaUJBQWlCO0FBQUE7O0FBQ3hCRyxZQUFRLGtCQUFZO0FBQ2hCLFlBQUlDLE9BQU8sSUFBWDtBQUNBLGVBQ0k7QUFBQTtBQUFBLGNBQUssSUFBRyxNQUFSLEVBQWUsV0FBWSxLQUFLQyxLQUFMLENBQVdDLFdBQVosR0FBMkIsV0FBM0IsR0FBeUMsZ0JBQW5FO0FBQ0k7QUFBQTtBQUFBO0FBQ0k7QUFBQTtBQUFBO0FBQ0ksK0NBQUcsV0FBVSxZQUFiLEdBREo7QUFFSTtBQUFBO0FBQUEsMEJBQUcsV0FBVSxVQUFiLEVBQXdCLE1BQUssUUFBN0I7QUFBQTtBQUFBO0FBRkosaUJBREo7QUFLSTtBQUFBO0FBQUE7QUFDSSwrQ0FBRyxXQUFVLFlBQWIsR0FESjtBQUVJO0FBQUE7QUFBQSwwQkFBRyxXQUFVLFVBQWIsRUFBd0IsTUFBSyxTQUE3QjtBQUFBO0FBQUE7QUFGSixpQkFMSjtBQVNJO0FBQUE7QUFBQTtBQUNJLCtDQUFHLFdBQVUsWUFBYixHQURKO0FBRUk7QUFBQTtBQUFBLDBCQUFHLFdBQVUsVUFBYixFQUF3QixNQUFLLGNBQTdCO0FBQUE7QUFBQTtBQUZKLGlCQVRKO0FBYUk7QUFBQTtBQUFBO0FBQ0ksK0NBQUcsV0FBVSxnQkFBYixHQURKO0FBRUk7QUFBQTtBQUFBLDBCQUFHLFdBQVUsVUFBYixFQUF3QixNQUFLLFdBQTdCO0FBQUE7QUFBQTtBQUZKO0FBYkosYUFESjtBQW1CSSwyQ0FuQko7QUFvQkk7QUFBQTtBQUFBLGtCQUFJLFdBQVUsb0JBQWQ7QUFDS0YscUJBQUtDLEtBQUwsQ0FBV0UsVUFBWCxDQUFzQkMsR0FBdEIsQ0FBMEIsVUFBVUMsUUFBVixFQUFvQkMsQ0FBcEIsRUFBdUI7QUFDOUMsMkJBQU8sb0JBQUUsWUFBRjtBQUNILDZCQUFLQSxDQURGO0FBRUgsa0NBQVVELFFBRlA7QUFHSCx1Q0FBZUwsS0FBS0MsS0FBTCxDQUFXTSxhQUh2QjtBQUlILHlDQUFpQlAsS0FBS0MsS0FBTCxDQUFXTyxlQUp6QjtBQUtILHdDQUFnQlIsS0FBS0MsS0FBTCxDQUFXUTtBQUx4QixzQkFBUDtBQU9ILGlCQVJBO0FBREw7QUFwQkosU0FESjtBQWtDSDtBQXJDdUIsQ0FBakIsQ0FBWDtBQXVDQUMsT0FBT0MsT0FBUCxHQUFpQmIsSUFBakIiLCJmaWxlIjoibWVudS5qc3giLCJzb3VyY2VzQ29udGVudCI6WyIndXNlIHN0cmljdCc7XG52YXIgUmVhY3QgPSByZXF1aXJlKCdyZWFjdCcpO1xudmFyIGNyZWF0ZVJlYWN0Q2xhc3MgPSByZXF1aXJlKCdjcmVhdGUtcmVhY3QtY2xhc3MnKTtcbnZhciBNZW51Q2F0ZWdvcnkgPSByZXF1aXJlKCcuL21lbnVDYXRlZ29yeS5qc3gnKTtcbnZhciBNZW51ID0gY3JlYXRlUmVhY3RDbGFzcyh7XG4gICAgcmVuZGVyOiBmdW5jdGlvbiAoKSB7XG4gICAgICAgIHZhciBzZWxmID0gdGhpcztcbiAgICAgICAgcmV0dXJuIChcbiAgICAgICAgICAgIDxkaXYgaWQ9XCJtZW51XCIgY2xhc3NOYW1lPXsodGhpcy5wcm9wcy5tZW51VmlzaWJsZSkgPyAnbWVudS1vcGVuJyA6ICdtZW51LWNvbGxhcHNlZCd9PlxuICAgICAgICAgICAgICAgIDx1bD5cbiAgICAgICAgICAgICAgICAgICAgPGxpPlxuICAgICAgICAgICAgICAgICAgICAgICAgPGkgY2xhc3NOYW1lPVwiZmEgZmEtaG9tZVwiPjwvaT5cbiAgICAgICAgICAgICAgICAgICAgICAgIDxhIGNsYXNzTmFtZT1cIm1lbnVpdGVtXCIgaHJlZj1cIiMvaG9tZVwiPkhvbWU8L2E+XG4gICAgICAgICAgICAgICAgICAgIDwvbGk+XG4gICAgICAgICAgICAgICAgICAgIDxsaT5cbiAgICAgICAgICAgICAgICAgICAgICAgIDxpIGNsYXNzTmFtZT1cImZhIGZhLWluZm9cIj48L2k+XG4gICAgICAgICAgICAgICAgICAgICAgICA8YSBjbGFzc05hbWU9XCJtZW51aXRlbVwiIGhyZWY9XCIjL2Fib3V0XCI+IEFib3V0PC9hPlxuICAgICAgICAgICAgICAgICAgICA8L2xpPlxuICAgICAgICAgICAgICAgICAgICA8bGk+XG4gICAgICAgICAgICAgICAgICAgICAgICA8aSBjbGFzc05hbWU9XCJmYSBmYS11c2VyXCI+PC9pPlxuICAgICAgICAgICAgICAgICAgICAgICAgPGEgY2xhc3NOYW1lPVwibWVudWl0ZW1cIiBocmVmPVwiIy9tZW1iZXJzaGlwXCI+TWVtYmVyc2hpcDwvYT5cbiAgICAgICAgICAgICAgICAgICAgPC9saT5cbiAgICAgICAgICAgICAgICAgICAgPGxpPlxuICAgICAgICAgICAgICAgICAgICAgICAgPGkgY2xhc3NOYW1lPVwiZmEgZmEtZW52ZWxvcGVcIj48L2k+XG4gICAgICAgICAgICAgICAgICAgICAgICA8YSBjbGFzc05hbWU9XCJtZW51aXRlbVwiIGhyZWY9XCIjL2NvbnRhY3RcIj5Db250YWN0PC9hPlxuICAgICAgICAgICAgICAgICAgICA8L2xpPlxuICAgICAgICAgICAgICAgIDwvdWw+XG4gICAgICAgICAgICAgICAgPGhyIC8+XG4gICAgICAgICAgICAgICAgPHVsIGNsYXNzTmFtZT1cIm1lbnUtY2F0ZWdvcnktbGlzdFwiPlxuICAgICAgICAgICAgICAgICAgICB7c2VsZi5wcm9wcy5jYXRlZ29yaWVzLm1hcChmdW5jdGlvbiAoY2F0ZWdvcnksIGkpIHtcbiAgICAgICAgICAgICAgICAgICAgICAgIHJldHVybiA8IE1lbnVDYXRlZ29yeVxuICAgICAgICAgICAgICAgICAgICAgICAgICAgIGtleT17aX1cbiAgICAgICAgICAgICAgICAgICAgICAgICAgICBjYXRlZ29yeT17Y2F0ZWdvcnl9XG4gICAgICAgICAgICAgICAgICAgICAgICAgICAgaGFuZGxlUm91dGluZz17c2VsZi5wcm9wcy5oYW5kbGVSb3V0aW5nfVxuICAgICAgICAgICAgICAgICAgICAgICAgICAgIHNldE1haW5Qcm9wZXJ0eT17c2VsZi5wcm9wcy5zZXRNYWluUHJvcGVydHl9XG4gICAgICAgICAgICAgICAgICAgICAgICAgICAgYWN0aXZlQ2F0ZWdvcnk9e3NlbGYucHJvcHMuYWN0aXZlQ2F0ZWdvcnl9XG4gICAgICAgICAgICAgICAgICAgICAgICAvPjtcbiAgICAgICAgICAgICAgICAgICAgfSl9XG4gICAgICAgICAgICAgICAgPC91bD5cbiAgICAgICAgICAgIDwvZGl2PlxuICAgICAgICApXG4gICAgfVxufSk7XG5tb2R1bGUuZXhwb3J0cyA9IE1lbnU7Il19
-},{"./menuCategory.jsx":"/mnt/c/swiggis.original/src/client/js/components/layout/menu/menuCategory.jsx","create-react-class":"/mnt/c/swiggis.original/node_modules/create-react-class/index.js","react":"/mnt/c/swiggis.original/node_modules/react/react.js"}],"/mnt/c/swiggis.original/src/client/js/components/layout/menu/menuBurger.jsx":[function(require,module,exports){
+//# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIm1lbnUuanN4Il0sIm5hbWVzIjpbIlJlYWN0IiwicmVxdWlyZSIsImNyZWF0ZVJlYWN0Q2xhc3MiLCJNZW51Q2F0ZWdvcnkiLCJNZW51IiwicmVuZGVyIiwic2VsZiIsInByb3BzIiwibWVudVZpc2libGUiLCJjYXRlZ29yaWVzIiwibWFwIiwiY2F0ZWdvcnkiLCJpIiwiaGFuZGxlUm91dGluZyIsInNldE1haW5Qcm9wZXJ0eSIsImFjdGl2ZUNhdGVnb3J5IiwibW9kdWxlIiwiZXhwb3J0cyJdLCJtYXBwaW5ncyI6IkFBQUE7O0FBQ0EsSUFBSUEsUUFBUUMsUUFBUSxPQUFSLENBQVo7QUFDQSxJQUFJQyxtQkFBbUJELFFBQVEsb0JBQVIsQ0FBdkI7QUFDQSxJQUFJRSxlQUFlRixRQUFRLG9CQUFSLENBQW5CO0FBQ0EsSUFBSUcsT0FBT0YsaUJBQWlCO0FBQUE7O0FBQ3hCRyxZQUFRLGtCQUFZO0FBQ2hCLFlBQUlDLE9BQU8sSUFBWDtBQUNBLGVBQ0k7QUFBQTtBQUFBLGNBQUssSUFBRyxNQUFSLEVBQWUsV0FBWSxLQUFLQyxLQUFMLENBQVdDLFdBQVosR0FBMkIsV0FBM0IsR0FBeUMsZ0JBQW5FO0FBQ0k7QUFBQTtBQUFBO0FBQ0k7QUFBQTtBQUFBO0FBQ0ksK0NBQUcsV0FBVSxZQUFiLEdBREo7QUFFSTtBQUFBO0FBQUEsMEJBQUcsV0FBVSxVQUFiLEVBQXdCLE1BQUssUUFBN0I7QUFBQTtBQUFBO0FBRkosaUJBREo7QUFLSTtBQUFBO0FBQUE7QUFDSSwrQ0FBRyxXQUFVLFlBQWIsR0FESjtBQUVJO0FBQUE7QUFBQSwwQkFBRyxXQUFVLFVBQWIsRUFBd0IsTUFBSyxTQUE3QjtBQUFBO0FBQUE7QUFGSixpQkFMSjtBQVNJO0FBQUE7QUFBQTtBQUNJLCtDQUFHLFdBQVUsWUFBYixHQURKO0FBRUk7QUFBQTtBQUFBLDBCQUFHLFdBQVUsVUFBYixFQUF3QixNQUFLLGNBQTdCO0FBQUE7QUFBQTtBQUZKLGlCQVRKO0FBYUk7QUFBQTtBQUFBO0FBQ0ksK0NBQUcsV0FBVSxnQkFBYixHQURKO0FBRUk7QUFBQTtBQUFBLDBCQUFHLFdBQVUsVUFBYixFQUF3QixNQUFLLFdBQTdCO0FBQUE7QUFBQTtBQUZKO0FBYkosYUFESjtBQW1CSSwyQ0FuQko7QUFvQkk7QUFBQTtBQUFBLGtCQUFJLFdBQVUsb0JBQWQ7QUFDS0YscUJBQUtDLEtBQUwsQ0FBV0UsVUFBWCxDQUFzQkMsR0FBdEIsQ0FBMEIsVUFBVUMsUUFBVixFQUFvQkMsQ0FBcEIsRUFBdUI7QUFDOUMsMkJBQU8sb0JBQUMsWUFBRDtBQUNILDZCQUFLQSxDQURGO0FBRUgsNEJBQUlBLENBRkQ7QUFHSCxrQ0FBVUQsUUFIUDtBQUlILHVDQUFlTCxLQUFLQyxLQUFMLENBQVdNLGFBSnZCO0FBS0gseUNBQWlCUCxLQUFLQyxLQUFMLENBQVdPLGVBTHpCO0FBTUgsd0NBQWdCUixLQUFLQyxLQUFMLENBQVdRO0FBTnhCLHNCQUFQO0FBUUgsaUJBVEE7QUFETDtBQXBCSixTQURKO0FBbUNIO0FBdEN1QixDQUFqQixDQUFYO0FBd0NBQyxPQUFPQyxPQUFQLEdBQWlCYixJQUFqQiIsImZpbGUiOiJtZW51LmpzeCIsInNvdXJjZXNDb250ZW50IjpbIid1c2Ugc3RyaWN0JztcclxudmFyIFJlYWN0ID0gcmVxdWlyZSgncmVhY3QnKTtcclxudmFyIGNyZWF0ZVJlYWN0Q2xhc3MgPSByZXF1aXJlKCdjcmVhdGUtcmVhY3QtY2xhc3MnKTtcclxudmFyIE1lbnVDYXRlZ29yeSA9IHJlcXVpcmUoJy4vbWVudUNhdGVnb3J5LmpzeCcpO1xyXG52YXIgTWVudSA9IGNyZWF0ZVJlYWN0Q2xhc3Moe1xyXG4gICAgcmVuZGVyOiBmdW5jdGlvbiAoKSB7XHJcbiAgICAgICAgdmFyIHNlbGYgPSB0aGlzO1xyXG4gICAgICAgIHJldHVybiAoXHJcbiAgICAgICAgICAgIDxkaXYgaWQ9XCJtZW51XCIgY2xhc3NOYW1lPXsodGhpcy5wcm9wcy5tZW51VmlzaWJsZSkgPyAnbWVudS1vcGVuJyA6ICdtZW51LWNvbGxhcHNlZCd9PlxyXG4gICAgICAgICAgICAgICAgPHVsPlxyXG4gICAgICAgICAgICAgICAgICAgIDxsaT5cclxuICAgICAgICAgICAgICAgICAgICAgICAgPGkgY2xhc3NOYW1lPVwiZmEgZmEtaG9tZVwiPjwvaT5cclxuICAgICAgICAgICAgICAgICAgICAgICAgPGEgY2xhc3NOYW1lPVwibWVudWl0ZW1cIiBocmVmPVwiIy9ob21lXCI+SG9tZTwvYT5cclxuICAgICAgICAgICAgICAgICAgICA8L2xpPlxyXG4gICAgICAgICAgICAgICAgICAgIDxsaT5cclxuICAgICAgICAgICAgICAgICAgICAgICAgPGkgY2xhc3NOYW1lPVwiZmEgZmEtaW5mb1wiPjwvaT5cclxuICAgICAgICAgICAgICAgICAgICAgICAgPGEgY2xhc3NOYW1lPVwibWVudWl0ZW1cIiBocmVmPVwiIy9hYm91dFwiPiBBYm91dDwvYT5cclxuICAgICAgICAgICAgICAgICAgICA8L2xpPlxyXG4gICAgICAgICAgICAgICAgICAgIDxsaT5cclxuICAgICAgICAgICAgICAgICAgICAgICAgPGkgY2xhc3NOYW1lPVwiZmEgZmEtdXNlclwiPjwvaT5cclxuICAgICAgICAgICAgICAgICAgICAgICAgPGEgY2xhc3NOYW1lPVwibWVudWl0ZW1cIiBocmVmPVwiIy9tZW1iZXJzaGlwXCI+TWVtYmVyc2hpcDwvYT5cclxuICAgICAgICAgICAgICAgICAgICA8L2xpPlxyXG4gICAgICAgICAgICAgICAgICAgIDxsaT5cclxuICAgICAgICAgICAgICAgICAgICAgICAgPGkgY2xhc3NOYW1lPVwiZmEgZmEtZW52ZWxvcGVcIj48L2k+XHJcbiAgICAgICAgICAgICAgICAgICAgICAgIDxhIGNsYXNzTmFtZT1cIm1lbnVpdGVtXCIgaHJlZj1cIiMvY29udGFjdFwiPkNvbnRhY3Q8L2E+XHJcbiAgICAgICAgICAgICAgICAgICAgPC9saT5cclxuICAgICAgICAgICAgICAgIDwvdWw+XHJcbiAgICAgICAgICAgICAgICA8aHIgLz5cclxuICAgICAgICAgICAgICAgIDx1bCBjbGFzc05hbWU9XCJtZW51LWNhdGVnb3J5LWxpc3RcIj5cclxuICAgICAgICAgICAgICAgICAgICB7c2VsZi5wcm9wcy5jYXRlZ29yaWVzLm1hcChmdW5jdGlvbiAoY2F0ZWdvcnksIGkpIHtcclxuICAgICAgICAgICAgICAgICAgICAgICAgcmV0dXJuIDxNZW51Q2F0ZWdvcnlcclxuICAgICAgICAgICAgICAgICAgICAgICAgICAgIGtleT17aX1cclxuICAgICAgICAgICAgICAgICAgICAgICAgICAgIGlkPXtpfVxyXG4gICAgICAgICAgICAgICAgICAgICAgICAgICAgY2F0ZWdvcnk9e2NhdGVnb3J5fVxyXG4gICAgICAgICAgICAgICAgICAgICAgICAgICAgaGFuZGxlUm91dGluZz17c2VsZi5wcm9wcy5oYW5kbGVSb3V0aW5nfVxyXG4gICAgICAgICAgICAgICAgICAgICAgICAgICAgc2V0TWFpblByb3BlcnR5PXtzZWxmLnByb3BzLnNldE1haW5Qcm9wZXJ0eX1cclxuICAgICAgICAgICAgICAgICAgICAgICAgICAgIGFjdGl2ZUNhdGVnb3J5PXtzZWxmLnByb3BzLmFjdGl2ZUNhdGVnb3J5fVxyXG4gICAgICAgICAgICAgICAgICAgICAgICAvPjtcclxuICAgICAgICAgICAgICAgICAgICB9KX1cclxuICAgICAgICAgICAgICAgIDwvdWw+XHJcbiAgICAgICAgICAgIDwvZGl2PlxyXG4gICAgICAgIClcclxuICAgIH1cclxufSk7XHJcbm1vZHVsZS5leHBvcnRzID0gTWVudTsiXX0=
+},{"./menuCategory.jsx":"C:\\swiggis.austin\\src\\client\\js\\components\\layout\\menu\\menuCategory.jsx","create-react-class":"C:\\swiggis.austin\\node_modules\\create-react-class\\index.js","react":"C:\\swiggis.austin\\node_modules\\react\\react.js"}],"C:\\swiggis.austin\\src\\client\\js\\components\\layout\\menu\\menuBurger.jsx":[function(require,module,exports){
 'use strict';
 
 var React = require('react');
@@ -57476,8 +56605,8 @@ var MenuBurger = createReactClass({
     }
 });
 module.exports = MenuBurger;
-//# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIm1lbnVCdXJnZXIuanN4Il0sIm5hbWVzIjpbIlJlYWN0IiwicmVxdWlyZSIsImNyZWF0ZVJlYWN0Q2xhc3MiLCJub29wIiwiTWVudUJ1cmdlciIsInJlbmRlciIsInRvZ2dsZU1lbnVWaXNpYmxlIiwic2VsZiIsInByb3BzIiwic2V0TWFpblByb3BlcnR5IiwibWVudVZpc2libGUiLCJtb2R1bGUiLCJleHBvcnRzIl0sIm1hcHBpbmdzIjoiQUFBQTs7QUFDQSxJQUFJQSxRQUFRQyxRQUFRLE9BQVIsQ0FBWjtBQUNBLElBQUlDLG1CQUFtQkQsUUFBUSxvQkFBUixDQUF2QjtBQUNBLElBQUlFLE9BQU8sU0FBUEEsSUFBTyxHQUFZLENBQ3RCLENBREQ7O0FBR0EsSUFBSUMsYUFBYUYsaUJBQWlCO0FBQUE7O0FBQzlCRyxZQUFRLGtCQUFZO0FBQ2hCLGVBQ0k7QUFBQTtBQUFBO0FBQ0ksMkJBQVUsa0NBRGQ7QUFFSSxzQkFBSyxRQUZUO0FBR0kseUJBQVMsS0FBS0M7QUFIbEI7QUFLSSwwQ0FBTSxXQUFVLEtBQWhCLEdBTEo7QUFNSSwwQ0FBTSxXQUFVLEtBQWhCLEdBTko7QUFPSSwwQ0FBTSxXQUFVLEtBQWhCO0FBUEosU0FESjtBQVdILEtBYjZCO0FBYzlCQSx1QkFBbUIsNkJBQVk7QUFDM0IsWUFBSUMsT0FBTyxJQUFYO0FBQ0EsYUFBS0MsS0FBTCxDQUFXQyxlQUFYLENBQTJCLGFBQTNCLEVBQTBDLENBQUNGLEtBQUtDLEtBQUwsQ0FBV0UsV0FBdEQsRUFBbUVQLElBQW5FO0FBQ0g7QUFqQjZCLENBQWpCLENBQWpCO0FBbUJBUSxPQUFPQyxPQUFQLEdBQWlCUixVQUFqQiIsImZpbGUiOiJtZW51QnVyZ2VyLmpzeCIsInNvdXJjZXNDb250ZW50IjpbIid1c2Ugc3RyaWN0JztcbnZhciBSZWFjdCA9IHJlcXVpcmUoJ3JlYWN0Jyk7XG52YXIgY3JlYXRlUmVhY3RDbGFzcyA9IHJlcXVpcmUoJ2NyZWF0ZS1yZWFjdC1jbGFzcycpO1xudmFyIG5vb3AgPSBmdW5jdGlvbiAoKSB7XG59O1xuXG52YXIgTWVudUJ1cmdlciA9IGNyZWF0ZVJlYWN0Q2xhc3Moe1xuICAgIHJlbmRlcjogZnVuY3Rpb24gKCkge1xuICAgICAgICByZXR1cm4gKFxuICAgICAgICAgICAgPGFcbiAgICAgICAgICAgICAgICBjbGFzc05hbWU9XCJtZW51LXRyaWdnZXIgYW5pbWF0ZWQgZmFkZUluRG93blwiXG4gICAgICAgICAgICAgICAgcm9sZT1cImJ1dHRvblwiXG4gICAgICAgICAgICAgICAgb25DbGljaz17dGhpcy50b2dnbGVNZW51VmlzaWJsZX1cbiAgICAgICAgICAgID5cbiAgICAgICAgICAgICAgICA8c3BhbiBjbGFzc05hbWU9XCJiYXJcIj48L3NwYW4+XG4gICAgICAgICAgICAgICAgPHNwYW4gY2xhc3NOYW1lPVwiYmFyXCI+PC9zcGFuPlxuICAgICAgICAgICAgICAgIDxzcGFuIGNsYXNzTmFtZT1cImJhclwiPjwvc3Bhbj5cbiAgICAgICAgICAgIDwvYT5cbiAgICAgICAgKVxuICAgIH0sXG4gICAgdG9nZ2xlTWVudVZpc2libGU6IGZ1bmN0aW9uICgpIHtcbiAgICAgICAgdmFyIHNlbGYgPSB0aGlzO1xuICAgICAgICB0aGlzLnByb3BzLnNldE1haW5Qcm9wZXJ0eShcIm1lbnVWaXNpYmxlXCIsICFzZWxmLnByb3BzLm1lbnVWaXNpYmxlLCBub29wKTtcbiAgICB9XG59KTtcbm1vZHVsZS5leHBvcnRzID0gTWVudUJ1cmdlcjsiXX0=
-},{"create-react-class":"/mnt/c/swiggis.original/node_modules/create-react-class/index.js","react":"/mnt/c/swiggis.original/node_modules/react/react.js"}],"/mnt/c/swiggis.original/src/client/js/components/layout/menu/menuCategory.jsx":[function(require,module,exports){
+//# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIm1lbnVCdXJnZXIuanN4Il0sIm5hbWVzIjpbIlJlYWN0IiwicmVxdWlyZSIsImNyZWF0ZVJlYWN0Q2xhc3MiLCJub29wIiwiTWVudUJ1cmdlciIsInJlbmRlciIsInRvZ2dsZU1lbnVWaXNpYmxlIiwic2VsZiIsInByb3BzIiwic2V0TWFpblByb3BlcnR5IiwibWVudVZpc2libGUiLCJtb2R1bGUiLCJleHBvcnRzIl0sIm1hcHBpbmdzIjoiQUFBQTs7QUFDQSxJQUFJQSxRQUFRQyxRQUFRLE9BQVIsQ0FBWjtBQUNBLElBQUlDLG1CQUFtQkQsUUFBUSxvQkFBUixDQUF2QjtBQUNBLElBQUlFLE9BQU8sU0FBUEEsSUFBTyxHQUFZLENBQ3RCLENBREQ7O0FBR0EsSUFBSUMsYUFBYUYsaUJBQWlCO0FBQUE7O0FBQzlCRyxZQUFRLGtCQUFZO0FBQ2hCLGVBQ0k7QUFBQTtBQUFBO0FBQ0ksMkJBQVUsa0NBRGQ7QUFFSSxzQkFBSyxRQUZUO0FBR0kseUJBQVMsS0FBS0M7QUFIbEI7QUFLSSwwQ0FBTSxXQUFVLEtBQWhCLEdBTEo7QUFNSSwwQ0FBTSxXQUFVLEtBQWhCLEdBTko7QUFPSSwwQ0FBTSxXQUFVLEtBQWhCO0FBUEosU0FESjtBQVdILEtBYjZCO0FBYzlCQSx1QkFBbUIsNkJBQVk7QUFDM0IsWUFBSUMsT0FBTyxJQUFYO0FBQ0EsYUFBS0MsS0FBTCxDQUFXQyxlQUFYLENBQTJCLGFBQTNCLEVBQTBDLENBQUNGLEtBQUtDLEtBQUwsQ0FBV0UsV0FBdEQsRUFBbUVQLElBQW5FO0FBQ0g7QUFqQjZCLENBQWpCLENBQWpCO0FBbUJBUSxPQUFPQyxPQUFQLEdBQWlCUixVQUFqQiIsImZpbGUiOiJtZW51QnVyZ2VyLmpzeCIsInNvdXJjZXNDb250ZW50IjpbIid1c2Ugc3RyaWN0JztcclxudmFyIFJlYWN0ID0gcmVxdWlyZSgncmVhY3QnKTtcclxudmFyIGNyZWF0ZVJlYWN0Q2xhc3MgPSByZXF1aXJlKCdjcmVhdGUtcmVhY3QtY2xhc3MnKTtcclxudmFyIG5vb3AgPSBmdW5jdGlvbiAoKSB7XHJcbn07XHJcblxyXG52YXIgTWVudUJ1cmdlciA9IGNyZWF0ZVJlYWN0Q2xhc3Moe1xyXG4gICAgcmVuZGVyOiBmdW5jdGlvbiAoKSB7XHJcbiAgICAgICAgcmV0dXJuIChcclxuICAgICAgICAgICAgPGFcclxuICAgICAgICAgICAgICAgIGNsYXNzTmFtZT1cIm1lbnUtdHJpZ2dlciBhbmltYXRlZCBmYWRlSW5Eb3duXCJcclxuICAgICAgICAgICAgICAgIHJvbGU9XCJidXR0b25cIlxyXG4gICAgICAgICAgICAgICAgb25DbGljaz17dGhpcy50b2dnbGVNZW51VmlzaWJsZX1cclxuICAgICAgICAgICAgPlxyXG4gICAgICAgICAgICAgICAgPHNwYW4gY2xhc3NOYW1lPVwiYmFyXCI+PC9zcGFuPlxyXG4gICAgICAgICAgICAgICAgPHNwYW4gY2xhc3NOYW1lPVwiYmFyXCI+PC9zcGFuPlxyXG4gICAgICAgICAgICAgICAgPHNwYW4gY2xhc3NOYW1lPVwiYmFyXCI+PC9zcGFuPlxyXG4gICAgICAgICAgICA8L2E+XHJcbiAgICAgICAgKVxyXG4gICAgfSxcclxuICAgIHRvZ2dsZU1lbnVWaXNpYmxlOiBmdW5jdGlvbiAoKSB7XHJcbiAgICAgICAgdmFyIHNlbGYgPSB0aGlzO1xyXG4gICAgICAgIHRoaXMucHJvcHMuc2V0TWFpblByb3BlcnR5KFwibWVudVZpc2libGVcIiwgIXNlbGYucHJvcHMubWVudVZpc2libGUsIG5vb3ApO1xyXG4gICAgfVxyXG59KTtcclxubW9kdWxlLmV4cG9ydHMgPSBNZW51QnVyZ2VyOyJdfQ==
+},{"create-react-class":"C:\\swiggis.austin\\node_modules\\create-react-class\\index.js","react":"C:\\swiggis.austin\\node_modules\\react\\react.js"}],"C:\\swiggis.austin\\src\\client\\js\\components\\layout\\menu\\menuCategory.jsx":[function(require,module,exports){
 'use strict';
 
 var React = require('react');
@@ -57498,7 +56627,7 @@ var MenuCategory = createReactClass({
         };
         return React.createElement(
             'li',
-            { key: self.props.key, className: "menu-category-item" + (isExpanded ? ' category-expanded' : '') },
+            { key: self.props.id, className: "menu-category-item" + (isExpanded ? ' category-expanded' : '') },
             React.createElement('i', { className: "fa fa-chevron-right" + (isExpanded ? ' chevron-expanded' : ' chevron') }),
             React.createElement(
                 'a',
@@ -57532,8 +56661,8 @@ var MenuCategory = createReactClass({
     }
 });
 module.exports = MenuCategory;
-//# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIm1lbnVDYXRlZ29yeS5qc3giXSwibmFtZXMiOlsiUmVhY3QiLCJyZXF1aXJlIiwiY3JlYXRlUmVhY3RDbGFzcyIsIm5vb3AiLCJNZW51Q2F0ZWdvcnlBcnRpY2xlcyIsIk1lbnVDYXRlZ29yeSIsInJlbmRlciIsInNlbGYiLCJpc0FjdGl2ZSIsInByb3BzIiwiYWN0aXZlQ2F0ZWdvcnkiLCJhY3RpdmVJZCIsImNhdGVnb3J5IiwiaWQiLCJpc0V4cGFuZGVkIiwiZXhwYW5kZWQiLCJleHBEYXRhIiwia2V5Iiwic2V0QWN0aXZlQ2F0ZWdvcnkiLCJiaW5kIiwidGl0bGUiLCJhcnRpY2xlcyIsImhhbmRsZVJvdXRpbmciLCJzZXRNYWluUHJvcGVydHkiLCJtb2R1bGUiLCJleHBvcnRzIl0sIm1hcHBpbmdzIjoiQUFBQTs7QUFDQSxJQUFJQSxRQUFRQyxRQUFRLE9BQVIsQ0FBWjtBQUNBLElBQUlDLG1CQUFtQkQsUUFBUSxvQkFBUixDQUF2QjtBQUNBLElBQUlFLE9BQU8sU0FBUEEsSUFBTyxHQUFZLENBQ3RCLENBREQ7QUFFQSxJQUFJQyx1QkFBdUJILFFBQVEsNEJBQVIsQ0FBM0I7QUFDQSxJQUFJSSxlQUFlSCxpQkFBaUI7QUFBQTs7QUFDaENJLFlBQVEsa0JBQVk7QUFDaEIsWUFBSUMsT0FBTyxJQUFYO0FBQ0EsWUFBSUMsV0FBWUQsS0FBS0UsS0FBTCxDQUFXQyxjQUFYLENBQTBCQyxRQUExQixLQUF1Q0osS0FBS0UsS0FBTCxDQUFXRyxRQUFYLENBQW9CQyxFQUEzRTtBQUNBLFlBQUlDLGFBQWFOLFdBQVdELEtBQUtFLEtBQUwsQ0FBV0MsY0FBWCxDQUEwQkssUUFBckMsR0FBZ0QsS0FBakU7QUFDQSxZQUFJQyxVQUFVO0FBQ1ZDLGlCQUFLVixLQUFLRSxLQUFMLENBQVdHLFFBQVgsQ0FBb0JDLEVBRGY7QUFFVkwsc0JBQVVBLFFBRkE7QUFHVk0sd0JBQVlBO0FBSEYsU0FBZDtBQUtBLGVBQ0k7QUFBQTtBQUFBLGNBQUksS0FBS1AsS0FBS0UsS0FBTCxDQUFXUSxHQUFwQixFQUF5QixXQUFZLHdCQUF3QkgsYUFBYSxvQkFBYixHQUFvQyxFQUE1RCxDQUFyQztBQUNJLHVDQUFHLFdBQVkseUJBQXlCQSxhQUFhLG1CQUFiLEdBQW1DLFVBQTVELENBQWYsR0FESjtBQUVJO0FBQUE7QUFBQTtBQUNJLDZCQUFTUCxLQUFLVyxpQkFBTCxDQUF1QkMsSUFBdkIsQ0FBNEIsSUFBNUIsRUFBa0NILE9BQWxDLENBRGI7QUFFSSwwQkFBSyxRQUZUO0FBR0ksMkJBQU9ULEtBQUtFLEtBQUwsQ0FBV0csUUFBWCxDQUFvQlE7QUFIL0I7QUFJRWIscUJBQUtFLEtBQUwsQ0FBV0csUUFBWCxDQUFvQlE7QUFKdEIsYUFGSjtBQU9JLGdDQUFFLG9CQUFGO0FBQ0ksMEJBQVViLEtBQUtFLEtBQUwsQ0FBV0csUUFBWCxDQUFvQlMsUUFEbEM7QUFFSSwrQkFBZWQsS0FBS0UsS0FBTCxDQUFXYSxhQUY5QjtBQUdJLDBCQUFVUjtBQUhkO0FBUEosU0FESjtBQWVILEtBekIrQjtBQTBCaENJLHVCQUFtQiwyQkFBVUYsT0FBVixFQUFtQjtBQUNsQyxZQUFJVCxPQUFPLElBQVg7QUFDQSxZQUFJLENBQUNTLFFBQVFSLFFBQWIsRUFBdUI7QUFDbkJELGlCQUFLRSxLQUFMLENBQVdjLGVBQVgsQ0FBMkIsZ0JBQTNCLEVBQTZDO0FBQ3pDWiwwQkFBVUssUUFBUUMsR0FEdUI7QUFFekNGLDBCQUFVO0FBRitCLGFBQTdDLEVBR0daLElBSEg7QUFJSCxTQUxELE1BS087QUFDSEksaUJBQUtFLEtBQUwsQ0FBV2MsZUFBWCxDQUEyQixnQkFBM0IsRUFBNkM7QUFDekNaLDBCQUFVSyxRQUFRQyxHQUR1QjtBQUV6Q0YsMEJBQVUsQ0FBQ0MsUUFBUUY7QUFGc0IsYUFBN0MsRUFHR1gsSUFISDtBQUlIO0FBQ0o7QUF2QytCLENBQWpCLENBQW5CO0FBeUNBcUIsT0FBT0MsT0FBUCxHQUFpQnBCLFlBQWpCIiwiZmlsZSI6Im1lbnVDYXRlZ29yeS5qc3giLCJzb3VyY2VzQ29udGVudCI6WyIndXNlIHN0cmljdCc7XG52YXIgUmVhY3QgPSByZXF1aXJlKCdyZWFjdCcpO1xudmFyIGNyZWF0ZVJlYWN0Q2xhc3MgPSByZXF1aXJlKCdjcmVhdGUtcmVhY3QtY2xhc3MnKTtcbnZhciBub29wID0gZnVuY3Rpb24gKCkge1xufTtcbnZhciBNZW51Q2F0ZWdvcnlBcnRpY2xlcyA9IHJlcXVpcmUoJy4vbWVudUNhdGVnb3J5QXJ0aWNsZXMuanN4Jyk7XG52YXIgTWVudUNhdGVnb3J5ID0gY3JlYXRlUmVhY3RDbGFzcyh7XG4gICAgcmVuZGVyOiBmdW5jdGlvbiAoKSB7XG4gICAgICAgIHZhciBzZWxmID0gdGhpcztcbiAgICAgICAgdmFyIGlzQWN0aXZlID0gKHNlbGYucHJvcHMuYWN0aXZlQ2F0ZWdvcnkuYWN0aXZlSWQgPT09IHNlbGYucHJvcHMuY2F0ZWdvcnkuaWQpO1xuICAgICAgICB2YXIgaXNFeHBhbmRlZCA9IGlzQWN0aXZlID8gc2VsZi5wcm9wcy5hY3RpdmVDYXRlZ29yeS5leHBhbmRlZCA6IGZhbHNlO1xuICAgICAgICB2YXIgZXhwRGF0YSA9IHtcbiAgICAgICAgICAgIGtleTogc2VsZi5wcm9wcy5jYXRlZ29yeS5pZCxcbiAgICAgICAgICAgIGlzQWN0aXZlOiBpc0FjdGl2ZSxcbiAgICAgICAgICAgIGlzRXhwYW5kZWQ6IGlzRXhwYW5kZWRcbiAgICAgICAgfTtcbiAgICAgICAgcmV0dXJuIChcbiAgICAgICAgICAgIDxsaSBrZXk9e3NlbGYucHJvcHMua2V5fSBjbGFzc05hbWU9eyhcIm1lbnUtY2F0ZWdvcnktaXRlbVwiICsgKGlzRXhwYW5kZWQgPyAnIGNhdGVnb3J5LWV4cGFuZGVkJyA6ICcnKSl9PlxuICAgICAgICAgICAgICAgIDxpIGNsYXNzTmFtZT17KFwiZmEgZmEtY2hldnJvbi1yaWdodFwiICsgKGlzRXhwYW5kZWQgPyAnIGNoZXZyb24tZXhwYW5kZWQnIDogJyBjaGV2cm9uJykpfT48L2k+XG4gICAgICAgICAgICAgICAgPGFcbiAgICAgICAgICAgICAgICAgICAgb25DbGljaz17c2VsZi5zZXRBY3RpdmVDYXRlZ29yeS5iaW5kKG51bGwsIGV4cERhdGEpfVxuICAgICAgICAgICAgICAgICAgICByb2xlPVwiYnV0dG9uXCJcbiAgICAgICAgICAgICAgICAgICAgdGl0bGU9e3NlbGYucHJvcHMuY2F0ZWdvcnkudGl0bGV9XG4gICAgICAgICAgICAgICAgPntzZWxmLnByb3BzLmNhdGVnb3J5LnRpdGxlfTwvYT5cbiAgICAgICAgICAgICAgICA8IE1lbnVDYXRlZ29yeUFydGljbGVzXG4gICAgICAgICAgICAgICAgICAgIGFydGljbGVzPXtzZWxmLnByb3BzLmNhdGVnb3J5LmFydGljbGVzfVxuICAgICAgICAgICAgICAgICAgICBoYW5kbGVSb3V0aW5nPXtzZWxmLnByb3BzLmhhbmRsZVJvdXRpbmd9XG4gICAgICAgICAgICAgICAgICAgIGV4cGFuZGVkPXtpc0V4cGFuZGVkfVxuICAgICAgICAgICAgICAgIC8+XG4gICAgICAgICAgICA8L2xpPlxuICAgICAgICApO1xuICAgIH0sXG4gICAgc2V0QWN0aXZlQ2F0ZWdvcnk6IGZ1bmN0aW9uIChleHBEYXRhKSB7XG4gICAgICAgIHZhciBzZWxmID0gdGhpcztcbiAgICAgICAgaWYgKCFleHBEYXRhLmlzQWN0aXZlKSB7XG4gICAgICAgICAgICBzZWxmLnByb3BzLnNldE1haW5Qcm9wZXJ0eShcImFjdGl2ZUNhdGVnb3J5XCIsIHtcbiAgICAgICAgICAgICAgICBhY3RpdmVJZDogZXhwRGF0YS5rZXksXG4gICAgICAgICAgICAgICAgZXhwYW5kZWQ6IHRydWVcbiAgICAgICAgICAgIH0sIG5vb3ApO1xuICAgICAgICB9IGVsc2Uge1xuICAgICAgICAgICAgc2VsZi5wcm9wcy5zZXRNYWluUHJvcGVydHkoXCJhY3RpdmVDYXRlZ29yeVwiLCB7XG4gICAgICAgICAgICAgICAgYWN0aXZlSWQ6IGV4cERhdGEua2V5LFxuICAgICAgICAgICAgICAgIGV4cGFuZGVkOiAhZXhwRGF0YS5pc0V4cGFuZGVkXG4gICAgICAgICAgICB9LCBub29wKTtcbiAgICAgICAgfVxuICAgIH1cbn0pO1xubW9kdWxlLmV4cG9ydHMgPSBNZW51Q2F0ZWdvcnk7Il19
-},{"./menuCategoryArticles.jsx":"/mnt/c/swiggis.original/src/client/js/components/layout/menu/menuCategoryArticles.jsx","create-react-class":"/mnt/c/swiggis.original/node_modules/create-react-class/index.js","react":"/mnt/c/swiggis.original/node_modules/react/react.js"}],"/mnt/c/swiggis.original/src/client/js/components/layout/menu/menuCategoryArticles.jsx":[function(require,module,exports){
+//# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIm1lbnVDYXRlZ29yeS5qc3giXSwibmFtZXMiOlsiUmVhY3QiLCJyZXF1aXJlIiwiY3JlYXRlUmVhY3RDbGFzcyIsIm5vb3AiLCJNZW51Q2F0ZWdvcnlBcnRpY2xlcyIsIk1lbnVDYXRlZ29yeSIsInJlbmRlciIsInNlbGYiLCJpc0FjdGl2ZSIsInByb3BzIiwiYWN0aXZlQ2F0ZWdvcnkiLCJhY3RpdmVJZCIsImNhdGVnb3J5IiwiaWQiLCJpc0V4cGFuZGVkIiwiZXhwYW5kZWQiLCJleHBEYXRhIiwia2V5Iiwic2V0QWN0aXZlQ2F0ZWdvcnkiLCJiaW5kIiwidGl0bGUiLCJhcnRpY2xlcyIsImhhbmRsZVJvdXRpbmciLCJzZXRNYWluUHJvcGVydHkiLCJtb2R1bGUiLCJleHBvcnRzIl0sIm1hcHBpbmdzIjoiQUFBQTs7QUFDQSxJQUFJQSxRQUFRQyxRQUFRLE9BQVIsQ0FBWjtBQUNBLElBQUlDLG1CQUFtQkQsUUFBUSxvQkFBUixDQUF2QjtBQUNBLElBQUlFLE9BQU8sU0FBUEEsSUFBTyxHQUFZLENBQ3RCLENBREQ7QUFFQSxJQUFJQyx1QkFBdUJILFFBQVEsNEJBQVIsQ0FBM0I7QUFDQSxJQUFJSSxlQUFlSCxpQkFBaUI7QUFBQTs7QUFDaENJLFlBQVEsa0JBQVk7QUFDaEIsWUFBSUMsT0FBTyxJQUFYO0FBQ0EsWUFBSUMsV0FBWUQsS0FBS0UsS0FBTCxDQUFXQyxjQUFYLENBQTBCQyxRQUExQixLQUF1Q0osS0FBS0UsS0FBTCxDQUFXRyxRQUFYLENBQW9CQyxFQUEzRTtBQUNBLFlBQUlDLGFBQWFOLFdBQVdELEtBQUtFLEtBQUwsQ0FBV0MsY0FBWCxDQUEwQkssUUFBckMsR0FBZ0QsS0FBakU7QUFDQSxZQUFJQyxVQUFVO0FBQ1ZDLGlCQUFLVixLQUFLRSxLQUFMLENBQVdHLFFBQVgsQ0FBb0JDLEVBRGY7QUFFVkwsc0JBQVVBLFFBRkE7QUFHVk0sd0JBQVlBO0FBSEYsU0FBZDtBQUtBLGVBQ0k7QUFBQTtBQUFBLGNBQUksS0FBS1AsS0FBS0UsS0FBTCxDQUFXSSxFQUFwQixFQUF3QixXQUFZLHdCQUF3QkMsYUFBYSxvQkFBYixHQUFvQyxFQUE1RCxDQUFwQztBQUNJLHVDQUFHLFdBQVkseUJBQXlCQSxhQUFhLG1CQUFiLEdBQW1DLFVBQTVELENBQWYsR0FESjtBQUVJO0FBQUE7QUFBQTtBQUNJLDZCQUFTUCxLQUFLVyxpQkFBTCxDQUF1QkMsSUFBdkIsQ0FBNEIsSUFBNUIsRUFBa0NILE9BQWxDLENBRGI7QUFFSSwwQkFBSyxRQUZUO0FBR0ksMkJBQU9ULEtBQUtFLEtBQUwsQ0FBV0csUUFBWCxDQUFvQlE7QUFIL0I7QUFJRWIscUJBQUtFLEtBQUwsQ0FBV0csUUFBWCxDQUFvQlE7QUFKdEIsYUFGSjtBQU9JLGdDQUFFLG9CQUFGO0FBQ0ksMEJBQVViLEtBQUtFLEtBQUwsQ0FBV0csUUFBWCxDQUFvQlMsUUFEbEM7QUFFSSwrQkFBZWQsS0FBS0UsS0FBTCxDQUFXYSxhQUY5QjtBQUdJLDBCQUFVUjtBQUhkO0FBUEosU0FESjtBQWVILEtBekIrQjtBQTBCaENJLHVCQUFtQiwyQkFBVUYsT0FBVixFQUFtQjtBQUNsQyxZQUFJVCxPQUFPLElBQVg7QUFDQSxZQUFJLENBQUNTLFFBQVFSLFFBQWIsRUFBdUI7QUFDbkJELGlCQUFLRSxLQUFMLENBQVdjLGVBQVgsQ0FBMkIsZ0JBQTNCLEVBQTZDO0FBQ3pDWiwwQkFBVUssUUFBUUMsR0FEdUI7QUFFekNGLDBCQUFVO0FBRitCLGFBQTdDLEVBR0daLElBSEg7QUFJSCxTQUxELE1BS087QUFDSEksaUJBQUtFLEtBQUwsQ0FBV2MsZUFBWCxDQUEyQixnQkFBM0IsRUFBNkM7QUFDekNaLDBCQUFVSyxRQUFRQyxHQUR1QjtBQUV6Q0YsMEJBQVUsQ0FBQ0MsUUFBUUY7QUFGc0IsYUFBN0MsRUFHR1gsSUFISDtBQUlIO0FBQ0o7QUF2QytCLENBQWpCLENBQW5CO0FBeUNBcUIsT0FBT0MsT0FBUCxHQUFpQnBCLFlBQWpCIiwiZmlsZSI6Im1lbnVDYXRlZ29yeS5qc3giLCJzb3VyY2VzQ29udGVudCI6WyIndXNlIHN0cmljdCc7XHJcbnZhciBSZWFjdCA9IHJlcXVpcmUoJ3JlYWN0Jyk7XHJcbnZhciBjcmVhdGVSZWFjdENsYXNzID0gcmVxdWlyZSgnY3JlYXRlLXJlYWN0LWNsYXNzJyk7XHJcbnZhciBub29wID0gZnVuY3Rpb24gKCkge1xyXG59O1xyXG52YXIgTWVudUNhdGVnb3J5QXJ0aWNsZXMgPSByZXF1aXJlKCcuL21lbnVDYXRlZ29yeUFydGljbGVzLmpzeCcpO1xyXG52YXIgTWVudUNhdGVnb3J5ID0gY3JlYXRlUmVhY3RDbGFzcyh7XHJcbiAgICByZW5kZXI6IGZ1bmN0aW9uICgpIHtcclxuICAgICAgICB2YXIgc2VsZiA9IHRoaXM7XHJcbiAgICAgICAgdmFyIGlzQWN0aXZlID0gKHNlbGYucHJvcHMuYWN0aXZlQ2F0ZWdvcnkuYWN0aXZlSWQgPT09IHNlbGYucHJvcHMuY2F0ZWdvcnkuaWQpO1xyXG4gICAgICAgIHZhciBpc0V4cGFuZGVkID0gaXNBY3RpdmUgPyBzZWxmLnByb3BzLmFjdGl2ZUNhdGVnb3J5LmV4cGFuZGVkIDogZmFsc2U7XHJcbiAgICAgICAgdmFyIGV4cERhdGEgPSB7XHJcbiAgICAgICAgICAgIGtleTogc2VsZi5wcm9wcy5jYXRlZ29yeS5pZCxcclxuICAgICAgICAgICAgaXNBY3RpdmU6IGlzQWN0aXZlLFxyXG4gICAgICAgICAgICBpc0V4cGFuZGVkOiBpc0V4cGFuZGVkXHJcbiAgICAgICAgfTtcclxuICAgICAgICByZXR1cm4gKFxyXG4gICAgICAgICAgICA8bGkga2V5PXtzZWxmLnByb3BzLmlkfSBjbGFzc05hbWU9eyhcIm1lbnUtY2F0ZWdvcnktaXRlbVwiICsgKGlzRXhwYW5kZWQgPyAnIGNhdGVnb3J5LWV4cGFuZGVkJyA6ICcnKSl9PlxyXG4gICAgICAgICAgICAgICAgPGkgY2xhc3NOYW1lPXsoXCJmYSBmYS1jaGV2cm9uLXJpZ2h0XCIgKyAoaXNFeHBhbmRlZCA/ICcgY2hldnJvbi1leHBhbmRlZCcgOiAnIGNoZXZyb24nKSl9PjwvaT5cclxuICAgICAgICAgICAgICAgIDxhXHJcbiAgICAgICAgICAgICAgICAgICAgb25DbGljaz17c2VsZi5zZXRBY3RpdmVDYXRlZ29yeS5iaW5kKG51bGwsIGV4cERhdGEpfVxyXG4gICAgICAgICAgICAgICAgICAgIHJvbGU9XCJidXR0b25cIlxyXG4gICAgICAgICAgICAgICAgICAgIHRpdGxlPXtzZWxmLnByb3BzLmNhdGVnb3J5LnRpdGxlfVxyXG4gICAgICAgICAgICAgICAgPntzZWxmLnByb3BzLmNhdGVnb3J5LnRpdGxlfTwvYT5cclxuICAgICAgICAgICAgICAgIDwgTWVudUNhdGVnb3J5QXJ0aWNsZXNcclxuICAgICAgICAgICAgICAgICAgICBhcnRpY2xlcz17c2VsZi5wcm9wcy5jYXRlZ29yeS5hcnRpY2xlc31cclxuICAgICAgICAgICAgICAgICAgICBoYW5kbGVSb3V0aW5nPXtzZWxmLnByb3BzLmhhbmRsZVJvdXRpbmd9XHJcbiAgICAgICAgICAgICAgICAgICAgZXhwYW5kZWQ9e2lzRXhwYW5kZWR9XHJcbiAgICAgICAgICAgICAgICAvPlxyXG4gICAgICAgICAgICA8L2xpPlxyXG4gICAgICAgICk7XHJcbiAgICB9LFxyXG4gICAgc2V0QWN0aXZlQ2F0ZWdvcnk6IGZ1bmN0aW9uIChleHBEYXRhKSB7XHJcbiAgICAgICAgdmFyIHNlbGYgPSB0aGlzO1xyXG4gICAgICAgIGlmICghZXhwRGF0YS5pc0FjdGl2ZSkge1xyXG4gICAgICAgICAgICBzZWxmLnByb3BzLnNldE1haW5Qcm9wZXJ0eShcImFjdGl2ZUNhdGVnb3J5XCIsIHtcclxuICAgICAgICAgICAgICAgIGFjdGl2ZUlkOiBleHBEYXRhLmtleSxcclxuICAgICAgICAgICAgICAgIGV4cGFuZGVkOiB0cnVlXHJcbiAgICAgICAgICAgIH0sIG5vb3ApO1xyXG4gICAgICAgIH0gZWxzZSB7XHJcbiAgICAgICAgICAgIHNlbGYucHJvcHMuc2V0TWFpblByb3BlcnR5KFwiYWN0aXZlQ2F0ZWdvcnlcIiwge1xyXG4gICAgICAgICAgICAgICAgYWN0aXZlSWQ6IGV4cERhdGEua2V5LFxyXG4gICAgICAgICAgICAgICAgZXhwYW5kZWQ6ICFleHBEYXRhLmlzRXhwYW5kZWRcclxuICAgICAgICAgICAgfSwgbm9vcCk7XHJcbiAgICAgICAgfVxyXG4gICAgfVxyXG59KTtcclxubW9kdWxlLmV4cG9ydHMgPSBNZW51Q2F0ZWdvcnk7Il19
+},{"./menuCategoryArticles.jsx":"C:\\swiggis.austin\\src\\client\\js\\components\\layout\\menu\\menuCategoryArticles.jsx","create-react-class":"C:\\swiggis.austin\\node_modules\\create-react-class\\index.js","react":"C:\\swiggis.austin\\node_modules\\react\\react.js"}],"C:\\swiggis.austin\\src\\client\\js\\components\\layout\\menu\\menuCategoryArticles.jsx":[function(require,module,exports){
 'use strict';
 
 var React = require('react');
@@ -57567,8 +56696,8 @@ var MenuCategoryArticles = createReactClass({
     }
 });
 module.exports = MenuCategoryArticles;
-//# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIm1lbnVDYXRlZ29yeUFydGljbGVzLmpzeCJdLCJuYW1lcyI6WyJSZWFjdCIsInJlcXVpcmUiLCJjcmVhdGVSZWFjdENsYXNzIiwic3RyaW5nIiwiTWVudUNhdGVnb3J5QXJ0aWNsZXMiLCJyZW5kZXIiLCJzZWxmIiwicHJvcHMiLCJleHBhbmRlZCIsImFydGljbGVzIiwibWFwIiwiYXJ0aWNsZSIsImkiLCJhcnRpY2xlVXJsIiwic2x1ZyIsInRpdGxlIiwiaGFuZGxlUm91dGluZyIsImJpbmQiLCJtb2R1bGUiLCJleHBvcnRzIl0sIm1hcHBpbmdzIjoiQUFBQTs7QUFDQSxJQUFJQSxRQUFRQyxRQUFRLE9BQVIsQ0FBWjtBQUNBLElBQUlDLG1CQUFtQkQsUUFBUSxvQkFBUixDQUF2QjtBQUNBLElBQUlFLFNBQVNGLFFBQVEsd0JBQVIsRUFBa0NFLE1BQS9DOztBQUVBLElBQUlDLHVCQUF1QkYsaUJBQWlCO0FBQUE7O0FBQ3hDRyxZQUFRLGtCQUFZO0FBQ2hCLFlBQUlDLE9BQU8sSUFBWDtBQUNBLGVBQ0k7QUFBQTtBQUFBLGNBQUksV0FBWSx3QkFBd0JBLEtBQUtDLEtBQUwsQ0FBV0MsUUFBWCxHQUFzQixvQkFBdEIsR0FBNkMsRUFBckUsQ0FBaEI7QUFDS0YsaUJBQUtDLEtBQUwsQ0FBV0UsUUFBWCxDQUFvQkMsR0FBcEIsQ0FBd0IsVUFBVUMsT0FBVixFQUFtQkMsQ0FBbkIsRUFBc0I7QUFDM0Msb0JBQUlDLGFBQWEsZUFBZVYsT0FBT1csSUFBUCxDQUFZSCxRQUFRSSxLQUFwQixDQUFoQztBQUNBLHVCQUFPO0FBQUE7QUFBQSxzQkFBSSxLQUFLSCxDQUFULEVBQVksV0FBWSx3QkFBd0JOLEtBQUtDLEtBQUwsQ0FBV0MsUUFBWCxHQUFzQixtQkFBdEIsR0FBNEMsRUFBcEUsQ0FBeEI7QUFDSDtBQUFBO0FBQUE7QUFDSSxxQ0FBU0YsS0FBS0MsS0FBTCxDQUFXUyxhQUFYLENBQXlCQyxJQUF6QixDQUE4QixJQUE5QixFQUFvQ04sT0FBcEMsQ0FEYjtBQUVJLGtDQUFNRTtBQUZWO0FBR0VGLGdDQUFRSTtBQUhWO0FBREcsaUJBQVA7QUFNSCxhQVJBO0FBREwsU0FESjtBQWFIO0FBaEJ1QyxDQUFqQixDQUEzQjtBQWtCQUcsT0FBT0MsT0FBUCxHQUFpQmYsb0JBQWpCIiwiZmlsZSI6Im1lbnVDYXRlZ29yeUFydGljbGVzLmpzeCIsInNvdXJjZXNDb250ZW50IjpbIid1c2Ugc3RyaWN0JztcbnZhciBSZWFjdCA9IHJlcXVpcmUoJ3JlYWN0Jyk7XG52YXIgY3JlYXRlUmVhY3RDbGFzcyA9IHJlcXVpcmUoJ2NyZWF0ZS1yZWFjdC1jbGFzcycpO1xudmFyIHN0cmluZyA9IHJlcXVpcmUoJy4vLi4vLi4vLi4vdXRpbHMvdXRpbHMnKS5zdHJpbmc7XG5cbnZhciBNZW51Q2F0ZWdvcnlBcnRpY2xlcyA9IGNyZWF0ZVJlYWN0Q2xhc3Moe1xuICAgIHJlbmRlcjogZnVuY3Rpb24gKCkge1xuICAgICAgICB2YXIgc2VsZiA9IHRoaXM7XG4gICAgICAgIHJldHVybiAoXG4gICAgICAgICAgICA8dWwgY2xhc3NOYW1lPXsoXCJtZW51LWFydGljbGVzLWxpc3RcIiArIChzZWxmLnByb3BzLmV4cGFuZGVkID8gJyBhcnRpY2xlcy1leHBhbmRlZCcgOiAnJykpfT5cbiAgICAgICAgICAgICAgICB7c2VsZi5wcm9wcy5hcnRpY2xlcy5tYXAoZnVuY3Rpb24gKGFydGljbGUsIGkpIHtcbiAgICAgICAgICAgICAgICAgICAgdmFyIGFydGljbGVVcmwgPSAnIy9hcnRpY2xlLycgKyBzdHJpbmcuc2x1ZyhhcnRpY2xlLnRpdGxlKTtcbiAgICAgICAgICAgICAgICAgICAgcmV0dXJuIDxsaSBrZXk9e2l9IGNsYXNzTmFtZT17KFwibWVudS1hcnRpY2xlcy1pdGVtXCIgKyAoc2VsZi5wcm9wcy5leHBhbmRlZCA/ICcgYXJ0aWNsZS1leHBhbmRlZCcgOiAnJykpfT5cbiAgICAgICAgICAgICAgICAgICAgICAgIDxhXG4gICAgICAgICAgICAgICAgICAgICAgICAgICAgb25DbGljaz17c2VsZi5wcm9wcy5oYW5kbGVSb3V0aW5nLmJpbmQobnVsbCwgYXJ0aWNsZSl9XG4gICAgICAgICAgICAgICAgICAgICAgICAgICAgaHJlZj17YXJ0aWNsZVVybH1cbiAgICAgICAgICAgICAgICAgICAgICAgID57YXJ0aWNsZS50aXRsZX08L2E+XG4gICAgICAgICAgICAgICAgICAgIDwvbGk+O1xuICAgICAgICAgICAgICAgIH0pfVxuICAgICAgICAgICAgPC91bD5cbiAgICAgICAgKVxuICAgIH1cbn0pO1xubW9kdWxlLmV4cG9ydHMgPSBNZW51Q2F0ZWdvcnlBcnRpY2xlczsiXX0=
-},{"./../../../utils/utils":"/mnt/c/swiggis.original/src/client/js/utils/utils.js","create-react-class":"/mnt/c/swiggis.original/node_modules/create-react-class/index.js","react":"/mnt/c/swiggis.original/node_modules/react/react.js"}],"/mnt/c/swiggis.original/src/client/js/components/layout/modal/eventsModal.jsx":[function(require,module,exports){
+//# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIm1lbnVDYXRlZ29yeUFydGljbGVzLmpzeCJdLCJuYW1lcyI6WyJSZWFjdCIsInJlcXVpcmUiLCJjcmVhdGVSZWFjdENsYXNzIiwic3RyaW5nIiwiTWVudUNhdGVnb3J5QXJ0aWNsZXMiLCJyZW5kZXIiLCJzZWxmIiwicHJvcHMiLCJleHBhbmRlZCIsImFydGljbGVzIiwibWFwIiwiYXJ0aWNsZSIsImkiLCJhcnRpY2xlVXJsIiwic2x1ZyIsInRpdGxlIiwiaGFuZGxlUm91dGluZyIsImJpbmQiLCJtb2R1bGUiLCJleHBvcnRzIl0sIm1hcHBpbmdzIjoiQUFBQTs7QUFDQSxJQUFJQSxRQUFRQyxRQUFRLE9BQVIsQ0FBWjtBQUNBLElBQUlDLG1CQUFtQkQsUUFBUSxvQkFBUixDQUF2QjtBQUNBLElBQUlFLFNBQVNGLFFBQVEsd0JBQVIsRUFBa0NFLE1BQS9DOztBQUVBLElBQUlDLHVCQUF1QkYsaUJBQWlCO0FBQUE7O0FBQ3hDRyxZQUFRLGtCQUFZO0FBQ2hCLFlBQUlDLE9BQU8sSUFBWDtBQUNBLGVBQ0k7QUFBQTtBQUFBLGNBQUksV0FBWSx3QkFBd0JBLEtBQUtDLEtBQUwsQ0FBV0MsUUFBWCxHQUFzQixvQkFBdEIsR0FBNkMsRUFBckUsQ0FBaEI7QUFDS0YsaUJBQUtDLEtBQUwsQ0FBV0UsUUFBWCxDQUFvQkMsR0FBcEIsQ0FBd0IsVUFBVUMsT0FBVixFQUFtQkMsQ0FBbkIsRUFBc0I7QUFDM0Msb0JBQUlDLGFBQWEsZUFBZVYsT0FBT1csSUFBUCxDQUFZSCxRQUFRSSxLQUFwQixDQUFoQztBQUNBLHVCQUFPO0FBQUE7QUFBQSxzQkFBSSxLQUFLSCxDQUFULEVBQVksV0FBWSx3QkFBd0JOLEtBQUtDLEtBQUwsQ0FBV0MsUUFBWCxHQUFzQixtQkFBdEIsR0FBNEMsRUFBcEUsQ0FBeEI7QUFDSDtBQUFBO0FBQUE7QUFDSSxxQ0FBU0YsS0FBS0MsS0FBTCxDQUFXUyxhQUFYLENBQXlCQyxJQUF6QixDQUE4QixJQUE5QixFQUFvQ04sT0FBcEMsQ0FEYjtBQUVJLGtDQUFNRTtBQUZWO0FBR0VGLGdDQUFRSTtBQUhWO0FBREcsaUJBQVA7QUFNSCxhQVJBO0FBREwsU0FESjtBQWFIO0FBaEJ1QyxDQUFqQixDQUEzQjtBQWtCQUcsT0FBT0MsT0FBUCxHQUFpQmYsb0JBQWpCIiwiZmlsZSI6Im1lbnVDYXRlZ29yeUFydGljbGVzLmpzeCIsInNvdXJjZXNDb250ZW50IjpbIid1c2Ugc3RyaWN0JztcclxudmFyIFJlYWN0ID0gcmVxdWlyZSgncmVhY3QnKTtcclxudmFyIGNyZWF0ZVJlYWN0Q2xhc3MgPSByZXF1aXJlKCdjcmVhdGUtcmVhY3QtY2xhc3MnKTtcclxudmFyIHN0cmluZyA9IHJlcXVpcmUoJy4vLi4vLi4vLi4vdXRpbHMvdXRpbHMnKS5zdHJpbmc7XHJcblxyXG52YXIgTWVudUNhdGVnb3J5QXJ0aWNsZXMgPSBjcmVhdGVSZWFjdENsYXNzKHtcclxuICAgIHJlbmRlcjogZnVuY3Rpb24gKCkge1xyXG4gICAgICAgIHZhciBzZWxmID0gdGhpcztcclxuICAgICAgICByZXR1cm4gKFxyXG4gICAgICAgICAgICA8dWwgY2xhc3NOYW1lPXsoXCJtZW51LWFydGljbGVzLWxpc3RcIiArIChzZWxmLnByb3BzLmV4cGFuZGVkID8gJyBhcnRpY2xlcy1leHBhbmRlZCcgOiAnJykpfT5cclxuICAgICAgICAgICAgICAgIHtzZWxmLnByb3BzLmFydGljbGVzLm1hcChmdW5jdGlvbiAoYXJ0aWNsZSwgaSkge1xyXG4gICAgICAgICAgICAgICAgICAgIHZhciBhcnRpY2xlVXJsID0gJyMvYXJ0aWNsZS8nICsgc3RyaW5nLnNsdWcoYXJ0aWNsZS50aXRsZSk7XHJcbiAgICAgICAgICAgICAgICAgICAgcmV0dXJuIDxsaSBrZXk9e2l9IGNsYXNzTmFtZT17KFwibWVudS1hcnRpY2xlcy1pdGVtXCIgKyAoc2VsZi5wcm9wcy5leHBhbmRlZCA/ICcgYXJ0aWNsZS1leHBhbmRlZCcgOiAnJykpfT5cclxuICAgICAgICAgICAgICAgICAgICAgICAgPGFcclxuICAgICAgICAgICAgICAgICAgICAgICAgICAgIG9uQ2xpY2s9e3NlbGYucHJvcHMuaGFuZGxlUm91dGluZy5iaW5kKG51bGwsIGFydGljbGUpfVxyXG4gICAgICAgICAgICAgICAgICAgICAgICAgICAgaHJlZj17YXJ0aWNsZVVybH1cclxuICAgICAgICAgICAgICAgICAgICAgICAgPnthcnRpY2xlLnRpdGxlfTwvYT5cclxuICAgICAgICAgICAgICAgICAgICA8L2xpPjtcclxuICAgICAgICAgICAgICAgIH0pfVxyXG4gICAgICAgICAgICA8L3VsPlxyXG4gICAgICAgIClcclxuICAgIH1cclxufSk7XHJcbm1vZHVsZS5leHBvcnRzID0gTWVudUNhdGVnb3J5QXJ0aWNsZXM7Il19
+},{"./../../../utils/utils":"C:\\swiggis.austin\\src\\client\\js\\utils\\utils.js","create-react-class":"C:\\swiggis.austin\\node_modules\\create-react-class\\index.js","react":"C:\\swiggis.austin\\node_modules\\react\\react.js"}],"C:\\swiggis.austin\\src\\client\\js\\components\\layout\\modal\\eventsModal.jsx":[function(require,module,exports){
 'use strict';
 
 var React = require('react');
@@ -57624,8 +56753,8 @@ var EventsModal = createReactClass({
     }
 });
 module.exports = EventsModal;
-//# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbImV2ZW50c01vZGFsLmpzeCJdLCJuYW1lcyI6WyJSZWFjdCIsInJlcXVpcmUiLCJjcmVhdGVSZWFjdENsYXNzIiwiTW9kYWwiLCJCdXR0b24iLCJFdmVudHNNb2RhbCIsInJlbmRlciIsInNlbGYiLCJwcm9wcyIsIm1vZGFsIiwic2hvdyIsImhpZGVNb2RhbCIsInRpdGxlIiwic3RhdHVzIiwiY29udGVudHMiLCJzZXRNYWluUHJvcGVydHkiLCJsb2FkaW5nIiwiY29vbERvd24iLCJtb2R1bGUiLCJleHBvcnRzIl0sIm1hcHBpbmdzIjoiQUFBQTs7QUFDQSxJQUFJQSxRQUFRQyxRQUFRLE9BQVIsQ0FBWjtBQUNBLElBQUlDLG1CQUFtQkQsUUFBUSxvQkFBUixDQUF2QjtBQUNBLElBQUlFLFFBQVFGLFFBQVEsaUJBQVIsRUFBMkJFLEtBQXZDO0FBQ0EsSUFBSUMsU0FBU0gsUUFBUSxpQkFBUixFQUEyQkcsTUFBeEM7QUFDQSxJQUFJQyxjQUFjSCxpQkFBaUI7QUFBQTs7QUFDL0JJLFlBQVEsa0JBQVk7QUFDaEIsWUFBSUMsT0FBTyxJQUFYO0FBQ0EsZUFDSTtBQUFDLGlCQUFEO0FBQUE7QUFDSSxzQkFBTSxLQUFLQyxLQUFMLENBQVdDLEtBQVgsQ0FBaUJDLElBRDNCO0FBRUksd0JBQVEsS0FBS0MsU0FGakI7QUFHSSwyQkFBVyxJQUhmO0FBSUksbUNBQWdCLHVCQUpwQjtBQUtJLGlDQUFnQjtBQUxwQjtBQU9JO0FBQUMscUJBQUQsQ0FBTyxNQUFQO0FBQUEsa0JBQWMsaUJBQWQ7QUFDSTtBQUFDLHlCQUFELENBQU8sS0FBUDtBQUFBLHNCQUFhLElBQUcsdUJBQWhCO0FBQXlDLHlCQUFLSCxLQUFMLENBQVdDLEtBQVgsQ0FBaUJHO0FBQTFEO0FBREosYUFQSjtBQVVJO0FBQUMscUJBQUQsQ0FBTyxJQUFQO0FBQUE7QUFDSSw2Q0FBSyxXQUFXLEtBQUtKLEtBQUwsQ0FBV0MsS0FBWCxDQUFpQkksTUFBakMsR0FESjtBQUNvRCxxQkFBS0wsS0FBTCxDQUFXQyxLQUFYLENBQWlCSztBQURyRSxhQVZKO0FBYUk7QUFBQyxxQkFBRCxDQUFPLE1BQVA7QUFBQTtBQUNJO0FBQUMsMEJBQUQ7QUFBQSxzQkFBUSxTQUFTLEtBQUtILFNBQXRCO0FBQUE7QUFBQTtBQURKO0FBYkosU0FESjtBQW1CSCxLQXRCOEI7QUF1Qi9CQSxlQUFXLHFCQUFVO0FBQ2pCLGFBQUtILEtBQUwsQ0FBV08sZUFBWCxDQUEyQixPQUEzQixFQUFvQztBQUNoQ0wsa0JBQU0sS0FEMEI7QUFFaENNLHFCQUFTLEtBRnVCO0FBR2hDQyxzQkFBVTtBQUhzQixTQUFwQztBQUtIO0FBN0I4QixDQUFqQixDQUFsQjtBQStCQUMsT0FBT0MsT0FBUCxHQUFpQmQsV0FBakIiLCJmaWxlIjoiZXZlbnRzTW9kYWwuanN4Iiwic291cmNlc0NvbnRlbnQiOlsiJ3VzZSBzdHJpY3QnO1xudmFyIFJlYWN0ID0gcmVxdWlyZSgncmVhY3QnKTtcbnZhciBjcmVhdGVSZWFjdENsYXNzID0gcmVxdWlyZSgnY3JlYXRlLXJlYWN0LWNsYXNzJyk7XG52YXIgTW9kYWwgPSByZXF1aXJlKCdyZWFjdC1ib290c3RyYXAnKS5Nb2RhbDtcbnZhciBCdXR0b24gPSByZXF1aXJlKCdyZWFjdC1ib290c3RyYXAnKS5CdXR0b247XG52YXIgRXZlbnRzTW9kYWwgPSBjcmVhdGVSZWFjdENsYXNzKHtcbiAgICByZW5kZXI6IGZ1bmN0aW9uICgpIHtcbiAgICAgICAgdmFyIHNlbGYgPSB0aGlzO1xuICAgICAgICByZXR1cm4gKFxuICAgICAgICAgICAgPE1vZGFsXG4gICAgICAgICAgICAgICAgc2hvdz17dGhpcy5wcm9wcy5tb2RhbC5zaG93fVxuICAgICAgICAgICAgICAgIG9uSGlkZT17dGhpcy5oaWRlTW9kYWx9XG4gICAgICAgICAgICAgICAgY29udGFpbmVyPXt0aGlzfVxuICAgICAgICAgICAgICAgIGFyaWEtbGFiZWxsZWRieT1cImNvbnRhaW5lZC1tb2RhbC10aXRsZVwiXG4gICAgICAgICAgICAgICAgZGlhbG9nQ2xhc3NOYW1lPVwicGFnZS1tb2RhbFwiXG4gICAgICAgICAgICA+XG4gICAgICAgICAgICAgICAgPE1vZGFsLkhlYWRlciBjbG9zZUJ1dHRvbj5cbiAgICAgICAgICAgICAgICAgICAgPE1vZGFsLlRpdGxlIGlkPVwiY29udGFpbmVkLW1vZGFsLXRpdGxlXCI+e3RoaXMucHJvcHMubW9kYWwudGl0bGV9PC9Nb2RhbC5UaXRsZT5cbiAgICAgICAgICAgICAgICA8L01vZGFsLkhlYWRlcj5cbiAgICAgICAgICAgICAgICA8TW9kYWwuQm9keT5cbiAgICAgICAgICAgICAgICAgICAgPGRpdiBjbGFzc05hbWU9e3RoaXMucHJvcHMubW9kYWwuc3RhdHVzfT48L2Rpdj57dGhpcy5wcm9wcy5tb2RhbC5jb250ZW50c31cbiAgICAgICAgICAgICAgICA8L01vZGFsLkJvZHk+XG4gICAgICAgICAgICAgICAgPE1vZGFsLkZvb3Rlcj5cbiAgICAgICAgICAgICAgICAgICAgPEJ1dHRvbiBvbkNsaWNrPXt0aGlzLmhpZGVNb2RhbH0+Q2xvc2U8L0J1dHRvbj5cbiAgICAgICAgICAgICAgICA8L01vZGFsLkZvb3Rlcj5cbiAgICAgICAgICAgIDwvTW9kYWw+XG4gICAgICAgIClcbiAgICB9LFxuICAgIGhpZGVNb2RhbDogZnVuY3Rpb24oKXtcbiAgICAgICAgdGhpcy5wcm9wcy5zZXRNYWluUHJvcGVydHkoJ21vZGFsJywge1xuICAgICAgICAgICAgc2hvdzogZmFsc2UsXG4gICAgICAgICAgICBsb2FkaW5nOiBmYWxzZSxcbiAgICAgICAgICAgIGNvb2xEb3duOiBmYWxzZVxuICAgICAgICB9KVxuICAgIH1cbn0pO1xubW9kdWxlLmV4cG9ydHMgPSBFdmVudHNNb2RhbDsiXX0=
-},{"create-react-class":"/mnt/c/swiggis.original/node_modules/create-react-class/index.js","react":"/mnt/c/swiggis.original/node_modules/react/react.js","react-bootstrap":"/mnt/c/swiggis.original/node_modules/react-bootstrap/lib/index.js"}],"/mnt/c/swiggis.original/src/client/js/components/layout/page/page.jsx":[function(require,module,exports){
+//# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbImV2ZW50c01vZGFsLmpzeCJdLCJuYW1lcyI6WyJSZWFjdCIsInJlcXVpcmUiLCJjcmVhdGVSZWFjdENsYXNzIiwiTW9kYWwiLCJCdXR0b24iLCJFdmVudHNNb2RhbCIsInJlbmRlciIsInNlbGYiLCJwcm9wcyIsIm1vZGFsIiwic2hvdyIsImhpZGVNb2RhbCIsInRpdGxlIiwic3RhdHVzIiwiY29udGVudHMiLCJzZXRNYWluUHJvcGVydHkiLCJsb2FkaW5nIiwiY29vbERvd24iLCJtb2R1bGUiLCJleHBvcnRzIl0sIm1hcHBpbmdzIjoiQUFBQTs7QUFDQSxJQUFJQSxRQUFRQyxRQUFRLE9BQVIsQ0FBWjtBQUNBLElBQUlDLG1CQUFtQkQsUUFBUSxvQkFBUixDQUF2QjtBQUNBLElBQUlFLFFBQVFGLFFBQVEsaUJBQVIsRUFBMkJFLEtBQXZDO0FBQ0EsSUFBSUMsU0FBU0gsUUFBUSxpQkFBUixFQUEyQkcsTUFBeEM7QUFDQSxJQUFJQyxjQUFjSCxpQkFBaUI7QUFBQTs7QUFDL0JJLFlBQVEsa0JBQVk7QUFDaEIsWUFBSUMsT0FBTyxJQUFYO0FBQ0EsZUFDSTtBQUFDLGlCQUFEO0FBQUE7QUFDSSxzQkFBTSxLQUFLQyxLQUFMLENBQVdDLEtBQVgsQ0FBaUJDLElBRDNCO0FBRUksd0JBQVEsS0FBS0MsU0FGakI7QUFHSSwyQkFBVyxJQUhmO0FBSUksbUNBQWdCLHVCQUpwQjtBQUtJLGlDQUFnQjtBQUxwQjtBQU9JO0FBQUMscUJBQUQsQ0FBTyxNQUFQO0FBQUEsa0JBQWMsaUJBQWQ7QUFDSTtBQUFDLHlCQUFELENBQU8sS0FBUDtBQUFBLHNCQUFhLElBQUcsdUJBQWhCO0FBQXlDLHlCQUFLSCxLQUFMLENBQVdDLEtBQVgsQ0FBaUJHO0FBQTFEO0FBREosYUFQSjtBQVVJO0FBQUMscUJBQUQsQ0FBTyxJQUFQO0FBQUE7QUFDSSw2Q0FBSyxXQUFXLEtBQUtKLEtBQUwsQ0FBV0MsS0FBWCxDQUFpQkksTUFBakMsR0FESjtBQUNvRCxxQkFBS0wsS0FBTCxDQUFXQyxLQUFYLENBQWlCSztBQURyRSxhQVZKO0FBYUk7QUFBQyxxQkFBRCxDQUFPLE1BQVA7QUFBQTtBQUNJO0FBQUMsMEJBQUQ7QUFBQSxzQkFBUSxTQUFTLEtBQUtILFNBQXRCO0FBQUE7QUFBQTtBQURKO0FBYkosU0FESjtBQW1CSCxLQXRCOEI7QUF1Qi9CQSxlQUFXLHFCQUFVO0FBQ2pCLGFBQUtILEtBQUwsQ0FBV08sZUFBWCxDQUEyQixPQUEzQixFQUFvQztBQUNoQ0wsa0JBQU0sS0FEMEI7QUFFaENNLHFCQUFTLEtBRnVCO0FBR2hDQyxzQkFBVTtBQUhzQixTQUFwQztBQUtIO0FBN0I4QixDQUFqQixDQUFsQjtBQStCQUMsT0FBT0MsT0FBUCxHQUFpQmQsV0FBakIiLCJmaWxlIjoiZXZlbnRzTW9kYWwuanN4Iiwic291cmNlc0NvbnRlbnQiOlsiJ3VzZSBzdHJpY3QnO1xyXG52YXIgUmVhY3QgPSByZXF1aXJlKCdyZWFjdCcpO1xyXG52YXIgY3JlYXRlUmVhY3RDbGFzcyA9IHJlcXVpcmUoJ2NyZWF0ZS1yZWFjdC1jbGFzcycpO1xyXG52YXIgTW9kYWwgPSByZXF1aXJlKCdyZWFjdC1ib290c3RyYXAnKS5Nb2RhbDtcclxudmFyIEJ1dHRvbiA9IHJlcXVpcmUoJ3JlYWN0LWJvb3RzdHJhcCcpLkJ1dHRvbjtcclxudmFyIEV2ZW50c01vZGFsID0gY3JlYXRlUmVhY3RDbGFzcyh7XHJcbiAgICByZW5kZXI6IGZ1bmN0aW9uICgpIHtcclxuICAgICAgICB2YXIgc2VsZiA9IHRoaXM7XHJcbiAgICAgICAgcmV0dXJuIChcclxuICAgICAgICAgICAgPE1vZGFsXHJcbiAgICAgICAgICAgICAgICBzaG93PXt0aGlzLnByb3BzLm1vZGFsLnNob3d9XHJcbiAgICAgICAgICAgICAgICBvbkhpZGU9e3RoaXMuaGlkZU1vZGFsfVxyXG4gICAgICAgICAgICAgICAgY29udGFpbmVyPXt0aGlzfVxyXG4gICAgICAgICAgICAgICAgYXJpYS1sYWJlbGxlZGJ5PVwiY29udGFpbmVkLW1vZGFsLXRpdGxlXCJcclxuICAgICAgICAgICAgICAgIGRpYWxvZ0NsYXNzTmFtZT1cInBhZ2UtbW9kYWxcIlxyXG4gICAgICAgICAgICA+XHJcbiAgICAgICAgICAgICAgICA8TW9kYWwuSGVhZGVyIGNsb3NlQnV0dG9uPlxyXG4gICAgICAgICAgICAgICAgICAgIDxNb2RhbC5UaXRsZSBpZD1cImNvbnRhaW5lZC1tb2RhbC10aXRsZVwiPnt0aGlzLnByb3BzLm1vZGFsLnRpdGxlfTwvTW9kYWwuVGl0bGU+XHJcbiAgICAgICAgICAgICAgICA8L01vZGFsLkhlYWRlcj5cclxuICAgICAgICAgICAgICAgIDxNb2RhbC5Cb2R5PlxyXG4gICAgICAgICAgICAgICAgICAgIDxkaXYgY2xhc3NOYW1lPXt0aGlzLnByb3BzLm1vZGFsLnN0YXR1c30+PC9kaXY+e3RoaXMucHJvcHMubW9kYWwuY29udGVudHN9XHJcbiAgICAgICAgICAgICAgICA8L01vZGFsLkJvZHk+XHJcbiAgICAgICAgICAgICAgICA8TW9kYWwuRm9vdGVyPlxyXG4gICAgICAgICAgICAgICAgICAgIDxCdXR0b24gb25DbGljaz17dGhpcy5oaWRlTW9kYWx9PkNsb3NlPC9CdXR0b24+XHJcbiAgICAgICAgICAgICAgICA8L01vZGFsLkZvb3Rlcj5cclxuICAgICAgICAgICAgPC9Nb2RhbD5cclxuICAgICAgICApXHJcbiAgICB9LFxyXG4gICAgaGlkZU1vZGFsOiBmdW5jdGlvbigpe1xyXG4gICAgICAgIHRoaXMucHJvcHMuc2V0TWFpblByb3BlcnR5KCdtb2RhbCcsIHtcclxuICAgICAgICAgICAgc2hvdzogZmFsc2UsXHJcbiAgICAgICAgICAgIGxvYWRpbmc6IGZhbHNlLFxyXG4gICAgICAgICAgICBjb29sRG93bjogZmFsc2VcclxuICAgICAgICB9KVxyXG4gICAgfVxyXG59KTtcclxubW9kdWxlLmV4cG9ydHMgPSBFdmVudHNNb2RhbDsiXX0=
+},{"create-react-class":"C:\\swiggis.austin\\node_modules\\create-react-class\\index.js","react":"C:\\swiggis.austin\\node_modules\\react\\react.js","react-bootstrap":"C:\\swiggis.austin\\node_modules\\react-bootstrap\\lib\\index.js"}],"C:\\swiggis.austin\\src\\client\\js\\components\\layout\\page\\page.jsx":[function(require,module,exports){
 'use strict';
 
 var React = require('react');
@@ -57674,8 +56803,8 @@ var Page = createReactClass({
 
 });
 module.exports = Page;
-//# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInBhZ2UuanN4Il0sIm5hbWVzIjpbIlJlYWN0IiwicmVxdWlyZSIsImNyZWF0ZVJlYWN0Q2xhc3MiLCJTaWRlYmFyIiwiTWVudSIsIk1lbnVCdXJnZXIiLCJFdmVudHNNb2RhbCIsIlBhZ2UiLCJyZW5kZXIiLCJwcm9wcyIsIm1lbnVWaXNpYmxlIiwiY2F0ZWdvcmllcyIsImhhbmRsZVJvdXRpbmciLCJzZXRNYWluUHJvcGVydHkiLCJhY3RpdmVDYXRlZ29yeSIsInBhZ2VJbmZvIiwicGF0aCIsImJhY2tncm91bmRJbWFnZSIsImNoaWxkcmVuIiwibW9kYWwiLCJtb2R1bGUiLCJleHBvcnRzIl0sIm1hcHBpbmdzIjoiQUFBQTs7QUFDQSxJQUFJQSxRQUFRQyxRQUFRLE9BQVIsQ0FBWjtBQUNBLElBQUlDLG1CQUFtQkQsUUFBUSxvQkFBUixDQUF2QjtBQUNBLElBQUlFLFVBQVVGLFFBQVEsMEJBQVIsQ0FBZDtBQUNBLElBQUlHLE9BQU9ILFFBQVEsb0JBQVIsQ0FBWDtBQUNBLElBQUlJLGFBQWFKLFFBQVEsMEJBQVIsQ0FBakI7QUFDQSxJQUFJSyxjQUFjTCxRQUFRLDRCQUFSLENBQWxCO0FBQ0EsSUFBSU0sT0FBT0wsaUJBQWlCO0FBQUE7O0FBQ3hCTSxZQUFRLGtCQUFZO0FBQ2hCLGVBQ0k7QUFBQTtBQUFBO0FBQ0ksZ0NBQUMsSUFBRDtBQUNJLDZCQUFhLEtBQUtDLEtBQUwsQ0FBV0MsV0FENUI7QUFFSSw0QkFBWSxLQUFLRCxLQUFMLENBQVdFLFVBRjNCO0FBR0ksK0JBQWUsS0FBS0YsS0FBTCxDQUFXRyxhQUg5QjtBQUlJLGlDQUFpQixLQUFLSCxLQUFMLENBQVdJLGVBSmhDO0FBS0ksZ0NBQWdCLEtBQUtKLEtBQUwsQ0FBV0s7QUFML0IsY0FESjtBQVFJO0FBQUE7QUFBQSxrQkFBTSxXQUFZLHlDQUF5QyxRQUF6QyxHQUFvRCxLQUFLTCxLQUFMLENBQVdNLFFBQVgsQ0FBb0JDLElBQXhFLEdBQStFLGtCQUEvRSxJQUFxRyxLQUFLUCxLQUFMLENBQVdDLFdBQVgsR0FBeUIsTUFBekIsR0FBa0MsUUFBdkksQ0FBbEI7QUFDQTtBQUFBO0FBQUEsc0JBQVEsV0FBVSxZQUFsQixFQUErQixNQUFLLFFBQXBDLEVBQTZDLE9BQU8sRUFBQ08saUJBQWlCLDhCQUFsQixFQUFwRDtBQUNRLHdDQUFDLFVBQUQ7QUFDSSx5Q0FBaUIsS0FBS1IsS0FBTCxDQUFXSSxlQURoQztBQUVJLHFDQUFhLEtBQUtKLEtBQUwsQ0FBV0M7QUFGNUI7QUFEUixpQkFEQTtBQU9RO0FBQUE7QUFBQSxzQkFBUyxXQUFVLGlEQUFuQjtBQUNLLHlCQUFLRCxLQUFMLENBQVdTLFFBRGhCO0FBRUksd0NBQUMsV0FBRDtBQUNJLCtCQUFPLEtBQUtULEtBQUwsQ0FBV1UsS0FEdEI7QUFFSSx5Q0FBaUIsS0FBS1YsS0FBTCxDQUFXSTtBQUZoQztBQUZKO0FBUFI7QUFSSixTQURKO0FBMEJIOztBQTVCdUIsQ0FBakIsQ0FBWDtBQStCQU8sT0FBT0MsT0FBUCxHQUFpQmQsSUFBakIiLCJmaWxlIjoicGFnZS5qc3giLCJzb3VyY2VzQ29udGVudCI6WyIndXNlIHN0cmljdCc7XG52YXIgUmVhY3QgPSByZXF1aXJlKCdyZWFjdCcpO1xudmFyIGNyZWF0ZVJlYWN0Q2xhc3MgPSByZXF1aXJlKCdjcmVhdGUtcmVhY3QtY2xhc3MnKTtcbnZhciBTaWRlYmFyID0gcmVxdWlyZSgnLi8uLi9zaWRlYmFyL3NpZGViYXIuanN4Jyk7XG52YXIgTWVudSA9IHJlcXVpcmUoJy4vLi4vbWVudS9tZW51LmpzeCcpO1xudmFyIE1lbnVCdXJnZXIgPSByZXF1aXJlKCcuLy4uL21lbnUvbWVudUJ1cmdlci5qc3gnKTtcbnZhciBFdmVudHNNb2RhbCA9IHJlcXVpcmUoJy4vLi4vbW9kYWwvZXZlbnRzTW9kYWwuanN4Jyk7XG52YXIgUGFnZSA9IGNyZWF0ZVJlYWN0Q2xhc3Moe1xuICAgIHJlbmRlcjogZnVuY3Rpb24gKCkge1xuICAgICAgICByZXR1cm4gKFxuICAgICAgICAgICAgPGRpdj5cbiAgICAgICAgICAgICAgICA8TWVudVxuICAgICAgICAgICAgICAgICAgICBtZW51VmlzaWJsZT17dGhpcy5wcm9wcy5tZW51VmlzaWJsZX1cbiAgICAgICAgICAgICAgICAgICAgY2F0ZWdvcmllcz17dGhpcy5wcm9wcy5jYXRlZ29yaWVzfVxuICAgICAgICAgICAgICAgICAgICBoYW5kbGVSb3V0aW5nPXt0aGlzLnByb3BzLmhhbmRsZVJvdXRpbmd9XG4gICAgICAgICAgICAgICAgICAgIHNldE1haW5Qcm9wZXJ0eT17dGhpcy5wcm9wcy5zZXRNYWluUHJvcGVydHl9XG4gICAgICAgICAgICAgICAgICAgIGFjdGl2ZUNhdGVnb3J5PXt0aGlzLnByb3BzLmFjdGl2ZUNhdGVnb3J5fVxuICAgICAgICAgICAgICAgIC8+XG4gICAgICAgICAgICAgICAgPG1haW4gY2xhc3NOYW1lPXsoJ2NvbnRhaW5lciBwYWdlLWZhZGVpbiBsZWZ0LWNvbnRhaW5lcicgKyAnIHBhZ2UtJyArIHRoaXMucHJvcHMucGFnZUluZm8ucGF0aCArICcgY29udGFpbmVyLW1lbnUtJyArICh0aGlzLnByb3BzLm1lbnVWaXNpYmxlID8gJ29wZW4nIDogJ2Nsb3NlZCcpKX0+XG4gICAgICAgICAgICAgICAgPGhlYWRlciBjbGFzc05hbWU9XCJoZXJvLWltYWdlXCIgcm9sZT1cImJhbm5lclwiIHN0eWxlPXt7YmFja2dyb3VuZEltYWdlOiAndXJsKGltYWdlcy9TV0lHR0lTX2xvZ28uanBnKSd9fT5cbiAgICAgICAgICAgICAgICAgICAgICAgIDxNZW51QnVyZ2VyXG4gICAgICAgICAgICAgICAgICAgICAgICAgICAgc2V0TWFpblByb3BlcnR5PXt0aGlzLnByb3BzLnNldE1haW5Qcm9wZXJ0eX1cbiAgICAgICAgICAgICAgICAgICAgICAgICAgICBtZW51VmlzaWJsZT17dGhpcy5wcm9wcy5tZW51VmlzaWJsZX1cbiAgICAgICAgICAgICAgICAgICAgICAgIC8+XG4gICAgICAgICAgICAgICAgPC9oZWFkZXI+XG4gICAgICAgICAgICAgICAgICAgICAgICA8c2VjdGlvbiBjbGFzc05hbWU9XCJjb2wtbWQtNyBjb2wtc20tMTIgbWFpbi1jb250ZW50IG1vZGFsLWNvbnRhaW5lclwiPlxuICAgICAgICAgICAgICAgICAgICAgICAgICAgIHt0aGlzLnByb3BzLmNoaWxkcmVufVxuICAgICAgICAgICAgICAgICAgICAgICAgICAgIDxFdmVudHNNb2RhbFxuICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICBtb2RhbD17dGhpcy5wcm9wcy5tb2RhbH1cbiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgc2V0TWFpblByb3BlcnR5PXt0aGlzLnByb3BzLnNldE1haW5Qcm9wZXJ0eX1cbiAgICAgICAgICAgICAgICAgICAgICAgICAgICAvPlxuICAgICAgICAgICAgICAgICAgICAgICAgPC9zZWN0aW9uPlxuICAgICAgICAgICAgICAgIDwvbWFpbj5cbiAgICAgICAgICAgIDwvZGl2PlxuICAgICAgICApXG4gICAgfVxuXG59KTtcbm1vZHVsZS5leHBvcnRzID0gUGFnZTsiXX0=
-},{"./../menu/menu.jsx":"/mnt/c/swiggis.original/src/client/js/components/layout/menu/menu.jsx","./../menu/menuBurger.jsx":"/mnt/c/swiggis.original/src/client/js/components/layout/menu/menuBurger.jsx","./../modal/eventsModal.jsx":"/mnt/c/swiggis.original/src/client/js/components/layout/modal/eventsModal.jsx","./../sidebar/sidebar.jsx":"/mnt/c/swiggis.original/src/client/js/components/layout/sidebar/sidebar.jsx","create-react-class":"/mnt/c/swiggis.original/node_modules/create-react-class/index.js","react":"/mnt/c/swiggis.original/node_modules/react/react.js"}],"/mnt/c/swiggis.original/src/client/js/components/layout/sidebar/infoLinks.jsx":[function(require,module,exports){
+//# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInBhZ2UuanN4Il0sIm5hbWVzIjpbIlJlYWN0IiwicmVxdWlyZSIsImNyZWF0ZVJlYWN0Q2xhc3MiLCJTaWRlYmFyIiwiTWVudSIsIk1lbnVCdXJnZXIiLCJFdmVudHNNb2RhbCIsIlBhZ2UiLCJyZW5kZXIiLCJwcm9wcyIsIm1lbnVWaXNpYmxlIiwiY2F0ZWdvcmllcyIsImhhbmRsZVJvdXRpbmciLCJzZXRNYWluUHJvcGVydHkiLCJhY3RpdmVDYXRlZ29yeSIsInBhZ2VJbmZvIiwicGF0aCIsImJhY2tncm91bmRJbWFnZSIsImNoaWxkcmVuIiwibW9kYWwiLCJtb2R1bGUiLCJleHBvcnRzIl0sIm1hcHBpbmdzIjoiQUFBQTs7QUFDQSxJQUFJQSxRQUFRQyxRQUFRLE9BQVIsQ0FBWjtBQUNBLElBQUlDLG1CQUFtQkQsUUFBUSxvQkFBUixDQUF2QjtBQUNBLElBQUlFLFVBQVVGLFFBQVEsMEJBQVIsQ0FBZDtBQUNBLElBQUlHLE9BQU9ILFFBQVEsb0JBQVIsQ0FBWDtBQUNBLElBQUlJLGFBQWFKLFFBQVEsMEJBQVIsQ0FBakI7QUFDQSxJQUFJSyxjQUFjTCxRQUFRLDRCQUFSLENBQWxCO0FBQ0EsSUFBSU0sT0FBT0wsaUJBQWlCO0FBQUE7O0FBQ3hCTSxZQUFRLGtCQUFZO0FBQ2hCLGVBQ0k7QUFBQTtBQUFBO0FBQ0ksZ0NBQUMsSUFBRDtBQUNJLDZCQUFhLEtBQUtDLEtBQUwsQ0FBV0MsV0FENUI7QUFFSSw0QkFBWSxLQUFLRCxLQUFMLENBQVdFLFVBRjNCO0FBR0ksK0JBQWUsS0FBS0YsS0FBTCxDQUFXRyxhQUg5QjtBQUlJLGlDQUFpQixLQUFLSCxLQUFMLENBQVdJLGVBSmhDO0FBS0ksZ0NBQWdCLEtBQUtKLEtBQUwsQ0FBV0s7QUFML0IsY0FESjtBQVFJO0FBQUE7QUFBQSxrQkFBTSxXQUFZLHlDQUF5QyxRQUF6QyxHQUFvRCxLQUFLTCxLQUFMLENBQVdNLFFBQVgsQ0FBb0JDLElBQXhFLEdBQStFLGtCQUEvRSxJQUFxRyxLQUFLUCxLQUFMLENBQVdDLFdBQVgsR0FBeUIsTUFBekIsR0FBa0MsUUFBdkksQ0FBbEI7QUFDQTtBQUFBO0FBQUEsc0JBQVEsV0FBVSxZQUFsQixFQUErQixNQUFLLFFBQXBDLEVBQTZDLE9BQU8sRUFBQ08saUJBQWlCLDhCQUFsQixFQUFwRDtBQUNRLHdDQUFDLFVBQUQ7QUFDSSx5Q0FBaUIsS0FBS1IsS0FBTCxDQUFXSSxlQURoQztBQUVJLHFDQUFhLEtBQUtKLEtBQUwsQ0FBV0M7QUFGNUI7QUFEUixpQkFEQTtBQU9RO0FBQUE7QUFBQSxzQkFBUyxXQUFVLGlEQUFuQjtBQUNLLHlCQUFLRCxLQUFMLENBQVdTLFFBRGhCO0FBRUksd0NBQUMsV0FBRDtBQUNJLCtCQUFPLEtBQUtULEtBQUwsQ0FBV1UsS0FEdEI7QUFFSSx5Q0FBaUIsS0FBS1YsS0FBTCxDQUFXSTtBQUZoQztBQUZKO0FBUFI7QUFSSixTQURKO0FBMEJIOztBQTVCdUIsQ0FBakIsQ0FBWDtBQStCQU8sT0FBT0MsT0FBUCxHQUFpQmQsSUFBakIiLCJmaWxlIjoicGFnZS5qc3giLCJzb3VyY2VzQ29udGVudCI6WyIndXNlIHN0cmljdCc7XHJcbnZhciBSZWFjdCA9IHJlcXVpcmUoJ3JlYWN0Jyk7XHJcbnZhciBjcmVhdGVSZWFjdENsYXNzID0gcmVxdWlyZSgnY3JlYXRlLXJlYWN0LWNsYXNzJyk7XHJcbnZhciBTaWRlYmFyID0gcmVxdWlyZSgnLi8uLi9zaWRlYmFyL3NpZGViYXIuanN4Jyk7XHJcbnZhciBNZW51ID0gcmVxdWlyZSgnLi8uLi9tZW51L21lbnUuanN4Jyk7XHJcbnZhciBNZW51QnVyZ2VyID0gcmVxdWlyZSgnLi8uLi9tZW51L21lbnVCdXJnZXIuanN4Jyk7XHJcbnZhciBFdmVudHNNb2RhbCA9IHJlcXVpcmUoJy4vLi4vbW9kYWwvZXZlbnRzTW9kYWwuanN4Jyk7XHJcbnZhciBQYWdlID0gY3JlYXRlUmVhY3RDbGFzcyh7XHJcbiAgICByZW5kZXI6IGZ1bmN0aW9uICgpIHtcclxuICAgICAgICByZXR1cm4gKFxyXG4gICAgICAgICAgICA8ZGl2PlxyXG4gICAgICAgICAgICAgICAgPE1lbnVcclxuICAgICAgICAgICAgICAgICAgICBtZW51VmlzaWJsZT17dGhpcy5wcm9wcy5tZW51VmlzaWJsZX1cclxuICAgICAgICAgICAgICAgICAgICBjYXRlZ29yaWVzPXt0aGlzLnByb3BzLmNhdGVnb3JpZXN9XHJcbiAgICAgICAgICAgICAgICAgICAgaGFuZGxlUm91dGluZz17dGhpcy5wcm9wcy5oYW5kbGVSb3V0aW5nfVxyXG4gICAgICAgICAgICAgICAgICAgIHNldE1haW5Qcm9wZXJ0eT17dGhpcy5wcm9wcy5zZXRNYWluUHJvcGVydHl9XHJcbiAgICAgICAgICAgICAgICAgICAgYWN0aXZlQ2F0ZWdvcnk9e3RoaXMucHJvcHMuYWN0aXZlQ2F0ZWdvcnl9XHJcbiAgICAgICAgICAgICAgICAvPlxyXG4gICAgICAgICAgICAgICAgPG1haW4gY2xhc3NOYW1lPXsoJ2NvbnRhaW5lciBwYWdlLWZhZGVpbiBsZWZ0LWNvbnRhaW5lcicgKyAnIHBhZ2UtJyArIHRoaXMucHJvcHMucGFnZUluZm8ucGF0aCArICcgY29udGFpbmVyLW1lbnUtJyArICh0aGlzLnByb3BzLm1lbnVWaXNpYmxlID8gJ29wZW4nIDogJ2Nsb3NlZCcpKX0+XHJcbiAgICAgICAgICAgICAgICA8aGVhZGVyIGNsYXNzTmFtZT1cImhlcm8taW1hZ2VcIiByb2xlPVwiYmFubmVyXCIgc3R5bGU9e3tiYWNrZ3JvdW5kSW1hZ2U6ICd1cmwoaW1hZ2VzL1NXSUdHSVNfbG9nby5qcGcpJ319PlxyXG4gICAgICAgICAgICAgICAgICAgICAgICA8TWVudUJ1cmdlclxyXG4gICAgICAgICAgICAgICAgICAgICAgICAgICAgc2V0TWFpblByb3BlcnR5PXt0aGlzLnByb3BzLnNldE1haW5Qcm9wZXJ0eX1cclxuICAgICAgICAgICAgICAgICAgICAgICAgICAgIG1lbnVWaXNpYmxlPXt0aGlzLnByb3BzLm1lbnVWaXNpYmxlfVxyXG4gICAgICAgICAgICAgICAgICAgICAgICAvPlxyXG4gICAgICAgICAgICAgICAgPC9oZWFkZXI+XHJcbiAgICAgICAgICAgICAgICAgICAgICAgIDxzZWN0aW9uIGNsYXNzTmFtZT1cImNvbC1tZC03IGNvbC1zbS0xMiBtYWluLWNvbnRlbnQgbW9kYWwtY29udGFpbmVyXCI+XHJcbiAgICAgICAgICAgICAgICAgICAgICAgICAgICB7dGhpcy5wcm9wcy5jaGlsZHJlbn1cclxuICAgICAgICAgICAgICAgICAgICAgICAgICAgIDxFdmVudHNNb2RhbFxyXG4gICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIG1vZGFsPXt0aGlzLnByb3BzLm1vZGFsfVxyXG4gICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIHNldE1haW5Qcm9wZXJ0eT17dGhpcy5wcm9wcy5zZXRNYWluUHJvcGVydHl9XHJcbiAgICAgICAgICAgICAgICAgICAgICAgICAgICAvPlxyXG4gICAgICAgICAgICAgICAgICAgICAgICA8L3NlY3Rpb24+XHJcbiAgICAgICAgICAgICAgICA8L21haW4+XHJcbiAgICAgICAgICAgIDwvZGl2PlxyXG4gICAgICAgIClcclxuICAgIH1cclxuXHJcbn0pO1xyXG5tb2R1bGUuZXhwb3J0cyA9IFBhZ2U7Il19
+},{"./../menu/menu.jsx":"C:\\swiggis.austin\\src\\client\\js\\components\\layout\\menu\\menu.jsx","./../menu/menuBurger.jsx":"C:\\swiggis.austin\\src\\client\\js\\components\\layout\\menu\\menuBurger.jsx","./../modal/eventsModal.jsx":"C:\\swiggis.austin\\src\\client\\js\\components\\layout\\modal\\eventsModal.jsx","./../sidebar/sidebar.jsx":"C:\\swiggis.austin\\src\\client\\js\\components\\layout\\sidebar\\sidebar.jsx","create-react-class":"C:\\swiggis.austin\\node_modules\\create-react-class\\index.js","react":"C:\\swiggis.austin\\node_modules\\react\\react.js"}],"C:\\swiggis.austin\\src\\client\\js\\components\\layout\\sidebar\\infoLinks.jsx":[function(require,module,exports){
 'use strict';
 
 var React = require('react');
@@ -57729,8 +56858,8 @@ var InfoLinks = createReactClass({
     }
 });
 module.exports = InfoLinks;
-//# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbImluZm9MaW5rcy5qc3giXSwibmFtZXMiOlsiUmVhY3QiLCJyZXF1aXJlIiwiY3JlYXRlUmVhY3RDbGFzcyIsIkluZm9MaW5rcyIsInJlbmRlciIsInByb3BzIiwicGF0aCIsIm1vZHVsZSIsImV4cG9ydHMiXSwibWFwcGluZ3MiOiJBQUFBOztBQUNBLElBQUlBLFFBQVFDLFFBQVEsT0FBUixDQUFaO0FBQ0EsSUFBSUMsbUJBQW1CRCxRQUFRLG9CQUFSLENBQXZCOztBQUVBLElBQUlFLFlBQVlELGlCQUFpQjtBQUFBOztBQUM3QkUsWUFBUSxrQkFBWTtBQUNoQixZQUFJLEtBQUtDLEtBQUwsQ0FBV0MsSUFBWCxLQUFvQixNQUFwQixJQUE4QixLQUFLRCxLQUFMLENBQVdDLElBQVgsS0FBb0IsT0FBdEQsRUFBK0Q7QUFDM0QsbUJBQVEsZ0NBQVI7QUFDSDtBQUNELGVBQ0k7QUFBQTtBQUFBO0FBQ0k7QUFBQTtBQUFBLGtCQUFLLFdBQVUsZ0JBQWY7QUFDSTtBQUFBO0FBQUE7QUFDSTtBQUFBO0FBQUE7QUFDSSx1Q0FBVSxnQ0FEZDtBQUVJLGtDQUFLLGlGQUZUO0FBR0ksb0NBQU87QUFIWDtBQUFBO0FBQUE7QUFESjtBQURKLGFBREo7QUFZSTtBQUFBO0FBQUEsa0JBQUssV0FBVSxnQkFBZjtBQUNJO0FBQUE7QUFBQTtBQUNJO0FBQUE7QUFBQTtBQUNJLHVDQUFVLGlDQURkO0FBRUksa0NBQUssNERBRlQ7QUFHSSxvQ0FBTztBQUhYO0FBQUE7QUFBQTtBQURKO0FBREo7QUFaSixTQURKO0FBMEJIO0FBL0I0QixDQUFqQixDQUFoQjtBQWlDQUMsT0FBT0MsT0FBUCxHQUFpQkwsU0FBakIiLCJmaWxlIjoiaW5mb0xpbmtzLmpzeCIsInNvdXJjZXNDb250ZW50IjpbIid1c2Ugc3RyaWN0JztcbnZhciBSZWFjdCA9IHJlcXVpcmUoJ3JlYWN0Jyk7XG52YXIgY3JlYXRlUmVhY3RDbGFzcyA9IHJlcXVpcmUoJ2NyZWF0ZS1yZWFjdC1jbGFzcycpO1xuXG52YXIgSW5mb0xpbmtzID0gY3JlYXRlUmVhY3RDbGFzcyh7XG4gICAgcmVuZGVyOiBmdW5jdGlvbiAoKSB7XG4gICAgICAgIGlmICh0aGlzLnByb3BzLnBhdGggIT09ICdob21lJyAmJiB0aGlzLnByb3BzLnBhdGggIT09ICdhYm91dCcpIHtcbiAgICAgICAgICAgIHJldHVybiAoPGRpdj48L2Rpdj4pXG4gICAgICAgIH1cbiAgICAgICAgcmV0dXJuIChcbiAgICAgICAgICAgIDxkaXY+XG4gICAgICAgICAgICAgICAgPGRpdiBjbGFzc05hbWU9XCJzZWNvbmRhcnktaW5mb1wiPlxuICAgICAgICAgICAgICAgICAgICA8cD5cbiAgICAgICAgICAgICAgICAgICAgICAgIDxhXG4gICAgICAgICAgICAgICAgICAgICAgICAgICAgY2xhc3NOYW1lPVwiYnRuIGJ0bi1wcmltYXJ5IGJ0bi1mcm9udC1sZWZ0XCJcbiAgICAgICAgICAgICAgICAgICAgICAgICAgICBocmVmPVwiaHR0cHM6Ly9kb2NzLmdvb2dsZS5jb20vZm9sZGVydmlldz9pZD0wQjBBX3pBU1RNcDlXVTBOTVlXOXdYelZRV2pnJnVzcD1kcml2ZXNka1wiXG4gICAgICAgICAgICAgICAgICAgICAgICAgICAgdGFyZ2V0PVwiX2JsYW5rXCJcbiAgICAgICAgICAgICAgICAgICAgICAgID5cbiAgICAgICAgICAgICAgICAgICAgICAgICAgICBWaWV3IHRoZSBvcmlnaW5hbCBwb3N0cyBvbiBEcml2ZVxuICAgICAgICAgICAgICAgICAgICAgICAgPC9hPlxuICAgICAgICAgICAgICAgICAgICA8L3A+XG4gICAgICAgICAgICAgICAgPC9kaXY+XG4gICAgICAgICAgICAgICAgPGRpdiBjbGFzc05hbWU9XCJzZWNvbmRhcnktaW5mb1wiPlxuICAgICAgICAgICAgICAgICAgICA8cD5cbiAgICAgICAgICAgICAgICAgICAgICAgIDxhXG4gICAgICAgICAgICAgICAgICAgICAgICAgICAgY2xhc3NOYW1lPVwiYnRuIGJ0bi1wcmltYXJ5IGJ0bi1mcm9udC1yaWdodFwiXG4gICAgICAgICAgICAgICAgICAgICAgICAgICAgaHJlZj1cImh0dHBzOi8vZ2l0aHViLmNvbS9taXN0ZXJmcmVzaC9yZWFjdC1kcml2ZS1jbXMvdHJlZS9tYXN0ZXJcIlxuICAgICAgICAgICAgICAgICAgICAgICAgICAgIHRhcmdldD1cIl9ibGFua1wiXG4gICAgICAgICAgICAgICAgICAgICAgICA+XG4gICAgICAgICAgICAgICAgICAgICAgICAgICAgVmlldyB0aGUgc291cmNlIG9uIEdpdEh1YlxuICAgICAgICAgICAgICAgICAgICAgICAgPC9hPlxuICAgICAgICAgICAgICAgICAgICA8L3A+XG4gICAgICAgICAgICAgICAgPC9kaXY+XG4gICAgICAgICAgICA8L2Rpdj5cbiAgICAgICAgKVxuICAgIH1cbn0pO1xubW9kdWxlLmV4cG9ydHMgPSBJbmZvTGlua3M7Il19
-},{"create-react-class":"/mnt/c/swiggis.original/node_modules/create-react-class/index.js","react":"/mnt/c/swiggis.original/node_modules/react/react.js"}],"/mnt/c/swiggis.original/src/client/js/components/layout/sidebar/pageinfo.jsx":[function(require,module,exports){
+//# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbImluZm9MaW5rcy5qc3giXSwibmFtZXMiOlsiUmVhY3QiLCJyZXF1aXJlIiwiY3JlYXRlUmVhY3RDbGFzcyIsIkluZm9MaW5rcyIsInJlbmRlciIsInByb3BzIiwicGF0aCIsIm1vZHVsZSIsImV4cG9ydHMiXSwibWFwcGluZ3MiOiJBQUFBOztBQUNBLElBQUlBLFFBQVFDLFFBQVEsT0FBUixDQUFaO0FBQ0EsSUFBSUMsbUJBQW1CRCxRQUFRLG9CQUFSLENBQXZCOztBQUVBLElBQUlFLFlBQVlELGlCQUFpQjtBQUFBOztBQUM3QkUsWUFBUSxrQkFBWTtBQUNoQixZQUFJLEtBQUtDLEtBQUwsQ0FBV0MsSUFBWCxLQUFvQixNQUFwQixJQUE4QixLQUFLRCxLQUFMLENBQVdDLElBQVgsS0FBb0IsT0FBdEQsRUFBK0Q7QUFDM0QsbUJBQVEsZ0NBQVI7QUFDSDtBQUNELGVBQ0k7QUFBQTtBQUFBO0FBQ0k7QUFBQTtBQUFBLGtCQUFLLFdBQVUsZ0JBQWY7QUFDSTtBQUFBO0FBQUE7QUFDSTtBQUFBO0FBQUE7QUFDSSx1Q0FBVSxnQ0FEZDtBQUVJLGtDQUFLLGlGQUZUO0FBR0ksb0NBQU87QUFIWDtBQUFBO0FBQUE7QUFESjtBQURKLGFBREo7QUFZSTtBQUFBO0FBQUEsa0JBQUssV0FBVSxnQkFBZjtBQUNJO0FBQUE7QUFBQTtBQUNJO0FBQUE7QUFBQTtBQUNJLHVDQUFVLGlDQURkO0FBRUksa0NBQUssNERBRlQ7QUFHSSxvQ0FBTztBQUhYO0FBQUE7QUFBQTtBQURKO0FBREo7QUFaSixTQURKO0FBMEJIO0FBL0I0QixDQUFqQixDQUFoQjtBQWlDQUMsT0FBT0MsT0FBUCxHQUFpQkwsU0FBakIiLCJmaWxlIjoiaW5mb0xpbmtzLmpzeCIsInNvdXJjZXNDb250ZW50IjpbIid1c2Ugc3RyaWN0JztcclxudmFyIFJlYWN0ID0gcmVxdWlyZSgncmVhY3QnKTtcclxudmFyIGNyZWF0ZVJlYWN0Q2xhc3MgPSByZXF1aXJlKCdjcmVhdGUtcmVhY3QtY2xhc3MnKTtcclxuXHJcbnZhciBJbmZvTGlua3MgPSBjcmVhdGVSZWFjdENsYXNzKHtcclxuICAgIHJlbmRlcjogZnVuY3Rpb24gKCkge1xyXG4gICAgICAgIGlmICh0aGlzLnByb3BzLnBhdGggIT09ICdob21lJyAmJiB0aGlzLnByb3BzLnBhdGggIT09ICdhYm91dCcpIHtcclxuICAgICAgICAgICAgcmV0dXJuICg8ZGl2PjwvZGl2PilcclxuICAgICAgICB9XHJcbiAgICAgICAgcmV0dXJuIChcclxuICAgICAgICAgICAgPGRpdj5cclxuICAgICAgICAgICAgICAgIDxkaXYgY2xhc3NOYW1lPVwic2Vjb25kYXJ5LWluZm9cIj5cclxuICAgICAgICAgICAgICAgICAgICA8cD5cclxuICAgICAgICAgICAgICAgICAgICAgICAgPGFcclxuICAgICAgICAgICAgICAgICAgICAgICAgICAgIGNsYXNzTmFtZT1cImJ0biBidG4tcHJpbWFyeSBidG4tZnJvbnQtbGVmdFwiXHJcbiAgICAgICAgICAgICAgICAgICAgICAgICAgICBocmVmPVwiaHR0cHM6Ly9kb2NzLmdvb2dsZS5jb20vZm9sZGVydmlldz9pZD0wQjBBX3pBU1RNcDlXVTBOTVlXOXdYelZRV2pnJnVzcD1kcml2ZXNka1wiXHJcbiAgICAgICAgICAgICAgICAgICAgICAgICAgICB0YXJnZXQ9XCJfYmxhbmtcIlxyXG4gICAgICAgICAgICAgICAgICAgICAgICA+XHJcbiAgICAgICAgICAgICAgICAgICAgICAgICAgICBWaWV3IHRoZSBvcmlnaW5hbCBwb3N0cyBvbiBEcml2ZVxyXG4gICAgICAgICAgICAgICAgICAgICAgICA8L2E+XHJcbiAgICAgICAgICAgICAgICAgICAgPC9wPlxyXG4gICAgICAgICAgICAgICAgPC9kaXY+XHJcbiAgICAgICAgICAgICAgICA8ZGl2IGNsYXNzTmFtZT1cInNlY29uZGFyeS1pbmZvXCI+XHJcbiAgICAgICAgICAgICAgICAgICAgPHA+XHJcbiAgICAgICAgICAgICAgICAgICAgICAgIDxhXHJcbiAgICAgICAgICAgICAgICAgICAgICAgICAgICBjbGFzc05hbWU9XCJidG4gYnRuLXByaW1hcnkgYnRuLWZyb250LXJpZ2h0XCJcclxuICAgICAgICAgICAgICAgICAgICAgICAgICAgIGhyZWY9XCJodHRwczovL2dpdGh1Yi5jb20vbWlzdGVyZnJlc2gvcmVhY3QtZHJpdmUtY21zL3RyZWUvbWFzdGVyXCJcclxuICAgICAgICAgICAgICAgICAgICAgICAgICAgIHRhcmdldD1cIl9ibGFua1wiXHJcbiAgICAgICAgICAgICAgICAgICAgICAgID5cclxuICAgICAgICAgICAgICAgICAgICAgICAgICAgIFZpZXcgdGhlIHNvdXJjZSBvbiBHaXRIdWJcclxuICAgICAgICAgICAgICAgICAgICAgICAgPC9hPlxyXG4gICAgICAgICAgICAgICAgICAgIDwvcD5cclxuICAgICAgICAgICAgICAgIDwvZGl2PlxyXG4gICAgICAgICAgICA8L2Rpdj5cclxuICAgICAgICApXHJcbiAgICB9XHJcbn0pO1xyXG5tb2R1bGUuZXhwb3J0cyA9IEluZm9MaW5rczsiXX0=
+},{"create-react-class":"C:\\swiggis.austin\\node_modules\\create-react-class\\index.js","react":"C:\\swiggis.austin\\node_modules\\react\\react.js"}],"C:\\swiggis.austin\\src\\client\\js\\components\\layout\\sidebar\\pageinfo.jsx":[function(require,module,exports){
 'use strict';
 
 var React = require('react');
@@ -57768,8 +56897,8 @@ var PageInfo = createReactClass({
     }
 });
 module.exports = PageInfo;
-//# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInBhZ2VpbmZvLmpzeCJdLCJuYW1lcyI6WyJSZWFjdCIsInJlcXVpcmUiLCJjcmVhdGVSZWFjdENsYXNzIiwiSW5mb0xpbmtzIiwiUGFnZUluZm8iLCJyZW5kZXIiLCJwcm9wcyIsInBhZ2VJbmZvIiwidGl0bGUiLCJzdWJ0aXRsZSIsImRlc2NyaXB0aW9uIiwicGF0aCIsIm1vZHVsZSIsImV4cG9ydHMiXSwibWFwcGluZ3MiOiJBQUFBOztBQUNBLElBQUlBLFFBQVFDLFFBQVEsT0FBUixDQUFaO0FBQ0EsSUFBSUMsbUJBQW1CRCxRQUFRLG9CQUFSLENBQXZCO0FBQ0EsSUFBSUUsWUFBWUYsUUFBUSxpQkFBUixDQUFoQjtBQUNBLElBQUlHLFdBQVdGLGlCQUFpQjtBQUFBOztBQUM1QkcsWUFBUSxrQkFBWTs7QUFFaEIsZUFDSTtBQUFBO0FBQUEsY0FBSyxXQUFVLFdBQWY7QUFDSTtBQUFBO0FBQUEsa0JBQUssV0FBVSxjQUFmO0FBQ0k7QUFBQTtBQUFBO0FBQUsseUJBQUtDLEtBQUwsQ0FBV0MsUUFBWCxDQUFvQkM7QUFBekIsaUJBREo7QUFFSTtBQUFBO0FBQUE7QUFBSSx5QkFBS0YsS0FBTCxDQUFXQyxRQUFYLENBQW9CRTtBQUF4QixpQkFGSjtBQUdJO0FBQUE7QUFBQTtBQUFJLHlCQUFLSCxLQUFMLENBQVdDLFFBQVgsQ0FBb0JHO0FBQXhCO0FBSEosYUFESjtBQU1JLGdDQUFDLFNBQUQsSUFBVyxNQUFNLEtBQUtKLEtBQUwsQ0FBV0MsUUFBWCxDQUFvQkksSUFBckM7QUFOSixTQURKO0FBVUg7QUFiMkIsQ0FBakIsQ0FBZjtBQWVBQyxPQUFPQyxPQUFQLEdBQWlCVCxRQUFqQiIsImZpbGUiOiJwYWdlaW5mby5qc3giLCJzb3VyY2VzQ29udGVudCI6WyIndXNlIHN0cmljdCc7XG52YXIgUmVhY3QgPSByZXF1aXJlKCdyZWFjdCcpO1xudmFyIGNyZWF0ZVJlYWN0Q2xhc3MgPSByZXF1aXJlKCdjcmVhdGUtcmVhY3QtY2xhc3MnKTtcbnZhciBJbmZvTGlua3MgPSByZXF1aXJlKCcuL2luZm9MaW5rcy5qc3gnKTtcbnZhciBQYWdlSW5mbyA9IGNyZWF0ZVJlYWN0Q2xhc3Moe1xuICAgIHJlbmRlcjogZnVuY3Rpb24gKCkge1xuXG4gICAgICAgIHJldHVybiAoXG4gICAgICAgICAgICA8ZGl2IGNsYXNzTmFtZT1cInNpdGUtaW5mb1wiPlxuICAgICAgICAgICAgICAgIDxkaXYgY2xhc3NOYW1lPVwicHJpbWFyeS1pbmZvXCI+XG4gICAgICAgICAgICAgICAgICAgIDxoMT57dGhpcy5wcm9wcy5wYWdlSW5mby50aXRsZX08L2gxPlxuICAgICAgICAgICAgICAgICAgICA8cD57dGhpcy5wcm9wcy5wYWdlSW5mby5zdWJ0aXRsZX08L3A+XG4gICAgICAgICAgICAgICAgICAgIDxwPnt0aGlzLnByb3BzLnBhZ2VJbmZvLmRlc2NyaXB0aW9ufTwvcD5cbiAgICAgICAgICAgICAgICA8L2Rpdj5cbiAgICAgICAgICAgICAgICA8SW5mb0xpbmtzIHBhdGg9e3RoaXMucHJvcHMucGFnZUluZm8ucGF0aH0vPlxuICAgICAgICAgICAgPC9kaXY+XG4gICAgICAgIClcbiAgICB9XG59KTtcbm1vZHVsZS5leHBvcnRzID0gUGFnZUluZm87Il19
-},{"./infoLinks.jsx":"/mnt/c/swiggis.original/src/client/js/components/layout/sidebar/infoLinks.jsx","create-react-class":"/mnt/c/swiggis.original/node_modules/create-react-class/index.js","react":"/mnt/c/swiggis.original/node_modules/react/react.js"}],"/mnt/c/swiggis.original/src/client/js/components/layout/sidebar/sidebar.jsx":[function(require,module,exports){
+//# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInBhZ2VpbmZvLmpzeCJdLCJuYW1lcyI6WyJSZWFjdCIsInJlcXVpcmUiLCJjcmVhdGVSZWFjdENsYXNzIiwiSW5mb0xpbmtzIiwiUGFnZUluZm8iLCJyZW5kZXIiLCJwcm9wcyIsInBhZ2VJbmZvIiwidGl0bGUiLCJzdWJ0aXRsZSIsImRlc2NyaXB0aW9uIiwicGF0aCIsIm1vZHVsZSIsImV4cG9ydHMiXSwibWFwcGluZ3MiOiJBQUFBOztBQUNBLElBQUlBLFFBQVFDLFFBQVEsT0FBUixDQUFaO0FBQ0EsSUFBSUMsbUJBQW1CRCxRQUFRLG9CQUFSLENBQXZCO0FBQ0EsSUFBSUUsWUFBWUYsUUFBUSxpQkFBUixDQUFoQjtBQUNBLElBQUlHLFdBQVdGLGlCQUFpQjtBQUFBOztBQUM1QkcsWUFBUSxrQkFBWTs7QUFFaEIsZUFDSTtBQUFBO0FBQUEsY0FBSyxXQUFVLFdBQWY7QUFDSTtBQUFBO0FBQUEsa0JBQUssV0FBVSxjQUFmO0FBQ0k7QUFBQTtBQUFBO0FBQUsseUJBQUtDLEtBQUwsQ0FBV0MsUUFBWCxDQUFvQkM7QUFBekIsaUJBREo7QUFFSTtBQUFBO0FBQUE7QUFBSSx5QkFBS0YsS0FBTCxDQUFXQyxRQUFYLENBQW9CRTtBQUF4QixpQkFGSjtBQUdJO0FBQUE7QUFBQTtBQUFJLHlCQUFLSCxLQUFMLENBQVdDLFFBQVgsQ0FBb0JHO0FBQXhCO0FBSEosYUFESjtBQU1JLGdDQUFDLFNBQUQsSUFBVyxNQUFNLEtBQUtKLEtBQUwsQ0FBV0MsUUFBWCxDQUFvQkksSUFBckM7QUFOSixTQURKO0FBVUg7QUFiMkIsQ0FBakIsQ0FBZjtBQWVBQyxPQUFPQyxPQUFQLEdBQWlCVCxRQUFqQiIsImZpbGUiOiJwYWdlaW5mby5qc3giLCJzb3VyY2VzQ29udGVudCI6WyIndXNlIHN0cmljdCc7XHJcbnZhciBSZWFjdCA9IHJlcXVpcmUoJ3JlYWN0Jyk7XHJcbnZhciBjcmVhdGVSZWFjdENsYXNzID0gcmVxdWlyZSgnY3JlYXRlLXJlYWN0LWNsYXNzJyk7XHJcbnZhciBJbmZvTGlua3MgPSByZXF1aXJlKCcuL2luZm9MaW5rcy5qc3gnKTtcclxudmFyIFBhZ2VJbmZvID0gY3JlYXRlUmVhY3RDbGFzcyh7XHJcbiAgICByZW5kZXI6IGZ1bmN0aW9uICgpIHtcclxuXHJcbiAgICAgICAgcmV0dXJuIChcclxuICAgICAgICAgICAgPGRpdiBjbGFzc05hbWU9XCJzaXRlLWluZm9cIj5cclxuICAgICAgICAgICAgICAgIDxkaXYgY2xhc3NOYW1lPVwicHJpbWFyeS1pbmZvXCI+XHJcbiAgICAgICAgICAgICAgICAgICAgPGgxPnt0aGlzLnByb3BzLnBhZ2VJbmZvLnRpdGxlfTwvaDE+XHJcbiAgICAgICAgICAgICAgICAgICAgPHA+e3RoaXMucHJvcHMucGFnZUluZm8uc3VidGl0bGV9PC9wPlxyXG4gICAgICAgICAgICAgICAgICAgIDxwPnt0aGlzLnByb3BzLnBhZ2VJbmZvLmRlc2NyaXB0aW9ufTwvcD5cclxuICAgICAgICAgICAgICAgIDwvZGl2PlxyXG4gICAgICAgICAgICAgICAgPEluZm9MaW5rcyBwYXRoPXt0aGlzLnByb3BzLnBhZ2VJbmZvLnBhdGh9Lz5cclxuICAgICAgICAgICAgPC9kaXY+XHJcbiAgICAgICAgKVxyXG4gICAgfVxyXG59KTtcclxubW9kdWxlLmV4cG9ydHMgPSBQYWdlSW5mbzsiXX0=
+},{"./infoLinks.jsx":"C:\\swiggis.austin\\src\\client\\js\\components\\layout\\sidebar\\infoLinks.jsx","create-react-class":"C:\\swiggis.austin\\node_modules\\create-react-class\\index.js","react":"C:\\swiggis.austin\\node_modules\\react\\react.js"}],"C:\\swiggis.austin\\src\\client\\js\\components\\layout\\sidebar\\sidebar.jsx":[function(require,module,exports){
 'use strict';
 
 var React = require('react');
@@ -57802,8 +56931,8 @@ var Sidebar = createReactClass({
     }
 });
 module.exports = Sidebar;
-//# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNpZGViYXIuanN4Il0sIm5hbWVzIjpbIlJlYWN0IiwicmVxdWlyZSIsImNyZWF0ZVJlYWN0Q2xhc3MiLCJNZW51QnVyZ2VyIiwiUGFnZUluZm8iLCJTaWRlYmFyIiwicmVuZGVyIiwic2lkZWJhclN0eWxlIiwiYmFja2dyb3VuZEltYWdlIiwicHJvcHMiLCJwYWdlSW5mbyIsInNpZGViYXJJbWFnZSIsInNldE1haW5Qcm9wZXJ0eSIsIm1lbnVWaXNpYmxlIiwibW9kdWxlIiwiZXhwb3J0cyJdLCJtYXBwaW5ncyI6IkFBQUE7O0FBQ0EsSUFBSUEsUUFBUUMsUUFBUSxPQUFSLENBQVo7QUFDQSxJQUFJQyxtQkFBbUJELFFBQVEsb0JBQVIsQ0FBdkI7QUFDQSxJQUFJRSxhQUFhRixRQUFRLDBCQUFSLENBQWpCO0FBQ0EsSUFBSUcsV0FBV0gsUUFBUSxnQkFBUixDQUFmOztBQUVBLElBQUlJLFVBQVVILGlCQUFpQjtBQUFBOztBQUMzQkksWUFBUSxrQkFBWTtBQUNoQixZQUFJQyxlQUFlO0FBQ2ZDLDZCQUFpQixTQUFTLEtBQUtDLEtBQUwsQ0FBV0MsUUFBWCxDQUFvQkMsWUFBN0IsR0FBNEM7QUFEOUMsU0FBbkI7QUFHQSxlQUNJO0FBQUE7QUFBQTtBQUNJLDJCQUFVLDRCQURkO0FBRUksdUJBQU9KO0FBRlg7QUFJSSxnQ0FBQyxVQUFEO0FBQ0ksaUNBQWlCLEtBQUtFLEtBQUwsQ0FBV0csZUFEaEM7QUFFSSw2QkFBYSxLQUFLSCxLQUFMLENBQVdJO0FBRjVCLGNBSko7QUFRSSxnQ0FBQyxRQUFEO0FBQ0ksaUNBQWlCLEtBQUtKLEtBQUwsQ0FBV0csZUFEaEM7QUFFSSwwQkFBVSxLQUFLSCxLQUFMLENBQVdDO0FBRnpCO0FBUkosU0FESjtBQWVIO0FBcEIwQixDQUFqQixDQUFkO0FBc0JBSSxPQUFPQyxPQUFQLEdBQWlCVixPQUFqQiIsImZpbGUiOiJzaWRlYmFyLmpzeCIsInNvdXJjZXNDb250ZW50IjpbIid1c2Ugc3RyaWN0JztcbnZhciBSZWFjdCA9IHJlcXVpcmUoJ3JlYWN0Jyk7XG52YXIgY3JlYXRlUmVhY3RDbGFzcyA9IHJlcXVpcmUoJ2NyZWF0ZS1yZWFjdC1jbGFzcycpO1xudmFyIE1lbnVCdXJnZXIgPSByZXF1aXJlKCcuLy4uL21lbnUvbWVudUJ1cmdlci5qc3gnKTtcbnZhciBQYWdlSW5mbyA9IHJlcXVpcmUoJy4vcGFnZWluZm8uanN4Jyk7XG5cbnZhciBTaWRlYmFyID0gY3JlYXRlUmVhY3RDbGFzcyh7XG4gICAgcmVuZGVyOiBmdW5jdGlvbiAoKSB7XG4gICAgICAgIHZhciBzaWRlYmFyU3R5bGUgPSB7XG4gICAgICAgICAgICBiYWNrZ3JvdW5kSW1hZ2U6ICd1cmwoJyArIHRoaXMucHJvcHMucGFnZUluZm8uc2lkZWJhckltYWdlICsgJyknXG4gICAgICAgIH07XG4gICAgICAgIHJldHVybiAoXG4gICAgICAgICAgICA8c2VjdGlvblxuICAgICAgICAgICAgICAgIGNsYXNzTmFtZT1cInNpZGViYXIgY29sLW1kLTUgY29sLXNtLTEyXCJcbiAgICAgICAgICAgICAgICBzdHlsZT17c2lkZWJhclN0eWxlfVxuICAgICAgICAgICAgPlxuICAgICAgICAgICAgICAgIDxNZW51QnVyZ2VyXG4gICAgICAgICAgICAgICAgICAgIHNldE1haW5Qcm9wZXJ0eT17dGhpcy5wcm9wcy5zZXRNYWluUHJvcGVydHl9XG4gICAgICAgICAgICAgICAgICAgIG1lbnVWaXNpYmxlPXt0aGlzLnByb3BzLm1lbnVWaXNpYmxlfVxuICAgICAgICAgICAgICAgIC8+XG4gICAgICAgICAgICAgICAgPFBhZ2VJbmZvXG4gICAgICAgICAgICAgICAgICAgIHNldE1haW5Qcm9wZXJ0eT17dGhpcy5wcm9wcy5zZXRNYWluUHJvcGVydHl9XG4gICAgICAgICAgICAgICAgICAgIHBhZ2VJbmZvPXt0aGlzLnByb3BzLnBhZ2VJbmZvfVxuICAgICAgICAgICAgICAgIC8+XG4gICAgICAgICAgICA8L3NlY3Rpb24+XG4gICAgICAgICk7XG4gICAgfVxufSk7XG5tb2R1bGUuZXhwb3J0cyA9IFNpZGViYXI7Il19
-},{"./../menu/menuBurger.jsx":"/mnt/c/swiggis.original/src/client/js/components/layout/menu/menuBurger.jsx","./pageinfo.jsx":"/mnt/c/swiggis.original/src/client/js/components/layout/sidebar/pageinfo.jsx","create-react-class":"/mnt/c/swiggis.original/node_modules/create-react-class/index.js","react":"/mnt/c/swiggis.original/node_modules/react/react.js"}],"/mnt/c/swiggis.original/src/client/js/components/lists/category/categories.jsx":[function(require,module,exports){
+//# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNpZGViYXIuanN4Il0sIm5hbWVzIjpbIlJlYWN0IiwicmVxdWlyZSIsImNyZWF0ZVJlYWN0Q2xhc3MiLCJNZW51QnVyZ2VyIiwiUGFnZUluZm8iLCJTaWRlYmFyIiwicmVuZGVyIiwic2lkZWJhclN0eWxlIiwiYmFja2dyb3VuZEltYWdlIiwicHJvcHMiLCJwYWdlSW5mbyIsInNpZGViYXJJbWFnZSIsInNldE1haW5Qcm9wZXJ0eSIsIm1lbnVWaXNpYmxlIiwibW9kdWxlIiwiZXhwb3J0cyJdLCJtYXBwaW5ncyI6IkFBQUE7O0FBQ0EsSUFBSUEsUUFBUUMsUUFBUSxPQUFSLENBQVo7QUFDQSxJQUFJQyxtQkFBbUJELFFBQVEsb0JBQVIsQ0FBdkI7QUFDQSxJQUFJRSxhQUFhRixRQUFRLDBCQUFSLENBQWpCO0FBQ0EsSUFBSUcsV0FBV0gsUUFBUSxnQkFBUixDQUFmOztBQUVBLElBQUlJLFVBQVVILGlCQUFpQjtBQUFBOztBQUMzQkksWUFBUSxrQkFBWTtBQUNoQixZQUFJQyxlQUFlO0FBQ2ZDLDZCQUFpQixTQUFTLEtBQUtDLEtBQUwsQ0FBV0MsUUFBWCxDQUFvQkMsWUFBN0IsR0FBNEM7QUFEOUMsU0FBbkI7QUFHQSxlQUNJO0FBQUE7QUFBQTtBQUNJLDJCQUFVLDRCQURkO0FBRUksdUJBQU9KO0FBRlg7QUFJSSxnQ0FBQyxVQUFEO0FBQ0ksaUNBQWlCLEtBQUtFLEtBQUwsQ0FBV0csZUFEaEM7QUFFSSw2QkFBYSxLQUFLSCxLQUFMLENBQVdJO0FBRjVCLGNBSko7QUFRSSxnQ0FBQyxRQUFEO0FBQ0ksaUNBQWlCLEtBQUtKLEtBQUwsQ0FBV0csZUFEaEM7QUFFSSwwQkFBVSxLQUFLSCxLQUFMLENBQVdDO0FBRnpCO0FBUkosU0FESjtBQWVIO0FBcEIwQixDQUFqQixDQUFkO0FBc0JBSSxPQUFPQyxPQUFQLEdBQWlCVixPQUFqQiIsImZpbGUiOiJzaWRlYmFyLmpzeCIsInNvdXJjZXNDb250ZW50IjpbIid1c2Ugc3RyaWN0JztcclxudmFyIFJlYWN0ID0gcmVxdWlyZSgncmVhY3QnKTtcclxudmFyIGNyZWF0ZVJlYWN0Q2xhc3MgPSByZXF1aXJlKCdjcmVhdGUtcmVhY3QtY2xhc3MnKTtcclxudmFyIE1lbnVCdXJnZXIgPSByZXF1aXJlKCcuLy4uL21lbnUvbWVudUJ1cmdlci5qc3gnKTtcclxudmFyIFBhZ2VJbmZvID0gcmVxdWlyZSgnLi9wYWdlaW5mby5qc3gnKTtcclxuXHJcbnZhciBTaWRlYmFyID0gY3JlYXRlUmVhY3RDbGFzcyh7XHJcbiAgICByZW5kZXI6IGZ1bmN0aW9uICgpIHtcclxuICAgICAgICB2YXIgc2lkZWJhclN0eWxlID0ge1xyXG4gICAgICAgICAgICBiYWNrZ3JvdW5kSW1hZ2U6ICd1cmwoJyArIHRoaXMucHJvcHMucGFnZUluZm8uc2lkZWJhckltYWdlICsgJyknXHJcbiAgICAgICAgfTtcclxuICAgICAgICByZXR1cm4gKFxyXG4gICAgICAgICAgICA8c2VjdGlvblxyXG4gICAgICAgICAgICAgICAgY2xhc3NOYW1lPVwic2lkZWJhciBjb2wtbWQtNSBjb2wtc20tMTJcIlxyXG4gICAgICAgICAgICAgICAgc3R5bGU9e3NpZGViYXJTdHlsZX1cclxuICAgICAgICAgICAgPlxyXG4gICAgICAgICAgICAgICAgPE1lbnVCdXJnZXJcclxuICAgICAgICAgICAgICAgICAgICBzZXRNYWluUHJvcGVydHk9e3RoaXMucHJvcHMuc2V0TWFpblByb3BlcnR5fVxyXG4gICAgICAgICAgICAgICAgICAgIG1lbnVWaXNpYmxlPXt0aGlzLnByb3BzLm1lbnVWaXNpYmxlfVxyXG4gICAgICAgICAgICAgICAgLz5cclxuICAgICAgICAgICAgICAgIDxQYWdlSW5mb1xyXG4gICAgICAgICAgICAgICAgICAgIHNldE1haW5Qcm9wZXJ0eT17dGhpcy5wcm9wcy5zZXRNYWluUHJvcGVydHl9XHJcbiAgICAgICAgICAgICAgICAgICAgcGFnZUluZm89e3RoaXMucHJvcHMucGFnZUluZm99XHJcbiAgICAgICAgICAgICAgICAvPlxyXG4gICAgICAgICAgICA8L3NlY3Rpb24+XHJcbiAgICAgICAgKTtcclxuICAgIH1cclxufSk7XHJcbm1vZHVsZS5leHBvcnRzID0gU2lkZWJhcjsiXX0=
+},{"./../menu/menuBurger.jsx":"C:\\swiggis.austin\\src\\client\\js\\components\\layout\\menu\\menuBurger.jsx","./pageinfo.jsx":"C:\\swiggis.austin\\src\\client\\js\\components\\layout\\sidebar\\pageinfo.jsx","create-react-class":"C:\\swiggis.austin\\node_modules\\create-react-class\\index.js","react":"C:\\swiggis.austin\\node_modules\\react\\react.js"}],"C:\\swiggis.austin\\src\\client\\js\\components\\lists\\category\\categories.jsx":[function(require,module,exports){
 'use strict';
 
 var React = require('react');
@@ -57837,8 +56966,8 @@ var Categories = createReactClass({
     }
 });
 module.exports = Categories;
-//# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbImNhdGVnb3JpZXMuanN4Il0sIm5hbWVzIjpbIlJlYWN0IiwicmVxdWlyZSIsImNyZWF0ZVJlYWN0Q2xhc3MiLCJDYXRlZ29yeSIsIkNhdGVnb3JpZXMiLCJyZW5kZXIiLCJzZWxmIiwicHJvcHMiLCJhY3RpdmVIb21lUGFuZWwiLCJjYXRlZ29yaWVzIiwibWFwIiwiY2F0ZWdvcnkiLCJpIiwiaGFuZGxlUm91dGluZyIsIm1vZHVsZSIsImV4cG9ydHMiXSwibWFwcGluZ3MiOiJBQUFBOztBQUNBLElBQUlBLFFBQVFDLFFBQVEsT0FBUixDQUFaO0FBQ0EsSUFBSUMsbUJBQW1CRCxRQUFRLG9CQUFSLENBQXZCO0FBQ0EsSUFBSUUsV0FBV0YsUUFBUSxnQkFBUixDQUFmO0FBQ0EsSUFBSUcsYUFBYUYsaUJBQWlCO0FBQUE7OztBQUU5QkcsWUFBUSxrQkFBWTtBQUNoQixZQUFJQyxPQUFPLElBQVg7QUFDQSxlQUNJO0FBQUE7QUFBQSxjQUFLLFdBQVcsMEJBQTJCLEtBQUtDLEtBQUwsQ0FBV0MsZUFBWCxLQUErQixZQUFoQyxHQUFnRCxpQkFBaEQsR0FBb0UsT0FBOUYsQ0FBaEI7QUFDSTtBQUFBO0FBQUEsa0JBQUssV0FBVSxjQUFmO0FBQ0k7QUFBQTtBQUFBO0FBQ0tGLHlCQUFLQyxLQUFMLENBQVdFLFVBQVgsQ0FBc0JDLEdBQXRCLENBQTBCLFVBQVVDLFFBQVYsRUFBb0JDLENBQXBCLEVBQXVCO0FBQzlDLCtCQUFPLG9CQUFDLFFBQUQ7QUFDSCxpQ0FBS0EsQ0FERjtBQUVILHNDQUFVRCxRQUZQO0FBR0gsMkNBQWVMLEtBQUtDLEtBQUwsQ0FBV007QUFIdkIsMEJBQVA7QUFLSCxxQkFOQTtBQURMO0FBREo7QUFESixTQURKO0FBZUg7QUFuQjZCLENBQWpCLENBQWpCO0FBcUJBQyxPQUFPQyxPQUFQLEdBQWlCWCxVQUFqQiIsImZpbGUiOiJjYXRlZ29yaWVzLmpzeCIsInNvdXJjZXNDb250ZW50IjpbIid1c2Ugc3RyaWN0JztcbnZhciBSZWFjdCA9IHJlcXVpcmUoJ3JlYWN0Jyk7XG52YXIgY3JlYXRlUmVhY3RDbGFzcyA9IHJlcXVpcmUoJ2NyZWF0ZS1yZWFjdC1jbGFzcycpO1xudmFyIENhdGVnb3J5ID0gcmVxdWlyZSgnLi9jYXRlZ29yeS5qc3gnKTtcbnZhciBDYXRlZ29yaWVzID0gY3JlYXRlUmVhY3RDbGFzcyh7XG5cbiAgICByZW5kZXI6IGZ1bmN0aW9uICgpIHtcbiAgICAgICAgdmFyIHNlbGYgPSB0aGlzO1xuICAgICAgICByZXR1cm4gKFxuICAgICAgICAgICAgPGRpdiBjbGFzc05hbWU9e1wiaG9tZS1wYWdlLWNhdGVnb3JpZXNcIiArICgodGhpcy5wcm9wcy5hY3RpdmVIb21lUGFuZWwgPT09ICdjYXRlZ29yaWVzJykgPyAnIHNlY3Rpb24tZmFkZWluJyA6ICcgaGlkZScpfT5cbiAgICAgICAgICAgICAgICA8ZGl2IGNsYXNzTmFtZT1cImNhdGVnb3J5IHJvd1wiPlxuICAgICAgICAgICAgICAgICAgICA8c2VjdGlvbj5cbiAgICAgICAgICAgICAgICAgICAgICAgIHtzZWxmLnByb3BzLmNhdGVnb3JpZXMubWFwKGZ1bmN0aW9uIChjYXRlZ29yeSwgaSkge1xuICAgICAgICAgICAgICAgICAgICAgICAgICAgIHJldHVybiA8Q2F0ZWdvcnlcbiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAga2V5PXtpfVxuICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICBjYXRlZ29yeT17Y2F0ZWdvcnl9XG4gICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIGhhbmRsZVJvdXRpbmc9e3NlbGYucHJvcHMuaGFuZGxlUm91dGluZ31cbiAgICAgICAgICAgICAgICAgICAgICAgICAgICAvPjtcbiAgICAgICAgICAgICAgICAgICAgICAgIH0pfVxuICAgICAgICAgICAgICAgICAgICA8L3NlY3Rpb24+XG4gICAgICAgICAgICAgICAgPC9kaXY+XG4gICAgICAgICAgICA8L2Rpdj5cbiAgICAgICAgKVxuICAgIH1cbn0pO1xubW9kdWxlLmV4cG9ydHMgPSBDYXRlZ29yaWVzOyJdfQ==
-},{"./category.jsx":"/mnt/c/swiggis.original/src/client/js/components/lists/category/category.jsx","create-react-class":"/mnt/c/swiggis.original/node_modules/create-react-class/index.js","react":"/mnt/c/swiggis.original/node_modules/react/react.js"}],"/mnt/c/swiggis.original/src/client/js/components/lists/category/category.jsx":[function(require,module,exports){
+//# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbImNhdGVnb3JpZXMuanN4Il0sIm5hbWVzIjpbIlJlYWN0IiwicmVxdWlyZSIsImNyZWF0ZVJlYWN0Q2xhc3MiLCJDYXRlZ29yeSIsIkNhdGVnb3JpZXMiLCJyZW5kZXIiLCJzZWxmIiwicHJvcHMiLCJhY3RpdmVIb21lUGFuZWwiLCJjYXRlZ29yaWVzIiwibWFwIiwiY2F0ZWdvcnkiLCJpIiwiaGFuZGxlUm91dGluZyIsIm1vZHVsZSIsImV4cG9ydHMiXSwibWFwcGluZ3MiOiJBQUFBOztBQUNBLElBQUlBLFFBQVFDLFFBQVEsT0FBUixDQUFaO0FBQ0EsSUFBSUMsbUJBQW1CRCxRQUFRLG9CQUFSLENBQXZCO0FBQ0EsSUFBSUUsV0FBV0YsUUFBUSxnQkFBUixDQUFmO0FBQ0EsSUFBSUcsYUFBYUYsaUJBQWlCO0FBQUE7OztBQUU5QkcsWUFBUSxrQkFBWTtBQUNoQixZQUFJQyxPQUFPLElBQVg7QUFDQSxlQUNJO0FBQUE7QUFBQSxjQUFLLFdBQVcsMEJBQTJCLEtBQUtDLEtBQUwsQ0FBV0MsZUFBWCxLQUErQixZQUFoQyxHQUFnRCxpQkFBaEQsR0FBb0UsT0FBOUYsQ0FBaEI7QUFDSTtBQUFBO0FBQUEsa0JBQUssV0FBVSxjQUFmO0FBQ0k7QUFBQTtBQUFBO0FBQ0tGLHlCQUFLQyxLQUFMLENBQVdFLFVBQVgsQ0FBc0JDLEdBQXRCLENBQTBCLFVBQVVDLFFBQVYsRUFBb0JDLENBQXBCLEVBQXVCO0FBQzlDLCtCQUFPLG9CQUFDLFFBQUQ7QUFDSCxpQ0FBS0EsQ0FERjtBQUVILHNDQUFVRCxRQUZQO0FBR0gsMkNBQWVMLEtBQUtDLEtBQUwsQ0FBV007QUFIdkIsMEJBQVA7QUFLSCxxQkFOQTtBQURMO0FBREo7QUFESixTQURKO0FBZUg7QUFuQjZCLENBQWpCLENBQWpCO0FBcUJBQyxPQUFPQyxPQUFQLEdBQWlCWCxVQUFqQiIsImZpbGUiOiJjYXRlZ29yaWVzLmpzeCIsInNvdXJjZXNDb250ZW50IjpbIid1c2Ugc3RyaWN0JztcclxudmFyIFJlYWN0ID0gcmVxdWlyZSgncmVhY3QnKTtcclxudmFyIGNyZWF0ZVJlYWN0Q2xhc3MgPSByZXF1aXJlKCdjcmVhdGUtcmVhY3QtY2xhc3MnKTtcclxudmFyIENhdGVnb3J5ID0gcmVxdWlyZSgnLi9jYXRlZ29yeS5qc3gnKTtcclxudmFyIENhdGVnb3JpZXMgPSBjcmVhdGVSZWFjdENsYXNzKHtcclxuXHJcbiAgICByZW5kZXI6IGZ1bmN0aW9uICgpIHtcclxuICAgICAgICB2YXIgc2VsZiA9IHRoaXM7XHJcbiAgICAgICAgcmV0dXJuIChcclxuICAgICAgICAgICAgPGRpdiBjbGFzc05hbWU9e1wiaG9tZS1wYWdlLWNhdGVnb3JpZXNcIiArICgodGhpcy5wcm9wcy5hY3RpdmVIb21lUGFuZWwgPT09ICdjYXRlZ29yaWVzJykgPyAnIHNlY3Rpb24tZmFkZWluJyA6ICcgaGlkZScpfT5cclxuICAgICAgICAgICAgICAgIDxkaXYgY2xhc3NOYW1lPVwiY2F0ZWdvcnkgcm93XCI+XHJcbiAgICAgICAgICAgICAgICAgICAgPHNlY3Rpb24+XHJcbiAgICAgICAgICAgICAgICAgICAgICAgIHtzZWxmLnByb3BzLmNhdGVnb3JpZXMubWFwKGZ1bmN0aW9uIChjYXRlZ29yeSwgaSkge1xyXG4gICAgICAgICAgICAgICAgICAgICAgICAgICAgcmV0dXJuIDxDYXRlZ29yeVxyXG4gICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIGtleT17aX1cclxuICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICBjYXRlZ29yeT17Y2F0ZWdvcnl9XHJcbiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgaGFuZGxlUm91dGluZz17c2VsZi5wcm9wcy5oYW5kbGVSb3V0aW5nfVxyXG4gICAgICAgICAgICAgICAgICAgICAgICAgICAgLz47XHJcbiAgICAgICAgICAgICAgICAgICAgICAgIH0pfVxyXG4gICAgICAgICAgICAgICAgICAgIDwvc2VjdGlvbj5cclxuICAgICAgICAgICAgICAgIDwvZGl2PlxyXG4gICAgICAgICAgICA8L2Rpdj5cclxuICAgICAgICApXHJcbiAgICB9XHJcbn0pO1xyXG5tb2R1bGUuZXhwb3J0cyA9IENhdGVnb3JpZXM7Il19
+},{"./category.jsx":"C:\\swiggis.austin\\src\\client\\js\\components\\lists\\category\\category.jsx","create-react-class":"C:\\swiggis.austin\\node_modules\\create-react-class\\index.js","react":"C:\\swiggis.austin\\node_modules\\react\\react.js"}],"C:\\swiggis.austin\\src\\client\\js\\components\\lists\\category\\category.jsx":[function(require,module,exports){
 'use strict';
 
 var React = require('react');
@@ -57880,8 +57009,8 @@ var Category = createReactClass({
     }
 });
 module.exports = Category;
-//# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbImNhdGVnb3J5LmpzeCJdLCJuYW1lcyI6WyJSZWFjdCIsInJlcXVpcmUiLCJjcmVhdGVSZWFjdENsYXNzIiwic3RyaW5nIiwiQ2F0ZWdvcnkiLCJyZW5kZXIiLCJzZWxmIiwiY2F0ZWdvcnlVcmwiLCJwcm9wcyIsImNhdGVnb3J5IiwiaWQiLCJzbHVnIiwidGl0bGUiLCJjYXRlZ29yeVN0eWxlIiwiYmFja2dyb3VuZEltYWdlIiwiaW1hZ2UiLCJoYW5kbGVSb3V0aW5nIiwiYmluZCIsIm1vZHVsZSIsImV4cG9ydHMiXSwibWFwcGluZ3MiOiJBQUFBOztBQUNBLElBQUlBLFFBQVFDLFFBQVEsT0FBUixDQUFaO0FBQ0EsSUFBSUMsbUJBQW1CRCxRQUFRLG9CQUFSLENBQXZCO0FBQ0EsSUFBSUUsU0FBU0YsUUFBUSx3QkFBUixFQUFrQ0UsTUFBL0M7O0FBRUEsSUFBSUMsV0FBV0YsaUJBQWlCO0FBQUE7OztBQUU1QkcsWUFBUSxrQkFBWTtBQUNoQixZQUFJQyxPQUFPLElBQVg7QUFDQSxZQUFJQyxjQUFjLGdCQUFnQkQsS0FBS0UsS0FBTCxDQUFXQyxRQUFYLENBQW9CQyxFQUFwQyxHQUF5QyxHQUF6QyxHQUErQ1AsT0FBT1EsSUFBUCxDQUFZTCxLQUFLRSxLQUFMLENBQVdDLFFBQVgsQ0FBb0JHLEtBQWhDLENBQWpFO0FBQ0EsWUFBSUMsZ0JBQWdCO0FBQ2hCQyw2QkFBaUIsU0FBU1IsS0FBS0UsS0FBTCxDQUFXQyxRQUFYLENBQW9CTSxLQUE3QixHQUFxQztBQUR0QyxTQUFwQjtBQUdBLGVBQ0k7QUFBQTtBQUFBO0FBQ0ksMkJBQVUsbURBRGQ7QUFFSSx1QkFBT0Y7QUFGWDtBQUlJO0FBQUE7QUFBQSxrQkFBSSxXQUFVLGdCQUFkO0FBQ0k7QUFBQTtBQUFBO0FBQ0ksOEJBQUssUUFEVDtBQUVJLG1DQUFZLGlCQUZoQjtBQUdJLGlDQUFTUCxLQUFLRSxLQUFMLENBQVdRLGFBQVgsQ0FBeUJDLElBQXpCLENBQThCLElBQTlCLEVBQW9DWCxLQUFLRSxLQUFMLENBQVdDLFFBQS9DLENBSGI7QUFJSSw4QkFBTUYsV0FKVjtBQUtJLCtCQUFPRCxLQUFLRSxLQUFMLENBQVdDLFFBQVgsQ0FBb0JHO0FBTC9CO0FBT0NOLHlCQUFLRSxLQUFMLENBQVdDLFFBQVgsQ0FBb0JHO0FBUHJCO0FBREo7QUFKSixTQURKO0FBa0JIO0FBMUIyQixDQUFqQixDQUFmO0FBNEJBTSxPQUFPQyxPQUFQLEdBQWlCZixRQUFqQiIsImZpbGUiOiJjYXRlZ29yeS5qc3giLCJzb3VyY2VzQ29udGVudCI6WyIndXNlIHN0cmljdCc7XG52YXIgUmVhY3QgPSByZXF1aXJlKCdyZWFjdCcpO1xudmFyIGNyZWF0ZVJlYWN0Q2xhc3MgPSByZXF1aXJlKCdjcmVhdGUtcmVhY3QtY2xhc3MnKTtcbnZhciBzdHJpbmcgPSByZXF1aXJlKCcuLy4uLy4uLy4uL3V0aWxzL3V0aWxzJykuc3RyaW5nO1xuXG52YXIgQ2F0ZWdvcnkgPSBjcmVhdGVSZWFjdENsYXNzKHtcblxuICAgIHJlbmRlcjogZnVuY3Rpb24gKCkge1xuICAgICAgICB2YXIgc2VsZiA9IHRoaXM7XG4gICAgICAgIHZhciBjYXRlZ29yeVVybCA9ICcjL2NhdGVnb3J5LycgKyBzZWxmLnByb3BzLmNhdGVnb3J5LmlkICsgJy8nICsgc3RyaW5nLnNsdWcoc2VsZi5wcm9wcy5jYXRlZ29yeS50aXRsZSk7XG4gICAgICAgIHZhciBjYXRlZ29yeVN0eWxlID0ge1xuICAgICAgICAgICAgYmFja2dyb3VuZEltYWdlOiAndXJsKCcgKyBzZWxmLnByb3BzLmNhdGVnb3J5LmltYWdlICsgJyknXG4gICAgICAgIH07XG4gICAgICAgIHJldHVybiAoXG4gICAgICAgICAgICA8ZGl2XG4gICAgICAgICAgICAgICAgY2xhc3NOYW1lPVwiY2F0ZWdvcnktcHJldmlldyBjb2wteHMtNiBjb2wtc20tNCBpbWFnZS1jYXRlZ29yeVwiXG4gICAgICAgICAgICAgICAgc3R5bGU9e2NhdGVnb3J5U3R5bGV9XG4gICAgICAgICAgICA+XG4gICAgICAgICAgICAgICAgPGgyIGNsYXNzTmFtZT1cImNhdGVnb3J5LXRpdGxlXCI+XG4gICAgICAgICAgICAgICAgICAgIDxhXG4gICAgICAgICAgICAgICAgICAgICAgICByb2xlPSdidXR0b24nXG4gICAgICAgICAgICAgICAgICAgICAgICBjbGFzc05hbWUgPSBcImNhdGVnb3J5LWJ1dHRvblwiXG4gICAgICAgICAgICAgICAgICAgICAgICBvbkNsaWNrPXtzZWxmLnByb3BzLmhhbmRsZVJvdXRpbmcuYmluZChudWxsLCBzZWxmLnByb3BzLmNhdGVnb3J5KX1cbiAgICAgICAgICAgICAgICAgICAgICAgIGhyZWY9e2NhdGVnb3J5VXJsfVxuICAgICAgICAgICAgICAgICAgICAgICAgdGl0bGU9e3NlbGYucHJvcHMuY2F0ZWdvcnkudGl0bGV9XG4gICAgICAgICAgICAgICAgICAgID5cbiAgICAgICAgICAgICAgICAgICAge3NlbGYucHJvcHMuY2F0ZWdvcnkudGl0bGV9XG4gICAgICAgICAgICAgICAgICAgIDwvYT5cbiAgICAgICAgICAgICAgICA8L2gyPlxuICAgICAgICAgICAgPC9kaXY+XG4gICAgICAgIClcbiAgICB9XG59KTtcbm1vZHVsZS5leHBvcnRzID0gQ2F0ZWdvcnk7Il19
-},{"./../../../utils/utils":"/mnt/c/swiggis.original/src/client/js/utils/utils.js","create-react-class":"/mnt/c/swiggis.original/node_modules/create-react-class/index.js","react":"/mnt/c/swiggis.original/node_modules/react/react.js"}],"/mnt/c/swiggis.original/src/client/js/components/lists/post/post.jsx":[function(require,module,exports){
+//# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbImNhdGVnb3J5LmpzeCJdLCJuYW1lcyI6WyJSZWFjdCIsInJlcXVpcmUiLCJjcmVhdGVSZWFjdENsYXNzIiwic3RyaW5nIiwiQ2F0ZWdvcnkiLCJyZW5kZXIiLCJzZWxmIiwiY2F0ZWdvcnlVcmwiLCJwcm9wcyIsImNhdGVnb3J5IiwiaWQiLCJzbHVnIiwidGl0bGUiLCJjYXRlZ29yeVN0eWxlIiwiYmFja2dyb3VuZEltYWdlIiwiaW1hZ2UiLCJoYW5kbGVSb3V0aW5nIiwiYmluZCIsIm1vZHVsZSIsImV4cG9ydHMiXSwibWFwcGluZ3MiOiJBQUFBOztBQUNBLElBQUlBLFFBQVFDLFFBQVEsT0FBUixDQUFaO0FBQ0EsSUFBSUMsbUJBQW1CRCxRQUFRLG9CQUFSLENBQXZCO0FBQ0EsSUFBSUUsU0FBU0YsUUFBUSx3QkFBUixFQUFrQ0UsTUFBL0M7O0FBRUEsSUFBSUMsV0FBV0YsaUJBQWlCO0FBQUE7OztBQUU1QkcsWUFBUSxrQkFBWTtBQUNoQixZQUFJQyxPQUFPLElBQVg7QUFDQSxZQUFJQyxjQUFjLGdCQUFnQkQsS0FBS0UsS0FBTCxDQUFXQyxRQUFYLENBQW9CQyxFQUFwQyxHQUF5QyxHQUF6QyxHQUErQ1AsT0FBT1EsSUFBUCxDQUFZTCxLQUFLRSxLQUFMLENBQVdDLFFBQVgsQ0FBb0JHLEtBQWhDLENBQWpFO0FBQ0EsWUFBSUMsZ0JBQWdCO0FBQ2hCQyw2QkFBaUIsU0FBU1IsS0FBS0UsS0FBTCxDQUFXQyxRQUFYLENBQW9CTSxLQUE3QixHQUFxQztBQUR0QyxTQUFwQjtBQUdBLGVBQ0k7QUFBQTtBQUFBO0FBQ0ksMkJBQVUsbURBRGQ7QUFFSSx1QkFBT0Y7QUFGWDtBQUlJO0FBQUE7QUFBQSxrQkFBSSxXQUFVLGdCQUFkO0FBQ0k7QUFBQTtBQUFBO0FBQ0ksOEJBQUssUUFEVDtBQUVJLG1DQUFZLGlCQUZoQjtBQUdJLGlDQUFTUCxLQUFLRSxLQUFMLENBQVdRLGFBQVgsQ0FBeUJDLElBQXpCLENBQThCLElBQTlCLEVBQW9DWCxLQUFLRSxLQUFMLENBQVdDLFFBQS9DLENBSGI7QUFJSSw4QkFBTUYsV0FKVjtBQUtJLCtCQUFPRCxLQUFLRSxLQUFMLENBQVdDLFFBQVgsQ0FBb0JHO0FBTC9CO0FBT0NOLHlCQUFLRSxLQUFMLENBQVdDLFFBQVgsQ0FBb0JHO0FBUHJCO0FBREo7QUFKSixTQURKO0FBa0JIO0FBMUIyQixDQUFqQixDQUFmO0FBNEJBTSxPQUFPQyxPQUFQLEdBQWlCZixRQUFqQiIsImZpbGUiOiJjYXRlZ29yeS5qc3giLCJzb3VyY2VzQ29udGVudCI6WyIndXNlIHN0cmljdCc7XHJcbnZhciBSZWFjdCA9IHJlcXVpcmUoJ3JlYWN0Jyk7XHJcbnZhciBjcmVhdGVSZWFjdENsYXNzID0gcmVxdWlyZSgnY3JlYXRlLXJlYWN0LWNsYXNzJyk7XHJcbnZhciBzdHJpbmcgPSByZXF1aXJlKCcuLy4uLy4uLy4uL3V0aWxzL3V0aWxzJykuc3RyaW5nO1xyXG5cclxudmFyIENhdGVnb3J5ID0gY3JlYXRlUmVhY3RDbGFzcyh7XHJcblxyXG4gICAgcmVuZGVyOiBmdW5jdGlvbiAoKSB7XHJcbiAgICAgICAgdmFyIHNlbGYgPSB0aGlzO1xyXG4gICAgICAgIHZhciBjYXRlZ29yeVVybCA9ICcjL2NhdGVnb3J5LycgKyBzZWxmLnByb3BzLmNhdGVnb3J5LmlkICsgJy8nICsgc3RyaW5nLnNsdWcoc2VsZi5wcm9wcy5jYXRlZ29yeS50aXRsZSk7XHJcbiAgICAgICAgdmFyIGNhdGVnb3J5U3R5bGUgPSB7XHJcbiAgICAgICAgICAgIGJhY2tncm91bmRJbWFnZTogJ3VybCgnICsgc2VsZi5wcm9wcy5jYXRlZ29yeS5pbWFnZSArICcpJ1xyXG4gICAgICAgIH07XHJcbiAgICAgICAgcmV0dXJuIChcclxuICAgICAgICAgICAgPGRpdlxyXG4gICAgICAgICAgICAgICAgY2xhc3NOYW1lPVwiY2F0ZWdvcnktcHJldmlldyBjb2wteHMtNiBjb2wtc20tNCBpbWFnZS1jYXRlZ29yeVwiXHJcbiAgICAgICAgICAgICAgICBzdHlsZT17Y2F0ZWdvcnlTdHlsZX1cclxuICAgICAgICAgICAgPlxyXG4gICAgICAgICAgICAgICAgPGgyIGNsYXNzTmFtZT1cImNhdGVnb3J5LXRpdGxlXCI+XHJcbiAgICAgICAgICAgICAgICAgICAgPGFcclxuICAgICAgICAgICAgICAgICAgICAgICAgcm9sZT0nYnV0dG9uJ1xyXG4gICAgICAgICAgICAgICAgICAgICAgICBjbGFzc05hbWUgPSBcImNhdGVnb3J5LWJ1dHRvblwiXHJcbiAgICAgICAgICAgICAgICAgICAgICAgIG9uQ2xpY2s9e3NlbGYucHJvcHMuaGFuZGxlUm91dGluZy5iaW5kKG51bGwsIHNlbGYucHJvcHMuY2F0ZWdvcnkpfVxyXG4gICAgICAgICAgICAgICAgICAgICAgICBocmVmPXtjYXRlZ29yeVVybH1cclxuICAgICAgICAgICAgICAgICAgICAgICAgdGl0bGU9e3NlbGYucHJvcHMuY2F0ZWdvcnkudGl0bGV9XHJcbiAgICAgICAgICAgICAgICAgICAgPlxyXG4gICAgICAgICAgICAgICAgICAgIHtzZWxmLnByb3BzLmNhdGVnb3J5LnRpdGxlfVxyXG4gICAgICAgICAgICAgICAgICAgIDwvYT5cclxuICAgICAgICAgICAgICAgIDwvaDI+XHJcbiAgICAgICAgICAgIDwvZGl2PlxyXG4gICAgICAgIClcclxuICAgIH1cclxufSk7XHJcbm1vZHVsZS5leHBvcnRzID0gQ2F0ZWdvcnk7Il19
+},{"./../../../utils/utils":"C:\\swiggis.austin\\src\\client\\js\\utils\\utils.js","create-react-class":"C:\\swiggis.austin\\node_modules\\create-react-class\\index.js","react":"C:\\swiggis.austin\\node_modules\\react\\react.js"}],"C:\\swiggis.austin\\src\\client\\js\\components\\lists\\post\\post.jsx":[function(require,module,exports){
 'use strict';
 
 var React = require('react');
@@ -57897,7 +57026,7 @@ var Post = createReactClass({
         var categoryUrl = '#/category/' + self.props.article.category.id + '/' + string.slug(self.props.article.category.title);
         return React.createElement(
             'div',
-            { key: this.props.key, className: 'post-preview col-xs-10  no-gutter' },
+            { key: this.props.id, className: 'post-preview col-xs-10  no-gutter' },
             React.createElement(
                 'div',
                 null,
@@ -57940,8 +57069,8 @@ var Post = createReactClass({
     }
 });
 module.exports = Post;
-//# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInBvc3QuanN4Il0sIm5hbWVzIjpbIlJlYWN0IiwicmVxdWlyZSIsImNyZWF0ZVJlYWN0Q2xhc3MiLCJzdHJpbmciLCJQb3N0IiwicmVuZGVyIiwic2VsZiIsImFydGljbGVVcmwiLCJzbHVnIiwicHJvcHMiLCJhcnRpY2xlIiwidGl0bGUiLCJjYXRlZ29yeVVybCIsImNhdGVnb3J5IiwiaWQiLCJrZXkiLCJoYW5kbGVSb3V0aW5nIiwiYmluZCIsInN1YnRpdGxlIiwibW9kdWxlIiwiZXhwb3J0cyJdLCJtYXBwaW5ncyI6IkFBQUE7O0FBQ0EsSUFBSUEsUUFBUUMsUUFBUSxPQUFSLENBQVo7QUFDQSxJQUFJQyxtQkFBbUJELFFBQVEsb0JBQVIsQ0FBdkI7QUFDQSxJQUFJRSxTQUFTRixRQUFRLHdCQUFSLEVBQWtDRSxNQUEvQzs7QUFFQSxJQUFJQyxPQUFPRixpQkFBaUI7QUFBQTs7QUFDeEJHLFlBQVEsa0JBQVk7QUFDaEIsWUFBSUMsT0FBTyxJQUFYO0FBQ0EsWUFBSUMsYUFBYSxlQUFlSixPQUFPSyxJQUFQLENBQVlGLEtBQUtHLEtBQUwsQ0FBV0MsT0FBWCxDQUFtQkMsS0FBL0IsQ0FBaEM7QUFDQSxZQUFJQyxjQUFjLGdCQUFnQk4sS0FBS0csS0FBTCxDQUFXQyxPQUFYLENBQW1CRyxRQUFuQixDQUE0QkMsRUFBNUMsR0FBaUQsR0FBakQsR0FBdURYLE9BQU9LLElBQVAsQ0FBWUYsS0FBS0csS0FBTCxDQUFXQyxPQUFYLENBQW1CRyxRQUFuQixDQUE0QkYsS0FBeEMsQ0FBekU7QUFDQSxlQUNJO0FBQUE7QUFBQSxjQUFLLEtBQUssS0FBS0YsS0FBTCxDQUFXTSxHQUFyQixFQUEwQixXQUFVLG1DQUFwQztBQUNJO0FBQUE7QUFBQTtBQUNJO0FBQUE7QUFBQTtBQUNJO0FBQUE7QUFBQTtBQUNJLGtDQUFLLFFBRFQ7QUFFSSxxQ0FBU1QsS0FBS0csS0FBTCxDQUFXTyxhQUFYLENBQXlCQyxJQUF6QixDQUE4QixJQUE5QixFQUFvQ1gsS0FBS0csS0FBTCxDQUFXQyxPQUEvQyxDQUZiO0FBR0ksa0NBQU1ILFVBSFY7QUFJSSxtQ0FBTyxLQUFLRSxLQUFMLENBQVdDLE9BQVgsQ0FBbUJDO0FBSjlCO0FBTUssNkJBQUtGLEtBQUwsQ0FBV0MsT0FBWCxDQUFtQkM7QUFOeEI7QUFESjtBQURKLGFBREo7QUFjSTtBQUFBO0FBQUE7QUFBSSxxQkFBS0YsS0FBTCxDQUFXQyxPQUFYLENBQW1CUTtBQUF2QixhQWRKO0FBZ0JJO0FBQUE7QUFBQSxrQkFBRyxXQUFVLE1BQWI7QUFBQTtBQUVJO0FBQUE7QUFBQTtBQUNJLDhCQUFLLFFBRFQ7QUFFSSxpQ0FBU1osS0FBS0csS0FBTCxDQUFXTyxhQUFYLENBQXlCQyxJQUF6QixDQUE4QixJQUE5QixFQUFvQ1gsS0FBS0csS0FBTCxDQUFXQyxPQUFYLENBQW1CRyxRQUF2RCxDQUZiO0FBR0ksOEJBQU1ELFdBSFY7QUFJSSwrQkFBT04sS0FBS0csS0FBTCxDQUFXQyxPQUFYLENBQW1CRyxRQUFuQixDQUE0QkY7QUFKdkM7QUFNQ0wseUJBQUtHLEtBQUwsQ0FBV0MsT0FBWCxDQUFtQkcsUUFBbkIsQ0FBNEJGO0FBTjdCO0FBRko7QUFoQkosU0FESjtBQThCSDtBQW5DdUIsQ0FBakIsQ0FBWDtBQXFDQVEsT0FBT0MsT0FBUCxHQUFpQmhCLElBQWpCIiwiZmlsZSI6InBvc3QuanN4Iiwic291cmNlc0NvbnRlbnQiOlsiJ3VzZSBzdHJpY3QnO1xudmFyIFJlYWN0ID0gcmVxdWlyZSgncmVhY3QnKTtcbnZhciBjcmVhdGVSZWFjdENsYXNzID0gcmVxdWlyZSgnY3JlYXRlLXJlYWN0LWNsYXNzJyk7XG52YXIgc3RyaW5nID0gcmVxdWlyZSgnLi8uLi8uLi8uLi91dGlscy91dGlscycpLnN0cmluZztcblxudmFyIFBvc3QgPSBjcmVhdGVSZWFjdENsYXNzKHtcbiAgICByZW5kZXI6IGZ1bmN0aW9uICgpIHtcbiAgICAgICAgdmFyIHNlbGYgPSB0aGlzO1xuICAgICAgICB2YXIgYXJ0aWNsZVVybCA9ICcjL2FydGljbGUvJyArIHN0cmluZy5zbHVnKHNlbGYucHJvcHMuYXJ0aWNsZS50aXRsZSk7XG4gICAgICAgIHZhciBjYXRlZ29yeVVybCA9ICcjL2NhdGVnb3J5LycgKyBzZWxmLnByb3BzLmFydGljbGUuY2F0ZWdvcnkuaWQgKyAnLycgKyBzdHJpbmcuc2x1ZyhzZWxmLnByb3BzLmFydGljbGUuY2F0ZWdvcnkudGl0bGUpO1xuICAgICAgICByZXR1cm4gKFxuICAgICAgICAgICAgPGRpdiBrZXk9e3RoaXMucHJvcHMua2V5fSBjbGFzc05hbWU9XCJwb3N0LXByZXZpZXcgY29sLXhzLTEwICBuby1ndXR0ZXJcIj5cbiAgICAgICAgICAgICAgICA8ZGl2PlxuICAgICAgICAgICAgICAgICAgICA8aDI+XG4gICAgICAgICAgICAgICAgICAgICAgICA8YVxuICAgICAgICAgICAgICAgICAgICAgICAgICAgIHJvbGU9J2J1dHRvbidcbiAgICAgICAgICAgICAgICAgICAgICAgICAgICBvbkNsaWNrPXtzZWxmLnByb3BzLmhhbmRsZVJvdXRpbmcuYmluZChudWxsLCBzZWxmLnByb3BzLmFydGljbGUpfVxuICAgICAgICAgICAgICAgICAgICAgICAgICAgIGhyZWY9e2FydGljbGVVcmx9XG4gICAgICAgICAgICAgICAgICAgICAgICAgICAgdGl0bGU9e3RoaXMucHJvcHMuYXJ0aWNsZS50aXRsZX1cbiAgICAgICAgICAgICAgICAgICAgICAgID5cbiAgICAgICAgICAgICAgICAgICAgICAgICAgICB7dGhpcy5wcm9wcy5hcnRpY2xlLnRpdGxlfVxuICAgICAgICAgICAgICAgICAgICAgICAgPC9hPlxuICAgICAgICAgICAgICAgICAgICA8L2gyPlxuXG4gICAgICAgICAgICAgICAgPC9kaXY+XG4gICAgICAgICAgICAgICAgPHA+e3RoaXMucHJvcHMuYXJ0aWNsZS5zdWJ0aXRsZX08L3A+XG5cbiAgICAgICAgICAgICAgICA8cCBjbGFzc05hbWU9XCJtZXRhXCI+XG4gICAgICAgICAgICAgICAgICAgIFB1Ymxpc2hlZCBpbiA6ICZuYnNwO1xuICAgICAgICAgICAgICAgICAgICA8YVxuICAgICAgICAgICAgICAgICAgICAgICAgcm9sZT0nYnV0dG9uJ1xuICAgICAgICAgICAgICAgICAgICAgICAgb25DbGljaz17c2VsZi5wcm9wcy5oYW5kbGVSb3V0aW5nLmJpbmQobnVsbCwgc2VsZi5wcm9wcy5hcnRpY2xlLmNhdGVnb3J5KX1cbiAgICAgICAgICAgICAgICAgICAgICAgIGhyZWY9e2NhdGVnb3J5VXJsfVxuICAgICAgICAgICAgICAgICAgICAgICAgdGl0bGU9e3NlbGYucHJvcHMuYXJ0aWNsZS5jYXRlZ29yeS50aXRsZX1cbiAgICAgICAgICAgICAgICAgICAgPlxuICAgICAgICAgICAgICAgICAgICB7c2VsZi5wcm9wcy5hcnRpY2xlLmNhdGVnb3J5LnRpdGxlfVxuICAgICAgICAgICAgICAgICAgICA8L2E+XG4gICAgICAgICAgICAgICAgPC9wPlxuICAgICAgICAgICAgPC9kaXY+XG4gICAgICAgIClcbiAgICB9XG59KTtcbm1vZHVsZS5leHBvcnRzID0gUG9zdDsiXX0=
-},{"./../../../utils/utils":"/mnt/c/swiggis.original/src/client/js/utils/utils.js","create-react-class":"/mnt/c/swiggis.original/node_modules/create-react-class/index.js","react":"/mnt/c/swiggis.original/node_modules/react/react.js"}],"/mnt/c/swiggis.original/src/client/js/components/lists/post/posts.jsx":[function(require,module,exports){
+//# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInBvc3QuanN4Il0sIm5hbWVzIjpbIlJlYWN0IiwicmVxdWlyZSIsImNyZWF0ZVJlYWN0Q2xhc3MiLCJzdHJpbmciLCJQb3N0IiwicmVuZGVyIiwic2VsZiIsImFydGljbGVVcmwiLCJzbHVnIiwicHJvcHMiLCJhcnRpY2xlIiwidGl0bGUiLCJjYXRlZ29yeVVybCIsImNhdGVnb3J5IiwiaWQiLCJoYW5kbGVSb3V0aW5nIiwiYmluZCIsInN1YnRpdGxlIiwibW9kdWxlIiwiZXhwb3J0cyJdLCJtYXBwaW5ncyI6IkFBQUE7O0FBQ0EsSUFBSUEsUUFBUUMsUUFBUSxPQUFSLENBQVo7QUFDQSxJQUFJQyxtQkFBbUJELFFBQVEsb0JBQVIsQ0FBdkI7QUFDQSxJQUFJRSxTQUFTRixRQUFRLHdCQUFSLEVBQWtDRSxNQUEvQzs7QUFFQSxJQUFJQyxPQUFPRixpQkFBaUI7QUFBQTs7QUFDeEJHLFlBQVEsa0JBQVk7QUFDaEIsWUFBSUMsT0FBTyxJQUFYO0FBQ0EsWUFBSUMsYUFBYSxlQUFlSixPQUFPSyxJQUFQLENBQVlGLEtBQUtHLEtBQUwsQ0FBV0MsT0FBWCxDQUFtQkMsS0FBL0IsQ0FBaEM7QUFDQSxZQUFJQyxjQUFjLGdCQUFnQk4sS0FBS0csS0FBTCxDQUFXQyxPQUFYLENBQW1CRyxRQUFuQixDQUE0QkMsRUFBNUMsR0FBaUQsR0FBakQsR0FBdURYLE9BQU9LLElBQVAsQ0FBWUYsS0FBS0csS0FBTCxDQUFXQyxPQUFYLENBQW1CRyxRQUFuQixDQUE0QkYsS0FBeEMsQ0FBekU7QUFDQSxlQUNJO0FBQUE7QUFBQSxjQUFLLEtBQUssS0FBS0YsS0FBTCxDQUFXSyxFQUFyQixFQUF5QixXQUFVLG1DQUFuQztBQUNJO0FBQUE7QUFBQTtBQUNJO0FBQUE7QUFBQTtBQUNJO0FBQUE7QUFBQTtBQUNJLGtDQUFLLFFBRFQ7QUFFSSxxQ0FBU1IsS0FBS0csS0FBTCxDQUFXTSxhQUFYLENBQXlCQyxJQUF6QixDQUE4QixJQUE5QixFQUFvQ1YsS0FBS0csS0FBTCxDQUFXQyxPQUEvQyxDQUZiO0FBR0ksa0NBQU1ILFVBSFY7QUFJSSxtQ0FBTyxLQUFLRSxLQUFMLENBQVdDLE9BQVgsQ0FBbUJDO0FBSjlCO0FBTUssNkJBQUtGLEtBQUwsQ0FBV0MsT0FBWCxDQUFtQkM7QUFOeEI7QUFESjtBQURKLGFBREo7QUFjSTtBQUFBO0FBQUE7QUFBSSxxQkFBS0YsS0FBTCxDQUFXQyxPQUFYLENBQW1CTztBQUF2QixhQWRKO0FBZ0JJO0FBQUE7QUFBQSxrQkFBRyxXQUFVLE1BQWI7QUFBQTtBQUVJO0FBQUE7QUFBQTtBQUNJLDhCQUFLLFFBRFQ7QUFFSSxpQ0FBU1gsS0FBS0csS0FBTCxDQUFXTSxhQUFYLENBQXlCQyxJQUF6QixDQUE4QixJQUE5QixFQUFvQ1YsS0FBS0csS0FBTCxDQUFXQyxPQUFYLENBQW1CRyxRQUF2RCxDQUZiO0FBR0ksOEJBQU1ELFdBSFY7QUFJSSwrQkFBT04sS0FBS0csS0FBTCxDQUFXQyxPQUFYLENBQW1CRyxRQUFuQixDQUE0QkY7QUFKdkM7QUFNQ0wseUJBQUtHLEtBQUwsQ0FBV0MsT0FBWCxDQUFtQkcsUUFBbkIsQ0FBNEJGO0FBTjdCO0FBRko7QUFoQkosU0FESjtBQThCSDtBQW5DdUIsQ0FBakIsQ0FBWDtBQXFDQU8sT0FBT0MsT0FBUCxHQUFpQmYsSUFBakIiLCJmaWxlIjoicG9zdC5qc3giLCJzb3VyY2VzQ29udGVudCI6WyIndXNlIHN0cmljdCc7XHJcbnZhciBSZWFjdCA9IHJlcXVpcmUoJ3JlYWN0Jyk7XHJcbnZhciBjcmVhdGVSZWFjdENsYXNzID0gcmVxdWlyZSgnY3JlYXRlLXJlYWN0LWNsYXNzJyk7XHJcbnZhciBzdHJpbmcgPSByZXF1aXJlKCcuLy4uLy4uLy4uL3V0aWxzL3V0aWxzJykuc3RyaW5nO1xyXG5cclxudmFyIFBvc3QgPSBjcmVhdGVSZWFjdENsYXNzKHtcclxuICAgIHJlbmRlcjogZnVuY3Rpb24gKCkge1xyXG4gICAgICAgIHZhciBzZWxmID0gdGhpcztcclxuICAgICAgICB2YXIgYXJ0aWNsZVVybCA9ICcjL2FydGljbGUvJyArIHN0cmluZy5zbHVnKHNlbGYucHJvcHMuYXJ0aWNsZS50aXRsZSk7XHJcbiAgICAgICAgdmFyIGNhdGVnb3J5VXJsID0gJyMvY2F0ZWdvcnkvJyArIHNlbGYucHJvcHMuYXJ0aWNsZS5jYXRlZ29yeS5pZCArICcvJyArIHN0cmluZy5zbHVnKHNlbGYucHJvcHMuYXJ0aWNsZS5jYXRlZ29yeS50aXRsZSk7XHJcbiAgICAgICAgcmV0dXJuIChcclxuICAgICAgICAgICAgPGRpdiBrZXk9e3RoaXMucHJvcHMuaWR9IGNsYXNzTmFtZT1cInBvc3QtcHJldmlldyBjb2wteHMtMTAgIG5vLWd1dHRlclwiPlxyXG4gICAgICAgICAgICAgICAgPGRpdj5cclxuICAgICAgICAgICAgICAgICAgICA8aDI+XHJcbiAgICAgICAgICAgICAgICAgICAgICAgIDxhXHJcbiAgICAgICAgICAgICAgICAgICAgICAgICAgICByb2xlPSdidXR0b24nXHJcbiAgICAgICAgICAgICAgICAgICAgICAgICAgICBvbkNsaWNrPXtzZWxmLnByb3BzLmhhbmRsZVJvdXRpbmcuYmluZChudWxsLCBzZWxmLnByb3BzLmFydGljbGUpfVxyXG4gICAgICAgICAgICAgICAgICAgICAgICAgICAgaHJlZj17YXJ0aWNsZVVybH1cclxuICAgICAgICAgICAgICAgICAgICAgICAgICAgIHRpdGxlPXt0aGlzLnByb3BzLmFydGljbGUudGl0bGV9XHJcbiAgICAgICAgICAgICAgICAgICAgICAgID5cclxuICAgICAgICAgICAgICAgICAgICAgICAgICAgIHt0aGlzLnByb3BzLmFydGljbGUudGl0bGV9XHJcbiAgICAgICAgICAgICAgICAgICAgICAgIDwvYT5cclxuICAgICAgICAgICAgICAgICAgICA8L2gyPlxyXG5cclxuICAgICAgICAgICAgICAgIDwvZGl2PlxyXG4gICAgICAgICAgICAgICAgPHA+e3RoaXMucHJvcHMuYXJ0aWNsZS5zdWJ0aXRsZX08L3A+XHJcblxyXG4gICAgICAgICAgICAgICAgPHAgY2xhc3NOYW1lPVwibWV0YVwiPlxyXG4gICAgICAgICAgICAgICAgICAgIFB1Ymxpc2hlZCBpbiA6ICZuYnNwO1xyXG4gICAgICAgICAgICAgICAgICAgIDxhXHJcbiAgICAgICAgICAgICAgICAgICAgICAgIHJvbGU9J2J1dHRvbidcclxuICAgICAgICAgICAgICAgICAgICAgICAgb25DbGljaz17c2VsZi5wcm9wcy5oYW5kbGVSb3V0aW5nLmJpbmQobnVsbCwgc2VsZi5wcm9wcy5hcnRpY2xlLmNhdGVnb3J5KX1cclxuICAgICAgICAgICAgICAgICAgICAgICAgaHJlZj17Y2F0ZWdvcnlVcmx9XHJcbiAgICAgICAgICAgICAgICAgICAgICAgIHRpdGxlPXtzZWxmLnByb3BzLmFydGljbGUuY2F0ZWdvcnkudGl0bGV9XHJcbiAgICAgICAgICAgICAgICAgICAgPlxyXG4gICAgICAgICAgICAgICAgICAgIHtzZWxmLnByb3BzLmFydGljbGUuY2F0ZWdvcnkudGl0bGV9XHJcbiAgICAgICAgICAgICAgICAgICAgPC9hPlxyXG4gICAgICAgICAgICAgICAgPC9wPlxyXG4gICAgICAgICAgICA8L2Rpdj5cclxuICAgICAgICApXHJcbiAgICB9XHJcbn0pO1xyXG5tb2R1bGUuZXhwb3J0cyA9IFBvc3Q7Il19
+},{"./../../../utils/utils":"C:\\swiggis.austin\\src\\client\\js\\utils\\utils.js","create-react-class":"C:\\swiggis.austin\\node_modules\\create-react-class\\index.js","react":"C:\\swiggis.austin\\node_modules\\react\\react.js"}],"C:\\swiggis.austin\\src\\client\\js\\components\\lists\\post\\posts.jsx":[function(require,module,exports){
 'use strict';
 
 var React = require('react');
@@ -57971,8 +57100,8 @@ var Posts = createReactClass({
     }
 });
 module.exports = Posts;
-//# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInBvc3RzLmpzeCJdLCJuYW1lcyI6WyJSZWFjdCIsInJlcXVpcmUiLCJjcmVhdGVSZWFjdENsYXNzIiwiUG9zdCIsIlBvc3RzIiwicmVuZGVyIiwic2VsZiIsInByb3BzIiwiYWN0aXZlSG9tZVBhbmVsIiwiYXJ0aWNsZXMiLCJtYXAiLCJhcnRpY2xlIiwiaSIsImhhbmRsZVJvdXRpbmciLCJtb2R1bGUiLCJleHBvcnRzIl0sIm1hcHBpbmdzIjoiQUFBQTs7QUFDQSxJQUFJQSxRQUFRQyxRQUFRLE9BQVIsQ0FBWjtBQUNBLElBQUlDLG1CQUFtQkQsUUFBUSxvQkFBUixDQUF2QjtBQUNBLElBQUlFLE9BQU9GLFFBQVEsWUFBUixDQUFYOztBQUVBLElBQUlHLFFBQVFGLGlCQUFpQjtBQUFBOztBQUN6QkcsWUFBUSxrQkFBWTtBQUNoQixZQUFJQyxPQUFPLElBQVg7QUFDQSxlQUNJO0FBQUE7QUFBQSxjQUFLLFdBQVcscUJBQXNCLEtBQUtDLEtBQUwsQ0FBV0MsZUFBWCxLQUErQixVQUFoQyxHQUE4QyxpQkFBOUMsR0FBa0UsT0FBdkYsQ0FBaEI7QUFDSyxpQkFBS0QsS0FBTCxDQUFXRSxRQUFYLENBQW9CQyxHQUFwQixDQUF3QixVQUFVQyxPQUFWLEVBQW1CQyxDQUFuQixFQUFzQjtBQUMzQyx1QkFBTztBQUFBO0FBQUEsc0JBQVMsS0FBS0EsQ0FBZCxFQUFpQixXQUFVLE1BQTNCO0FBQ0gsd0NBQUMsSUFBRDtBQUNJLDZCQUFLQSxDQURUO0FBRUksaUNBQVNELE9BRmI7QUFHSSx1Q0FBZUwsS0FBS0MsS0FBTCxDQUFXTTtBQUg5QjtBQURHLGlCQUFQO0FBT0gsYUFSQTtBQURMLFNBREo7QUFhSDtBQWhCd0IsQ0FBakIsQ0FBWjtBQWtCQUMsT0FBT0MsT0FBUCxHQUFpQlgsS0FBakIiLCJmaWxlIjoicG9zdHMuanN4Iiwic291cmNlc0NvbnRlbnQiOlsiJ3VzZSBzdHJpY3QnO1xudmFyIFJlYWN0ID0gcmVxdWlyZSgncmVhY3QnKTtcbnZhciBjcmVhdGVSZWFjdENsYXNzID0gcmVxdWlyZSgnY3JlYXRlLXJlYWN0LWNsYXNzJyk7XG52YXIgUG9zdCA9IHJlcXVpcmUoJy4vcG9zdC5qc3gnKTtcblxudmFyIFBvc3RzID0gY3JlYXRlUmVhY3RDbGFzcyh7XG4gICAgcmVuZGVyOiBmdW5jdGlvbiAoKSB7XG4gICAgICAgIHZhciBzZWxmID0gdGhpcztcbiAgICAgICAgcmV0dXJuIChcbiAgICAgICAgICAgIDxkaXYgY2xhc3NOYW1lPXtcImhvbWUtcGFnZS1wb3N0c1wiICsgKCh0aGlzLnByb3BzLmFjdGl2ZUhvbWVQYW5lbCA9PT0gJ2FydGljbGVzJykgPyAnIHNlY3Rpb24tZmFkZWluJyA6ICcgaGlkZScpfT5cbiAgICAgICAgICAgICAgICB7dGhpcy5wcm9wcy5hcnRpY2xlcy5tYXAoZnVuY3Rpb24gKGFydGljbGUsIGkpIHtcbiAgICAgICAgICAgICAgICAgICAgcmV0dXJuIDxhcnRpY2xlIGtleT17aX0gY2xhc3NOYW1lPVwicG9zdFwiPlxuICAgICAgICAgICAgICAgICAgICAgICAgPFBvc3RcbiAgICAgICAgICAgICAgICAgICAgICAgICAgICBrZXk9e2l9XG4gICAgICAgICAgICAgICAgICAgICAgICAgICAgYXJ0aWNsZT17YXJ0aWNsZX1cbiAgICAgICAgICAgICAgICAgICAgICAgICAgICBoYW5kbGVSb3V0aW5nPXtzZWxmLnByb3BzLmhhbmRsZVJvdXRpbmd9XG4gICAgICAgICAgICAgICAgICAgICAgICAvPlxuICAgICAgICAgICAgICAgICAgICA8L2FydGljbGU+O1xuICAgICAgICAgICAgICAgIH0pfVxuICAgICAgICAgICAgPC9kaXY+XG4gICAgICAgIClcbiAgICB9XG59KTtcbm1vZHVsZS5leHBvcnRzID0gUG9zdHM7Il19
-},{"./post.jsx":"/mnt/c/swiggis.original/src/client/js/components/lists/post/post.jsx","create-react-class":"/mnt/c/swiggis.original/node_modules/create-react-class/index.js","react":"/mnt/c/swiggis.original/node_modules/react/react.js"}],"/mnt/c/swiggis.original/src/client/js/components/pages/about.jsx":[function(require,module,exports){
+//# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInBvc3RzLmpzeCJdLCJuYW1lcyI6WyJSZWFjdCIsInJlcXVpcmUiLCJjcmVhdGVSZWFjdENsYXNzIiwiUG9zdCIsIlBvc3RzIiwicmVuZGVyIiwic2VsZiIsInByb3BzIiwiYWN0aXZlSG9tZVBhbmVsIiwiYXJ0aWNsZXMiLCJtYXAiLCJhcnRpY2xlIiwiaSIsImhhbmRsZVJvdXRpbmciLCJtb2R1bGUiLCJleHBvcnRzIl0sIm1hcHBpbmdzIjoiQUFBQTs7QUFDQSxJQUFJQSxRQUFRQyxRQUFRLE9BQVIsQ0FBWjtBQUNBLElBQUlDLG1CQUFtQkQsUUFBUSxvQkFBUixDQUF2QjtBQUNBLElBQUlFLE9BQU9GLFFBQVEsWUFBUixDQUFYOztBQUVBLElBQUlHLFFBQVFGLGlCQUFpQjtBQUFBOztBQUN6QkcsWUFBUSxrQkFBWTtBQUNoQixZQUFJQyxPQUFPLElBQVg7QUFDQSxlQUNJO0FBQUE7QUFBQSxjQUFLLFdBQVcscUJBQXNCLEtBQUtDLEtBQUwsQ0FBV0MsZUFBWCxLQUErQixVQUFoQyxHQUE4QyxpQkFBOUMsR0FBa0UsT0FBdkYsQ0FBaEI7QUFDSyxpQkFBS0QsS0FBTCxDQUFXRSxRQUFYLENBQW9CQyxHQUFwQixDQUF3QixVQUFVQyxPQUFWLEVBQW1CQyxDQUFuQixFQUFzQjtBQUMzQyx1QkFBTztBQUFBO0FBQUEsc0JBQVMsS0FBS0EsQ0FBZCxFQUFpQixXQUFVLE1BQTNCO0FBQ0gsd0NBQUMsSUFBRDtBQUNJLDZCQUFLQSxDQURUO0FBRUksaUNBQVNELE9BRmI7QUFHSSx1Q0FBZUwsS0FBS0MsS0FBTCxDQUFXTTtBQUg5QjtBQURHLGlCQUFQO0FBT0gsYUFSQTtBQURMLFNBREo7QUFhSDtBQWhCd0IsQ0FBakIsQ0FBWjtBQWtCQUMsT0FBT0MsT0FBUCxHQUFpQlgsS0FBakIiLCJmaWxlIjoicG9zdHMuanN4Iiwic291cmNlc0NvbnRlbnQiOlsiJ3VzZSBzdHJpY3QnO1xyXG52YXIgUmVhY3QgPSByZXF1aXJlKCdyZWFjdCcpO1xyXG52YXIgY3JlYXRlUmVhY3RDbGFzcyA9IHJlcXVpcmUoJ2NyZWF0ZS1yZWFjdC1jbGFzcycpO1xyXG52YXIgUG9zdCA9IHJlcXVpcmUoJy4vcG9zdC5qc3gnKTtcclxuXHJcbnZhciBQb3N0cyA9IGNyZWF0ZVJlYWN0Q2xhc3Moe1xyXG4gICAgcmVuZGVyOiBmdW5jdGlvbiAoKSB7XHJcbiAgICAgICAgdmFyIHNlbGYgPSB0aGlzO1xyXG4gICAgICAgIHJldHVybiAoXHJcbiAgICAgICAgICAgIDxkaXYgY2xhc3NOYW1lPXtcImhvbWUtcGFnZS1wb3N0c1wiICsgKCh0aGlzLnByb3BzLmFjdGl2ZUhvbWVQYW5lbCA9PT0gJ2FydGljbGVzJykgPyAnIHNlY3Rpb24tZmFkZWluJyA6ICcgaGlkZScpfT5cclxuICAgICAgICAgICAgICAgIHt0aGlzLnByb3BzLmFydGljbGVzLm1hcChmdW5jdGlvbiAoYXJ0aWNsZSwgaSkge1xyXG4gICAgICAgICAgICAgICAgICAgIHJldHVybiA8YXJ0aWNsZSBrZXk9e2l9IGNsYXNzTmFtZT1cInBvc3RcIj5cclxuICAgICAgICAgICAgICAgICAgICAgICAgPFBvc3RcclxuICAgICAgICAgICAgICAgICAgICAgICAgICAgIGtleT17aX1cclxuICAgICAgICAgICAgICAgICAgICAgICAgICAgIGFydGljbGU9e2FydGljbGV9XHJcbiAgICAgICAgICAgICAgICAgICAgICAgICAgICBoYW5kbGVSb3V0aW5nPXtzZWxmLnByb3BzLmhhbmRsZVJvdXRpbmd9XHJcbiAgICAgICAgICAgICAgICAgICAgICAgIC8+XHJcbiAgICAgICAgICAgICAgICAgICAgPC9hcnRpY2xlPjtcclxuICAgICAgICAgICAgICAgIH0pfVxyXG4gICAgICAgICAgICA8L2Rpdj5cclxuICAgICAgICApXHJcbiAgICB9XHJcbn0pO1xyXG5tb2R1bGUuZXhwb3J0cyA9IFBvc3RzOyJdfQ==
+},{"./post.jsx":"C:\\swiggis.austin\\src\\client\\js\\components\\lists\\post\\post.jsx","create-react-class":"C:\\swiggis.austin\\node_modules\\create-react-class\\index.js","react":"C:\\swiggis.austin\\node_modules\\react\\react.js"}],"C:\\swiggis.austin\\src\\client\\js\\components\\pages\\about.jsx":[function(require,module,exports){
 'use strict';
 
 var React = require('react');
@@ -58074,8 +57203,8 @@ var About = createReactClass({
     }
 });
 module.exports = About;
-//# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbImFib3V0LmpzeCJdLCJuYW1lcyI6WyJSZWFjdCIsInJlcXVpcmUiLCJjcmVhdGVSZWFjdENsYXNzIiwiUm93IiwiUGFnZSIsIkFib3V0IiwicmVuZGVyIiwiYWJvdXRJbmZvIiwidGl0bGUiLCJzdWJ0aXRsZSIsImRlc2NyaXB0aW9uIiwic2lkZWJhckltYWdlIiwicGF0aCIsInByb3BzIiwibWVudVZpc2libGUiLCJzdG9yZSIsImNhdGVnb3J5IiwiaGFuZGxlUm91dGluZyIsInNldE1haW5Qcm9wZXJ0eSIsImFjdGl2ZUNhdGVnb3J5IiwibW9kYWwiLCJtb2R1bGUiLCJleHBvcnRzIl0sIm1hcHBpbmdzIjoiQUFBQTs7QUFDQSxJQUFJQSxRQUFRQyxRQUFRLE9BQVIsQ0FBWjtBQUNBLElBQUlDLG1CQUFtQkQsUUFBUSxvQkFBUixDQUF2QjtBQUNBLElBQUlFLE1BQU1GLFFBQVEsaUJBQVIsRUFBMkJFLEdBQXJDO0FBQ0EsSUFBSUMsT0FBT0gsUUFBUSwyQkFBUixDQUFYOztBQUVBLElBQUlJLFFBQVFILGlCQUFpQjtBQUFBOztBQUN6QkksWUFBUSxrQkFBWTs7QUFFaEIsWUFBSUMsWUFBWTtBQUNaQyxtQkFBTyxPQURLO0FBRVpDLHNCQUFVLHNCQUZFO0FBR1pDLHlCQUFhLDREQUhEO0FBSVpDLDBCQUFjLDZCQUpGO0FBS1pDLGtCQUFNO0FBTE0sU0FBaEI7O0FBUUEsZUFDSTtBQUFDLGdCQUFEO0FBQUE7QUFDSSwwQkFBVUwsU0FEZDtBQUVJLDZCQUFhLEtBQUtNLEtBQUwsQ0FBV0MsV0FGNUI7QUFHSSw0QkFBWSxLQUFLRCxLQUFMLENBQVdFLEtBQVgsQ0FBaUJDLFFBSGpDO0FBSUksK0JBQWUsS0FBS0gsS0FBTCxDQUFXSSxhQUo5QjtBQUtJLGlDQUFpQixLQUFLSixLQUFMLENBQVdLLGVBTGhDO0FBTUksZ0NBQWdCLEtBQUtMLEtBQUwsQ0FBV00sY0FOL0I7QUFPSSx1QkFBTyxLQUFLTixLQUFMLENBQVdPO0FBUHRCO0FBU0k7QUFBQTtBQUFBLGtCQUFLLFdBQVUsWUFBZjtBQUNJO0FBQUE7QUFBQSxzQkFBSyxXQUFVLGtCQUFmO0FBRUk7QUFBQTtBQUFBO0FBQUE7QUFBQSxxQkFGSjtBQUdJO0FBQUE7QUFBQTtBQUFBO0FBQUEscUJBSEo7QUFLSTtBQUFBO0FBQUE7QUFDQTtBQUFBO0FBQUE7QUFBQTtBQUFBLHlCQURBO0FBRUE7QUFBQTtBQUFBO0FBQUE7QUFBQSx5QkFGQTtBQUdBO0FBQUE7QUFBQTtBQUFBO0FBQUEseUJBSEE7QUFJQTtBQUFBO0FBQUE7QUFBQTtBQUFBO0FBSkEscUJBTEo7QUFZSTtBQUFBO0FBQUE7QUFBQTtBQUFBLHFCQVpKO0FBYUk7QUFBQTtBQUFBO0FBQUE7QUFBQSxxQkFiSjtBQWVJO0FBQUE7QUFBQTtBQUFBO0FBQUE7QUFmSjtBQURKLGFBVEo7QUE4Qkk7QUFBQTtBQUFBLGtCQUFRLFdBQVUsY0FBbEI7QUFDSTtBQUFBO0FBQUEsc0JBQUcsTUFBSyxXQUFSO0FBQUE7QUFBQTtBQURKO0FBOUJKLFNBREo7QUFvQ0g7QUEvQ3dCLENBQWpCLENBQVo7QUFpREFDLE9BQU9DLE9BQVAsR0FBaUJqQixLQUFqQiIsImZpbGUiOiJhYm91dC5qc3giLCJzb3VyY2VzQ29udGVudCI6WyIndXNlIHN0cmljdCc7XG52YXIgUmVhY3QgPSByZXF1aXJlKCdyZWFjdCcpO1xudmFyIGNyZWF0ZVJlYWN0Q2xhc3MgPSByZXF1aXJlKCdjcmVhdGUtcmVhY3QtY2xhc3MnKTtcbnZhciBSb3cgPSByZXF1aXJlKCdyZWFjdC1ib290c3RyYXAnKS5Sb3c7XG52YXIgUGFnZSA9IHJlcXVpcmUoJy4vLi4vbGF5b3V0L3BhZ2UvcGFnZS5qc3gnKTtcblxudmFyIEFib3V0ID0gY3JlYXRlUmVhY3RDbGFzcyh7XG4gICAgcmVuZGVyOiBmdW5jdGlvbiAoKSB7XG5cbiAgICAgICAgdmFyIGFib3V0SW5mbyA9IHtcbiAgICAgICAgICAgIHRpdGxlOiAnQWJvdXQnLFxuICAgICAgICAgICAgc3VidGl0bGU6ICdSZWFjdCBEcml2ZSBDTVMgRGVtbycsXG4gICAgICAgICAgICBkZXNjcmlwdGlvbjogJ0FuIGVhc3kgd2F5IHRvIHB1Ymxpc2ggYXJ0aWNsZXMgZGlyZWN0bHkgZnJvbSBHb29nbGUgRHJpdmUnLFxuICAgICAgICAgICAgc2lkZWJhckltYWdlOiAnLi4vaW1hZ2VzL2RlZmF1bHQtYWJvdXQuanBnJyxcbiAgICAgICAgICAgIHBhdGg6IFwiYWJvdXRcIlxuICAgICAgICB9O1xuXG4gICAgICAgIHJldHVybiAoXG4gICAgICAgICAgICA8UGFnZVxuICAgICAgICAgICAgICAgIHBhZ2VJbmZvPXthYm91dEluZm99XG4gICAgICAgICAgICAgICAgbWVudVZpc2libGU9e3RoaXMucHJvcHMubWVudVZpc2libGV9XG4gICAgICAgICAgICAgICAgY2F0ZWdvcmllcz17dGhpcy5wcm9wcy5zdG9yZS5jYXRlZ29yeX1cbiAgICAgICAgICAgICAgICBoYW5kbGVSb3V0aW5nPXt0aGlzLnByb3BzLmhhbmRsZVJvdXRpbmd9XG4gICAgICAgICAgICAgICAgc2V0TWFpblByb3BlcnR5PXt0aGlzLnByb3BzLnNldE1haW5Qcm9wZXJ0eX1cbiAgICAgICAgICAgICAgICBhY3RpdmVDYXRlZ29yeT17dGhpcy5wcm9wcy5hY3RpdmVDYXRlZ29yeX1cbiAgICAgICAgICAgICAgICBtb2RhbD17dGhpcy5wcm9wcy5tb2RhbH1cbiAgICAgICAgICAgID5cbiAgICAgICAgICAgICAgICA8ZGl2IGNsYXNzTmFtZT1cImF1dGhvci1iaW9cIj5cbiAgICAgICAgICAgICAgICAgICAgPGRpdiBjbGFzc05hbWU9XCJhdXRob3ItYmlvX19pbmZvXCI+XG4gICAgICAgICAgICAgICAgICAgICAgICBcbiAgICAgICAgICAgICAgICAgICAgICAgIDxoMT5TV0lHR0lTIC0gUFVSUE9TRTwvaDE+XG4gICAgICAgICAgICAgICAgICAgICAgICA8cD5BZmZlY3Rpb25hdGVseSBrbm93biBhcyBTV0lHR0lTLCB3ZSBhcmUgYW4gQXVzdGluIGFyZWEgb3JnYW5pemF0aW9uIG9mIGZlbWFsZSBnZW9zcGF0aWFsIHByb2Zlc3Npb25hbHMgZGVkaWNhdGVkIHRvIGF3YXJlbmVzcywgZWR1Y2F0aW9uLCBhbmQgcGFydGljaXBhdGlvbiBpbiBHZW9ncmFwaHkgYW5kIEdlb2dyYXBoaWMgSW5mb3JtYXRpb24gU3lzdGVtcyAoR0lTKS5cbiAgICAgICAgICAgICAgICAgICAgICAgIFNXSUdHSVMgQXVzdGluIGlzIHByb3VkIHRvIG9yZ2FuaXplIGFuZCBwYXJ0aWNpcGF0ZSBpbiBsb2NhbDo8L3A+XG4gICAgICAgICAgICAgICAgICAgICAgICA8dWw+XG4gICAgICAgICAgICAgICAgICAgICAgICA8bGk+Q2hhcml0eSBFdmVudHM8L2xpPlxuICAgICAgICAgICAgICAgICAgICAgICAgPGxpPlByb2Zlc3Npb25hbCBEZXZlbG9wbWVudCBXb3Jrc2hvcHM8L2xpPlxuICAgICAgICAgICAgICAgICAgICAgICAgPGxpPlNvY2lhbCBIb3VyczwvbGk+XG4gICAgICAgICAgICAgICAgICAgICAgICA8bGk+WW91dGggT3V0cmVhY2ggYW5kIE1lbnRvcmluZzwvbGk+XG4gICAgICAgICAgICAgICAgICAgICAgICA8L3VsPlxuXG4gICAgICAgICAgICAgICAgICAgICAgICA8aDE+U1dJR0dJUyAtIEhJU1RPUlk8L2gxPlxuICAgICAgICAgICAgICAgICAgICAgICAgPHA+4oCcU3VwcG9ydGluZyBXb21lbiBpbiBHZW9ncmFwaHnigJ0gKFNXSUcpIG9yaWdpbmFsbHkgc3RhcnRlZCBpbiB0aGUgYWNhZGVtaWMgcmVhbG0gaW4gcmVzcG9uc2UgdG8gcGVyY2VpdmVkIGFuZCByZWFsIGdlbmRlciBpbmVxdWFsaXR5IGRpZmZlcmVuY2VzIGluIGFjYWRlbWlhLiBTZXZlcmFsIGF1dG9ub21vdXMgb3JnYW5pemF0aW9ucyBoYXZlIGZvcm1lZCBhY3Jvc3MgTm9ydGggQW1lcmljYSB0byBwcm9tb3RlIHRoZSBwYXJ0aWNpcGF0aW9uIG9mIHdvbWVuIGluIEdlb2dyYXBoeSBhbmQgdGhlc2UgZ3JvdXBzIHNoYXJlIHRoZSBtb25pa2VyIOKAnFNXSUfigJ0uIE91ciBncm91cCB3YXMgZXN0YWJsaXNoZWQgaW4gMjAwNyBhbmQgaXMgdGhlIGZpcnN0IG9mIGl0cyBraW5kIHRoYXQgaGFzIGZvcm1lZCBpbiB0aGUgcHJvZmVzc2lvbmFsIHJlYWxtIGFuZCBpcyBidWlsdCB1cG9uIHRoZSBzYW1lIGlkZWFzIGFuZCBwaGlsb3NvcGhpZXMgYXMgU1dJRyBhbmQgaW5jbHVkZXMgbm90IG9ubHkgZ2VvZ3JhcGhlcnMgYnV0IGFsc28gdGhlIHRlY2hub2xvZ2ljYWxseSBzYXZ2eSBHSVMgdXNlcnMuXG4gICAgICAgICAgICAgICAgICAgICAgICA8L3A+XG4gICAgICAgICAgICAgICAgICAgICAgICA8cD5XZSBjb250aW51ZSB0aGUgc2luZ2xlLXNleCB0cmFkaXRpb24gYmVjYXVzZSB3ZSBlbmpveSB0aGUgY29tcGFueSBvZiBsaWtlLW1pbmRlZCB3b21lbiB3aG8gcGxhY2UgaW1wb3J0YW5jZSB1cG9uIHRoZSBodW1hbiBhbmQgc29jaWFsIGFzcGVjdHMgb2YgdGhlIG5hdHVyYWwgZW52aXJvbm1lbnQuIFdlIGFyZSBhbiBpbmZvcm1hbCBjb21tdW5pdHkgb2Ygd29tZW4gZnJvbSBhIHdpZGUgcmFuZ2Ugb2YgYmFja2dyb3VuZHMuIE91ciBtZW1iZXJzIHJlcHJlc2VudCBhIGxhcmdlIHZhcmlldHkgb2YgcHJpdmF0ZSBidXNpbmVzc2VzLCBwdWJsaWMgaW5zdGl0dXRpb25zLCBhbmQgbG9jYWwgYW5kIHN0YXRlIGFnZW5jaWVzLiBPdXIgY29tbW9uIHRocmVhZCBpcyB0aGF0IHdlIGFyZSB0cmFpbmVkIHdvbWVuIGdlb2dyYXBoZXJzIGFuZCBhcyBhIHJlc3VsdCBoYXZlIGEgdW5pcXVlIHBlcnNwZWN0aXZlIG9uIHRoZSB3b3JsZC4gVGhpcyBpcyBhIGZvcnVtIGZvciB3b21lbiBpbiBHZW9ncmFwaHkgYW5kIEdJUyB0byBiZSBpbnF1aXNpdGl2ZSBhYm91dCBHSVMgYW5kIGl0cyB0ZWNobm9sb2d5LCBkaXNjdXNzIGlkZWFzLCBhbmQgZmVlbCBmcmVlIHRvIHNwZWFrIHRoZWlyIG1pbmRzIGFib3V0IHRoZSBmaWVsZC5cbiAgICAgICAgICAgICAgICAgICAgICAgIDwvcD5cbiAgICAgICAgICAgICAgICAgICAgPC9kaXY+XG4gICAgICAgICAgICAgICAgPC9kaXY+XG5cbiAgICAgICAgICAgICAgICA8Zm9vdGVyIGNsYXNzTmFtZT1cInNwbGl0LWZvb3RlclwiPlxuICAgICAgICAgICAgICAgICAgICA8YSBocmVmPVwiIy9jb250YWN0XCI+Q29udGFjdDwvYT5cbiAgICAgICAgICAgICAgICA8L2Zvb3Rlcj5cbiAgICAgICAgICAgIDwvUGFnZT5cbiAgICAgICAgKVxuICAgIH1cbn0pO1xubW9kdWxlLmV4cG9ydHMgPSBBYm91dDsiXX0=
-},{"./../layout/page/page.jsx":"/mnt/c/swiggis.original/src/client/js/components/layout/page/page.jsx","create-react-class":"/mnt/c/swiggis.original/node_modules/create-react-class/index.js","react":"/mnt/c/swiggis.original/node_modules/react/react.js","react-bootstrap":"/mnt/c/swiggis.original/node_modules/react-bootstrap/lib/index.js"}],"/mnt/c/swiggis.original/src/client/js/components/pages/article.jsx":[function(require,module,exports){
+//# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbImFib3V0LmpzeCJdLCJuYW1lcyI6WyJSZWFjdCIsInJlcXVpcmUiLCJjcmVhdGVSZWFjdENsYXNzIiwiUm93IiwiUGFnZSIsIkFib3V0IiwicmVuZGVyIiwiYWJvdXRJbmZvIiwidGl0bGUiLCJzdWJ0aXRsZSIsImRlc2NyaXB0aW9uIiwic2lkZWJhckltYWdlIiwicGF0aCIsInByb3BzIiwibWVudVZpc2libGUiLCJzdG9yZSIsImNhdGVnb3J5IiwiaGFuZGxlUm91dGluZyIsInNldE1haW5Qcm9wZXJ0eSIsImFjdGl2ZUNhdGVnb3J5IiwibW9kYWwiLCJtb2R1bGUiLCJleHBvcnRzIl0sIm1hcHBpbmdzIjoiQUFBQTs7QUFDQSxJQUFJQSxRQUFRQyxRQUFRLE9BQVIsQ0FBWjtBQUNBLElBQUlDLG1CQUFtQkQsUUFBUSxvQkFBUixDQUF2QjtBQUNBLElBQUlFLE1BQU1GLFFBQVEsaUJBQVIsRUFBMkJFLEdBQXJDO0FBQ0EsSUFBSUMsT0FBT0gsUUFBUSwyQkFBUixDQUFYOztBQUVBLElBQUlJLFFBQVFILGlCQUFpQjtBQUFBOztBQUN6QkksWUFBUSxrQkFBWTs7QUFFaEIsWUFBSUMsWUFBWTtBQUNaQyxtQkFBTyxPQURLO0FBRVpDLHNCQUFVLHNCQUZFO0FBR1pDLHlCQUFhLDREQUhEO0FBSVpDLDBCQUFjLDZCQUpGO0FBS1pDLGtCQUFNO0FBTE0sU0FBaEI7O0FBUUEsZUFDSTtBQUFDLGdCQUFEO0FBQUE7QUFDSSwwQkFBVUwsU0FEZDtBQUVJLDZCQUFhLEtBQUtNLEtBQUwsQ0FBV0MsV0FGNUI7QUFHSSw0QkFBWSxLQUFLRCxLQUFMLENBQVdFLEtBQVgsQ0FBaUJDLFFBSGpDO0FBSUksK0JBQWUsS0FBS0gsS0FBTCxDQUFXSSxhQUo5QjtBQUtJLGlDQUFpQixLQUFLSixLQUFMLENBQVdLLGVBTGhDO0FBTUksZ0NBQWdCLEtBQUtMLEtBQUwsQ0FBV00sY0FOL0I7QUFPSSx1QkFBTyxLQUFLTixLQUFMLENBQVdPO0FBUHRCO0FBU0k7QUFBQTtBQUFBLGtCQUFLLFdBQVUsWUFBZjtBQUNJO0FBQUE7QUFBQSxzQkFBSyxXQUFVLGtCQUFmO0FBRUk7QUFBQTtBQUFBO0FBQUE7QUFBQSxxQkFGSjtBQUdJO0FBQUE7QUFBQTtBQUFBO0FBQUEscUJBSEo7QUFLSTtBQUFBO0FBQUE7QUFDQTtBQUFBO0FBQUE7QUFBQTtBQUFBLHlCQURBO0FBRUE7QUFBQTtBQUFBO0FBQUE7QUFBQSx5QkFGQTtBQUdBO0FBQUE7QUFBQTtBQUFBO0FBQUEseUJBSEE7QUFJQTtBQUFBO0FBQUE7QUFBQTtBQUFBO0FBSkEscUJBTEo7QUFZSTtBQUFBO0FBQUE7QUFBQTtBQUFBLHFCQVpKO0FBYUk7QUFBQTtBQUFBO0FBQUE7QUFBQSxxQkFiSjtBQWVJO0FBQUE7QUFBQTtBQUFBO0FBQUE7QUFmSjtBQURKLGFBVEo7QUE4Qkk7QUFBQTtBQUFBLGtCQUFRLFdBQVUsY0FBbEI7QUFDSTtBQUFBO0FBQUEsc0JBQUcsTUFBSyxXQUFSO0FBQUE7QUFBQTtBQURKO0FBOUJKLFNBREo7QUFvQ0g7QUEvQ3dCLENBQWpCLENBQVo7QUFpREFDLE9BQU9DLE9BQVAsR0FBaUJqQixLQUFqQiIsImZpbGUiOiJhYm91dC5qc3giLCJzb3VyY2VzQ29udGVudCI6WyIndXNlIHN0cmljdCc7XHJcbnZhciBSZWFjdCA9IHJlcXVpcmUoJ3JlYWN0Jyk7XHJcbnZhciBjcmVhdGVSZWFjdENsYXNzID0gcmVxdWlyZSgnY3JlYXRlLXJlYWN0LWNsYXNzJyk7XHJcbnZhciBSb3cgPSByZXF1aXJlKCdyZWFjdC1ib290c3RyYXAnKS5Sb3c7XHJcbnZhciBQYWdlID0gcmVxdWlyZSgnLi8uLi9sYXlvdXQvcGFnZS9wYWdlLmpzeCcpO1xyXG5cclxudmFyIEFib3V0ID0gY3JlYXRlUmVhY3RDbGFzcyh7XHJcbiAgICByZW5kZXI6IGZ1bmN0aW9uICgpIHtcclxuXHJcbiAgICAgICAgdmFyIGFib3V0SW5mbyA9IHtcclxuICAgICAgICAgICAgdGl0bGU6ICdBYm91dCcsXHJcbiAgICAgICAgICAgIHN1YnRpdGxlOiAnUmVhY3QgRHJpdmUgQ01TIERlbW8nLFxyXG4gICAgICAgICAgICBkZXNjcmlwdGlvbjogJ0FuIGVhc3kgd2F5IHRvIHB1Ymxpc2ggYXJ0aWNsZXMgZGlyZWN0bHkgZnJvbSBHb29nbGUgRHJpdmUnLFxyXG4gICAgICAgICAgICBzaWRlYmFySW1hZ2U6ICcuLi9pbWFnZXMvZGVmYXVsdC1hYm91dC5qcGcnLFxyXG4gICAgICAgICAgICBwYXRoOiBcImFib3V0XCJcclxuICAgICAgICB9O1xyXG5cclxuICAgICAgICByZXR1cm4gKFxyXG4gICAgICAgICAgICA8UGFnZVxyXG4gICAgICAgICAgICAgICAgcGFnZUluZm89e2Fib3V0SW5mb31cclxuICAgICAgICAgICAgICAgIG1lbnVWaXNpYmxlPXt0aGlzLnByb3BzLm1lbnVWaXNpYmxlfVxyXG4gICAgICAgICAgICAgICAgY2F0ZWdvcmllcz17dGhpcy5wcm9wcy5zdG9yZS5jYXRlZ29yeX1cclxuICAgICAgICAgICAgICAgIGhhbmRsZVJvdXRpbmc9e3RoaXMucHJvcHMuaGFuZGxlUm91dGluZ31cclxuICAgICAgICAgICAgICAgIHNldE1haW5Qcm9wZXJ0eT17dGhpcy5wcm9wcy5zZXRNYWluUHJvcGVydHl9XHJcbiAgICAgICAgICAgICAgICBhY3RpdmVDYXRlZ29yeT17dGhpcy5wcm9wcy5hY3RpdmVDYXRlZ29yeX1cclxuICAgICAgICAgICAgICAgIG1vZGFsPXt0aGlzLnByb3BzLm1vZGFsfVxyXG4gICAgICAgICAgICA+XHJcbiAgICAgICAgICAgICAgICA8ZGl2IGNsYXNzTmFtZT1cImF1dGhvci1iaW9cIj5cclxuICAgICAgICAgICAgICAgICAgICA8ZGl2IGNsYXNzTmFtZT1cImF1dGhvci1iaW9fX2luZm9cIj5cclxuICAgICAgICAgICAgICAgICAgICAgICAgXHJcbiAgICAgICAgICAgICAgICAgICAgICAgIDxoMT5TV0lHR0lTIC0gUFVSUE9TRTwvaDE+XHJcbiAgICAgICAgICAgICAgICAgICAgICAgIDxwPkFmZmVjdGlvbmF0ZWx5IGtub3duIGFzIFNXSUdHSVMsIHdlIGFyZSBhbiBBdXN0aW4gYXJlYSBvcmdhbml6YXRpb24gb2YgZmVtYWxlIGdlb3NwYXRpYWwgcHJvZmVzc2lvbmFscyBkZWRpY2F0ZWQgdG8gYXdhcmVuZXNzLCBlZHVjYXRpb24sIGFuZCBwYXJ0aWNpcGF0aW9uIGluIEdlb2dyYXBoeSBhbmQgR2VvZ3JhcGhpYyBJbmZvcm1hdGlvbiBTeXN0ZW1zIChHSVMpLlxyXG4gICAgICAgICAgICAgICAgICAgICAgICBTV0lHR0lTIEF1c3RpbiBpcyBwcm91ZCB0byBvcmdhbml6ZSBhbmQgcGFydGljaXBhdGUgaW4gbG9jYWw6PC9wPlxyXG4gICAgICAgICAgICAgICAgICAgICAgICA8dWw+XHJcbiAgICAgICAgICAgICAgICAgICAgICAgIDxsaT5DaGFyaXR5IEV2ZW50czwvbGk+XHJcbiAgICAgICAgICAgICAgICAgICAgICAgIDxsaT5Qcm9mZXNzaW9uYWwgRGV2ZWxvcG1lbnQgV29ya3Nob3BzPC9saT5cclxuICAgICAgICAgICAgICAgICAgICAgICAgPGxpPlNvY2lhbCBIb3VyczwvbGk+XHJcbiAgICAgICAgICAgICAgICAgICAgICAgIDxsaT5Zb3V0aCBPdXRyZWFjaCBhbmQgTWVudG9yaW5nPC9saT5cclxuICAgICAgICAgICAgICAgICAgICAgICAgPC91bD5cclxuXHJcbiAgICAgICAgICAgICAgICAgICAgICAgIDxoMT5TV0lHR0lTIC0gSElTVE9SWTwvaDE+XHJcbiAgICAgICAgICAgICAgICAgICAgICAgIDxwPuKAnFN1cHBvcnRpbmcgV29tZW4gaW4gR2VvZ3JhcGh54oCdIChTV0lHKSBvcmlnaW5hbGx5IHN0YXJ0ZWQgaW4gdGhlIGFjYWRlbWljIHJlYWxtIGluIHJlc3BvbnNlIHRvIHBlcmNlaXZlZCBhbmQgcmVhbCBnZW5kZXIgaW5lcXVhbGl0eSBkaWZmZXJlbmNlcyBpbiBhY2FkZW1pYS4gU2V2ZXJhbCBhdXRvbm9tb3VzIG9yZ2FuaXphdGlvbnMgaGF2ZSBmb3JtZWQgYWNyb3NzIE5vcnRoIEFtZXJpY2EgdG8gcHJvbW90ZSB0aGUgcGFydGljaXBhdGlvbiBvZiB3b21lbiBpbiBHZW9ncmFwaHkgYW5kIHRoZXNlIGdyb3VwcyBzaGFyZSB0aGUgbW9uaWtlciDigJxTV0lH4oCdLiBPdXIgZ3JvdXAgd2FzIGVzdGFibGlzaGVkIGluIDIwMDcgYW5kIGlzIHRoZSBmaXJzdCBvZiBpdHMga2luZCB0aGF0IGhhcyBmb3JtZWQgaW4gdGhlIHByb2Zlc3Npb25hbCByZWFsbSBhbmQgaXMgYnVpbHQgdXBvbiB0aGUgc2FtZSBpZGVhcyBhbmQgcGhpbG9zb3BoaWVzIGFzIFNXSUcgYW5kIGluY2x1ZGVzIG5vdCBvbmx5IGdlb2dyYXBoZXJzIGJ1dCBhbHNvIHRoZSB0ZWNobm9sb2dpY2FsbHkgc2F2dnkgR0lTIHVzZXJzLlxyXG4gICAgICAgICAgICAgICAgICAgICAgICA8L3A+XHJcbiAgICAgICAgICAgICAgICAgICAgICAgIDxwPldlIGNvbnRpbnVlIHRoZSBzaW5nbGUtc2V4IHRyYWRpdGlvbiBiZWNhdXNlIHdlIGVuam95IHRoZSBjb21wYW55IG9mIGxpa2UtbWluZGVkIHdvbWVuIHdobyBwbGFjZSBpbXBvcnRhbmNlIHVwb24gdGhlIGh1bWFuIGFuZCBzb2NpYWwgYXNwZWN0cyBvZiB0aGUgbmF0dXJhbCBlbnZpcm9ubWVudC4gV2UgYXJlIGFuIGluZm9ybWFsIGNvbW11bml0eSBvZiB3b21lbiBmcm9tIGEgd2lkZSByYW5nZSBvZiBiYWNrZ3JvdW5kcy4gT3VyIG1lbWJlcnMgcmVwcmVzZW50IGEgbGFyZ2UgdmFyaWV0eSBvZiBwcml2YXRlIGJ1c2luZXNzZXMsIHB1YmxpYyBpbnN0aXR1dGlvbnMsIGFuZCBsb2NhbCBhbmQgc3RhdGUgYWdlbmNpZXMuIE91ciBjb21tb24gdGhyZWFkIGlzIHRoYXQgd2UgYXJlIHRyYWluZWQgd29tZW4gZ2VvZ3JhcGhlcnMgYW5kIGFzIGEgcmVzdWx0IGhhdmUgYSB1bmlxdWUgcGVyc3BlY3RpdmUgb24gdGhlIHdvcmxkLiBUaGlzIGlzIGEgZm9ydW0gZm9yIHdvbWVuIGluIEdlb2dyYXBoeSBhbmQgR0lTIHRvIGJlIGlucXVpc2l0aXZlIGFib3V0IEdJUyBhbmQgaXRzIHRlY2hub2xvZ3ksIGRpc2N1c3MgaWRlYXMsIGFuZCBmZWVsIGZyZWUgdG8gc3BlYWsgdGhlaXIgbWluZHMgYWJvdXQgdGhlIGZpZWxkLlxyXG4gICAgICAgICAgICAgICAgICAgICAgICA8L3A+XHJcbiAgICAgICAgICAgICAgICAgICAgPC9kaXY+XHJcbiAgICAgICAgICAgICAgICA8L2Rpdj5cclxuXHJcbiAgICAgICAgICAgICAgICA8Zm9vdGVyIGNsYXNzTmFtZT1cInNwbGl0LWZvb3RlclwiPlxyXG4gICAgICAgICAgICAgICAgICAgIDxhIGhyZWY9XCIjL2NvbnRhY3RcIj5Db250YWN0PC9hPlxyXG4gICAgICAgICAgICAgICAgPC9mb290ZXI+XHJcbiAgICAgICAgICAgIDwvUGFnZT5cclxuICAgICAgICApXHJcbiAgICB9XHJcbn0pO1xyXG5tb2R1bGUuZXhwb3J0cyA9IEFib3V0OyJdfQ==
+},{"./../layout/page/page.jsx":"C:\\swiggis.austin\\src\\client\\js\\components\\layout\\page\\page.jsx","create-react-class":"C:\\swiggis.austin\\node_modules\\create-react-class\\index.js","react":"C:\\swiggis.austin\\node_modules\\react\\react.js","react-bootstrap":"C:\\swiggis.austin\\node_modules\\react-bootstrap\\lib\\index.js"}],"C:\\swiggis.austin\\src\\client\\js\\components\\pages\\article.jsx":[function(require,module,exports){
 'use strict';
 
 var React = require('react');
@@ -58150,8 +57279,8 @@ var Article = createReactClass({
     }
 });
 module.exports = Article;
-//# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbImFydGljbGUuanN4Il0sIm5hbWVzIjpbIlJlYWN0IiwicmVxdWlyZSIsImNyZWF0ZVJlYWN0Q2xhc3MiLCJSb3ciLCJGb290ZXIiLCJNZW51IiwiTWVudUJ1cmdlciIsIkRpc3F1c1RocmVhZCIsIkFydGljbGUiLCJjb21wb25lbnREaWRNb3VudCIsInJlbmRlciIsImhlYWRlclN0eWxlIiwiYmFja2dyb3VuZEltYWdlIiwicHJvcHMiLCJtZW51VmlzaWJsZSIsInN0b3JlIiwiY2F0ZWdvcnkiLCJoYW5kbGVSb3V0aW5nIiwic2V0TWFpblByb3BlcnR5IiwiYWN0aXZlQ2F0ZWdvcnkiLCJjdXJyZW50UGFnZSIsInRpdGxlIiwic3VidGl0bGUiLCJfX2h0bWwiLCJib2R5IiwibGFzdFVwZGF0ZWQiLCJjb25maWciLCJhdXRob3IiLCJ2aWV3IiwiYXJ0aWNsZXMiLCJtb2R1bGUiLCJleHBvcnRzIl0sIm1hcHBpbmdzIjoiQUFBQTs7QUFDQSxJQUFJQSxRQUFRQyxRQUFRLE9BQVIsQ0FBWjtBQUNBLElBQUlDLG1CQUFtQkQsUUFBUSxvQkFBUixDQUF2QjtBQUNBLElBQUlFLE1BQU1GLFFBQVEsaUJBQVIsRUFBMkJFLEdBQXJDO0FBQ0EsSUFBSUMsU0FBU0gsUUFBUSwrQkFBUixDQUFiO0FBQ0EsSUFBSUksT0FBT0osUUFBUSwyQkFBUixDQUFYO0FBQ0EsSUFBSUssYUFBYUwsUUFBUSxpQ0FBUixDQUFqQjtBQUNBLElBQUlNLGVBQWVOLFFBQVEsZ0NBQVIsQ0FBbkI7O0FBRUEsSUFBSU8sVUFBVU4saUJBQWlCO0FBQUE7O0FBQzNCTyx1QkFBbUIsNkJBQVksQ0FFOUIsQ0FIMEI7QUFJM0JDLFlBQVEsa0JBQVk7QUFDaEIsWUFBSUMsY0FBYztBQUNkQyw2QkFBaUI7QUFESCxTQUFsQjtBQUdBLGVBQ0k7QUFBQTtBQUFBO0FBQ0ksZ0NBQUMsSUFBRDtBQUNJLDZCQUFhLEtBQUtDLEtBQUwsQ0FBV0MsV0FENUI7QUFFSSw0QkFBWSxLQUFLRCxLQUFMLENBQVdFLEtBQVgsQ0FBaUJDLFFBRmpDO0FBR0ksK0JBQWUsS0FBS0gsS0FBTCxDQUFXSSxhQUg5QjtBQUlJLGlDQUFpQixLQUFLSixLQUFMLENBQVdLLGVBSmhDO0FBS0ksZ0NBQWdCLEtBQUtMLEtBQUwsQ0FBV007QUFML0IsY0FESjtBQVFJO0FBQUE7QUFBQSxrQkFBSyxXQUFZLDBEQUEwRCxLQUFLTixLQUFMLENBQVdDLFdBQVgsR0FBeUIsTUFBekIsR0FBa0MsUUFBNUYsQ0FBakI7QUFDSTtBQUFBO0FBQUEsc0JBQVEsV0FBVSxZQUFsQixFQUErQixNQUFLLFFBQXBDLEVBQTZDLE9BQU9ILFdBQXBEO0FBQ0ksd0NBQUMsVUFBRDtBQUNJLHlDQUFpQixLQUFLRSxLQUFMLENBQVdLLGVBRGhDO0FBRUkscUNBQWEsS0FBS0wsS0FBTCxDQUFXQztBQUY1QjtBQURKLGlCQURKO0FBT0k7QUFBQTtBQUFBO0FBQ0k7QUFBQywyQkFBRDtBQUFBO0FBQ0k7QUFBQTtBQUFBLDhCQUFLLFdBQVUsMEJBQWY7QUFDSTtBQUFBO0FBQUE7QUFBSyxxQ0FBS0QsS0FBTCxDQUFXTyxXQUFYLENBQXVCQztBQUE1Qiw2QkFESjtBQUVJO0FBQUE7QUFBQSxrQ0FBRyxXQUFVLFVBQWI7QUFBeUIscUNBQUtSLEtBQUwsQ0FBV08sV0FBWCxDQUF1QkU7QUFBaEQsNkJBRko7QUFHSSx5REFBSyx5QkFBeUIsRUFBQ0MsUUFBUSxLQUFLVixLQUFMLENBQVdPLFdBQVgsQ0FBdUJJLElBQWhDLEVBQTlCO0FBSEo7QUFESjtBQURKLGlCQVBKO0FBZ0JJLG9DQUFDLE1BQUQ7QUFDSSxpQ0FBYSxLQUFLWCxLQUFMLENBQVdPLFdBQVgsQ0FBdUJLLFdBRHhDO0FBRUksOEJBQVUsS0FBS1osS0FBTCxDQUFXTyxXQUFYLENBQXVCSixRQUZyQztBQUdJLDRCQUFRLEtBQUtILEtBQUwsQ0FBV2EsTUFBWCxDQUFrQkMsTUFIOUI7QUFJSSw4QkFBVSxLQUFLZCxLQUFMLENBQVdFLEtBQVgsQ0FBaUJhLElBQWpCLENBQXNCQyxRQUpwQztBQUtJLG1DQUFlLEtBQUtoQixLQUFMLENBQVdJO0FBTDlCO0FBaEJKO0FBUkosU0FESjtBQW1DSDtBQTNDMEIsQ0FBakIsQ0FBZDtBQTZDQWEsT0FBT0MsT0FBUCxHQUFpQnZCLE9BQWpCIiwiZmlsZSI6ImFydGljbGUuanN4Iiwic291cmNlc0NvbnRlbnQiOlsiJ3VzZSBzdHJpY3QnO1xudmFyIFJlYWN0ID0gcmVxdWlyZSgncmVhY3QnKTtcbnZhciBjcmVhdGVSZWFjdENsYXNzID0gcmVxdWlyZSgnY3JlYXRlLXJlYWN0LWNsYXNzJyk7XG52YXIgUm93ID0gcmVxdWlyZSgncmVhY3QtYm9vdHN0cmFwJykuUm93O1xudmFyIEZvb3RlciA9IHJlcXVpcmUoJy4vLi4vbGF5b3V0L2Zvb3Rlci9mb290ZXIuanN4Jyk7XG52YXIgTWVudSA9IHJlcXVpcmUoJy4vLi4vbGF5b3V0L21lbnUvbWVudS5qc3gnKTtcbnZhciBNZW51QnVyZ2VyID0gcmVxdWlyZSgnLi8uLi9sYXlvdXQvbWVudS9tZW51QnVyZ2VyLmpzeCcpO1xudmFyIERpc3F1c1RocmVhZCA9IHJlcXVpcmUoJy4vLi4vY29tbWVudHMvZGlzcXVzVGhyZWFkLmpzeCcpO1xuXG52YXIgQXJ0aWNsZSA9IGNyZWF0ZVJlYWN0Q2xhc3Moe1xuICAgIGNvbXBvbmVudERpZE1vdW50OiBmdW5jdGlvbiAoKSB7XG5cbiAgICB9LFxuICAgIHJlbmRlcjogZnVuY3Rpb24gKCkge1xuICAgICAgICB2YXIgaGVhZGVyU3R5bGUgPSB7XG4gICAgICAgICAgICBiYWNrZ3JvdW5kSW1hZ2U6ICd1cmwoaW1hZ2VzL1NXSUdHSVNfbG9nby5qcGcpJ1xuICAgICAgICB9O1xuICAgICAgICByZXR1cm4gKFxuICAgICAgICAgICAgPGRpdiA+XG4gICAgICAgICAgICAgICAgPE1lbnVcbiAgICAgICAgICAgICAgICAgICAgbWVudVZpc2libGU9e3RoaXMucHJvcHMubWVudVZpc2libGV9XG4gICAgICAgICAgICAgICAgICAgIGNhdGVnb3JpZXM9e3RoaXMucHJvcHMuc3RvcmUuY2F0ZWdvcnl9XG4gICAgICAgICAgICAgICAgICAgIGhhbmRsZVJvdXRpbmc9e3RoaXMucHJvcHMuaGFuZGxlUm91dGluZ31cbiAgICAgICAgICAgICAgICAgICAgc2V0TWFpblByb3BlcnR5PXt0aGlzLnByb3BzLnNldE1haW5Qcm9wZXJ0eX1cbiAgICAgICAgICAgICAgICAgICAgYWN0aXZlQ2F0ZWdvcnk9e3RoaXMucHJvcHMuYWN0aXZlQ2F0ZWdvcnl9XG4gICAgICAgICAgICAgICAgLz5cbiAgICAgICAgICAgICAgICA8ZGl2IGNsYXNzTmFtZT17KCdjb250YWluZXIgcGFnZS1mYWRlaW4gbGVmdC1jb250YWluZXIgY29udGFpbmVyLW1lbnUtJyArICh0aGlzLnByb3BzLm1lbnVWaXNpYmxlID8gJ29wZW4nIDogJ2Nsb3NlZCcpKX0+XG4gICAgICAgICAgICAgICAgICAgIDxoZWFkZXIgY2xhc3NOYW1lPVwiaGVyby1pbWFnZVwiIHJvbGU9XCJiYW5uZXJcIiBzdHlsZT17aGVhZGVyU3R5bGV9PlxuICAgICAgICAgICAgICAgICAgICAgICAgPE1lbnVCdXJnZXJcbiAgICAgICAgICAgICAgICAgICAgICAgICAgICBzZXRNYWluUHJvcGVydHk9e3RoaXMucHJvcHMuc2V0TWFpblByb3BlcnR5fVxuICAgICAgICAgICAgICAgICAgICAgICAgICAgIG1lbnVWaXNpYmxlPXt0aGlzLnByb3BzLm1lbnVWaXNpYmxlfVxuICAgICAgICAgICAgICAgICAgICAgICAgLz5cbiAgICAgICAgICAgICAgICAgICAgPC9oZWFkZXI+XG4gICAgICAgICAgICAgICAgICAgIDxtYWluID5cbiAgICAgICAgICAgICAgICAgICAgICAgIDxSb3c+XG4gICAgICAgICAgICAgICAgICAgICAgICAgICAgPGRpdiBjbGFzc05hbWU9XCJjb2wteHMtMTIgc2luZ2xlLWNvbnRlbnRcIj5cbiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgPGgxPnt0aGlzLnByb3BzLmN1cnJlbnRQYWdlLnRpdGxlfTwvaDE+XG4gICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIDxwIGNsYXNzTmFtZT1cInN1YnRpdGxlXCI+e3RoaXMucHJvcHMuY3VycmVudFBhZ2Uuc3VidGl0bGV9PC9wPlxuICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICA8ZGl2IGRhbmdlcm91c2x5U2V0SW5uZXJIVE1MPXt7X19odG1sOiB0aGlzLnByb3BzLmN1cnJlbnRQYWdlLmJvZHl9fT48L2Rpdj5cbiAgICAgICAgICAgICAgICAgICAgICAgICAgICA8L2Rpdj5cbiAgICAgICAgICAgICAgICAgICAgICAgIDwvUm93PlxuICAgICAgICAgICAgICAgICAgICA8L21haW4+XG4gICAgICAgICAgICAgICAgICAgIDxGb290ZXJcbiAgICAgICAgICAgICAgICAgICAgICAgIGxhc3RVcGRhdGVkPXt0aGlzLnByb3BzLmN1cnJlbnRQYWdlLmxhc3RVcGRhdGVkfVxuICAgICAgICAgICAgICAgICAgICAgICAgY2F0ZWdvcnk9e3RoaXMucHJvcHMuY3VycmVudFBhZ2UuY2F0ZWdvcnl9XG4gICAgICAgICAgICAgICAgICAgICAgICBhdXRob3I9e3RoaXMucHJvcHMuY29uZmlnLmF1dGhvcn1cbiAgICAgICAgICAgICAgICAgICAgICAgIGFydGljbGVzPXt0aGlzLnByb3BzLnN0b3JlLnZpZXcuYXJ0aWNsZXN9XG4gICAgICAgICAgICAgICAgICAgICAgICBoYW5kbGVSb3V0aW5nPXt0aGlzLnByb3BzLmhhbmRsZVJvdXRpbmd9XG4gICAgICAgICAgICAgICAgICAgIC8+XG4gICAgICAgICAgICAgICAgPC9kaXY+XG4gICAgICAgICAgICA8L2Rpdj5cbiAgICAgICAgKVxuICAgIH1cbn0pO1xubW9kdWxlLmV4cG9ydHMgPSBBcnRpY2xlOyJdfQ==
-},{"./../comments/disqusThread.jsx":"/mnt/c/swiggis.original/src/client/js/components/comments/disqusThread.jsx","./../layout/footer/footer.jsx":"/mnt/c/swiggis.original/src/client/js/components/layout/footer/footer.jsx","./../layout/menu/menu.jsx":"/mnt/c/swiggis.original/src/client/js/components/layout/menu/menu.jsx","./../layout/menu/menuBurger.jsx":"/mnt/c/swiggis.original/src/client/js/components/layout/menu/menuBurger.jsx","create-react-class":"/mnt/c/swiggis.original/node_modules/create-react-class/index.js","react":"/mnt/c/swiggis.original/node_modules/react/react.js","react-bootstrap":"/mnt/c/swiggis.original/node_modules/react-bootstrap/lib/index.js"}],"/mnt/c/swiggis.original/src/client/js/components/pages/category.jsx":[function(require,module,exports){
+//# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbImFydGljbGUuanN4Il0sIm5hbWVzIjpbIlJlYWN0IiwicmVxdWlyZSIsImNyZWF0ZVJlYWN0Q2xhc3MiLCJSb3ciLCJGb290ZXIiLCJNZW51IiwiTWVudUJ1cmdlciIsIkRpc3F1c1RocmVhZCIsIkFydGljbGUiLCJjb21wb25lbnREaWRNb3VudCIsInJlbmRlciIsImhlYWRlclN0eWxlIiwiYmFja2dyb3VuZEltYWdlIiwicHJvcHMiLCJtZW51VmlzaWJsZSIsInN0b3JlIiwiY2F0ZWdvcnkiLCJoYW5kbGVSb3V0aW5nIiwic2V0TWFpblByb3BlcnR5IiwiYWN0aXZlQ2F0ZWdvcnkiLCJjdXJyZW50UGFnZSIsInRpdGxlIiwic3VidGl0bGUiLCJfX2h0bWwiLCJib2R5IiwibGFzdFVwZGF0ZWQiLCJjb25maWciLCJhdXRob3IiLCJ2aWV3IiwiYXJ0aWNsZXMiLCJtb2R1bGUiLCJleHBvcnRzIl0sIm1hcHBpbmdzIjoiQUFBQTs7QUFDQSxJQUFJQSxRQUFRQyxRQUFRLE9BQVIsQ0FBWjtBQUNBLElBQUlDLG1CQUFtQkQsUUFBUSxvQkFBUixDQUF2QjtBQUNBLElBQUlFLE1BQU1GLFFBQVEsaUJBQVIsRUFBMkJFLEdBQXJDO0FBQ0EsSUFBSUMsU0FBU0gsUUFBUSwrQkFBUixDQUFiO0FBQ0EsSUFBSUksT0FBT0osUUFBUSwyQkFBUixDQUFYO0FBQ0EsSUFBSUssYUFBYUwsUUFBUSxpQ0FBUixDQUFqQjtBQUNBLElBQUlNLGVBQWVOLFFBQVEsZ0NBQVIsQ0FBbkI7O0FBRUEsSUFBSU8sVUFBVU4saUJBQWlCO0FBQUE7O0FBQzNCTyx1QkFBbUIsNkJBQVksQ0FFOUIsQ0FIMEI7QUFJM0JDLFlBQVEsa0JBQVk7QUFDaEIsWUFBSUMsY0FBYztBQUNkQyw2QkFBaUI7QUFESCxTQUFsQjtBQUdBLGVBQ0k7QUFBQTtBQUFBO0FBQ0ksZ0NBQUMsSUFBRDtBQUNJLDZCQUFhLEtBQUtDLEtBQUwsQ0FBV0MsV0FENUI7QUFFSSw0QkFBWSxLQUFLRCxLQUFMLENBQVdFLEtBQVgsQ0FBaUJDLFFBRmpDO0FBR0ksK0JBQWUsS0FBS0gsS0FBTCxDQUFXSSxhQUg5QjtBQUlJLGlDQUFpQixLQUFLSixLQUFMLENBQVdLLGVBSmhDO0FBS0ksZ0NBQWdCLEtBQUtMLEtBQUwsQ0FBV007QUFML0IsY0FESjtBQVFJO0FBQUE7QUFBQSxrQkFBSyxXQUFZLDBEQUEwRCxLQUFLTixLQUFMLENBQVdDLFdBQVgsR0FBeUIsTUFBekIsR0FBa0MsUUFBNUYsQ0FBakI7QUFDSTtBQUFBO0FBQUEsc0JBQVEsV0FBVSxZQUFsQixFQUErQixNQUFLLFFBQXBDLEVBQTZDLE9BQU9ILFdBQXBEO0FBQ0ksd0NBQUMsVUFBRDtBQUNJLHlDQUFpQixLQUFLRSxLQUFMLENBQVdLLGVBRGhDO0FBRUkscUNBQWEsS0FBS0wsS0FBTCxDQUFXQztBQUY1QjtBQURKLGlCQURKO0FBT0k7QUFBQTtBQUFBO0FBQ0k7QUFBQywyQkFBRDtBQUFBO0FBQ0k7QUFBQTtBQUFBLDhCQUFLLFdBQVUsMEJBQWY7QUFDSTtBQUFBO0FBQUE7QUFBSyxxQ0FBS0QsS0FBTCxDQUFXTyxXQUFYLENBQXVCQztBQUE1Qiw2QkFESjtBQUVJO0FBQUE7QUFBQSxrQ0FBRyxXQUFVLFVBQWI7QUFBeUIscUNBQUtSLEtBQUwsQ0FBV08sV0FBWCxDQUF1QkU7QUFBaEQsNkJBRko7QUFHSSx5REFBSyx5QkFBeUIsRUFBQ0MsUUFBUSxLQUFLVixLQUFMLENBQVdPLFdBQVgsQ0FBdUJJLElBQWhDLEVBQTlCO0FBSEo7QUFESjtBQURKLGlCQVBKO0FBZ0JJLG9DQUFDLE1BQUQ7QUFDSSxpQ0FBYSxLQUFLWCxLQUFMLENBQVdPLFdBQVgsQ0FBdUJLLFdBRHhDO0FBRUksOEJBQVUsS0FBS1osS0FBTCxDQUFXTyxXQUFYLENBQXVCSixRQUZyQztBQUdJLDRCQUFRLEtBQUtILEtBQUwsQ0FBV2EsTUFBWCxDQUFrQkMsTUFIOUI7QUFJSSw4QkFBVSxLQUFLZCxLQUFMLENBQVdFLEtBQVgsQ0FBaUJhLElBQWpCLENBQXNCQyxRQUpwQztBQUtJLG1DQUFlLEtBQUtoQixLQUFMLENBQVdJO0FBTDlCO0FBaEJKO0FBUkosU0FESjtBQW1DSDtBQTNDMEIsQ0FBakIsQ0FBZDtBQTZDQWEsT0FBT0MsT0FBUCxHQUFpQnZCLE9BQWpCIiwiZmlsZSI6ImFydGljbGUuanN4Iiwic291cmNlc0NvbnRlbnQiOlsiJ3VzZSBzdHJpY3QnO1xyXG52YXIgUmVhY3QgPSByZXF1aXJlKCdyZWFjdCcpO1xyXG52YXIgY3JlYXRlUmVhY3RDbGFzcyA9IHJlcXVpcmUoJ2NyZWF0ZS1yZWFjdC1jbGFzcycpO1xyXG52YXIgUm93ID0gcmVxdWlyZSgncmVhY3QtYm9vdHN0cmFwJykuUm93O1xyXG52YXIgRm9vdGVyID0gcmVxdWlyZSgnLi8uLi9sYXlvdXQvZm9vdGVyL2Zvb3Rlci5qc3gnKTtcclxudmFyIE1lbnUgPSByZXF1aXJlKCcuLy4uL2xheW91dC9tZW51L21lbnUuanN4Jyk7XHJcbnZhciBNZW51QnVyZ2VyID0gcmVxdWlyZSgnLi8uLi9sYXlvdXQvbWVudS9tZW51QnVyZ2VyLmpzeCcpO1xyXG52YXIgRGlzcXVzVGhyZWFkID0gcmVxdWlyZSgnLi8uLi9jb21tZW50cy9kaXNxdXNUaHJlYWQuanN4Jyk7XHJcblxyXG52YXIgQXJ0aWNsZSA9IGNyZWF0ZVJlYWN0Q2xhc3Moe1xyXG4gICAgY29tcG9uZW50RGlkTW91bnQ6IGZ1bmN0aW9uICgpIHtcclxuXHJcbiAgICB9LFxyXG4gICAgcmVuZGVyOiBmdW5jdGlvbiAoKSB7XHJcbiAgICAgICAgdmFyIGhlYWRlclN0eWxlID0ge1xyXG4gICAgICAgICAgICBiYWNrZ3JvdW5kSW1hZ2U6ICd1cmwoaW1hZ2VzL1NXSUdHSVNfbG9nby5qcGcpJ1xyXG4gICAgICAgIH07XHJcbiAgICAgICAgcmV0dXJuIChcclxuICAgICAgICAgICAgPGRpdiA+XHJcbiAgICAgICAgICAgICAgICA8TWVudVxyXG4gICAgICAgICAgICAgICAgICAgIG1lbnVWaXNpYmxlPXt0aGlzLnByb3BzLm1lbnVWaXNpYmxlfVxyXG4gICAgICAgICAgICAgICAgICAgIGNhdGVnb3JpZXM9e3RoaXMucHJvcHMuc3RvcmUuY2F0ZWdvcnl9XHJcbiAgICAgICAgICAgICAgICAgICAgaGFuZGxlUm91dGluZz17dGhpcy5wcm9wcy5oYW5kbGVSb3V0aW5nfVxyXG4gICAgICAgICAgICAgICAgICAgIHNldE1haW5Qcm9wZXJ0eT17dGhpcy5wcm9wcy5zZXRNYWluUHJvcGVydHl9XHJcbiAgICAgICAgICAgICAgICAgICAgYWN0aXZlQ2F0ZWdvcnk9e3RoaXMucHJvcHMuYWN0aXZlQ2F0ZWdvcnl9XHJcbiAgICAgICAgICAgICAgICAvPlxyXG4gICAgICAgICAgICAgICAgPGRpdiBjbGFzc05hbWU9eygnY29udGFpbmVyIHBhZ2UtZmFkZWluIGxlZnQtY29udGFpbmVyIGNvbnRhaW5lci1tZW51LScgKyAodGhpcy5wcm9wcy5tZW51VmlzaWJsZSA/ICdvcGVuJyA6ICdjbG9zZWQnKSl9PlxyXG4gICAgICAgICAgICAgICAgICAgIDxoZWFkZXIgY2xhc3NOYW1lPVwiaGVyby1pbWFnZVwiIHJvbGU9XCJiYW5uZXJcIiBzdHlsZT17aGVhZGVyU3R5bGV9PlxyXG4gICAgICAgICAgICAgICAgICAgICAgICA8TWVudUJ1cmdlclxyXG4gICAgICAgICAgICAgICAgICAgICAgICAgICAgc2V0TWFpblByb3BlcnR5PXt0aGlzLnByb3BzLnNldE1haW5Qcm9wZXJ0eX1cclxuICAgICAgICAgICAgICAgICAgICAgICAgICAgIG1lbnVWaXNpYmxlPXt0aGlzLnByb3BzLm1lbnVWaXNpYmxlfVxyXG4gICAgICAgICAgICAgICAgICAgICAgICAvPlxyXG4gICAgICAgICAgICAgICAgICAgIDwvaGVhZGVyPlxyXG4gICAgICAgICAgICAgICAgICAgIDxtYWluID5cclxuICAgICAgICAgICAgICAgICAgICAgICAgPFJvdz5cclxuICAgICAgICAgICAgICAgICAgICAgICAgICAgIDxkaXYgY2xhc3NOYW1lPVwiY29sLXhzLTEyIHNpbmdsZS1jb250ZW50XCI+XHJcbiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgPGgxPnt0aGlzLnByb3BzLmN1cnJlbnRQYWdlLnRpdGxlfTwvaDE+XHJcbiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgPHAgY2xhc3NOYW1lPVwic3VidGl0bGVcIj57dGhpcy5wcm9wcy5jdXJyZW50UGFnZS5zdWJ0aXRsZX08L3A+XHJcbiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgPGRpdiBkYW5nZXJvdXNseVNldElubmVySFRNTD17e19faHRtbDogdGhpcy5wcm9wcy5jdXJyZW50UGFnZS5ib2R5fX0+PC9kaXY+XHJcbiAgICAgICAgICAgICAgICAgICAgICAgICAgICA8L2Rpdj5cclxuICAgICAgICAgICAgICAgICAgICAgICAgPC9Sb3c+XHJcbiAgICAgICAgICAgICAgICAgICAgPC9tYWluPlxyXG4gICAgICAgICAgICAgICAgICAgIDxGb290ZXJcclxuICAgICAgICAgICAgICAgICAgICAgICAgbGFzdFVwZGF0ZWQ9e3RoaXMucHJvcHMuY3VycmVudFBhZ2UubGFzdFVwZGF0ZWR9XHJcbiAgICAgICAgICAgICAgICAgICAgICAgIGNhdGVnb3J5PXt0aGlzLnByb3BzLmN1cnJlbnRQYWdlLmNhdGVnb3J5fVxyXG4gICAgICAgICAgICAgICAgICAgICAgICBhdXRob3I9e3RoaXMucHJvcHMuY29uZmlnLmF1dGhvcn1cclxuICAgICAgICAgICAgICAgICAgICAgICAgYXJ0aWNsZXM9e3RoaXMucHJvcHMuc3RvcmUudmlldy5hcnRpY2xlc31cclxuICAgICAgICAgICAgICAgICAgICAgICAgaGFuZGxlUm91dGluZz17dGhpcy5wcm9wcy5oYW5kbGVSb3V0aW5nfVxyXG4gICAgICAgICAgICAgICAgICAgIC8+XHJcbiAgICAgICAgICAgICAgICA8L2Rpdj5cclxuICAgICAgICAgICAgPC9kaXY+XHJcbiAgICAgICAgKVxyXG4gICAgfVxyXG59KTtcclxubW9kdWxlLmV4cG9ydHMgPSBBcnRpY2xlOyJdfQ==
+},{"./../comments/disqusThread.jsx":"C:\\swiggis.austin\\src\\client\\js\\components\\comments\\disqusThread.jsx","./../layout/footer/footer.jsx":"C:\\swiggis.austin\\src\\client\\js\\components\\layout\\footer\\footer.jsx","./../layout/menu/menu.jsx":"C:\\swiggis.austin\\src\\client\\js\\components\\layout\\menu\\menu.jsx","./../layout/menu/menuBurger.jsx":"C:\\swiggis.austin\\src\\client\\js\\components\\layout\\menu\\menuBurger.jsx","create-react-class":"C:\\swiggis.austin\\node_modules\\create-react-class\\index.js","react":"C:\\swiggis.austin\\node_modules\\react\\react.js","react-bootstrap":"C:\\swiggis.austin\\node_modules\\react-bootstrap\\lib\\index.js"}],"C:\\swiggis.austin\\src\\client\\js\\components\\pages\\category.jsx":[function(require,module,exports){
 'use strict';
 
 var React = require('react');
@@ -58206,8 +57335,8 @@ var Category = createReactClass({
     }
 });
 module.exports = Category;
-//# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbImNhdGVnb3J5LmpzeCJdLCJuYW1lcyI6WyJSZWFjdCIsInJlcXVpcmUiLCJjcmVhdGVSZWFjdENsYXNzIiwiUm93IiwiUG9zdHMiLCJQYWdlIiwiRGlzcXVzQ291bnQiLCJDYXRlZ29yeSIsInJlbmRlciIsImNhdGVnb3J5IiwicHJvcHMiLCJzdG9yZSIsInBhcmFtcyIsImNhdGVnb3J5SWQiLCJjYXRlZ29yeUluZm8iLCJ0aXRsZSIsInN1YnRpdGxlIiwiZGVzY3JpcHRpb24iLCJzaWRlYmFySW1hZ2UiLCJpbWFnZSIsInBhdGgiLCJtZW51VmlzaWJsZSIsImhhbmRsZVJvdXRpbmciLCJzZXRNYWluUHJvcGVydHkiLCJhY3RpdmVDYXRlZ29yeSIsIm1vZGFsIiwiYXJ0aWNsZXMiLCJtb2R1bGUiLCJleHBvcnRzIl0sIm1hcHBpbmdzIjoiQUFBQTs7QUFDQSxJQUFJQSxRQUFRQyxRQUFRLE9BQVIsQ0FBWjtBQUNBLElBQUlDLG1CQUFtQkQsUUFBUSxvQkFBUixDQUF2QjtBQUNBLElBQUlFLE1BQU1GLFFBQVEsaUJBQVIsRUFBMkJFLEdBQXJDO0FBQ0EsSUFBSUMsUUFBUUgsUUFBUSwyQkFBUixDQUFaO0FBQ0EsSUFBSUksT0FBT0osUUFBUSwyQkFBUixDQUFYO0FBQ0EsSUFBSUssY0FBY0wsUUFBUSwrQkFBUixDQUFsQjtBQUNBLElBQUlNLFdBQVdMLGlCQUFpQjtBQUFBOztBQUM1Qk0sWUFBUSxrQkFBWTtBQUNoQixZQUFJQyxXQUFXLEtBQUtDLEtBQUwsQ0FBV0MsS0FBWCxDQUFpQkYsUUFBakIsQ0FBMEIsS0FBS0MsS0FBTCxDQUFXRSxNQUFYLENBQWtCQyxVQUE1QyxDQUFmO0FBQ0EsWUFBSUMsZUFBZTtBQUNmQyxtQkFBT04sU0FBU00sS0FERDtBQUVmQyxzQkFBVSxFQUZLO0FBR2ZDLHlCQUFhLEVBSEU7QUFJZkMsMEJBQWNULFNBQVNVLEtBSlI7QUFLZkMsa0JBQU07QUFMUyxTQUFuQjs7QUFRQSxlQUNJO0FBQUMsZ0JBQUQ7QUFBQTtBQUNJLDBCQUFVTixZQURkO0FBRUksNkJBQWEsS0FBS0osS0FBTCxDQUFXVyxXQUY1QjtBQUdJLDRCQUFZLEtBQUtYLEtBQUwsQ0FBV0MsS0FBWCxDQUFpQkYsUUFIakM7QUFJSSwrQkFBZSxLQUFLQyxLQUFMLENBQVdZLGFBSjlCO0FBS0ksaUNBQWlCLEtBQUtaLEtBQUwsQ0FBV2EsZUFMaEM7QUFNSSxnQ0FBZ0IsS0FBS2IsS0FBTCxDQUFXYyxjQU4vQjtBQU9JLHVCQUFPLEtBQUtkLEtBQUwsQ0FBV2U7QUFQdEI7QUFTSTtBQUFBO0FBQUEsa0JBQUssV0FBVSxTQUFmO0FBQ0k7QUFBQTtBQUFBO0FBQ0ksOEJBQUssUUFEVDtBQUVJLG1DQUFVLHFCQUZkO0FBR0ksK0JBQU07QUFIVjtBQUFBO0FBQUE7QUFESixhQVRKO0FBa0JJLGdDQUFDLEtBQUQ7QUFDSSwwQkFBVWhCLFNBQVNpQixRQUR2QjtBQUVJLGlDQUFpQixVQUZyQjtBQUdJLCtCQUFlLEtBQUtoQixLQUFMLENBQVdZO0FBSDlCO0FBbEJKLFNBREo7QUEwQkg7QUFyQzJCLENBQWpCLENBQWY7QUF1Q0FLLE9BQU9DLE9BQVAsR0FBaUJyQixRQUFqQiIsImZpbGUiOiJjYXRlZ29yeS5qc3giLCJzb3VyY2VzQ29udGVudCI6WyIndXNlIHN0cmljdCc7XG52YXIgUmVhY3QgPSByZXF1aXJlKCdyZWFjdCcpO1xudmFyIGNyZWF0ZVJlYWN0Q2xhc3MgPSByZXF1aXJlKCdjcmVhdGUtcmVhY3QtY2xhc3MnKTtcbnZhciBSb3cgPSByZXF1aXJlKCdyZWFjdC1ib290c3RyYXAnKS5Sb3c7XG52YXIgUG9zdHMgPSByZXF1aXJlKCcuLy4uL2xpc3RzL3Bvc3QvcG9zdHMuanN4Jyk7XG52YXIgUGFnZSA9IHJlcXVpcmUoJy4vLi4vbGF5b3V0L3BhZ2UvcGFnZS5qc3gnKTtcbnZhciBEaXNxdXNDb3VudCA9IHJlcXVpcmUoJy4vLi4vY29tbWVudHMvZGlzcXVzQ291bnQuanN4Jyk7XG52YXIgQ2F0ZWdvcnkgPSBjcmVhdGVSZWFjdENsYXNzKHtcbiAgICByZW5kZXI6IGZ1bmN0aW9uICgpIHtcbiAgICAgICAgdmFyIGNhdGVnb3J5ID0gdGhpcy5wcm9wcy5zdG9yZS5jYXRlZ29yeVt0aGlzLnByb3BzLnBhcmFtcy5jYXRlZ29yeUlkXTtcbiAgICAgICAgdmFyIGNhdGVnb3J5SW5mbyA9IHtcbiAgICAgICAgICAgIHRpdGxlOiBjYXRlZ29yeS50aXRsZSxcbiAgICAgICAgICAgIHN1YnRpdGxlOiAnJyxcbiAgICAgICAgICAgIGRlc2NyaXB0aW9uOiAnJyxcbiAgICAgICAgICAgIHNpZGViYXJJbWFnZTogY2F0ZWdvcnkuaW1hZ2UsXG4gICAgICAgICAgICBwYXRoOiBcImNhdGVnb3J5XCJcbiAgICAgICAgfTtcblxuICAgICAgICByZXR1cm4gKFxuICAgICAgICAgICAgPFBhZ2VcbiAgICAgICAgICAgICAgICBwYWdlSW5mbz17Y2F0ZWdvcnlJbmZvfVxuICAgICAgICAgICAgICAgIG1lbnVWaXNpYmxlPXt0aGlzLnByb3BzLm1lbnVWaXNpYmxlfVxuICAgICAgICAgICAgICAgIGNhdGVnb3JpZXM9e3RoaXMucHJvcHMuc3RvcmUuY2F0ZWdvcnl9XG4gICAgICAgICAgICAgICAgaGFuZGxlUm91dGluZz17dGhpcy5wcm9wcy5oYW5kbGVSb3V0aW5nfVxuICAgICAgICAgICAgICAgIHNldE1haW5Qcm9wZXJ0eT17dGhpcy5wcm9wcy5zZXRNYWluUHJvcGVydHl9XG4gICAgICAgICAgICAgICAgYWN0aXZlQ2F0ZWdvcnk9e3RoaXMucHJvcHMuYWN0aXZlQ2F0ZWdvcnl9XG4gICAgICAgICAgICAgICAgbW9kYWw9e3RoaXMucHJvcHMubW9kYWx9XG4gICAgICAgICAgICA+XG4gICAgICAgICAgICAgICAgPGRpdiBjbGFzc05hbWU9XCJzdWItbmF2XCI+XG4gICAgICAgICAgICAgICAgICAgIDxhXG4gICAgICAgICAgICAgICAgICAgICAgICByb2xlPSdidXR0b24nXG4gICAgICAgICAgICAgICAgICAgICAgICBjbGFzc05hbWU9J3NlbGVjdC1wb3N0cyBhY3RpdmUnXG4gICAgICAgICAgICAgICAgICAgICAgICB0aXRsZT0nYXJ0aWNsZXMnXG4gICAgICAgICAgICAgICAgICAgID5cbiAgICAgICAgICAgICAgICAgICAgICAgIFBvc3RzXG4gICAgICAgICAgICAgICAgICAgIDwvYT5cbiAgICAgICAgICAgICAgICA8L2Rpdj5cbiAgICAgICAgICAgICAgICA8UG9zdHNcbiAgICAgICAgICAgICAgICAgICAgYXJ0aWNsZXM9e2NhdGVnb3J5LmFydGljbGVzfVxuICAgICAgICAgICAgICAgICAgICBhY3RpdmVIb21lUGFuZWw9e1wiYXJ0aWNsZXNcIn1cbiAgICAgICAgICAgICAgICAgICAgaGFuZGxlUm91dGluZz17dGhpcy5wcm9wcy5oYW5kbGVSb3V0aW5nfVxuICAgICAgICAgICAgICAgIC8+XG4gICAgICAgICAgICA8L1BhZ2U+XG4gICAgICAgIClcbiAgICB9XG59KTtcbm1vZHVsZS5leHBvcnRzID0gQ2F0ZWdvcnk7Il19
-},{"./../comments/disqusCount.jsx":"/mnt/c/swiggis.original/src/client/js/components/comments/disqusCount.jsx","./../layout/page/page.jsx":"/mnt/c/swiggis.original/src/client/js/components/layout/page/page.jsx","./../lists/post/posts.jsx":"/mnt/c/swiggis.original/src/client/js/components/lists/post/posts.jsx","create-react-class":"/mnt/c/swiggis.original/node_modules/create-react-class/index.js","react":"/mnt/c/swiggis.original/node_modules/react/react.js","react-bootstrap":"/mnt/c/swiggis.original/node_modules/react-bootstrap/lib/index.js"}],"/mnt/c/swiggis.original/src/client/js/components/pages/contact.jsx":[function(require,module,exports){
+//# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbImNhdGVnb3J5LmpzeCJdLCJuYW1lcyI6WyJSZWFjdCIsInJlcXVpcmUiLCJjcmVhdGVSZWFjdENsYXNzIiwiUm93IiwiUG9zdHMiLCJQYWdlIiwiRGlzcXVzQ291bnQiLCJDYXRlZ29yeSIsInJlbmRlciIsImNhdGVnb3J5IiwicHJvcHMiLCJzdG9yZSIsInBhcmFtcyIsImNhdGVnb3J5SWQiLCJjYXRlZ29yeUluZm8iLCJ0aXRsZSIsInN1YnRpdGxlIiwiZGVzY3JpcHRpb24iLCJzaWRlYmFySW1hZ2UiLCJpbWFnZSIsInBhdGgiLCJtZW51VmlzaWJsZSIsImhhbmRsZVJvdXRpbmciLCJzZXRNYWluUHJvcGVydHkiLCJhY3RpdmVDYXRlZ29yeSIsIm1vZGFsIiwiYXJ0aWNsZXMiLCJtb2R1bGUiLCJleHBvcnRzIl0sIm1hcHBpbmdzIjoiQUFBQTs7QUFDQSxJQUFJQSxRQUFRQyxRQUFRLE9BQVIsQ0FBWjtBQUNBLElBQUlDLG1CQUFtQkQsUUFBUSxvQkFBUixDQUF2QjtBQUNBLElBQUlFLE1BQU1GLFFBQVEsaUJBQVIsRUFBMkJFLEdBQXJDO0FBQ0EsSUFBSUMsUUFBUUgsUUFBUSwyQkFBUixDQUFaO0FBQ0EsSUFBSUksT0FBT0osUUFBUSwyQkFBUixDQUFYO0FBQ0EsSUFBSUssY0FBY0wsUUFBUSwrQkFBUixDQUFsQjtBQUNBLElBQUlNLFdBQVdMLGlCQUFpQjtBQUFBOztBQUM1Qk0sWUFBUSxrQkFBWTtBQUNoQixZQUFJQyxXQUFXLEtBQUtDLEtBQUwsQ0FBV0MsS0FBWCxDQUFpQkYsUUFBakIsQ0FBMEIsS0FBS0MsS0FBTCxDQUFXRSxNQUFYLENBQWtCQyxVQUE1QyxDQUFmO0FBQ0EsWUFBSUMsZUFBZTtBQUNmQyxtQkFBT04sU0FBU00sS0FERDtBQUVmQyxzQkFBVSxFQUZLO0FBR2ZDLHlCQUFhLEVBSEU7QUFJZkMsMEJBQWNULFNBQVNVLEtBSlI7QUFLZkMsa0JBQU07QUFMUyxTQUFuQjs7QUFRQSxlQUNJO0FBQUMsZ0JBQUQ7QUFBQTtBQUNJLDBCQUFVTixZQURkO0FBRUksNkJBQWEsS0FBS0osS0FBTCxDQUFXVyxXQUY1QjtBQUdJLDRCQUFZLEtBQUtYLEtBQUwsQ0FBV0MsS0FBWCxDQUFpQkYsUUFIakM7QUFJSSwrQkFBZSxLQUFLQyxLQUFMLENBQVdZLGFBSjlCO0FBS0ksaUNBQWlCLEtBQUtaLEtBQUwsQ0FBV2EsZUFMaEM7QUFNSSxnQ0FBZ0IsS0FBS2IsS0FBTCxDQUFXYyxjQU4vQjtBQU9JLHVCQUFPLEtBQUtkLEtBQUwsQ0FBV2U7QUFQdEI7QUFTSTtBQUFBO0FBQUEsa0JBQUssV0FBVSxTQUFmO0FBQ0k7QUFBQTtBQUFBO0FBQ0ksOEJBQUssUUFEVDtBQUVJLG1DQUFVLHFCQUZkO0FBR0ksK0JBQU07QUFIVjtBQUFBO0FBQUE7QUFESixhQVRKO0FBa0JJLGdDQUFDLEtBQUQ7QUFDSSwwQkFBVWhCLFNBQVNpQixRQUR2QjtBQUVJLGlDQUFpQixVQUZyQjtBQUdJLCtCQUFlLEtBQUtoQixLQUFMLENBQVdZO0FBSDlCO0FBbEJKLFNBREo7QUEwQkg7QUFyQzJCLENBQWpCLENBQWY7QUF1Q0FLLE9BQU9DLE9BQVAsR0FBaUJyQixRQUFqQiIsImZpbGUiOiJjYXRlZ29yeS5qc3giLCJzb3VyY2VzQ29udGVudCI6WyIndXNlIHN0cmljdCc7XHJcbnZhciBSZWFjdCA9IHJlcXVpcmUoJ3JlYWN0Jyk7XHJcbnZhciBjcmVhdGVSZWFjdENsYXNzID0gcmVxdWlyZSgnY3JlYXRlLXJlYWN0LWNsYXNzJyk7XHJcbnZhciBSb3cgPSByZXF1aXJlKCdyZWFjdC1ib290c3RyYXAnKS5Sb3c7XHJcbnZhciBQb3N0cyA9IHJlcXVpcmUoJy4vLi4vbGlzdHMvcG9zdC9wb3N0cy5qc3gnKTtcclxudmFyIFBhZ2UgPSByZXF1aXJlKCcuLy4uL2xheW91dC9wYWdlL3BhZ2UuanN4Jyk7XHJcbnZhciBEaXNxdXNDb3VudCA9IHJlcXVpcmUoJy4vLi4vY29tbWVudHMvZGlzcXVzQ291bnQuanN4Jyk7XHJcbnZhciBDYXRlZ29yeSA9IGNyZWF0ZVJlYWN0Q2xhc3Moe1xyXG4gICAgcmVuZGVyOiBmdW5jdGlvbiAoKSB7XHJcbiAgICAgICAgdmFyIGNhdGVnb3J5ID0gdGhpcy5wcm9wcy5zdG9yZS5jYXRlZ29yeVt0aGlzLnByb3BzLnBhcmFtcy5jYXRlZ29yeUlkXTtcclxuICAgICAgICB2YXIgY2F0ZWdvcnlJbmZvID0ge1xyXG4gICAgICAgICAgICB0aXRsZTogY2F0ZWdvcnkudGl0bGUsXHJcbiAgICAgICAgICAgIHN1YnRpdGxlOiAnJyxcclxuICAgICAgICAgICAgZGVzY3JpcHRpb246ICcnLFxyXG4gICAgICAgICAgICBzaWRlYmFySW1hZ2U6IGNhdGVnb3J5LmltYWdlLFxyXG4gICAgICAgICAgICBwYXRoOiBcImNhdGVnb3J5XCJcclxuICAgICAgICB9O1xyXG5cclxuICAgICAgICByZXR1cm4gKFxyXG4gICAgICAgICAgICA8UGFnZVxyXG4gICAgICAgICAgICAgICAgcGFnZUluZm89e2NhdGVnb3J5SW5mb31cclxuICAgICAgICAgICAgICAgIG1lbnVWaXNpYmxlPXt0aGlzLnByb3BzLm1lbnVWaXNpYmxlfVxyXG4gICAgICAgICAgICAgICAgY2F0ZWdvcmllcz17dGhpcy5wcm9wcy5zdG9yZS5jYXRlZ29yeX1cclxuICAgICAgICAgICAgICAgIGhhbmRsZVJvdXRpbmc9e3RoaXMucHJvcHMuaGFuZGxlUm91dGluZ31cclxuICAgICAgICAgICAgICAgIHNldE1haW5Qcm9wZXJ0eT17dGhpcy5wcm9wcy5zZXRNYWluUHJvcGVydHl9XHJcbiAgICAgICAgICAgICAgICBhY3RpdmVDYXRlZ29yeT17dGhpcy5wcm9wcy5hY3RpdmVDYXRlZ29yeX1cclxuICAgICAgICAgICAgICAgIG1vZGFsPXt0aGlzLnByb3BzLm1vZGFsfVxyXG4gICAgICAgICAgICA+XHJcbiAgICAgICAgICAgICAgICA8ZGl2IGNsYXNzTmFtZT1cInN1Yi1uYXZcIj5cclxuICAgICAgICAgICAgICAgICAgICA8YVxyXG4gICAgICAgICAgICAgICAgICAgICAgICByb2xlPSdidXR0b24nXHJcbiAgICAgICAgICAgICAgICAgICAgICAgIGNsYXNzTmFtZT0nc2VsZWN0LXBvc3RzIGFjdGl2ZSdcclxuICAgICAgICAgICAgICAgICAgICAgICAgdGl0bGU9J2FydGljbGVzJ1xyXG4gICAgICAgICAgICAgICAgICAgID5cclxuICAgICAgICAgICAgICAgICAgICAgICAgUG9zdHNcclxuICAgICAgICAgICAgICAgICAgICA8L2E+XHJcbiAgICAgICAgICAgICAgICA8L2Rpdj5cclxuICAgICAgICAgICAgICAgIDxQb3N0c1xyXG4gICAgICAgICAgICAgICAgICAgIGFydGljbGVzPXtjYXRlZ29yeS5hcnRpY2xlc31cclxuICAgICAgICAgICAgICAgICAgICBhY3RpdmVIb21lUGFuZWw9e1wiYXJ0aWNsZXNcIn1cclxuICAgICAgICAgICAgICAgICAgICBoYW5kbGVSb3V0aW5nPXt0aGlzLnByb3BzLmhhbmRsZVJvdXRpbmd9XHJcbiAgICAgICAgICAgICAgICAvPlxyXG4gICAgICAgICAgICA8L1BhZ2U+XHJcbiAgICAgICAgKVxyXG4gICAgfVxyXG59KTtcclxubW9kdWxlLmV4cG9ydHMgPSBDYXRlZ29yeTsiXX0=
+},{"./../comments/disqusCount.jsx":"C:\\swiggis.austin\\src\\client\\js\\components\\comments\\disqusCount.jsx","./../layout/page/page.jsx":"C:\\swiggis.austin\\src\\client\\js\\components\\layout\\page\\page.jsx","./../lists/post/posts.jsx":"C:\\swiggis.austin\\src\\client\\js\\components\\lists\\post\\posts.jsx","create-react-class":"C:\\swiggis.austin\\node_modules\\create-react-class\\index.js","react":"C:\\swiggis.austin\\node_modules\\react\\react.js","react-bootstrap":"C:\\swiggis.austin\\node_modules\\react-bootstrap\\lib\\index.js"}],"C:\\swiggis.austin\\src\\client\\js\\components\\pages\\contact.jsx":[function(require,module,exports){
 'use strict';
 
 var React = require('react');
@@ -58405,8 +57534,8 @@ var Contact = createReactClass({
     }
 });
 module.exports = Contact;
-//# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbImNvbnRhY3QuanN4Il0sIm5hbWVzIjpbIlJlYWN0IiwicmVxdWlyZSIsImNyZWF0ZVJlYWN0Q2xhc3MiLCJJbnB1dCIsIlBhZ2UiLCJ2YWxpZGF0aW9uIiwibWVzc2FnZSIsIm5vb3AiLCJDb250YWN0IiwiZ2V0SW5pdGlhbFN0YXRlIiwiZm9ybVZhbHVlcyIsIm5hbWUiLCJlbWFpbCIsImNvbXBhbnkiLCJudW1iZXIiLCJpbnB1dFN0eWxlcyIsInJlbmRlciIsInNlbGYiLCJjb250YWN0SW5mbyIsInRpdGxlIiwic3VidGl0bGUiLCJkZXNjcmlwdGlvbiIsInNpZGViYXJJbWFnZSIsInBhdGgiLCJmb3JtRmllbGRzIiwibGFiZWwiLCJ0eXBlIiwicGxhY2Vob2xkZXIiLCJwcm9wcyIsIm1lbnVWaXNpYmxlIiwic3RvcmUiLCJjYXRlZ29yeSIsImhhbmRsZVJvdXRpbmciLCJzZXRNYWluUHJvcGVydHkiLCJhY3RpdmVDYXRlZ29yeSIsIm1vZGFsIiwibWFwIiwiZmllbGQiLCJpIiwic3RhdGUiLCJ1cGRhdGVUaGlzRmllbGQiLCJzZW5kTWFpbCIsInVwZGF0ZUZpZWxkVmFsdWUiLCJwcm9wZXJ0eSIsInZhbHVlIiwiY2FsbGJhY2siLCJmaWVsZHMiLCJzZXRTdGF0ZSIsImV2ZW50IiwidGFyZ2V0IiwiZmlsdGVyZWQiLCJmaWx0ZXJGaWVsZHMiLCJjb25zb2xlIiwibG9nIiwidmFsaWRhdGVGaWVsZHMiLCJpc1ZhbGlkIiwiZSIsInByZXZlbnREZWZhdWx0Iiwic3RvcFByb3BhZ2F0aW9uIiwiY29vbERvd24iLCJzaG93Iiwic3RhdHVzIiwiY29udGVudHMiLCJyZXNwb25zZSIsIm1vZHVsZSIsImV4cG9ydHMiXSwibWFwcGluZ3MiOiJBQUFBOztBQUNBLElBQUlBLFFBQVFDLFFBQVEsT0FBUixDQUFaO0FBQ0EsSUFBSUMsbUJBQW1CRCxRQUFRLG9CQUFSLENBQXZCO0FBQ0EsSUFBSUUsUUFBUUYsUUFBUSxpQkFBUixFQUEyQkUsS0FBdkM7O0FBRUEsSUFBSUMsT0FBT0gsUUFBUSwyQkFBUixDQUFYO0FBQ0EsSUFBSUksYUFBYUosUUFBUSxxQkFBUixFQUErQkksVUFBaEQ7QUFDQSxJQUFJQyxVQUFVTCxRQUFRLHFCQUFSLEVBQStCSyxPQUE3QztBQUNBLElBQUlDLE9BQU8sU0FBUEEsSUFBTyxHQUFZLENBQUUsQ0FBekI7QUFDQSxJQUFJQyxVQUFVTixpQkFBaUI7QUFBQTs7QUFDM0JPLHFCQUFpQiwyQkFBVTtBQUN2QixlQUFPO0FBQ0hDLHdCQUFZO0FBQ1JDLHNCQUFNLEVBREU7QUFFUkMsdUJBQU8sRUFGQztBQUdSQyx5QkFBUyxFQUhEO0FBSVJDLHdCQUFRLEVBSkE7QUFLUlIseUJBQVM7QUFMRCxhQURUO0FBUUhTLHlCQUFhO0FBQ1RKLHNCQUFNLFNBREc7QUFFVEMsdUJBQU8sU0FGRTtBQUdUQyx5QkFBUyxTQUhBO0FBSVRDLHdCQUFRLFNBSkM7QUFLVFIseUJBQVM7QUFMQTtBQVJWLFNBQVA7QUFnQkgsS0FsQjBCO0FBbUIzQlUsWUFBUSxrQkFBVTtBQUNkLFlBQUlDLE9BQU8sSUFBWDtBQUNBLFlBQUlDLGNBQWM7QUFDZEMsbUJBQU8sU0FETztBQUVkQyxzQkFBVSxzQkFGSTtBQUdkQyx5QkFBYSxFQUhDO0FBSWRDLDBCQUFjLCtCQUpBO0FBS2RDLGtCQUFNO0FBTFEsU0FBbEI7QUFPQSxZQUFJQyxhQUFhLENBQ2I7QUFDSWIsa0JBQU0sTUFEVjtBQUVJYyxtQkFBTyxXQUZYO0FBR0lDLGtCQUFNLE1BSFY7QUFJSUMseUJBQWE7QUFKakIsU0FEYSxFQU9iO0FBQ0loQixrQkFBTSxPQURWO0FBRUljLG1CQUFPLFlBRlg7QUFHSUMsa0JBQU0sTUFIVjtBQUlJQyx5QkFBYTtBQUpqQixTQVBhLEVBYWI7QUFDSWhCLGtCQUFNLFNBRFY7QUFFSWMsbUJBQU8sU0FGWDtBQUdJQyxrQkFBTSxNQUhWO0FBSUlDLHlCQUFhO0FBSmpCLFNBYmEsRUFtQmI7QUFDSWhCLGtCQUFNLFFBRFY7QUFFSWMsbUJBQU8sY0FGWDtBQUdJQyxrQkFBTSxLQUhWO0FBSUlDLHlCQUFhO0FBSmpCLFNBbkJhLEVBeUJiO0FBQ0loQixrQkFBTSxTQURWO0FBRUljLG1CQUFPLGNBRlg7QUFHSUMsa0JBQU0sVUFIVjtBQUlJQyx5QkFBYTtBQUpqQixTQXpCYSxDQUFqQjtBQWdDQSxlQUNJO0FBQUMsZ0JBQUQ7QUFBQTtBQUNJLDBCQUFVVCxXQURkO0FBRUksNkJBQWEsS0FBS1UsS0FBTCxDQUFXQyxXQUY1QjtBQUdJLDRCQUFZLEtBQUtELEtBQUwsQ0FBV0UsS0FBWCxDQUFpQkMsUUFIakM7QUFJSSwrQkFBZSxLQUFLSCxLQUFMLENBQVdJLGFBSjlCO0FBS0ksaUNBQWlCLEtBQUtKLEtBQUwsQ0FBV0ssZUFMaEM7QUFNSSxnQ0FBZ0IsS0FBS0wsS0FBTCxDQUFXTSxjQU4vQjtBQU9JLHVCQUFPLEtBQUtOLEtBQUwsQ0FBV087QUFQdEI7QUFTSTtBQUFBO0FBQUE7QUFBQTtBQUFBLGFBVEo7QUFVSTtBQUFBO0FBQUE7QUFDS1gsMkJBQVdZLEdBQVgsQ0FBZSxVQUFTQyxLQUFULEVBQWdCQyxDQUFoQixFQUFtQjtBQUMvQiwyQkFBTztBQUFBO0FBQUEsMEJBQUssV0FBVSxZQUFmLEVBQTRCLEtBQUtBLENBQWpDO0FBQ0g7QUFBQTtBQUFBLDhCQUFPLFNBQVNELE1BQU0xQixJQUF0QjtBQUE2QjBCLGtDQUFNWjtBQUFuQyx5QkFERztBQUVILDRDQUFDLEtBQUQ7QUFDSSxrQ0FBTVksTUFBTVgsSUFEaEI7QUFFSSx1Q0FBVSxjQUZkO0FBR0ksa0NBQU1XLE1BQU0xQixJQUhoQjtBQUlJLG1DQUFPTSxLQUFLc0IsS0FBTCxDQUFXN0IsVUFBWCxDQUFzQjJCLE1BQU0xQixJQUE1QixDQUpYO0FBS0ksc0NBQVVNLEtBQUt1QixlQUxuQjtBQU1JLHlDQUFhSCxNQUFNVixXQU52QjtBQU9JLHFDQUFTVixLQUFLc0IsS0FBTCxDQUFXeEIsV0FBWCxDQUF1QnNCLE1BQU0xQixJQUE3QjtBQVBiO0FBRkcscUJBQVA7QUFZSCxpQkFiQSxDQURMO0FBZUk7QUFBQTtBQUFBLHNCQUFLLFdBQVUsWUFBZjtBQUNJO0FBQ0ksNEJBQUcsY0FEUDtBQUVJLG1DQUFVLGlCQUZkO0FBR0ksOEJBQUssUUFIVDtBQUlJLCtCQUFNLE1BSlY7QUFLSSxpQ0FBUyxLQUFLOEI7QUFMbEI7QUFESjtBQWZKLGFBVko7QUFtQ0k7QUFBQTtBQUFBLGtCQUFRLFdBQVUsY0FBbEI7QUFDSTtBQUFBO0FBQUEsc0JBQUcsTUFBSyxTQUFSO0FBQUE7QUFBQTtBQURKO0FBbkNKLFNBREo7QUF5Q0gsS0FyRzBCO0FBc0czQkMsc0JBQWtCLDBCQUFTQyxRQUFULEVBQW1CQyxLQUFuQixFQUEwQkMsUUFBMUIsRUFBbUM7QUFDakQsWUFBSTVCLE9BQU8sSUFBWDtBQUNBLFlBQUk2QixTQUFTN0IsS0FBS3NCLEtBQUwsQ0FBVzdCLFVBQXhCO0FBQ0FtQyxtQkFBV0EsWUFBWXRDLElBQXZCO0FBQ0F1QyxlQUFPSCxRQUFQLElBQW1CQyxLQUFuQjtBQUNBM0IsYUFBSzhCLFFBQUwsQ0FBYztBQUNWLDBCQUFjRDtBQURKLFNBQWQsRUFFR0QsUUFGSDtBQUdILEtBOUcwQjtBQStHM0JMLHFCQUFpQix5QkFBU1EsS0FBVCxFQUFlO0FBQzVCLFlBQUkvQixPQUFPLElBQVg7QUFDQUEsYUFBS3lCLGdCQUFMLENBQXNCTSxNQUFNQyxNQUFOLENBQWF0QyxJQUFuQyxFQUF5Q3FDLE1BQU1DLE1BQU4sQ0FBYUwsS0FBdEQsRUFBNkQsWUFBVTtBQUNuRSxnQkFBSU0sV0FBVzdDLFdBQVc4QyxZQUFYLENBQXdCbEMsS0FBS3NCLEtBQUwsQ0FBVzdCLFVBQW5DLENBQWY7QUFDQU8saUJBQUs4QixRQUFMLENBQWM7QUFDVnJDLDRCQUFZd0M7QUFERixhQUFkLEVBRUcsWUFBVTtBQUNURSx3QkFBUUMsR0FBUixDQUFZcEMsS0FBS3NCLEtBQUwsQ0FBVzdCLFVBQXZCO0FBQ0gsYUFKRDtBQUtILFNBUEQ7QUFRSCxLQXpIMEI7QUEwSDNCNEMsb0JBQWdCLHdCQUFTVCxRQUFULEVBQWtCO0FBQzlCLFlBQUk1QixPQUFPLElBQVg7QUFDQTRCLG1CQUFXQSxZQUFZdEMsSUFBdkI7QUFDQSxZQUFJZ0QsVUFBVWxELFdBQVdpRCxjQUFYLENBQTBCckMsS0FBS3NCLEtBQUwsQ0FBVzdCLFVBQXJDLENBQWQ7QUFDQU8sYUFBSzhCLFFBQUwsQ0FBYztBQUNYaEMseUJBQWF3QztBQURGLFNBQWQsRUFFRSxZQUFVO0FBQ1IsZ0JBQUdBLFFBQVEsS0FBUixDQUFILEVBQWtCO0FBQ2RWLHlCQUFTVSxPQUFUO0FBQ0g7QUFDSixTQU5EO0FBT0gsS0FySTBCO0FBc0kzQmQsY0FBVSxrQkFBU2UsQ0FBVCxFQUFXO0FBQ2pCLFlBQUl2QyxPQUFPLElBQVg7QUFDQXVDLFVBQUVDLGNBQUY7QUFDQUQsVUFBRUUsZUFBRjtBQUNBLFlBQUd6QyxLQUFLVyxLQUFMLENBQVdPLEtBQVgsQ0FBaUJ3QixRQUFqQixLQUE4QixJQUFqQyxFQUFzQztBQUNsQyxtQkFBTyxLQUFQO0FBQ0g7QUFDRDFDLGFBQUtxQyxjQUFMLENBQW9CLFVBQVNDLE9BQVQsRUFBaUI7QUFDakNILG9CQUFRQyxHQUFSLENBQVlFLE9BQVo7QUFDQXRDLGlCQUFLVyxLQUFMLENBQVdLLGVBQVgsQ0FBMkIsT0FBM0IsRUFBb0M7QUFDaEMyQixzQkFBTSxJQUQwQjtBQUVoQ0Msd0JBQVEsU0FGd0I7QUFHaENGLDBCQUFVLElBSHNCO0FBSWhDeEMsdUJBQU8sZUFKeUI7QUFLaEMyQywwQkFBVTtBQUxzQixhQUFwQyxFQU1HLFlBQVU7QUFDVHhELHdCQUFRbUMsUUFBUixDQUFpQnhCLEtBQUtzQixLQUFMLENBQVc3QixVQUE1QixFQUF3QyxVQUFTcUQsUUFBVCxFQUFrQjtBQUN0RFgsNEJBQVFDLEdBQVIsQ0FBWVUsUUFBWjtBQUNBLHdCQUFJNUIsUUFBUTtBQUNSeUIsOEJBQU0sSUFERTtBQUVSRCxrQ0FBVSxLQUZGO0FBR1JFLGdDQUFRLFNBSEE7QUFJUjFDLCtCQUFPLGNBSkM7QUFLUjJDLGtDQUFVO0FBTEYscUJBQVo7QUFPQSx3QkFBR0MsU0FBU0YsTUFBVCxLQUFvQixHQUF2QixFQUEyQjtBQUN2QjFCLDhCQUFNLFFBQU4sSUFBa0IsT0FBbEI7QUFDQUEsOEJBQU0sT0FBTixJQUFpQixrQkFBakI7QUFDQUEsOEJBQU0sVUFBTixJQUFvQixtQkFBcEI7QUFDSDtBQUNEbEIseUJBQUtXLEtBQUwsQ0FBV0ssZUFBWCxDQUEyQixPQUEzQixFQUFvQ0UsS0FBcEM7QUFDSCxpQkFmRDtBQWdCSCxhQXZCRDtBQXdCSCxTQTFCRDtBQTJCSDtBQXhLMEIsQ0FBakIsQ0FBZDtBQTBLQTZCLE9BQU9DLE9BQVAsR0FBaUJ6RCxPQUFqQiIsImZpbGUiOiJjb250YWN0LmpzeCIsInNvdXJjZXNDb250ZW50IjpbIid1c2Ugc3RyaWN0JztcbnZhciBSZWFjdCA9IHJlcXVpcmUoJ3JlYWN0Jyk7XG52YXIgY3JlYXRlUmVhY3RDbGFzcyA9IHJlcXVpcmUoJ2NyZWF0ZS1yZWFjdC1jbGFzcycpO1xudmFyIElucHV0ID0gcmVxdWlyZSgncmVhY3QtYm9vdHN0cmFwJykuSW5wdXQ7XG5cbnZhciBQYWdlID0gcmVxdWlyZSgnLi8uLi9sYXlvdXQvcGFnZS9wYWdlLmpzeCcpO1xudmFyIHZhbGlkYXRpb24gPSByZXF1aXJlKCcuLy4uLy4uL3V0aWxzL3V0aWxzJykudmFsaWRhdGlvbjtcbnZhciBtZXNzYWdlID0gcmVxdWlyZSgnLi8uLi8uLi91dGlscy91dGlscycpLm1lc3NhZ2U7XG52YXIgbm9vcCA9IGZ1bmN0aW9uICgpIHt9O1xudmFyIENvbnRhY3QgPSBjcmVhdGVSZWFjdENsYXNzKHtcbiAgICBnZXRJbml0aWFsU3RhdGU6IGZ1bmN0aW9uKCl7XG4gICAgICAgIHJldHVybiB7XG4gICAgICAgICAgICBmb3JtVmFsdWVzOiB7XG4gICAgICAgICAgICAgICAgbmFtZTogJycsXG4gICAgICAgICAgICAgICAgZW1haWw6ICcnLFxuICAgICAgICAgICAgICAgIGNvbXBhbnk6ICcnLFxuICAgICAgICAgICAgICAgIG51bWJlcjogJycsXG4gICAgICAgICAgICAgICAgbWVzc2FnZTogJydcbiAgICAgICAgICAgIH0sXG4gICAgICAgICAgICBpbnB1dFN0eWxlczoge1xuICAgICAgICAgICAgICAgIG5hbWU6ICd3YXJuaW5nJyxcbiAgICAgICAgICAgICAgICBlbWFpbDogJ3dhcm5pbmcnLFxuICAgICAgICAgICAgICAgIGNvbXBhbnk6ICd3YXJuaW5nJyxcbiAgICAgICAgICAgICAgICBudW1iZXI6ICd3YXJuaW5nJyxcbiAgICAgICAgICAgICAgICBtZXNzYWdlOiAnd2FybmluZydcbiAgICAgICAgICAgIH1cbiAgICAgICAgfVxuICAgIH0sXG4gICAgcmVuZGVyOiBmdW5jdGlvbigpe1xuICAgICAgICB2YXIgc2VsZiA9IHRoaXM7XG4gICAgICAgIHZhciBjb250YWN0SW5mbyA9IHtcbiAgICAgICAgICAgIHRpdGxlOiAnQ29udGFjdCcsXG4gICAgICAgICAgICBzdWJ0aXRsZTogJ0dldCBpbiB0b3VjaCB3aXRoIHVzJyxcbiAgICAgICAgICAgIGRlc2NyaXB0aW9uOiAnJyxcbiAgICAgICAgICAgIHNpZGViYXJJbWFnZTogJy4uL2ltYWdlcy9kZWZhdWx0LWNvbnRhY3QuanBnJyxcbiAgICAgICAgICAgIHBhdGg6IFwiY29udGFjdFwiXG4gICAgICAgIH07XG4gICAgICAgIHZhciBmb3JtRmllbGRzID0gW1xuICAgICAgICAgICAge1xuICAgICAgICAgICAgICAgIG5hbWU6ICduYW1lJyxcbiAgICAgICAgICAgICAgICBsYWJlbDogJ1lvdXIgTmFtZScsXG4gICAgICAgICAgICAgICAgdHlwZTogJ3RleHQnLFxuICAgICAgICAgICAgICAgIHBsYWNlaG9sZGVyOiAnSmFjayBTbWl0aCdcbiAgICAgICAgICAgIH0sXG4gICAgICAgICAgICB7XG4gICAgICAgICAgICAgICAgbmFtZTogJ2VtYWlsJyxcbiAgICAgICAgICAgICAgICBsYWJlbDogJ1lvdXIgRW1haWwnLFxuICAgICAgICAgICAgICAgIHR5cGU6ICd0ZXh0JyxcbiAgICAgICAgICAgICAgICBwbGFjZWhvbGRlcjogJ2V4YW1wbGVAbWFpbC5jb20nXG4gICAgICAgICAgICB9LFxuICAgICAgICAgICAge1xuICAgICAgICAgICAgICAgIG5hbWU6ICdjb21wYW55JyxcbiAgICAgICAgICAgICAgICBsYWJlbDogJ0NvbXBhbnknLFxuICAgICAgICAgICAgICAgIHR5cGU6ICd0ZXh0JyxcbiAgICAgICAgICAgICAgICBwbGFjZWhvbGRlcjogJ0V4YW1wbGUgQ29ycG9yYXRpb24nXG4gICAgICAgICAgICB9LFxuICAgICAgICAgICAge1xuICAgICAgICAgICAgICAgIG5hbWU6ICdudW1iZXInLFxuICAgICAgICAgICAgICAgIGxhYmVsOiAnUGhvbmUgTnVtYmVyJyxcbiAgICAgICAgICAgICAgICB0eXBlOiAndGVsJyxcbiAgICAgICAgICAgICAgICBwbGFjZWhvbGRlcjogJys0NDc3ODc2NTQzOSdcbiAgICAgICAgICAgIH0sXG4gICAgICAgICAgICB7XG4gICAgICAgICAgICAgICAgbmFtZTogJ21lc3NhZ2UnLFxuICAgICAgICAgICAgICAgIGxhYmVsOiAnWW91ciBNZXNzYWdlJyxcbiAgICAgICAgICAgICAgICB0eXBlOiAndGV4dGFyZWEnLFxuICAgICAgICAgICAgICAgIHBsYWNlaG9sZGVyOiBcIkhlbGxvLCBsZXQncyBjaGF0IVwiXG4gICAgICAgICAgICB9XG4gICAgICAgIF07XG4gICAgICAgIHJldHVybiAoXG4gICAgICAgICAgICA8UGFnZVxuICAgICAgICAgICAgICAgIHBhZ2VJbmZvPXtjb250YWN0SW5mb31cbiAgICAgICAgICAgICAgICBtZW51VmlzaWJsZT17dGhpcy5wcm9wcy5tZW51VmlzaWJsZX1cbiAgICAgICAgICAgICAgICBjYXRlZ29yaWVzPXt0aGlzLnByb3BzLnN0b3JlLmNhdGVnb3J5fVxuICAgICAgICAgICAgICAgIGhhbmRsZVJvdXRpbmc9e3RoaXMucHJvcHMuaGFuZGxlUm91dGluZ31cbiAgICAgICAgICAgICAgICBzZXRNYWluUHJvcGVydHk9e3RoaXMucHJvcHMuc2V0TWFpblByb3BlcnR5fVxuICAgICAgICAgICAgICAgIGFjdGl2ZUNhdGVnb3J5PXt0aGlzLnByb3BzLmFjdGl2ZUNhdGVnb3J5fVxuICAgICAgICAgICAgICAgIG1vZGFsPXt0aGlzLnByb3BzLm1vZGFsfVxuICAgICAgICAgICAgPlxuICAgICAgICAgICAgICAgIDxoMz5TZW5kIHVzIGFuIGVtYWlsPC9oMz5cbiAgICAgICAgICAgICAgICA8Zm9ybT5cbiAgICAgICAgICAgICAgICAgICAge2Zvcm1GaWVsZHMubWFwKGZ1bmN0aW9uKGZpZWxkLCBpKSB7XG4gICAgICAgICAgICAgICAgICAgICAgICByZXR1cm4gPGRpdiBjbGFzc05hbWU9XCJmb3JtLWdyb3VwXCIga2V5PXtpfT5cbiAgICAgICAgICAgICAgICAgICAgICAgICAgICA8bGFiZWwgaHRtbEZvcj17ZmllbGQubmFtZX0+e2ZpZWxkLmxhYmVsfTwvbGFiZWw+XG4gICAgICAgICAgICAgICAgICAgICAgICAgICAgPElucHV0XG4gICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIHR5cGU9e2ZpZWxkLnR5cGV9XG4gICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIGNsYXNzTmFtZT1cImZvcm0tY29udHJvbFwiXG4gICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIG5hbWU9e2ZpZWxkLm5hbWV9XG4gICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIHZhbHVlPXtzZWxmLnN0YXRlLmZvcm1WYWx1ZXNbZmllbGQubmFtZV19XG4gICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIG9uQ2hhbmdlPXtzZWxmLnVwZGF0ZVRoaXNGaWVsZH1cbiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgcGxhY2Vob2xkZXI9e2ZpZWxkLnBsYWNlaG9sZGVyfVxuICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICBic1N0eWxlPXtzZWxmLnN0YXRlLmlucHV0U3R5bGVzW2ZpZWxkLm5hbWVdfVxuICAgICAgICAgICAgICAgICAgICAgICAgICAgIC8+XG4gICAgICAgICAgICAgICAgICAgICAgICA8L2Rpdj47XG4gICAgICAgICAgICAgICAgICAgIH0pfVxuICAgICAgICAgICAgICAgICAgICA8ZGl2IGNsYXNzTmFtZT1cImZvcm0tZ3JvdXBcIj5cbiAgICAgICAgICAgICAgICAgICAgICAgIDxpbnB1dFxuICAgICAgICAgICAgICAgICAgICAgICAgICAgIGlkPVwic2VuZC1tZXNzYWdlXCJcbiAgICAgICAgICAgICAgICAgICAgICAgICAgICBjbGFzc05hbWU9XCJidG4gYnRuLWRlZmF1bHRcIlxuICAgICAgICAgICAgICAgICAgICAgICAgICAgIHR5cGU9XCJidXR0b25cIlxuICAgICAgICAgICAgICAgICAgICAgICAgICAgIHZhbHVlPVwiU2VuZFwiXG4gICAgICAgICAgICAgICAgICAgICAgICAgICAgb25DbGljaz17dGhpcy5zZW5kTWFpbH1cbiAgICAgICAgICAgICAgICAgICAgICAgIC8+XG4gICAgICAgICAgICAgICAgICAgIDwvZGl2PlxuICAgICAgICAgICAgICAgIDwvZm9ybT5cbiAgICAgICAgICAgICAgICA8Zm9vdGVyIGNsYXNzTmFtZT1cInNwbGl0LWZvb3RlclwiPlxuICAgICAgICAgICAgICAgICAgICA8YSBocmVmPVwiIy9hYm91dFwiPkFib3V0PC9hPlxuICAgICAgICAgICAgICAgIDwvZm9vdGVyPlxuICAgICAgICAgICAgPC9QYWdlPlxuICAgICAgICApXG4gICAgfSxcbiAgICB1cGRhdGVGaWVsZFZhbHVlOiBmdW5jdGlvbihwcm9wZXJ0eSwgdmFsdWUsIGNhbGxiYWNrKXtcbiAgICAgICAgdmFyIHNlbGYgPSB0aGlzO1xuICAgICAgICB2YXIgZmllbGRzID0gc2VsZi5zdGF0ZS5mb3JtVmFsdWVzO1xuICAgICAgICBjYWxsYmFjayA9IGNhbGxiYWNrIHx8IG5vb3A7XG4gICAgICAgIGZpZWxkc1twcm9wZXJ0eV0gPSB2YWx1ZTtcbiAgICAgICAgc2VsZi5zZXRTdGF0ZSh7XG4gICAgICAgICAgICAnZm9ybVZhbHVlcyc6IGZpZWxkc1xuICAgICAgICB9LCBjYWxsYmFjayk7XG4gICAgfSxcbiAgICB1cGRhdGVUaGlzRmllbGQ6IGZ1bmN0aW9uKGV2ZW50KXtcbiAgICAgICAgdmFyIHNlbGYgPSB0aGlzO1xuICAgICAgICBzZWxmLnVwZGF0ZUZpZWxkVmFsdWUoZXZlbnQudGFyZ2V0Lm5hbWUsIGV2ZW50LnRhcmdldC52YWx1ZSwgZnVuY3Rpb24oKXtcbiAgICAgICAgICAgIHZhciBmaWx0ZXJlZCA9IHZhbGlkYXRpb24uZmlsdGVyRmllbGRzKHNlbGYuc3RhdGUuZm9ybVZhbHVlcyk7XG4gICAgICAgICAgICBzZWxmLnNldFN0YXRlKHtcbiAgICAgICAgICAgICAgICBmb3JtVmFsdWVzOiBmaWx0ZXJlZFxuICAgICAgICAgICAgfSwgZnVuY3Rpb24oKXtcbiAgICAgICAgICAgICAgICBjb25zb2xlLmxvZyhzZWxmLnN0YXRlLmZvcm1WYWx1ZXMpO1xuICAgICAgICAgICAgfSk7XG4gICAgICAgIH0pO1xuICAgIH0sXG4gICAgdmFsaWRhdGVGaWVsZHM6IGZ1bmN0aW9uKGNhbGxiYWNrKXtcbiAgICAgICAgdmFyIHNlbGYgPSB0aGlzO1xuICAgICAgICBjYWxsYmFjayA9IGNhbGxiYWNrIHx8IG5vb3A7XG4gICAgICAgIHZhciBpc1ZhbGlkID0gdmFsaWRhdGlvbi52YWxpZGF0ZUZpZWxkcyhzZWxmLnN0YXRlLmZvcm1WYWx1ZXMpO1xuICAgICAgICBzZWxmLnNldFN0YXRlKHtcbiAgICAgICAgICAgaW5wdXRTdHlsZXM6IGlzVmFsaWRcbiAgICAgICAgfSxmdW5jdGlvbigpe1xuICAgICAgICAgICAgaWYoaXNWYWxpZFsnYWxsJ10pe1xuICAgICAgICAgICAgICAgIGNhbGxiYWNrKGlzVmFsaWQpO1xuICAgICAgICAgICAgfVxuICAgICAgICB9KTtcbiAgICB9LFxuICAgIHNlbmRNYWlsOiBmdW5jdGlvbihlKXtcbiAgICAgICAgdmFyIHNlbGYgPSB0aGlzO1xuICAgICAgICBlLnByZXZlbnREZWZhdWx0KCk7XG4gICAgICAgIGUuc3RvcFByb3BhZ2F0aW9uKCk7XG4gICAgICAgIGlmKHNlbGYucHJvcHMubW9kYWwuY29vbERvd24gPT09IHRydWUpe1xuICAgICAgICAgICAgcmV0dXJuIGZhbHNlO1xuICAgICAgICB9XG4gICAgICAgIHNlbGYudmFsaWRhdGVGaWVsZHMoZnVuY3Rpb24oaXNWYWxpZCl7XG4gICAgICAgICAgICBjb25zb2xlLmxvZyhpc1ZhbGlkKTtcbiAgICAgICAgICAgIHNlbGYucHJvcHMuc2V0TWFpblByb3BlcnR5KCdtb2RhbCcsIHtcbiAgICAgICAgICAgICAgICBzaG93OiB0cnVlLFxuICAgICAgICAgICAgICAgIHN0YXR1czogJ2xvYWRpbmcnLFxuICAgICAgICAgICAgICAgIGNvb2xEb3duOiB0cnVlLFxuICAgICAgICAgICAgICAgIHRpdGxlOiAnU2VuZGluZyBFbWFpbCcsXG4gICAgICAgICAgICAgICAgY29udGVudHM6ICdQbGVhc2Ugd2FpdC4uLiAnXG4gICAgICAgICAgICB9LCBmdW5jdGlvbigpe1xuICAgICAgICAgICAgICAgIG1lc3NhZ2Uuc2VuZE1haWwoc2VsZi5zdGF0ZS5mb3JtVmFsdWVzLCBmdW5jdGlvbihyZXNwb25zZSl7XG4gICAgICAgICAgICAgICAgICAgIGNvbnNvbGUubG9nKHJlc3BvbnNlKTtcbiAgICAgICAgICAgICAgICAgICAgdmFyIG1vZGFsID0ge1xuICAgICAgICAgICAgICAgICAgICAgICAgc2hvdzogdHJ1ZSxcbiAgICAgICAgICAgICAgICAgICAgICAgIGNvb2xEb3duOiBmYWxzZSxcbiAgICAgICAgICAgICAgICAgICAgICAgIHN0YXR1czogJ3N1Y2Nlc3MnLFxuICAgICAgICAgICAgICAgICAgICAgICAgdGl0bGU6ICdNZXNzYWdlIFNlbnQnLFxuICAgICAgICAgICAgICAgICAgICAgICAgY29udGVudHM6ICdUaGFuayB5b3UhJ1xuICAgICAgICAgICAgICAgICAgICB9O1xuICAgICAgICAgICAgICAgICAgICBpZihyZXNwb25zZS5zdGF0dXMgIT09IDIwMCl7XG4gICAgICAgICAgICAgICAgICAgICAgICBtb2RhbFsnc3RhdHVzJ10gPSAnZXJyb3InO1xuICAgICAgICAgICAgICAgICAgICAgICAgbW9kYWxbJ3RpdGxlJ10gPSAnT3BlcmF0aW9uIEZhaWxlZCc7XG4gICAgICAgICAgICAgICAgICAgICAgICBtb2RhbFsnY29udGVudHMnXSA9ICdQbGVhc2UgdHJ5IGFnYWluLidcbiAgICAgICAgICAgICAgICAgICAgfVxuICAgICAgICAgICAgICAgICAgICBzZWxmLnByb3BzLnNldE1haW5Qcm9wZXJ0eSgnbW9kYWwnLCBtb2RhbCk7XG4gICAgICAgICAgICAgICAgfSk7XG4gICAgICAgICAgICB9KTtcbiAgICAgICAgfSk7XG4gICAgfVxufSk7XG5tb2R1bGUuZXhwb3J0cyA9IENvbnRhY3Q7Il19
-},{"./../../utils/utils":"/mnt/c/swiggis.original/src/client/js/utils/utils.js","./../layout/page/page.jsx":"/mnt/c/swiggis.original/src/client/js/components/layout/page/page.jsx","create-react-class":"/mnt/c/swiggis.original/node_modules/create-react-class/index.js","react":"/mnt/c/swiggis.original/node_modules/react/react.js","react-bootstrap":"/mnt/c/swiggis.original/node_modules/react-bootstrap/lib/index.js"}],"/mnt/c/swiggis.original/src/client/js/components/pages/home.jsx":[function(require,module,exports){
+//# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbImNvbnRhY3QuanN4Il0sIm5hbWVzIjpbIlJlYWN0IiwicmVxdWlyZSIsImNyZWF0ZVJlYWN0Q2xhc3MiLCJJbnB1dCIsIlBhZ2UiLCJ2YWxpZGF0aW9uIiwibWVzc2FnZSIsIm5vb3AiLCJDb250YWN0IiwiZ2V0SW5pdGlhbFN0YXRlIiwiZm9ybVZhbHVlcyIsIm5hbWUiLCJlbWFpbCIsImNvbXBhbnkiLCJudW1iZXIiLCJpbnB1dFN0eWxlcyIsInJlbmRlciIsInNlbGYiLCJjb250YWN0SW5mbyIsInRpdGxlIiwic3VidGl0bGUiLCJkZXNjcmlwdGlvbiIsInNpZGViYXJJbWFnZSIsInBhdGgiLCJmb3JtRmllbGRzIiwibGFiZWwiLCJ0eXBlIiwicGxhY2Vob2xkZXIiLCJwcm9wcyIsIm1lbnVWaXNpYmxlIiwic3RvcmUiLCJjYXRlZ29yeSIsImhhbmRsZVJvdXRpbmciLCJzZXRNYWluUHJvcGVydHkiLCJhY3RpdmVDYXRlZ29yeSIsIm1vZGFsIiwibWFwIiwiZmllbGQiLCJpIiwic3RhdGUiLCJ1cGRhdGVUaGlzRmllbGQiLCJzZW5kTWFpbCIsInVwZGF0ZUZpZWxkVmFsdWUiLCJwcm9wZXJ0eSIsInZhbHVlIiwiY2FsbGJhY2siLCJmaWVsZHMiLCJzZXRTdGF0ZSIsImV2ZW50IiwidGFyZ2V0IiwiZmlsdGVyZWQiLCJmaWx0ZXJGaWVsZHMiLCJjb25zb2xlIiwibG9nIiwidmFsaWRhdGVGaWVsZHMiLCJpc1ZhbGlkIiwiZSIsInByZXZlbnREZWZhdWx0Iiwic3RvcFByb3BhZ2F0aW9uIiwiY29vbERvd24iLCJzaG93Iiwic3RhdHVzIiwiY29udGVudHMiLCJyZXNwb25zZSIsIm1vZHVsZSIsImV4cG9ydHMiXSwibWFwcGluZ3MiOiJBQUFBOztBQUNBLElBQUlBLFFBQVFDLFFBQVEsT0FBUixDQUFaO0FBQ0EsSUFBSUMsbUJBQW1CRCxRQUFRLG9CQUFSLENBQXZCO0FBQ0EsSUFBSUUsUUFBUUYsUUFBUSxpQkFBUixFQUEyQkUsS0FBdkM7O0FBRUEsSUFBSUMsT0FBT0gsUUFBUSwyQkFBUixDQUFYO0FBQ0EsSUFBSUksYUFBYUosUUFBUSxxQkFBUixFQUErQkksVUFBaEQ7QUFDQSxJQUFJQyxVQUFVTCxRQUFRLHFCQUFSLEVBQStCSyxPQUE3QztBQUNBLElBQUlDLE9BQU8sU0FBUEEsSUFBTyxHQUFZLENBQUUsQ0FBekI7QUFDQSxJQUFJQyxVQUFVTixpQkFBaUI7QUFBQTs7QUFDM0JPLHFCQUFpQiwyQkFBVTtBQUN2QixlQUFPO0FBQ0hDLHdCQUFZO0FBQ1JDLHNCQUFNLEVBREU7QUFFUkMsdUJBQU8sRUFGQztBQUdSQyx5QkFBUyxFQUhEO0FBSVJDLHdCQUFRLEVBSkE7QUFLUlIseUJBQVM7QUFMRCxhQURUO0FBUUhTLHlCQUFhO0FBQ1RKLHNCQUFNLFNBREc7QUFFVEMsdUJBQU8sU0FGRTtBQUdUQyx5QkFBUyxTQUhBO0FBSVRDLHdCQUFRLFNBSkM7QUFLVFIseUJBQVM7QUFMQTtBQVJWLFNBQVA7QUFnQkgsS0FsQjBCO0FBbUIzQlUsWUFBUSxrQkFBVTtBQUNkLFlBQUlDLE9BQU8sSUFBWDtBQUNBLFlBQUlDLGNBQWM7QUFDZEMsbUJBQU8sU0FETztBQUVkQyxzQkFBVSxzQkFGSTtBQUdkQyx5QkFBYSxFQUhDO0FBSWRDLDBCQUFjLCtCQUpBO0FBS2RDLGtCQUFNO0FBTFEsU0FBbEI7QUFPQSxZQUFJQyxhQUFhLENBQ2I7QUFDSWIsa0JBQU0sTUFEVjtBQUVJYyxtQkFBTyxXQUZYO0FBR0lDLGtCQUFNLE1BSFY7QUFJSUMseUJBQWE7QUFKakIsU0FEYSxFQU9iO0FBQ0loQixrQkFBTSxPQURWO0FBRUljLG1CQUFPLFlBRlg7QUFHSUMsa0JBQU0sTUFIVjtBQUlJQyx5QkFBYTtBQUpqQixTQVBhLEVBYWI7QUFDSWhCLGtCQUFNLFNBRFY7QUFFSWMsbUJBQU8sU0FGWDtBQUdJQyxrQkFBTSxNQUhWO0FBSUlDLHlCQUFhO0FBSmpCLFNBYmEsRUFtQmI7QUFDSWhCLGtCQUFNLFFBRFY7QUFFSWMsbUJBQU8sY0FGWDtBQUdJQyxrQkFBTSxLQUhWO0FBSUlDLHlCQUFhO0FBSmpCLFNBbkJhLEVBeUJiO0FBQ0loQixrQkFBTSxTQURWO0FBRUljLG1CQUFPLGNBRlg7QUFHSUMsa0JBQU0sVUFIVjtBQUlJQyx5QkFBYTtBQUpqQixTQXpCYSxDQUFqQjtBQWdDQSxlQUNJO0FBQUMsZ0JBQUQ7QUFBQTtBQUNJLDBCQUFVVCxXQURkO0FBRUksNkJBQWEsS0FBS1UsS0FBTCxDQUFXQyxXQUY1QjtBQUdJLDRCQUFZLEtBQUtELEtBQUwsQ0FBV0UsS0FBWCxDQUFpQkMsUUFIakM7QUFJSSwrQkFBZSxLQUFLSCxLQUFMLENBQVdJLGFBSjlCO0FBS0ksaUNBQWlCLEtBQUtKLEtBQUwsQ0FBV0ssZUFMaEM7QUFNSSxnQ0FBZ0IsS0FBS0wsS0FBTCxDQUFXTSxjQU4vQjtBQU9JLHVCQUFPLEtBQUtOLEtBQUwsQ0FBV087QUFQdEI7QUFTSTtBQUFBO0FBQUE7QUFBQTtBQUFBLGFBVEo7QUFVSTtBQUFBO0FBQUE7QUFDS1gsMkJBQVdZLEdBQVgsQ0FBZSxVQUFTQyxLQUFULEVBQWdCQyxDQUFoQixFQUFtQjtBQUMvQiwyQkFBTztBQUFBO0FBQUEsMEJBQUssV0FBVSxZQUFmLEVBQTRCLEtBQUtBLENBQWpDO0FBQ0g7QUFBQTtBQUFBLDhCQUFPLFNBQVNELE1BQU0xQixJQUF0QjtBQUE2QjBCLGtDQUFNWjtBQUFuQyx5QkFERztBQUVILDRDQUFDLEtBQUQ7QUFDSSxrQ0FBTVksTUFBTVgsSUFEaEI7QUFFSSx1Q0FBVSxjQUZkO0FBR0ksa0NBQU1XLE1BQU0xQixJQUhoQjtBQUlJLG1DQUFPTSxLQUFLc0IsS0FBTCxDQUFXN0IsVUFBWCxDQUFzQjJCLE1BQU0xQixJQUE1QixDQUpYO0FBS0ksc0NBQVVNLEtBQUt1QixlQUxuQjtBQU1JLHlDQUFhSCxNQUFNVixXQU52QjtBQU9JLHFDQUFTVixLQUFLc0IsS0FBTCxDQUFXeEIsV0FBWCxDQUF1QnNCLE1BQU0xQixJQUE3QjtBQVBiO0FBRkcscUJBQVA7QUFZSCxpQkFiQSxDQURMO0FBZUk7QUFBQTtBQUFBLHNCQUFLLFdBQVUsWUFBZjtBQUNJO0FBQ0ksNEJBQUcsY0FEUDtBQUVJLG1DQUFVLGlCQUZkO0FBR0ksOEJBQUssUUFIVDtBQUlJLCtCQUFNLE1BSlY7QUFLSSxpQ0FBUyxLQUFLOEI7QUFMbEI7QUFESjtBQWZKLGFBVko7QUFtQ0k7QUFBQTtBQUFBLGtCQUFRLFdBQVUsY0FBbEI7QUFDSTtBQUFBO0FBQUEsc0JBQUcsTUFBSyxTQUFSO0FBQUE7QUFBQTtBQURKO0FBbkNKLFNBREo7QUF5Q0gsS0FyRzBCO0FBc0czQkMsc0JBQWtCLDBCQUFTQyxRQUFULEVBQW1CQyxLQUFuQixFQUEwQkMsUUFBMUIsRUFBbUM7QUFDakQsWUFBSTVCLE9BQU8sSUFBWDtBQUNBLFlBQUk2QixTQUFTN0IsS0FBS3NCLEtBQUwsQ0FBVzdCLFVBQXhCO0FBQ0FtQyxtQkFBV0EsWUFBWXRDLElBQXZCO0FBQ0F1QyxlQUFPSCxRQUFQLElBQW1CQyxLQUFuQjtBQUNBM0IsYUFBSzhCLFFBQUwsQ0FBYztBQUNWLDBCQUFjRDtBQURKLFNBQWQsRUFFR0QsUUFGSDtBQUdILEtBOUcwQjtBQStHM0JMLHFCQUFpQix5QkFBU1EsS0FBVCxFQUFlO0FBQzVCLFlBQUkvQixPQUFPLElBQVg7QUFDQUEsYUFBS3lCLGdCQUFMLENBQXNCTSxNQUFNQyxNQUFOLENBQWF0QyxJQUFuQyxFQUF5Q3FDLE1BQU1DLE1BQU4sQ0FBYUwsS0FBdEQsRUFBNkQsWUFBVTtBQUNuRSxnQkFBSU0sV0FBVzdDLFdBQVc4QyxZQUFYLENBQXdCbEMsS0FBS3NCLEtBQUwsQ0FBVzdCLFVBQW5DLENBQWY7QUFDQU8saUJBQUs4QixRQUFMLENBQWM7QUFDVnJDLDRCQUFZd0M7QUFERixhQUFkLEVBRUcsWUFBVTtBQUNURSx3QkFBUUMsR0FBUixDQUFZcEMsS0FBS3NCLEtBQUwsQ0FBVzdCLFVBQXZCO0FBQ0gsYUFKRDtBQUtILFNBUEQ7QUFRSCxLQXpIMEI7QUEwSDNCNEMsb0JBQWdCLHdCQUFTVCxRQUFULEVBQWtCO0FBQzlCLFlBQUk1QixPQUFPLElBQVg7QUFDQTRCLG1CQUFXQSxZQUFZdEMsSUFBdkI7QUFDQSxZQUFJZ0QsVUFBVWxELFdBQVdpRCxjQUFYLENBQTBCckMsS0FBS3NCLEtBQUwsQ0FBVzdCLFVBQXJDLENBQWQ7QUFDQU8sYUFBSzhCLFFBQUwsQ0FBYztBQUNYaEMseUJBQWF3QztBQURGLFNBQWQsRUFFRSxZQUFVO0FBQ1IsZ0JBQUdBLFFBQVEsS0FBUixDQUFILEVBQWtCO0FBQ2RWLHlCQUFTVSxPQUFUO0FBQ0g7QUFDSixTQU5EO0FBT0gsS0FySTBCO0FBc0kzQmQsY0FBVSxrQkFBU2UsQ0FBVCxFQUFXO0FBQ2pCLFlBQUl2QyxPQUFPLElBQVg7QUFDQXVDLFVBQUVDLGNBQUY7QUFDQUQsVUFBRUUsZUFBRjtBQUNBLFlBQUd6QyxLQUFLVyxLQUFMLENBQVdPLEtBQVgsQ0FBaUJ3QixRQUFqQixLQUE4QixJQUFqQyxFQUFzQztBQUNsQyxtQkFBTyxLQUFQO0FBQ0g7QUFDRDFDLGFBQUtxQyxjQUFMLENBQW9CLFVBQVNDLE9BQVQsRUFBaUI7QUFDakNILG9CQUFRQyxHQUFSLENBQVlFLE9BQVo7QUFDQXRDLGlCQUFLVyxLQUFMLENBQVdLLGVBQVgsQ0FBMkIsT0FBM0IsRUFBb0M7QUFDaEMyQixzQkFBTSxJQUQwQjtBQUVoQ0Msd0JBQVEsU0FGd0I7QUFHaENGLDBCQUFVLElBSHNCO0FBSWhDeEMsdUJBQU8sZUFKeUI7QUFLaEMyQywwQkFBVTtBQUxzQixhQUFwQyxFQU1HLFlBQVU7QUFDVHhELHdCQUFRbUMsUUFBUixDQUFpQnhCLEtBQUtzQixLQUFMLENBQVc3QixVQUE1QixFQUF3QyxVQUFTcUQsUUFBVCxFQUFrQjtBQUN0RFgsNEJBQVFDLEdBQVIsQ0FBWVUsUUFBWjtBQUNBLHdCQUFJNUIsUUFBUTtBQUNSeUIsOEJBQU0sSUFERTtBQUVSRCxrQ0FBVSxLQUZGO0FBR1JFLGdDQUFRLFNBSEE7QUFJUjFDLCtCQUFPLGNBSkM7QUFLUjJDLGtDQUFVO0FBTEYscUJBQVo7QUFPQSx3QkFBR0MsU0FBU0YsTUFBVCxLQUFvQixHQUF2QixFQUEyQjtBQUN2QjFCLDhCQUFNLFFBQU4sSUFBa0IsT0FBbEI7QUFDQUEsOEJBQU0sT0FBTixJQUFpQixrQkFBakI7QUFDQUEsOEJBQU0sVUFBTixJQUFvQixtQkFBcEI7QUFDSDtBQUNEbEIseUJBQUtXLEtBQUwsQ0FBV0ssZUFBWCxDQUEyQixPQUEzQixFQUFvQ0UsS0FBcEM7QUFDSCxpQkFmRDtBQWdCSCxhQXZCRDtBQXdCSCxTQTFCRDtBQTJCSDtBQXhLMEIsQ0FBakIsQ0FBZDtBQTBLQTZCLE9BQU9DLE9BQVAsR0FBaUJ6RCxPQUFqQiIsImZpbGUiOiJjb250YWN0LmpzeCIsInNvdXJjZXNDb250ZW50IjpbIid1c2Ugc3RyaWN0JztcclxudmFyIFJlYWN0ID0gcmVxdWlyZSgncmVhY3QnKTtcclxudmFyIGNyZWF0ZVJlYWN0Q2xhc3MgPSByZXF1aXJlKCdjcmVhdGUtcmVhY3QtY2xhc3MnKTtcclxudmFyIElucHV0ID0gcmVxdWlyZSgncmVhY3QtYm9vdHN0cmFwJykuSW5wdXQ7XHJcblxyXG52YXIgUGFnZSA9IHJlcXVpcmUoJy4vLi4vbGF5b3V0L3BhZ2UvcGFnZS5qc3gnKTtcclxudmFyIHZhbGlkYXRpb24gPSByZXF1aXJlKCcuLy4uLy4uL3V0aWxzL3V0aWxzJykudmFsaWRhdGlvbjtcclxudmFyIG1lc3NhZ2UgPSByZXF1aXJlKCcuLy4uLy4uL3V0aWxzL3V0aWxzJykubWVzc2FnZTtcclxudmFyIG5vb3AgPSBmdW5jdGlvbiAoKSB7fTtcclxudmFyIENvbnRhY3QgPSBjcmVhdGVSZWFjdENsYXNzKHtcclxuICAgIGdldEluaXRpYWxTdGF0ZTogZnVuY3Rpb24oKXtcclxuICAgICAgICByZXR1cm4ge1xyXG4gICAgICAgICAgICBmb3JtVmFsdWVzOiB7XHJcbiAgICAgICAgICAgICAgICBuYW1lOiAnJyxcclxuICAgICAgICAgICAgICAgIGVtYWlsOiAnJyxcclxuICAgICAgICAgICAgICAgIGNvbXBhbnk6ICcnLFxyXG4gICAgICAgICAgICAgICAgbnVtYmVyOiAnJyxcclxuICAgICAgICAgICAgICAgIG1lc3NhZ2U6ICcnXHJcbiAgICAgICAgICAgIH0sXHJcbiAgICAgICAgICAgIGlucHV0U3R5bGVzOiB7XHJcbiAgICAgICAgICAgICAgICBuYW1lOiAnd2FybmluZycsXHJcbiAgICAgICAgICAgICAgICBlbWFpbDogJ3dhcm5pbmcnLFxyXG4gICAgICAgICAgICAgICAgY29tcGFueTogJ3dhcm5pbmcnLFxyXG4gICAgICAgICAgICAgICAgbnVtYmVyOiAnd2FybmluZycsXHJcbiAgICAgICAgICAgICAgICBtZXNzYWdlOiAnd2FybmluZydcclxuICAgICAgICAgICAgfVxyXG4gICAgICAgIH1cclxuICAgIH0sXHJcbiAgICByZW5kZXI6IGZ1bmN0aW9uKCl7XHJcbiAgICAgICAgdmFyIHNlbGYgPSB0aGlzO1xyXG4gICAgICAgIHZhciBjb250YWN0SW5mbyA9IHtcclxuICAgICAgICAgICAgdGl0bGU6ICdDb250YWN0JyxcclxuICAgICAgICAgICAgc3VidGl0bGU6ICdHZXQgaW4gdG91Y2ggd2l0aCB1cycsXHJcbiAgICAgICAgICAgIGRlc2NyaXB0aW9uOiAnJyxcclxuICAgICAgICAgICAgc2lkZWJhckltYWdlOiAnLi4vaW1hZ2VzL2RlZmF1bHQtY29udGFjdC5qcGcnLFxyXG4gICAgICAgICAgICBwYXRoOiBcImNvbnRhY3RcIlxyXG4gICAgICAgIH07XHJcbiAgICAgICAgdmFyIGZvcm1GaWVsZHMgPSBbXHJcbiAgICAgICAgICAgIHtcclxuICAgICAgICAgICAgICAgIG5hbWU6ICduYW1lJyxcclxuICAgICAgICAgICAgICAgIGxhYmVsOiAnWW91ciBOYW1lJyxcclxuICAgICAgICAgICAgICAgIHR5cGU6ICd0ZXh0JyxcclxuICAgICAgICAgICAgICAgIHBsYWNlaG9sZGVyOiAnSmFjayBTbWl0aCdcclxuICAgICAgICAgICAgfSxcclxuICAgICAgICAgICAge1xyXG4gICAgICAgICAgICAgICAgbmFtZTogJ2VtYWlsJyxcclxuICAgICAgICAgICAgICAgIGxhYmVsOiAnWW91ciBFbWFpbCcsXHJcbiAgICAgICAgICAgICAgICB0eXBlOiAndGV4dCcsXHJcbiAgICAgICAgICAgICAgICBwbGFjZWhvbGRlcjogJ2V4YW1wbGVAbWFpbC5jb20nXHJcbiAgICAgICAgICAgIH0sXHJcbiAgICAgICAgICAgIHtcclxuICAgICAgICAgICAgICAgIG5hbWU6ICdjb21wYW55JyxcclxuICAgICAgICAgICAgICAgIGxhYmVsOiAnQ29tcGFueScsXHJcbiAgICAgICAgICAgICAgICB0eXBlOiAndGV4dCcsXHJcbiAgICAgICAgICAgICAgICBwbGFjZWhvbGRlcjogJ0V4YW1wbGUgQ29ycG9yYXRpb24nXHJcbiAgICAgICAgICAgIH0sXHJcbiAgICAgICAgICAgIHtcclxuICAgICAgICAgICAgICAgIG5hbWU6ICdudW1iZXInLFxyXG4gICAgICAgICAgICAgICAgbGFiZWw6ICdQaG9uZSBOdW1iZXInLFxyXG4gICAgICAgICAgICAgICAgdHlwZTogJ3RlbCcsXHJcbiAgICAgICAgICAgICAgICBwbGFjZWhvbGRlcjogJys0NDc3ODc2NTQzOSdcclxuICAgICAgICAgICAgfSxcclxuICAgICAgICAgICAge1xyXG4gICAgICAgICAgICAgICAgbmFtZTogJ21lc3NhZ2UnLFxyXG4gICAgICAgICAgICAgICAgbGFiZWw6ICdZb3VyIE1lc3NhZ2UnLFxyXG4gICAgICAgICAgICAgICAgdHlwZTogJ3RleHRhcmVhJyxcclxuICAgICAgICAgICAgICAgIHBsYWNlaG9sZGVyOiBcIkhlbGxvLCBsZXQncyBjaGF0IVwiXHJcbiAgICAgICAgICAgIH1cclxuICAgICAgICBdO1xyXG4gICAgICAgIHJldHVybiAoXHJcbiAgICAgICAgICAgIDxQYWdlXHJcbiAgICAgICAgICAgICAgICBwYWdlSW5mbz17Y29udGFjdEluZm99XHJcbiAgICAgICAgICAgICAgICBtZW51VmlzaWJsZT17dGhpcy5wcm9wcy5tZW51VmlzaWJsZX1cclxuICAgICAgICAgICAgICAgIGNhdGVnb3JpZXM9e3RoaXMucHJvcHMuc3RvcmUuY2F0ZWdvcnl9XHJcbiAgICAgICAgICAgICAgICBoYW5kbGVSb3V0aW5nPXt0aGlzLnByb3BzLmhhbmRsZVJvdXRpbmd9XHJcbiAgICAgICAgICAgICAgICBzZXRNYWluUHJvcGVydHk9e3RoaXMucHJvcHMuc2V0TWFpblByb3BlcnR5fVxyXG4gICAgICAgICAgICAgICAgYWN0aXZlQ2F0ZWdvcnk9e3RoaXMucHJvcHMuYWN0aXZlQ2F0ZWdvcnl9XHJcbiAgICAgICAgICAgICAgICBtb2RhbD17dGhpcy5wcm9wcy5tb2RhbH1cclxuICAgICAgICAgICAgPlxyXG4gICAgICAgICAgICAgICAgPGgzPlNlbmQgdXMgYW4gZW1haWw8L2gzPlxyXG4gICAgICAgICAgICAgICAgPGZvcm0+XHJcbiAgICAgICAgICAgICAgICAgICAge2Zvcm1GaWVsZHMubWFwKGZ1bmN0aW9uKGZpZWxkLCBpKSB7XHJcbiAgICAgICAgICAgICAgICAgICAgICAgIHJldHVybiA8ZGl2IGNsYXNzTmFtZT1cImZvcm0tZ3JvdXBcIiBrZXk9e2l9PlxyXG4gICAgICAgICAgICAgICAgICAgICAgICAgICAgPGxhYmVsIGh0bWxGb3I9e2ZpZWxkLm5hbWV9PntmaWVsZC5sYWJlbH08L2xhYmVsPlxyXG4gICAgICAgICAgICAgICAgICAgICAgICAgICAgPElucHV0XHJcbiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgdHlwZT17ZmllbGQudHlwZX1cclxuICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICBjbGFzc05hbWU9XCJmb3JtLWNvbnRyb2xcIlxyXG4gICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIG5hbWU9e2ZpZWxkLm5hbWV9XHJcbiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgdmFsdWU9e3NlbGYuc3RhdGUuZm9ybVZhbHVlc1tmaWVsZC5uYW1lXX1cclxuICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICBvbkNoYW5nZT17c2VsZi51cGRhdGVUaGlzRmllbGR9XHJcbiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgcGxhY2Vob2xkZXI9e2ZpZWxkLnBsYWNlaG9sZGVyfVxyXG4gICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIGJzU3R5bGU9e3NlbGYuc3RhdGUuaW5wdXRTdHlsZXNbZmllbGQubmFtZV19XHJcbiAgICAgICAgICAgICAgICAgICAgICAgICAgICAvPlxyXG4gICAgICAgICAgICAgICAgICAgICAgICA8L2Rpdj47XHJcbiAgICAgICAgICAgICAgICAgICAgfSl9XHJcbiAgICAgICAgICAgICAgICAgICAgPGRpdiBjbGFzc05hbWU9XCJmb3JtLWdyb3VwXCI+XHJcbiAgICAgICAgICAgICAgICAgICAgICAgIDxpbnB1dFxyXG4gICAgICAgICAgICAgICAgICAgICAgICAgICAgaWQ9XCJzZW5kLW1lc3NhZ2VcIlxyXG4gICAgICAgICAgICAgICAgICAgICAgICAgICAgY2xhc3NOYW1lPVwiYnRuIGJ0bi1kZWZhdWx0XCJcclxuICAgICAgICAgICAgICAgICAgICAgICAgICAgIHR5cGU9XCJidXR0b25cIlxyXG4gICAgICAgICAgICAgICAgICAgICAgICAgICAgdmFsdWU9XCJTZW5kXCJcclxuICAgICAgICAgICAgICAgICAgICAgICAgICAgIG9uQ2xpY2s9e3RoaXMuc2VuZE1haWx9XHJcbiAgICAgICAgICAgICAgICAgICAgICAgIC8+XHJcbiAgICAgICAgICAgICAgICAgICAgPC9kaXY+XHJcbiAgICAgICAgICAgICAgICA8L2Zvcm0+XHJcbiAgICAgICAgICAgICAgICA8Zm9vdGVyIGNsYXNzTmFtZT1cInNwbGl0LWZvb3RlclwiPlxyXG4gICAgICAgICAgICAgICAgICAgIDxhIGhyZWY9XCIjL2Fib3V0XCI+QWJvdXQ8L2E+XHJcbiAgICAgICAgICAgICAgICA8L2Zvb3Rlcj5cclxuICAgICAgICAgICAgPC9QYWdlPlxyXG4gICAgICAgIClcclxuICAgIH0sXHJcbiAgICB1cGRhdGVGaWVsZFZhbHVlOiBmdW5jdGlvbihwcm9wZXJ0eSwgdmFsdWUsIGNhbGxiYWNrKXtcclxuICAgICAgICB2YXIgc2VsZiA9IHRoaXM7XHJcbiAgICAgICAgdmFyIGZpZWxkcyA9IHNlbGYuc3RhdGUuZm9ybVZhbHVlcztcclxuICAgICAgICBjYWxsYmFjayA9IGNhbGxiYWNrIHx8IG5vb3A7XHJcbiAgICAgICAgZmllbGRzW3Byb3BlcnR5XSA9IHZhbHVlO1xyXG4gICAgICAgIHNlbGYuc2V0U3RhdGUoe1xyXG4gICAgICAgICAgICAnZm9ybVZhbHVlcyc6IGZpZWxkc1xyXG4gICAgICAgIH0sIGNhbGxiYWNrKTtcclxuICAgIH0sXHJcbiAgICB1cGRhdGVUaGlzRmllbGQ6IGZ1bmN0aW9uKGV2ZW50KXtcclxuICAgICAgICB2YXIgc2VsZiA9IHRoaXM7XHJcbiAgICAgICAgc2VsZi51cGRhdGVGaWVsZFZhbHVlKGV2ZW50LnRhcmdldC5uYW1lLCBldmVudC50YXJnZXQudmFsdWUsIGZ1bmN0aW9uKCl7XHJcbiAgICAgICAgICAgIHZhciBmaWx0ZXJlZCA9IHZhbGlkYXRpb24uZmlsdGVyRmllbGRzKHNlbGYuc3RhdGUuZm9ybVZhbHVlcyk7XHJcbiAgICAgICAgICAgIHNlbGYuc2V0U3RhdGUoe1xyXG4gICAgICAgICAgICAgICAgZm9ybVZhbHVlczogZmlsdGVyZWRcclxuICAgICAgICAgICAgfSwgZnVuY3Rpb24oKXtcclxuICAgICAgICAgICAgICAgIGNvbnNvbGUubG9nKHNlbGYuc3RhdGUuZm9ybVZhbHVlcyk7XHJcbiAgICAgICAgICAgIH0pO1xyXG4gICAgICAgIH0pO1xyXG4gICAgfSxcclxuICAgIHZhbGlkYXRlRmllbGRzOiBmdW5jdGlvbihjYWxsYmFjayl7XHJcbiAgICAgICAgdmFyIHNlbGYgPSB0aGlzO1xyXG4gICAgICAgIGNhbGxiYWNrID0gY2FsbGJhY2sgfHwgbm9vcDtcclxuICAgICAgICB2YXIgaXNWYWxpZCA9IHZhbGlkYXRpb24udmFsaWRhdGVGaWVsZHMoc2VsZi5zdGF0ZS5mb3JtVmFsdWVzKTtcclxuICAgICAgICBzZWxmLnNldFN0YXRlKHtcclxuICAgICAgICAgICBpbnB1dFN0eWxlczogaXNWYWxpZFxyXG4gICAgICAgIH0sZnVuY3Rpb24oKXtcclxuICAgICAgICAgICAgaWYoaXNWYWxpZFsnYWxsJ10pe1xyXG4gICAgICAgICAgICAgICAgY2FsbGJhY2soaXNWYWxpZCk7XHJcbiAgICAgICAgICAgIH1cclxuICAgICAgICB9KTtcclxuICAgIH0sXHJcbiAgICBzZW5kTWFpbDogZnVuY3Rpb24oZSl7XHJcbiAgICAgICAgdmFyIHNlbGYgPSB0aGlzO1xyXG4gICAgICAgIGUucHJldmVudERlZmF1bHQoKTtcclxuICAgICAgICBlLnN0b3BQcm9wYWdhdGlvbigpO1xyXG4gICAgICAgIGlmKHNlbGYucHJvcHMubW9kYWwuY29vbERvd24gPT09IHRydWUpe1xyXG4gICAgICAgICAgICByZXR1cm4gZmFsc2U7XHJcbiAgICAgICAgfVxyXG4gICAgICAgIHNlbGYudmFsaWRhdGVGaWVsZHMoZnVuY3Rpb24oaXNWYWxpZCl7XHJcbiAgICAgICAgICAgIGNvbnNvbGUubG9nKGlzVmFsaWQpO1xyXG4gICAgICAgICAgICBzZWxmLnByb3BzLnNldE1haW5Qcm9wZXJ0eSgnbW9kYWwnLCB7XHJcbiAgICAgICAgICAgICAgICBzaG93OiB0cnVlLFxyXG4gICAgICAgICAgICAgICAgc3RhdHVzOiAnbG9hZGluZycsXHJcbiAgICAgICAgICAgICAgICBjb29sRG93bjogdHJ1ZSxcclxuICAgICAgICAgICAgICAgIHRpdGxlOiAnU2VuZGluZyBFbWFpbCcsXHJcbiAgICAgICAgICAgICAgICBjb250ZW50czogJ1BsZWFzZSB3YWl0Li4uICdcclxuICAgICAgICAgICAgfSwgZnVuY3Rpb24oKXtcclxuICAgICAgICAgICAgICAgIG1lc3NhZ2Uuc2VuZE1haWwoc2VsZi5zdGF0ZS5mb3JtVmFsdWVzLCBmdW5jdGlvbihyZXNwb25zZSl7XHJcbiAgICAgICAgICAgICAgICAgICAgY29uc29sZS5sb2cocmVzcG9uc2UpO1xyXG4gICAgICAgICAgICAgICAgICAgIHZhciBtb2RhbCA9IHtcclxuICAgICAgICAgICAgICAgICAgICAgICAgc2hvdzogdHJ1ZSxcclxuICAgICAgICAgICAgICAgICAgICAgICAgY29vbERvd246IGZhbHNlLFxyXG4gICAgICAgICAgICAgICAgICAgICAgICBzdGF0dXM6ICdzdWNjZXNzJyxcclxuICAgICAgICAgICAgICAgICAgICAgICAgdGl0bGU6ICdNZXNzYWdlIFNlbnQnLFxyXG4gICAgICAgICAgICAgICAgICAgICAgICBjb250ZW50czogJ1RoYW5rIHlvdSEnXHJcbiAgICAgICAgICAgICAgICAgICAgfTtcclxuICAgICAgICAgICAgICAgICAgICBpZihyZXNwb25zZS5zdGF0dXMgIT09IDIwMCl7XHJcbiAgICAgICAgICAgICAgICAgICAgICAgIG1vZGFsWydzdGF0dXMnXSA9ICdlcnJvcic7XHJcbiAgICAgICAgICAgICAgICAgICAgICAgIG1vZGFsWyd0aXRsZSddID0gJ09wZXJhdGlvbiBGYWlsZWQnO1xyXG4gICAgICAgICAgICAgICAgICAgICAgICBtb2RhbFsnY29udGVudHMnXSA9ICdQbGVhc2UgdHJ5IGFnYWluLidcclxuICAgICAgICAgICAgICAgICAgICB9XHJcbiAgICAgICAgICAgICAgICAgICAgc2VsZi5wcm9wcy5zZXRNYWluUHJvcGVydHkoJ21vZGFsJywgbW9kYWwpO1xyXG4gICAgICAgICAgICAgICAgfSk7XHJcbiAgICAgICAgICAgIH0pO1xyXG4gICAgICAgIH0pO1xyXG4gICAgfVxyXG59KTtcclxubW9kdWxlLmV4cG9ydHMgPSBDb250YWN0OyJdfQ==
+},{"./../../utils/utils":"C:\\swiggis.austin\\src\\client\\js\\utils\\utils.js","./../layout/page/page.jsx":"C:\\swiggis.austin\\src\\client\\js\\components\\layout\\page\\page.jsx","create-react-class":"C:\\swiggis.austin\\node_modules\\create-react-class\\index.js","react":"C:\\swiggis.austin\\node_modules\\react\\react.js","react-bootstrap":"C:\\swiggis.austin\\node_modules\\react-bootstrap\\lib\\index.js"}],"C:\\swiggis.austin\\src\\client\\js\\components\\pages\\home.jsx":[function(require,module,exports){
 'use strict';
 
 var React = require('react');
@@ -58479,8 +57608,8 @@ var Home = createReactClass({
 
 });
 module.exports = Home;
-//# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbImhvbWUuanN4Il0sIm5hbWVzIjpbIlJlYWN0IiwicmVxdWlyZSIsImNyZWF0ZVJlYWN0Q2xhc3MiLCJSb3ciLCJQb3N0cyIsIkNhdGVnb3JpZXMiLCJQYWdlIiwiSG9tZSIsInJlbmRlciIsImhvbWVJbmZvIiwidGl0bGUiLCJzdWJ0aXRsZSIsImRlc2NyaXB0aW9uIiwic2lkZWJhckltYWdlIiwicGF0aCIsInRlc3QiLCJwcm9wcyIsIm1lbnVWaXNpYmxlIiwic3RvcmUiLCJjYXRlZ29yeSIsImhhbmRsZVJvdXRpbmciLCJzZXRNYWluUHJvcGVydHkiLCJhY3RpdmVDYXRlZ29yeSIsIm1vZGFsIiwiYWN0aXZlSG9tZVBhbmVsIiwic2V0QWN0aXZlUGFuZWwiLCJ2aWV3IiwiYXJ0aWNsZXMiLCJlIiwidGFyZ2V0IiwibW9kdWxlIiwiZXhwb3J0cyJdLCJtYXBwaW5ncyI6IkFBQUE7O0FBQ0EsSUFBSUEsUUFBUUMsUUFBUSxPQUFSLENBQVo7QUFDQSxJQUFJQyxtQkFBbUJELFFBQVEsb0JBQVIsQ0FBdkI7QUFDQSxJQUFJRSxNQUFNRixRQUFRLGlCQUFSLEVBQTJCRSxHQUFyQztBQUNBLElBQUlDLFFBQVFILFFBQVEsMkJBQVIsQ0FBWjtBQUNBLElBQUlJLGFBQWFKLFFBQVEsb0NBQVIsQ0FBakI7QUFDQSxJQUFJSyxPQUFPTCxRQUFRLDJCQUFSLENBQVg7QUFDQSxJQUFJTSxPQUFPTCxpQkFBaUI7QUFBQTs7O0FBRXhCTSxZQUFRLGtCQUFZO0FBQ2hCLFlBQUlDLFdBQVc7QUFDWEMsbUJBQU8sTUFESTtBQUVYQyxzQkFBVSxzQkFGQztBQUdYQyx5QkFBYSw4REFIRjtBQUlYQywwQkFBYywrQkFKSDtBQUtYQyxrQkFBTTtBQUxLLFNBQWY7QUFPQSxZQUFJQyxPQUFPLEtBQUtDLEtBQWhCO0FBQ0EsZUFDSTtBQUFDLGdCQUFEO0FBQUE7QUFDSSwwQkFBVVAsUUFEZDtBQUVJLDZCQUFhLEtBQUtPLEtBQUwsQ0FBV0MsV0FGNUI7QUFHSSw0QkFBWSxLQUFLRCxLQUFMLENBQVdFLEtBQVgsQ0FBaUJDLFFBSGpDO0FBSUksK0JBQWUsS0FBS0gsS0FBTCxDQUFXSSxhQUo5QjtBQUtJLGlDQUFpQixLQUFLSixLQUFMLENBQVdLLGVBTGhDO0FBTUksZ0NBQWdCLEtBQUtMLEtBQUwsQ0FBV00sY0FOL0I7QUFPSSx1QkFBTyxLQUFLTixLQUFMLENBQVdPO0FBUHRCO0FBU0k7QUFBQTtBQUFBLGtCQUFLLFdBQVUsU0FBZjtBQUNJO0FBQUE7QUFBQSxzQkFBRyxNQUFLLFFBQVI7QUFDSSxtQ0FBVyxrQkFBbUIsS0FBS1AsS0FBTCxDQUFXUSxlQUFYLEtBQStCLFVBQWhDLEdBQThDLFNBQTlDLEdBQTBELEVBQTVFLENBRGY7QUFFSSwrQkFBTSxVQUZWO0FBR0ksaUNBQVMsS0FBS0M7QUFIbEI7QUFBQTtBQUFBLGlCQURKO0FBUUk7QUFBQTtBQUFBLHNCQUFHLE1BQUssUUFBUjtBQUNJLG1DQUFXLHVCQUF3QixLQUFLVCxLQUFMLENBQVdRLGVBQVgsS0FBK0IsWUFBaEMsR0FBZ0QsU0FBaEQsR0FBNEQsRUFBbkYsQ0FEZjtBQUVJLCtCQUFNLFlBRlY7QUFHSSxpQ0FBUyxLQUFLQztBQUhsQjtBQUFBO0FBQUE7QUFSSixhQVRKO0FBeUJJLGdDQUFDLEtBQUQ7QUFDSSwwQkFBVSxLQUFLVCxLQUFMLENBQVdFLEtBQVgsQ0FBaUJRLElBQWpCLENBQXNCQyxRQURwQztBQUVJLGlDQUFpQixLQUFLWCxLQUFMLENBQVdRLGVBRmhDO0FBR0ksK0JBQWUsS0FBS1IsS0FBTCxDQUFXSTtBQUg5QixjQXpCSjtBQThCSSxnQ0FBQyxVQUFEO0FBQ0ksNEJBQVksS0FBS0osS0FBTCxDQUFXRSxLQUFYLENBQWlCQyxRQURqQztBQUVJLGlDQUFpQixLQUFLSCxLQUFMLENBQVdRLGVBRmhDO0FBR0ksK0JBQWUsS0FBS1IsS0FBTCxDQUFXSTtBQUg5QjtBQTlCSixTQURKO0FBc0NILEtBakR1QjtBQWtEeEJLLG9CQUFnQix3QkFBVUcsQ0FBVixFQUFhO0FBQ3pCLGFBQUtaLEtBQUwsQ0FBV0ssZUFBWCxDQUEyQixpQkFBM0IsRUFBOENPLEVBQUVDLE1BQUYsQ0FBU25CLEtBQXZEO0FBQ0g7O0FBcER1QixDQUFqQixDQUFYO0FBdURBb0IsT0FBT0MsT0FBUCxHQUFpQnhCLElBQWpCIiwiZmlsZSI6ImhvbWUuanN4Iiwic291cmNlc0NvbnRlbnQiOlsiJ3VzZSBzdHJpY3QnO1xudmFyIFJlYWN0ID0gcmVxdWlyZSgncmVhY3QnKTtcbnZhciBjcmVhdGVSZWFjdENsYXNzID0gcmVxdWlyZSgnY3JlYXRlLXJlYWN0LWNsYXNzJyk7XG52YXIgUm93ID0gcmVxdWlyZSgncmVhY3QtYm9vdHN0cmFwJykuUm93O1xudmFyIFBvc3RzID0gcmVxdWlyZSgnLi8uLi9saXN0cy9wb3N0L3Bvc3RzLmpzeCcpO1xudmFyIENhdGVnb3JpZXMgPSByZXF1aXJlKCcuLy4uL2xpc3RzL2NhdGVnb3J5L2NhdGVnb3JpZXMuanN4Jyk7XG52YXIgUGFnZSA9IHJlcXVpcmUoJy4vLi4vbGF5b3V0L3BhZ2UvcGFnZS5qc3gnKTtcbnZhciBIb21lID0gY3JlYXRlUmVhY3RDbGFzcyh7XG5cbiAgICByZW5kZXI6IGZ1bmN0aW9uICgpIHtcbiAgICAgICAgdmFyIGhvbWVJbmZvID0ge1xuICAgICAgICAgICAgdGl0bGU6ICdDYXRzJyxcbiAgICAgICAgICAgIHN1YnRpdGxlOiAnUmVhY3QgRHJpdmUgQ01TIERlbW8nLFxuICAgICAgICAgICAgZGVzY3JpcHRpb246ICdQdWJsaXNoIGFydGljbGVzIGRpcmVjdGx5IGZyb20gR29vZ2xlIERyaXZlIHRvIHlvdXIgd2Vic2l0ZS4nLFxuICAgICAgICAgICAgc2lkZWJhckltYWdlOiAnLi4vaW1hZ2VzL2RlZmF1bHQtc2lkZWJhci5qcGcnLFxuICAgICAgICAgICAgcGF0aDogXCJob21lXCJcbiAgICAgICAgfTtcbiAgICAgICAgdmFyIHRlc3QgPSB0aGlzLnByb3BzO1xuICAgICAgICByZXR1cm4gKFxuICAgICAgICAgICAgPFBhZ2VcbiAgICAgICAgICAgICAgICBwYWdlSW5mbz17aG9tZUluZm99XG4gICAgICAgICAgICAgICAgbWVudVZpc2libGU9e3RoaXMucHJvcHMubWVudVZpc2libGV9XG4gICAgICAgICAgICAgICAgY2F0ZWdvcmllcz17dGhpcy5wcm9wcy5zdG9yZS5jYXRlZ29yeX1cbiAgICAgICAgICAgICAgICBoYW5kbGVSb3V0aW5nPXt0aGlzLnByb3BzLmhhbmRsZVJvdXRpbmd9XG4gICAgICAgICAgICAgICAgc2V0TWFpblByb3BlcnR5PXt0aGlzLnByb3BzLnNldE1haW5Qcm9wZXJ0eX1cbiAgICAgICAgICAgICAgICBhY3RpdmVDYXRlZ29yeT17dGhpcy5wcm9wcy5hY3RpdmVDYXRlZ29yeX1cbiAgICAgICAgICAgICAgICBtb2RhbD17dGhpcy5wcm9wcy5tb2RhbH1cbiAgICAgICAgICAgID5cbiAgICAgICAgICAgICAgICA8ZGl2IGNsYXNzTmFtZT1cInN1Yi1uYXZcIj5cbiAgICAgICAgICAgICAgICAgICAgPGEgcm9sZT0nYnV0dG9uJ1xuICAgICAgICAgICAgICAgICAgICAgICAgY2xhc3NOYW1lPXsnc2VsZWN0LXBvc3RzJyArICgodGhpcy5wcm9wcy5hY3RpdmVIb21lUGFuZWwgPT09ICdhcnRpY2xlcycpID8gJyBhY3RpdmUnIDogJycpfVxuICAgICAgICAgICAgICAgICAgICAgICAgdGl0bGU9J2FydGljbGVzJ1xuICAgICAgICAgICAgICAgICAgICAgICAgb25DbGljaz17dGhpcy5zZXRBY3RpdmVQYW5lbH1cbiAgICAgICAgICAgICAgICAgICAgPlxuICAgICAgICAgICAgICAgICAgICAgICAgUG9zdHNcbiAgICAgICAgICAgICAgICAgICAgPC9hPlxuICAgICAgICAgICAgICAgICAgICA8YSByb2xlPSdidXR0b24nXG4gICAgICAgICAgICAgICAgICAgICAgICBjbGFzc05hbWU9eydzZWxlY3QtY2F0ZWdvcmllcycgKyAoKHRoaXMucHJvcHMuYWN0aXZlSG9tZVBhbmVsID09PSAnY2F0ZWdvcmllcycpID8gJyBhY3RpdmUnIDogJycpfVxuICAgICAgICAgICAgICAgICAgICAgICAgdGl0bGU9J2NhdGVnb3JpZXMnXG4gICAgICAgICAgICAgICAgICAgICAgICBvbkNsaWNrPXt0aGlzLnNldEFjdGl2ZVBhbmVsfVxuICAgICAgICAgICAgICAgICAgICA+XG4gICAgICAgICAgICAgICAgICAgICAgICBDYXRlZ29yaWVzXG4gICAgICAgICAgICAgICAgICAgIDwvYT5cbiAgICAgICAgICAgICAgICA8L2Rpdj5cbiAgICAgICAgICAgICAgICA8UG9zdHNcbiAgICAgICAgICAgICAgICAgICAgYXJ0aWNsZXM9e3RoaXMucHJvcHMuc3RvcmUudmlldy5hcnRpY2xlc31cbiAgICAgICAgICAgICAgICAgICAgYWN0aXZlSG9tZVBhbmVsPXt0aGlzLnByb3BzLmFjdGl2ZUhvbWVQYW5lbH1cbiAgICAgICAgICAgICAgICAgICAgaGFuZGxlUm91dGluZz17dGhpcy5wcm9wcy5oYW5kbGVSb3V0aW5nfVxuICAgICAgICAgICAgICAgIC8+XG4gICAgICAgICAgICAgICAgPENhdGVnb3JpZXNcbiAgICAgICAgICAgICAgICAgICAgY2F0ZWdvcmllcz17dGhpcy5wcm9wcy5zdG9yZS5jYXRlZ29yeX1cbiAgICAgICAgICAgICAgICAgICAgYWN0aXZlSG9tZVBhbmVsPXt0aGlzLnByb3BzLmFjdGl2ZUhvbWVQYW5lbH1cbiAgICAgICAgICAgICAgICAgICAgaGFuZGxlUm91dGluZz17dGhpcy5wcm9wcy5oYW5kbGVSb3V0aW5nfVxuICAgICAgICAgICAgICAgIC8+XG4gICAgICAgICAgICA8LyBQYWdlPlxuICAgICAgICApXG4gICAgfSxcbiAgICBzZXRBY3RpdmVQYW5lbDogZnVuY3Rpb24gKGUpIHtcbiAgICAgICAgdGhpcy5wcm9wcy5zZXRNYWluUHJvcGVydHkoJ2FjdGl2ZUhvbWVQYW5lbCcsIGUudGFyZ2V0LnRpdGxlKTtcbiAgICB9XG5cbn0pO1xubW9kdWxlLmV4cG9ydHMgPSBIb21lOyJdfQ==
-},{"./../layout/page/page.jsx":"/mnt/c/swiggis.original/src/client/js/components/layout/page/page.jsx","./../lists/category/categories.jsx":"/mnt/c/swiggis.original/src/client/js/components/lists/category/categories.jsx","./../lists/post/posts.jsx":"/mnt/c/swiggis.original/src/client/js/components/lists/post/posts.jsx","create-react-class":"/mnt/c/swiggis.original/node_modules/create-react-class/index.js","react":"/mnt/c/swiggis.original/node_modules/react/react.js","react-bootstrap":"/mnt/c/swiggis.original/node_modules/react-bootstrap/lib/index.js"}],"/mnt/c/swiggis.original/src/client/js/components/pages/membership.jsx":[function(require,module,exports){
+//# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbImhvbWUuanN4Il0sIm5hbWVzIjpbIlJlYWN0IiwicmVxdWlyZSIsImNyZWF0ZVJlYWN0Q2xhc3MiLCJSb3ciLCJQb3N0cyIsIkNhdGVnb3JpZXMiLCJQYWdlIiwiSG9tZSIsInJlbmRlciIsImhvbWVJbmZvIiwidGl0bGUiLCJzdWJ0aXRsZSIsImRlc2NyaXB0aW9uIiwic2lkZWJhckltYWdlIiwicGF0aCIsInRlc3QiLCJwcm9wcyIsIm1lbnVWaXNpYmxlIiwic3RvcmUiLCJjYXRlZ29yeSIsImhhbmRsZVJvdXRpbmciLCJzZXRNYWluUHJvcGVydHkiLCJhY3RpdmVDYXRlZ29yeSIsIm1vZGFsIiwiYWN0aXZlSG9tZVBhbmVsIiwic2V0QWN0aXZlUGFuZWwiLCJ2aWV3IiwiYXJ0aWNsZXMiLCJlIiwidGFyZ2V0IiwibW9kdWxlIiwiZXhwb3J0cyJdLCJtYXBwaW5ncyI6IkFBQUE7O0FBQ0EsSUFBSUEsUUFBUUMsUUFBUSxPQUFSLENBQVo7QUFDQSxJQUFJQyxtQkFBbUJELFFBQVEsb0JBQVIsQ0FBdkI7QUFDQSxJQUFJRSxNQUFNRixRQUFRLGlCQUFSLEVBQTJCRSxHQUFyQztBQUNBLElBQUlDLFFBQVFILFFBQVEsMkJBQVIsQ0FBWjtBQUNBLElBQUlJLGFBQWFKLFFBQVEsb0NBQVIsQ0FBakI7QUFDQSxJQUFJSyxPQUFPTCxRQUFRLDJCQUFSLENBQVg7QUFDQSxJQUFJTSxPQUFPTCxpQkFBaUI7QUFBQTs7O0FBRXhCTSxZQUFRLGtCQUFZO0FBQ2hCLFlBQUlDLFdBQVc7QUFDWEMsbUJBQU8sTUFESTtBQUVYQyxzQkFBVSxzQkFGQztBQUdYQyx5QkFBYSw4REFIRjtBQUlYQywwQkFBYywrQkFKSDtBQUtYQyxrQkFBTTtBQUxLLFNBQWY7QUFPQSxZQUFJQyxPQUFPLEtBQUtDLEtBQWhCO0FBQ0EsZUFDSTtBQUFDLGdCQUFEO0FBQUE7QUFDSSwwQkFBVVAsUUFEZDtBQUVJLDZCQUFhLEtBQUtPLEtBQUwsQ0FBV0MsV0FGNUI7QUFHSSw0QkFBWSxLQUFLRCxLQUFMLENBQVdFLEtBQVgsQ0FBaUJDLFFBSGpDO0FBSUksK0JBQWUsS0FBS0gsS0FBTCxDQUFXSSxhQUo5QjtBQUtJLGlDQUFpQixLQUFLSixLQUFMLENBQVdLLGVBTGhDO0FBTUksZ0NBQWdCLEtBQUtMLEtBQUwsQ0FBV00sY0FOL0I7QUFPSSx1QkFBTyxLQUFLTixLQUFMLENBQVdPO0FBUHRCO0FBU0k7QUFBQTtBQUFBLGtCQUFLLFdBQVUsU0FBZjtBQUNJO0FBQUE7QUFBQSxzQkFBRyxNQUFLLFFBQVI7QUFDSSxtQ0FBVyxrQkFBbUIsS0FBS1AsS0FBTCxDQUFXUSxlQUFYLEtBQStCLFVBQWhDLEdBQThDLFNBQTlDLEdBQTBELEVBQTVFLENBRGY7QUFFSSwrQkFBTSxVQUZWO0FBR0ksaUNBQVMsS0FBS0M7QUFIbEI7QUFBQTtBQUFBLGlCQURKO0FBUUk7QUFBQTtBQUFBLHNCQUFHLE1BQUssUUFBUjtBQUNJLG1DQUFXLHVCQUF3QixLQUFLVCxLQUFMLENBQVdRLGVBQVgsS0FBK0IsWUFBaEMsR0FBZ0QsU0FBaEQsR0FBNEQsRUFBbkYsQ0FEZjtBQUVJLCtCQUFNLFlBRlY7QUFHSSxpQ0FBUyxLQUFLQztBQUhsQjtBQUFBO0FBQUE7QUFSSixhQVRKO0FBeUJJLGdDQUFDLEtBQUQ7QUFDSSwwQkFBVSxLQUFLVCxLQUFMLENBQVdFLEtBQVgsQ0FBaUJRLElBQWpCLENBQXNCQyxRQURwQztBQUVJLGlDQUFpQixLQUFLWCxLQUFMLENBQVdRLGVBRmhDO0FBR0ksK0JBQWUsS0FBS1IsS0FBTCxDQUFXSTtBQUg5QixjQXpCSjtBQThCSSxnQ0FBQyxVQUFEO0FBQ0ksNEJBQVksS0FBS0osS0FBTCxDQUFXRSxLQUFYLENBQWlCQyxRQURqQztBQUVJLGlDQUFpQixLQUFLSCxLQUFMLENBQVdRLGVBRmhDO0FBR0ksK0JBQWUsS0FBS1IsS0FBTCxDQUFXSTtBQUg5QjtBQTlCSixTQURKO0FBc0NILEtBakR1QjtBQWtEeEJLLG9CQUFnQix3QkFBVUcsQ0FBVixFQUFhO0FBQ3pCLGFBQUtaLEtBQUwsQ0FBV0ssZUFBWCxDQUEyQixpQkFBM0IsRUFBOENPLEVBQUVDLE1BQUYsQ0FBU25CLEtBQXZEO0FBQ0g7O0FBcER1QixDQUFqQixDQUFYO0FBdURBb0IsT0FBT0MsT0FBUCxHQUFpQnhCLElBQWpCIiwiZmlsZSI6ImhvbWUuanN4Iiwic291cmNlc0NvbnRlbnQiOlsiJ3VzZSBzdHJpY3QnO1xyXG52YXIgUmVhY3QgPSByZXF1aXJlKCdyZWFjdCcpO1xyXG52YXIgY3JlYXRlUmVhY3RDbGFzcyA9IHJlcXVpcmUoJ2NyZWF0ZS1yZWFjdC1jbGFzcycpO1xyXG52YXIgUm93ID0gcmVxdWlyZSgncmVhY3QtYm9vdHN0cmFwJykuUm93O1xyXG52YXIgUG9zdHMgPSByZXF1aXJlKCcuLy4uL2xpc3RzL3Bvc3QvcG9zdHMuanN4Jyk7XHJcbnZhciBDYXRlZ29yaWVzID0gcmVxdWlyZSgnLi8uLi9saXN0cy9jYXRlZ29yeS9jYXRlZ29yaWVzLmpzeCcpO1xyXG52YXIgUGFnZSA9IHJlcXVpcmUoJy4vLi4vbGF5b3V0L3BhZ2UvcGFnZS5qc3gnKTtcclxudmFyIEhvbWUgPSBjcmVhdGVSZWFjdENsYXNzKHtcclxuXHJcbiAgICByZW5kZXI6IGZ1bmN0aW9uICgpIHtcclxuICAgICAgICB2YXIgaG9tZUluZm8gPSB7XHJcbiAgICAgICAgICAgIHRpdGxlOiAnQ2F0cycsXHJcbiAgICAgICAgICAgIHN1YnRpdGxlOiAnUmVhY3QgRHJpdmUgQ01TIERlbW8nLFxyXG4gICAgICAgICAgICBkZXNjcmlwdGlvbjogJ1B1Ymxpc2ggYXJ0aWNsZXMgZGlyZWN0bHkgZnJvbSBHb29nbGUgRHJpdmUgdG8geW91ciB3ZWJzaXRlLicsXHJcbiAgICAgICAgICAgIHNpZGViYXJJbWFnZTogJy4uL2ltYWdlcy9kZWZhdWx0LXNpZGViYXIuanBnJyxcclxuICAgICAgICAgICAgcGF0aDogXCJob21lXCJcclxuICAgICAgICB9O1xyXG4gICAgICAgIHZhciB0ZXN0ID0gdGhpcy5wcm9wcztcclxuICAgICAgICByZXR1cm4gKFxyXG4gICAgICAgICAgICA8UGFnZVxyXG4gICAgICAgICAgICAgICAgcGFnZUluZm89e2hvbWVJbmZvfVxyXG4gICAgICAgICAgICAgICAgbWVudVZpc2libGU9e3RoaXMucHJvcHMubWVudVZpc2libGV9XHJcbiAgICAgICAgICAgICAgICBjYXRlZ29yaWVzPXt0aGlzLnByb3BzLnN0b3JlLmNhdGVnb3J5fVxyXG4gICAgICAgICAgICAgICAgaGFuZGxlUm91dGluZz17dGhpcy5wcm9wcy5oYW5kbGVSb3V0aW5nfVxyXG4gICAgICAgICAgICAgICAgc2V0TWFpblByb3BlcnR5PXt0aGlzLnByb3BzLnNldE1haW5Qcm9wZXJ0eX1cclxuICAgICAgICAgICAgICAgIGFjdGl2ZUNhdGVnb3J5PXt0aGlzLnByb3BzLmFjdGl2ZUNhdGVnb3J5fVxyXG4gICAgICAgICAgICAgICAgbW9kYWw9e3RoaXMucHJvcHMubW9kYWx9XHJcbiAgICAgICAgICAgID5cclxuICAgICAgICAgICAgICAgIDxkaXYgY2xhc3NOYW1lPVwic3ViLW5hdlwiPlxyXG4gICAgICAgICAgICAgICAgICAgIDxhIHJvbGU9J2J1dHRvbidcclxuICAgICAgICAgICAgICAgICAgICAgICAgY2xhc3NOYW1lPXsnc2VsZWN0LXBvc3RzJyArICgodGhpcy5wcm9wcy5hY3RpdmVIb21lUGFuZWwgPT09ICdhcnRpY2xlcycpID8gJyBhY3RpdmUnIDogJycpfVxyXG4gICAgICAgICAgICAgICAgICAgICAgICB0aXRsZT0nYXJ0aWNsZXMnXHJcbiAgICAgICAgICAgICAgICAgICAgICAgIG9uQ2xpY2s9e3RoaXMuc2V0QWN0aXZlUGFuZWx9XHJcbiAgICAgICAgICAgICAgICAgICAgPlxyXG4gICAgICAgICAgICAgICAgICAgICAgICBQb3N0c1xyXG4gICAgICAgICAgICAgICAgICAgIDwvYT5cclxuICAgICAgICAgICAgICAgICAgICA8YSByb2xlPSdidXR0b24nXHJcbiAgICAgICAgICAgICAgICAgICAgICAgIGNsYXNzTmFtZT17J3NlbGVjdC1jYXRlZ29yaWVzJyArICgodGhpcy5wcm9wcy5hY3RpdmVIb21lUGFuZWwgPT09ICdjYXRlZ29yaWVzJykgPyAnIGFjdGl2ZScgOiAnJyl9XHJcbiAgICAgICAgICAgICAgICAgICAgICAgIHRpdGxlPSdjYXRlZ29yaWVzJ1xyXG4gICAgICAgICAgICAgICAgICAgICAgICBvbkNsaWNrPXt0aGlzLnNldEFjdGl2ZVBhbmVsfVxyXG4gICAgICAgICAgICAgICAgICAgID5cclxuICAgICAgICAgICAgICAgICAgICAgICAgQ2F0ZWdvcmllc1xyXG4gICAgICAgICAgICAgICAgICAgIDwvYT5cclxuICAgICAgICAgICAgICAgIDwvZGl2PlxyXG4gICAgICAgICAgICAgICAgPFBvc3RzXHJcbiAgICAgICAgICAgICAgICAgICAgYXJ0aWNsZXM9e3RoaXMucHJvcHMuc3RvcmUudmlldy5hcnRpY2xlc31cclxuICAgICAgICAgICAgICAgICAgICBhY3RpdmVIb21lUGFuZWw9e3RoaXMucHJvcHMuYWN0aXZlSG9tZVBhbmVsfVxyXG4gICAgICAgICAgICAgICAgICAgIGhhbmRsZVJvdXRpbmc9e3RoaXMucHJvcHMuaGFuZGxlUm91dGluZ31cclxuICAgICAgICAgICAgICAgIC8+XHJcbiAgICAgICAgICAgICAgICA8Q2F0ZWdvcmllc1xyXG4gICAgICAgICAgICAgICAgICAgIGNhdGVnb3JpZXM9e3RoaXMucHJvcHMuc3RvcmUuY2F0ZWdvcnl9XHJcbiAgICAgICAgICAgICAgICAgICAgYWN0aXZlSG9tZVBhbmVsPXt0aGlzLnByb3BzLmFjdGl2ZUhvbWVQYW5lbH1cclxuICAgICAgICAgICAgICAgICAgICBoYW5kbGVSb3V0aW5nPXt0aGlzLnByb3BzLmhhbmRsZVJvdXRpbmd9XHJcbiAgICAgICAgICAgICAgICAvPlxyXG4gICAgICAgICAgICA8LyBQYWdlPlxyXG4gICAgICAgIClcclxuICAgIH0sXHJcbiAgICBzZXRBY3RpdmVQYW5lbDogZnVuY3Rpb24gKGUpIHtcclxuICAgICAgICB0aGlzLnByb3BzLnNldE1haW5Qcm9wZXJ0eSgnYWN0aXZlSG9tZVBhbmVsJywgZS50YXJnZXQudGl0bGUpO1xyXG4gICAgfVxyXG5cclxufSk7XHJcbm1vZHVsZS5leHBvcnRzID0gSG9tZTsiXX0=
+},{"./../layout/page/page.jsx":"C:\\swiggis.austin\\src\\client\\js\\components\\layout\\page\\page.jsx","./../lists/category/categories.jsx":"C:\\swiggis.austin\\src\\client\\js\\components\\lists\\category\\categories.jsx","./../lists/post/posts.jsx":"C:\\swiggis.austin\\src\\client\\js\\components\\lists\\post\\posts.jsx","create-react-class":"C:\\swiggis.austin\\node_modules\\create-react-class\\index.js","react":"C:\\swiggis.austin\\node_modules\\react\\react.js","react-bootstrap":"C:\\swiggis.austin\\node_modules\\react-bootstrap\\lib\\index.js"}],"C:\\swiggis.austin\\src\\client\\js\\components\\pages\\membership.jsx":[function(require,module,exports){
 'use strict';
 
 var React = require('react');
@@ -58613,8 +57742,8 @@ var Membership = createReactClass({
     }
 });
 module.exports = Membership;
-//# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIm1lbWJlcnNoaXAuanN4Il0sIm5hbWVzIjpbIlJlYWN0IiwicmVxdWlyZSIsImNyZWF0ZVJlYWN0Q2xhc3MiLCJSb3ciLCJQYWdlIiwiTWVtYmVyc2hpcCIsInJlbmRlciIsIm1lbWJlcnNoaXBJbmZvIiwidGl0bGUiLCJzdWJ0aXRsZSIsImRlc2NyaXB0aW9uIiwic2lkZWJhckltYWdlIiwicGF0aCIsInByb3BzIiwibWVudVZpc2libGUiLCJzdG9yZSIsImNhdGVnb3J5IiwiaGFuZGxlUm91dGluZyIsInNldE1haW5Qcm9wZXJ0eSIsImFjdGl2ZUNhdGVnb3J5IiwibW9kYWwiLCJtb2R1bGUiLCJleHBvcnRzIl0sIm1hcHBpbmdzIjoiQUFBQTs7QUFDQSxJQUFJQSxRQUFRQyxRQUFRLE9BQVIsQ0FBWjtBQUNBLElBQUlDLG1CQUFtQkQsUUFBUSxvQkFBUixDQUF2QjtBQUNBLElBQUlFLE1BQU1GLFFBQVEsaUJBQVIsRUFBMkJFLEdBQXJDOztBQUVBLElBQUlDLE9BQU9ILFFBQVEsMkJBQVIsQ0FBWDtBQUNBLElBQUlJLGFBQWFILGlCQUFpQjtBQUFBOztBQUM5QkksWUFBUSxrQkFBWTs7QUFFaEIsWUFBSUMsaUJBQWlCO0FBQ2pCQyxtQkFBTyxZQURVO0FBRWpCQyxzQkFBVSx5QkFGTztBQUdqQkMseUJBQWEsMkNBSEk7QUFJakJDLDBCQUFjLCtCQUpHO0FBS2pCQyxrQkFBTTtBQUxXLFNBQXJCOztBQVFBLGVBQ0k7QUFBQyxnQkFBRDtBQUFBO0FBQ0ksMEJBQVVMLGNBRGQ7QUFFSSw2QkFBYSxLQUFLTSxLQUFMLENBQVdDLFdBRjVCO0FBR0ksNEJBQVksS0FBS0QsS0FBTCxDQUFXRSxLQUFYLENBQWlCQyxRQUhqQztBQUlJLCtCQUFlLEtBQUtILEtBQUwsQ0FBV0ksYUFKOUI7QUFLSSxpQ0FBaUIsS0FBS0osS0FBTCxDQUFXSyxlQUxoQztBQU1JLGdDQUFnQixLQUFLTCxLQUFMLENBQVdNLGNBTi9CO0FBT0ksdUJBQU8sS0FBS04sS0FBTCxDQUFXTztBQVB0QjtBQVNJO0FBQUE7QUFBQSxrQkFBSyxXQUFVLFlBQWY7QUFDSTtBQUFBO0FBQUEsc0JBQUssV0FBVSxrQkFBZjtBQUVJO0FBQUE7QUFBQTtBQUFBO0FBQUEscUJBRko7QUFHSTtBQUFBO0FBQUE7QUFBQTtBQUFBLHFCQUhKO0FBS0k7QUFBQTtBQUFBO0FBQUc7QUFBQTtBQUFBLDhCQUFHLE1BQUsscUdBQVIsRUFBOEcsUUFBTyxRQUFySDtBQUFBO0FBQUE7QUFBSCxxQkFMSjtBQVFJO0FBQUE7QUFBQTtBQUFBO0FBQUEscUJBUko7QUFTSTtBQUFBO0FBQUEsMEJBQU0sUUFBTyx1Q0FBYixFQUFxRCxRQUFPLE1BQTVELEVBQW1FLFFBQU8sUUFBMUU7QUFDQSx1REFBTyxNQUFLLFFBQVosRUFBcUIsTUFBSyxLQUExQixFQUFnQyxPQUFNLFdBQXRDLEdBREE7QUFFQSx1REFBTyxNQUFLLFFBQVosRUFBcUIsTUFBSyxrQkFBMUIsRUFBNkMsT0FBTSxlQUFuRCxHQUZBO0FBR0E7QUFBQTtBQUFBO0FBQU87QUFBQTtBQUFBO0FBQ1A7QUFBQTtBQUFBO0FBQUk7QUFBQTtBQUFBO0FBQUksdUVBQU8sTUFBSyxRQUFaLEVBQXFCLE1BQUssS0FBMUIsRUFBZ0MsT0FBTSxpQkFBdEMsR0FBSjtBQUFBO0FBQUE7QUFBSixpQ0FETztBQUNvRjtBQUFBO0FBQUE7QUFBSTtBQUFBO0FBQUE7QUFDL0Y7QUFBQTtBQUFBLDhDQUFRLE1BQUssS0FBYjtBQUNJO0FBQUE7QUFBQSxrREFBUSxPQUFNLHlCQUFkO0FBQUE7QUFBQSw2Q0FESjtBQUVJO0FBQUE7QUFBQSxrREFBUSxPQUFNLG9CQUFkO0FBQUE7QUFBQTtBQUZKLHlDQUQrRjtBQUFBO0FBQUE7QUFBSjtBQURwRjtBQUFQLHlCQUhBO0FBVUEsdURBQU8sTUFBSyxRQUFaLEVBQXFCLE1BQUssZUFBMUIsRUFBMEMsT0FBTSxLQUFoRCxHQVZBO0FBV0EsdURBQU8sTUFBSyxPQUFaLEVBQW9CLEtBQUksK0RBQXhCLEVBQXdGLFFBQU8sR0FBL0YsRUFBbUcsTUFBSyxRQUF4RyxFQUFpSCxLQUFJLCtDQUFySCxHQVhBO0FBWUEscURBQUssS0FBSSxFQUFULEVBQVksUUFBTyxHQUFuQixFQUF1QixLQUFJLHFEQUEzQixFQUFpRixPQUFNLEdBQXZGLEVBQTJGLFFBQU8sR0FBbEc7QUFaQSxxQkFUSjtBQXVCSSxtREF2Qko7QUF3Qkk7QUFBQTtBQUFBO0FBQUE7QUFBQTtBQXhCSjtBQURKLGFBVEo7QUFzQ0k7QUFBQTtBQUFBLGtCQUFRLFdBQVUsY0FBbEI7QUFDSTtBQUFBO0FBQUEsc0JBQUcsTUFBSyxXQUFSO0FBQUE7QUFBQTtBQURKO0FBdENKLFNBREo7QUE0Q0g7QUF2RDZCLENBQWpCLENBQWpCO0FBeURBQyxPQUFPQyxPQUFQLEdBQWlCakIsVUFBakIiLCJmaWxlIjoibWVtYmVyc2hpcC5qc3giLCJzb3VyY2VzQ29udGVudCI6WyIndXNlIHN0cmljdCc7XG52YXIgUmVhY3QgPSByZXF1aXJlKCdyZWFjdCcpO1xudmFyIGNyZWF0ZVJlYWN0Q2xhc3MgPSByZXF1aXJlKCdjcmVhdGUtcmVhY3QtY2xhc3MnKTtcbnZhciBSb3cgPSByZXF1aXJlKCdyZWFjdC1ib290c3RyYXAnKS5Sb3c7XG5cbnZhciBQYWdlID0gcmVxdWlyZSgnLi8uLi9sYXlvdXQvcGFnZS9wYWdlLmpzeCcpO1xudmFyIE1lbWJlcnNoaXAgPSBjcmVhdGVSZWFjdENsYXNzKHtcbiAgICByZW5kZXI6IGZ1bmN0aW9uICgpIHtcblxuICAgICAgICB2YXIgbWVtYmVyc2hpcEluZm8gPSB7XG4gICAgICAgICAgICB0aXRsZTogJ01lbWJlcnNoaXAnLFxuICAgICAgICAgICAgc3VidGl0bGU6ICdCZWNvbWUgYSBTV0lHR0lTIE1lbWJlcicsXG4gICAgICAgICAgICBkZXNjcmlwdGlvbjogJ0ZpbGwgb3V0IHRoZSBtZW1iZXJzaGlwIGZvcm0gYW5kIHBheSBkdWVzJyxcbiAgICAgICAgICAgIHNpZGViYXJJbWFnZTogJy4uL2ltYWdlcy9kZWZhdWx0LWNvbnRhY3QuanBnJyxcbiAgICAgICAgICAgIHBhdGg6IFwibWVtYmVyc2hpcFwiXG4gICAgICAgIH07XG5cbiAgICAgICAgcmV0dXJuIChcbiAgICAgICAgICAgIDxQYWdlXG4gICAgICAgICAgICAgICAgcGFnZUluZm89e21lbWJlcnNoaXBJbmZvfVxuICAgICAgICAgICAgICAgIG1lbnVWaXNpYmxlPXt0aGlzLnByb3BzLm1lbnVWaXNpYmxlfVxuICAgICAgICAgICAgICAgIGNhdGVnb3JpZXM9e3RoaXMucHJvcHMuc3RvcmUuY2F0ZWdvcnl9XG4gICAgICAgICAgICAgICAgaGFuZGxlUm91dGluZz17dGhpcy5wcm9wcy5oYW5kbGVSb3V0aW5nfVxuICAgICAgICAgICAgICAgIHNldE1haW5Qcm9wZXJ0eT17dGhpcy5wcm9wcy5zZXRNYWluUHJvcGVydHl9XG4gICAgICAgICAgICAgICAgYWN0aXZlQ2F0ZWdvcnk9e3RoaXMucHJvcHMuYWN0aXZlQ2F0ZWdvcnl9XG4gICAgICAgICAgICAgICAgbW9kYWw9e3RoaXMucHJvcHMubW9kYWx9XG4gICAgICAgICAgICA+XG4gICAgICAgICAgICAgICAgPGRpdiBjbGFzc05hbWU9XCJhdXRob3ItYmlvXCI+XG4gICAgICAgICAgICAgICAgICAgIDxkaXYgY2xhc3NOYW1lPVwiYXV0aG9yLWJpb19faW5mb1wiPlxuICAgICAgICAgICAgICAgICAgICAgICAgXG4gICAgICAgICAgICAgICAgICAgICAgICA8aDE+U1dJR0dJUyAtIE1FTUJFUlNISVA8L2gxPlxuICAgICAgICAgICAgICAgICAgICAgICAgPHA+U1dJR0dJUyBpcyBhIHByb2Zlc3Npb25hbCBhbmQgc29jaWFsIG9yZ2FuaXphdGlvbi4gT3VyIG1lbWJlcnNoaXAgcHJvdmlkZXMgd29tZW4gZ2VvZ3JhcGhlcnMgd2l0aCBhIHBvc2l0aXZlIGFuZCBwcm9kdWN0aXZlIHNwYWNlIGFzIHdlbGwgYXMgYSBzdXBwb3J0aXZlIGFuZCBlbmdhZ2luZyBlbnZpcm9ubWVudCBpbiB3aGljaCB3ZSBtZW50b3IgZWFjaCBvdGhlciwgZW5oYW5jZSBvdXIgaW50ZWxsZWN0dWFsIGNsaW1hdGUsIGFuZCBhcmUgaW5ub3ZhdGl2ZSBpbiBvdXIgc3RyYXRlZ2llcyB0byBwcm9tb3RlIHRoZSBwcm9mZXNzaW9uYWwgc3RhdHVzIG9mIHdvbWVuIGluIEdlb2dyYXBoeSBhbmQgR0lTLiBPdXIgZ29hbCBpcyB0byBtZWV0IG1vbnRobHksIGFuZCBvdXIgbWVldGluZ3Mgd2lsbCBiZSBzY2hlZHVsZWQgYWx0ZXJuYXRpdmVseSBhcyBlZHVjYXRpb25hbCBzZXNzaW9ucyBhbmQgc29jaWFsIGhhcHB5IGhvdXJzLiAgICBcbiAgICAgICAgICAgICAgICAgICAgICAgIDwvcD5cbiAgICAgICAgICAgICAgICAgICAgICAgIDxwPjxhIGhyZWY9XCJodHRwczovL2RvY3MuZ29vZ2xlLmNvbS9mb3Jtcy9kL2UvMUZBSXBRTFNldU1sZnhaZldWc3ZmNWlodmpCam9FeXJpRVFWSVlBSFBpdDQ1Y0ZQblJ5d2hoSEEvdmlld2Zvcm1cIiB0YXJnZXQ9XCJfYmxhbmtcIj5GaWxsIG91dCB0aGUgbWVtYmVyc2hpcCByZWdpc3RyYXRpb24gZm9ybTwvYT5cbiAgICAgICAgICAgICAgICAgICAgICAgIDwvcD5cblxuICAgICAgICAgICAgICAgICAgICAgICAgPGgxPk1FTUJFUlNISVAgRFVFUzwvaDE+XG4gICAgICAgICAgICAgICAgICAgICAgICA8Zm9ybSBhY3Rpb249XCJodHRwczovL3d3dy5wYXlwYWwuY29tL2NnaS1iaW4vd2Vic2NyXCIgbWV0aG9kPVwicG9zdFwiIHRhcmdldD1cIl9ibGFua1wiPlxuICAgICAgICAgICAgICAgICAgICAgICAgPGlucHV0IHR5cGU9XCJoaWRkZW5cIiBuYW1lPVwiY21kXCIgdmFsdWU9XCJfcy14Y2xpY2tcIiAvPlxuICAgICAgICAgICAgICAgICAgICAgICAgPGlucHV0IHR5cGU9XCJoaWRkZW5cIiBuYW1lPVwiaG9zdGVkX2J1dHRvbl9pZFwiIHZhbHVlPVwiMllMNThRQVU5TVJKTFwiIC8+XG4gICAgICAgICAgICAgICAgICAgICAgICA8dGFibGU+PHRib2R5PlxuICAgICAgICAgICAgICAgICAgICAgICAgPHRyPjx0ZD48aW5wdXQgdHlwZT1cImhpZGRlblwiIG5hbWU9XCJvbjBcIiB2YWx1ZT1cIk1lbWJlcnNoaXAgVHlwZVwiIC8+TWVtYmVyc2hpcCBUeXBlPC90ZD48L3RyPjx0cj48dGQ+XG4gICAgICAgICAgICAgICAgICAgICAgICA8c2VsZWN0IG5hbWU9XCJvczBcIj5cbiAgICAgICAgICAgICAgICAgICAgICAgICAgICA8b3B0aW9uIHZhbHVlPVwiUHJvZmVzc2lvbmFsIE1lbWJlcnNoaXBcIj5Qcm9mZXNzaW9uYWwgTWVtYmVyc2hpcCAkMjYuMDAgVVNEPC9vcHRpb24+XG4gICAgICAgICAgICAgICAgICAgICAgICAgICAgPG9wdGlvbiB2YWx1ZT1cIlN0dWRlbnQgTWVtYmVyc2hpcFwiPlN0dWRlbnQgTWVtYmVyc2hpcCAkMTEuMDAgVVNEPC9vcHRpb24+XG4gICAgICAgICAgICAgICAgICAgICAgICA8L3NlbGVjdD4gPC90ZD48L3RyPlxuICAgICAgICAgICAgICAgICAgICAgICAgPC90Ym9keT48L3RhYmxlPlxuICAgICAgICAgICAgICAgICAgICAgICAgPGlucHV0IHR5cGU9XCJoaWRkZW5cIiBuYW1lPVwiY3VycmVuY3lfY29kZVwiIHZhbHVlPVwiVVNEXCIgLz5cbiAgICAgICAgICAgICAgICAgICAgICAgIDxpbnB1dCB0eXBlPVwiaW1hZ2VcIiBzcmM9XCJodHRwczovL3d3dy5wYXlwYWxvYmplY3RzLmNvbS9lbl9VUy9pL2J0bi9idG5fYnV5bm93Q0NfTEcuZ2lmXCIgYm9yZGVyPVwiMFwiIG5hbWU9XCJzdWJtaXRcIiBhbHQ9XCJQYXlQYWwgLSBUaGUgc2FmZXIsIGVhc2llciB3YXkgdG8gcGF5IG9ubGluZSFcIiAvPlxuICAgICAgICAgICAgICAgICAgICAgICAgPGltZyBhbHQ9XCJcIiBib3JkZXI9XCIwXCIgc3JjPVwiaHR0cHM6Ly93d3cucGF5cGFsb2JqZWN0cy5jb20vZW5fVVMvaS9zY3IvcGl4ZWwuZ2lmXCIgd2lkdGg9XCIxXCIgaGVpZ2h0PVwiMVwiIC8+XG4gICAgICAgICAgICAgICAgICAgICAgICA8L2Zvcm0+XG4gICAgICAgICAgICAgICAgICAgICAgICA8YnIgLz5cbiAgICAgICAgICAgICAgICAgICAgICAgIDxwPkRJU0NMQUlNRVI6IEFuIGFkZGl0aW9uYWwgJDEgaXMgY2hhcmdlZCB0byBjb3ZlciBmZWVzIGZvciBvbmxpbmUgcGF5bWVudCBvZiBNZW1iZXJzaGlwIER1ZXMuPC9wPlxuICAgICAgICAgICAgICAgICAgICA8L2Rpdj5cbiAgICAgICAgICAgICAgICA8L2Rpdj5cblxuICAgICAgICAgICAgICAgIDxmb290ZXIgY2xhc3NOYW1lPVwic3BsaXQtZm9vdGVyXCI+XG4gICAgICAgICAgICAgICAgICAgIDxhIGhyZWY9XCIjL2NvbnRhY3RcIj5Db250YWN0PC9hPlxuICAgICAgICAgICAgICAgIDwvZm9vdGVyPlxuICAgICAgICAgICAgPC9QYWdlPlxuICAgICAgICApXG4gICAgfVxufSk7XG5tb2R1bGUuZXhwb3J0cyA9IE1lbWJlcnNoaXA7Il19
-},{"./../layout/page/page.jsx":"/mnt/c/swiggis.original/src/client/js/components/layout/page/page.jsx","create-react-class":"/mnt/c/swiggis.original/node_modules/create-react-class/index.js","react":"/mnt/c/swiggis.original/node_modules/react/react.js","react-bootstrap":"/mnt/c/swiggis.original/node_modules/react-bootstrap/lib/index.js"}],"/mnt/c/swiggis.original/src/client/js/driveAccess/drive.js":[function(require,module,exports){
+//# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIm1lbWJlcnNoaXAuanN4Il0sIm5hbWVzIjpbIlJlYWN0IiwicmVxdWlyZSIsImNyZWF0ZVJlYWN0Q2xhc3MiLCJSb3ciLCJQYWdlIiwiTWVtYmVyc2hpcCIsInJlbmRlciIsIm1lbWJlcnNoaXBJbmZvIiwidGl0bGUiLCJzdWJ0aXRsZSIsImRlc2NyaXB0aW9uIiwic2lkZWJhckltYWdlIiwicGF0aCIsInByb3BzIiwibWVudVZpc2libGUiLCJzdG9yZSIsImNhdGVnb3J5IiwiaGFuZGxlUm91dGluZyIsInNldE1haW5Qcm9wZXJ0eSIsImFjdGl2ZUNhdGVnb3J5IiwibW9kYWwiLCJtb2R1bGUiLCJleHBvcnRzIl0sIm1hcHBpbmdzIjoiQUFBQTs7QUFDQSxJQUFJQSxRQUFRQyxRQUFRLE9BQVIsQ0FBWjtBQUNBLElBQUlDLG1CQUFtQkQsUUFBUSxvQkFBUixDQUF2QjtBQUNBLElBQUlFLE1BQU1GLFFBQVEsaUJBQVIsRUFBMkJFLEdBQXJDOztBQUVBLElBQUlDLE9BQU9ILFFBQVEsMkJBQVIsQ0FBWDtBQUNBLElBQUlJLGFBQWFILGlCQUFpQjtBQUFBOztBQUM5QkksWUFBUSxrQkFBWTs7QUFFaEIsWUFBSUMsaUJBQWlCO0FBQ2pCQyxtQkFBTyxZQURVO0FBRWpCQyxzQkFBVSx5QkFGTztBQUdqQkMseUJBQWEsMkNBSEk7QUFJakJDLDBCQUFjLCtCQUpHO0FBS2pCQyxrQkFBTTtBQUxXLFNBQXJCOztBQVFBLGVBQ0k7QUFBQyxnQkFBRDtBQUFBO0FBQ0ksMEJBQVVMLGNBRGQ7QUFFSSw2QkFBYSxLQUFLTSxLQUFMLENBQVdDLFdBRjVCO0FBR0ksNEJBQVksS0FBS0QsS0FBTCxDQUFXRSxLQUFYLENBQWlCQyxRQUhqQztBQUlJLCtCQUFlLEtBQUtILEtBQUwsQ0FBV0ksYUFKOUI7QUFLSSxpQ0FBaUIsS0FBS0osS0FBTCxDQUFXSyxlQUxoQztBQU1JLGdDQUFnQixLQUFLTCxLQUFMLENBQVdNLGNBTi9CO0FBT0ksdUJBQU8sS0FBS04sS0FBTCxDQUFXTztBQVB0QjtBQVNJO0FBQUE7QUFBQSxrQkFBSyxXQUFVLFlBQWY7QUFDSTtBQUFBO0FBQUEsc0JBQUssV0FBVSxrQkFBZjtBQUVJO0FBQUE7QUFBQTtBQUFBO0FBQUEscUJBRko7QUFHSTtBQUFBO0FBQUE7QUFBQTtBQUFBLHFCQUhKO0FBS0k7QUFBQTtBQUFBO0FBQUc7QUFBQTtBQUFBLDhCQUFHLE1BQUsscUdBQVIsRUFBOEcsUUFBTyxRQUFySDtBQUFBO0FBQUE7QUFBSCxxQkFMSjtBQVFJO0FBQUE7QUFBQTtBQUFBO0FBQUEscUJBUko7QUFTSTtBQUFBO0FBQUEsMEJBQU0sUUFBTyx1Q0FBYixFQUFxRCxRQUFPLE1BQTVELEVBQW1FLFFBQU8sUUFBMUU7QUFDQSx1REFBTyxNQUFLLFFBQVosRUFBcUIsTUFBSyxLQUExQixFQUFnQyxPQUFNLFdBQXRDLEdBREE7QUFFQSx1REFBTyxNQUFLLFFBQVosRUFBcUIsTUFBSyxrQkFBMUIsRUFBNkMsT0FBTSxlQUFuRCxHQUZBO0FBR0E7QUFBQTtBQUFBO0FBQU87QUFBQTtBQUFBO0FBQ1A7QUFBQTtBQUFBO0FBQUk7QUFBQTtBQUFBO0FBQUksdUVBQU8sTUFBSyxRQUFaLEVBQXFCLE1BQUssS0FBMUIsRUFBZ0MsT0FBTSxpQkFBdEMsR0FBSjtBQUFBO0FBQUE7QUFBSixpQ0FETztBQUNvRjtBQUFBO0FBQUE7QUFBSTtBQUFBO0FBQUE7QUFDL0Y7QUFBQTtBQUFBLDhDQUFRLE1BQUssS0FBYjtBQUNJO0FBQUE7QUFBQSxrREFBUSxPQUFNLHlCQUFkO0FBQUE7QUFBQSw2Q0FESjtBQUVJO0FBQUE7QUFBQSxrREFBUSxPQUFNLG9CQUFkO0FBQUE7QUFBQTtBQUZKLHlDQUQrRjtBQUFBO0FBQUE7QUFBSjtBQURwRjtBQUFQLHlCQUhBO0FBVUEsdURBQU8sTUFBSyxRQUFaLEVBQXFCLE1BQUssZUFBMUIsRUFBMEMsT0FBTSxLQUFoRCxHQVZBO0FBV0EsdURBQU8sTUFBSyxPQUFaLEVBQW9CLEtBQUksK0RBQXhCLEVBQXdGLFFBQU8sR0FBL0YsRUFBbUcsTUFBSyxRQUF4RyxFQUFpSCxLQUFJLCtDQUFySCxHQVhBO0FBWUEscURBQUssS0FBSSxFQUFULEVBQVksUUFBTyxHQUFuQixFQUF1QixLQUFJLHFEQUEzQixFQUFpRixPQUFNLEdBQXZGLEVBQTJGLFFBQU8sR0FBbEc7QUFaQSxxQkFUSjtBQXVCSSxtREF2Qko7QUF3Qkk7QUFBQTtBQUFBO0FBQUE7QUFBQTtBQXhCSjtBQURKLGFBVEo7QUFzQ0k7QUFBQTtBQUFBLGtCQUFRLFdBQVUsY0FBbEI7QUFDSTtBQUFBO0FBQUEsc0JBQUcsTUFBSyxXQUFSO0FBQUE7QUFBQTtBQURKO0FBdENKLFNBREo7QUE0Q0g7QUF2RDZCLENBQWpCLENBQWpCO0FBeURBQyxPQUFPQyxPQUFQLEdBQWlCakIsVUFBakIiLCJmaWxlIjoibWVtYmVyc2hpcC5qc3giLCJzb3VyY2VzQ29udGVudCI6WyIndXNlIHN0cmljdCc7XHJcbnZhciBSZWFjdCA9IHJlcXVpcmUoJ3JlYWN0Jyk7XHJcbnZhciBjcmVhdGVSZWFjdENsYXNzID0gcmVxdWlyZSgnY3JlYXRlLXJlYWN0LWNsYXNzJyk7XHJcbnZhciBSb3cgPSByZXF1aXJlKCdyZWFjdC1ib290c3RyYXAnKS5Sb3c7XHJcblxyXG52YXIgUGFnZSA9IHJlcXVpcmUoJy4vLi4vbGF5b3V0L3BhZ2UvcGFnZS5qc3gnKTtcclxudmFyIE1lbWJlcnNoaXAgPSBjcmVhdGVSZWFjdENsYXNzKHtcclxuICAgIHJlbmRlcjogZnVuY3Rpb24gKCkge1xyXG5cclxuICAgICAgICB2YXIgbWVtYmVyc2hpcEluZm8gPSB7XHJcbiAgICAgICAgICAgIHRpdGxlOiAnTWVtYmVyc2hpcCcsXHJcbiAgICAgICAgICAgIHN1YnRpdGxlOiAnQmVjb21lIGEgU1dJR0dJUyBNZW1iZXInLFxyXG4gICAgICAgICAgICBkZXNjcmlwdGlvbjogJ0ZpbGwgb3V0IHRoZSBtZW1iZXJzaGlwIGZvcm0gYW5kIHBheSBkdWVzJyxcclxuICAgICAgICAgICAgc2lkZWJhckltYWdlOiAnLi4vaW1hZ2VzL2RlZmF1bHQtY29udGFjdC5qcGcnLFxyXG4gICAgICAgICAgICBwYXRoOiBcIm1lbWJlcnNoaXBcIlxyXG4gICAgICAgIH07XHJcblxyXG4gICAgICAgIHJldHVybiAoXHJcbiAgICAgICAgICAgIDxQYWdlXHJcbiAgICAgICAgICAgICAgICBwYWdlSW5mbz17bWVtYmVyc2hpcEluZm99XHJcbiAgICAgICAgICAgICAgICBtZW51VmlzaWJsZT17dGhpcy5wcm9wcy5tZW51VmlzaWJsZX1cclxuICAgICAgICAgICAgICAgIGNhdGVnb3JpZXM9e3RoaXMucHJvcHMuc3RvcmUuY2F0ZWdvcnl9XHJcbiAgICAgICAgICAgICAgICBoYW5kbGVSb3V0aW5nPXt0aGlzLnByb3BzLmhhbmRsZVJvdXRpbmd9XHJcbiAgICAgICAgICAgICAgICBzZXRNYWluUHJvcGVydHk9e3RoaXMucHJvcHMuc2V0TWFpblByb3BlcnR5fVxyXG4gICAgICAgICAgICAgICAgYWN0aXZlQ2F0ZWdvcnk9e3RoaXMucHJvcHMuYWN0aXZlQ2F0ZWdvcnl9XHJcbiAgICAgICAgICAgICAgICBtb2RhbD17dGhpcy5wcm9wcy5tb2RhbH1cclxuICAgICAgICAgICAgPlxyXG4gICAgICAgICAgICAgICAgPGRpdiBjbGFzc05hbWU9XCJhdXRob3ItYmlvXCI+XHJcbiAgICAgICAgICAgICAgICAgICAgPGRpdiBjbGFzc05hbWU9XCJhdXRob3ItYmlvX19pbmZvXCI+XHJcbiAgICAgICAgICAgICAgICAgICAgICAgIFxyXG4gICAgICAgICAgICAgICAgICAgICAgICA8aDE+U1dJR0dJUyAtIE1FTUJFUlNISVA8L2gxPlxyXG4gICAgICAgICAgICAgICAgICAgICAgICA8cD5TV0lHR0lTIGlzIGEgcHJvZmVzc2lvbmFsIGFuZCBzb2NpYWwgb3JnYW5pemF0aW9uLiBPdXIgbWVtYmVyc2hpcCBwcm92aWRlcyB3b21lbiBnZW9ncmFwaGVycyB3aXRoIGEgcG9zaXRpdmUgYW5kIHByb2R1Y3RpdmUgc3BhY2UgYXMgd2VsbCBhcyBhIHN1cHBvcnRpdmUgYW5kIGVuZ2FnaW5nIGVudmlyb25tZW50IGluIHdoaWNoIHdlIG1lbnRvciBlYWNoIG90aGVyLCBlbmhhbmNlIG91ciBpbnRlbGxlY3R1YWwgY2xpbWF0ZSwgYW5kIGFyZSBpbm5vdmF0aXZlIGluIG91ciBzdHJhdGVnaWVzIHRvIHByb21vdGUgdGhlIHByb2Zlc3Npb25hbCBzdGF0dXMgb2Ygd29tZW4gaW4gR2VvZ3JhcGh5IGFuZCBHSVMuIE91ciBnb2FsIGlzIHRvIG1lZXQgbW9udGhseSwgYW5kIG91ciBtZWV0aW5ncyB3aWxsIGJlIHNjaGVkdWxlZCBhbHRlcm5hdGl2ZWx5IGFzIGVkdWNhdGlvbmFsIHNlc3Npb25zIGFuZCBzb2NpYWwgaGFwcHkgaG91cnMuICAgIFxyXG4gICAgICAgICAgICAgICAgICAgICAgICA8L3A+XHJcbiAgICAgICAgICAgICAgICAgICAgICAgIDxwPjxhIGhyZWY9XCJodHRwczovL2RvY3MuZ29vZ2xlLmNvbS9mb3Jtcy9kL2UvMUZBSXBRTFNldU1sZnhaZldWc3ZmNWlodmpCam9FeXJpRVFWSVlBSFBpdDQ1Y0ZQblJ5d2hoSEEvdmlld2Zvcm1cIiB0YXJnZXQ9XCJfYmxhbmtcIj5GaWxsIG91dCB0aGUgbWVtYmVyc2hpcCByZWdpc3RyYXRpb24gZm9ybTwvYT5cclxuICAgICAgICAgICAgICAgICAgICAgICAgPC9wPlxyXG5cclxuICAgICAgICAgICAgICAgICAgICAgICAgPGgxPk1FTUJFUlNISVAgRFVFUzwvaDE+XHJcbiAgICAgICAgICAgICAgICAgICAgICAgIDxmb3JtIGFjdGlvbj1cImh0dHBzOi8vd3d3LnBheXBhbC5jb20vY2dpLWJpbi93ZWJzY3JcIiBtZXRob2Q9XCJwb3N0XCIgdGFyZ2V0PVwiX2JsYW5rXCI+XHJcbiAgICAgICAgICAgICAgICAgICAgICAgIDxpbnB1dCB0eXBlPVwiaGlkZGVuXCIgbmFtZT1cImNtZFwiIHZhbHVlPVwiX3MteGNsaWNrXCIgLz5cclxuICAgICAgICAgICAgICAgICAgICAgICAgPGlucHV0IHR5cGU9XCJoaWRkZW5cIiBuYW1lPVwiaG9zdGVkX2J1dHRvbl9pZFwiIHZhbHVlPVwiMllMNThRQVU5TVJKTFwiIC8+XHJcbiAgICAgICAgICAgICAgICAgICAgICAgIDx0YWJsZT48dGJvZHk+XHJcbiAgICAgICAgICAgICAgICAgICAgICAgIDx0cj48dGQ+PGlucHV0IHR5cGU9XCJoaWRkZW5cIiBuYW1lPVwib24wXCIgdmFsdWU9XCJNZW1iZXJzaGlwIFR5cGVcIiAvPk1lbWJlcnNoaXAgVHlwZTwvdGQ+PC90cj48dHI+PHRkPlxyXG4gICAgICAgICAgICAgICAgICAgICAgICA8c2VsZWN0IG5hbWU9XCJvczBcIj5cclxuICAgICAgICAgICAgICAgICAgICAgICAgICAgIDxvcHRpb24gdmFsdWU9XCJQcm9mZXNzaW9uYWwgTWVtYmVyc2hpcFwiPlByb2Zlc3Npb25hbCBNZW1iZXJzaGlwICQyNi4wMCBVU0Q8L29wdGlvbj5cclxuICAgICAgICAgICAgICAgICAgICAgICAgICAgIDxvcHRpb24gdmFsdWU9XCJTdHVkZW50IE1lbWJlcnNoaXBcIj5TdHVkZW50IE1lbWJlcnNoaXAgJDExLjAwIFVTRDwvb3B0aW9uPlxyXG4gICAgICAgICAgICAgICAgICAgICAgICA8L3NlbGVjdD4gPC90ZD48L3RyPlxyXG4gICAgICAgICAgICAgICAgICAgICAgICA8L3Rib2R5PjwvdGFibGU+XHJcbiAgICAgICAgICAgICAgICAgICAgICAgIDxpbnB1dCB0eXBlPVwiaGlkZGVuXCIgbmFtZT1cImN1cnJlbmN5X2NvZGVcIiB2YWx1ZT1cIlVTRFwiIC8+XHJcbiAgICAgICAgICAgICAgICAgICAgICAgIDxpbnB1dCB0eXBlPVwiaW1hZ2VcIiBzcmM9XCJodHRwczovL3d3dy5wYXlwYWxvYmplY3RzLmNvbS9lbl9VUy9pL2J0bi9idG5fYnV5bm93Q0NfTEcuZ2lmXCIgYm9yZGVyPVwiMFwiIG5hbWU9XCJzdWJtaXRcIiBhbHQ9XCJQYXlQYWwgLSBUaGUgc2FmZXIsIGVhc2llciB3YXkgdG8gcGF5IG9ubGluZSFcIiAvPlxyXG4gICAgICAgICAgICAgICAgICAgICAgICA8aW1nIGFsdD1cIlwiIGJvcmRlcj1cIjBcIiBzcmM9XCJodHRwczovL3d3dy5wYXlwYWxvYmplY3RzLmNvbS9lbl9VUy9pL3Njci9waXhlbC5naWZcIiB3aWR0aD1cIjFcIiBoZWlnaHQ9XCIxXCIgLz5cclxuICAgICAgICAgICAgICAgICAgICAgICAgPC9mb3JtPlxyXG4gICAgICAgICAgICAgICAgICAgICAgICA8YnIgLz5cclxuICAgICAgICAgICAgICAgICAgICAgICAgPHA+RElTQ0xBSU1FUjogQW4gYWRkaXRpb25hbCAkMSBpcyBjaGFyZ2VkIHRvIGNvdmVyIGZlZXMgZm9yIG9ubGluZSBwYXltZW50IG9mIE1lbWJlcnNoaXAgRHVlcy48L3A+XHJcbiAgICAgICAgICAgICAgICAgICAgPC9kaXY+XHJcbiAgICAgICAgICAgICAgICA8L2Rpdj5cclxuXHJcbiAgICAgICAgICAgICAgICA8Zm9vdGVyIGNsYXNzTmFtZT1cInNwbGl0LWZvb3RlclwiPlxyXG4gICAgICAgICAgICAgICAgICAgIDxhIGhyZWY9XCIjL2NvbnRhY3RcIj5Db250YWN0PC9hPlxyXG4gICAgICAgICAgICAgICAgPC9mb290ZXI+XHJcbiAgICAgICAgICAgIDwvUGFnZT5cclxuICAgICAgICApXHJcbiAgICB9XHJcbn0pO1xyXG5tb2R1bGUuZXhwb3J0cyA9IE1lbWJlcnNoaXA7Il19
+},{"./../layout/page/page.jsx":"C:\\swiggis.austin\\src\\client\\js\\components\\layout\\page\\page.jsx","create-react-class":"C:\\swiggis.austin\\node_modules\\create-react-class\\index.js","react":"C:\\swiggis.austin\\node_modules\\react\\react.js","react-bootstrap":"C:\\swiggis.austin\\node_modules\\react-bootstrap\\lib\\index.js"}],"C:\\swiggis.austin\\src\\client\\js\\driveAccess\\drive.js":[function(require,module,exports){
 'use strict';
 
 var content = require('./../utils/utils').content;
@@ -58698,8 +57827,8 @@ var Drive = function Drive(config, $) {
     };
 };
 module.exports = Drive;
-//# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbImRyaXZlLmpzIl0sIm5hbWVzIjpbImNvbnRlbnQiLCJyZXF1aXJlIiwic3RyaW5nIiwibm9vcCIsIkRyaXZlIiwiY29uZmlnIiwiJCIsImNhbGxKc29uUCIsInVybCIsImNhbGxiYWNrIiwiYWpheCIsInR5cGUiLCJkYXRhVHlwZSIsInN1Y2Nlc3MiLCJyZXMiLCJzdGF0dXMiLCJlcnJvciIsImNvbnNvbGUiLCJsb2ciLCJjYWxsIiwiZ2V0U3ByZWFkc2hlZXQiLCJmaWxlSWQiLCJzZWxmIiwic2hlZXRVcmwiLCJnZXREb2N1bWVudCIsImRvY1VybCIsImdldFZpZXdzIiwiZGFzaGJvYXJkSWQiLCJKc29uIiwiZXh0cmFjdFZpZXdzIiwiZ2V0UG9zdHMiLCJpbml0Iiwidmlld3MiLCJyb3V0ZVBhcmFtcyIsInBhcnNlVXJsIiwiYXJ0aWNsZSIsImVsZW1lbnRUeXBlIiwiZ2V0RWxlbWVudEh0bWwiLCJlbGVtZW50RmlsZUlkIiwiZWxlbWVudEh0bWwiLCJhcnRpY2xlcyIsImVsZW1lbnRJZCIsImRvYyIsImRvY0h0bWwiLCJwYXJzZUh0bWwiLCJzdHlsZXMiLCJodG1sIiwibW9kdWxlIiwiZXhwb3J0cyJdLCJtYXBwaW5ncyI6IkFBQUE7O0FBQ0EsSUFBSUEsVUFBVUMsUUFBUSxrQkFBUixFQUE0QkQsT0FBMUM7QUFDQSxJQUFJRSxTQUFTRCxRQUFRLGtCQUFSLEVBQTRCQyxNQUF6QztBQUNBLElBQUlDLE9BQU8sU0FBUEEsSUFBTyxHQUFZLENBQ3RCLENBREQ7O0FBR0EsSUFBSUMsUUFBUSxTQUFSQSxLQUFRLENBQVVDLE1BQVYsRUFBa0JDLENBQWxCLEVBQXFCO0FBQzdCLFdBQU87QUFDSEMsbUJBQVcsbUJBQVVDLEdBQVYsRUFBZUMsUUFBZixFQUF5QjtBQUNoQ0EsdUJBQVdBLFlBQVlOLElBQXZCO0FBQ0FHLGNBQUVJLElBQUYsQ0FBTztBQUNIRixxQkFBS0EsR0FERjtBQUVIRyxzQkFBTSxLQUZIO0FBR0hDLDBCQUFVLE9BSFA7QUFJSEMseUJBQVMsaUJBQVVDLEdBQVYsRUFBZUMsTUFBZixFQUF1QjtBQUM1Qk4sNkJBQVNLLEdBQVQ7QUFDSCxpQkFORTtBQU9IRSx1QkFBTyxlQUFVRixHQUFWLEVBQWVDLE1BQWYsRUFBdUJDLE1BQXZCLEVBQThCO0FBQ2pDQyw0QkFBUUMsR0FBUixDQUFZRixNQUFaO0FBQ0g7QUFURSxhQUFQO0FBV0gsU0FkRTtBQWVIRyxjQUFNLGNBQVVYLEdBQVYsRUFBZUMsUUFBZixFQUF5QjtBQUMzQkEsdUJBQVdBLFlBQVlOLElBQXZCO0FBQ0FHLGNBQUVJLElBQUYsQ0FBTztBQUNIRixxQkFBS0EsR0FERjtBQUVIRyxzQkFBTSxLQUZIO0FBR0hDLDBCQUFVLE1BSFA7QUFJSEMseUJBQVMsaUJBQVVDLEdBQVYsRUFBZUMsTUFBZixFQUF1QjtBQUM1Qk4sNkJBQVNLLEdBQVQ7QUFDSCxpQkFORTtBQU9IRSx1QkFBTyxlQUFVRixHQUFWLEVBQWVDLE1BQWYsRUFBdUJDLE9BQXZCLEVBQThCO0FBQ2pDQyw0QkFBUUMsR0FBUixDQUFZRixPQUFaO0FBQ0g7QUFURSxhQUFQO0FBV0gsU0E1QkU7QUE2QkhJLHdCQUFnQix3QkFBVUMsTUFBVixFQUFrQlosUUFBbEIsRUFBNEI7QUFDeENBLHVCQUFXQSxZQUFZTixJQUF2QjtBQUNBLGdCQUFJbUIsT0FBTyxJQUFYO0FBQ0EsZ0JBQUlDLFdBQVcsZ0RBQWdERixNQUFoRCxHQUF5RCw2QkFBeEU7QUFDQUMsaUJBQUtmLFNBQUwsQ0FBZWdCLFFBQWYsRUFBeUJkLFFBQXpCO0FBQ0gsU0FsQ0U7QUFtQ0hlLHFCQUFhLHFCQUFVSCxNQUFWLEVBQWtCWixRQUFsQixFQUE0QjtBQUNyQ0EsdUJBQVdBLFlBQVlOLElBQXZCO0FBQ0EsZ0JBQUltQixPQUFPLElBQVg7QUFDQSxnQkFBSUcsU0FBUyx1RUFBdUVKLE1BQXZFLEdBQWdGLG9CQUE3RjtBQUNBQyxpQkFBS0gsSUFBTCxDQUFVTSxNQUFWLEVBQWtCaEIsUUFBbEI7QUFDSCxTQXhDRTtBQXlDSGlCLGtCQUFVLGtCQUFVakIsUUFBVixFQUFvQjtBQUMxQixnQkFBSWEsT0FBTyxJQUFYO0FBQ0FiLHVCQUFXQSxZQUFZTixJQUF2QjtBQUNBbUIsaUJBQUtGLGNBQUwsQ0FBb0JmLE9BQU9zQixXQUEzQixFQUF3QyxVQUFVQyxJQUFWLEVBQWdCO0FBQ3BEbkIseUJBQ0lULFFBQVE2QixZQUFSLENBQ0k3QixRQUFROEIsUUFBUixDQUFpQkYsSUFBakIsQ0FESixDQURKO0FBS0gsYUFORDtBQU9ILFNBbkRFO0FBb0RIRyxjQUFNLGNBQVV0QixRQUFWLEVBQW9CO0FBQ3RCLGdCQUFJYSxPQUFPLElBQVg7QUFDQWIsdUJBQVdBLFlBQVlOLElBQXZCO0FBQ0FtQixpQkFBS0ksUUFBTCxDQUFjLFVBQVVNLEtBQVYsRUFBaUI7QUFDM0JBLHNCQUFNQyxXQUFOLEdBQW9CL0IsT0FBT2dDLFFBQVAsQ0FBZ0JGLEtBQWhCLENBQXBCO0FBQ0FBLHNCQUFNRyxPQUFOLEdBQWdCLEtBQWhCO0FBQ0Esb0JBQUlILE1BQU1DLFdBQU4sQ0FBa0JHLFdBQWxCLEtBQWtDLFNBQXRDLEVBQWlEO0FBQzdDZCx5QkFBS2UsY0FBTCxDQUFvQkwsTUFBTUMsV0FBTixDQUFrQkssYUFBdEMsRUFBcUQsVUFBVUMsV0FBVixFQUF1QjtBQUN4RSw0QkFBSUosVUFBVUgsTUFBTVEsUUFBTixDQUFlUixNQUFNQyxXQUFOLENBQWtCUSxTQUFqQyxDQUFkO0FBQ0FOLGdDQUFRLE1BQVIsSUFBa0JJLFdBQWxCO0FBQ0FQLDhCQUFNRyxPQUFOLEdBQWdCQSxPQUFoQjtBQUNBMUIsaUNBQVN1QixLQUFUO0FBQ0gscUJBTEQ7QUFNSCxpQkFQRCxNQU9PO0FBQ0h2Qiw2QkFBU3VCLEtBQVQ7QUFDSDtBQUNKLGFBYkQ7QUFjSCxTQXJFRTtBQXNFSEssd0JBQWdCLHdCQUFVSSxTQUFWLEVBQXFCaEMsUUFBckIsRUFBK0I7QUFDM0MsZ0JBQUlhLE9BQU8sSUFBWDtBQUNBQSxpQkFBS0UsV0FBTCxDQUFpQmlCLFNBQWpCLEVBQTRCLFVBQVVDLEdBQVYsRUFBZTtBQUN2QyxvQkFBSUMsVUFBVTNDLFFBQVE0QyxTQUFSLENBQWtCRixHQUFsQixDQUFkO0FBQ0FqQyx5QkFBVWtDLFFBQVFFLE1BQVIsR0FBaUJGLFFBQVFHLElBQW5DO0FBQ0gsYUFIRDtBQUlIO0FBNUVFLEtBQVA7QUE4RUgsQ0EvRUQ7QUFnRkFDLE9BQU9DLE9BQVAsR0FBaUI1QyxLQUFqQiIsImZpbGUiOiJkcml2ZS5qcyIsInNvdXJjZXNDb250ZW50IjpbIid1c2Ugc3RyaWN0JztcbnZhciBjb250ZW50ID0gcmVxdWlyZSgnLi8uLi91dGlscy91dGlscycpLmNvbnRlbnQ7XG52YXIgc3RyaW5nID0gcmVxdWlyZSgnLi8uLi91dGlscy91dGlscycpLnN0cmluZztcbnZhciBub29wID0gZnVuY3Rpb24gKCkge1xufTtcblxudmFyIERyaXZlID0gZnVuY3Rpb24gKGNvbmZpZywgJCkge1xuICAgIHJldHVybiB7XG4gICAgICAgIGNhbGxKc29uUDogZnVuY3Rpb24gKHVybCwgY2FsbGJhY2spIHtcbiAgICAgICAgICAgIGNhbGxiYWNrID0gY2FsbGJhY2sgfHwgbm9vcDtcbiAgICAgICAgICAgICQuYWpheCh7XG4gICAgICAgICAgICAgICAgdXJsOiB1cmwsXG4gICAgICAgICAgICAgICAgdHlwZTogJ0dFVCcsXG4gICAgICAgICAgICAgICAgZGF0YVR5cGU6ICdqc29ucCcsXG4gICAgICAgICAgICAgICAgc3VjY2VzczogZnVuY3Rpb24gKHJlcywgc3RhdHVzKSB7XG4gICAgICAgICAgICAgICAgICAgIGNhbGxiYWNrKHJlcyk7XG4gICAgICAgICAgICAgICAgfSxcbiAgICAgICAgICAgICAgICBlcnJvcjogZnVuY3Rpb24gKHJlcywgc3RhdHVzLCBlcnJvcikge1xuICAgICAgICAgICAgICAgICAgICBjb25zb2xlLmxvZyhlcnJvcik7XG4gICAgICAgICAgICAgICAgfVxuICAgICAgICAgICAgfSk7XG4gICAgICAgIH0sXG4gICAgICAgIGNhbGw6IGZ1bmN0aW9uICh1cmwsIGNhbGxiYWNrKSB7XG4gICAgICAgICAgICBjYWxsYmFjayA9IGNhbGxiYWNrIHx8IG5vb3A7XG4gICAgICAgICAgICAkLmFqYXgoe1xuICAgICAgICAgICAgICAgIHVybDogdXJsLFxuICAgICAgICAgICAgICAgIHR5cGU6ICdHRVQnLFxuICAgICAgICAgICAgICAgIGRhdGFUeXBlOiAndGV4dCcsXG4gICAgICAgICAgICAgICAgc3VjY2VzczogZnVuY3Rpb24gKHJlcywgc3RhdHVzKSB7XG4gICAgICAgICAgICAgICAgICAgIGNhbGxiYWNrKHJlcyk7XG4gICAgICAgICAgICAgICAgfSxcbiAgICAgICAgICAgICAgICBlcnJvcjogZnVuY3Rpb24gKHJlcywgc3RhdHVzLCBlcnJvcikge1xuICAgICAgICAgICAgICAgICAgICBjb25zb2xlLmxvZyhlcnJvcik7XG4gICAgICAgICAgICAgICAgfVxuICAgICAgICAgICAgfSk7XG4gICAgICAgIH0sXG4gICAgICAgIGdldFNwcmVhZHNoZWV0OiBmdW5jdGlvbiAoZmlsZUlkLCBjYWxsYmFjaykge1xuICAgICAgICAgICAgY2FsbGJhY2sgPSBjYWxsYmFjayB8fCBub29wO1xuICAgICAgICAgICAgdmFyIHNlbGYgPSB0aGlzO1xuICAgICAgICAgICAgdmFyIHNoZWV0VXJsID0gXCJodHRwczovL3NwcmVhZHNoZWV0cy5nb29nbGUuY29tL2ZlZWRzL2xpc3QvXCIgKyBmaWxlSWQgKyBcIi9vZDYvcHVibGljL3ZhbHVlcz9hbHQ9anNvblwiO1xuICAgICAgICAgICAgc2VsZi5jYWxsSnNvblAoc2hlZXRVcmwsIGNhbGxiYWNrKTtcbiAgICAgICAgfSxcbiAgICAgICAgZ2V0RG9jdW1lbnQ6IGZ1bmN0aW9uIChmaWxlSWQsIGNhbGxiYWNrKSB7XG4gICAgICAgICAgICBjYWxsYmFjayA9IGNhbGxiYWNrIHx8IG5vb3A7XG4gICAgICAgICAgICB2YXIgc2VsZiA9IHRoaXM7XG4gICAgICAgICAgICB2YXIgZG9jVXJsID0gJ2h0dHBzOi8vZG9jcy5nb29nbGUuY29tL2ZlZWRzL2Rvd25sb2FkL2RvY3VtZW50cy9leHBvcnQvRXhwb3J0P2lkPScgKyBmaWxlSWQgKyAnJmV4cG9ydEZvcm1hdD1odG1sJztcbiAgICAgICAgICAgIHNlbGYuY2FsbChkb2NVcmwsIGNhbGxiYWNrKTtcbiAgICAgICAgfSxcbiAgICAgICAgZ2V0Vmlld3M6IGZ1bmN0aW9uIChjYWxsYmFjaykge1xuICAgICAgICAgICAgdmFyIHNlbGYgPSB0aGlzO1xuICAgICAgICAgICAgY2FsbGJhY2sgPSBjYWxsYmFjayB8fCBub29wO1xuICAgICAgICAgICAgc2VsZi5nZXRTcHJlYWRzaGVldChjb25maWcuZGFzaGJvYXJkSWQsIGZ1bmN0aW9uIChKc29uKSB7XG4gICAgICAgICAgICAgICAgY2FsbGJhY2soXG4gICAgICAgICAgICAgICAgICAgIGNvbnRlbnQuZXh0cmFjdFZpZXdzKFxuICAgICAgICAgICAgICAgICAgICAgICAgY29udGVudC5nZXRQb3N0cyhKc29uKVxuICAgICAgICAgICAgICAgICAgICApXG4gICAgICAgICAgICAgICAgKTtcbiAgICAgICAgICAgIH0pO1xuICAgICAgICB9LFxuICAgICAgICBpbml0OiBmdW5jdGlvbiAoY2FsbGJhY2spIHtcbiAgICAgICAgICAgIHZhciBzZWxmID0gdGhpcztcbiAgICAgICAgICAgIGNhbGxiYWNrID0gY2FsbGJhY2sgfHwgbm9vcDtcbiAgICAgICAgICAgIHNlbGYuZ2V0Vmlld3MoZnVuY3Rpb24gKHZpZXdzKSB7XG4gICAgICAgICAgICAgICAgdmlld3Mucm91dGVQYXJhbXMgPSBzdHJpbmcucGFyc2VVcmwodmlld3MpO1xuICAgICAgICAgICAgICAgIHZpZXdzLmFydGljbGUgPSBmYWxzZTtcbiAgICAgICAgICAgICAgICBpZiAodmlld3Mucm91dGVQYXJhbXMuZWxlbWVudFR5cGUgPT09ICdhcnRpY2xlJykge1xuICAgICAgICAgICAgICAgICAgICBzZWxmLmdldEVsZW1lbnRIdG1sKHZpZXdzLnJvdXRlUGFyYW1zLmVsZW1lbnRGaWxlSWQsIGZ1bmN0aW9uIChlbGVtZW50SHRtbCkge1xuICAgICAgICAgICAgICAgICAgICAgICAgdmFyIGFydGljbGUgPSB2aWV3cy5hcnRpY2xlc1t2aWV3cy5yb3V0ZVBhcmFtcy5lbGVtZW50SWRdO1xuICAgICAgICAgICAgICAgICAgICAgICAgYXJ0aWNsZVsnYm9keSddID0gZWxlbWVudEh0bWw7XG4gICAgICAgICAgICAgICAgICAgICAgICB2aWV3cy5hcnRpY2xlID0gYXJ0aWNsZTtcbiAgICAgICAgICAgICAgICAgICAgICAgIGNhbGxiYWNrKHZpZXdzKTtcbiAgICAgICAgICAgICAgICAgICAgfSlcbiAgICAgICAgICAgICAgICB9IGVsc2Uge1xuICAgICAgICAgICAgICAgICAgICBjYWxsYmFjayh2aWV3cyk7XG4gICAgICAgICAgICAgICAgfVxuICAgICAgICAgICAgfSlcbiAgICAgICAgfSxcbiAgICAgICAgZ2V0RWxlbWVudEh0bWw6IGZ1bmN0aW9uIChlbGVtZW50SWQsIGNhbGxiYWNrKSB7XG4gICAgICAgICAgICB2YXIgc2VsZiA9IHRoaXM7XG4gICAgICAgICAgICBzZWxmLmdldERvY3VtZW50KGVsZW1lbnRJZCwgZnVuY3Rpb24gKGRvYykge1xuICAgICAgICAgICAgICAgIHZhciBkb2NIdG1sID0gY29udGVudC5wYXJzZUh0bWwoZG9jKTtcbiAgICAgICAgICAgICAgICBjYWxsYmFjaygoZG9jSHRtbC5zdHlsZXMgKyBkb2NIdG1sLmh0bWwpKTtcbiAgICAgICAgICAgIH0pXG4gICAgICAgIH1cbiAgICB9O1xufTtcbm1vZHVsZS5leHBvcnRzID0gRHJpdmU7Il19
-},{"./../utils/utils":"/mnt/c/swiggis.original/src/client/js/utils/utils.js"}],"/mnt/c/swiggis.original/src/client/js/utils/content/content.js":[function(require,module,exports){
+//# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbImRyaXZlLmpzIl0sIm5hbWVzIjpbImNvbnRlbnQiLCJyZXF1aXJlIiwic3RyaW5nIiwibm9vcCIsIkRyaXZlIiwiY29uZmlnIiwiJCIsImNhbGxKc29uUCIsInVybCIsImNhbGxiYWNrIiwiYWpheCIsInR5cGUiLCJkYXRhVHlwZSIsInN1Y2Nlc3MiLCJyZXMiLCJzdGF0dXMiLCJlcnJvciIsImNvbnNvbGUiLCJsb2ciLCJjYWxsIiwiZ2V0U3ByZWFkc2hlZXQiLCJmaWxlSWQiLCJzZWxmIiwic2hlZXRVcmwiLCJnZXREb2N1bWVudCIsImRvY1VybCIsImdldFZpZXdzIiwiZGFzaGJvYXJkSWQiLCJKc29uIiwiZXh0cmFjdFZpZXdzIiwiZ2V0UG9zdHMiLCJpbml0Iiwidmlld3MiLCJyb3V0ZVBhcmFtcyIsInBhcnNlVXJsIiwiYXJ0aWNsZSIsImVsZW1lbnRUeXBlIiwiZ2V0RWxlbWVudEh0bWwiLCJlbGVtZW50RmlsZUlkIiwiZWxlbWVudEh0bWwiLCJhcnRpY2xlcyIsImVsZW1lbnRJZCIsImRvYyIsImRvY0h0bWwiLCJwYXJzZUh0bWwiLCJzdHlsZXMiLCJodG1sIiwibW9kdWxlIiwiZXhwb3J0cyJdLCJtYXBwaW5ncyI6IkFBQUE7O0FBQ0EsSUFBSUEsVUFBVUMsUUFBUSxrQkFBUixFQUE0QkQsT0FBMUM7QUFDQSxJQUFJRSxTQUFTRCxRQUFRLGtCQUFSLEVBQTRCQyxNQUF6QztBQUNBLElBQUlDLE9BQU8sU0FBUEEsSUFBTyxHQUFZLENBQ3RCLENBREQ7O0FBR0EsSUFBSUMsUUFBUSxTQUFSQSxLQUFRLENBQVVDLE1BQVYsRUFBa0JDLENBQWxCLEVBQXFCO0FBQzdCLFdBQU87QUFDSEMsbUJBQVcsbUJBQVVDLEdBQVYsRUFBZUMsUUFBZixFQUF5QjtBQUNoQ0EsdUJBQVdBLFlBQVlOLElBQXZCO0FBQ0FHLGNBQUVJLElBQUYsQ0FBTztBQUNIRixxQkFBS0EsR0FERjtBQUVIRyxzQkFBTSxLQUZIO0FBR0hDLDBCQUFVLE9BSFA7QUFJSEMseUJBQVMsaUJBQVVDLEdBQVYsRUFBZUMsTUFBZixFQUF1QjtBQUM1Qk4sNkJBQVNLLEdBQVQ7QUFDSCxpQkFORTtBQU9IRSx1QkFBTyxlQUFVRixHQUFWLEVBQWVDLE1BQWYsRUFBdUJDLE1BQXZCLEVBQThCO0FBQ2pDQyw0QkFBUUMsR0FBUixDQUFZRixNQUFaO0FBQ0g7QUFURSxhQUFQO0FBV0gsU0FkRTtBQWVIRyxjQUFNLGNBQVVYLEdBQVYsRUFBZUMsUUFBZixFQUF5QjtBQUMzQkEsdUJBQVdBLFlBQVlOLElBQXZCO0FBQ0FHLGNBQUVJLElBQUYsQ0FBTztBQUNIRixxQkFBS0EsR0FERjtBQUVIRyxzQkFBTSxLQUZIO0FBR0hDLDBCQUFVLE1BSFA7QUFJSEMseUJBQVMsaUJBQVVDLEdBQVYsRUFBZUMsTUFBZixFQUF1QjtBQUM1Qk4sNkJBQVNLLEdBQVQ7QUFDSCxpQkFORTtBQU9IRSx1QkFBTyxlQUFVRixHQUFWLEVBQWVDLE1BQWYsRUFBdUJDLE9BQXZCLEVBQThCO0FBQ2pDQyw0QkFBUUMsR0FBUixDQUFZRixPQUFaO0FBQ0g7QUFURSxhQUFQO0FBV0gsU0E1QkU7QUE2QkhJLHdCQUFnQix3QkFBVUMsTUFBVixFQUFrQlosUUFBbEIsRUFBNEI7QUFDeENBLHVCQUFXQSxZQUFZTixJQUF2QjtBQUNBLGdCQUFJbUIsT0FBTyxJQUFYO0FBQ0EsZ0JBQUlDLFdBQVcsZ0RBQWdERixNQUFoRCxHQUF5RCw2QkFBeEU7QUFDQUMsaUJBQUtmLFNBQUwsQ0FBZWdCLFFBQWYsRUFBeUJkLFFBQXpCO0FBQ0gsU0FsQ0U7QUFtQ0hlLHFCQUFhLHFCQUFVSCxNQUFWLEVBQWtCWixRQUFsQixFQUE0QjtBQUNyQ0EsdUJBQVdBLFlBQVlOLElBQXZCO0FBQ0EsZ0JBQUltQixPQUFPLElBQVg7QUFDQSxnQkFBSUcsU0FBUyx1RUFBdUVKLE1BQXZFLEdBQWdGLG9CQUE3RjtBQUNBQyxpQkFBS0gsSUFBTCxDQUFVTSxNQUFWLEVBQWtCaEIsUUFBbEI7QUFDSCxTQXhDRTtBQXlDSGlCLGtCQUFVLGtCQUFVakIsUUFBVixFQUFvQjtBQUMxQixnQkFBSWEsT0FBTyxJQUFYO0FBQ0FiLHVCQUFXQSxZQUFZTixJQUF2QjtBQUNBbUIsaUJBQUtGLGNBQUwsQ0FBb0JmLE9BQU9zQixXQUEzQixFQUF3QyxVQUFVQyxJQUFWLEVBQWdCO0FBQ3BEbkIseUJBQ0lULFFBQVE2QixZQUFSLENBQ0k3QixRQUFROEIsUUFBUixDQUFpQkYsSUFBakIsQ0FESixDQURKO0FBS0gsYUFORDtBQU9ILFNBbkRFO0FBb0RIRyxjQUFNLGNBQVV0QixRQUFWLEVBQW9CO0FBQ3RCLGdCQUFJYSxPQUFPLElBQVg7QUFDQWIsdUJBQVdBLFlBQVlOLElBQXZCO0FBQ0FtQixpQkFBS0ksUUFBTCxDQUFjLFVBQVVNLEtBQVYsRUFBaUI7QUFDM0JBLHNCQUFNQyxXQUFOLEdBQW9CL0IsT0FBT2dDLFFBQVAsQ0FBZ0JGLEtBQWhCLENBQXBCO0FBQ0FBLHNCQUFNRyxPQUFOLEdBQWdCLEtBQWhCO0FBQ0Esb0JBQUlILE1BQU1DLFdBQU4sQ0FBa0JHLFdBQWxCLEtBQWtDLFNBQXRDLEVBQWlEO0FBQzdDZCx5QkFBS2UsY0FBTCxDQUFvQkwsTUFBTUMsV0FBTixDQUFrQkssYUFBdEMsRUFBcUQsVUFBVUMsV0FBVixFQUF1QjtBQUN4RSw0QkFBSUosVUFBVUgsTUFBTVEsUUFBTixDQUFlUixNQUFNQyxXQUFOLENBQWtCUSxTQUFqQyxDQUFkO0FBQ0FOLGdDQUFRLE1BQVIsSUFBa0JJLFdBQWxCO0FBQ0FQLDhCQUFNRyxPQUFOLEdBQWdCQSxPQUFoQjtBQUNBMUIsaUNBQVN1QixLQUFUO0FBQ0gscUJBTEQ7QUFNSCxpQkFQRCxNQU9PO0FBQ0h2Qiw2QkFBU3VCLEtBQVQ7QUFDSDtBQUNKLGFBYkQ7QUFjSCxTQXJFRTtBQXNFSEssd0JBQWdCLHdCQUFVSSxTQUFWLEVBQXFCaEMsUUFBckIsRUFBK0I7QUFDM0MsZ0JBQUlhLE9BQU8sSUFBWDtBQUNBQSxpQkFBS0UsV0FBTCxDQUFpQmlCLFNBQWpCLEVBQTRCLFVBQVVDLEdBQVYsRUFBZTtBQUN2QyxvQkFBSUMsVUFBVTNDLFFBQVE0QyxTQUFSLENBQWtCRixHQUFsQixDQUFkO0FBQ0FqQyx5QkFBVWtDLFFBQVFFLE1BQVIsR0FBaUJGLFFBQVFHLElBQW5DO0FBQ0gsYUFIRDtBQUlIO0FBNUVFLEtBQVA7QUE4RUgsQ0EvRUQ7QUFnRkFDLE9BQU9DLE9BQVAsR0FBaUI1QyxLQUFqQiIsImZpbGUiOiJkcml2ZS5qcyIsInNvdXJjZXNDb250ZW50IjpbIid1c2Ugc3RyaWN0JztcclxudmFyIGNvbnRlbnQgPSByZXF1aXJlKCcuLy4uL3V0aWxzL3V0aWxzJykuY29udGVudDtcclxudmFyIHN0cmluZyA9IHJlcXVpcmUoJy4vLi4vdXRpbHMvdXRpbHMnKS5zdHJpbmc7XHJcbnZhciBub29wID0gZnVuY3Rpb24gKCkge1xyXG59O1xyXG5cclxudmFyIERyaXZlID0gZnVuY3Rpb24gKGNvbmZpZywgJCkge1xyXG4gICAgcmV0dXJuIHtcclxuICAgICAgICBjYWxsSnNvblA6IGZ1bmN0aW9uICh1cmwsIGNhbGxiYWNrKSB7XHJcbiAgICAgICAgICAgIGNhbGxiYWNrID0gY2FsbGJhY2sgfHwgbm9vcDtcclxuICAgICAgICAgICAgJC5hamF4KHtcclxuICAgICAgICAgICAgICAgIHVybDogdXJsLFxyXG4gICAgICAgICAgICAgICAgdHlwZTogJ0dFVCcsXHJcbiAgICAgICAgICAgICAgICBkYXRhVHlwZTogJ2pzb25wJyxcclxuICAgICAgICAgICAgICAgIHN1Y2Nlc3M6IGZ1bmN0aW9uIChyZXMsIHN0YXR1cykge1xyXG4gICAgICAgICAgICAgICAgICAgIGNhbGxiYWNrKHJlcyk7XHJcbiAgICAgICAgICAgICAgICB9LFxyXG4gICAgICAgICAgICAgICAgZXJyb3I6IGZ1bmN0aW9uIChyZXMsIHN0YXR1cywgZXJyb3IpIHtcclxuICAgICAgICAgICAgICAgICAgICBjb25zb2xlLmxvZyhlcnJvcik7XHJcbiAgICAgICAgICAgICAgICB9XHJcbiAgICAgICAgICAgIH0pO1xyXG4gICAgICAgIH0sXHJcbiAgICAgICAgY2FsbDogZnVuY3Rpb24gKHVybCwgY2FsbGJhY2spIHtcclxuICAgICAgICAgICAgY2FsbGJhY2sgPSBjYWxsYmFjayB8fCBub29wO1xyXG4gICAgICAgICAgICAkLmFqYXgoe1xyXG4gICAgICAgICAgICAgICAgdXJsOiB1cmwsXHJcbiAgICAgICAgICAgICAgICB0eXBlOiAnR0VUJyxcclxuICAgICAgICAgICAgICAgIGRhdGFUeXBlOiAndGV4dCcsXHJcbiAgICAgICAgICAgICAgICBzdWNjZXNzOiBmdW5jdGlvbiAocmVzLCBzdGF0dXMpIHtcclxuICAgICAgICAgICAgICAgICAgICBjYWxsYmFjayhyZXMpO1xyXG4gICAgICAgICAgICAgICAgfSxcclxuICAgICAgICAgICAgICAgIGVycm9yOiBmdW5jdGlvbiAocmVzLCBzdGF0dXMsIGVycm9yKSB7XHJcbiAgICAgICAgICAgICAgICAgICAgY29uc29sZS5sb2coZXJyb3IpO1xyXG4gICAgICAgICAgICAgICAgfVxyXG4gICAgICAgICAgICB9KTtcclxuICAgICAgICB9LFxyXG4gICAgICAgIGdldFNwcmVhZHNoZWV0OiBmdW5jdGlvbiAoZmlsZUlkLCBjYWxsYmFjaykge1xyXG4gICAgICAgICAgICBjYWxsYmFjayA9IGNhbGxiYWNrIHx8IG5vb3A7XHJcbiAgICAgICAgICAgIHZhciBzZWxmID0gdGhpcztcclxuICAgICAgICAgICAgdmFyIHNoZWV0VXJsID0gXCJodHRwczovL3NwcmVhZHNoZWV0cy5nb29nbGUuY29tL2ZlZWRzL2xpc3QvXCIgKyBmaWxlSWQgKyBcIi9vZDYvcHVibGljL3ZhbHVlcz9hbHQ9anNvblwiO1xyXG4gICAgICAgICAgICBzZWxmLmNhbGxKc29uUChzaGVldFVybCwgY2FsbGJhY2spO1xyXG4gICAgICAgIH0sXHJcbiAgICAgICAgZ2V0RG9jdW1lbnQ6IGZ1bmN0aW9uIChmaWxlSWQsIGNhbGxiYWNrKSB7XHJcbiAgICAgICAgICAgIGNhbGxiYWNrID0gY2FsbGJhY2sgfHwgbm9vcDtcclxuICAgICAgICAgICAgdmFyIHNlbGYgPSB0aGlzO1xyXG4gICAgICAgICAgICB2YXIgZG9jVXJsID0gJ2h0dHBzOi8vZG9jcy5nb29nbGUuY29tL2ZlZWRzL2Rvd25sb2FkL2RvY3VtZW50cy9leHBvcnQvRXhwb3J0P2lkPScgKyBmaWxlSWQgKyAnJmV4cG9ydEZvcm1hdD1odG1sJztcclxuICAgICAgICAgICAgc2VsZi5jYWxsKGRvY1VybCwgY2FsbGJhY2spO1xyXG4gICAgICAgIH0sXHJcbiAgICAgICAgZ2V0Vmlld3M6IGZ1bmN0aW9uIChjYWxsYmFjaykge1xyXG4gICAgICAgICAgICB2YXIgc2VsZiA9IHRoaXM7XHJcbiAgICAgICAgICAgIGNhbGxiYWNrID0gY2FsbGJhY2sgfHwgbm9vcDtcclxuICAgICAgICAgICAgc2VsZi5nZXRTcHJlYWRzaGVldChjb25maWcuZGFzaGJvYXJkSWQsIGZ1bmN0aW9uIChKc29uKSB7XHJcbiAgICAgICAgICAgICAgICBjYWxsYmFjayhcclxuICAgICAgICAgICAgICAgICAgICBjb250ZW50LmV4dHJhY3RWaWV3cyhcclxuICAgICAgICAgICAgICAgICAgICAgICAgY29udGVudC5nZXRQb3N0cyhKc29uKVxyXG4gICAgICAgICAgICAgICAgICAgIClcclxuICAgICAgICAgICAgICAgICk7XHJcbiAgICAgICAgICAgIH0pO1xyXG4gICAgICAgIH0sXHJcbiAgICAgICAgaW5pdDogZnVuY3Rpb24gKGNhbGxiYWNrKSB7XHJcbiAgICAgICAgICAgIHZhciBzZWxmID0gdGhpcztcclxuICAgICAgICAgICAgY2FsbGJhY2sgPSBjYWxsYmFjayB8fCBub29wO1xyXG4gICAgICAgICAgICBzZWxmLmdldFZpZXdzKGZ1bmN0aW9uICh2aWV3cykge1xyXG4gICAgICAgICAgICAgICAgdmlld3Mucm91dGVQYXJhbXMgPSBzdHJpbmcucGFyc2VVcmwodmlld3MpO1xyXG4gICAgICAgICAgICAgICAgdmlld3MuYXJ0aWNsZSA9IGZhbHNlO1xyXG4gICAgICAgICAgICAgICAgaWYgKHZpZXdzLnJvdXRlUGFyYW1zLmVsZW1lbnRUeXBlID09PSAnYXJ0aWNsZScpIHtcclxuICAgICAgICAgICAgICAgICAgICBzZWxmLmdldEVsZW1lbnRIdG1sKHZpZXdzLnJvdXRlUGFyYW1zLmVsZW1lbnRGaWxlSWQsIGZ1bmN0aW9uIChlbGVtZW50SHRtbCkge1xyXG4gICAgICAgICAgICAgICAgICAgICAgICB2YXIgYXJ0aWNsZSA9IHZpZXdzLmFydGljbGVzW3ZpZXdzLnJvdXRlUGFyYW1zLmVsZW1lbnRJZF07XHJcbiAgICAgICAgICAgICAgICAgICAgICAgIGFydGljbGVbJ2JvZHknXSA9IGVsZW1lbnRIdG1sO1xyXG4gICAgICAgICAgICAgICAgICAgICAgICB2aWV3cy5hcnRpY2xlID0gYXJ0aWNsZTtcclxuICAgICAgICAgICAgICAgICAgICAgICAgY2FsbGJhY2sodmlld3MpO1xyXG4gICAgICAgICAgICAgICAgICAgIH0pXHJcbiAgICAgICAgICAgICAgICB9IGVsc2Uge1xyXG4gICAgICAgICAgICAgICAgICAgIGNhbGxiYWNrKHZpZXdzKTtcclxuICAgICAgICAgICAgICAgIH1cclxuICAgICAgICAgICAgfSlcclxuICAgICAgICB9LFxyXG4gICAgICAgIGdldEVsZW1lbnRIdG1sOiBmdW5jdGlvbiAoZWxlbWVudElkLCBjYWxsYmFjaykge1xyXG4gICAgICAgICAgICB2YXIgc2VsZiA9IHRoaXM7XHJcbiAgICAgICAgICAgIHNlbGYuZ2V0RG9jdW1lbnQoZWxlbWVudElkLCBmdW5jdGlvbiAoZG9jKSB7XHJcbiAgICAgICAgICAgICAgICB2YXIgZG9jSHRtbCA9IGNvbnRlbnQucGFyc2VIdG1sKGRvYyk7XHJcbiAgICAgICAgICAgICAgICBjYWxsYmFjaygoZG9jSHRtbC5zdHlsZXMgKyBkb2NIdG1sLmh0bWwpKTtcclxuICAgICAgICAgICAgfSlcclxuICAgICAgICB9XHJcbiAgICB9O1xyXG59O1xyXG5tb2R1bGUuZXhwb3J0cyA9IERyaXZlOyJdfQ==
+},{"./../utils/utils":"C:\\swiggis.austin\\src\\client\\js\\utils\\utils.js"}],"C:\\swiggis.austin\\src\\client\\js\\utils\\content\\content.js":[function(require,module,exports){
 'use strict';
 
 var Content = {
@@ -58708,8 +57837,8 @@ var Content = {
     parseHtml: require('./parseHtml')
 };
 module.exports = Content;
-//# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbImNvbnRlbnQuanMiXSwibmFtZXMiOlsiQ29udGVudCIsImV4dHJhY3RWaWV3cyIsInJlcXVpcmUiLCJnZXRQb3N0cyIsInBhcnNlSHRtbCIsIm1vZHVsZSIsImV4cG9ydHMiXSwibWFwcGluZ3MiOiJBQUFBOztBQUNBLElBQUlBLFVBQVU7QUFDVkMsa0JBQWNDLFFBQVEsZ0JBQVIsQ0FESjtBQUVWQyxjQUFVRCxRQUFRLFlBQVIsQ0FGQTtBQUdWRSxlQUFXRixRQUFRLGFBQVI7QUFIRCxDQUFkO0FBS0FHLE9BQU9DLE9BQVAsR0FBaUJOLE9BQWpCIiwiZmlsZSI6ImNvbnRlbnQuanMiLCJzb3VyY2VzQ29udGVudCI6WyIndXNlIHN0cmljdCc7XG52YXIgQ29udGVudCA9IHtcbiAgICBleHRyYWN0Vmlld3M6IHJlcXVpcmUoJy4vZXh0cmFjdFZpZXdzJyksXG4gICAgZ2V0UG9zdHM6IHJlcXVpcmUoJy4vZ2V0UG9zdHMnKSxcbiAgICBwYXJzZUh0bWw6IHJlcXVpcmUoJy4vcGFyc2VIdG1sJylcbn07XG5tb2R1bGUuZXhwb3J0cyA9IENvbnRlbnQ7Il19
-},{"./extractViews":"/mnt/c/swiggis.original/src/client/js/utils/content/extractViews.js","./getPosts":"/mnt/c/swiggis.original/src/client/js/utils/content/getPosts.js","./parseHtml":"/mnt/c/swiggis.original/src/client/js/utils/content/parseHtml.js"}],"/mnt/c/swiggis.original/src/client/js/utils/content/extractViews.js":[function(require,module,exports){
+//# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbImNvbnRlbnQuanMiXSwibmFtZXMiOlsiQ29udGVudCIsImV4dHJhY3RWaWV3cyIsInJlcXVpcmUiLCJnZXRQb3N0cyIsInBhcnNlSHRtbCIsIm1vZHVsZSIsImV4cG9ydHMiXSwibWFwcGluZ3MiOiJBQUFBOztBQUNBLElBQUlBLFVBQVU7QUFDVkMsa0JBQWNDLFFBQVEsZ0JBQVIsQ0FESjtBQUVWQyxjQUFVRCxRQUFRLFlBQVIsQ0FGQTtBQUdWRSxlQUFXRixRQUFRLGFBQVI7QUFIRCxDQUFkO0FBS0FHLE9BQU9DLE9BQVAsR0FBaUJOLE9BQWpCIiwiZmlsZSI6ImNvbnRlbnQuanMiLCJzb3VyY2VzQ29udGVudCI6WyIndXNlIHN0cmljdCc7XHJcbnZhciBDb250ZW50ID0ge1xyXG4gICAgZXh0cmFjdFZpZXdzOiByZXF1aXJlKCcuL2V4dHJhY3RWaWV3cycpLFxyXG4gICAgZ2V0UG9zdHM6IHJlcXVpcmUoJy4vZ2V0UG9zdHMnKSxcclxuICAgIHBhcnNlSHRtbDogcmVxdWlyZSgnLi9wYXJzZUh0bWwnKVxyXG59O1xyXG5tb2R1bGUuZXhwb3J0cyA9IENvbnRlbnQ7Il19
+},{"./extractViews":"C:\\swiggis.austin\\src\\client\\js\\utils\\content\\extractViews.js","./getPosts":"C:\\swiggis.austin\\src\\client\\js\\utils\\content\\getPosts.js","./parseHtml":"C:\\swiggis.austin\\src\\client\\js\\utils\\content\\parseHtml.js"}],"C:\\swiggis.austin\\src\\client\\js\\utils\\content\\extractViews.js":[function(require,module,exports){
 'use strict';
 
 var _ = require('lodash');
@@ -58761,8 +57890,8 @@ var extractViews = function extractViews(dashboard) {
     };
 };
 module.exports = extractViews;
-//# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbImV4dHJhY3RWaWV3cy5qcyJdLCJuYW1lcyI6WyJfIiwicmVxdWlyZSIsImV4dHJhY3RWaWV3cyIsImRhc2hib2FyZCIsImFydGljbGVzIiwiY2F0ZWdvcmllcyIsImkiLCJsZW5ndGgiLCJyb3ciLCJjYXRlZ29yeSIsImNhdGVnb3J5SWQiLCJyZXN1bHQiLCJmaW5kIiwiQ2F0ZWdvcnkiLCJhcnRpY2xlIiwiaWQiLCJ0aXRsZSIsIlRpdGxlIiwic3VidGl0bGUiLCJTdWJ0aXRsZSIsImltYWdlTmFtZSIsIkltYWdlIiwiaW1hZ2UiLCJ0eXBlIiwiY29weUFydGljbGUiLCJKU09OIiwicGFyc2UiLCJzdHJpbmdpZnkiLCJwdXNoIiwibW9kdWxlIiwiZXhwb3J0cyJdLCJtYXBwaW5ncyI6IkFBQUE7O0FBQ0EsSUFBSUEsSUFBSUMsUUFBUSxRQUFSLENBQVI7QUFDQSxJQUFJQyxlQUFlLFNBQWZBLFlBQWUsQ0FBVUMsU0FBVixFQUFxQjtBQUNwQyxRQUFJQyxXQUFXLEVBQWY7QUFDQSxRQUFJQyxhQUFhLEVBQWpCO0FBQ0EsU0FBSyxJQUFJQyxJQUFJLENBQWIsRUFBZ0JBLElBQUlILFVBQVVJLE1BQTlCLEVBQXNDRCxHQUF0QyxFQUEyQztBQUN2QyxZQUFJRSxNQUFNTCxVQUFVRyxDQUFWLENBQVY7QUFDQSxZQUFJRyxXQUFXLEVBQWY7QUFDQSxZQUFJQyxhQUFhVixFQUFFVyxNQUFGLENBQVNYLEVBQUVZLElBQUYsQ0FBT1AsVUFBUCxFQUFtQixPQUFuQixFQUE0QkcsSUFBSUssUUFBaEMsQ0FBVCxFQUFvRCxJQUFwRCxDQUFqQjtBQUNBLFlBQUlDLFVBQVU7QUFDVkMsZ0JBQUlULENBRE07QUFFVlUsbUJBQU9SLElBQUlTLEtBRkQ7QUFHVkMsc0JBQVVWLElBQUlXLFFBSEo7QUFJVkMsdUJBQVdaLElBQUlhLEtBSkw7QUFLVkMsbUJBQU8sb0RBQW9EZCxJQUFJLFVBQUosQ0FMakQ7QUFNVkMsc0JBQVU7QUFDTk0sb0JBQUssT0FBT0wsVUFBUCxLQUFzQixXQUF2QixHQUFzQ0EsVUFBdEMsR0FBbURMLFdBQVdFLE1BRDVEO0FBRU5TLHVCQUFPUixJQUFJSyxRQUZMO0FBR05VLHNCQUFNO0FBSEEsYUFOQTtBQVdWQSxrQkFBTTtBQVhJLFNBQWQ7QUFhQSxZQUFJQyxjQUFjQyxLQUFLQyxLQUFMLENBQVdELEtBQUtFLFNBQUwsQ0FBZWIsT0FBZixDQUFYLENBQWxCO0FBQ0EsWUFBSSxPQUFPSixVQUFQLEtBQXNCLFdBQTFCLEVBQXVDO0FBQ25DRCx1QkFBV0osV0FBV0ssVUFBWCxDQUFYO0FBQ0FELHFCQUFTTCxRQUFULENBQWtCd0IsSUFBbEIsQ0FBdUJKLFdBQXZCO0FBQ0FuQix1QkFBV0ssVUFBWCxJQUF5QkQsUUFBekI7QUFDSCxTQUpELE1BSU87QUFDSEEsdUJBQVc7QUFDUE0sb0JBQUlWLFdBQVdFLE1BRFI7QUFFUFMsdUJBQU9SLElBQUlLLFFBRko7QUFHUE8sMkJBQVdaLElBQUlhLEtBSFI7QUFJUEMsdUJBQU8sb0RBQW9EZCxJQUFJLFVBQUosQ0FKcEQ7QUFLUEosMEJBQVUsQ0FBQ29CLFdBQUQsQ0FMSDtBQU1QRCxzQkFBTTtBQU5DLGFBQVg7QUFRQWxCLHVCQUFXSSxTQUFTTSxFQUFwQixJQUEwQk4sUUFBMUI7QUFDSDtBQUNESyxnQkFBUSxTQUFSLElBQXFCTixJQUFJLFNBQUosQ0FBckI7QUFDQU0sZ0JBQVEsYUFBUixJQUF5Qk4sSUFBSSxjQUFKLENBQXpCO0FBQ0FNLGdCQUFRLFVBQVIsSUFBc0JMLFFBQXRCOztBQUVBTCxpQkFBU1UsUUFBUUMsRUFBakIsSUFBdUJELE9BQXZCO0FBQ0g7QUFDRCxXQUFPO0FBQ0hWLGtCQUFVQSxRQURQO0FBRUhDLG9CQUFZQTtBQUZULEtBQVA7QUFJSCxDQTlDRDtBQStDQXdCLE9BQU9DLE9BQVAsR0FBaUI1QixZQUFqQiIsImZpbGUiOiJleHRyYWN0Vmlld3MuanMiLCJzb3VyY2VzQ29udGVudCI6WyIndXNlIHN0cmljdCc7XG52YXIgXyA9IHJlcXVpcmUoJ2xvZGFzaCcpO1xudmFyIGV4dHJhY3RWaWV3cyA9IGZ1bmN0aW9uIChkYXNoYm9hcmQpIHtcbiAgICB2YXIgYXJ0aWNsZXMgPSBbXTtcbiAgICB2YXIgY2F0ZWdvcmllcyA9IFtdO1xuICAgIGZvciAodmFyIGkgPSAwOyBpIDwgZGFzaGJvYXJkLmxlbmd0aDsgaSsrKSB7XG4gICAgICAgIHZhciByb3cgPSBkYXNoYm9hcmRbaV07XG4gICAgICAgIHZhciBjYXRlZ29yeSA9IHt9O1xuICAgICAgICB2YXIgY2F0ZWdvcnlJZCA9IF8ucmVzdWx0KF8uZmluZChjYXRlZ29yaWVzLCAndGl0bGUnLCByb3cuQ2F0ZWdvcnkpLCAnaWQnKTtcbiAgICAgICAgdmFyIGFydGljbGUgPSB7XG4gICAgICAgICAgICBpZDogaSxcbiAgICAgICAgICAgIHRpdGxlOiByb3cuVGl0bGUsXG4gICAgICAgICAgICBzdWJ0aXRsZTogcm93LlN1YnRpdGxlLFxuICAgICAgICAgICAgaW1hZ2VOYW1lOiByb3cuSW1hZ2UsXG4gICAgICAgICAgICBpbWFnZTogJ2h0dHBzOi8vZHJpdmUuZ29vZ2xlLmNvbS91Yz9leHBvcnQ9ZG93bmxvYWQmaWQ9JyArIHJvd1snSW1hZ2UgSWQnXSxcbiAgICAgICAgICAgIGNhdGVnb3J5OiB7XG4gICAgICAgICAgICAgICAgaWQ6ICh0eXBlb2YgY2F0ZWdvcnlJZCAhPT0gJ3VuZGVmaW5lZCcpID8gY2F0ZWdvcnlJZCA6IGNhdGVnb3JpZXMubGVuZ3RoLFxuICAgICAgICAgICAgICAgIHRpdGxlOiByb3cuQ2F0ZWdvcnksXG4gICAgICAgICAgICAgICAgdHlwZTogJ2NhdGVnb3J5J1xuICAgICAgICAgICAgfSxcbiAgICAgICAgICAgIHR5cGU6ICdhcnRpY2xlJ1xuICAgICAgICB9O1xuICAgICAgICB2YXIgY29weUFydGljbGUgPSBKU09OLnBhcnNlKEpTT04uc3RyaW5naWZ5KGFydGljbGUpKTtcbiAgICAgICAgaWYgKHR5cGVvZiBjYXRlZ29yeUlkICE9PSAndW5kZWZpbmVkJykge1xuICAgICAgICAgICAgY2F0ZWdvcnkgPSBjYXRlZ29yaWVzW2NhdGVnb3J5SWRdO1xuICAgICAgICAgICAgY2F0ZWdvcnkuYXJ0aWNsZXMucHVzaChjb3B5QXJ0aWNsZSk7XG4gICAgICAgICAgICBjYXRlZ29yaWVzW2NhdGVnb3J5SWRdID0gY2F0ZWdvcnk7XG4gICAgICAgIH0gZWxzZSB7XG4gICAgICAgICAgICBjYXRlZ29yeSA9IHtcbiAgICAgICAgICAgICAgICBpZDogY2F0ZWdvcmllcy5sZW5ndGgsXG4gICAgICAgICAgICAgICAgdGl0bGU6IHJvdy5DYXRlZ29yeSxcbiAgICAgICAgICAgICAgICBpbWFnZU5hbWU6IHJvdy5JbWFnZSxcbiAgICAgICAgICAgICAgICBpbWFnZTogJ2h0dHBzOi8vZHJpdmUuZ29vZ2xlLmNvbS91Yz9leHBvcnQ9ZG93bmxvYWQmaWQ9JyArIHJvd1snSW1hZ2UgSWQnXSxcbiAgICAgICAgICAgICAgICBhcnRpY2xlczogW2NvcHlBcnRpY2xlXSxcbiAgICAgICAgICAgICAgICB0eXBlOiAnY2F0ZWdvcnknXG4gICAgICAgICAgICB9O1xuICAgICAgICAgICAgY2F0ZWdvcmllc1tjYXRlZ29yeS5pZF0gPSBjYXRlZ29yeTtcbiAgICAgICAgfVxuICAgICAgICBhcnRpY2xlWydkcml2ZUlkJ10gPSByb3dbJ1Bvc3QgSWQnXTtcbiAgICAgICAgYXJ0aWNsZVsnbGFzdFVwZGF0ZWQnXSA9IHJvd1snTGFzdCBVcGRhdGVkJ107XG4gICAgICAgIGFydGljbGVbJ2NhdGVnb3J5J10gPSBjYXRlZ29yeTtcblxuICAgICAgICBhcnRpY2xlc1thcnRpY2xlLmlkXSA9IGFydGljbGU7XG4gICAgfVxuICAgIHJldHVybiB7XG4gICAgICAgIGFydGljbGVzOiBhcnRpY2xlcyxcbiAgICAgICAgY2F0ZWdvcmllczogY2F0ZWdvcmllc1xuICAgIH07XG59O1xubW9kdWxlLmV4cG9ydHMgPSBleHRyYWN0Vmlld3M7Il19
-},{"lodash":"/mnt/c/swiggis.original/node_modules/lodash/index.js"}],"/mnt/c/swiggis.original/src/client/js/utils/content/getPosts.js":[function(require,module,exports){
+//# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbImV4dHJhY3RWaWV3cy5qcyJdLCJuYW1lcyI6WyJfIiwicmVxdWlyZSIsImV4dHJhY3RWaWV3cyIsImRhc2hib2FyZCIsImFydGljbGVzIiwiY2F0ZWdvcmllcyIsImkiLCJsZW5ndGgiLCJyb3ciLCJjYXRlZ29yeSIsImNhdGVnb3J5SWQiLCJyZXN1bHQiLCJmaW5kIiwiQ2F0ZWdvcnkiLCJhcnRpY2xlIiwiaWQiLCJ0aXRsZSIsIlRpdGxlIiwic3VidGl0bGUiLCJTdWJ0aXRsZSIsImltYWdlTmFtZSIsIkltYWdlIiwiaW1hZ2UiLCJ0eXBlIiwiY29weUFydGljbGUiLCJKU09OIiwicGFyc2UiLCJzdHJpbmdpZnkiLCJwdXNoIiwibW9kdWxlIiwiZXhwb3J0cyJdLCJtYXBwaW5ncyI6IkFBQUE7O0FBQ0EsSUFBSUEsSUFBSUMsUUFBUSxRQUFSLENBQVI7QUFDQSxJQUFJQyxlQUFlLFNBQWZBLFlBQWUsQ0FBVUMsU0FBVixFQUFxQjtBQUNwQyxRQUFJQyxXQUFXLEVBQWY7QUFDQSxRQUFJQyxhQUFhLEVBQWpCO0FBQ0EsU0FBSyxJQUFJQyxJQUFJLENBQWIsRUFBZ0JBLElBQUlILFVBQVVJLE1BQTlCLEVBQXNDRCxHQUF0QyxFQUEyQztBQUN2QyxZQUFJRSxNQUFNTCxVQUFVRyxDQUFWLENBQVY7QUFDQSxZQUFJRyxXQUFXLEVBQWY7QUFDQSxZQUFJQyxhQUFhVixFQUFFVyxNQUFGLENBQVNYLEVBQUVZLElBQUYsQ0FBT1AsVUFBUCxFQUFtQixPQUFuQixFQUE0QkcsSUFBSUssUUFBaEMsQ0FBVCxFQUFvRCxJQUFwRCxDQUFqQjtBQUNBLFlBQUlDLFVBQVU7QUFDVkMsZ0JBQUlULENBRE07QUFFVlUsbUJBQU9SLElBQUlTLEtBRkQ7QUFHVkMsc0JBQVVWLElBQUlXLFFBSEo7QUFJVkMsdUJBQVdaLElBQUlhLEtBSkw7QUFLVkMsbUJBQU8sb0RBQW9EZCxJQUFJLFVBQUosQ0FMakQ7QUFNVkMsc0JBQVU7QUFDTk0sb0JBQUssT0FBT0wsVUFBUCxLQUFzQixXQUF2QixHQUFzQ0EsVUFBdEMsR0FBbURMLFdBQVdFLE1BRDVEO0FBRU5TLHVCQUFPUixJQUFJSyxRQUZMO0FBR05VLHNCQUFNO0FBSEEsYUFOQTtBQVdWQSxrQkFBTTtBQVhJLFNBQWQ7QUFhQSxZQUFJQyxjQUFjQyxLQUFLQyxLQUFMLENBQVdELEtBQUtFLFNBQUwsQ0FBZWIsT0FBZixDQUFYLENBQWxCO0FBQ0EsWUFBSSxPQUFPSixVQUFQLEtBQXNCLFdBQTFCLEVBQXVDO0FBQ25DRCx1QkFBV0osV0FBV0ssVUFBWCxDQUFYO0FBQ0FELHFCQUFTTCxRQUFULENBQWtCd0IsSUFBbEIsQ0FBdUJKLFdBQXZCO0FBQ0FuQix1QkFBV0ssVUFBWCxJQUF5QkQsUUFBekI7QUFDSCxTQUpELE1BSU87QUFDSEEsdUJBQVc7QUFDUE0sb0JBQUlWLFdBQVdFLE1BRFI7QUFFUFMsdUJBQU9SLElBQUlLLFFBRko7QUFHUE8sMkJBQVdaLElBQUlhLEtBSFI7QUFJUEMsdUJBQU8sb0RBQW9EZCxJQUFJLFVBQUosQ0FKcEQ7QUFLUEosMEJBQVUsQ0FBQ29CLFdBQUQsQ0FMSDtBQU1QRCxzQkFBTTtBQU5DLGFBQVg7QUFRQWxCLHVCQUFXSSxTQUFTTSxFQUFwQixJQUEwQk4sUUFBMUI7QUFDSDtBQUNESyxnQkFBUSxTQUFSLElBQXFCTixJQUFJLFNBQUosQ0FBckI7QUFDQU0sZ0JBQVEsYUFBUixJQUF5Qk4sSUFBSSxjQUFKLENBQXpCO0FBQ0FNLGdCQUFRLFVBQVIsSUFBc0JMLFFBQXRCOztBQUVBTCxpQkFBU1UsUUFBUUMsRUFBakIsSUFBdUJELE9BQXZCO0FBQ0g7QUFDRCxXQUFPO0FBQ0hWLGtCQUFVQSxRQURQO0FBRUhDLG9CQUFZQTtBQUZULEtBQVA7QUFJSCxDQTlDRDtBQStDQXdCLE9BQU9DLE9BQVAsR0FBaUI1QixZQUFqQiIsImZpbGUiOiJleHRyYWN0Vmlld3MuanMiLCJzb3VyY2VzQ29udGVudCI6WyIndXNlIHN0cmljdCc7XHJcbnZhciBfID0gcmVxdWlyZSgnbG9kYXNoJyk7XHJcbnZhciBleHRyYWN0Vmlld3MgPSBmdW5jdGlvbiAoZGFzaGJvYXJkKSB7XHJcbiAgICB2YXIgYXJ0aWNsZXMgPSBbXTtcclxuICAgIHZhciBjYXRlZ29yaWVzID0gW107XHJcbiAgICBmb3IgKHZhciBpID0gMDsgaSA8IGRhc2hib2FyZC5sZW5ndGg7IGkrKykge1xyXG4gICAgICAgIHZhciByb3cgPSBkYXNoYm9hcmRbaV07XHJcbiAgICAgICAgdmFyIGNhdGVnb3J5ID0ge307XHJcbiAgICAgICAgdmFyIGNhdGVnb3J5SWQgPSBfLnJlc3VsdChfLmZpbmQoY2F0ZWdvcmllcywgJ3RpdGxlJywgcm93LkNhdGVnb3J5KSwgJ2lkJyk7XHJcbiAgICAgICAgdmFyIGFydGljbGUgPSB7XHJcbiAgICAgICAgICAgIGlkOiBpLFxyXG4gICAgICAgICAgICB0aXRsZTogcm93LlRpdGxlLFxyXG4gICAgICAgICAgICBzdWJ0aXRsZTogcm93LlN1YnRpdGxlLFxyXG4gICAgICAgICAgICBpbWFnZU5hbWU6IHJvdy5JbWFnZSxcclxuICAgICAgICAgICAgaW1hZ2U6ICdodHRwczovL2RyaXZlLmdvb2dsZS5jb20vdWM/ZXhwb3J0PWRvd25sb2FkJmlkPScgKyByb3dbJ0ltYWdlIElkJ10sXHJcbiAgICAgICAgICAgIGNhdGVnb3J5OiB7XHJcbiAgICAgICAgICAgICAgICBpZDogKHR5cGVvZiBjYXRlZ29yeUlkICE9PSAndW5kZWZpbmVkJykgPyBjYXRlZ29yeUlkIDogY2F0ZWdvcmllcy5sZW5ndGgsXHJcbiAgICAgICAgICAgICAgICB0aXRsZTogcm93LkNhdGVnb3J5LFxyXG4gICAgICAgICAgICAgICAgdHlwZTogJ2NhdGVnb3J5J1xyXG4gICAgICAgICAgICB9LFxyXG4gICAgICAgICAgICB0eXBlOiAnYXJ0aWNsZSdcclxuICAgICAgICB9O1xyXG4gICAgICAgIHZhciBjb3B5QXJ0aWNsZSA9IEpTT04ucGFyc2UoSlNPTi5zdHJpbmdpZnkoYXJ0aWNsZSkpO1xyXG4gICAgICAgIGlmICh0eXBlb2YgY2F0ZWdvcnlJZCAhPT0gJ3VuZGVmaW5lZCcpIHtcclxuICAgICAgICAgICAgY2F0ZWdvcnkgPSBjYXRlZ29yaWVzW2NhdGVnb3J5SWRdO1xyXG4gICAgICAgICAgICBjYXRlZ29yeS5hcnRpY2xlcy5wdXNoKGNvcHlBcnRpY2xlKTtcclxuICAgICAgICAgICAgY2F0ZWdvcmllc1tjYXRlZ29yeUlkXSA9IGNhdGVnb3J5O1xyXG4gICAgICAgIH0gZWxzZSB7XHJcbiAgICAgICAgICAgIGNhdGVnb3J5ID0ge1xyXG4gICAgICAgICAgICAgICAgaWQ6IGNhdGVnb3JpZXMubGVuZ3RoLFxyXG4gICAgICAgICAgICAgICAgdGl0bGU6IHJvdy5DYXRlZ29yeSxcclxuICAgICAgICAgICAgICAgIGltYWdlTmFtZTogcm93LkltYWdlLFxyXG4gICAgICAgICAgICAgICAgaW1hZ2U6ICdodHRwczovL2RyaXZlLmdvb2dsZS5jb20vdWM/ZXhwb3J0PWRvd25sb2FkJmlkPScgKyByb3dbJ0ltYWdlIElkJ10sXHJcbiAgICAgICAgICAgICAgICBhcnRpY2xlczogW2NvcHlBcnRpY2xlXSxcclxuICAgICAgICAgICAgICAgIHR5cGU6ICdjYXRlZ29yeSdcclxuICAgICAgICAgICAgfTtcclxuICAgICAgICAgICAgY2F0ZWdvcmllc1tjYXRlZ29yeS5pZF0gPSBjYXRlZ29yeTtcclxuICAgICAgICB9XHJcbiAgICAgICAgYXJ0aWNsZVsnZHJpdmVJZCddID0gcm93WydQb3N0IElkJ107XHJcbiAgICAgICAgYXJ0aWNsZVsnbGFzdFVwZGF0ZWQnXSA9IHJvd1snTGFzdCBVcGRhdGVkJ107XHJcbiAgICAgICAgYXJ0aWNsZVsnY2F0ZWdvcnknXSA9IGNhdGVnb3J5O1xyXG5cclxuICAgICAgICBhcnRpY2xlc1thcnRpY2xlLmlkXSA9IGFydGljbGU7XHJcbiAgICB9XHJcbiAgICByZXR1cm4ge1xyXG4gICAgICAgIGFydGljbGVzOiBhcnRpY2xlcyxcclxuICAgICAgICBjYXRlZ29yaWVzOiBjYXRlZ29yaWVzXHJcbiAgICB9O1xyXG59O1xyXG5tb2R1bGUuZXhwb3J0cyA9IGV4dHJhY3RWaWV3czsiXX0=
+},{"lodash":"C:\\swiggis.austin\\node_modules\\lodash\\index.js"}],"C:\\swiggis.austin\\src\\client\\js\\utils\\content\\getPosts.js":[function(require,module,exports){
 'use strict';
 
 var getPosts = function getPosts(data) {
@@ -58783,8 +57912,8 @@ var getPosts = function getPosts(data) {
     return fieldsObject;
 };
 module.exports = getPosts;
-//# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbImdldFBvc3RzLmpzIl0sIm5hbWVzIjpbImdldFBvc3RzIiwiZGF0YSIsImZpZWxkc09iamVjdCIsImkiLCJmZWVkIiwiZW50cnkiLCJsZW5ndGgiLCJyb3ciLCJyb3dPYmplY3QiLCJUaXRsZSIsImdzeCR0aXRsZSIsIiR0IiwiU3VidGl0bGUiLCJnc3gkc3VidGl0bGUiLCJJbWFnZSIsImdzeCRpbWFnZSIsIkNhdGVnb3J5IiwiZ3N4JGNhdGVnb3J5IiwiZ3N4JHBvc3RpZCIsImdzeCRpbWFnZWlkIiwiZ3N4JGxhc3R1cGRhdGVkIiwicHVzaCIsIm1vZHVsZSIsImV4cG9ydHMiXSwibWFwcGluZ3MiOiJBQUFBOztBQUNBLElBQUlBLFdBQVcsU0FBWEEsUUFBVyxDQUFVQyxJQUFWLEVBQWdCO0FBQzNCLFFBQUlDLGVBQWUsRUFBbkI7QUFDQSxTQUFLLElBQUlDLElBQUksQ0FBYixFQUFnQkEsSUFBSUYsS0FBS0csSUFBTCxDQUFVQyxLQUFWLENBQWdCQyxNQUFwQyxFQUE0Q0gsR0FBNUMsRUFBaUQ7QUFDN0MsWUFBSUksTUFBTU4sS0FBS0csSUFBTCxDQUFVQyxLQUFWLENBQWdCRixDQUFoQixDQUFWO0FBQ0EsWUFBSUssWUFBWTtBQUNaQyxtQkFBT0YsSUFBSUcsU0FBSixDQUFjQyxFQURUO0FBRVpDLHNCQUFVTCxJQUFJTSxZQUFKLENBQWlCRixFQUZmO0FBR1pHLG1CQUFPUCxJQUFJUSxTQUFKLENBQWNKLEVBSFQ7QUFJWkssc0JBQVVULElBQUlVLFlBQUosQ0FBaUJOO0FBSmYsU0FBaEI7QUFNQUgsa0JBQVUsU0FBVixJQUF1QkQsSUFBSVcsVUFBSixDQUFlUCxFQUF0QztBQUNBSCxrQkFBVSxVQUFWLElBQXdCRCxJQUFJWSxXQUFKLENBQWdCUixFQUF4QztBQUNBSCxrQkFBVSxjQUFWLElBQTRCRCxJQUFJYSxlQUFKLENBQW9CVCxFQUFoRDtBQUNBVCxxQkFBYW1CLElBQWIsQ0FBa0JiLFNBQWxCO0FBQ0g7QUFDRCxXQUFPTixZQUFQO0FBQ0gsQ0FoQkQ7QUFpQkFvQixPQUFPQyxPQUFQLEdBQWlCdkIsUUFBakIiLCJmaWxlIjoiZ2V0UG9zdHMuanMiLCJzb3VyY2VzQ29udGVudCI6WyIndXNlIHN0cmljdCc7XG52YXIgZ2V0UG9zdHMgPSBmdW5jdGlvbiAoZGF0YSkge1xuICAgIHZhciBmaWVsZHNPYmplY3QgPSBbXTtcbiAgICBmb3IgKHZhciBpID0gMDsgaSA8IGRhdGEuZmVlZC5lbnRyeS5sZW5ndGg7IGkrKykge1xuICAgICAgICB2YXIgcm93ID0gZGF0YS5mZWVkLmVudHJ5W2ldO1xuICAgICAgICB2YXIgcm93T2JqZWN0ID0ge1xuICAgICAgICAgICAgVGl0bGU6IHJvdy5nc3gkdGl0bGUuJHQsXG4gICAgICAgICAgICBTdWJ0aXRsZTogcm93LmdzeCRzdWJ0aXRsZS4kdCxcbiAgICAgICAgICAgIEltYWdlOiByb3cuZ3N4JGltYWdlLiR0LFxuICAgICAgICAgICAgQ2F0ZWdvcnk6IHJvdy5nc3gkY2F0ZWdvcnkuJHRcbiAgICAgICAgfTtcbiAgICAgICAgcm93T2JqZWN0WydQb3N0IElkJ10gPSByb3cuZ3N4JHBvc3RpZC4kdDtcbiAgICAgICAgcm93T2JqZWN0WydJbWFnZSBJZCddID0gcm93LmdzeCRpbWFnZWlkLiR0O1xuICAgICAgICByb3dPYmplY3RbJ0xhc3QgVXBkYXRlZCddID0gcm93LmdzeCRsYXN0dXBkYXRlZC4kdDtcbiAgICAgICAgZmllbGRzT2JqZWN0LnB1c2gocm93T2JqZWN0KTtcbiAgICB9XG4gICAgcmV0dXJuIGZpZWxkc09iamVjdDtcbn07XG5tb2R1bGUuZXhwb3J0cyA9IGdldFBvc3RzOyJdfQ==
-},{}],"/mnt/c/swiggis.original/src/client/js/utils/content/parseHtml.js":[function(require,module,exports){
+//# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbImdldFBvc3RzLmpzIl0sIm5hbWVzIjpbImdldFBvc3RzIiwiZGF0YSIsImZpZWxkc09iamVjdCIsImkiLCJmZWVkIiwiZW50cnkiLCJsZW5ndGgiLCJyb3ciLCJyb3dPYmplY3QiLCJUaXRsZSIsImdzeCR0aXRsZSIsIiR0IiwiU3VidGl0bGUiLCJnc3gkc3VidGl0bGUiLCJJbWFnZSIsImdzeCRpbWFnZSIsIkNhdGVnb3J5IiwiZ3N4JGNhdGVnb3J5IiwiZ3N4JHBvc3RpZCIsImdzeCRpbWFnZWlkIiwiZ3N4JGxhc3R1cGRhdGVkIiwicHVzaCIsIm1vZHVsZSIsImV4cG9ydHMiXSwibWFwcGluZ3MiOiJBQUFBOztBQUNBLElBQUlBLFdBQVcsU0FBWEEsUUFBVyxDQUFVQyxJQUFWLEVBQWdCO0FBQzNCLFFBQUlDLGVBQWUsRUFBbkI7QUFDQSxTQUFLLElBQUlDLElBQUksQ0FBYixFQUFnQkEsSUFBSUYsS0FBS0csSUFBTCxDQUFVQyxLQUFWLENBQWdCQyxNQUFwQyxFQUE0Q0gsR0FBNUMsRUFBaUQ7QUFDN0MsWUFBSUksTUFBTU4sS0FBS0csSUFBTCxDQUFVQyxLQUFWLENBQWdCRixDQUFoQixDQUFWO0FBQ0EsWUFBSUssWUFBWTtBQUNaQyxtQkFBT0YsSUFBSUcsU0FBSixDQUFjQyxFQURUO0FBRVpDLHNCQUFVTCxJQUFJTSxZQUFKLENBQWlCRixFQUZmO0FBR1pHLG1CQUFPUCxJQUFJUSxTQUFKLENBQWNKLEVBSFQ7QUFJWkssc0JBQVVULElBQUlVLFlBQUosQ0FBaUJOO0FBSmYsU0FBaEI7QUFNQUgsa0JBQVUsU0FBVixJQUF1QkQsSUFBSVcsVUFBSixDQUFlUCxFQUF0QztBQUNBSCxrQkFBVSxVQUFWLElBQXdCRCxJQUFJWSxXQUFKLENBQWdCUixFQUF4QztBQUNBSCxrQkFBVSxjQUFWLElBQTRCRCxJQUFJYSxlQUFKLENBQW9CVCxFQUFoRDtBQUNBVCxxQkFBYW1CLElBQWIsQ0FBa0JiLFNBQWxCO0FBQ0g7QUFDRCxXQUFPTixZQUFQO0FBQ0gsQ0FoQkQ7QUFpQkFvQixPQUFPQyxPQUFQLEdBQWlCdkIsUUFBakIiLCJmaWxlIjoiZ2V0UG9zdHMuanMiLCJzb3VyY2VzQ29udGVudCI6WyIndXNlIHN0cmljdCc7XHJcbnZhciBnZXRQb3N0cyA9IGZ1bmN0aW9uIChkYXRhKSB7XHJcbiAgICB2YXIgZmllbGRzT2JqZWN0ID0gW107XHJcbiAgICBmb3IgKHZhciBpID0gMDsgaSA8IGRhdGEuZmVlZC5lbnRyeS5sZW5ndGg7IGkrKykge1xyXG4gICAgICAgIHZhciByb3cgPSBkYXRhLmZlZWQuZW50cnlbaV07XHJcbiAgICAgICAgdmFyIHJvd09iamVjdCA9IHtcclxuICAgICAgICAgICAgVGl0bGU6IHJvdy5nc3gkdGl0bGUuJHQsXHJcbiAgICAgICAgICAgIFN1YnRpdGxlOiByb3cuZ3N4JHN1YnRpdGxlLiR0LFxyXG4gICAgICAgICAgICBJbWFnZTogcm93LmdzeCRpbWFnZS4kdCxcclxuICAgICAgICAgICAgQ2F0ZWdvcnk6IHJvdy5nc3gkY2F0ZWdvcnkuJHRcclxuICAgICAgICB9O1xyXG4gICAgICAgIHJvd09iamVjdFsnUG9zdCBJZCddID0gcm93LmdzeCRwb3N0aWQuJHQ7XHJcbiAgICAgICAgcm93T2JqZWN0WydJbWFnZSBJZCddID0gcm93LmdzeCRpbWFnZWlkLiR0O1xyXG4gICAgICAgIHJvd09iamVjdFsnTGFzdCBVcGRhdGVkJ10gPSByb3cuZ3N4JGxhc3R1cGRhdGVkLiR0O1xyXG4gICAgICAgIGZpZWxkc09iamVjdC5wdXNoKHJvd09iamVjdCk7XHJcbiAgICB9XHJcbiAgICByZXR1cm4gZmllbGRzT2JqZWN0O1xyXG59O1xyXG5tb2R1bGUuZXhwb3J0cyA9IGdldFBvc3RzOyJdfQ==
+},{}],"C:\\swiggis.austin\\src\\client\\js\\utils\\content\\parseHtml.js":[function(require,module,exports){
 'use strict';
 
 var parseHtml = function parseHtml(inputDoc) {
@@ -58809,16 +57938,16 @@ var parseHtml = function parseHtml(inputDoc) {
     };
 };
 module.exports = parseHtml;
-//# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInBhcnNlSHRtbC5qcyJdLCJuYW1lcyI6WyJwYXJzZUh0bWwiLCJpbnB1dERvYyIsInN0eWxlU3RhcnQiLCJzdHlsZUVuZCIsInNwbGl0U3R5bGVTdGFydCIsInNwbGl0Iiwic3BsaXRTdHlsZUVuZCIsImh0bWxTdGFydCIsImh0bWxTdGFydDIiLCJodG1sRW5kIiwic3BsaXRIdG1sU3RhcnQiLCJzcGxpdEh0bWxTdGFydDIiLCJodG1sQ2xhc3MiLCJodG1sU3RhcnRGdWxsIiwic3BsaXRIdG1sRW5kIiwic3R5bGVzIiwiaHRtbCIsIm1vZHVsZSIsImV4cG9ydHMiXSwibWFwcGluZ3MiOiJBQUFBOztBQUVBLElBQUlBLFlBQVksU0FBWkEsU0FBWSxDQUFVQyxRQUFWLEVBQW9CO0FBQ2hDLFFBQUlDLGFBQWEseUJBQWpCO0FBQ0EsUUFBSUMsV0FBVyxVQUFmO0FBQ0EsUUFBSUMsa0JBQWtCSCxTQUFTSSxLQUFULENBQWVILFVBQWYsQ0FBdEI7QUFDQSxRQUFJSSxnQkFBZ0JGLGdCQUFnQixDQUFoQixFQUFtQkMsS0FBbkIsQ0FBeUJGLFFBQXpCLENBQXBCOztBQUVBLFFBQUlJLFlBQVksUUFBaEI7QUFDQSxRQUFJQyxhQUFhLEdBQWpCO0FBQ0EsUUFBSUMsVUFBVSxTQUFkO0FBQ0EsUUFBSUMsaUJBQWlCSixjQUFjLENBQWQsRUFBaUJELEtBQWpCLENBQXVCRSxTQUF2QixDQUFyQjtBQUNBLFFBQUlJLGtCQUFrQkQsZUFBZSxDQUFmLEVBQWtCTCxLQUFsQixDQUF3QkcsVUFBeEIsQ0FBdEI7QUFDQSxRQUFJSSxZQUFZRCxnQkFBZ0IsQ0FBaEIsQ0FBaEI7QUFDQSxRQUFJRSxnQkFBZ0JOLFlBQVlLLFNBQVosR0FBd0JKLFVBQTVDO0FBQ0FFLHFCQUFpQkosY0FBYyxDQUFkLEVBQWlCRCxLQUFqQixDQUF1QlEsYUFBdkIsQ0FBakI7QUFDQSxRQUFJQyxlQUFlSixlQUFlLENBQWYsRUFBa0JMLEtBQWxCLENBQXdCSSxPQUF4QixDQUFuQjs7QUFFQSxXQUFPO0FBQ0hNLGdCQUFRYixhQUFhSSxjQUFjLENBQWQsQ0FBYixHQUFnQ0gsUUFEckM7QUFFSGEsY0FBTSxXQUFXRixhQUFhLENBQWIsQ0FBWCxHQUE2QjtBQUZoQyxLQUFQO0FBSUgsQ0FwQkQ7QUFxQkFHLE9BQU9DLE9BQVAsR0FBaUJsQixTQUFqQiIsImZpbGUiOiJwYXJzZUh0bWwuanMiLCJzb3VyY2VzQ29udGVudCI6WyIndXNlIHN0cmljdCc7XG5cbnZhciBwYXJzZUh0bWwgPSBmdW5jdGlvbiAoaW5wdXREb2MpIHtcbiAgICB2YXIgc3R5bGVTdGFydCA9ICc8c3R5bGUgdHlwZT1cInRleHQvY3NzXCI+JztcbiAgICB2YXIgc3R5bGVFbmQgPSAnPC9zdHlsZT4nO1xuICAgIHZhciBzcGxpdFN0eWxlU3RhcnQgPSBpbnB1dERvYy5zcGxpdChzdHlsZVN0YXJ0KTtcbiAgICB2YXIgc3BsaXRTdHlsZUVuZCA9IHNwbGl0U3R5bGVTdGFydFsxXS5zcGxpdChzdHlsZUVuZCk7XG5cbiAgICB2YXIgaHRtbFN0YXJ0ID0gJzxib2R5ICc7XG4gICAgdmFyIGh0bWxTdGFydDIgPSAnPic7XG4gICAgdmFyIGh0bWxFbmQgPSAnPC9ib2R5Pic7XG4gICAgdmFyIHNwbGl0SHRtbFN0YXJ0ID0gc3BsaXRTdHlsZUVuZFsxXS5zcGxpdChodG1sU3RhcnQpO1xuICAgIHZhciBzcGxpdEh0bWxTdGFydDIgPSBzcGxpdEh0bWxTdGFydFsxXS5zcGxpdChodG1sU3RhcnQyKTtcbiAgICB2YXIgaHRtbENsYXNzID0gc3BsaXRIdG1sU3RhcnQyWzBdO1xuICAgIHZhciBodG1sU3RhcnRGdWxsID0gaHRtbFN0YXJ0ICsgaHRtbENsYXNzICsgaHRtbFN0YXJ0MjtcbiAgICBzcGxpdEh0bWxTdGFydCA9IHNwbGl0U3R5bGVFbmRbMV0uc3BsaXQoaHRtbFN0YXJ0RnVsbCk7XG4gICAgdmFyIHNwbGl0SHRtbEVuZCA9IHNwbGl0SHRtbFN0YXJ0WzFdLnNwbGl0KGh0bWxFbmQpO1xuXG4gICAgcmV0dXJuIHtcbiAgICAgICAgc3R5bGVzOiBzdHlsZVN0YXJ0ICsgc3BsaXRTdHlsZUVuZFswXSArIHN0eWxlRW5kLFxuICAgICAgICBodG1sOiAnPGRpdiA+JyArIHNwbGl0SHRtbEVuZFswXSArICc8L2Rpdj4nXG4gICAgfVxufTtcbm1vZHVsZS5leHBvcnRzID0gcGFyc2VIdG1sOyJdfQ==
-},{}],"/mnt/c/swiggis.original/src/client/js/utils/message/message.js":[function(require,module,exports){
+//# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInBhcnNlSHRtbC5qcyJdLCJuYW1lcyI6WyJwYXJzZUh0bWwiLCJpbnB1dERvYyIsInN0eWxlU3RhcnQiLCJzdHlsZUVuZCIsInNwbGl0U3R5bGVTdGFydCIsInNwbGl0Iiwic3BsaXRTdHlsZUVuZCIsImh0bWxTdGFydCIsImh0bWxTdGFydDIiLCJodG1sRW5kIiwic3BsaXRIdG1sU3RhcnQiLCJzcGxpdEh0bWxTdGFydDIiLCJodG1sQ2xhc3MiLCJodG1sU3RhcnRGdWxsIiwic3BsaXRIdG1sRW5kIiwic3R5bGVzIiwiaHRtbCIsIm1vZHVsZSIsImV4cG9ydHMiXSwibWFwcGluZ3MiOiJBQUFBOztBQUVBLElBQUlBLFlBQVksU0FBWkEsU0FBWSxDQUFVQyxRQUFWLEVBQW9CO0FBQ2hDLFFBQUlDLGFBQWEseUJBQWpCO0FBQ0EsUUFBSUMsV0FBVyxVQUFmO0FBQ0EsUUFBSUMsa0JBQWtCSCxTQUFTSSxLQUFULENBQWVILFVBQWYsQ0FBdEI7QUFDQSxRQUFJSSxnQkFBZ0JGLGdCQUFnQixDQUFoQixFQUFtQkMsS0FBbkIsQ0FBeUJGLFFBQXpCLENBQXBCOztBQUVBLFFBQUlJLFlBQVksUUFBaEI7QUFDQSxRQUFJQyxhQUFhLEdBQWpCO0FBQ0EsUUFBSUMsVUFBVSxTQUFkO0FBQ0EsUUFBSUMsaUJBQWlCSixjQUFjLENBQWQsRUFBaUJELEtBQWpCLENBQXVCRSxTQUF2QixDQUFyQjtBQUNBLFFBQUlJLGtCQUFrQkQsZUFBZSxDQUFmLEVBQWtCTCxLQUFsQixDQUF3QkcsVUFBeEIsQ0FBdEI7QUFDQSxRQUFJSSxZQUFZRCxnQkFBZ0IsQ0FBaEIsQ0FBaEI7QUFDQSxRQUFJRSxnQkFBZ0JOLFlBQVlLLFNBQVosR0FBd0JKLFVBQTVDO0FBQ0FFLHFCQUFpQkosY0FBYyxDQUFkLEVBQWlCRCxLQUFqQixDQUF1QlEsYUFBdkIsQ0FBakI7QUFDQSxRQUFJQyxlQUFlSixlQUFlLENBQWYsRUFBa0JMLEtBQWxCLENBQXdCSSxPQUF4QixDQUFuQjs7QUFFQSxXQUFPO0FBQ0hNLGdCQUFRYixhQUFhSSxjQUFjLENBQWQsQ0FBYixHQUFnQ0gsUUFEckM7QUFFSGEsY0FBTSxXQUFXRixhQUFhLENBQWIsQ0FBWCxHQUE2QjtBQUZoQyxLQUFQO0FBSUgsQ0FwQkQ7QUFxQkFHLE9BQU9DLE9BQVAsR0FBaUJsQixTQUFqQiIsImZpbGUiOiJwYXJzZUh0bWwuanMiLCJzb3VyY2VzQ29udGVudCI6WyIndXNlIHN0cmljdCc7XHJcblxyXG52YXIgcGFyc2VIdG1sID0gZnVuY3Rpb24gKGlucHV0RG9jKSB7XHJcbiAgICB2YXIgc3R5bGVTdGFydCA9ICc8c3R5bGUgdHlwZT1cInRleHQvY3NzXCI+JztcclxuICAgIHZhciBzdHlsZUVuZCA9ICc8L3N0eWxlPic7XHJcbiAgICB2YXIgc3BsaXRTdHlsZVN0YXJ0ID0gaW5wdXREb2Muc3BsaXQoc3R5bGVTdGFydCk7XHJcbiAgICB2YXIgc3BsaXRTdHlsZUVuZCA9IHNwbGl0U3R5bGVTdGFydFsxXS5zcGxpdChzdHlsZUVuZCk7XHJcblxyXG4gICAgdmFyIGh0bWxTdGFydCA9ICc8Ym9keSAnO1xyXG4gICAgdmFyIGh0bWxTdGFydDIgPSAnPic7XHJcbiAgICB2YXIgaHRtbEVuZCA9ICc8L2JvZHk+JztcclxuICAgIHZhciBzcGxpdEh0bWxTdGFydCA9IHNwbGl0U3R5bGVFbmRbMV0uc3BsaXQoaHRtbFN0YXJ0KTtcclxuICAgIHZhciBzcGxpdEh0bWxTdGFydDIgPSBzcGxpdEh0bWxTdGFydFsxXS5zcGxpdChodG1sU3RhcnQyKTtcclxuICAgIHZhciBodG1sQ2xhc3MgPSBzcGxpdEh0bWxTdGFydDJbMF07XHJcbiAgICB2YXIgaHRtbFN0YXJ0RnVsbCA9IGh0bWxTdGFydCArIGh0bWxDbGFzcyArIGh0bWxTdGFydDI7XHJcbiAgICBzcGxpdEh0bWxTdGFydCA9IHNwbGl0U3R5bGVFbmRbMV0uc3BsaXQoaHRtbFN0YXJ0RnVsbCk7XHJcbiAgICB2YXIgc3BsaXRIdG1sRW5kID0gc3BsaXRIdG1sU3RhcnRbMV0uc3BsaXQoaHRtbEVuZCk7XHJcblxyXG4gICAgcmV0dXJuIHtcclxuICAgICAgICBzdHlsZXM6IHN0eWxlU3RhcnQgKyBzcGxpdFN0eWxlRW5kWzBdICsgc3R5bGVFbmQsXHJcbiAgICAgICAgaHRtbDogJzxkaXYgPicgKyBzcGxpdEh0bWxFbmRbMF0gKyAnPC9kaXY+J1xyXG4gICAgfVxyXG59O1xyXG5tb2R1bGUuZXhwb3J0cyA9IHBhcnNlSHRtbDsiXX0=
+},{}],"C:\\swiggis.austin\\src\\client\\js\\utils\\message\\message.js":[function(require,module,exports){
 'use strict';
 
 var Message = {
     sendMail: require('./sendMail')
 };
 module.exports = Message;
-//# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIm1lc3NhZ2UuanMiXSwibmFtZXMiOlsiTWVzc2FnZSIsInNlbmRNYWlsIiwicmVxdWlyZSIsIm1vZHVsZSIsImV4cG9ydHMiXSwibWFwcGluZ3MiOiJBQUFBOztBQUNBLElBQUlBLFVBQVU7QUFDVkMsY0FBVUMsUUFBUSxZQUFSO0FBREEsQ0FBZDtBQUdBQyxPQUFPQyxPQUFQLEdBQWlCSixPQUFqQiIsImZpbGUiOiJtZXNzYWdlLmpzIiwic291cmNlc0NvbnRlbnQiOlsiJ3VzZSBzdHJpY3QnO1xudmFyIE1lc3NhZ2UgPSB7XG4gICAgc2VuZE1haWw6IHJlcXVpcmUoJy4vc2VuZE1haWwnKVxufTtcbm1vZHVsZS5leHBvcnRzID0gTWVzc2FnZTsiXX0=
-},{"./sendMail":"/mnt/c/swiggis.original/src/client/js/utils/message/sendMail.js"}],"/mnt/c/swiggis.original/src/client/js/utils/message/sendMail.js":[function(require,module,exports){
+//# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIm1lc3NhZ2UuanMiXSwibmFtZXMiOlsiTWVzc2FnZSIsInNlbmRNYWlsIiwicmVxdWlyZSIsIm1vZHVsZSIsImV4cG9ydHMiXSwibWFwcGluZ3MiOiJBQUFBOztBQUNBLElBQUlBLFVBQVU7QUFDVkMsY0FBVUMsUUFBUSxZQUFSO0FBREEsQ0FBZDtBQUdBQyxPQUFPQyxPQUFQLEdBQWlCSixPQUFqQiIsImZpbGUiOiJtZXNzYWdlLmpzIiwic291cmNlc0NvbnRlbnQiOlsiJ3VzZSBzdHJpY3QnO1xyXG52YXIgTWVzc2FnZSA9IHtcclxuICAgIHNlbmRNYWlsOiByZXF1aXJlKCcuL3NlbmRNYWlsJylcclxufTtcclxubW9kdWxlLmV4cG9ydHMgPSBNZXNzYWdlOyJdfQ==
+},{"./sendMail":"C:\\swiggis.austin\\src\\client\\js\\utils\\message\\sendMail.js"}],"C:\\swiggis.austin\\src\\client\\js\\utils\\message\\sendMail.js":[function(require,module,exports){
 'use strict';
 
 var noop = function noop() {};
@@ -58852,8 +57981,8 @@ var getInfo = function getInfo(callback) {
 };
 
 module.exports = sendMail;
-//# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNlbmRNYWlsLmpzIl0sIm5hbWVzIjpbIm5vb3AiLCJzZW5kTWFpbCIsImZvcm1WYWx1ZXMiLCJjYWxsYmFjayIsIiQiLCJ3aW5kb3ciLCJjb25maWciLCJjb25maWdSZWFjdERyaXZlQ21zIiwiY29uc29sZSIsImxvZyIsIkpTT04iLCJzdHJpbmdpZnkiLCJhamF4IiwibWV0aG9kIiwiZGF0YVR5cGUiLCJhY2NlcHRzIiwiY2FjaGUiLCJkYXRhIiwidXJsIiwic3VjY2VzcyIsInJlc3BvbnNlIiwiZXJyb3IiLCJkb25lIiwiZ2V0SW5mbyIsIm1vZHVsZSIsImV4cG9ydHMiXSwibWFwcGluZ3MiOiJBQUFBOztBQUNBLElBQUlBLE9BQU8sU0FBUEEsSUFBTyxHQUFZLENBQ3RCLENBREQ7O0FBR0EsSUFBSUMsV0FBVyxTQUFYQSxRQUFXLENBQVVDLFVBQVYsRUFBc0JDLFFBQXRCLEVBQWdDO0FBQzNDQSxlQUFXQSxZQUFZSCxJQUF2QjtBQUNBLFFBQUlJLElBQUlDLE9BQU9ELENBQWY7QUFDQSxRQUFJRSxTQUFTRCxPQUFPRSxtQkFBcEI7QUFDQUMsWUFBUUMsR0FBUixDQUFZQyxLQUFLQyxTQUFMLENBQWVULFVBQWYsQ0FBWjs7QUFFQUUsTUFBRVEsSUFBRixDQUFPO0FBQ0hDLGdCQUFRLE1BREw7QUFFSEMsa0JBQVUsT0FGUDtBQUdIQyxpQkFBUyxrQkFITjtBQUlIQyxlQUFPLEtBSko7QUFLSEMsY0FBTWYsVUFMSDtBQU1IZ0IsYUFBSyw0QkFORjtBQU9IQyxpQkFBUyxpQkFBU0MsUUFBVCxFQUFtQjtBQUN4QmpCLHFCQUFTaUIsUUFBVDtBQUNILFNBVEU7QUFVSEMsZUFBTyxlQUFTRCxRQUFULEVBQW1CO0FBQ3RCakIscUJBQVNpQixRQUFUO0FBQ0g7QUFaRSxLQUFQLEVBYUdFLElBYkgsQ0FhUSxVQUFVRixRQUFWLEVBQW9CO0FBQ3hCakIsaUJBQVNpQixRQUFUO0FBQ0gsS0FmRDtBQWdCSCxDQXRCRDs7QUF3QkEsSUFBSUcsVUFBVSxTQUFWQSxPQUFVLENBQVVwQixRQUFWLEVBQW9CO0FBQzlCQSxlQUFXSCxJQUFYO0FBQ0gsQ0FGRDs7QUFJQXdCLE9BQU9DLE9BQVAsR0FBaUJ4QixRQUFqQiIsImZpbGUiOiJzZW5kTWFpbC5qcyIsInNvdXJjZXNDb250ZW50IjpbIid1c2Ugc3RyaWN0JztcbnZhciBub29wID0gZnVuY3Rpb24gKCkge1xufTtcblxudmFyIHNlbmRNYWlsID0gZnVuY3Rpb24gKGZvcm1WYWx1ZXMsIGNhbGxiYWNrKSB7XG4gICAgY2FsbGJhY2sgPSBjYWxsYmFjayB8fCBub29wO1xuICAgIHZhciAkID0gd2luZG93LiQ7XG4gICAgdmFyIGNvbmZpZyA9IHdpbmRvdy5jb25maWdSZWFjdERyaXZlQ21zO1xuICAgIGNvbnNvbGUubG9nKEpTT04uc3RyaW5naWZ5KGZvcm1WYWx1ZXMpKTtcblxuICAgICQuYWpheCh7XG4gICAgICAgIG1ldGhvZDogXCJQT1NUXCIsXG4gICAgICAgIGRhdGFUeXBlOiAnanNvbnAnLFxuICAgICAgICBhY2NlcHRzOiBcImFwcGxpY2F0aW9uL2pzb25cIixcbiAgICAgICAgY2FjaGU6IGZhbHNlLFxuICAgICAgICBkYXRhOiBmb3JtVmFsdWVzLFxuICAgICAgICB1cmw6IFwiLy93d3cuZW5mb3JtZWQuaW8vYmh4eGIzNjhcIixcbiAgICAgICAgc3VjY2VzczogZnVuY3Rpb24ocmVzcG9uc2UpIHtcbiAgICAgICAgICAgIGNhbGxiYWNrKHJlc3BvbnNlKTtcbiAgICAgICAgfSxcbiAgICAgICAgZXJyb3I6IGZ1bmN0aW9uKHJlc3BvbnNlKSB7XG4gICAgICAgICAgICBjYWxsYmFjayhyZXNwb25zZSk7XG4gICAgICAgIH1cbiAgICB9KS5kb25lKGZ1bmN0aW9uIChyZXNwb25zZSkge1xuICAgICAgICBjYWxsYmFjayhyZXNwb25zZSk7XG4gICAgfSk7XG59O1xuXG52YXIgZ2V0SW5mbyA9IGZ1bmN0aW9uIChjYWxsYmFjaykge1xuICAgIGNhbGxiYWNrID0gbm9vcDtcbn07XG5cbm1vZHVsZS5leHBvcnRzID0gc2VuZE1haWw7Il19
-},{}],"/mnt/c/swiggis.original/src/client/js/utils/string/formatDate.js":[function(require,module,exports){
+//# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNlbmRNYWlsLmpzIl0sIm5hbWVzIjpbIm5vb3AiLCJzZW5kTWFpbCIsImZvcm1WYWx1ZXMiLCJjYWxsYmFjayIsIiQiLCJ3aW5kb3ciLCJjb25maWciLCJjb25maWdSZWFjdERyaXZlQ21zIiwiY29uc29sZSIsImxvZyIsIkpTT04iLCJzdHJpbmdpZnkiLCJhamF4IiwibWV0aG9kIiwiZGF0YVR5cGUiLCJhY2NlcHRzIiwiY2FjaGUiLCJkYXRhIiwidXJsIiwic3VjY2VzcyIsInJlc3BvbnNlIiwiZXJyb3IiLCJkb25lIiwiZ2V0SW5mbyIsIm1vZHVsZSIsImV4cG9ydHMiXSwibWFwcGluZ3MiOiJBQUFBOztBQUNBLElBQUlBLE9BQU8sU0FBUEEsSUFBTyxHQUFZLENBQ3RCLENBREQ7O0FBR0EsSUFBSUMsV0FBVyxTQUFYQSxRQUFXLENBQVVDLFVBQVYsRUFBc0JDLFFBQXRCLEVBQWdDO0FBQzNDQSxlQUFXQSxZQUFZSCxJQUF2QjtBQUNBLFFBQUlJLElBQUlDLE9BQU9ELENBQWY7QUFDQSxRQUFJRSxTQUFTRCxPQUFPRSxtQkFBcEI7QUFDQUMsWUFBUUMsR0FBUixDQUFZQyxLQUFLQyxTQUFMLENBQWVULFVBQWYsQ0FBWjs7QUFFQUUsTUFBRVEsSUFBRixDQUFPO0FBQ0hDLGdCQUFRLE1BREw7QUFFSEMsa0JBQVUsT0FGUDtBQUdIQyxpQkFBUyxrQkFITjtBQUlIQyxlQUFPLEtBSko7QUFLSEMsY0FBTWYsVUFMSDtBQU1IZ0IsYUFBSyw0QkFORjtBQU9IQyxpQkFBUyxpQkFBU0MsUUFBVCxFQUFtQjtBQUN4QmpCLHFCQUFTaUIsUUFBVDtBQUNILFNBVEU7QUFVSEMsZUFBTyxlQUFTRCxRQUFULEVBQW1CO0FBQ3RCakIscUJBQVNpQixRQUFUO0FBQ0g7QUFaRSxLQUFQLEVBYUdFLElBYkgsQ0FhUSxVQUFVRixRQUFWLEVBQW9CO0FBQ3hCakIsaUJBQVNpQixRQUFUO0FBQ0gsS0FmRDtBQWdCSCxDQXRCRDs7QUF3QkEsSUFBSUcsVUFBVSxTQUFWQSxPQUFVLENBQVVwQixRQUFWLEVBQW9CO0FBQzlCQSxlQUFXSCxJQUFYO0FBQ0gsQ0FGRDs7QUFJQXdCLE9BQU9DLE9BQVAsR0FBaUJ4QixRQUFqQiIsImZpbGUiOiJzZW5kTWFpbC5qcyIsInNvdXJjZXNDb250ZW50IjpbIid1c2Ugc3RyaWN0JztcclxudmFyIG5vb3AgPSBmdW5jdGlvbiAoKSB7XHJcbn07XHJcblxyXG52YXIgc2VuZE1haWwgPSBmdW5jdGlvbiAoZm9ybVZhbHVlcywgY2FsbGJhY2spIHtcclxuICAgIGNhbGxiYWNrID0gY2FsbGJhY2sgfHwgbm9vcDtcclxuICAgIHZhciAkID0gd2luZG93LiQ7XHJcbiAgICB2YXIgY29uZmlnID0gd2luZG93LmNvbmZpZ1JlYWN0RHJpdmVDbXM7XHJcbiAgICBjb25zb2xlLmxvZyhKU09OLnN0cmluZ2lmeShmb3JtVmFsdWVzKSk7XHJcblxyXG4gICAgJC5hamF4KHtcclxuICAgICAgICBtZXRob2Q6IFwiUE9TVFwiLFxyXG4gICAgICAgIGRhdGFUeXBlOiAnanNvbnAnLFxyXG4gICAgICAgIGFjY2VwdHM6IFwiYXBwbGljYXRpb24vanNvblwiLFxyXG4gICAgICAgIGNhY2hlOiBmYWxzZSxcclxuICAgICAgICBkYXRhOiBmb3JtVmFsdWVzLFxyXG4gICAgICAgIHVybDogXCIvL3d3dy5lbmZvcm1lZC5pby9iaHh4YjM2OFwiLFxyXG4gICAgICAgIHN1Y2Nlc3M6IGZ1bmN0aW9uKHJlc3BvbnNlKSB7XHJcbiAgICAgICAgICAgIGNhbGxiYWNrKHJlc3BvbnNlKTtcclxuICAgICAgICB9LFxyXG4gICAgICAgIGVycm9yOiBmdW5jdGlvbihyZXNwb25zZSkge1xyXG4gICAgICAgICAgICBjYWxsYmFjayhyZXNwb25zZSk7XHJcbiAgICAgICAgfVxyXG4gICAgfSkuZG9uZShmdW5jdGlvbiAocmVzcG9uc2UpIHtcclxuICAgICAgICBjYWxsYmFjayhyZXNwb25zZSk7XHJcbiAgICB9KTtcclxufTtcclxuXHJcbnZhciBnZXRJbmZvID0gZnVuY3Rpb24gKGNhbGxiYWNrKSB7XHJcbiAgICBjYWxsYmFjayA9IG5vb3A7XHJcbn07XHJcblxyXG5tb2R1bGUuZXhwb3J0cyA9IHNlbmRNYWlsOyJdfQ==
+},{}],"C:\\swiggis.austin\\src\\client\\js\\utils\\string\\formatDate.js":[function(require,module,exports){
 'use strict';
 
 var formatDate = function formatDate(lastUpdated) {
@@ -58878,8 +58007,8 @@ var formatDate = function formatDate(lastUpdated) {
     return day + daySuffix + ' of ' + monthNames[month - 1] + ' ' + year;
 };
 module.exports = formatDate;
-//# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbImZvcm1hdERhdGUuanMiXSwibmFtZXMiOlsiZm9ybWF0RGF0ZSIsImxhc3RVcGRhdGVkIiwiZnVsbERhdGVTcGxpdCIsInNwbGl0IiwiZGF0ZVNwbGl0IiwiZGF5IiwicGFyc2VJbnQiLCJtb250aCIsInllYXIiLCJtb250aE5hbWVzIiwiZGF5U3VmZml4IiwibW9kdWxlIiwiZXhwb3J0cyJdLCJtYXBwaW5ncyI6IkFBQUE7O0FBQ0EsSUFBSUEsYUFBYSxTQUFiQSxVQUFhLENBQVVDLFdBQVYsRUFBdUI7QUFDcEMsUUFBSUMsZ0JBQWdCRCxZQUFZRSxLQUFaLENBQWtCLEdBQWxCLENBQXBCO0FBQ0EsUUFBSUMsWUFBWUYsY0FBYyxDQUFkLEVBQWlCQyxLQUFqQixDQUF1QixHQUF2QixDQUFoQjtBQUNBLFFBQUlFLE1BQU1DLFNBQVNGLFVBQVUsQ0FBVixDQUFULENBQVY7QUFDQSxRQUFJRyxRQUFRSCxVQUFVLENBQVYsQ0FBWjtBQUNBLFFBQUlJLE9BQU9KLFVBQVUsQ0FBVixDQUFYO0FBQ0EsUUFBSUssYUFBYSxDQUNiLFNBRGEsRUFDRixVQURFLEVBQ1UsT0FEVixFQUViLE9BRmEsRUFFSixLQUZJLEVBRUcsTUFGSCxFQUVXLE1BRlgsRUFHYixRQUhhLEVBR0gsV0FIRyxFQUdVLFNBSFYsRUFJYixVQUphLEVBSUQsVUFKQyxDQUFqQjtBQU1BLFFBQUlDLFlBQVksSUFBaEI7QUFDQSxZQUFRTCxHQUFSO0FBQ0ksYUFBSyxDQUFMO0FBQ0lLLHdCQUFZLElBQVo7QUFDQTtBQUNKLGFBQUssQ0FBTDtBQUNJQSx3QkFBWSxJQUFaO0FBQ0E7QUFDSixhQUFLLENBQUw7QUFDSUEsd0JBQVksSUFBWjtBQUNBO0FBVFI7QUFXQSxXQUFPTCxNQUFNSyxTQUFOLEdBQWtCLE1BQWxCLEdBQTJCRCxXQUFZRixRQUFRLENBQXBCLENBQTNCLEdBQXFELEdBQXJELEdBQTJEQyxJQUFsRTtBQUNILENBekJEO0FBMEJBRyxPQUFPQyxPQUFQLEdBQWlCWixVQUFqQiIsImZpbGUiOiJmb3JtYXREYXRlLmpzIiwic291cmNlc0NvbnRlbnQiOlsiJ3VzZSBzdHJpY3QnO1xudmFyIGZvcm1hdERhdGUgPSBmdW5jdGlvbiAobGFzdFVwZGF0ZWQpIHtcbiAgICB2YXIgZnVsbERhdGVTcGxpdCA9IGxhc3RVcGRhdGVkLnNwbGl0KCcgJyk7XG4gICAgdmFyIGRhdGVTcGxpdCA9IGZ1bGxEYXRlU3BsaXRbMF0uc3BsaXQoJy8nKTtcbiAgICB2YXIgZGF5ID0gcGFyc2VJbnQoZGF0ZVNwbGl0WzFdKTtcbiAgICB2YXIgbW9udGggPSBkYXRlU3BsaXRbMF07XG4gICAgdmFyIHllYXIgPSBkYXRlU3BsaXRbMl07XG4gICAgdmFyIG1vbnRoTmFtZXMgPSBbXG4gICAgICAgIFwiSmFudWFyeVwiLCBcIkZlYnJ1YXJ5XCIsIFwiTWFyY2hcIixcbiAgICAgICAgXCJBcHJpbFwiLCBcIk1heVwiLCBcIkp1bmVcIiwgXCJKdWx5XCIsXG4gICAgICAgIFwiQXVndXN0XCIsIFwiU2VwdGVtYmVyXCIsIFwiT2N0b2JlclwiLFxuICAgICAgICBcIk5vdmVtYmVyXCIsIFwiRGVjZW1iZXJcIlxuICAgIF07XG4gICAgdmFyIGRheVN1ZmZpeCA9ICd0aCc7XG4gICAgc3dpdGNoIChkYXkpIHtcbiAgICAgICAgY2FzZSAxOlxuICAgICAgICAgICAgZGF5U3VmZml4ID0gJ3N0JztcbiAgICAgICAgICAgIGJyZWFrO1xuICAgICAgICBjYXNlIDI6XG4gICAgICAgICAgICBkYXlTdWZmaXggPSAnbmQnO1xuICAgICAgICAgICAgYnJlYWs7XG4gICAgICAgIGNhc2UgMzpcbiAgICAgICAgICAgIGRheVN1ZmZpeCA9ICdyZCc7XG4gICAgICAgICAgICBicmVhaztcbiAgICB9XG4gICAgcmV0dXJuIGRheSArIGRheVN1ZmZpeCArICcgb2YgJyArIG1vbnRoTmFtZXNbKG1vbnRoIC0gMSldICsgJyAnICsgeWVhcjtcbn07XG5tb2R1bGUuZXhwb3J0cyA9IGZvcm1hdERhdGU7Il19
-},{}],"/mnt/c/swiggis.original/src/client/js/utils/string/parseUrl.js":[function(require,module,exports){
+//# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbImZvcm1hdERhdGUuanMiXSwibmFtZXMiOlsiZm9ybWF0RGF0ZSIsImxhc3RVcGRhdGVkIiwiZnVsbERhdGVTcGxpdCIsInNwbGl0IiwiZGF0ZVNwbGl0IiwiZGF5IiwicGFyc2VJbnQiLCJtb250aCIsInllYXIiLCJtb250aE5hbWVzIiwiZGF5U3VmZml4IiwibW9kdWxlIiwiZXhwb3J0cyJdLCJtYXBwaW5ncyI6IkFBQUE7O0FBQ0EsSUFBSUEsYUFBYSxTQUFiQSxVQUFhLENBQVVDLFdBQVYsRUFBdUI7QUFDcEMsUUFBSUMsZ0JBQWdCRCxZQUFZRSxLQUFaLENBQWtCLEdBQWxCLENBQXBCO0FBQ0EsUUFBSUMsWUFBWUYsY0FBYyxDQUFkLEVBQWlCQyxLQUFqQixDQUF1QixHQUF2QixDQUFoQjtBQUNBLFFBQUlFLE1BQU1DLFNBQVNGLFVBQVUsQ0FBVixDQUFULENBQVY7QUFDQSxRQUFJRyxRQUFRSCxVQUFVLENBQVYsQ0FBWjtBQUNBLFFBQUlJLE9BQU9KLFVBQVUsQ0FBVixDQUFYO0FBQ0EsUUFBSUssYUFBYSxDQUNiLFNBRGEsRUFDRixVQURFLEVBQ1UsT0FEVixFQUViLE9BRmEsRUFFSixLQUZJLEVBRUcsTUFGSCxFQUVXLE1BRlgsRUFHYixRQUhhLEVBR0gsV0FIRyxFQUdVLFNBSFYsRUFJYixVQUphLEVBSUQsVUFKQyxDQUFqQjtBQU1BLFFBQUlDLFlBQVksSUFBaEI7QUFDQSxZQUFRTCxHQUFSO0FBQ0ksYUFBSyxDQUFMO0FBQ0lLLHdCQUFZLElBQVo7QUFDQTtBQUNKLGFBQUssQ0FBTDtBQUNJQSx3QkFBWSxJQUFaO0FBQ0E7QUFDSixhQUFLLENBQUw7QUFDSUEsd0JBQVksSUFBWjtBQUNBO0FBVFI7QUFXQSxXQUFPTCxNQUFNSyxTQUFOLEdBQWtCLE1BQWxCLEdBQTJCRCxXQUFZRixRQUFRLENBQXBCLENBQTNCLEdBQXFELEdBQXJELEdBQTJEQyxJQUFsRTtBQUNILENBekJEO0FBMEJBRyxPQUFPQyxPQUFQLEdBQWlCWixVQUFqQiIsImZpbGUiOiJmb3JtYXREYXRlLmpzIiwic291cmNlc0NvbnRlbnQiOlsiJ3VzZSBzdHJpY3QnO1xyXG52YXIgZm9ybWF0RGF0ZSA9IGZ1bmN0aW9uIChsYXN0VXBkYXRlZCkge1xyXG4gICAgdmFyIGZ1bGxEYXRlU3BsaXQgPSBsYXN0VXBkYXRlZC5zcGxpdCgnICcpO1xyXG4gICAgdmFyIGRhdGVTcGxpdCA9IGZ1bGxEYXRlU3BsaXRbMF0uc3BsaXQoJy8nKTtcclxuICAgIHZhciBkYXkgPSBwYXJzZUludChkYXRlU3BsaXRbMV0pO1xyXG4gICAgdmFyIG1vbnRoID0gZGF0ZVNwbGl0WzBdO1xyXG4gICAgdmFyIHllYXIgPSBkYXRlU3BsaXRbMl07XHJcbiAgICB2YXIgbW9udGhOYW1lcyA9IFtcclxuICAgICAgICBcIkphbnVhcnlcIiwgXCJGZWJydWFyeVwiLCBcIk1hcmNoXCIsXHJcbiAgICAgICAgXCJBcHJpbFwiLCBcIk1heVwiLCBcIkp1bmVcIiwgXCJKdWx5XCIsXHJcbiAgICAgICAgXCJBdWd1c3RcIiwgXCJTZXB0ZW1iZXJcIiwgXCJPY3RvYmVyXCIsXHJcbiAgICAgICAgXCJOb3ZlbWJlclwiLCBcIkRlY2VtYmVyXCJcclxuICAgIF07XHJcbiAgICB2YXIgZGF5U3VmZml4ID0gJ3RoJztcclxuICAgIHN3aXRjaCAoZGF5KSB7XHJcbiAgICAgICAgY2FzZSAxOlxyXG4gICAgICAgICAgICBkYXlTdWZmaXggPSAnc3QnO1xyXG4gICAgICAgICAgICBicmVhaztcclxuICAgICAgICBjYXNlIDI6XHJcbiAgICAgICAgICAgIGRheVN1ZmZpeCA9ICduZCc7XHJcbiAgICAgICAgICAgIGJyZWFrO1xyXG4gICAgICAgIGNhc2UgMzpcclxuICAgICAgICAgICAgZGF5U3VmZml4ID0gJ3JkJztcclxuICAgICAgICAgICAgYnJlYWs7XHJcbiAgICB9XHJcbiAgICByZXR1cm4gZGF5ICsgZGF5U3VmZml4ICsgJyBvZiAnICsgbW9udGhOYW1lc1sobW9udGggLSAxKV0gKyAnICcgKyB5ZWFyO1xyXG59O1xyXG5tb2R1bGUuZXhwb3J0cyA9IGZvcm1hdERhdGU7Il19
+},{}],"C:\\swiggis.austin\\src\\client\\js\\utils\\string\\parseUrl.js":[function(require,module,exports){
 'use strict';
 
 var slug = require('./slug.js');
@@ -58921,8 +58050,8 @@ var parseUrl = function parseUrl(views) {
     };
 };
 module.exports = parseUrl;
-//# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInBhcnNlVXJsLmpzIl0sIm5hbWVzIjpbInNsdWciLCJyZXF1aXJlIiwiXyIsInBhcnNlVXJsIiwidmlld3MiLCJ1cmwiLCJ3aW5kb3ciLCJsb2NhdGlvbiIsImhyZWYiLCJ1cmxTcGxpdCIsInNwbGl0IiwiZWxlbWVudFR5cGUiLCJlbGVtZW50SWQiLCJzbHVnVVJMIiwiZWxlbWVudEZpbGVJZCIsImVsZW1lbnRQYXRoIiwiaSIsImxlbmd0aCIsImZvckVhY2giLCJhcnRpY2xlcyIsImFydGljbGUiLCJzbHVnVGl0bGUiLCJ0aXRsZSIsImlkIiwibW9kdWxlIiwiZXhwb3J0cyJdLCJtYXBwaW5ncyI6IkFBQUE7O0FBQ0EsSUFBSUEsT0FBT0MsUUFBUSxXQUFSLENBQVg7QUFDQSxJQUFJQyxJQUFJRCxRQUFRLFFBQVIsQ0FBUjtBQUNBLElBQUlFLFdBQVcsU0FBWEEsUUFBVyxDQUFVQyxLQUFWLEVBQWlCO0FBQzVCLFFBQUlDLE1BQU1DLE9BQU9DLFFBQVAsQ0FBZ0JDLElBQTFCO0FBQ0EsUUFBSUMsV0FBV0osSUFBSUssS0FBSixDQUFVLEdBQVYsQ0FBZjtBQUNBLFFBQUlDLGNBQWMsTUFBbEI7QUFDQSxRQUFJQyxZQUFZLENBQWhCO0FBQ0EsUUFBSUMsVUFBVSxFQUFkO0FBQ0EsUUFBSUMsZ0JBQWdCLEVBQXBCO0FBQ0EsUUFBSUMsY0FBYyxFQUFsQjtBQUNBLFNBQUssSUFBSUMsSUFBSSxDQUFiLEVBQWdCQSxJQUFJUCxTQUFTUSxNQUE3QixFQUFxQ0QsR0FBckMsRUFBMEM7QUFDdEMsWUFBSVAsU0FBU08sQ0FBVCxNQUFnQixTQUFwQixFQUErQjtBQUMzQkwsMEJBQWMsU0FBZDtBQUNBRSxzQkFBVUosU0FBU08sSUFBSSxDQUFiLENBQVY7QUFDQWQsY0FBRWdCLE9BQUYsQ0FBVWQsTUFBTWUsUUFBaEIsRUFBMEIsVUFBU0MsT0FBVCxFQUFrQjtBQUN4QyxvQkFBSUMsWUFBWXJCLEtBQUtvQixRQUFRRSxLQUFiLENBQWhCO0FBQ0Esb0JBQUlELGFBQWFSLE9BQWpCLEVBQTBCO0FBQ3RCRCxnQ0FBWVEsUUFBUUcsRUFBcEI7QUFDSDtBQUNGLGFBTEg7QUFNQVQsNEJBQWdCVixNQUFNZSxRQUFOLENBQWVQLFNBQWYsRUFBMEIsU0FBMUIsQ0FBaEI7QUFDQTtBQUNILFNBWEQsTUFXTyxJQUFJSCxTQUFTTyxDQUFULE1BQWdCLFVBQXBCLEVBQWdDO0FBQ25DTCwwQkFBYyxVQUFkO0FBQ0FDLHdCQUFZSCxTQUFTTyxJQUFJLENBQWIsQ0FBWjtBQUNBO0FBQ0gsU0FKTSxNQUlBLElBQUlQLFNBQVNPLENBQVQsTUFBZ0IsR0FBcEIsRUFBeUI7QUFDNUJELDBCQUFjTixTQUFTTyxJQUFJLENBQWIsQ0FBZDtBQUNIO0FBQ0o7O0FBRUQsV0FBTztBQUNITCxxQkFBYUEsV0FEVjtBQUVIQyxtQkFBV0EsU0FGUjtBQUdIRSx1QkFBZUEsYUFIWjtBQUlIQyxxQkFBYUE7QUFKVixLQUFQO0FBTUgsQ0FuQ0Q7QUFvQ0FTLE9BQU9DLE9BQVAsR0FBaUJ0QixRQUFqQiIsImZpbGUiOiJwYXJzZVVybC5qcyIsInNvdXJjZXNDb250ZW50IjpbIid1c2Ugc3RyaWN0JztcbnZhciBzbHVnID0gcmVxdWlyZSgnLi9zbHVnLmpzJyk7XG52YXIgXyA9IHJlcXVpcmUoJ2xvZGFzaCcpO1xudmFyIHBhcnNlVXJsID0gZnVuY3Rpb24gKHZpZXdzKSB7XG4gICAgdmFyIHVybCA9IHdpbmRvdy5sb2NhdGlvbi5ocmVmO1xuICAgIHZhciB1cmxTcGxpdCA9IHVybC5zcGxpdCgnLycpO1xuICAgIHZhciBlbGVtZW50VHlwZSA9ICdwYWdlJztcbiAgICB2YXIgZWxlbWVudElkID0gMDtcbiAgICB2YXIgc2x1Z1VSTCA9ICcnO1xuICAgIHZhciBlbGVtZW50RmlsZUlkID0gJyc7XG4gICAgdmFyIGVsZW1lbnRQYXRoID0gJyc7XG4gICAgZm9yICh2YXIgaSA9IDA7IGkgPCB1cmxTcGxpdC5sZW5ndGg7IGkrKykge1xuICAgICAgICBpZiAodXJsU3BsaXRbaV0gPT09ICdhcnRpY2xlJykge1xuICAgICAgICAgICAgZWxlbWVudFR5cGUgPSAnYXJ0aWNsZSc7XG4gICAgICAgICAgICBzbHVnVVJMID0gdXJsU3BsaXRbaSArIDFdO1xuICAgICAgICAgICAgXy5mb3JFYWNoKHZpZXdzLmFydGljbGVzLCBmdW5jdGlvbihhcnRpY2xlKSB7XG4gICAgICAgICAgICAgICAgdmFyIHNsdWdUaXRsZSA9IHNsdWcoYXJ0aWNsZS50aXRsZSk7XG4gICAgICAgICAgICAgICAgaWYgKHNsdWdUaXRsZSA9PSBzbHVnVVJMKSB7XG4gICAgICAgICAgICAgICAgICAgIGVsZW1lbnRJZCA9IGFydGljbGUuaWQ7XG4gICAgICAgICAgICAgICAgfVxuICAgICAgICAgICAgICB9KTtcbiAgICAgICAgICAgIGVsZW1lbnRGaWxlSWQgPSB2aWV3cy5hcnRpY2xlc1tlbGVtZW50SWRdWydkcml2ZUlkJ107XG4gICAgICAgICAgICBicmVhaztcbiAgICAgICAgfSBlbHNlIGlmICh1cmxTcGxpdFtpXSA9PT0gJ2NhdGVnb3J5Jykge1xuICAgICAgICAgICAgZWxlbWVudFR5cGUgPSAnY2F0ZWdvcnknO1xuICAgICAgICAgICAgZWxlbWVudElkID0gdXJsU3BsaXRbaSArIDFdO1xuICAgICAgICAgICAgYnJlYWs7XG4gICAgICAgIH0gZWxzZSBpZiAodXJsU3BsaXRbaV0gPT09ICcjJykge1xuICAgICAgICAgICAgZWxlbWVudFBhdGggPSB1cmxTcGxpdFtpICsgMV07XG4gICAgICAgIH1cbiAgICB9XG5cbiAgICByZXR1cm4ge1xuICAgICAgICBlbGVtZW50VHlwZTogZWxlbWVudFR5cGUsXG4gICAgICAgIGVsZW1lbnRJZDogZWxlbWVudElkLFxuICAgICAgICBlbGVtZW50RmlsZUlkOiBlbGVtZW50RmlsZUlkLFxuICAgICAgICBlbGVtZW50UGF0aDogZWxlbWVudFBhdGhcbiAgICB9O1xufTtcbm1vZHVsZS5leHBvcnRzID0gcGFyc2VVcmw7Il19
-},{"./slug.js":"/mnt/c/swiggis.original/src/client/js/utils/string/slug.js","lodash":"/mnt/c/swiggis.original/node_modules/lodash/index.js"}],"/mnt/c/swiggis.original/src/client/js/utils/string/slug.js":[function(require,module,exports){
+//# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInBhcnNlVXJsLmpzIl0sIm5hbWVzIjpbInNsdWciLCJyZXF1aXJlIiwiXyIsInBhcnNlVXJsIiwidmlld3MiLCJ1cmwiLCJ3aW5kb3ciLCJsb2NhdGlvbiIsImhyZWYiLCJ1cmxTcGxpdCIsInNwbGl0IiwiZWxlbWVudFR5cGUiLCJlbGVtZW50SWQiLCJzbHVnVVJMIiwiZWxlbWVudEZpbGVJZCIsImVsZW1lbnRQYXRoIiwiaSIsImxlbmd0aCIsImZvckVhY2giLCJhcnRpY2xlcyIsImFydGljbGUiLCJzbHVnVGl0bGUiLCJ0aXRsZSIsImlkIiwibW9kdWxlIiwiZXhwb3J0cyJdLCJtYXBwaW5ncyI6IkFBQUE7O0FBQ0EsSUFBSUEsT0FBT0MsUUFBUSxXQUFSLENBQVg7QUFDQSxJQUFJQyxJQUFJRCxRQUFRLFFBQVIsQ0FBUjtBQUNBLElBQUlFLFdBQVcsU0FBWEEsUUFBVyxDQUFVQyxLQUFWLEVBQWlCO0FBQzVCLFFBQUlDLE1BQU1DLE9BQU9DLFFBQVAsQ0FBZ0JDLElBQTFCO0FBQ0EsUUFBSUMsV0FBV0osSUFBSUssS0FBSixDQUFVLEdBQVYsQ0FBZjtBQUNBLFFBQUlDLGNBQWMsTUFBbEI7QUFDQSxRQUFJQyxZQUFZLENBQWhCO0FBQ0EsUUFBSUMsVUFBVSxFQUFkO0FBQ0EsUUFBSUMsZ0JBQWdCLEVBQXBCO0FBQ0EsUUFBSUMsY0FBYyxFQUFsQjtBQUNBLFNBQUssSUFBSUMsSUFBSSxDQUFiLEVBQWdCQSxJQUFJUCxTQUFTUSxNQUE3QixFQUFxQ0QsR0FBckMsRUFBMEM7QUFDdEMsWUFBSVAsU0FBU08sQ0FBVCxNQUFnQixTQUFwQixFQUErQjtBQUMzQkwsMEJBQWMsU0FBZDtBQUNBRSxzQkFBVUosU0FBU08sSUFBSSxDQUFiLENBQVY7QUFDQWQsY0FBRWdCLE9BQUYsQ0FBVWQsTUFBTWUsUUFBaEIsRUFBMEIsVUFBU0MsT0FBVCxFQUFrQjtBQUN4QyxvQkFBSUMsWUFBWXJCLEtBQUtvQixRQUFRRSxLQUFiLENBQWhCO0FBQ0Esb0JBQUlELGFBQWFSLE9BQWpCLEVBQTBCO0FBQ3RCRCxnQ0FBWVEsUUFBUUcsRUFBcEI7QUFDSDtBQUNGLGFBTEg7QUFNQVQsNEJBQWdCVixNQUFNZSxRQUFOLENBQWVQLFNBQWYsRUFBMEIsU0FBMUIsQ0FBaEI7QUFDQTtBQUNILFNBWEQsTUFXTyxJQUFJSCxTQUFTTyxDQUFULE1BQWdCLFVBQXBCLEVBQWdDO0FBQ25DTCwwQkFBYyxVQUFkO0FBQ0FDLHdCQUFZSCxTQUFTTyxJQUFJLENBQWIsQ0FBWjtBQUNBO0FBQ0gsU0FKTSxNQUlBLElBQUlQLFNBQVNPLENBQVQsTUFBZ0IsR0FBcEIsRUFBeUI7QUFDNUJELDBCQUFjTixTQUFTTyxJQUFJLENBQWIsQ0FBZDtBQUNIO0FBQ0o7O0FBRUQsV0FBTztBQUNITCxxQkFBYUEsV0FEVjtBQUVIQyxtQkFBV0EsU0FGUjtBQUdIRSx1QkFBZUEsYUFIWjtBQUlIQyxxQkFBYUE7QUFKVixLQUFQO0FBTUgsQ0FuQ0Q7QUFvQ0FTLE9BQU9DLE9BQVAsR0FBaUJ0QixRQUFqQiIsImZpbGUiOiJwYXJzZVVybC5qcyIsInNvdXJjZXNDb250ZW50IjpbIid1c2Ugc3RyaWN0JztcclxudmFyIHNsdWcgPSByZXF1aXJlKCcuL3NsdWcuanMnKTtcclxudmFyIF8gPSByZXF1aXJlKCdsb2Rhc2gnKTtcclxudmFyIHBhcnNlVXJsID0gZnVuY3Rpb24gKHZpZXdzKSB7XHJcbiAgICB2YXIgdXJsID0gd2luZG93LmxvY2F0aW9uLmhyZWY7XHJcbiAgICB2YXIgdXJsU3BsaXQgPSB1cmwuc3BsaXQoJy8nKTtcclxuICAgIHZhciBlbGVtZW50VHlwZSA9ICdwYWdlJztcclxuICAgIHZhciBlbGVtZW50SWQgPSAwO1xyXG4gICAgdmFyIHNsdWdVUkwgPSAnJztcclxuICAgIHZhciBlbGVtZW50RmlsZUlkID0gJyc7XHJcbiAgICB2YXIgZWxlbWVudFBhdGggPSAnJztcclxuICAgIGZvciAodmFyIGkgPSAwOyBpIDwgdXJsU3BsaXQubGVuZ3RoOyBpKyspIHtcclxuICAgICAgICBpZiAodXJsU3BsaXRbaV0gPT09ICdhcnRpY2xlJykge1xyXG4gICAgICAgICAgICBlbGVtZW50VHlwZSA9ICdhcnRpY2xlJztcclxuICAgICAgICAgICAgc2x1Z1VSTCA9IHVybFNwbGl0W2kgKyAxXTtcclxuICAgICAgICAgICAgXy5mb3JFYWNoKHZpZXdzLmFydGljbGVzLCBmdW5jdGlvbihhcnRpY2xlKSB7XHJcbiAgICAgICAgICAgICAgICB2YXIgc2x1Z1RpdGxlID0gc2x1ZyhhcnRpY2xlLnRpdGxlKTtcclxuICAgICAgICAgICAgICAgIGlmIChzbHVnVGl0bGUgPT0gc2x1Z1VSTCkge1xyXG4gICAgICAgICAgICAgICAgICAgIGVsZW1lbnRJZCA9IGFydGljbGUuaWQ7XHJcbiAgICAgICAgICAgICAgICB9XHJcbiAgICAgICAgICAgICAgfSk7XHJcbiAgICAgICAgICAgIGVsZW1lbnRGaWxlSWQgPSB2aWV3cy5hcnRpY2xlc1tlbGVtZW50SWRdWydkcml2ZUlkJ107XHJcbiAgICAgICAgICAgIGJyZWFrO1xyXG4gICAgICAgIH0gZWxzZSBpZiAodXJsU3BsaXRbaV0gPT09ICdjYXRlZ29yeScpIHtcclxuICAgICAgICAgICAgZWxlbWVudFR5cGUgPSAnY2F0ZWdvcnknO1xyXG4gICAgICAgICAgICBlbGVtZW50SWQgPSB1cmxTcGxpdFtpICsgMV07XHJcbiAgICAgICAgICAgIGJyZWFrO1xyXG4gICAgICAgIH0gZWxzZSBpZiAodXJsU3BsaXRbaV0gPT09ICcjJykge1xyXG4gICAgICAgICAgICBlbGVtZW50UGF0aCA9IHVybFNwbGl0W2kgKyAxXTtcclxuICAgICAgICB9XHJcbiAgICB9XHJcblxyXG4gICAgcmV0dXJuIHtcclxuICAgICAgICBlbGVtZW50VHlwZTogZWxlbWVudFR5cGUsXHJcbiAgICAgICAgZWxlbWVudElkOiBlbGVtZW50SWQsXHJcbiAgICAgICAgZWxlbWVudEZpbGVJZDogZWxlbWVudEZpbGVJZCxcclxuICAgICAgICBlbGVtZW50UGF0aDogZWxlbWVudFBhdGhcclxuICAgIH07XHJcbn07XHJcbm1vZHVsZS5leHBvcnRzID0gcGFyc2VVcmw7Il19
+},{"./slug.js":"C:\\swiggis.austin\\src\\client\\js\\utils\\string\\slug.js","lodash":"C:\\swiggis.austin\\node_modules\\lodash\\index.js"}],"C:\\swiggis.austin\\src\\client\\js\\utils\\string\\slug.js":[function(require,module,exports){
 'use strict';
 
 var Slug = function Slug(str) {
@@ -58942,8 +58071,8 @@ var Slug = function Slug(str) {
     return str;
 };
 module.exports = Slug;
-//# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNsdWcuanMiXSwibmFtZXMiOlsiU2x1ZyIsInN0ciIsInJlcGxhY2UiLCJ0b0xvd2VyQ2FzZSIsImZyb20iLCJ0byIsImkiLCJsIiwibGVuZ3RoIiwiUmVnRXhwIiwiY2hhckF0IiwibW9kdWxlIiwiZXhwb3J0cyJdLCJtYXBwaW5ncyI6IkFBQUE7O0FBQ0EsSUFBSUEsT0FBTyxTQUFQQSxJQUFPLENBQVVDLEdBQVYsRUFBZTtBQUN0QkEsVUFBTUEsSUFBSUMsT0FBSixDQUFZLFlBQVosRUFBMEIsRUFBMUIsQ0FBTixDQURzQixDQUNlO0FBQ3JDRCxVQUFNQSxJQUFJRSxXQUFKLEVBQU47QUFDQTtBQUNBLFFBQUlDLE9BQU8saUNBQVg7QUFDQSxRQUFJQyxLQUFLLGlDQUFUO0FBQ0EsU0FBSyxJQUFJQyxJQUFJLENBQVIsRUFBV0MsSUFBSUgsS0FBS0ksTUFBekIsRUFBaUNGLElBQUlDLENBQXJDLEVBQXdDRCxHQUF4QyxFQUE2QztBQUN6Q0wsY0FBTUEsSUFBSUMsT0FBSixDQUFZLElBQUlPLE1BQUosQ0FBV0wsS0FBS00sTUFBTCxDQUFZSixDQUFaLENBQVgsRUFBMkIsR0FBM0IsQ0FBWixFQUE2Q0QsR0FBR0ssTUFBSCxDQUFVSixDQUFWLENBQTdDLENBQU47QUFDSDs7QUFFREwsVUFBTUEsSUFBSUMsT0FBSixDQUFZLGNBQVosRUFBNEIsRUFBNUIsRUFBZ0M7QUFBaEMsS0FDREEsT0FEQyxDQUNPLE1BRFAsRUFDZSxHQURmLEVBQ29CO0FBRHBCLEtBRURBLE9BRkMsQ0FFTyxLQUZQLEVBRWMsR0FGZCxDQUFOLENBVnNCLENBWUk7O0FBRTFCLFdBQU9ELEdBQVA7QUFDSCxDQWZEO0FBZ0JBVSxPQUFPQyxPQUFQLEdBQWlCWixJQUFqQiIsImZpbGUiOiJzbHVnLmpzIiwic291cmNlc0NvbnRlbnQiOlsiJ3VzZSBzdHJpY3QnO1xudmFyIFNsdWcgPSBmdW5jdGlvbiAoc3RyKSB7XG4gICAgc3RyID0gc3RyLnJlcGxhY2UoL15cXHMrfFxccyskL2csICcnKTsgLy8gdHJpbVxuICAgIHN0ciA9IHN0ci50b0xvd2VyQ2FzZSgpO1xuICAgIC8vIHJlbW92ZSBhY2NlbnRzLCBzd2FwIMOxIGZvciBuLCBldGNcbiAgICB2YXIgZnJvbSA9IFwiw6PDoMOhw6TDouG6vcOow6nDq8Oqw6zDrcOvw67DtcOyw7PDtsO0w7nDusO8w7vDscOnwrcvXyw6O1wiO1xuICAgIHZhciB0byA9IFwiYWFhYWFlZWVlZWlpaWlvb29vb3V1dXVuYy0tLS0tLVwiO1xuICAgIGZvciAodmFyIGkgPSAwLCBsID0gZnJvbS5sZW5ndGg7IGkgPCBsOyBpKyspIHtcbiAgICAgICAgc3RyID0gc3RyLnJlcGxhY2UobmV3IFJlZ0V4cChmcm9tLmNoYXJBdChpKSwgJ2cnKSwgdG8uY2hhckF0KGkpKTtcbiAgICB9XG5cbiAgICBzdHIgPSBzdHIucmVwbGFjZSgvW15hLXowLTkgLV0vZywgJycpIC8vIHJlbW92ZSBpbnZhbGlkIGNoYXJzXG4gICAgICAgIC5yZXBsYWNlKC9cXHMrL2csICctJykgLy8gY29sbGFwc2Ugd2hpdGVzcGFjZSBhbmQgcmVwbGFjZSBieSAtXG4gICAgICAgIC5yZXBsYWNlKC8tKy9nLCAnLScpOyAvLyBjb2xsYXBzZSBkYXNoZXNcblxuICAgIHJldHVybiBzdHI7XG59O1xubW9kdWxlLmV4cG9ydHMgPSBTbHVnOyJdfQ==
-},{}],"/mnt/c/swiggis.original/src/client/js/utils/string/string.js":[function(require,module,exports){
+//# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNsdWcuanMiXSwibmFtZXMiOlsiU2x1ZyIsInN0ciIsInJlcGxhY2UiLCJ0b0xvd2VyQ2FzZSIsImZyb20iLCJ0byIsImkiLCJsIiwibGVuZ3RoIiwiUmVnRXhwIiwiY2hhckF0IiwibW9kdWxlIiwiZXhwb3J0cyJdLCJtYXBwaW5ncyI6IkFBQUE7O0FBQ0EsSUFBSUEsT0FBTyxTQUFQQSxJQUFPLENBQVVDLEdBQVYsRUFBZTtBQUN0QkEsVUFBTUEsSUFBSUMsT0FBSixDQUFZLFlBQVosRUFBMEIsRUFBMUIsQ0FBTixDQURzQixDQUNlO0FBQ3JDRCxVQUFNQSxJQUFJRSxXQUFKLEVBQU47QUFDQTtBQUNBLFFBQUlDLE9BQU8saUNBQVg7QUFDQSxRQUFJQyxLQUFLLGlDQUFUO0FBQ0EsU0FBSyxJQUFJQyxJQUFJLENBQVIsRUFBV0MsSUFBSUgsS0FBS0ksTUFBekIsRUFBaUNGLElBQUlDLENBQXJDLEVBQXdDRCxHQUF4QyxFQUE2QztBQUN6Q0wsY0FBTUEsSUFBSUMsT0FBSixDQUFZLElBQUlPLE1BQUosQ0FBV0wsS0FBS00sTUFBTCxDQUFZSixDQUFaLENBQVgsRUFBMkIsR0FBM0IsQ0FBWixFQUE2Q0QsR0FBR0ssTUFBSCxDQUFVSixDQUFWLENBQTdDLENBQU47QUFDSDs7QUFFREwsVUFBTUEsSUFBSUMsT0FBSixDQUFZLGNBQVosRUFBNEIsRUFBNUIsRUFBZ0M7QUFBaEMsS0FDREEsT0FEQyxDQUNPLE1BRFAsRUFDZSxHQURmLEVBQ29CO0FBRHBCLEtBRURBLE9BRkMsQ0FFTyxLQUZQLEVBRWMsR0FGZCxDQUFOLENBVnNCLENBWUk7O0FBRTFCLFdBQU9ELEdBQVA7QUFDSCxDQWZEO0FBZ0JBVSxPQUFPQyxPQUFQLEdBQWlCWixJQUFqQiIsImZpbGUiOiJzbHVnLmpzIiwic291cmNlc0NvbnRlbnQiOlsiJ3VzZSBzdHJpY3QnO1xyXG52YXIgU2x1ZyA9IGZ1bmN0aW9uIChzdHIpIHtcclxuICAgIHN0ciA9IHN0ci5yZXBsYWNlKC9eXFxzK3xcXHMrJC9nLCAnJyk7IC8vIHRyaW1cclxuICAgIHN0ciA9IHN0ci50b0xvd2VyQ2FzZSgpO1xyXG4gICAgLy8gcmVtb3ZlIGFjY2VudHMsIHN3YXAgw7EgZm9yIG4sIGV0Y1xyXG4gICAgdmFyIGZyb20gPSBcIsOjw6DDocOkw6Lhur3DqMOpw6vDqsOsw63Dr8Ouw7XDssOzw7bDtMO5w7rDvMO7w7HDp8K3L18sOjtcIjtcclxuICAgIHZhciB0byA9IFwiYWFhYWFlZWVlZWlpaWlvb29vb3V1dXVuYy0tLS0tLVwiO1xyXG4gICAgZm9yICh2YXIgaSA9IDAsIGwgPSBmcm9tLmxlbmd0aDsgaSA8IGw7IGkrKykge1xyXG4gICAgICAgIHN0ciA9IHN0ci5yZXBsYWNlKG5ldyBSZWdFeHAoZnJvbS5jaGFyQXQoaSksICdnJyksIHRvLmNoYXJBdChpKSk7XHJcbiAgICB9XHJcblxyXG4gICAgc3RyID0gc3RyLnJlcGxhY2UoL1teYS16MC05IC1dL2csICcnKSAvLyByZW1vdmUgaW52YWxpZCBjaGFyc1xyXG4gICAgICAgIC5yZXBsYWNlKC9cXHMrL2csICctJykgLy8gY29sbGFwc2Ugd2hpdGVzcGFjZSBhbmQgcmVwbGFjZSBieSAtXHJcbiAgICAgICAgLnJlcGxhY2UoLy0rL2csICctJyk7IC8vIGNvbGxhcHNlIGRhc2hlc1xyXG5cclxuICAgIHJldHVybiBzdHI7XHJcbn07XHJcbm1vZHVsZS5leHBvcnRzID0gU2x1ZzsiXX0=
+},{}],"C:\\swiggis.austin\\src\\client\\js\\utils\\string\\string.js":[function(require,module,exports){
 'use strict';
 
 var String = {
@@ -58952,8 +58081,8 @@ var String = {
     slug: require('./slug')
 };
 module.exports = String;
-//# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInN0cmluZy5qcyJdLCJuYW1lcyI6WyJTdHJpbmciLCJmb3JtYXREYXRlIiwicmVxdWlyZSIsInBhcnNlVXJsIiwic2x1ZyIsIm1vZHVsZSIsImV4cG9ydHMiXSwibWFwcGluZ3MiOiJBQUFBOztBQUNBLElBQUlBLFNBQVM7QUFDVEMsZ0JBQVlDLFFBQVEsY0FBUixDQURIO0FBRVRDLGNBQVVELFFBQVEsWUFBUixDQUZEO0FBR1RFLFVBQU1GLFFBQVEsUUFBUjtBQUhHLENBQWI7QUFLQUcsT0FBT0MsT0FBUCxHQUFpQk4sTUFBakIiLCJmaWxlIjoic3RyaW5nLmpzIiwic291cmNlc0NvbnRlbnQiOlsiJ3VzZSBzdHJpY3QnO1xudmFyIFN0cmluZyA9IHtcbiAgICBmb3JtYXREYXRlOiByZXF1aXJlKCcuL2Zvcm1hdERhdGUnKSxcbiAgICBwYXJzZVVybDogcmVxdWlyZSgnLi9wYXJzZVVybCcpLFxuICAgIHNsdWc6IHJlcXVpcmUoJy4vc2x1ZycpXG59O1xubW9kdWxlLmV4cG9ydHMgPSBTdHJpbmc7Il19
-},{"./formatDate":"/mnt/c/swiggis.original/src/client/js/utils/string/formatDate.js","./parseUrl":"/mnt/c/swiggis.original/src/client/js/utils/string/parseUrl.js","./slug":"/mnt/c/swiggis.original/src/client/js/utils/string/slug.js"}],"/mnt/c/swiggis.original/src/client/js/utils/utils.js":[function(require,module,exports){
+//# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInN0cmluZy5qcyJdLCJuYW1lcyI6WyJTdHJpbmciLCJmb3JtYXREYXRlIiwicmVxdWlyZSIsInBhcnNlVXJsIiwic2x1ZyIsIm1vZHVsZSIsImV4cG9ydHMiXSwibWFwcGluZ3MiOiJBQUFBOztBQUNBLElBQUlBLFNBQVM7QUFDVEMsZ0JBQVlDLFFBQVEsY0FBUixDQURIO0FBRVRDLGNBQVVELFFBQVEsWUFBUixDQUZEO0FBR1RFLFVBQU1GLFFBQVEsUUFBUjtBQUhHLENBQWI7QUFLQUcsT0FBT0MsT0FBUCxHQUFpQk4sTUFBakIiLCJmaWxlIjoic3RyaW5nLmpzIiwic291cmNlc0NvbnRlbnQiOlsiJ3VzZSBzdHJpY3QnO1xyXG52YXIgU3RyaW5nID0ge1xyXG4gICAgZm9ybWF0RGF0ZTogcmVxdWlyZSgnLi9mb3JtYXREYXRlJyksXHJcbiAgICBwYXJzZVVybDogcmVxdWlyZSgnLi9wYXJzZVVybCcpLFxyXG4gICAgc2x1ZzogcmVxdWlyZSgnLi9zbHVnJylcclxufTtcclxubW9kdWxlLmV4cG9ydHMgPSBTdHJpbmc7Il19
+},{"./formatDate":"C:\\swiggis.austin\\src\\client\\js\\utils\\string\\formatDate.js","./parseUrl":"C:\\swiggis.austin\\src\\client\\js\\utils\\string\\parseUrl.js","./slug":"C:\\swiggis.austin\\src\\client\\js\\utils\\string\\slug.js"}],"C:\\swiggis.austin\\src\\client\\js\\utils\\utils.js":[function(require,module,exports){
 'use strict';
 
 var Utils = {
@@ -58963,8 +58092,8 @@ var Utils = {
     validation: require('./validation/validation')
 };
 module.exports = Utils;
-//# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInV0aWxzLmpzIl0sIm5hbWVzIjpbIlV0aWxzIiwiY29udGVudCIsInJlcXVpcmUiLCJtZXNzYWdlIiwic3RyaW5nIiwidmFsaWRhdGlvbiIsIm1vZHVsZSIsImV4cG9ydHMiXSwibWFwcGluZ3MiOiJBQUFBOztBQUNBLElBQUlBLFFBQVE7QUFDUkMsYUFBU0MsUUFBUSxtQkFBUixDQUREO0FBRVJDLGFBQVNELFFBQVEsbUJBQVIsQ0FGRDtBQUdSRSxZQUFRRixRQUFRLGlCQUFSLENBSEE7QUFJUkcsZ0JBQVlILFFBQVEseUJBQVI7QUFKSixDQUFaO0FBTUFJLE9BQU9DLE9BQVAsR0FBaUJQLEtBQWpCIiwiZmlsZSI6InV0aWxzLmpzIiwic291cmNlc0NvbnRlbnQiOlsiJ3VzZSBzdHJpY3QnO1xudmFyIFV0aWxzID0ge1xuICAgIGNvbnRlbnQ6IHJlcXVpcmUoJy4vY29udGVudC9jb250ZW50JyksXG4gICAgbWVzc2FnZTogcmVxdWlyZSgnLi9tZXNzYWdlL21lc3NhZ2UnKSxcbiAgICBzdHJpbmc6IHJlcXVpcmUoJy4vc3RyaW5nL3N0cmluZycpLFxuICAgIHZhbGlkYXRpb246IHJlcXVpcmUoJy4vdmFsaWRhdGlvbi92YWxpZGF0aW9uJylcbn07XG5tb2R1bGUuZXhwb3J0cyA9IFV0aWxzOyJdfQ==
-},{"./content/content":"/mnt/c/swiggis.original/src/client/js/utils/content/content.js","./message/message":"/mnt/c/swiggis.original/src/client/js/utils/message/message.js","./string/string":"/mnt/c/swiggis.original/src/client/js/utils/string/string.js","./validation/validation":"/mnt/c/swiggis.original/src/client/js/utils/validation/validation.js"}],"/mnt/c/swiggis.original/src/client/js/utils/validation/filterFields.js":[function(require,module,exports){
+//# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInV0aWxzLmpzIl0sIm5hbWVzIjpbIlV0aWxzIiwiY29udGVudCIsInJlcXVpcmUiLCJtZXNzYWdlIiwic3RyaW5nIiwidmFsaWRhdGlvbiIsIm1vZHVsZSIsImV4cG9ydHMiXSwibWFwcGluZ3MiOiJBQUFBOztBQUNBLElBQUlBLFFBQVE7QUFDUkMsYUFBU0MsUUFBUSxtQkFBUixDQUREO0FBRVJDLGFBQVNELFFBQVEsbUJBQVIsQ0FGRDtBQUdSRSxZQUFRRixRQUFRLGlCQUFSLENBSEE7QUFJUkcsZ0JBQVlILFFBQVEseUJBQVI7QUFKSixDQUFaO0FBTUFJLE9BQU9DLE9BQVAsR0FBaUJQLEtBQWpCIiwiZmlsZSI6InV0aWxzLmpzIiwic291cmNlc0NvbnRlbnQiOlsiJ3VzZSBzdHJpY3QnO1xyXG52YXIgVXRpbHMgPSB7XHJcbiAgICBjb250ZW50OiByZXF1aXJlKCcuL2NvbnRlbnQvY29udGVudCcpLFxyXG4gICAgbWVzc2FnZTogcmVxdWlyZSgnLi9tZXNzYWdlL21lc3NhZ2UnKSxcclxuICAgIHN0cmluZzogcmVxdWlyZSgnLi9zdHJpbmcvc3RyaW5nJyksXHJcbiAgICB2YWxpZGF0aW9uOiByZXF1aXJlKCcuL3ZhbGlkYXRpb24vdmFsaWRhdGlvbicpXHJcbn07XHJcbm1vZHVsZS5leHBvcnRzID0gVXRpbHM7Il19
+},{"./content/content":"C:\\swiggis.austin\\src\\client\\js\\utils\\content\\content.js","./message/message":"C:\\swiggis.austin\\src\\client\\js\\utils\\message\\message.js","./string/string":"C:\\swiggis.austin\\src\\client\\js\\utils\\string\\string.js","./validation/validation":"C:\\swiggis.austin\\src\\client\\js\\utils\\validation\\validation.js"}],"C:\\swiggis.austin\\src\\client\\js\\utils\\validation\\filterFields.js":[function(require,module,exports){
 'use strict';
 
 var FilterFields = function FilterFields(formValues) {
@@ -59008,8 +58137,8 @@ var FilterFields = function FilterFields(formValues) {
     return filtered;
 };
 module.exports = FilterFields;
-//# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbImZpbHRlckZpZWxkcy5qcyJdLCJuYW1lcyI6WyJGaWx0ZXJGaWVsZHMiLCJmb3JtVmFsdWVzIiwiZmlsdGVyZWQiLCJmaWx0ZXIiLCJuYW1lIiwiaW5wdXROYW1lIiwic2VsZiIsInRyaW1Ub01heExlbmd0aCIsImZpbHRlckFscGhhTnVtZXJpYyIsImVtYWlsIiwiaW5wdXRFbWFpbCIsInJlcGxhY2UiLCJjb21wYW55IiwiaW5wdXRDb21wYW55IiwibnVtYmVyIiwiaW5wdXROdW1iZXIiLCJtZXNzYWdlIiwiaW5wdXRNZXNzYWdlIiwiZmlsdGVyQU5QdW5jdHVhdGlvbiIsInN0ciIsImxlbmd0aCIsInN1YnN0ciIsImZpZWxkIiwiaGFzT3duUHJvcGVydHkiLCJtb2R1bGUiLCJleHBvcnRzIl0sIm1hcHBpbmdzIjoiQUFBQTs7QUFDQSxJQUFJQSxlQUFlLFNBQWZBLFlBQWUsQ0FBVUMsVUFBVixFQUFzQjtBQUNyQyxRQUFJQyxXQUFXLEVBQWY7QUFDQSxRQUFJQyxTQUFTO0FBQ1RGLG9CQUFZQSxVQURIO0FBRVRHLGNBQU0sY0FBVUMsU0FBVixFQUFxQjtBQUN2QixnQkFBSUMsT0FBTyxJQUFYO0FBQ0EsbUJBQU9BLEtBQUtDLGVBQUwsQ0FBcUJELEtBQUtFLGtCQUFMLENBQXdCSCxTQUF4QixDQUFyQixFQUF5RCxFQUF6RCxDQUFQO0FBQ0gsU0FMUTtBQU1USSxlQUFPLGVBQVVDLFVBQVYsRUFBc0I7QUFDekIsbUJBQU9BLFdBQVdDLE9BQVgsQ0FBbUIsdUJBQW5CLEVBQTRDLEVBQTVDLENBQVA7QUFDSCxTQVJRO0FBU1RDLGlCQUFTLGlCQUFVQyxZQUFWLEVBQXdCO0FBQzdCLGdCQUFJUCxPQUFPLElBQVg7QUFDQSxtQkFBT0EsS0FBS0MsZUFBTCxDQUFxQkQsS0FBS0Usa0JBQUwsQ0FBd0JLLFlBQXhCLENBQXJCLEVBQTRELEVBQTVELENBQVA7QUFDSCxTQVpRO0FBYVRDLGdCQUFRLGdCQUFVQyxXQUFWLEVBQXVCO0FBQzNCQSwwQkFBY0EsWUFBWUosT0FBWixDQUFvQixLQUFwQixFQUEyQixFQUEzQixDQUFkO0FBQ0EsbUJBQU9JLFdBQVA7QUFDSCxTQWhCUTtBQWlCVEMsaUJBQVMsaUJBQVVDLFlBQVYsRUFBd0I7QUFDN0IsZ0JBQUlYLE9BQU8sSUFBWDtBQUNBLG1CQUFPQSxLQUFLQyxlQUFMLENBQXFCRCxLQUFLWSxtQkFBTCxDQUF5QkQsWUFBekIsQ0FBckIsRUFBNkQsR0FBN0QsQ0FBUDtBQUNILFNBcEJRO0FBcUJUVCw0QkFBb0IsNEJBQVVXLEdBQVYsRUFBZTtBQUMvQixtQkFBT0EsSUFBSVIsT0FBSixDQUFZLHVHQUFaLEVBQXFILEVBQXJILENBQVA7QUFDSCxTQXZCUTtBQXdCVE8sNkJBQXFCLDZCQUFVQyxHQUFWLEVBQWU7QUFDaEMsbUJBQU9BLElBQUlSLE9BQUosQ0FBWSxtSEFBWixFQUFpSSxFQUFqSSxDQUFQO0FBQ0gsU0ExQlE7QUEyQlRKLHlCQUFpQix5QkFBVVksR0FBVixFQUFlQyxNQUFmLEVBQXVCO0FBQ3BDLG1CQUFPRCxJQUFJRSxNQUFKLENBQVcsQ0FBWCxFQUFjRCxNQUFkLENBQVA7QUFDSDtBQTdCUSxLQUFiO0FBK0JBLFNBQUssSUFBSUUsS0FBVCxJQUFrQnJCLFVBQWxCLEVBQThCO0FBQzFCLFlBQUlBLFdBQVdzQixjQUFYLENBQTBCRCxLQUExQixDQUFKLEVBQXNDO0FBQ2xDcEIscUJBQVNvQixLQUFULElBQWtCbkIsT0FBT21CLEtBQVAsRUFBY3JCLFdBQVdxQixLQUFYLENBQWQsQ0FBbEI7QUFDSDtBQUNKO0FBQ0QsV0FBT3BCLFFBQVA7QUFDSCxDQXZDRDtBQXdDQXNCLE9BQU9DLE9BQVAsR0FBaUJ6QixZQUFqQiIsImZpbGUiOiJmaWx0ZXJGaWVsZHMuanMiLCJzb3VyY2VzQ29udGVudCI6WyIndXNlIHN0cmljdCc7XG52YXIgRmlsdGVyRmllbGRzID0gZnVuY3Rpb24gKGZvcm1WYWx1ZXMpIHtcbiAgICB2YXIgZmlsdGVyZWQgPSB7fTtcbiAgICB2YXIgZmlsdGVyID0ge1xuICAgICAgICBmb3JtVmFsdWVzOiBmb3JtVmFsdWVzLFxuICAgICAgICBuYW1lOiBmdW5jdGlvbiAoaW5wdXROYW1lKSB7XG4gICAgICAgICAgICB2YXIgc2VsZiA9IHRoaXM7XG4gICAgICAgICAgICByZXR1cm4gc2VsZi50cmltVG9NYXhMZW5ndGgoc2VsZi5maWx0ZXJBbHBoYU51bWVyaWMoaW5wdXROYW1lKSwgMjQpO1xuICAgICAgICB9LFxuICAgICAgICBlbWFpbDogZnVuY3Rpb24gKGlucHV0RW1haWwpIHtcbiAgICAgICAgICAgIHJldHVybiBpbnB1dEVtYWlsLnJlcGxhY2UoL1teQS1aYS16MC05X1xcQFxcLVxcLiBdL2csICcnKTtcbiAgICAgICAgfSxcbiAgICAgICAgY29tcGFueTogZnVuY3Rpb24gKGlucHV0Q29tcGFueSkge1xuICAgICAgICAgICAgdmFyIHNlbGYgPSB0aGlzO1xuICAgICAgICAgICAgcmV0dXJuIHNlbGYudHJpbVRvTWF4TGVuZ3RoKHNlbGYuZmlsdGVyQWxwaGFOdW1lcmljKGlucHV0Q29tcGFueSksIDI0KTtcbiAgICAgICAgfSxcbiAgICAgICAgbnVtYmVyOiBmdW5jdGlvbiAoaW5wdXROdW1iZXIpIHtcbiAgICAgICAgICAgIGlucHV0TnVtYmVyID0gaW5wdXROdW1iZXIucmVwbGFjZSgvXFxzL2csICcnKTtcbiAgICAgICAgICAgIHJldHVybiBpbnB1dE51bWJlcjtcbiAgICAgICAgfSxcbiAgICAgICAgbWVzc2FnZTogZnVuY3Rpb24gKGlucHV0TWVzc2FnZSkge1xuICAgICAgICAgICAgdmFyIHNlbGYgPSB0aGlzO1xuICAgICAgICAgICAgcmV0dXJuIHNlbGYudHJpbVRvTWF4TGVuZ3RoKHNlbGYuZmlsdGVyQU5QdW5jdHVhdGlvbihpbnB1dE1lc3NhZ2UpLCA0MDApO1xuICAgICAgICB9LFxuICAgICAgICBmaWx0ZXJBbHBoYU51bWVyaWM6IGZ1bmN0aW9uIChzdHIpIHtcbiAgICAgICAgICAgIHJldHVybiBzdHIucmVwbGFjZSgvW15BLVphLXowLTlfXFx1MDBFMFxcdTAwRTJcXHUwMEU3XFx1MDBFOFxcdTAwRTlcXHUwMEVBXFx1MDBFRVxcdTAwRjRcXHUwMEZCXFx1MDBDN1xcdTAwQzBcXHUwMEM5XFx1MDBDQVxcdTAwRjlcXC0gXS9nLCAnJyk7XG4gICAgICAgIH0sXG4gICAgICAgIGZpbHRlckFOUHVuY3R1YXRpb246IGZ1bmN0aW9uIChzdHIpIHtcbiAgICAgICAgICAgIHJldHVybiBzdHIucmVwbGFjZSgvW15BLVphLXowLTlfXFx1MDBFMFxcdTAwRTJcXHUwMEU3XFx1MDBFOFxcdTAwRTlcXHUwMEVBXFx1MDBFRVxcdTAwRjRcXHUwMEZCXFx1MDBDN1xcdTAwQzBcXHUwMEM5XFx1MDBDQVxcdTAwRjlcXC1cXC5cXCxcXD9cXCFcXCdcXDogXS9nLCAnJyk7XG4gICAgICAgIH0sXG4gICAgICAgIHRyaW1Ub01heExlbmd0aDogZnVuY3Rpb24gKHN0ciwgbGVuZ3RoKSB7XG4gICAgICAgICAgICByZXR1cm4gc3RyLnN1YnN0cigwLCBsZW5ndGgpO1xuICAgICAgICB9XG4gICAgfTtcbiAgICBmb3IgKHZhciBmaWVsZCBpbiBmb3JtVmFsdWVzKSB7XG4gICAgICAgIGlmIChmb3JtVmFsdWVzLmhhc093blByb3BlcnR5KGZpZWxkKSkge1xuICAgICAgICAgICAgZmlsdGVyZWRbZmllbGRdID0gZmlsdGVyW2ZpZWxkXShmb3JtVmFsdWVzW2ZpZWxkXSk7XG4gICAgICAgIH1cbiAgICB9XG4gICAgcmV0dXJuIGZpbHRlcmVkO1xufTtcbm1vZHVsZS5leHBvcnRzID0gRmlsdGVyRmllbGRzOyJdfQ==
-},{}],"/mnt/c/swiggis.original/src/client/js/utils/validation/validateFields.js":[function(require,module,exports){
+//# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbImZpbHRlckZpZWxkcy5qcyJdLCJuYW1lcyI6WyJGaWx0ZXJGaWVsZHMiLCJmb3JtVmFsdWVzIiwiZmlsdGVyZWQiLCJmaWx0ZXIiLCJuYW1lIiwiaW5wdXROYW1lIiwic2VsZiIsInRyaW1Ub01heExlbmd0aCIsImZpbHRlckFscGhhTnVtZXJpYyIsImVtYWlsIiwiaW5wdXRFbWFpbCIsInJlcGxhY2UiLCJjb21wYW55IiwiaW5wdXRDb21wYW55IiwibnVtYmVyIiwiaW5wdXROdW1iZXIiLCJtZXNzYWdlIiwiaW5wdXRNZXNzYWdlIiwiZmlsdGVyQU5QdW5jdHVhdGlvbiIsInN0ciIsImxlbmd0aCIsInN1YnN0ciIsImZpZWxkIiwiaGFzT3duUHJvcGVydHkiLCJtb2R1bGUiLCJleHBvcnRzIl0sIm1hcHBpbmdzIjoiQUFBQTs7QUFDQSxJQUFJQSxlQUFlLFNBQWZBLFlBQWUsQ0FBVUMsVUFBVixFQUFzQjtBQUNyQyxRQUFJQyxXQUFXLEVBQWY7QUFDQSxRQUFJQyxTQUFTO0FBQ1RGLG9CQUFZQSxVQURIO0FBRVRHLGNBQU0sY0FBVUMsU0FBVixFQUFxQjtBQUN2QixnQkFBSUMsT0FBTyxJQUFYO0FBQ0EsbUJBQU9BLEtBQUtDLGVBQUwsQ0FBcUJELEtBQUtFLGtCQUFMLENBQXdCSCxTQUF4QixDQUFyQixFQUF5RCxFQUF6RCxDQUFQO0FBQ0gsU0FMUTtBQU1USSxlQUFPLGVBQVVDLFVBQVYsRUFBc0I7QUFDekIsbUJBQU9BLFdBQVdDLE9BQVgsQ0FBbUIsdUJBQW5CLEVBQTRDLEVBQTVDLENBQVA7QUFDSCxTQVJRO0FBU1RDLGlCQUFTLGlCQUFVQyxZQUFWLEVBQXdCO0FBQzdCLGdCQUFJUCxPQUFPLElBQVg7QUFDQSxtQkFBT0EsS0FBS0MsZUFBTCxDQUFxQkQsS0FBS0Usa0JBQUwsQ0FBd0JLLFlBQXhCLENBQXJCLEVBQTRELEVBQTVELENBQVA7QUFDSCxTQVpRO0FBYVRDLGdCQUFRLGdCQUFVQyxXQUFWLEVBQXVCO0FBQzNCQSwwQkFBY0EsWUFBWUosT0FBWixDQUFvQixLQUFwQixFQUEyQixFQUEzQixDQUFkO0FBQ0EsbUJBQU9JLFdBQVA7QUFDSCxTQWhCUTtBQWlCVEMsaUJBQVMsaUJBQVVDLFlBQVYsRUFBd0I7QUFDN0IsZ0JBQUlYLE9BQU8sSUFBWDtBQUNBLG1CQUFPQSxLQUFLQyxlQUFMLENBQXFCRCxLQUFLWSxtQkFBTCxDQUF5QkQsWUFBekIsQ0FBckIsRUFBNkQsR0FBN0QsQ0FBUDtBQUNILFNBcEJRO0FBcUJUVCw0QkFBb0IsNEJBQVVXLEdBQVYsRUFBZTtBQUMvQixtQkFBT0EsSUFBSVIsT0FBSixDQUFZLHVHQUFaLEVBQXFILEVBQXJILENBQVA7QUFDSCxTQXZCUTtBQXdCVE8sNkJBQXFCLDZCQUFVQyxHQUFWLEVBQWU7QUFDaEMsbUJBQU9BLElBQUlSLE9BQUosQ0FBWSxtSEFBWixFQUFpSSxFQUFqSSxDQUFQO0FBQ0gsU0ExQlE7QUEyQlRKLHlCQUFpQix5QkFBVVksR0FBVixFQUFlQyxNQUFmLEVBQXVCO0FBQ3BDLG1CQUFPRCxJQUFJRSxNQUFKLENBQVcsQ0FBWCxFQUFjRCxNQUFkLENBQVA7QUFDSDtBQTdCUSxLQUFiO0FBK0JBLFNBQUssSUFBSUUsS0FBVCxJQUFrQnJCLFVBQWxCLEVBQThCO0FBQzFCLFlBQUlBLFdBQVdzQixjQUFYLENBQTBCRCxLQUExQixDQUFKLEVBQXNDO0FBQ2xDcEIscUJBQVNvQixLQUFULElBQWtCbkIsT0FBT21CLEtBQVAsRUFBY3JCLFdBQVdxQixLQUFYLENBQWQsQ0FBbEI7QUFDSDtBQUNKO0FBQ0QsV0FBT3BCLFFBQVA7QUFDSCxDQXZDRDtBQXdDQXNCLE9BQU9DLE9BQVAsR0FBaUJ6QixZQUFqQiIsImZpbGUiOiJmaWx0ZXJGaWVsZHMuanMiLCJzb3VyY2VzQ29udGVudCI6WyIndXNlIHN0cmljdCc7XHJcbnZhciBGaWx0ZXJGaWVsZHMgPSBmdW5jdGlvbiAoZm9ybVZhbHVlcykge1xyXG4gICAgdmFyIGZpbHRlcmVkID0ge307XHJcbiAgICB2YXIgZmlsdGVyID0ge1xyXG4gICAgICAgIGZvcm1WYWx1ZXM6IGZvcm1WYWx1ZXMsXHJcbiAgICAgICAgbmFtZTogZnVuY3Rpb24gKGlucHV0TmFtZSkge1xyXG4gICAgICAgICAgICB2YXIgc2VsZiA9IHRoaXM7XHJcbiAgICAgICAgICAgIHJldHVybiBzZWxmLnRyaW1Ub01heExlbmd0aChzZWxmLmZpbHRlckFscGhhTnVtZXJpYyhpbnB1dE5hbWUpLCAyNCk7XHJcbiAgICAgICAgfSxcclxuICAgICAgICBlbWFpbDogZnVuY3Rpb24gKGlucHV0RW1haWwpIHtcclxuICAgICAgICAgICAgcmV0dXJuIGlucHV0RW1haWwucmVwbGFjZSgvW15BLVphLXowLTlfXFxAXFwtXFwuIF0vZywgJycpO1xyXG4gICAgICAgIH0sXHJcbiAgICAgICAgY29tcGFueTogZnVuY3Rpb24gKGlucHV0Q29tcGFueSkge1xyXG4gICAgICAgICAgICB2YXIgc2VsZiA9IHRoaXM7XHJcbiAgICAgICAgICAgIHJldHVybiBzZWxmLnRyaW1Ub01heExlbmd0aChzZWxmLmZpbHRlckFscGhhTnVtZXJpYyhpbnB1dENvbXBhbnkpLCAyNCk7XHJcbiAgICAgICAgfSxcclxuICAgICAgICBudW1iZXI6IGZ1bmN0aW9uIChpbnB1dE51bWJlcikge1xyXG4gICAgICAgICAgICBpbnB1dE51bWJlciA9IGlucHV0TnVtYmVyLnJlcGxhY2UoL1xccy9nLCAnJyk7XHJcbiAgICAgICAgICAgIHJldHVybiBpbnB1dE51bWJlcjtcclxuICAgICAgICB9LFxyXG4gICAgICAgIG1lc3NhZ2U6IGZ1bmN0aW9uIChpbnB1dE1lc3NhZ2UpIHtcclxuICAgICAgICAgICAgdmFyIHNlbGYgPSB0aGlzO1xyXG4gICAgICAgICAgICByZXR1cm4gc2VsZi50cmltVG9NYXhMZW5ndGgoc2VsZi5maWx0ZXJBTlB1bmN0dWF0aW9uKGlucHV0TWVzc2FnZSksIDQwMCk7XHJcbiAgICAgICAgfSxcclxuICAgICAgICBmaWx0ZXJBbHBoYU51bWVyaWM6IGZ1bmN0aW9uIChzdHIpIHtcclxuICAgICAgICAgICAgcmV0dXJuIHN0ci5yZXBsYWNlKC9bXkEtWmEtejAtOV9cXHUwMEUwXFx1MDBFMlxcdTAwRTdcXHUwMEU4XFx1MDBFOVxcdTAwRUFcXHUwMEVFXFx1MDBGNFxcdTAwRkJcXHUwMEM3XFx1MDBDMFxcdTAwQzlcXHUwMENBXFx1MDBGOVxcLSBdL2csICcnKTtcclxuICAgICAgICB9LFxyXG4gICAgICAgIGZpbHRlckFOUHVuY3R1YXRpb246IGZ1bmN0aW9uIChzdHIpIHtcclxuICAgICAgICAgICAgcmV0dXJuIHN0ci5yZXBsYWNlKC9bXkEtWmEtejAtOV9cXHUwMEUwXFx1MDBFMlxcdTAwRTdcXHUwMEU4XFx1MDBFOVxcdTAwRUFcXHUwMEVFXFx1MDBGNFxcdTAwRkJcXHUwMEM3XFx1MDBDMFxcdTAwQzlcXHUwMENBXFx1MDBGOVxcLVxcLlxcLFxcP1xcIVxcJ1xcOiBdL2csICcnKTtcclxuICAgICAgICB9LFxyXG4gICAgICAgIHRyaW1Ub01heExlbmd0aDogZnVuY3Rpb24gKHN0ciwgbGVuZ3RoKSB7XHJcbiAgICAgICAgICAgIHJldHVybiBzdHIuc3Vic3RyKDAsIGxlbmd0aCk7XHJcbiAgICAgICAgfVxyXG4gICAgfTtcclxuICAgIGZvciAodmFyIGZpZWxkIGluIGZvcm1WYWx1ZXMpIHtcclxuICAgICAgICBpZiAoZm9ybVZhbHVlcy5oYXNPd25Qcm9wZXJ0eShmaWVsZCkpIHtcclxuICAgICAgICAgICAgZmlsdGVyZWRbZmllbGRdID0gZmlsdGVyW2ZpZWxkXShmb3JtVmFsdWVzW2ZpZWxkXSk7XHJcbiAgICAgICAgfVxyXG4gICAgfVxyXG4gICAgcmV0dXJuIGZpbHRlcmVkO1xyXG59O1xyXG5tb2R1bGUuZXhwb3J0cyA9IEZpbHRlckZpZWxkczsiXX0=
+},{}],"C:\\swiggis.austin\\src\\client\\js\\utils\\validation\\validateFields.js":[function(require,module,exports){
 'use strict';
 
 var ValidateFields = function ValidateFields(formValues) {
@@ -59054,8 +58183,8 @@ var ValidateFields = function ValidateFields(formValues) {
     return isValid;
 };
 module.exports = ValidateFields;
-//# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInZhbGlkYXRlRmllbGRzLmpzIl0sIm5hbWVzIjpbIlZhbGlkYXRlRmllbGRzIiwiZm9ybVZhbHVlcyIsImlzVmFsaWQiLCJ2YWxpZGF0b3IiLCJuYW1lIiwiaW5wdXROYW1lIiwic2VsZiIsImNoZWNrTWluTGVuZ3RoIiwiZW1haWwiLCJpbnB1dEVtYWlsIiwiZmlsdGVyIiwidGVzdCIsImNvbXBhbnkiLCJpbnB1dENvbXBhbnkiLCJudW1iZXIiLCJpbnB1dE51bWJlciIsIm1lc3NhZ2UiLCJpbnB1dE1lc3NhZ2UiLCJjaGVja0FscGhhTnVtZXJpYyIsInN0ciIsImxlbmd0aCIsImZpZWxkIiwiaGFzT3duUHJvcGVydHkiLCJ2YWxpZEZpZWxkIiwibW9kdWxlIiwiZXhwb3J0cyJdLCJtYXBwaW5ncyI6IkFBQUE7O0FBQ0EsSUFBSUEsaUJBQWlCLFNBQWpCQSxjQUFpQixDQUFVQyxVQUFWLEVBQXNCO0FBQ3ZDLFFBQUlDLFVBQVUsRUFBZDtBQUNBQSxZQUFRLEtBQVIsSUFBaUIsSUFBakI7QUFDQSxRQUFJQyxZQUFZO0FBQ1pGLG9CQUFZQSxVQURBO0FBRVpHLGNBQU0sY0FBVUMsU0FBVixFQUFxQjtBQUN2QixnQkFBSUMsT0FBTyxJQUFYO0FBQ0EsbUJBQVNBLEtBQUtDLGNBQUwsQ0FBb0JGLFNBQXBCLEVBQStCLENBQS9CLENBQVQ7QUFDSCxTQUxXO0FBTVpHLGVBQU8sZUFBVUMsVUFBVixFQUFzQjtBQUN6QixnQkFBSUMsU0FBUyxpRUFBYjtBQUNBLG1CQUFPQSxPQUFPQyxJQUFQLENBQVlGLFVBQVosQ0FBUDtBQUNILFNBVFc7QUFVWkcsaUJBQVMsaUJBQVVDLFlBQVYsRUFBd0I7QUFDN0IsbUJBQU8sSUFBUDtBQUNILFNBWlc7QUFhWkMsZ0JBQVEsZ0JBQVVDLFdBQVYsRUFBdUI7QUFDM0IsbUJBQU8sSUFBUDtBQUNILFNBZlc7QUFnQlpDLGlCQUFTLGlCQUFVQyxZQUFWLEVBQXdCO0FBQzdCLGdCQUFJWCxPQUFPLElBQVg7QUFDQSxtQkFBU0EsS0FBS0MsY0FBTCxDQUFvQlUsWUFBcEIsRUFBa0MsQ0FBbEMsQ0FBVDtBQUNILFNBbkJXO0FBb0JaQywyQkFBbUIsMkJBQVVDLEdBQVYsRUFBZTtBQUM5QixtQkFBTyxJQUFQO0FBQ0gsU0F0Qlc7QUF1QlpaLHdCQUFnQix3QkFBVVksR0FBVixFQUFlQyxNQUFmLEVBQXVCO0FBQ25DLG1CQUFRRCxJQUFJQyxNQUFKLElBQWNBLE1BQXRCO0FBQ0g7QUF6QlcsS0FBaEI7QUEyQkEsU0FBSyxJQUFJQyxLQUFULElBQWtCcEIsVUFBbEIsRUFBOEI7QUFDMUIsWUFBSUEsV0FBV3FCLGNBQVgsQ0FBMEJELEtBQTFCLENBQUosRUFBc0M7QUFDbEMsZ0JBQUlFLGFBQWFwQixVQUFVa0IsS0FBVixFQUFpQnBCLFdBQVdvQixLQUFYLENBQWpCLENBQWpCO0FBQ0FuQixvQkFBUW1CLEtBQVIsSUFBa0JFLFVBQUQsR0FBZSxTQUFmLEdBQTJCLE9BQTVDO0FBQ0EsZ0JBQUksQ0FBQ0EsVUFBTCxFQUFpQjtBQUNickIsd0JBQVEsS0FBUixJQUFpQixLQUFqQjtBQUNIO0FBQ0o7QUFDSjtBQUNELFdBQU9BLE9BQVA7QUFDSCxDQXhDRDtBQXlDQXNCLE9BQU9DLE9BQVAsR0FBaUJ6QixjQUFqQiIsImZpbGUiOiJ2YWxpZGF0ZUZpZWxkcy5qcyIsInNvdXJjZXNDb250ZW50IjpbIid1c2Ugc3RyaWN0JztcbnZhciBWYWxpZGF0ZUZpZWxkcyA9IGZ1bmN0aW9uIChmb3JtVmFsdWVzKSB7XG4gICAgdmFyIGlzVmFsaWQgPSB7fTtcbiAgICBpc1ZhbGlkWydhbGwnXSA9IHRydWU7XG4gICAgdmFyIHZhbGlkYXRvciA9IHtcbiAgICAgICAgZm9ybVZhbHVlczogZm9ybVZhbHVlcyxcbiAgICAgICAgbmFtZTogZnVuY3Rpb24gKGlucHV0TmFtZSkge1xuICAgICAgICAgICAgdmFyIHNlbGYgPSB0aGlzO1xuICAgICAgICAgICAgcmV0dXJuICggc2VsZi5jaGVja01pbkxlbmd0aChpbnB1dE5hbWUsIDQpKTtcbiAgICAgICAgfSxcbiAgICAgICAgZW1haWw6IGZ1bmN0aW9uIChpbnB1dEVtYWlsKSB7XG4gICAgICAgICAgICB2YXIgZmlsdGVyID0gL14oW2EtekEtWjAtOV9cXC5cXC1dKStcXEAoKFthLXpBLVowLTlcXC1dKStcXC4pKyhbYS16QS1aMC05XXsyLDR9KSskLztcbiAgICAgICAgICAgIHJldHVybiBmaWx0ZXIudGVzdChpbnB1dEVtYWlsKTtcbiAgICAgICAgfSxcbiAgICAgICAgY29tcGFueTogZnVuY3Rpb24gKGlucHV0Q29tcGFueSkge1xuICAgICAgICAgICAgcmV0dXJuIHRydWU7XG4gICAgICAgIH0sXG4gICAgICAgIG51bWJlcjogZnVuY3Rpb24gKGlucHV0TnVtYmVyKSB7XG4gICAgICAgICAgICByZXR1cm4gdHJ1ZTtcbiAgICAgICAgfSxcbiAgICAgICAgbWVzc2FnZTogZnVuY3Rpb24gKGlucHV0TWVzc2FnZSkge1xuICAgICAgICAgICAgdmFyIHNlbGYgPSB0aGlzO1xuICAgICAgICAgICAgcmV0dXJuICggc2VsZi5jaGVja01pbkxlbmd0aChpbnB1dE1lc3NhZ2UsIDUpKTtcbiAgICAgICAgfSxcbiAgICAgICAgY2hlY2tBbHBoYU51bWVyaWM6IGZ1bmN0aW9uIChzdHIpIHtcbiAgICAgICAgICAgIHJldHVybiB0cnVlO1xuICAgICAgICB9LFxuICAgICAgICBjaGVja01pbkxlbmd0aDogZnVuY3Rpb24gKHN0ciwgbGVuZ3RoKSB7XG4gICAgICAgICAgICByZXR1cm4gKHN0ci5sZW5ndGggPj0gbGVuZ3RoKTtcbiAgICAgICAgfVxuICAgIH07XG4gICAgZm9yICh2YXIgZmllbGQgaW4gZm9ybVZhbHVlcykge1xuICAgICAgICBpZiAoZm9ybVZhbHVlcy5oYXNPd25Qcm9wZXJ0eShmaWVsZCkpIHtcbiAgICAgICAgICAgIHZhciB2YWxpZEZpZWxkID0gdmFsaWRhdG9yW2ZpZWxkXShmb3JtVmFsdWVzW2ZpZWxkXSk7XG4gICAgICAgICAgICBpc1ZhbGlkW2ZpZWxkXSA9ICh2YWxpZEZpZWxkKSA/ICdzdWNjZXNzJyA6ICdlcnJvcic7XG4gICAgICAgICAgICBpZiAoIXZhbGlkRmllbGQpIHtcbiAgICAgICAgICAgICAgICBpc1ZhbGlkWydhbGwnXSA9IGZhbHNlO1xuICAgICAgICAgICAgfVxuICAgICAgICB9XG4gICAgfVxuICAgIHJldHVybiBpc1ZhbGlkO1xufTtcbm1vZHVsZS5leHBvcnRzID0gVmFsaWRhdGVGaWVsZHM7Il19
-},{}],"/mnt/c/swiggis.original/src/client/js/utils/validation/validation.js":[function(require,module,exports){
+//# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInZhbGlkYXRlRmllbGRzLmpzIl0sIm5hbWVzIjpbIlZhbGlkYXRlRmllbGRzIiwiZm9ybVZhbHVlcyIsImlzVmFsaWQiLCJ2YWxpZGF0b3IiLCJuYW1lIiwiaW5wdXROYW1lIiwic2VsZiIsImNoZWNrTWluTGVuZ3RoIiwiZW1haWwiLCJpbnB1dEVtYWlsIiwiZmlsdGVyIiwidGVzdCIsImNvbXBhbnkiLCJpbnB1dENvbXBhbnkiLCJudW1iZXIiLCJpbnB1dE51bWJlciIsIm1lc3NhZ2UiLCJpbnB1dE1lc3NhZ2UiLCJjaGVja0FscGhhTnVtZXJpYyIsInN0ciIsImxlbmd0aCIsImZpZWxkIiwiaGFzT3duUHJvcGVydHkiLCJ2YWxpZEZpZWxkIiwibW9kdWxlIiwiZXhwb3J0cyJdLCJtYXBwaW5ncyI6IkFBQUE7O0FBQ0EsSUFBSUEsaUJBQWlCLFNBQWpCQSxjQUFpQixDQUFVQyxVQUFWLEVBQXNCO0FBQ3ZDLFFBQUlDLFVBQVUsRUFBZDtBQUNBQSxZQUFRLEtBQVIsSUFBaUIsSUFBakI7QUFDQSxRQUFJQyxZQUFZO0FBQ1pGLG9CQUFZQSxVQURBO0FBRVpHLGNBQU0sY0FBVUMsU0FBVixFQUFxQjtBQUN2QixnQkFBSUMsT0FBTyxJQUFYO0FBQ0EsbUJBQVNBLEtBQUtDLGNBQUwsQ0FBb0JGLFNBQXBCLEVBQStCLENBQS9CLENBQVQ7QUFDSCxTQUxXO0FBTVpHLGVBQU8sZUFBVUMsVUFBVixFQUFzQjtBQUN6QixnQkFBSUMsU0FBUyxpRUFBYjtBQUNBLG1CQUFPQSxPQUFPQyxJQUFQLENBQVlGLFVBQVosQ0FBUDtBQUNILFNBVFc7QUFVWkcsaUJBQVMsaUJBQVVDLFlBQVYsRUFBd0I7QUFDN0IsbUJBQU8sSUFBUDtBQUNILFNBWlc7QUFhWkMsZ0JBQVEsZ0JBQVVDLFdBQVYsRUFBdUI7QUFDM0IsbUJBQU8sSUFBUDtBQUNILFNBZlc7QUFnQlpDLGlCQUFTLGlCQUFVQyxZQUFWLEVBQXdCO0FBQzdCLGdCQUFJWCxPQUFPLElBQVg7QUFDQSxtQkFBU0EsS0FBS0MsY0FBTCxDQUFvQlUsWUFBcEIsRUFBa0MsQ0FBbEMsQ0FBVDtBQUNILFNBbkJXO0FBb0JaQywyQkFBbUIsMkJBQVVDLEdBQVYsRUFBZTtBQUM5QixtQkFBTyxJQUFQO0FBQ0gsU0F0Qlc7QUF1QlpaLHdCQUFnQix3QkFBVVksR0FBVixFQUFlQyxNQUFmLEVBQXVCO0FBQ25DLG1CQUFRRCxJQUFJQyxNQUFKLElBQWNBLE1BQXRCO0FBQ0g7QUF6QlcsS0FBaEI7QUEyQkEsU0FBSyxJQUFJQyxLQUFULElBQWtCcEIsVUFBbEIsRUFBOEI7QUFDMUIsWUFBSUEsV0FBV3FCLGNBQVgsQ0FBMEJELEtBQTFCLENBQUosRUFBc0M7QUFDbEMsZ0JBQUlFLGFBQWFwQixVQUFVa0IsS0FBVixFQUFpQnBCLFdBQVdvQixLQUFYLENBQWpCLENBQWpCO0FBQ0FuQixvQkFBUW1CLEtBQVIsSUFBa0JFLFVBQUQsR0FBZSxTQUFmLEdBQTJCLE9BQTVDO0FBQ0EsZ0JBQUksQ0FBQ0EsVUFBTCxFQUFpQjtBQUNickIsd0JBQVEsS0FBUixJQUFpQixLQUFqQjtBQUNIO0FBQ0o7QUFDSjtBQUNELFdBQU9BLE9BQVA7QUFDSCxDQXhDRDtBQXlDQXNCLE9BQU9DLE9BQVAsR0FBaUJ6QixjQUFqQiIsImZpbGUiOiJ2YWxpZGF0ZUZpZWxkcy5qcyIsInNvdXJjZXNDb250ZW50IjpbIid1c2Ugc3RyaWN0JztcclxudmFyIFZhbGlkYXRlRmllbGRzID0gZnVuY3Rpb24gKGZvcm1WYWx1ZXMpIHtcclxuICAgIHZhciBpc1ZhbGlkID0ge307XHJcbiAgICBpc1ZhbGlkWydhbGwnXSA9IHRydWU7XHJcbiAgICB2YXIgdmFsaWRhdG9yID0ge1xyXG4gICAgICAgIGZvcm1WYWx1ZXM6IGZvcm1WYWx1ZXMsXHJcbiAgICAgICAgbmFtZTogZnVuY3Rpb24gKGlucHV0TmFtZSkge1xyXG4gICAgICAgICAgICB2YXIgc2VsZiA9IHRoaXM7XHJcbiAgICAgICAgICAgIHJldHVybiAoIHNlbGYuY2hlY2tNaW5MZW5ndGgoaW5wdXROYW1lLCA0KSk7XHJcbiAgICAgICAgfSxcclxuICAgICAgICBlbWFpbDogZnVuY3Rpb24gKGlucHV0RW1haWwpIHtcclxuICAgICAgICAgICAgdmFyIGZpbHRlciA9IC9eKFthLXpBLVowLTlfXFwuXFwtXSkrXFxAKChbYS16QS1aMC05XFwtXSkrXFwuKSsoW2EtekEtWjAtOV17Miw0fSkrJC87XHJcbiAgICAgICAgICAgIHJldHVybiBmaWx0ZXIudGVzdChpbnB1dEVtYWlsKTtcclxuICAgICAgICB9LFxyXG4gICAgICAgIGNvbXBhbnk6IGZ1bmN0aW9uIChpbnB1dENvbXBhbnkpIHtcclxuICAgICAgICAgICAgcmV0dXJuIHRydWU7XHJcbiAgICAgICAgfSxcclxuICAgICAgICBudW1iZXI6IGZ1bmN0aW9uIChpbnB1dE51bWJlcikge1xyXG4gICAgICAgICAgICByZXR1cm4gdHJ1ZTtcclxuICAgICAgICB9LFxyXG4gICAgICAgIG1lc3NhZ2U6IGZ1bmN0aW9uIChpbnB1dE1lc3NhZ2UpIHtcclxuICAgICAgICAgICAgdmFyIHNlbGYgPSB0aGlzO1xyXG4gICAgICAgICAgICByZXR1cm4gKCBzZWxmLmNoZWNrTWluTGVuZ3RoKGlucHV0TWVzc2FnZSwgNSkpO1xyXG4gICAgICAgIH0sXHJcbiAgICAgICAgY2hlY2tBbHBoYU51bWVyaWM6IGZ1bmN0aW9uIChzdHIpIHtcclxuICAgICAgICAgICAgcmV0dXJuIHRydWU7XHJcbiAgICAgICAgfSxcclxuICAgICAgICBjaGVja01pbkxlbmd0aDogZnVuY3Rpb24gKHN0ciwgbGVuZ3RoKSB7XHJcbiAgICAgICAgICAgIHJldHVybiAoc3RyLmxlbmd0aCA+PSBsZW5ndGgpO1xyXG4gICAgICAgIH1cclxuICAgIH07XHJcbiAgICBmb3IgKHZhciBmaWVsZCBpbiBmb3JtVmFsdWVzKSB7XHJcbiAgICAgICAgaWYgKGZvcm1WYWx1ZXMuaGFzT3duUHJvcGVydHkoZmllbGQpKSB7XHJcbiAgICAgICAgICAgIHZhciB2YWxpZEZpZWxkID0gdmFsaWRhdG9yW2ZpZWxkXShmb3JtVmFsdWVzW2ZpZWxkXSk7XHJcbiAgICAgICAgICAgIGlzVmFsaWRbZmllbGRdID0gKHZhbGlkRmllbGQpID8gJ3N1Y2Nlc3MnIDogJ2Vycm9yJztcclxuICAgICAgICAgICAgaWYgKCF2YWxpZEZpZWxkKSB7XHJcbiAgICAgICAgICAgICAgICBpc1ZhbGlkWydhbGwnXSA9IGZhbHNlO1xyXG4gICAgICAgICAgICB9XHJcbiAgICAgICAgfVxyXG4gICAgfVxyXG4gICAgcmV0dXJuIGlzVmFsaWQ7XHJcbn07XHJcbm1vZHVsZS5leHBvcnRzID0gVmFsaWRhdGVGaWVsZHM7Il19
+},{}],"C:\\swiggis.austin\\src\\client\\js\\utils\\validation\\validation.js":[function(require,module,exports){
 'use strict';
 
 var Validation = {
@@ -59063,5 +58192,5 @@ var Validation = {
     validateFields: require('./validateFields')
 };
 module.exports = Validation;
-//# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInZhbGlkYXRpb24uanMiXSwibmFtZXMiOlsiVmFsaWRhdGlvbiIsImZpbHRlckZpZWxkcyIsInJlcXVpcmUiLCJ2YWxpZGF0ZUZpZWxkcyIsIm1vZHVsZSIsImV4cG9ydHMiXSwibWFwcGluZ3MiOiJBQUFBOztBQUNBLElBQUlBLGFBQWE7QUFDYkMsa0JBQWNDLFFBQVEsZ0JBQVIsQ0FERDtBQUViQyxvQkFBZ0JELFFBQVEsa0JBQVI7QUFGSCxDQUFqQjtBQUlBRSxPQUFPQyxPQUFQLEdBQWlCTCxVQUFqQiIsImZpbGUiOiJ2YWxpZGF0aW9uLmpzIiwic291cmNlc0NvbnRlbnQiOlsiJ3VzZSBzdHJpY3QnO1xudmFyIFZhbGlkYXRpb24gPSB7XG4gICAgZmlsdGVyRmllbGRzOiByZXF1aXJlKCcuL2ZpbHRlckZpZWxkcycpLFxuICAgIHZhbGlkYXRlRmllbGRzOiByZXF1aXJlKCcuL3ZhbGlkYXRlRmllbGRzJylcbn07XG5tb2R1bGUuZXhwb3J0cyA9IFZhbGlkYXRpb247Il19
-},{"./filterFields":"/mnt/c/swiggis.original/src/client/js/utils/validation/filterFields.js","./validateFields":"/mnt/c/swiggis.original/src/client/js/utils/validation/validateFields.js"}]},{},["./src/client/client.js"]);
+//# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInZhbGlkYXRpb24uanMiXSwibmFtZXMiOlsiVmFsaWRhdGlvbiIsImZpbHRlckZpZWxkcyIsInJlcXVpcmUiLCJ2YWxpZGF0ZUZpZWxkcyIsIm1vZHVsZSIsImV4cG9ydHMiXSwibWFwcGluZ3MiOiJBQUFBOztBQUNBLElBQUlBLGFBQWE7QUFDYkMsa0JBQWNDLFFBQVEsZ0JBQVIsQ0FERDtBQUViQyxvQkFBZ0JELFFBQVEsa0JBQVI7QUFGSCxDQUFqQjtBQUlBRSxPQUFPQyxPQUFQLEdBQWlCTCxVQUFqQiIsImZpbGUiOiJ2YWxpZGF0aW9uLmpzIiwic291cmNlc0NvbnRlbnQiOlsiJ3VzZSBzdHJpY3QnO1xyXG52YXIgVmFsaWRhdGlvbiA9IHtcclxuICAgIGZpbHRlckZpZWxkczogcmVxdWlyZSgnLi9maWx0ZXJGaWVsZHMnKSxcclxuICAgIHZhbGlkYXRlRmllbGRzOiByZXF1aXJlKCcuL3ZhbGlkYXRlRmllbGRzJylcclxufTtcclxubW9kdWxlLmV4cG9ydHMgPSBWYWxpZGF0aW9uOyJdfQ==
+},{"./filterFields":"C:\\swiggis.austin\\src\\client\\js\\utils\\validation\\filterFields.js","./validateFields":"C:\\swiggis.austin\\src\\client\\js\\utils\\validation\\validateFields.js"}]},{},["./src/client/client.js"]);

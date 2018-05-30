@@ -12,7 +12,7 @@ var OtherArticle = createReactClass({
         var articleUrl = '#/article/' + string.slug(self.props.article.title);
         return (
 
-            <div key={this.props.key} className="col-sm-6 col-md-2 no-gutter read-another-container image-read-another" style={otherArticleStyle}>
+            <div key={this.props.id} className="col-sm-6 col-md-2 no-gutter read-another-container image-read-another" style={otherArticleStyle}>
                 <div className="overlay"></div>
 
                 <h3 className="read-another">

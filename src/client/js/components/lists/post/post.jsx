@@ -9,7 +9,7 @@ var Post = createReactClass({
         var articleUrl = '#/article/' + string.slug(self.props.article.title);
         var categoryUrl = '#/category/' + self.props.article.category.id + '/' + string.slug(self.props.article.category.title);
         return (
-            <div key={this.props.key} className="post-preview col-xs-10  no-gutter">
+            <div key={this.props.id} className="post-preview col-xs-10  no-gutter">
                 <div>
                     <h2>
                         <a

@@ -2,9 +2,9 @@
 var React = require('react');
 var ReactDOM = require('react-dom');
 var Router = require('react-router').Router;
-var useRouterHistory = require('react-router').useRouterHistory;
-var createHashHistory = require('./../../node_modules/history/lib/createHashHistory.js');
-var History = useRouterHistory(createHashHistory({queryKey: false}))
+var useRouterHistory = require('react-router/lib/useRouterHistory');
+var createHashHistory = require('react-router/node_modules/history/lib/createHashHistory');
+var History = useRouterHistory(createHashHistory)({queryKey: false});
 
 var $ = window.$;
 var config = window.configReactDriveCms;

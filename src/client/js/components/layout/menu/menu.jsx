@@ -28,8 +28,9 @@ var Menu = createReactClass({
                 <hr />
                 <ul className="menu-category-list">
                     {self.props.categories.map(function (category, i) {
-                        return < MenuCategory
+                        return <MenuCategory
                             key={i}
+                            id={i}
                             category={category}
                             handleRouting={self.props.handleRouting}
                             setMainProperty={self.props.setMainProperty}

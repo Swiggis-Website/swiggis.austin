@@ -12,6 +12,7 @@ var ReadOther = createReactClass({
                     return <OtherArticle
                         article={article}
                         key={i}
+                        id={i}
                         handleRouting={self.props.handleRouting}
                     />;
                 })}

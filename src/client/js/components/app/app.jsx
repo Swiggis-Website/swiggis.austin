@@ -42,7 +42,7 @@ var App = function (drive, views, route) {
             });
         },
         contextTypes: {
-            router: PropTypes.func
+            router: PropTypes.object.isRequired
         },
         loadElement: function (elementType, elementId, callback) {
             var self = this;
@@ -92,7 +92,7 @@ var App = function (drive, views, route) {
         },
         goToRoute: function (route) {
             var self = this;
-            self.props.router.push(route);
+            self.context.router.push(route);
         },
         render: function () {
             var self = this;
@@ -112,18 +112,7 @@ var App = function (drive, views, route) {
                 })
             });
             return (
-                <div
-                    store={this.state.store}
-                    currentPage={this.state.currentPage}
-                    path={path}
-                    activeHomePanel={this.state.activeHomePanel}
-                    setMainProperty={this.setMainProperty}
-                    menuVisible={this.state.menuVisible}
-                    handleRouting={this.handleRouting}
-                    activeCategory={this.state.activeCategory}
-                    config={this.state.config}
-                    modal={this.state.modal} 
-                >
+                <div>
                 {children}
                 </div>
             )
