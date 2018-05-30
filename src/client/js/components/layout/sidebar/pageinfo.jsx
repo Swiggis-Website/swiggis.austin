@@ -1,7 +1,8 @@
 'use strict';
 var React = require('react');
+var createReactClass = require('create-react-class');
 var InfoLinks = require('./infoLinks.jsx');
-var PageInfo = React.createClass({
+var PageInfo = createReactClass({
     render: function () {
 
         return (

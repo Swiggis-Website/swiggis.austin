@@ -2,7 +2,9 @@
 var React = require('react');
 var ReactDOM = require('react-dom');
 var Router = require('react-router').Router;
-var History = require('./../../node_modules/history/lib/createHashHistory.js');
+var useRouterHistory = require('react-router').useRouterHistory;
+var createHashHistory = require('./../../node_modules/history/lib/createHashHistory.js');
+var History = useRouterHistory(createHashHistory({queryKey: false}))
 
 var $ = window.$;
 var config = window.configReactDriveCms;
@@ -12,7 +14,7 @@ var config = window.configReactDriveCms;
         var routes = require('./js/components/app/routes.jsx')(App);
         ReactDOM.render(React.createElement(
             Router,
-            {history: History({ queryKey: false })},
+            {history: History},
             routes
         ), document.getElementById('app-mount'));
     });

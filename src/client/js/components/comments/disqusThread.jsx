@@ -1,8 +1,10 @@
 'use strict';
 var React = require('react');
+var createReactClass = require('create-react-class');
+
 var config = window.configReactDriveCms;
 
-var DisqusThread = React.createClass({
+var DisqusThread = createReactClass({
 
     addDisqusScript: function () {
         var self = this;

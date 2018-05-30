@@ -1,8 +1,9 @@
 'use strict';
 var React = require('react');
+var createReactClass = require('create-react-class');
 var string = require('./../../../utils/utils').string;
 
-var Post = React.createClass({
+var Post = createReactClass({
     render: function () {
         var self = this;
         var articleUrl = '#/article/' + string.slug(self.props.article.title);

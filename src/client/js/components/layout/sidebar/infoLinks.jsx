@@ -1,7 +1,8 @@
 'use strict';
 var React = require('react');
+var createReactClass = require('create-react-class');
 
-var InfoLinks = React.createClass({
+var InfoLinks = createReactClass({
     render: function () {
         if (this.props.path !== 'home' && this.props.path !== 'about') {
             return (<div></div>)

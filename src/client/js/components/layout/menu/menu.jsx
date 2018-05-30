@@ -1,7 +1,8 @@
 'use strict';
 var React = require('react');
+var createReactClass = require('create-react-class');
 var MenuCategory = require('./menuCategory.jsx');
-var Menu = React.createClass({
+var Menu = createReactClass({
     render: function () {
         var self = this;
         return (

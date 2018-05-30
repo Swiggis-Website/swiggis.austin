@@ -1,12 +1,13 @@
 'use strict';
 var React = require('react');
+var createReactClass = require('create-react-class');
 var Input = require('react-bootstrap').Input;
 
 var Page = require('./../layout/page/page.jsx');
 var validation = require('./../../utils/utils').validation;
 var message = require('./../../utils/utils').message;
 var noop = function () {};
-var Contact = React.createClass({
+var Contact = createReactClass({
     getInitialState: function(){
         return {
             formValues: {

@@ -1,9 +1,10 @@
 'use strict';
 var React = require('react');
+var createReactClass = require('create-react-class');
 var noop = function () {
 };
 
-var MenuBurger = React.createClass({
+var MenuBurger = createReactClass({
     render: function () {
         return (
             <a

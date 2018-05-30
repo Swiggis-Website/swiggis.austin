@@ -1,10 +1,11 @@
 'use strict';
 var React = require('react');
+var createReactClass = require('create-react-class');
 var Sidebar = require('./../sidebar/sidebar.jsx');
 var Menu = require('./../menu/menu.jsx');
 var MenuBurger = require('./../menu/menuBurger.jsx');
 var EventsModal = require('./../modal/eventsModal.jsx');
-var Page = React.createClass({
+var Page = createReactClass({
     render: function () {
         return (
             <div>

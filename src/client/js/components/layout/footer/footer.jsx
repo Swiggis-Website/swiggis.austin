@@ -1,8 +1,9 @@
 'use strict';
 var React = require('react');
+var createReactClass = require('create-react-class');
 var ReadOther = require('./readOther.jsx');
 var Credits = require('./credits.jsx');
-var Footer = React.createClass({
+var Footer = createReactClass({
     render: function () {
         return (
             <footer className="single">

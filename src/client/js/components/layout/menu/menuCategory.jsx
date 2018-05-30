@@ -1,9 +1,10 @@
 'use strict';
 var React = require('react');
+var createReactClass = require('create-react-class');
 var noop = function () {
 };
 var MenuCategoryArticles = require('./menuCategoryArticles.jsx');
-var MenuCategory = React.createClass({
+var MenuCategory = createReactClass({
     render: function () {
         var self = this;
         var isActive = (self.props.activeCategory.activeId === self.props.category.id);

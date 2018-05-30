@@ -1,7 +1,8 @@
 'use strict';
 var React = require('react');
+var createReactClass = require('create-react-class');
 var OtherArticle = require('./otherArticle.jsx');
-var ReadOther = React.createClass({
+var ReadOther = createReactClass({
     render: function () {
         var self = this;
         return (

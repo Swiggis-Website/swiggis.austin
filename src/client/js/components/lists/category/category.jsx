@@ -1,8 +1,9 @@
 'use strict';
 var React = require('react');
+var createReactClass = require('create-react-class');
 var string = require('./../../../utils/utils').string;
 
-var Category = React.createClass({
+var Category = createReactClass({
 
     render: function () {
         var self = this;

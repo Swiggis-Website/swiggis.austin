@@ -1,9 +1,10 @@
 'use strict';
 var React = require('react');
+var createReactClass = require('create-react-class');
 var Row = require('react-bootstrap').Row;
-
 var Page = require('./../layout/page/page.jsx');
-var About = React.createClass({
+
+var About = createReactClass({
     render: function () {
 
         var aboutInfo = {

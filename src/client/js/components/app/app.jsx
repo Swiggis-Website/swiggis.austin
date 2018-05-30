@@ -1,10 +1,13 @@
 'use strict';
 var React = require('react');
+var PropTypes = require('prop-types');
+var createReactClass = require('create-react-class');
+
 var noop = function () {
 };
 
 var App = function (drive, views, route) {
-    return React.createClass({
+    return createReactClass({
         getInitialState: function () {
             var self = this;
             return {
@@ -39,7 +42,7 @@ var App = function (drive, views, route) {
             });
         },
         contextTypes: {
-            router: React.PropTypes.func
+            router: PropTypes.func
         },
         loadElement: function (elementType, elementId, callback) {
             var self = this;
@@ -89,7 +92,7 @@ var App = function (drive, views, route) {
         },
         goToRoute: function (route) {
             var self = this;
-            self.props.history.push(route);
+            self.props.router.push(route);
         },
         render: function () {
             var self = this;
