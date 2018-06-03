@@ -1,7 +1,7 @@
 'use strict';
 var React = require('react');
 var createReactClass = require('create-react-class');
-var Input = require('react-bootstrap').Input;
+var FormControl = require('react-bootstrap').FormControl;
 
 var Page = require('./../layout/page/page.jsx');
 var validation = require('./../../utils/utils').validation;
@@ -82,7 +82,7 @@ var Contact = createReactClass({
                     {formFields.map(function(field, i) {
                         return <div className="form-group" key={i}>
                             <label htmlFor={field.name}>{field.label}</label>
-                            <Input
+                            <FormControl
                                 type={field.type}
                                 className="form-control"
                                 name={field.name}

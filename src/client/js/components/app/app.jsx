@@ -6,7 +6,7 @@ var createReactClass = require('create-react-class');
 var noop = function () {
 };
 
-var App = function (drive, views, route) {
+var App = function (drive, views, zips, route) {
     return createReactClass({
         getInitialState: function () {
             var self = this;
@@ -15,7 +15,8 @@ var App = function (drive, views, route) {
                     article: [],
                     category: views.categories,
                     page: [],
-                    view: views
+                    view: views,
+                    zip: zips
                 },
                 currentRoute: views.routeParams.elementPath,
                 activeHomePanel: 'articles',

@@ -37,7 +37,7 @@ var Drive = function (config, $) {
         getSpreadsheet: function (fileId, callback) {
             callback = callback || noop;
             var self = this;
-            var sheetUrl = "https://spreadsheets.google.com/feeds/list/" + fileId + "/od6/public/values?alt=json";
+            var sheetUrl = "https://spreadsheets.google.com/feeds/list/" + fileId + "/default/public/values?alt=json";
             self.callJsonP(sheetUrl, callback);
         },
         getDocument: function (fileId, callback) {
@@ -57,6 +57,17 @@ var Drive = function (config, $) {
                 );
             });
         },
+        getZips: function (callback) {
+            var self = this;
+            callback = callback || noop;
+            self.getSpreadsheet(config.MemberSurveyId, function (Json) {
+                callback(
+                    content.extractZips(
+                        content.getZips(Json)
+                    )
+                );
+            });
+        },
         init: function (callback) {
             var self = this;
             callback = callback || noop;
@@ -68,10 +79,14 @@ var Drive = function (config, $) {
                         var article = views.articles[views.routeParams.elementId];
                         article['body'] = elementHtml;
                         views.article = article;
-                        callback(views);
+                        self.getZips(function (zips) {
+                            callback(views, zips);
+                        })
                     })
                 } else {
-                    callback(views);
+                    self.getZips(function (zips) {
+                        callback(views, zips);
+                    })
                 }
             })
         },

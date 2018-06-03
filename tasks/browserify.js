@@ -11,5 +11,7 @@ module.exports = function (gulp) {
     return b.bundle()
         .pipe(source('./src/client/client.js'))
         .pipe(rename("bundle.js"))
-        .pipe(gulp.dest('./assets/js'));
+        .pipe(gulp.dest('./assets/js'))
+        .pipe(source('./src/client/client.js'))
+
 };

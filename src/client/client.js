@@ -9,8 +9,8 @@ var History = useRouterHistory(createHashHistory)();
 var $ = window.$;
 var config = window.configReactDriveCms;
     var drive = require('./js/driveAccess/drive.js')(config, $);
-    drive.init(function (views) { 
-        var App = require('./js/components/app/app.jsx')(drive, views);
+    drive.init(function (views, zips) { 
+        var App = require('./js/components/app/app.jsx')(drive, views, zips);
         var routes = require('./js/components/app/routes.jsx')(App);
         ReactDOM.render(React.createElement(
             Router,
