@@ -32,7 +32,7 @@ var MemberMap = createReactClass({
   componentDidMount: function() {
     var self = this;
 
-    var zipRequest = fetch("/map/Texas.topo.json").then(function(response){ 
+    var zipRequest = fetch("https://aubreyrhea.github.io/swiggis.austin/map/Texas.topo.json").then(function(response){ 
       return response.json();
     });
     
