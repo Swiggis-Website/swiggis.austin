@@ -1,11 +1,13 @@
 'use strict';
 var React = require('react');
+var createReactClass = require('create-react-class');
 var Row = require('react-bootstrap').Row;
 var Footer = require('./../layout/footer/footer.jsx');
 var Menu = require('./../layout/menu/menu.jsx');
 var MenuBurger = require('./../layout/menu/menuBurger.jsx');
 var DisqusThread = require('./../comments/disqusThread.jsx');
-var Article = React.createClass({
+
+var Article = createReactClass({
     componentDidMount: function () {
 
     },
@@ -38,10 +40,6 @@ var Article = React.createClass({
                             </div>
                         </Row>
                     </main>
-           {/*          <DisqusThread
-                        id={this.props.currentPage.driveId}
-                        title={this.props.currentPage.title}
-                    /> */}
                     <Footer
                         lastUpdated={this.props.currentPage.lastUpdated}
                         category={this.props.currentPage.category}

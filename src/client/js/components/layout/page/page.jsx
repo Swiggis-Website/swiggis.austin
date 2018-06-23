@@ -1,11 +1,11 @@
 'use strict';
 var React = require('react');
-var Row = require('react-bootstrap').Row;
+var createReactClass = require('create-react-class');
 var Sidebar = require('./../sidebar/sidebar.jsx');
 var Menu = require('./../menu/menu.jsx');
 var MenuBurger = require('./../menu/menuBurger.jsx');
 var EventsModal = require('./../modal/eventsModal.jsx');
-var Page = React.createClass({
+var Page = createReactClass({
     render: function () {
         return (
             <div>
@@ -23,12 +23,6 @@ var Page = React.createClass({
                             menuVisible={this.props.menuVisible}
                         />
                 </header>
-                    {/* <Row> */}
-                        {/* <Sidebar
-                            setMainProperty={this.props.setMainProperty}
-                            pageInfo={this.props.pageInfo}
-                            menuVisible={this.props.menuVisible}
-                        /> */}
                         <section className="col-md-7 col-sm-12 main-content modal-container">
                             {this.props.children}
                             <EventsModal
@@ -36,7 +30,6 @@ var Page = React.createClass({
                                 setMainProperty={this.props.setMainProperty}
                             />
                         </section>
-                    {/* </Row> */}
                 </main>
             </div>
         )

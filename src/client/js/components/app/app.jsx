@@ -1,12 +1,13 @@
 'use strict';
 var React = require('react');
-var _ = require('lodash');
+var PropTypes = require('prop-types');
+var createReactClass = require('create-react-class');
+
 var noop = function () {
 };
-var Main = require('./main.jsx');
 
-var App = function (drive, views, route) {
-    return React.createClass({
+var App = function (drive, views, zips, route) {
+    return createReactClass({
         getInitialState: function () {
             var self = this;
             return {
@@ -14,7 +15,8 @@ var App = function (drive, views, route) {
                     article: [],
                     category: views.categories,
                     page: [],
-                    view: views
+                    view: views,
+                    zip: zips
                 },
                 currentRoute: views.routeParams.elementPath,
                 activeHomePanel: 'articles',
@@ -41,7 +43,7 @@ var App = function (drive, views, route) {
             });
         },
         contextTypes: {
-            router: React.PropTypes.func
+            router: PropTypes.object.isRequired
         },
         loadElement: function (elementType, elementId, callback) {
             var self = this;
@@ -82,7 +84,7 @@ var App = function (drive, views, route) {
         handleRouting: function (element, e) {
             e.preventDefault();
             e.stopPropagation();
-            var routeSplit = e.target.href.split('#!');
+            var routeSplit = e.target.href.split('#');
             var route = routeSplit[1];
             var self = this;
             self.loadElement(element.type, element.id, function () {
@@ -91,23 +93,29 @@ var App = function (drive, views, route) {
         },
         goToRoute: function (route) {
             var self = this;
-            self.context.router.transitionTo(route);
+            self.context.router.push(route);
         },
         render: function () {
-            var path = this.context.router.getCurrentPath();
+            var self = this;
+            var path = this.props.location.pathname;
+            var children = React.Children.map(this.props.children, function (child) {
+                return React.cloneElement(child, {                     
+                    store: self.state.store,
+                    currentPage: self.state.currentPage,
+                    path: path,
+                    activeHomePanel: self.state.activeHomePanel,
+                    setMainProperty: self.setMainProperty,
+                    menuVisible: self.state.menuVisible,
+                    handleRouting: self.handleRouting,
+                    activeCategory: self.state.activeCategory,
+                    config: self.state.config,
+                    modal: self.state.modal
+                })
+            });
             return (
-                <Main
-                    store={this.state.store}
-                    currentPage={this.state.currentPage}
-                    path={path}
-                    activeHomePanel={this.state.activeHomePanel}
-                    setMainProperty={this.setMainProperty}
-                    menuVisible={this.state.menuVisible}
-                    handleRouting={this.handleRouting}
-                    activeCategory={this.state.activeCategory}
-                    config={this.state.config}
-                    modal={this.state.modal}
-                />
+                <div>
+                {children}
+                </div>
             )
         }
     });

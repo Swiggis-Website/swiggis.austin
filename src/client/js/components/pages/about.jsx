@@ -1,9 +1,11 @@
 'use strict';
 var React = require('react');
+var createReactClass = require('create-react-class');
 var Row = require('react-bootstrap').Row;
-
 var Page = require('./../layout/page/page.jsx');
-var About = React.createClass({
+var MemberMap = require('./../map/membermap.jsx');
+
+var About = createReactClass({
     render: function () {
 
         var aboutInfo = {
@@ -44,9 +46,11 @@ var About = React.createClass({
                         </p>
                     </div>
                 </div>
-
+                <MemberMap
+                    zips={this.props.store.zip}
+                />
                 <footer className="split-footer">
-                    <a href="#!/contact">Contact</a>
+                    <a href="#/contact">Contact</a>
                 </footer>
             </Page>
         )

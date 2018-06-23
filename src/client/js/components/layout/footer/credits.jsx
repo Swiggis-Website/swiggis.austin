@@ -1,16 +1,17 @@
 'use strict';
 var React = require('react');
+var createReactClass = require('create-react-class');
 var string = require('./../../../utils/utils').string;
 var Row = require('react-bootstrap').Row;
-var Credits = React.createClass({
+var Credits = createReactClass({
     render: function () {
         var self = this;
-        var categoryUrl = '#!/category/' + self.props.category.id + '/' + string.slug(self.props.category.title);
+        var categoryUrl = '#/category/' + self.props.category.id + '/' + string.slug(self.props.category.title);
         var date = string.formatDate(self.props.lastUpdated);
         return (
             <Row >
                 <div className="col-xs-12 col-sm-2">
-                    <a href="#!/about">
+                    <a href="#/about">
                         <img src="images/SWIGGIS_icon.png" className="user-icon " alt="user-image" />
                     </a>
                 </div>
@@ -21,7 +22,7 @@ var Credits = React.createClass({
                         </p>
                         <p>
                             <span className="credits-separator">by</span>
-                            <a href="#!/about">
+                            <a href="#/about">
                                 {self.props.author}
                             </a>
                             <span className="credits-separator">in</span>

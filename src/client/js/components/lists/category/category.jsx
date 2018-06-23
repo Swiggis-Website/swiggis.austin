@@ -1,12 +1,13 @@
 'use strict';
 var React = require('react');
+var createReactClass = require('create-react-class');
 var string = require('./../../../utils/utils').string;
 
-var Category = React.createClass({
+var Category = createReactClass({
 
     render: function () {
         var self = this;
-        var categoryUrl = '#!/category/' + self.props.category.id + '/' + string.slug(self.props.category.title);
+        var categoryUrl = '#/category/' + self.props.category.id + '/' + string.slug(self.props.category.title);
         var categoryStyle = {
             backgroundImage: 'url(' + self.props.category.image + ')'
         };
