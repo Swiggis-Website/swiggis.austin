@@ -2,7 +2,7 @@
 var browserify = require('browserify');
 var source = require("vinyl-source-stream");
 var watchify = require('watchify');
-var reactify = require('reactify');
+var babelify = require('babelify');
 var uglify = require('gulp-uglify');
 var rename = require('gulp-rename');
 
@@ -14,7 +14,7 @@ module.exports = function (gulp) {
             fullPaths: true
         })
     );
-    b.transform(reactify);
+    b.transform(babelify, {presets: ["react", "es2015"]});
     b.add('./src/client/client.js');
     var packBundle = function(b){
         console.log("pack bundle.js");
@@ -29,6 +29,3 @@ module.exports = function (gulp) {
 
     packBundle(b);
 };
-
-
-

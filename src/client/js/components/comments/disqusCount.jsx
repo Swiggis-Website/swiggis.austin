@@ -1,7 +1,9 @@
 'use strict';
 var React = require('react');
+var createReactClass = require('create-react-class');
+
 var config = window.configReactDriveCms;
-var DisqusCount = React.createClass({
+var DisqusCount = createReactClass({
     addDisqusScript: function () {
         var self = this;
         var child = self.disqusCount = document.createElement('script');

@@ -1,11 +1,11 @@
 'use strict';
 var React = require('react');
+var createReactClass = require('create-react-class');
 var Row = require('react-bootstrap').Row;
 var Posts = require('./../lists/post/posts.jsx');
 var Categories = require('./../lists/category/categories.jsx');
 var Page = require('./../layout/page/page.jsx');
-var DisqusCount = require('./../comments/disqusCount.jsx');
-var Home = React.createClass({
+var Home = createReactClass({
 
     render: function () {
         var homeInfo = {
@@ -15,7 +15,7 @@ var Home = React.createClass({
             sidebarImage: '../images/default-sidebar.jpg',
             path: "home"
         };
-
+        var test = this.props;
         return (
             <Page
                 pageInfo={homeInfo}
@@ -52,7 +52,6 @@ var Home = React.createClass({
                     activeHomePanel={this.props.activeHomePanel}
                     handleRouting={this.props.handleRouting}
                 />
-                {/* <DisqusCount/> */}
             </ Page>
         )
     },

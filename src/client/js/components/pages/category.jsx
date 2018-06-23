@@ -1,10 +1,11 @@
 'use strict';
 var React = require('react');
+var createReactClass = require('create-react-class');
 var Row = require('react-bootstrap').Row;
 var Posts = require('./../lists/post/posts.jsx');
 var Page = require('./../layout/page/page.jsx');
 var DisqusCount = require('./../comments/disqusCount.jsx');
-var Category = React.createClass({
+var Category = createReactClass({
     render: function () {
         var category = this.props.store.category[this.props.params.categoryId];
         var categoryInfo = {
@@ -39,7 +40,6 @@ var Category = React.createClass({
                     activeHomePanel={"articles"}
                     handleRouting={this.props.handleRouting}
                 />
-                {/* <DisqusCount/> */}
             </Page>
         )
     }

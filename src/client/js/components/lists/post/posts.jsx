@@ -1,8 +1,9 @@
 'use strict';
 var React = require('react');
+var createReactClass = require('create-react-class');
 var Post = require('./post.jsx');
 
-var Posts = React.createClass({
+var Posts = createReactClass({
     render: function () {
         var self = this;
         return (

@@ -1,8 +1,8 @@
 'use strict';
 var React = require('react');
-
+var createReactClass = require('create-react-class');
 var Category = require('./category.jsx');
-var Categories = React.createClass({
+var Categories = createReactClass({
 
     render: function () {
         var self = this;

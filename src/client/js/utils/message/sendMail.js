@@ -28,14 +28,6 @@ var sendMail = function (formValues, callback) {
 
 var getInfo = function (callback) {
     callback = noop;
-/*     var $ = window.$;
-    $.ajax({
-        type: "GET",
-        dataType: 'jsonp',
-        url: "http://smart-ip.net/info-json" 
-    }).done(function (response) {
-        callback(response);
-    }); */
 };
 
 module.exports = sendMail;

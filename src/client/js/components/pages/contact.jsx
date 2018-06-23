@@ -1,12 +1,13 @@
 'use strict';
 var React = require('react');
-var Input = require('react-bootstrap').Input;
+var createReactClass = require('create-react-class');
+var FormControl = require('react-bootstrap').FormControl;
 
 var Page = require('./../layout/page/page.jsx');
 var validation = require('./../../utils/utils').validation;
 var message = require('./../../utils/utils').message;
 var noop = function () {};
-var Contact = React.createClass({
+var Contact = createReactClass({
     getInitialState: function(){
         return {
             formValues: {
@@ -81,7 +82,7 @@ var Contact = React.createClass({
                     {formFields.map(function(field, i) {
                         return <div className="form-group" key={i}>
                             <label htmlFor={field.name}>{field.label}</label>
-                            <Input
+                            <FormControl
                                 type={field.type}
                                 className="form-control"
                                 name={field.name}
@@ -103,7 +104,7 @@ var Contact = React.createClass({
                     </div>
                 </form>
                 <footer className="split-footer">
-                    <a href="#!/about">About</a>
+                    <a href="#/about">About</a>
                 </footer>
             </Page>
         )

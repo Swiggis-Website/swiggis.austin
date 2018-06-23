@@ -25,7 +25,7 @@ var parseUrl = function (views) {
             elementType = 'category';
             elementId = urlSplit[i + 1];
             break;
-        } else if (urlSplit[i] === '#!') {
+        } else if (urlSplit[i] === '#') {
             elementPath = urlSplit[i + 1];
         }
     }

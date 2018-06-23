@@ -1,8 +1,9 @@
 'use strict';
 var React = require('react');
+var createReactClass = require('create-react-class');
 var Modal = require('react-bootstrap').Modal;
 var Button = require('react-bootstrap').Button;
-var EventsModal = React.createClass({
+var EventsModal = createReactClass({
     render: function () {
         var self = this;
         return (

@@ -1,7 +1,8 @@
 'use strict';
 var React = require('react');
+var createReactClass = require('create-react-class');
 var OtherArticle = require('./otherArticle.jsx');
-var ReadOther = React.createClass({
+var ReadOther = createReactClass({
     render: function () {
         var self = this;
         return (
@@ -11,6 +12,7 @@ var ReadOther = React.createClass({
                     return <OtherArticle
                         article={article}
                         key={i}
+                        id={i}
                         handleRouting={self.props.handleRouting}
                     />;
                 })}

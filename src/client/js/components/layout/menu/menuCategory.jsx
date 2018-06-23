@@ -1,9 +1,10 @@
 'use strict';
 var React = require('react');
+var createReactClass = require('create-react-class');
 var noop = function () {
 };
 var MenuCategoryArticles = require('./menuCategoryArticles.jsx');
-var MenuCategory = React.createClass({
+var MenuCategory = createReactClass({
     render: function () {
         var self = this;
         var isActive = (self.props.activeCategory.activeId === self.props.category.id);
@@ -14,7 +15,7 @@ var MenuCategory = React.createClass({
             isExpanded: isExpanded
         };
         return (
-            <li key={self.props.key} className={("menu-category-item" + (isExpanded ? ' category-expanded' : ''))}>
+            <li key={self.props.id} className={("menu-category-item" + (isExpanded ? ' category-expanded' : ''))}>
                 <i className={("fa fa-chevron-right" + (isExpanded ? ' chevron-expanded' : ' chevron'))}></i>
                 <a
                     className="menuitem"
