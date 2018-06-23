@@ -8118,3 +8118,13 @@ form input[type=submit]:hover {
     src: local('Source Sans Pro Bold'), local('SourceSansPro-Bold'), url(https://fonts.gstatic.com/s/sourcesanspro/v9/toadOcfmlt9b38dHJxOBGEo0As1BFRXtCDhS66znb_k.woff2) format('woff2');
     unicode-range: U0 0FF, U131, U152 -153, U2C6, U2DA, U2DC, U2000 -206F, U2074, U20AC, U2212, U2215, UE0FF, UEFFD, UF000
 }
+
+.livezip
+{
+    color: blue;
+}
+
+.workzip
+{
+    color: red;
+}
