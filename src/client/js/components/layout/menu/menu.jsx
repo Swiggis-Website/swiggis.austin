@@ -21,6 +21,10 @@ var Menu = createReactClass({
                         <a className="menuitem" href="#/membership">Membership</a>
                     </li>
                     <li>
+                        <i className="fa fa-calendar"></i>
+                        <a className="menuitem" href="#/calendar">Calendar</a>
+                    </li>
+                    <li>
                         <i className="fa fa-envelope"></i>
                         <a className="menuitem" href="#/contact">Contact</a>
                     </li>

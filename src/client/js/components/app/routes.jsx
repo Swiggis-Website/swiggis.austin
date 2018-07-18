@@ -11,6 +11,7 @@ var Membership = require("./../pages/membership.jsx");
 var Contact = require("./../pages/contact.jsx");
 var Article = require("./../pages/article.jsx");
 var Category = require("./../pages/category.jsx");
+var Calendar = require("./../pages/calendar.jsx");
 
 var routes = function (App) {
     return (
@@ -19,6 +20,7 @@ var routes = function (App) {
             <Route path="about" component={About}/>
             <Route path="membership" component={Membership}/>
             <Route path="contact" component={Contact}/>
+            <Route path="calendar" component={Calendar}/>
             <Route path="article/:slug" component={Article}/>
             <Route path="category/:categoryId/:slug" component={Category}/>
             <IndexRoute component={Home}/>
