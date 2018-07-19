@@ -8,11 +8,7 @@ var IFrame = createReactClass({
         return (
             <iframe 
             src={this.props.src} 
-            style={this.props.style} 
-            width={this.props.width} 
-            height={this.props.height} 
-            frameBorder={this.props.frameBorder} 
-            scrolling={this.props.scrolling}>
+            style={this.props.style}>
             </iframe>
         )
     }
@@ -39,14 +35,12 @@ var Calendar = createReactClass({
                 activeCategory={this.props.activeCategory}
                 modal={this.props.modal}
             >
-                <div className="author-bio">
-                    <div className="author-bio__info">  
-                    <IFrame 
+            <div className="calendar-container">
+                <IFrame 
                     src="https://calendar.google.com/calendar/embed?height=600&amp;wkst=1&amp;bgcolor=%23FFFFFF&amp;src=u3sfsl0gsunalmgl6003sis8d2kvf98f%40import.calendar.google.com&amp;color=%23B1440E&amp;ctz=America%2FChicago" 
-                    style={{borderWidth: 0}} width="800" height="600" frameBorder="0" scrolling="no">
-                    </IFrame>
-                    </div>
-                </div>
+                    style={{borderWidth: 0}}>
+                </IFrame>
+            </div>
 
                 <footer className="split-footer">
                     <a href="#/contact">Contact</a>
