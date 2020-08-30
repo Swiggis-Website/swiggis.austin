@@ -33,6 +33,23 @@ var Membership = createReactClass({
                         <p><a href="https://docs.google.com/forms/d/e/1FAIpQLSeuMlfxZfWVsvf5ihvjBjoEyriEQVIYAHPit45cFPnRywhhHA/viewform" target="_blank">Fill out the membership registration form</a>
                         </p>
 
+                        <h2>MEMBERSHIP BENEFITS</h2>
+                        <p>
+                            <ul>
+                                <li>Professional Development</li>
+                                <li>Social/Networking Events</li>
+                                <li>Free or discounted webinars and workshops</li>
+                                <li>Opportunities to contribute; Earn GISP points via participation</li>
+                                <li>Opportunities to participate in an activity</li>
+                                <li>Online community to discuss interests, explore solutions</li>
+                                <li>Access to social networks</li>
+                                <li>Access to exclusive membership directory</li>
+                                <li>Recognition for work, achievements and advancements</li>
+                                <li>Jobs</li>
+                                <li>Youth Outreach</li>
+                            </ul>
+                         </p>
+
                         <h1>MEMBERSHIP DUES</h1>
                         <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_blank">
                         <input type="hidden" name="cmd" value="_s-xclick" />
