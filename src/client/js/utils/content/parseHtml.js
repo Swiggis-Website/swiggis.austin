@@ -6,17 +6,17 @@ var parseHtml = function (inputDoc) {
     var splitStyleStart = inputDoc.split(styleStart);
     var splitStyleEnd = splitStyleStart[1].split(styleEnd);
 
-    //var htmlStart = '<body ';
-    var htmlStart = '<body>';
-    //var htmlStart2 = '>';
+    var htmlStart = '<body ';
+    //var htmlStart = '<body class=\"c5\">';
+    var htmlStart2 = '>';
     var htmlEnd = '</body>';
     var splitHtmlStart = splitStyleEnd[1].split(htmlStart);
-    //var splitHtmlStart2 = splitHtmlStart[1].split(htmlStart2);
-    //var htmlClass = splitHtmlStart2[0];
-    var htmlClass = splitHtmlStart[0];
-    //var htmlStartFull = htmlStart + htmlClass// + htmlStart2;
-    //splitHtmlStart = splitStyleEnd[1].split(htmlStartFull);
-    splitHtmlStart = splitStyleEnd[1].split(htmlStart);
+    var splitHtmlStart2 = splitHtmlStart[1].split(htmlStart2);
+    var htmlClass = splitHtmlStart2[0];
+    //var htmlClass = splitHtmlStart[0];
+    var htmlStartFull = htmlStart + htmlClass// + htmlStart2;
+    splitHtmlStart = splitStyleEnd[1].split(htmlStartFull);
+    //splitHtmlStart = splitStyleEnd[1].split(htmlStart);
     var splitHtmlEnd = splitHtmlStart[1].split(htmlEnd);
 
     return {
